@@ -1,0 +1,149 @@
+\newcommand{\EduWFEightDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Owner or teacher opens the class home screen.};
+  \node (roster) [edu process, below=of open] {Review the current teacher and student roster for the class.};
+  \node (removeaction) [edu decision, below=of roster] {Remove a student membership?};
+  \node (invite) [edu process, below=16mm of removeaction] {Enter an email address and choose the requested class role.};
+  \node (allowed) [edu decision, below=of invite] {Current user allowed to manage the requested class role?};
+  \node (callinvite) [edu process, below=of allowed] {Call the class-member invitation action.};
+  \node (existing) [edu decision, below=of callinvite] {Existing profile already tied to the invited email?};
+  \node (activate) [edu process, below=of existing] {Create or update the active class membership immediately.};
+  \node (linked) [edu process, right=42mm of existing] {Create or refresh the linked organization invite and class invite.};
+  \node (remove) [edu process, right=42mm of removeaction] {Choose the target membership for removal.};
+  \node (studentonly) [edu decision, below=of remove] {Target is a student membership?};
+  \node (removed) [edu process, below=of studentonly] {Remove the student from the class roster.};
+  \node (reject) [edu process, left=42mm of allowed] {Reject the action and keep the roster unchanged.};
+  \node (refresh) [edu process, below=22mm of activate] {Refresh the class roster and membership state.};
+  \node (endreject) [edu process, right=42mm of studentonly] {Reject the removal request and leave the teacher assignment unchanged.};
+  \node (end) [edu startstop, below=of refresh] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (roster);
+  \path [edu arrow] (roster) -- (removeaction);
+  \path [edu arrow] (removeaction) -- node[edu label] {No} (invite);
+  \path [edu arrow] (removeaction.east) -- node[edu label] {Yes} (remove.west);
+  \path [edu arrow] (invite) -- (allowed);
+  \path [edu arrow] (allowed) -- node[edu label] {Yes} (callinvite);
+  \path [edu arrow] (allowed.west) -- node[edu label] {No} (reject.east);
+  \path [edu arrow] (callinvite) -- (existing);
+  \path [edu arrow] (existing) -- node[edu label] {Yes} (activate);
+  \path [edu arrow] (existing.east) -- node[edu label] {No} (linked.west);
+  \path [edu arrow] (remove) -- (studentonly);
+  \path [edu arrow] (studentonly) -- node[edu label] {Yes} (removed);
+  \path [edu arrow] (studentonly.east) -- node[edu label] {No} (endreject.west);
+  \path [edu arrow] (activate) -- (refresh);
+  \path [edu arrow] (linked.south) |- (refresh.east);
+  \path [edu arrow] (removed.south) |- (refresh.east);
+  \path [edu arrow] (refresh) -- (end);
+  \path [edu arrow] (reject.south) |- (end.west);
+  \path [edu arrow] (endreject.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFNineDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Owner, teacher, or student opens a class route.};
+  \node (context) [edu process, below=of open] {Load the class context for the selected organization and the currently active role.};
+  \node (access) [edu decision, below=of context] {Class accessible for the selected organization and role?};
+  \node (feature) [edu decision, below=16mm of access] {Target is a feature route rather than the class home screen?};
+  \node (enabled) [edu decision, below=16mm of feature] {Requested class feature enabled?};
+  \node (renderhome) [edu process, left=42mm of feature] {Render the requested class screen in its allowed class context.};
+  \node (renderfeature) [edu process, below=of enabled] {Render the requested feature screen for the class.};
+  \node (fallback) [edu process, right=42mm of enabled] {Render the feature-disabled fallback instead of the tool screen.};
+  \node (error) [edu process, right=42mm of access] {Stop at the class error state because the route is invalid or inaccessible.};
+  \node (end) [edu startstop, below=22mm of renderfeature] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (context);
+  \path [edu arrow] (context) -- (access);
+  \path [edu arrow] (access) -- node[edu label] {Yes} (feature);
+  \path [edu arrow] (access.east) -- node[edu label] {No} (error.west);
+  \path [edu arrow] (feature.west) -- node[edu label] {No} (renderhome.east);
+  \path [edu arrow] (feature) -- node[edu label] {Yes} (enabled);
+  \path [edu arrow] (enabled) -- node[edu label] {Yes} (renderfeature);
+  \path [edu arrow] (enabled.east) -- node[edu label] {No} (fallback.west);
+  \path [edu arrow] (renderfeature) -- (end);
+  \path [edu arrow] (renderhome.south) |- (end.west);
+  \path [edu arrow] (fallback.south) |- (end.east);
+  \path [edu arrow] (error.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFTenDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Owner, teacher, or student opens the class chat screen.};
+  \node (load) [edu process, below=of open] {Load the class messages together with the announcement carousel data.};
+  \node (announce) [edu decision, below=of load] {Announcement action selected?};
+  \node (message) [edu decision, below=16mm of announce] {Media upload instead of a text message?};
+  \node (textmsg) [edu process, below=16mm of message] {Send a text message in the class discussion stream.};
+  \node (mediamsg) [edu process, right=42mm of message] {Upload media for a class message.};
+  \node (postannounce) [edu process, right=42mm of announce] {Owner or teacher posts an announcement message.};
+  \node (hideannounce) [edu process, right=42mm of postannounce] {Owner or teacher hides an announcement from the carousel.};
+  \node (membervalid) [edu process, below=of textmsg] {Validate class membership and insert the class message.};
+  \node (mediavalid) [edu process, below=of mediamsg] {Validate file and class access, then create the stored material and linked chat message.};
+  \node (announcevalid) [edu process, below=of postannounce] {Validate announcement permission, insert the message, and create a class notification.};
+  \node (hidekeep) [edu process, below=of hideannounce] {Remove the announcement from the carousel while keeping it in message history.};
+  \node (end) [edu startstop, below=28mm of membervalid] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (load);
+  \path [edu arrow] (load) -- (announce);
+  \path [edu arrow] (announce) -- node[edu label] {No} (message);
+  \path [edu arrow] (announce.east) -- node[edu label] {Yes} (postannounce.west);
+  \path [edu arrow] (message) -- node[edu label] {No} (textmsg);
+  \path [edu arrow] (message.east) -- node[edu label] {Yes} (mediamsg.west);
+  \path [edu arrow] (textmsg) -- (membervalid);
+  \path [edu arrow] (mediamsg) -- (mediavalid);
+  \path [edu arrow] (postannounce) -- (announcevalid);
+  \path [edu arrow] (postannounce.east) -- node[edu label] {Hide instead} (hideannounce.west);
+  \path [edu arrow] (hideannounce) -- (hidekeep);
+  \path [edu arrow] (membervalid) -- (end);
+  \path [edu arrow] (mediavalid.south) |- (end.east);
+  \path [edu arrow] (announcevalid.south) |- (end.east);
+  \path [edu arrow] (hidekeep.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFElevenDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Owner, teacher, or student opens the materials page.};
+  \node (load) [edu process, below=of open] {Load the available class materials.};
+  \node (manage) [edu decision, below=of load] {Owner or teacher managing materials?};
+  \node (read) [edu process, left=42mm of manage] {Search, filter, open, or download the available materials.};
+  \node (inline) [edu decision, below=of read] {Material can be streamed inline?};
+  \node (stream) [edu process, below=of inline] {Open the material through the inline content route.};
+  \node (download) [edu process, left=42mm of inline] {Issue a signed download URL for the material.};
+  \node (deleteaction) [edu decision, below=16mm of manage] {Delete an existing material?};
+  \node (upload) [edu process, below=16mm of deleteaction] {Upload a material file together with its metadata.};
+  \node (uploadvalid) [edu decision, below=of upload] {Uploaded file valid?};
+  \node (save) [edu process, below=of uploadvalid] {Store the object, insert the material row, and create a class notification.};
+  \node (delete) [edu process, right=42mm of deleteaction] {Soft-delete the material and clean up the stored object.};
+  \node (error) [edu process, right=42mm of uploadvalid] {Return the upload error and keep the materials list unchanged.};
+  \node (refresh) [edu process, below=22mm of save] {Refresh the materials view for the class.};
+  \node (end) [edu startstop, below=of refresh] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (load);
+  \path [edu arrow] (load) -- (manage);
+  \path [edu arrow] (manage.west) -- node[edu label] {No} (read.east);
+  \path [edu arrow] (manage) -- node[edu label] {Yes} (deleteaction);
+  \path [edu arrow] (read) -- (inline);
+  \path [edu arrow] (inline) -- node[edu label] {Yes} (stream);
+  \path [edu arrow] (inline.west) -- node[edu label] {No} (download.east);
+  \path [edu arrow] (deleteaction) -- node[edu label] {No} (upload);
+  \path [edu arrow] (deleteaction.east) -- node[edu label] {Yes} (delete.west);
+  \path [edu arrow] (upload) -- (uploadvalid);
+  \path [edu arrow] (uploadvalid) -- node[edu label] {Yes} (save);
+  \path [edu arrow] (uploadvalid.east) -- node[edu label] {No} (error.west);
+  \path [edu arrow] (save) -- (refresh);
+  \path [edu arrow] (delete.south) |- (refresh.east);
+  \path [edu arrow] (refresh) -- (end);
+  \path [edu arrow] (stream.south) |- (end.west);
+  \path [edu arrow] (download.south) |- (end.west);
+  \path [edu arrow] (error.south) |- (end.east);
+\end{tikzpicture}%
+}

@@ -1,0 +1,109 @@
+\newcommand{\EduWFEighteenDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Owner, teacher, or student opens the live-session screen.};
+  \node (manager) [edu decision, below=of open] {Owner or teacher managing the session?};
+  \node (startsession) [edu process, right=42mm of manager] {Start or reconnect the class live session.};
+  \node (claim) [edu process, below=of startsession] {Claim or refresh the live-session row and issue the live-session token.};
+  \node (golive) [edu process, below=of claim] {Mark the class session as live.};
+  \node (studentjoin) [edu decision, below=16mm of manager] {Active live session already available for student join?};
+  \node (join) [edu process, below=of studentjoin] {Join the active live session.};
+  \node (blocked) [edu process, left=42mm of studentjoin] {Keep the student in the waiting state because the session is not live.};
+  \node (participate) [edu process, below=22mm of golive] {Use media, chat, and whiteboard features during the live session.};
+  \node (refresh) [edu process, below=of participate] {Heartbeat or live-state recheck keeps the session state fresh while it remains active.};
+  \node (ended) [edu decision, below=of refresh] {Session ended, timed out, or closed on page exit?};
+  \node (close) [edu process, below=of ended] {End the live session and disconnect participants from the class room.};
+  \node (end) [edu startstop, below=of close] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (manager);
+  \path [edu arrow] (manager.east) -- node[edu label] {Yes} (startsession.west);
+  \path [edu arrow] (manager) -- node[edu label] {No} (studentjoin);
+  \path [edu arrow] (startsession) -- (claim);
+  \path [edu arrow] (claim) -- (golive);
+  \path [edu arrow] (golive.south) |- (participate.east);
+  \path [edu arrow] (studentjoin) -- node[edu label] {Yes} (join);
+  \path [edu arrow] (studentjoin.west) -- node[edu label] {No} (blocked.east);
+  \path [edu arrow] (join.south) |- (participate.west);
+  \path [edu arrow] (participate) -- (refresh);
+  \path [edu arrow] (refresh) -- (ended);
+  \path [edu arrow] (ended) -- node[edu label] {Yes} (close);
+  \path [edu arrow] (ended.south) -- node[edu label] {No} ++(0,-6mm) -| (participate.south);
+  \path [edu arrow] (close) -- (end);
+  \path [edu arrow] (blocked.south) |- (end.west);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFNineteenDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Teacher or student opens the Results route.};
+  \node (access) [edu process, below=of open] {Verify class access and the availability of the Results feature.};
+  \node (enabled) [edu decision, below=of access] {Results feature enabled for the class?};
+  \node (viewer) [edu decision, below=16mm of enabled] {Viewer is teacher?};
+  \node (teacher) [edu process, left=40mm of viewer] {Show aggregated assignment and exam performance for the class.};
+  \node (student) [edu process, right=40mm of viewer] {Show graded assignments and released exam results only.};
+  \node (released) [edu decision, below=of student] {Requested exam result already released?};
+  \node (details) [edu process, below=22mm of viewer] {Open result details from the Results page as needed.};
+  \node (hidden) [edu process, right=40mm of released] {Keep unreleased exam attempts hidden from the student view.};
+  \node (fallback) [edu process, right=40mm of enabled] {Stop at the feature-disabled fallback for the Results route.};
+  \node (end) [edu startstop, below=of details] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (access);
+  \path [edu arrow] (access) -- (enabled);
+  \path [edu arrow] (enabled) -- node[edu label] {Yes} (viewer);
+  \path [edu arrow] (enabled.east) -- node[edu label] {No} (fallback.west);
+  \path [edu arrow] (viewer.west) -- node[edu label] {Yes} (teacher.east);
+  \path [edu arrow] (viewer.east) -- node[edu label] {No} (student.west);
+  \path [edu arrow] (teacher.south) |- (details.west);
+  \path [edu arrow] (student) -- (released);
+  \path [edu arrow] (released) -- node[edu label] {Yes} (details.east);
+  \path [edu arrow] (released.east) -- node[edu label] {No} (hidden.west);
+  \path [edu arrow] (details) -- (end);
+  \path [edu arrow] (hidden.south) |- (end.east);
+  \path [edu arrow] (fallback.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFTwentyDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Owner, teacher, or student opens the notifications menu.};
+  \node (load) [edu process, below=of open] {Load the notifications list and unread count for the current organization and selected role.};
+  \node (realtime) [edu process, below=of load] {Realtime notification changes trigger a refresh of the menu data.};
+  \node (available) [edu decision, below=of realtime] {Notifications available?};
+  \node (openaction) [edu decision, below=16mm of available] {Open a linked notification?};
+  \node (href) [edu decision, right=42mm of openaction] {Notification includes a target link?};
+  \node (route) [edu process, below=of href] {Route the user to the linked class resource and refresh the menu state.};
+  \node (markall) [edu decision, below=of openaction] {Mark all notifications as read?};
+  \node (deleteone) [edu decision, below=of markall] {Delete one notification?};
+  \node (markone) [edu process, left=42mm of deleteone] {Mark a single notification as read and refresh the list.};
+  \node (deletenode) [edu process, right=42mm of deleteone] {Delete the selected notification and refresh the list.};
+  \node (readall) [edu process, below=of deleteone] {Mark all notifications as read and refresh the list.};
+  \node (empty) [edu process, right=42mm of available] {Show the empty state because no notifications exist.};
+  \node (nolink) [edu process, right=42mm of markall] {Keep the user in the notifications list because the notification has no target link.};
+  \node (end) [edu startstop, below=22mm of readall] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (load);
+  \path [edu arrow] (load) -- (realtime);
+  \path [edu arrow] (realtime) -- (available);
+  \path [edu arrow] (available) -- node[edu label] {Yes} (openaction);
+  \path [edu arrow] (available.east) -- node[edu label] {No} (empty.west);
+  \path [edu arrow] (openaction.east) -- node[edu label] {Yes} (href.west);
+  \path [edu arrow] (openaction) -- node[edu label] {No} (markall);
+  \path [edu arrow] (href) -- node[edu label] {Yes} (route);
+  \path [edu arrow] (href.east) -- node[edu label] {No} ++(10mm,0) |- (nolink.north);
+  \path [edu arrow] (markall) -- node[edu label] {Yes} (readall);
+  \path [edu arrow] (markall.east) -- node[edu label] {No} (nolink.west);
+  \path [edu arrow] (nolink.south) |- (deleteone.east);
+  \path [edu arrow] (deleteone.west) -- node[edu label] {No} (markone.east);
+  \path [edu arrow] (deleteone.east) -- node[edu label] {Yes} (deletenode.west);
+  \path [edu arrow] (route.south) |- (end.east);
+  \path [edu arrow] (readall) -- (end);
+  \path [edu arrow] (markone.south) |- (end.west);
+  \path [edu arrow] (deletenode.south) |- (end.east);
+  \path [edu arrow] (empty.south) |- (end.east);
+\end{tikzpicture}%
+}

@@ -1,0 +1,64 @@
+\documentclass[12pt]{report}
+\pdfminorversion=7
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+\setlength{\headheight}{18pt}
+
+\fancypagestyle{thesismain}{
+  \fancyhf{}
+  \renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter. ##1}{}}
+  \renewcommand{\sectionmark}[1]{}
+  \fancyhead[L]{\small\nouppercase{\leftmark}}
+  \fancyhead[R]{\small\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\include{frontmatter/abstract}
+\include{frontmatter/acknowledgements}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+\pagestyle{thesismain}
+
+\include{chapters/chapter1_strategic_vision}
+\include{chapters/chapter2_literature_review}
+\include{chapters/chapter3_methodology}
+\include{chapters/chapter4_system_analysis}
+\include{chapters/chapter5_system_design}
+\include{chapters/chapter6_implementation}
+\include{chapters/chapter7_testing_evaluation}
+\include{chapters/chapter8_future_work}
+
+\include{backmatter/conclusion}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{references}
+
+\appendix
+\include{backmatter/appendices}
+
+\end{document}

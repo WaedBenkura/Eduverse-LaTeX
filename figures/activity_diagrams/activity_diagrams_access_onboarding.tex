@@ -1,0 +1,140 @@
+\newcommand{\EduWFOneDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {User opens the authentication page.};
+  \node (session) [edu decision, below=of open] {Active session already exists?};
+  \node (choice) [edu process, below=16mm of session] {User chooses sign in or sign up.};
+  \node (mode) [edu decision, below=of choice] {Sign in?};
+  \node (signin) [edu process, left=34mm of mode] {Submit sign-in credentials to Supabase.};
+  \node (signinvalid) [edu decision, below=of signin] {Credentials valid?};
+  \node (signup) [edu process, right=34mm of mode] {Submit sign-up registration.};
+  \node (signupsession) [edu decision, below=of signup] {Immediate session returned?};
+  \node (redirect) [edu process, right=38mm of session] {Redirect to the requested route or to the dashboard.};
+  \node (context) [edu process, below=16mm of mode] {Application refreshes user, organization, and role context through the shared app store.};
+  \node (orgctx) [edu decision, below=of context] {Organization context available?};
+  \node (dashboard) [edu process, below=of orgctx] {Render the role-specific dashboard for the resolved current role.};
+  \node (error) [edu process, left=38mm of signinvalid] {Stay on the authentication page and show the validation error.};
+  \node (confirm) [edu process, right=38mm of signupsession] {Show the email-confirmation message and stop dashboard entry.};
+  \node (workspace) [edu process, right=38mm of orgctx] {Show dashboard entry without an active organization context.};
+  \node (end) [edu startstop, below=16mm of dashboard] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (session);
+  \path [edu arrow] (session) -- node[edu label] {No} (choice);
+  \path [edu arrow] (session.east) -- ++(10mm,0) |- node[edu label, pos=0.2] {Yes} (redirect.west);
+  \path [edu arrow] (choice) -- (mode);
+  \path [edu arrow] (mode.west) -- node[edu label] {Yes} (signin.east);
+  \path [edu arrow] (mode.east) -- node[edu label] {No} (signup.west);
+  \path [edu arrow] (signin) -- (signinvalid);
+  \path [edu arrow] (signup) -- (signupsession);
+  \path [edu arrow] (signinvalid.west) -- node[edu label] {No} (error.east);
+  \path [edu arrow] (signupsession.east) -- node[edu label] {No} (confirm.west);
+  \path [edu arrow] (signinvalid.south) |- node[edu label, pos=0.25] {Yes} (context.west);
+  \path [edu arrow] (signupsession.south) |- node[edu label, pos=0.25] {Yes} (context.east);
+  \path [edu arrow] (redirect.west) |- (context.east);
+  \path [edu arrow] (context) -- (orgctx);
+  \path [edu arrow] (orgctx) -- node[edu label] {Yes} (dashboard);
+  \path [edu arrow] (orgctx.east) -- node[edu label] {No} (workspace.west);
+  \path [edu arrow] (dashboard) -- (end);
+  \path [edu arrow] (workspace.south) |- (end.east);
+  \path [edu arrow] (error.south) |- (end.west);
+  \path [edu arrow] (confirm.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFTwoDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (enter) [edu process, below=of start] {Owner enters the organization name, slug, and preset.};
+  \node (rpc) [edu process, below=of enter] {Client calls the create organization RPC.};
+  \node (auth) [edu decision, below=of rpc] {Authenticated owner?};
+  \node (validate) [edu process, below=16mm of auth] {Validate the organization name, slug rules, preset value, and slug availability.};
+  \node (valid) [edu decision, below=of validate] {Validation passed?};
+  \node (create) [edu process, below=of valid] {Create the organization and seed the organization-level feature settings.};
+  \node (membership) [edu process, below=of create] {Create the owner membership and set the default organization.};
+  \node (refresh) [edu process, below=of membership] {Refresh app state and route the owner back to the dashboard.};
+  \node (error) [edu process, right=40mm of valid] {Return the validation error and stop organization creation.};
+  \node (unauth) [edu process, right=40mm of auth] {Reject the request because the user is not authenticated.};
+  \node (end) [edu startstop, below=of refresh] {End};
+
+  \path [edu arrow] (start) -- (enter);
+  \path [edu arrow] (enter) -- (rpc);
+  \path [edu arrow] (rpc) -- (auth);
+  \path [edu arrow] (auth) -- node[edu label] {Yes} (validate);
+  \path [edu arrow] (auth.east) -- node[edu label] {No} (unauth.west);
+  \path [edu arrow] (validate) -- (valid);
+  \path [edu arrow] (valid) -- node[edu label] {Yes} (create);
+  \path [edu arrow] (valid.east) -- node[edu label] {No} (error.west);
+  \path [edu arrow] (create) -- (membership);
+  \path [edu arrow] (membership) -- (refresh);
+  \path [edu arrow] (refresh) -- (end);
+  \path [edu arrow] (error.south) |- (end.east);
+  \path [edu arrow] (unauth.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFThreeDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start] {Teacher or student opens the organization invite link.};
+  \node (auth) [edu decision, below=of open] {Signed in?};
+  \node (signin) [edu process, right=38mm of auth] {Redirect to the authentication page with the invite route as the next destination.};
+  \node (accept) [edu process, below=16mm of auth] {Call the organization-invite acceptance action.};
+  \node (valid) [edu decision, below=of accept] {Token valid, unused, unexpired, and matched to the signed-in email?};
+  \node (activate) [edu process, below=of valid] {Activate the organization membership.};
+  \node (linked) [edu decision, below=of activate] {Linked pending class invites exist for the same email and organization?};
+  \node (classinvites) [edu process, right=40mm of linked] {Activate the linked class invites for the same email.};
+  \node (defaultorg) [edu process, below=16mm of linked] {Set the default organization when the profile does not already have one.};
+  \node (refresh) [edu process, below=of defaultorg] {Refresh app state and return the user to the workspace.};
+  \node (error) [edu process, right=40mm of valid] {Show the invite error and keep the invite unresolved.};
+  \node (end) [edu startstop, below=of refresh] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (auth);
+  \path [edu arrow] (auth) -- node[edu label] {Yes} (accept);
+  \path [edu arrow] (auth.east) -- node[edu label] {No} (signin.west);
+  \path [edu arrow] (signin.south) |- (accept.east);
+  \path [edu arrow] (accept) -- (valid);
+  \path [edu arrow] (valid) -- node[edu label] {Yes} (activate);
+  \path [edu arrow] (valid.east) -- node[edu label] {No} (error.west);
+  \path [edu arrow] (activate) -- (linked);
+  \path [edu arrow] (linked) -- node[edu label] {No} (defaultorg);
+  \path [edu arrow] (linked.east) -- node[edu label] {Yes} (classinvites.west);
+  \path [edu arrow] (classinvites.south) |- (defaultorg.east);
+  \path [edu arrow] (defaultorg) -- (refresh);
+  \path [edu arrow] (refresh) -- (end);
+  \path [edu arrow] (error.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduWFFourDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (controls) [edu process, below=of start] {Owner, teacher, or student opens the workspace controls.};
+  \node (action) [edu decision, below=of controls] {Switch organization?};
+  \node (orgselect) [edu process, right=40mm of action] {Select a different organization from the organization switcher.};
+  \node (orgrefresh) [edu process, below=16mm of action] {Set the default organization and refresh memberships, classes, users, and live-session state.};
+  \node (roleselect) [edu process, left=40mm of action] {Select a different active organization role from the role switcher.};
+  \node (rolevalid) [edu decision, below=of roleselect] {Requested role active for the current organization membership?};
+  \node (reject) [edu process, left=40mm of rolevalid] {Reject the role change and keep the current role state.};
+  \node (routevalid) [edu decision, below=24mm of orgrefresh] {Current route still valid after the switch?};
+  \node (stay) [edu process, below=of routevalid] {Remain in the current route and continue with the refreshed context.};
+  \node (dashboard) [edu process, right=40mm of routevalid] {Redirect the user back to the dashboard.};
+  \node (end) [edu startstop, below=of stay] {End};
+
+  \path [edu arrow] (start) -- (controls);
+  \path [edu arrow] (controls) -- (action);
+  \path [edu arrow] (action.east) -- node[edu label] {Yes} (orgselect.west);
+  \path [edu arrow] (action.west) -- node[edu label] {No} (roleselect.east);
+  \path [edu arrow] (orgselect.south) |- (orgrefresh.east);
+  \path [edu arrow] (roleselect) -- (rolevalid);
+  \path [edu arrow] (rolevalid.east) |- node[edu label, pos=0.2] {Yes} (routevalid.west);
+  \path [edu arrow] (rolevalid.west) -- node[edu label] {No} (reject.east);
+  \path [edu arrow] (orgrefresh) -- (routevalid);
+  \path [edu arrow] (routevalid) -- node[edu label] {Yes} (stay);
+  \path [edu arrow] (routevalid.east) -- node[edu label] {No} (dashboard.west);
+  \path [edu arrow] (stay) -- (end);
+  \path [edu arrow] (dashboard.south) |- (end.east);
+  \path [edu arrow] (reject.south) |- (end.west);
+\end{tikzpicture}%
+}

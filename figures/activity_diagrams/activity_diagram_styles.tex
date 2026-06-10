@@ -1,0 +1,63 @@
+\tikzset{
+  edu activity/.style={
+    font=\footnotesize,
+    >=Latex,
+    node distance=6mm and 16mm,
+    every node/.style={align=center}
+  },
+  edu startstop/.style={
+    ellipse,
+    draw,
+    thick,
+    fill=gray!15,
+    minimum width=26mm,
+    minimum height=7mm,
+    inner sep=2pt
+  },
+  edu process/.style={
+    rectangle,
+    rounded corners=2pt,
+    draw,
+    thick,
+    fill=blue!6,
+    text width=82mm,
+    minimum height=8mm,
+    inner sep=3pt
+  },
+  edu decision/.style={
+    diamond,
+    draw,
+    thick,
+    fill=orange!10,
+    aspect=2.3,
+    text width=28mm,
+    inner sep=1pt
+  },
+  edu arrow/.style={
+    ->,
+    thick
+  },
+  edu label/.style={
+    font=\footnotesize,
+    fill=white,
+    inner sep=1pt
+  }
+}
+
+\newsavebox{\EduActivityBox}
+
+\newcommand{\EduActivityFigure}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \sbox{\EduActivityBox}{#1}%
+    \ifdim\wd\EduActivityBox>0.96\textwidth
+      \resizebox{0.96\textwidth}{!}{\usebox{\EduActivityBox}}%
+    \else\ifdim\dimexpr\ht\EduActivityBox+\dp\EduActivityBox\relax>0.54\textheight
+      \resizebox{!}{0.54\textheight}{\usebox{\EduActivityBox}}%
+    \else
+      \usebox{\EduActivityBox}%
+    \fi\fi
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
