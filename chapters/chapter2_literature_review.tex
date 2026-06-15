@@ -9,15 +9,11 @@
 
 \section{Introduction}\label{sec:literature_review_introduction}
 
-This chapter presents the theoretical background that frames Eduverse as an
-integrated educational platform. It reviews the shift from traditional
-classroom management toward digital learning systems, highlights the limitations
-of fragmented educational tools, and situates Eduverse within the broader need
-for unified academic ecosystems. The chapter also discusses selected concepts
-from artificial intelligence in education, synchronous virtual learning, and
-secure role-aware platform design in order to establish the conceptual basis
-for the later analysis, design, and implementation chapters.
-It therefore draws selectively from the literature on Learning Management
+This chapter presents the theoretical background for Eduverse. It reviews the
+evolution of digital learning systems, the limitations of fragmented
+educational tools, selected concepts from artificial intelligence in
+education, and the main foundations that inform the system's design. The
+discussion draws selectively from the literature on Learning Management
 Systems, Artificial Intelligence in Education, Role-Based Access Control, and
 educational platform architecture.
 
@@ -50,12 +46,10 @@ process are distributed across unrelated systems. As a result, students must
 move repeatedly between platforms, while teachers and administrators face a
 reduced ability to maintain clear academic oversight \cite{selwyn2011education,dagger2007service}.
 
-Fragmentation also affects consistency and accountability. When communication,
-submissions, live sessions, and evaluation records are distributed across
-multiple tools, it becomes more difficult to maintain a coherent academic
-history, enforce clear access boundaries, and manage workflows in a structured
-way. From a system-design perspective, the limitation is not merely technical;
-it is also organizational, because fragmented tools weaken the integrity of the
+When communication, submissions, live sessions, and evaluation records are
+distributed across multiple tools, consistency, accountability, and access
+governance become harder to maintain. The limitation is therefore
+organizational as well as technical, because it weakens the integrity of the
 educational environment itself.
 
 \section{Research Gap and Proposed Integrated Learning Ecosystem}\label{sec:research_gap_integrated_ecosystem}
@@ -69,20 +63,13 @@ be effective in isolation, the overall experience remains fragmented and
 operationally inefficient.
 
 Eduverse addresses this gap by proposing an integrated learning ecosystem
-rather than a collection of separate utilities. Its core idea is that class
-management, communication, materials, assignments, live sessions, examinations,
-AI-assisted support, and programming practice should be coordinated within one
-platform governed by organizational structure and role-based access. In this
-sense, Eduverse is positioned as a response to fragmentation through
-integration, controlled scope, and educational workflow continuity.
-
-This research direction is especially relevant because the platform does not
-attempt to treat every educational function as identical in weight or usage.
-Instead, it distinguishes between the main implemented web environment and the
-MVP mobile companion application, and between core academic workflows and
-specialized extensions such as AI support and the educational IDE. That balance
-between integration and scope control is central to the academic identity of
-the project.
+rather than a collection of separate utilities. It brings class management,
+communication, materials, assessment, live sessions, AI-assisted support, and
+programming practice into one organizationally governed environment. The main
+implemented client is the web application, while the mobile client remains an
+MVP companion for selected daily-use workflows. This balance between
+integration and controlled scope is central to the academic identity of the
+project.
 
 \section{Artificial Intelligence in Education}\label{sec:artificial_intelligence_in_education}
 
@@ -91,10 +78,9 @@ augmenting teaching and learning rather than replacing teachers or institutional
 judgment \cite{luckin2016intelligence,holmes2019ai}. In educational settings,
 AI systems are valuable when they improve access to explanations, support
 learning continuity, reduce routine workload, and provide structured assistance
-without undermining academic responsibility.
-In Eduverse, this perspective frames the AI Agent as a bounded academic support
-service embedded in the platform rather than as an independent authority over
-teaching or evaluation.
+without undermining academic responsibility. In Eduverse, this perspective
+frames the AI Agent as a bounded academic support service embedded in the
+platform rather than as an authority over teaching or evaluation.
 
 \subsection{Context-Aware Learning Assistance}\label{subsec:context_aware_learning_assistance}
 
@@ -105,16 +91,10 @@ materials, class discussion, ongoing tasks, and instructional expectations.
 Context-aware assistance can therefore improve relevance, reduce confusion, and
 support more focused academic interaction \cite{holmes2019ai}.
 
-In relation to Eduverse, this concept is particularly important because the AI
-Agent is not conceived as an isolated chatbot detached from the broader
-learning environment. Its academic value depends on responding within the
-user's class, role, and ongoing learning activity so that assistance remains
-relevant to the immediate educational context. In practice, it is positioned as
-a support layer for understanding, clarification, and workflow assistance
-rather than as a substitute for teaching.
-Accordingly, the Eduverse AI Agent operates within the active class context so
-that assistance can be shaped by the learner's role, course materials, and
-immediate academic task.
+In Eduverse, this means the AI Agent operates within the active class, user
+role, and immediate learning task so that support remains relevant to the
+current course activity. Its role is to assist understanding and clarification
+rather than to substitute for teaching.
 
 \subsection{Material Summarization and Learning Support}\label{subsec:material_summarization_and_learning_support}
 
@@ -126,17 +106,10 @@ parallel. AI-assisted summarization can support comprehension by highlighting
 main points, reducing information overload, and helping learners return more
 quickly to the central ideas of a topic \cite{luckin2016intelligence}.
 
-This kind of support is most academically appropriate when it complements
-reading rather than replacing it. For that reason, summarization should be
-understood as a learning aid that improves navigation and revision rather than
-as an alternative to engagement with the full material.
-Within Eduverse, this type of assistance is most relevant for class materials,
-assignment instructions, and other course-related resources presented through
-the platform. The AI Agent may therefore support revision by summarizing or
-clarifying educational content while keeping the original material central.
-In this sense, the Eduverse AI Agent can help students summarize and explain
-class materials, learning resources, and assignment-related content without
-displacing the source material itself.
+This kind of support is most appropriate when it complements reading rather
+than replacing it. In Eduverse, it is most relevant to class materials,
+assignment instructions, and related course resources, where the AI Agent may
+summarize or clarify content while keeping the original material central.
 
 \subsection{Assessment and Feedback Support}\label{subsec:assessment_and_feedback_support}
 
@@ -148,14 +121,10 @@ However, educational literature also emphasizes that AI use in assessment must
 be governed carefully so that it supports learning without weakening academic
 integrity or teacher responsibility \cite{luckin2016intelligence,holmes2019ai}.
 
-For Eduverse, this means the AI Agent should assist students and teachers with
-preparatory guidance, clarification, and formative support around academic
-tasks while final instructional judgment and assessment responsibility remain
-with the teacher. This distinction is especially important in educational
-systems that must preserve trust, fairness, and instructor oversight.
-Within the platform, this support is reflected in AI assistance around
-assignments and examinations that helps users prepare and clarify requirements
-without replacing teacher judgment.
+For Eduverse, this means the AI Agent may assist students and teachers with
+preparatory guidance, clarification, and formative support around assignments
+and examinations, while final instructional judgment and assessment
+responsibility remain with the teacher.
 
 \section{Benchmarking: Fragmented Tools vs. Integrated Eduverse Approach}\label{sec:benchmarking_fragmented_vs_integrated}
 
@@ -235,11 +204,10 @@ notifications, reviewing assignments, opening materials, and joining live
 sessions. As a result, they are especially useful as companion systems for
 daily academic engagement.
 
-In Eduverse, the mobile client should therefore be understood as an MVP mobile
-companion rather than as a complete replacement for the main platform. Its
-purpose is to extend accessibility to core user-facing workflows while the more
-comprehensive management and authoring activities remain centered in the web
-application.
+In Eduverse, the mobile client should therefore be understood as an MVP
+companion rather than as a complete replacement for the main platform. It
+extends accessibility to core user-facing workflows while more comprehensive
+management and authoring remain centered in the web application.
 
 % TODO: Add scholarly citation(s) specifically addressing mobile companion
 % applications in digital learning environments.
@@ -267,9 +235,9 @@ materials, teacher guidance, assignments, and practical execution.
 
 An integrated coding environment addresses this problem by placing programming
 practice within the same educational ecosystem as the rest of the academic
-workflow. For Eduverse, the integrated educational IDE is therefore not merely
-a technical add-on, but part of the platform's broader pedagogical direction,
-especially for programming-related classes and technical learning settings.
+workflow. For Eduverse, the integrated IDE is therefore part of the platform's
+broader pedagogical direction, especially for programming-related classes and
+technical learning settings.
 
 % TODO: Add scholarly citation(s) on integrated coding environments or browser-
 % based programming practice in education.
@@ -288,11 +256,11 @@ Data management is equally foundational. Educational systems must maintain
 reliable records, protect assessment-related information, and support different
 types of content ranging from structured academic data to larger learning
 materials and live-session interaction. From a theoretical perspective, this
-requires a design orientation that treats security, data organization, and role
-awareness as core educational infrastructure rather than as secondary technical
-concerns. This view is consistent with Eduverse, where access control, data
-separation, and institutional structure are part of the platform's academic
-trust model.
+requires a design orientation that treats security, data organization, and
+permissions as core educational infrastructure rather than as secondary
+technical concerns. This view is consistent with Eduverse, where access
+control, data separation, and institutional structure are part of the
+platform's trust model.
 
 % TODO: Add additional citation(s) specifically supporting educational data
 % governance and storage separation in learning platforms.
@@ -301,10 +269,10 @@ Taken together, these theoretical threads show that effective educational
 platforms must reduce fragmentation while coordinating complementary forms of
 support across web, mobile, synchronous, and practice-oriented learning
 contexts. They also indicate that AI assistance, real-time instruction,
-integrated coding environments, and secure role-aware data management are most
-valuable when they operate within one coherent academic system rather than as
-detached services. For Eduverse, this combined perspective provides the
-conceptual basis for adopting an integrated platform model with differentiated
-client roles, bounded AI support, live-session continuity, and protected
-institutional workflows. The following chapters build on this foundation to
-explain the analysis, design, and implementation choices of the project.
+integrated coding environments, and secure data management are most valuable
+when they operate within one coherent academic system rather than as detached
+services. For Eduverse, this combined perspective provides the conceptual
+basis for a unified platform model with differentiated client roles, bounded
+AI support, live-session continuity, and protected institutional workflows.
+The following chapters build on this foundation to explain the analysis,
+design, and implementation choices of the project.

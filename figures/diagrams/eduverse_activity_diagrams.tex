@@ -1,0 +1,174 @@
+\newcommand{\EduAuthRoleSelectionDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start, text width=76mm] {User opens the Eduverse web platform or companion application.};
+  \node (mode) [edu process, below=of open, text width=76mm] {Choose login or sign-up, then submit credentials or registration data.};
+  \node (auth) [edu process, below=of mode, text width=76mm] {Supabase authentication verifies the request and returns the active session when successful.};
+  \node (success) [edu decision wide, below=of auth] {Authentication successful?};
+  \node (load) [edu process, below=16mm of success, text width=76mm] {System loads the user's organizations, memberships, and available roles.};
+  \node (select) [edu process, below=of load, text width=76mm] {User selects the organization and active role, or the system resolves the default context.};
+  \node (dashboard) [edu process, below=of select, text width=76mm] {Open the role-based dashboard and initialize the permitted academic workspace.};
+  \node (error) [edu process, right=42mm of success, text width=54mm] {Stay on the access screen and display the authentication or validation error.};
+  \node (end) [edu startstop, below=of dashboard] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (mode);
+  \path [edu arrow] (mode) -- (auth);
+  \path [edu arrow] (auth) -- (success);
+  \path [edu arrow] (success) -- node[edu label] {Yes} (load);
+  \path [edu arrow] (success.east) -- node[edu label] {No} (error.west);
+  \path [edu arrow] (load) -- (select);
+  \path [edu arrow] (select) -- (dashboard);
+  \path [edu arrow] (dashboard) -- (end);
+  \path [edu arrow] (error.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduTeacherLiveSessionDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start, text width=76mm] {Teacher opens the target class and enters the live-session screen.};
+  \node (status) [edu decision wide, below=of open] {Active live session already exists?};
+  \node (startaction) [edu process, below=16mm of status, text width=76mm] {Teacher starts the live session from the class workspace.};
+  \node (record) [edu process, below=of startaction, text width=76mm] {System creates or refreshes the class session record and marks it as active.};
+  \node (token) [edu process, below=of record, text width=76mm] {System requests the LiveKit access token needed for room entry.};
+  \node (teacher) [edu process, below=of token, text width=76mm] {Teacher enters the live room and begins synchronous instruction.};
+  \node (students) [edu process, below=of teacher, text width=76mm] {Students can now join the active session from the same class context.};
+  \node (endcheck) [edu decision wide, below=of students] {Teacher ends the live session?};
+  \node (close) [edu process, below=16mm of endcheck, text width=76mm] {System closes the active session, updates the session state, and disconnects participants.};
+  \node (rejoin) [edu process, right=42mm of status, text width=54mm] {Teacher re-enters the already active room and resumes the session context.};
+  \node (end) [edu startstop, below=of close] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (status);
+  \path [edu arrow] (status) -- node[edu label] {No} (startaction);
+  \path [edu arrow] (status.east) -- node[edu label] {Yes} (rejoin.west);
+  \path [edu arrow] (startaction) -- (record);
+  \path [edu arrow] (record) -- (token);
+  \path [edu arrow] (token) -- (teacher);
+  \path [edu arrow] (teacher) -- (students);
+  \path [edu arrow] (students) -- (endcheck);
+  \path [edu arrow] (rejoin.south) |- (students.east);
+  \path [edu arrow] (endcheck) -- node[edu label] {Yes} (close);
+  \path [edu arrow] (endcheck.east) -- ++(10mm,0) node[edu label, pos=0.2] {No} |- (students.east);
+  \path [edu arrow] (close) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduStudentAssignmentSubmissionDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (class) [edu process, below=of start, text width=76mm] {Student opens the class workspace using the permitted student role.};
+  \node (assignments) [edu process, below=of class, text width=76mm] {View the list of available assignments and select the target task.};
+  \node (answer) [edu process, below=of assignments, text width=76mm] {Write the answer, attach the required file if needed, and submit the response.};
+  \node (validate) [edu decision wide, below=of answer] {Submission valid and still allowed by timing and mode rules?};
+  \node (store) [edu process, below=16mm of validate, text width=76mm] {System stores or updates the submission record and preserves the submitted content.};
+  \node (review) [edu process, below=of store, text width=76mm] {Teacher can review the submission from the class assignment workflow.};
+  \node (revise) [edu process, right=42mm of validate, text width=54mm] {Display the validation issue and return the student to revise the submission.};
+  \node (end) [edu startstop, below=of review] {End};
+
+  \path [edu arrow] (start) -- (class);
+  \path [edu arrow] (class) -- (assignments);
+  \path [edu arrow] (assignments) -- (answer);
+  \path [edu arrow] (answer) -- (validate);
+  \path [edu arrow] (validate) -- node[edu label] {Yes} (store);
+  \path [edu arrow] (validate.east) -- node[edu label] {No} (revise.west);
+  \path [edu arrow] (store) -- (review);
+  \path [edu arrow] (review) -- (end);
+  \path [edu arrow] (revise.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduStudentExamDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start, text width=76mm] {Student opens the exam page from the class workspace.};
+  \node (available) [edu decision wide, below=of open] {Exam available for a permitted attempt?};
+  \node (attempt) [edu process, below=16mm of available, text width=76mm] {System starts or resumes the exam attempt according to timing and access rules.};
+  \node (answer) [edu process, below=of attempt, text width=76mm] {Student answers the questions while the system records progress.};
+  \node (integrity) [edu process, below=of answer, text width=76mm] {Integrity-related events are monitored where the exam configuration requires them.};
+  \node (submit) [edu decision wide, below=of integrity] {Submit now or continue answering?};
+  \node (save) [edu process, below=16mm of submit, text width=76mm] {System saves the answers, closes the attempt, and computes the stored outcome state.};
+  \node (result) [edu process, below=of save, text width=76mm] {Result or feedback becomes visible according to the exam release settings.};
+  \node (blocked) [edu process, right=42mm of available, text width=54mm] {Show the waiting or blocked state because no valid exam attempt is currently available.};
+  \node (end) [edu startstop, below=of result] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (available);
+  \path [edu arrow] (available) -- node[edu label] {Yes} (attempt);
+  \path [edu arrow] (available.east) -- node[edu label] {No} (blocked.west);
+  \path [edu arrow] (attempt) -- (answer);
+  \path [edu arrow] (answer) -- (integrity);
+  \path [edu arrow] (integrity) -- (submit);
+  \path [edu arrow] (submit) -- node[edu label] {Submit} (save);
+  \path [edu arrow] (submit.east) -- ++(10mm,0) node[edu label, pos=0.18] {Continue} |- (answer.east);
+  \path [edu arrow] (save) -- (result);
+  \path [edu arrow] (result) -- (end);
+  \path [edu arrow] (blocked.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduAIAgentInteractionDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start, text width=76mm] {Teacher or student opens the AI Agent from within the current class context.};
+  \node (question) [edu process, below=of open, text width=76mm] {User writes the academic question or support request.};
+  \node (context) [edu process, below=of question, text width=76mm] {System gathers the active class context, role context, and relevant prompt information.};
+  \node (request) [edu process, below=of context, text width=76mm] {Send the request to the external AI service through the bounded Eduverse AI layer.};
+  \node (response) [edu process, below=of request, text width=76mm] {Receive the generated response and map it back to the class workflow.};
+  \node (display) [edu process, below=of response, text width=76mm] {Display the answer to the user inside the class interface.};
+  \node (continue) [edu decision wide, below=of display] {Continue the AI interaction?};
+  \node (end) [edu startstop, below=16mm of continue] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (question);
+  \path [edu arrow] (question) -- (context);
+  \path [edu arrow] (context) -- (request);
+  \path [edu arrow] (request) -- (response);
+  \path [edu arrow] (response) -- (display);
+  \path [edu arrow] (display) -- (continue);
+  \path [edu arrow] (continue) -- node[edu label] {No} (end);
+  \path [edu arrow] (continue.east) -- ++(10mm,0) node[edu label, pos=0.18] {Yes} |- (question.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduIDEUsageDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start, text width=76mm] {User opens the integrated IDE from the relevant class workspace.};
+  \node (file) [edu process, below=of open, text width=76mm] {Create a new file or open an existing code or markdown file.};
+  \node (edit) [edu process, below=of file, text width=76mm] {Edit the code or learning content inside the IDE editor.};
+  \node (run) [edu process, below=of edit, text width=76mm] {Run the preview or console-style simulation for the current work.};
+  \node (output) [edu process, below=of run, text width=76mm] {System displays the resulting output, messages, or detected errors.};
+  \node (refine) [edu decision wide, below=of output] {Refine the work and run again?};
+  \node (end) [edu startstop, below=16mm of refine] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (file);
+  \path [edu arrow] (file) -- (edit);
+  \path [edu arrow] (edit) -- (run);
+  \path [edu arrow] (run) -- (output);
+  \path [edu arrow] (output) -- (refine);
+  \path [edu arrow] (refine) -- node[edu label] {No} (end);
+  \path [edu arrow] (refine.east) -- ++(10mm,0) node[edu label, pos=0.18] {Yes} |- (edit.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduMobileCompanionDiagram}{%
+\begin{tikzpicture}[edu activity]
+  \node (start) [edu startstop] {Start};
+  \node (open) [edu process, below=of start, text width=76mm] {User opens the Eduverse mobile companion application.};
+  \node (session) [edu process, below=of open, text width=76mm] {Resume the active session or authenticate and load the permitted mobile context.};
+  \node (home) [edu process, below=of session, text width=76mm] {Review notifications, classes, assignments, or class materials from the mobile dashboard.};
+  \node (select) [edu process, below=of home, text width=76mm] {Select the required item and open the related class detail or live-session entry point.};
+  \node (action) [edu process, below=of select, text width=76mm] {Complete the quick companion action, such as checking tasks, reading materials, or joining a live session.};
+  \node (end) [edu startstop, below=of action] {End};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (session);
+  \path [edu arrow] (session) -- (home);
+  \path [edu arrow] (home) -- (select);
+  \path [edu arrow] (select) -- (action);
+  \path [edu arrow] (action) -- (end);
+\end{tikzpicture}%
+}
