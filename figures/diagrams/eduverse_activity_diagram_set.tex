@@ -1,0 +1,277 @@
+\tikzset{
+  edu act step wide/.style={
+    edu process,
+    text width=72mm,
+    minimum height=9mm
+  },
+  edu act step medium/.style={
+    edu process,
+    text width=64mm,
+    minimum height=9mm
+  },
+  edu act step branch/.style={
+    edu process,
+    text width=50mm,
+    minimum height=9mm
+  },
+  edu act decision wide/.style={
+    edu decision,
+    text width=34mm,
+    aspect=2.0
+  },
+  edu act merge compact/.style={
+    diamond,
+    draw=black!85,
+    line width=0.9pt,
+    fill=white,
+    minimum size=7mm,
+    inner sep=0pt,
+    outer sep=0pt
+  }
+}
+
+\newcommand{\EduOverallSystemActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (open) [edu act step wide, below=of start] {User opens Eduverse.};
+  \node (access) [edu act step wide, below=of open] {System displays the available access options and workspace entry points.};
+  \node (signin) [edu act step wide, below=of access] {User signs in or continues the available session.};
+  \node (verified) [edu act decision wide, below=of signin] {Access verified?};
+  \node (workspace) [edu act decision wide, below=14mm of verified] {Workspace available?};
+  \node (select) [edu act step wide, below=14mm of workspace] {User selects the organization, role, and workspace.};
+  \node (bootstrap) [edu act step branch, right=48mm of workspace] {User creates or joins an organization.};
+  \node (dashboard) [edu act step wide, below=of select] {System opens the permitted dashboard and academic workspace.};
+  \node (choose) [edu act step wide, below=of dashboard] {User opens the required class, service, or learning feature.};
+  \node (task) [edu act step wide, below=of choose] {User completes the intended academic task.};
+  \node (result) [edu act step wide, below=of task] {System saves the update and shows the visible result.};
+  \node (denied) [edu act step branch, left=48mm of verified] {System shows the access error.};
+  \node (end) [edu final, below=of result] {};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (access);
+  \path [edu arrow] (access) -- (signin);
+  \path [edu arrow] (signin) -- (verified);
+  \path [edu arrow] (verified) -- node[edu label] {Yes} (workspace);
+  \path [edu arrow] (verified.west) -- node[edu label] {No} (denied.east);
+  \path [edu arrow] (workspace) -- node[edu label] {Yes} (select);
+  \path [edu arrow] (workspace.east) -- node[edu label] {No} (bootstrap.west);
+  \path [edu arrow] (bootstrap.south) |- (select.east);
+  \path [edu arrow] (select) -- (dashboard);
+  \path [edu arrow] (dashboard) -- (choose);
+  \path [edu arrow] (choose) -- (task);
+  \path [edu arrow] (task) -- (result);
+  \path [edu arrow] (result) -- (end);
+  \path [edu arrow] (denied.south) |- (end.west);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduAuthWorkspaceActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (open) [edu act step medium, below=of start] {User opens the Eduverse access page.};
+  \node (form) [edu act step medium, below=of open] {System displays the sign-in or registration form.};
+  \node (credentials) [edu act step medium, below=of form] {User enters the required account details.};
+  \node (validate) [edu act step medium, below=of credentials] {System validates the submitted access request.};
+  \node (valid) [edu act decision wide, below=of validate] {Request valid?};
+  \node (workspace) [edu act decision wide, below=14mm of valid] {Workspace resolved?};
+  \node (select) [edu act step medium, below=14mm of workspace] {User selects the active role and workspace.};
+  \node (bootstrap) [edu act step branch, right=48mm of workspace] {User creates or joins an organization workspace.};
+  \node (dashboard) [edu act step medium, below=of select] {System opens the authorized dashboard.};
+  \node (error) [edu act step branch, left=48mm of valid] {System shows the validation or access error.};
+  \node (end) [edu final, below=of dashboard] {};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (form);
+  \path [edu arrow] (form) -- (credentials);
+  \path [edu arrow] (credentials) -- (validate);
+  \path [edu arrow] (validate) -- (valid);
+  \path [edu arrow] (valid) -- node[edu label] {Yes} (workspace);
+  \path [edu arrow] (valid.west) -- node[edu label] {No} (error.east);
+  \path [edu arrow] (workspace) -- node[edu label] {Yes} (select);
+  \path [edu arrow] (workspace.east) -- node[edu label] {No} (bootstrap.west);
+  \path [edu arrow] (bootstrap.south) |- (select.east);
+  \path [edu arrow] (select) -- (dashboard);
+  \path [edu arrow] (dashboard) -- (end);
+  \path [edu arrow] (error.south) |- (end.west);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduClassContentActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (open) [edu act step medium, below=of start] {User opens an available class from the workspace.};
+  \node (workspace) [edu act step medium, below=of open] {System opens the class workspace.};
+  \node (select) [edu act step medium, below=of workspace] {User selects course content or material actions.};
+  \node (actionq) [edu act decision wide, below=of select] {Review content or manage material?};
+  \node (display) [edu act step branch, left=48mm of actionq] {System displays the requested learning content.};
+  \node (review) [edu act step branch, below=of display] {User reviews the available material.};
+  \node (manage) [edu act step branch, right=48mm of actionq] {Teacher uploads or updates the class material.};
+  \node (publish) [edu act step branch, below=of manage] {System saves and publishes the updated material.};
+  \node (merge) [edu act merge compact, below=18mm of actionq] {};
+  \node (end) [edu final, below=of merge] {};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (workspace);
+  \path [edu arrow] (workspace) -- (select);
+  \path [edu arrow] (select) -- (actionq);
+  \path [edu arrow] (actionq.west) -- node[edu label] {Review} (display.east);
+  \path [edu arrow] (actionq.east) -- node[edu label] {Manage} (manage.west);
+  \path [edu arrow] (display) -- (review);
+  \path [edu arrow] (manage) -- (publish);
+  \path [edu arrow] (review.east) |- (merge.west);
+  \path [edu arrow] (publish.west) |- (merge.east);
+  \path [edu arrow] (merge) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduAssignmentWorkflowActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (open) [edu act step wide, below=of start] {Teacher opens the assignment area for the class.};
+  \node (form) [edu act step wide, below=of open] {System displays the assignment form and current class tasks.};
+  \node (details) [edu act step wide, below=of form] {Teacher enters the assignment details and publishes the task.};
+  \node (release) [edu act step wide, below=of details] {System saves the assignment and makes it visible to students.};
+  \node (studentopen) [edu act step wide, below=of release] {Student opens the published assignment.};
+  \node (available) [edu act decision wide, below=of studentopen] {Submission still open?};
+  \node (submit) [edu act step wide, below=14mm of available] {Student completes and submits the assignment.};
+  \node (store) [edu act step wide, below=of submit] {System saves the submission for teacher review.};
+  \node (grade) [edu act step wide, below=of store] {Teacher reviews the submission and records the grade or feedback.};
+  \node (result) [edu act step wide, below=of grade] {System releases the visible submission status or result.};
+  \node (blocked) [edu act step branch, right=48mm of available] {System shows that submission is closed or unavailable.};
+  \node (end) [edu final, below=of result] {};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (form);
+  \path [edu arrow] (form) -- (details);
+  \path [edu arrow] (details) -- (release);
+  \path [edu arrow] (release) -- (studentopen);
+  \path [edu arrow] (studentopen) -- (available);
+  \path [edu arrow] (available) -- node[edu label] {Yes} (submit);
+  \path [edu arrow] (available.east) -- node[edu label] {No} (blocked.west);
+  \path [edu arrow] (submit) -- (store);
+  \path [edu arrow] (store) -- (grade);
+  \path [edu arrow] (grade) -- (result);
+  \path [edu arrow] (result) -- (end);
+  \path [edu arrow] (blocked.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduExamWorkflowActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (teacher) [edu act step wide, below=of start] {Teacher configures and publishes the exam.};
+  \node (release) [edu act step wide, below=of teacher] {System makes the exam available according to its schedule and rules.};
+  \node (open) [edu act step wide, below=of release] {Student opens the exam from the class workspace.};
+  \node (allowed) [edu act decision wide, below=of open] {Attempt available?};
+  \node (attempt) [edu act step wide, below=14mm of allowed] {System starts the exam attempt for the student.};
+  \node (answer) [edu act step wide, below=of attempt] {Student answers the exam questions.};
+  \node (monitor) [edu act step wide, below=of answer] {System applies the configured monitoring and attempt controls.};
+  \node (submit) [edu act step wide, below=of monitor] {Student submits the completed exam attempt.};
+  \node (reviewq) [edu act decision wide, below=of submit] {Manual review required?};
+  \node (review) [edu act step wide, below=14mm of reviewq] {Teacher reviews subjective answers and records the final marks.};
+  \node (releaseq) [edu act step branch, right=48mm of reviewq] {System proceeds directly to result release.};
+  \node (merge) [edu act merge compact, below=14mm of review] {};
+  \node (results) [edu act step wide, below=of merge] {System releases the visible exam result or feedback.};
+  \node (view) [edu act step wide, below=of results] {Student views the released exam outcome.};
+  \node (blocked) [edu act step branch, left=48mm of allowed] {System shows that no exam attempt is currently available.};
+  \node (end) [edu final, below=of view] {};
+
+  \path [edu arrow] (start) -- (teacher);
+  \path [edu arrow] (teacher) -- (release);
+  \path [edu arrow] (release) -- (open);
+  \path [edu arrow] (open) -- (allowed);
+  \path [edu arrow] (allowed) -- node[edu label] {Yes} (attempt);
+  \path [edu arrow] (allowed.west) -- node[edu label] {No} (blocked.east);
+  \path [edu arrow] (attempt) -- (answer);
+  \path [edu arrow] (answer) -- (monitor);
+  \path [edu arrow] (monitor) -- (submit);
+  \path [edu arrow] (submit) -- (reviewq);
+  \path [edu arrow] (reviewq) -- node[edu label] {Yes} (review);
+  \path [edu arrow] (reviewq.east) -- node[edu label] {No} (releaseq.west);
+  \path [edu arrow] (review) -- (merge);
+  \path [edu arrow] (releaseq.south) |- (merge.east);
+  \path [edu arrow] (merge) -- (results);
+  \path [edu arrow] (results) -- (view);
+  \path [edu arrow] (view) -- (end);
+  \path [edu arrow] (blocked.south) |- (end.west);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduLiveSessionWorkflowActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (teacheropen) [edu act step medium, below=of start] {Teacher opens the live-session page.};
+  \node (controls) [edu act step medium, below=of teacheropen] {System displays the session controls for the class.};
+  \node (startsession) [edu act step medium, below=of controls] {Teacher starts the live session.};
+  \node (room) [edu act step medium, below=of startsession] {System opens the active live room for the class.};
+  \node (studentopen) [edu act step medium, below=of room] {Student opens the live-session entry point.};
+  \node (join) [edu act step medium, below=of studentopen] {Student joins the live session.};
+  \node (participate) [edu act step medium, below=of join] {Teacher and students participate in the live class.};
+  \node (endsession) [edu act step medium, below=of participate] {Teacher ends the live session.};
+  \node (close) [edu act step medium, below=of endsession] {System closes the room and returns users to the class context.};
+  \node (end) [edu final, below=of close] {};
+
+  \path [edu arrow] (start) -- (teacheropen);
+  \path [edu arrow] (teacheropen) -- (controls);
+  \path [edu arrow] (controls) -- (startsession);
+  \path [edu arrow] (startsession) -- (room);
+  \path [edu arrow] (room) -- (studentopen);
+  \path [edu arrow] (studentopen) -- (join);
+  \path [edu arrow] (join) -- (participate);
+  \path [edu arrow] (participate) -- (endsession);
+  \path [edu arrow] (endsession) -- (close);
+  \path [edu arrow] (close) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduAILearningSupportActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (open) [edu act step medium, below=of start] {User opens the AI Agent from the learning workspace.};
+  \node (interface) [edu act step medium, below=of open] {System displays the AI support interface.};
+  \node (question) [edu act step medium, below=of interface] {User enters the question or support request.};
+  \node (prepare) [edu act step medium, below=of question] {System prepares the AI response within the current learning context.};
+  \node (answer) [edu act step medium, below=of prepare] {System returns the answer or learning support response.};
+  \node (view) [edu act step medium, below=of answer] {User reviews the returned explanation or summary.};
+  \node (continueq) [edu act decision wide, below=of view] {Continue asking?};
+  \node (end) [edu final, below=14mm of continueq] {};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (interface);
+  \path [edu arrow] (interface) -- (question);
+  \path [edu arrow] (question) -- (prepare);
+  \path [edu arrow] (prepare) -- (answer);
+  \path [edu arrow] (answer) -- (view);
+  \path [edu arrow] (view) -- (continueq);
+  \path [edu arrow] (continueq) -- node[edu label] {No} (end);
+  \path [edu arrow] (continueq.east) -- ++(14mm,0) node[edu label, pos=0.2] {Yes} |- (question.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduIdeCodingLabExtensionsActivityDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=9mm and 30mm]
+  \node (start) [edu initial] {};
+  \node (open) [edu act step medium, below=of start] {User opens the IDE, coding lab, or extension area.};
+  \node (tools) [edu act step medium, below=of open] {System displays the available IDE or extension tools.};
+  \node (select) [edu act step medium, below=of tools] {User selects the needed workspace or extension.};
+  \node (workspace) [edu act step medium, below=of select] {System opens the selected workspace or extension.};
+  \node (edit) [edu act step medium, below=of workspace] {User edits code or interacts with the available tool.};
+  \node (run) [edu act step medium, below=of edit] {User runs the code or refreshes the available preview.};
+  \node (output) [edu act step medium, below=of run] {System displays the resulting output or preview.};
+  \node (continueq) [edu act decision wide, below=of output] {Continue working?};
+  \node (exit) [edu act step medium, below=14mm of continueq] {User exits the workspace or extension.};
+  \node (end) [edu final, below=of exit] {};
+
+  \path [edu arrow] (start) -- (open);
+  \path [edu arrow] (open) -- (tools);
+  \path [edu arrow] (tools) -- (select);
+  \path [edu arrow] (select) -- (workspace);
+  \path [edu arrow] (workspace) -- (edit);
+  \path [edu arrow] (edit) -- (run);
+  \path [edu arrow] (run) -- (output);
+  \path [edu arrow] (output) -- (continueq);
+  \path [edu arrow] (continueq) -- node[edu label] {No} (exit);
+  \path [edu arrow] (continueq.east) -- ++(14mm,0) node[edu label, pos=0.2] {Yes} |- (edit.east);
+  \path [edu arrow] (exit) -- (end);
+\end{tikzpicture}%
+}
