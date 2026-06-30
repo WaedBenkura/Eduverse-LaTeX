@@ -12,6 +12,46 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 
+% Keep links clickable without visible boxes and reduce line-breaking pressure
+% after disabling automatic word hyphenation.
+\hypersetup{
+  hidelinks,
+  colorlinks=false,
+  pdfborder={0 0 0}
+}
+\emergencystretch=3em
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\brokenpenalty=10000
+
+\makeatletter
+% Prevent stretched spacing in headings by using ragged-right section styles.
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus.2ex}%
+  {\normalfont\Large\bfseries\raggedright}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\large\bfseries\raggedright}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries\raggedright}}
+
+% Keep multi-line captions naturally wrapped instead of fully justified.
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{\small\textbf{#1.} #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\small\raggedright\textbf{#1.} #2\par}%
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother
+
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric}
 
 \setlength{\headheight}{18pt}

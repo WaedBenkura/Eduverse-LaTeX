@@ -1,203 +1,110 @@
 \chapterwithopening{Methodology}{chap:methodology}{
   \chaptercontentsitem{sec:methodology_introduction}
-  \chaptercontentsitem{sec:adopted_development_methodology}
-  \chaptercontentsitem{sec:justification_for_methodology}
-  \chaptercontentsitem{sec:development_phases}
-  \chaptercontentsitem{sec:tools_and_technologies_used}
-  \chaptercontentsitem{sec:team_workflow_and_project_management}
-  \chaptercontentsitem{sec:methodological_challenges}
-  \chaptercontentsitem{sec:methodology_summary}
+  \chaptercontentsitem{sec:system_development_methodology}
+  \chaptercontentsitem{sec:development_workflow_structure}
 }
 
 \section{Introduction}\label{sec:methodology_introduction}
 
-This chapter explains the methodology adopted for planning, analyzing,
-developing, and refining Eduverse as a graduation project. It focuses on how
-the project moved from scope definition to system planning, implementation,
-integration, and refinement rather than on detailed module-level technical
-explanation.
+This chapter explains the methodology adopted for planning, developing,
+validating, and refining Eduverse as a graduation project. It focuses on the
+practical development approach and workflow structure rather than on detailed
+implementation artifacts, which are discussed later in the thesis.
 
-\section{Adopted Development Methodology}\label{sec:adopted_development_methodology}
+Eduverse required repeated refinement because it combines the web application
+as the primary client with an MVP mobile companion, backend services,
+database migrations, role-based workflows, live sessions, AI-assisted
+features, and an IDE-based coding workspace.
 
-Eduverse was developed using an iterative and incremental software development
-methodology. This approach was appropriate because the project combines
-several interdependent educational workflows and therefore could not be
-handled effectively as a single linear implementation task. Development
-progressed through repeated cycles of analysis, design, implementation,
-review, and adjustment.
+\section{System Development Methodology}\label{sec:system_development_methodology}
 
-The methodology was also feature-oriented. Core workflows were prioritized
-first and then expanded through successive refinements as the system became
-more stable. Within this process, the web application served as the main
-execution environment, while the mobile application was developed as an MVP
-companion for selected high-frequency academic activities.
+Eduverse is best described as having been developed through a hybrid
+iterative workflow with predominantly feature-based vertical slices. This
+description is more accurate than a strictly phase-based model because the
+repository evidence shows repeated feature increments rather than a simple
+sequence such as frontend first, backend later, and testing only at the end.
+After an initial prototype and project setup stage, the system progressed
+through iterative increments in which the selected module was implemented,
+reviewed, and refined in relation to the wider platform.
 
-\section{Justification for the Methodology}\label{sec:justification_for_methodology}
+The methodology remained incremental, but it was not organized as isolated
+technical layers. When a feature required server-side behavior, permission
+updates, or data-model changes, those concerns were usually developed close
+to the same increment rather than postponed to a later project phase. Within
+this process, the web application remained the primary execution environment,
+while the mobile application was kept as an MVP companion for selected
+high-frequency academic activities.
 
-An iterative methodology was selected because Eduverse addresses a problem
-domain that is broad in function but sensitive to project boundaries. The
-platform had to support multiple roles, multiple organizations, synchronous
-and asynchronous learning activities, and several specialized services without
-becoming unrealistic or weakly integrated. A rigid linear process would have
-made it harder to validate workflow priorities, client boundaries, and
-integration decisions as the project evolved.
+\subsection{Feature-Based Iterative Workflow}\label{subsec:feature_based_iterative_workflow}
 
-The chosen methodology also suited the academic nature of the project, where
-analysis, design, implementation, and documentation develop together rather
-than as isolated stages. It allowed the core platform model to stabilize
-early and then expand in a controlled manner through later feature additions.
+Development generally proceeded through working slices organized around real
+academic or administrative workflows. Examples include organization
+management, class workflows, materials, assignments, examinations, live
+sessions, IDE support, and AI-assisted features. In many increments, the
+selected slice combined interface work with the corresponding API or server
+logic, shared domain services, and Supabase migrations when required.
 
-\section{Development Phases}\label{sec:development_phases}
+This pattern allowed the project to evolve through usable increments rather
+than through disconnected partial implementations. At the same time, the
+repository evidence also shows refactoring, infrastructure work, and later
+refinements, so the methodology is most accurately described as
+predominantly feature-based rather than exclusively vertical-slice in every
+commit.
 
-Although the project followed an iterative path, its progress can still be
-understood through a set of major development phases. These phases provide a
-structured view of how the project moved from problem analysis to a working
-system.
+\subsection{Justification for Methodology Selection}\label{subsec:justification_for_methodology_selection}
+
+This methodology suited Eduverse because the platform combines a
+multi-organization structure, role-based access, and diverse academic
+workflows with recurring integration between interface behavior, backend
+logic, and data constraints. A rigid linear model would have made it harder
+to adjust permissions, workflow boundaries, and feature integration as
+requirements became clearer through implementation.
+
+It also supported continuous validation. As features evolved, the project
+needed repeated confirmation that interface behavior, backend logic,
+permissions, schema changes, and shared services remained coherent. This was
+especially important because some increments affected multiple workflows at
+the same time.
+
+\section{Development Workflow Structure}\label{sec:development_workflow_structure}
+
+In practical terms, the workflow followed a recurring structure in which the
+team selected a feature or workflow, implemented the required slice,
+validated it, and integrated it into the main project history.
 
 \begin{table}[htbp]
   \centering
   \small
   \renewcommand{\arraystretch}{1.15}
   \setlength{\tabcolsep}{5pt}
-  \caption{Eduverse Development Phases}
-  \label{tab:eduverse_development_phases}
-  \begin{tabular}{|>{\raggedright\arraybackslash}p{0.20\textwidth}|>{\raggedright\arraybackslash}p{0.41\textwidth}|>{\raggedright\arraybackslash}p{0.23\textwidth}|}
+  \caption{Eduverse Development Workflow Structure}
+  \label{tab:eduverse_development_workflow_structure}
+  \begin{tabular}{|>{\raggedright\arraybackslash}p{0.25\textwidth}|>{\raggedright\arraybackslash}p{0.59\textwidth}|}
     \hline
-    \textbf{Phase} & \textbf{Main Activities} & \textbf{Output} \\
+    \textbf{Workflow step} & \textbf{Main focus} \\
     \hline
-    Domain analysis & Studying fragmented educational workflows, user roles, and institutional needs & Initial problem model and platform direction \\
+    Feature selection and scope clarification & Choose the next feature or module increment and define the user-facing workflow to be completed within the current scope. \\
     \hline
-    Scope definition & Identifying core features, priority users, and mobile MVP boundaries & Controlled project scope and feature priorities \\
+    Slice implementation & Build the relevant interface behavior and supporting module code for the selected workflow. \\
     \hline
-    Architecture planning & Organizing the system structure, data strategy, and external service roles & High-level architectural model \\
+    Backend and domain integration & Add API routes, server logic, and shared services when the feature depends on server-owned behavior or shared rules. \\
     \hline
-    Web development & Building the primary academic workflows in the main client & Implemented web platform modules \\
+    Data-model refinement & Add Supabase migrations or policy changes when the feature changes permissions, workflow state, or stored academic records. \\
     \hline
-    Mobile development & Extending selected student and teacher workflows to the companion app & MVP mobile companion application \\
+    Validation & Use build, type-check, and format-check routines together with targeted tests for selected high-risk logic where such tests were available. \\
     \hline
-    Integration and refinement & Connecting services, validating workflows, and correcting issues iteratively & More stable and coherent system behavior \\
+    Integration & Integrate verified changes into the main project history and continue refinement through later increments when needed. \\
     \hline
   \end{tabular}
 \end{table}
 
-\subsection{Problem Understanding and Domain Analysis}\label{subsec:problem_understanding_and_domain_analysis}
-
-The first phase focused on understanding the educational problem that Eduverse
-was intended to address. It examined how materials, communication,
-assignments, live teaching, examinations, and follow-up are often distributed
-across separate tools, creating discontinuity and administrative overhead.
-This phase also established the class as the central academic workspace and
-identified the organizational and role structure that would shape later
-requirements and permissions.
-
-\subsection{Requirement Collection and Scope Definition}\label{subsec:requirement_collection_and_scope_definition}
-
-After the problem domain was clarified, the next phase focused on translating
-that understanding into a controlled scope. Functional expectations were
-centered on the main academic workflows, while non-functional concerns such as
-maintainability, usability, responsiveness, and secure access were treated as
-foundational requirements. This phase also defined the division between the
-full web environment and the narrower mobile companion, with advanced mobile
-parity excluded from the current scope.
-
-\subsection{System Design and Architecture Planning}\label{subsec:system_design_and_architecture_planning}
-
-Once the scope was defined, the project moved into high-level system planning.
-This phase established the main system responsibilities across the client
-interface, secure backend operations, structured data management, large-file
-handling, real-time communication, and AI-assisted support. It also defined
-the service alignment later used in implementation, including Supabase
-PostgreSQL for structured data, AWS S3 for large files, LiveKit for live
-sessions, and an external model-access layer for AI support.
-
-\subsection{Web Application Development}\label{subsec:web_application_development}
-
-The main body of development work was concentrated on the web application
-because it serves as the primary environment for the complete system.
-Development proceeded through feature-oriented iterations in which the main
-academic workflows were implemented, reviewed, and refined in relation to the
-identified roles and class structure. Methodologically, this phase treated the
-major functions of Eduverse as connected workflows rather than isolated pages.
-
-\subsection{Mobile Companion Development}\label{subsec:mobile_companion_development}
-
-The mobile application was developed as an MVP companion rather than as a full
-replication of the web platform. This decision preserved project realism by
-recognizing that mobile interaction patterns differ from desktop-oriented
-academic management workflows. The mobile scope therefore emphasized
-high-frequency participation tasks such as authentication, dashboard access,
-classes, assignments, notifications, chat, materials, and live-session
-participation, while richer management and authoring workflows remained on the
-web side.
-
-\subsection{Backend, Database, and Service Integration}\label{subsec:backend_database_and_service_integration}
-
-Another major phase concerned integrating the system components that allow the
-platform to operate as one coherent environment. This included secure
-authentication handling, API-based data exchange, access control,
-database-backed academic workflows, large-file access, live-session support,
-and AI connectivity. Structured records were maintained in Supabase
-PostgreSQL, large files and submission assets were handled through AWS S3,
-live-session capabilities were connected through LiveKit, and AI support was
-connected through OpenRouter. The mobile companion relied on the same identity
-and backend ecosystem in order to preserve consistency between the two
-clients.
-
-\subsection{Testing and Refinement}\label{subsec:testing_and_refinement}
-
-The final recurring phase involved testing and refinement across the evolving
-system. Verification accompanied development through repeated checking of
-feature behavior, role restrictions, integration points, and interface
-consistency, especially for examinations, live sessions, and IDE-supported
-learning. The refinement process combined targeted automated checks with
-manual review of integrated user flows across roles and devices; full
-end-to-end automation remained outside the current scope.
-
-\section{Tools and Technologies Used in the Development Process}\label{sec:tools_and_technologies_used}
-
-The development process relied on a technology set selected to support a
-modern and maintainable system without fragmenting the project into unrelated
-parts. The main implemented client was built as a web application using
-Next.js, React, TypeScript, and Tailwind CSS. The companion mobile
-application was built using Expo, React Native, and TypeScript to support
-selected mobile workflows within the same project direction.
-
-For data and service integration, the project used Supabase for authentication
-and structured platform data, AWS S3 for larger academic files, LiveKit for
-real-time live sessions, and OpenRouter for AI Agent connectivity. These
-technologies are identified here as part of the methodological environment,
-while their detailed implementation roles are reserved for Chapter 6.
-
-\section{Team Workflow and Project Management}\label{sec:team_workflow_and_project_management}
-
-The project workflow emphasized continuous coordination between analysis,
-implementation, and documentation. Rather than separating the work into fully
-independent tracks, the team progressed through repeated cycles in which
-requirements were clarified, features were prioritized, implementation choices
-were reviewed against scope, and documentation was updated to reflect verified
-project realities.
-
-Priority was consistently given to the workflows with the greatest academic
-importance, including class activities, assessment support, live sessions, and
-the controlled mobile extension. This prioritization helped the team preserve
-project relevance and avoid uncontrolled expansion.
-
-\section{Methodological Challenges}\label{sec:methodological_challenges}
-
-One of the main methodological challenges in Eduverse was balancing feature
-breadth with controlled scope across management, communication, assessment,
-real-time teaching, AI support, and programming practice. Another challenge
-concerned integration complexity, since multi-organization access, live
-sessions, storage separation, and AI support had to function coherently
-together. A further challenge was maintaining accurate documentation
-boundaries between implemented features and features that remain under
-development.
-
-\section{Summary}\label{sec:methodology_summary}
-
-This chapter has described the methodology through which Eduverse was planned,
-developed, integrated, and refined as a graduation project. The project
-followed an iterative, feature-oriented approach that guided the work from
-scope definition through implementation and verification. This methodological
-foundation prepares the transition to the next chapter, which examines the
-system analysis and requirement structure in greater detail.
+Repository evidence also shows that build, type-check, and format-check
+validation was configured through GitHub Actions for pull requests and
+updates to the main branch. In practice, validation also included targeted
+\texttt{bun test} usage for selected higher-risk logic where such tests were
+available, together with Biome-backed formatting support. The repository does
+not support a claim of universal automated test coverage. Detailed CI/CD
+behavior, deployment setup, and broader engineering artifacts are therefore
+left for Chapter 6. Accordingly, this chapter describes the methodology as a
+controlled workflow for iterative feature integration rather than as a set of
+isolated development phases.

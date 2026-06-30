@@ -26,7 +26,10 @@ companion application that extends access to selected academic workflows for
 students and teachers. The platform is centered on the class as the primary
 digital workspace in which materials, assignments, examinations, results,
 notifications, live sessions, academic communication, and intelligent support
-services can be managed in a coordinated manner.
+services can be managed in a coordinated manner. Within this workspace,
+classes are organized by term and stage, can move to Past Terms when
+concluded, and preserve academic history under organization-level visibility
+and feature controls.
 
 At a high level, Eduverse combines a modern web platform with supporting cloud
 and real-time services in order to provide a realistic and extensible
@@ -101,14 +104,17 @@ The main strategic objectives of the project are as follows:
     materials, assignments, examinations, results, notifications,
     communication, and live sessions within one coordinated platform.
   \item To support multi-organization operation and role-based access for
-    organization owners, organization admins, teachers, and students.
+    organization administrators, teachers, and students, including
+    memberships spanning multiple organizations or roles with active
+    organization and role switching according to the current workspace
+    context.
   \item To provide a primary web-based environment capable of supporting both
     institutional administration and day-to-day academic activity.
   \item To extend selected high-frequency academic workflows to a mobile MVP
     companion application without claiming full feature parity with the web
     platform.
   \item To incorporate distinctive educational capabilities such as an AI
-    Agent and an integrated educational IDE as part of the platform's broader
+    Agent and an integrated coding workspace as part of the platform's broader
     academic value.
   \item To organize data and services in a maintainable and scalable manner
     suitable for educational institutions with different operational needs.
@@ -146,12 +152,18 @@ testing evidence are reserved for later chapters.
 Eduverse operates within a multi-organization educational context and therefore
 distinguishes clearly between administrative, instructional, and learner
 responsibilities. At the institutional level, the platform supports
-organization owners and organization admins who manage organizations, user
-access, and operational control. At the instructional level, teachers manage
-class activities such as materials, assignments, live sessions, examinations,
-and academic follow-up. At the learner level, students access the classes to
-which they belong in order to study materials, follow announcements, submit
-work, join sessions, communicate, and review academic outcomes.
+organization administrators who manage organizations, user access, public and
+invitation-based membership onboarding, public join links, approval-based join
+requests, feature configuration, class oversight, teacher permission controls,
+and operational control. A user may belong to multiple organizations, and the
+same organization member may hold more than one active role, with the
+interface and permissions resolved according to the currently selected
+organization and role. At the instructional level, teachers manage class
+activities such as materials, assignments, live sessions, examinations, and
+academic follow-up within the permissions defined by organization settings. At
+the learner level, students access the classes available to them in order to
+study materials, follow announcements, submit work, join sessions,
+communicate, and review academic outcomes.
 
 These role distinctions define important system boundaries. Eduverse is not a
 generic social platform in which all users have the same functional position.
@@ -162,11 +174,16 @@ controlled visibility, and more reliable institutional management.
 \subsection{Functional Scope}\label{subsec:functional_scope}
 
 Within its current implemented scope, Eduverse includes authentication,
-multi-organization access, class management, materials, assignments, exams,
-results, notifications, live sessions, an AI Agent, and an integrated
-educational IDE. Together, these functions define the platform as more than a
-basic learning content portal. Eduverse is intended to support both academic
-management and active instructional workflows within one system.
+organization access and multi-organization membership, class management,
+materials, assignments, exams, results and academic history, notifications,
+live sessions, an AI Agent, and an integrated coding workspace. Together,
+these functions define the platform as more than a basic learning content
+portal. Eduverse is intended to support both academic management and active
+instructional workflows within one system. Within this scope, classes can be
+visible across the organization, require term and stage definition, and move
+into Past Terms without losing preserved academic history. Teacher management
+abilities, class feature controls, student linkage to previous terms, and
+Results visibility are also governed through organization and class settings.
 
 At the same time, Chapter 1 remains introductory in nature. It does not attempt
 to document detailed database structures, API behavior, or low-level internal
@@ -177,10 +194,10 @@ and lie outside the present scope.
 
 The main implemented Eduverse client is the web application. It provides the
 widest operational coverage of the platform, including organization-aware
-navigation, role-based access, class management, materials, assignments, exams,
-results, notifications, live sessions, AI Agent workflows, and the integrated
-educational IDE. For this reason, the web application should be regarded as the
-core working environment of the system.
+navigation, role-based access, membership handling, class management,
+materials, assignments, exams, results, notifications, live sessions, AI
+Agent workflows, and the integrated coding workspace. For this reason, the web
+application should be regarded as the core working environment of the system.
 
 The mobile application has a more focused scope. It is an MVP companion
 application intended to extend access to selected academic workflows such as
@@ -197,13 +214,17 @@ one educational platform. A major distinguishing point is its
 multi-organization, role-based structure, which allows the same system to
 support organizational control, instructional management, and student
 participation in a coordinated way. The platform also integrates live sessions,
-an AI Agent, and an educational IDE within the same broader academic
-environment rather than treating them as isolated external utilities.
+an AI Agent, and a coding workspace within the same broader academic
+environment rather than treating them as isolated external utilities. It also
+supports controlled public and invitation-based class access, term-and-stage
+class organization, and the transition of completed classes into Past Terms
+while preserving historical records.
 
 Another important feature is the platform's attention to examinations and
 assessment integrity. Eduverse does not treat evaluation as a peripheral task,
 but as an integral part of the educational workflow that must be managed within
-a controlled digital environment. In addition, the system deliberately combines
+a controlled digital environment, including controlled student-facing Results
+visibility where needed. In addition, the system deliberately combines
 a comprehensive web platform with an MVP mobile companion application, thereby
 balancing rich institutional workflows with accessible everyday mobile use.
 
