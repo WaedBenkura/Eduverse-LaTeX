@@ -1,24 +1,16 @@
 \chapterwithopening{System Analysis and Requirements}{chap:system_analysis}{
   \chaptercontentsitem{sec:system_analysis_introduction}
-  \chaptercontentsitem{sec:problem_domain_operational_gaps}
-  \chaptercontentsitem{sec:analysis_methodology_adopted}
-  \chaptercontentsitem{sec:as_is_analysis}
-  \chaptercontentsitem{sec:to_be_analysis}
-  \chaptercontentsitem{sec:requirements_engineering}
-  \chaptercontentsitem{sec:use_case_modeling}
+  \chaptercontentsitem{sec:system_overview}
+  \chaptercontentsitem{sec:system_actors}
+  \chaptercontentsitem{sec:functional_requirements}
+  \chaptercontentsitem{sec:non_functional_requirements}
+  \chaptercontentsitem{sec:use_case_model}
   \chaptercontentsitem{sec:activity_diagrams}
+  \chaptercontentsitem{sec:chapter4_summary}
 }
 
-% Reusable activity-diagram assets preserved from the existing thesis project.
 \input{figures/activity_diagrams/activity_diagram_styles.tex}
-\input{figures/activity_diagrams/activity_diagrams_access_onboarding.tex}
-\input{figures/activity_diagrams/activity_diagrams_organization.tex}
-\input{figures/activity_diagrams/activity_diagrams_classroom.tex}
-\input{figures/activity_diagrams/activity_diagrams_assessment.tex}
-\input{figures/activity_diagrams/activity_diagrams_followup.tex}
-\input{figures/diagrams/eduverse_diagram_styles.tex}
-\input{figures/diagrams/eduverse_activity_diagrams.tex}
-\input{figures/diagrams/eduverse_activity_diagram_set.tex}
+\input{figures/activity_diagrams/chapter4_activity_diagrams.tex}
 
 \newcommand{\EduUseCasePdfFigure}[3]{%
   \begin{figure}[htbp]
@@ -31,408 +23,587 @@
 
 \section{Introduction}\label{sec:system_analysis_introduction}
 
-This chapter presents the system analysis of Eduverse by defining the
-operational problem space, summarizing the adopted analysis method,
-organizing the functional and non-functional requirements, and documenting
-the use-case and activity models that explain system behavior.
+This chapter presents the system analysis and requirements of Eduverse. It
+defines the scope of the platform from an analytical perspective, identifies
+the principal actors, organizes the functional and non-functional
+requirements, and documents the updated use-case and activity models that
+describe the main user-visible workflows.
 
-\section{Problem Domain and Operational Gaps}\label{sec:problem_domain_operational_gaps}
+The analysis is grounded in the current Eduverse platform scope represented by
+the updated use-case diagrams and supporting project documentation. The
+chapter therefore focuses on verified platform behavior, configurable feature
+availability, and controlled role-based interaction rather than on low-level
+implementation detail.
 
-Eduverse addresses the operational gap that emerges when educational
-institutions rely on separate tools for class administration, communication,
-learning materials, assignments, examinations, live sessions, and results.
-Such fragmentation weakens continuity across the learning process, increases
-context switching for teachers and students, and makes it difficult to govern
-academic workflows within one role-aware institutional environment.
+\section{System Overview}\label{sec:system_overview}
 
-The problem is intensified by multi-organization operation and differentiated
-responsibilities, which require controlled membership, permissions, and
-visibility boundaries. The same environment must also accommodate AI-assisted
-learning support and programming support without relying on detached external
-services.
+Eduverse is a multi-organization educational platform centered on the class as
+the main operational workspace. Its primary implemented client is the web
+application, while the companion mobile scope supports selected high-frequency
+academic actions. Within this environment, organizations can manage users,
+roles, class structures, course materials, communication, assignments,
+examinations, live sessions, results, profile settings, and help resources
+through one coordinated system.
 
-\section{Analysis Methodology Adopted}\label{sec:analysis_methodology_adopted}
+The platform is role-aware and configuration-sensitive. A single account may
+belong to more than one organization and may hold more than one role, so the
+visible pages and permitted actions depend on the selected Active
+Organization, the Active Role, organization-level settings, class-level
+feature settings, and class membership. As a result, Eduverse must be
+analyzed not only as a collection of learning tools, but also as a governed
+workspace in which institutional control and daily educational activity are
+resolved together.
 
-The analysis adopted for Eduverse was based on the implemented and validated
-project scope rather than on speculative features. It proceeded through the
-following activities:
+\section{System Actors}\label{sec:system_actors}
 
-\begin{itemize}
-  \item reviewing the implemented web platform and the MVP mobile companion in
-    order to identify the actual service boundaries;
-  \item identifying the needs of the organization owner, teacher, and student
-    as the principal stakeholders;
-  \item organizing recurring educational workflows into functional modules
-    that reflect the operational structure; and
-  \item modeling system behavior through use-case and activity diagrams to
-    relate scope, actors, and workflow progression.
-\end{itemize}
-
-\section{As-Is Analysis}\label{sec:as_is_analysis}
-
-Before Eduverse, institutions commonly combine messaging applications,
-file-sharing services, live-meeting tools, assessment utilities, and manual
-follow-up practices. This arrangement separates class communication from
-materials, submissions, results, coding practice, and contextual support,
-which produces inconsistent records and slows coordination across roles.
-
-\section{To-Be Analysis}\label{sec:to_be_analysis}
-
-Eduverse proposes a unified, role-aware environment centered on the class
-context and coordinated through organization membership and controlled access.
-The web application serves as the full management environment, while the
-mobile application remains an MVP companion for selected daily actions;
-automated notifications, AI support, and IDE support are integrated without
-expanding the mobile scope beyond that role.
-
-\section{Requirements Engineering}\label{sec:requirements_engineering}
-
-The requirements of Eduverse are derived from the problem-domain analysis, the
-validated project scope, and the needs of the principal stakeholders. They
-are stated at the module level so that the system scope is clear without
-repeating every action already represented in the use-case diagrams.
-
-\subsection{Functional Requirements}\label{subsec:functional_requirements}
-
-\begin{itemize}
-  \item \textbf{A. Authentication and Access:} Eduverse shall support public
-    entry, account registration, login and logout, verification-email
-    dispatch, and organization or role selection when multiple eligible
-    contexts exist.
-  \item \textbf{B. Organization and Role Management:} the platform shall allow
-    organization owners to create organizations, apply feature presets, manage
-    members and invitations, and assign or remove roles.
-  \item \textbf{C. Class Management:} the platform shall support class
-    creation, update, teacher assignment, membership control, and feature
-    configuration.
-  \item \textbf{D. Course Content and Materials:} the platform shall support
-    material upload with metadata, viewing, search, filtering, download, and
-    controlled deletion.
-  \item \textbf{E. Class Communication and Notifications:} the platform shall
-    provide class messaging and event-driven notifications with viewing,
-    read-state management, and follow-up actions.
-  \item \textbf{F. Assignment Management:} the platform shall support
-    assignment authoring, publication, student submission through the allowed
-    response modes, instructor grading, and feedback visibility.
-  \item \textbf{G. Exam Management and Integrity:} the platform shall support
-    exam authoring, optional passcodes, student attempts, integrity
-    monitoring, review decisions, grading, and optional result release.
-  \item \textbf{H. Results and Dashboards:} the platform shall provide
-    role-specific dashboards and controlled access to class, assignment, and
-    examination results, including detailed views where permitted.
-  \item \textbf{I. Live Sessions and Whiteboard:} the platform shall allow
-    teachers to start and end sessions and eligible participants to join,
-    communicate, and use whiteboard features.
-  \item \textbf{J. AI Learning Support:} the platform shall provide
-    class-context AI assistance for explanation, summarization, drafting
-    support, and bounded assessment-related support without replacing teacher
-    judgment.
-  \item \textbf{K. Integrated Coding Lab / IDE Extension:} the platform shall
-    support environment selection, file operations, code editing, execution,
-    terminal use, preview, and problem or console viewing for
-    programming-oriented learning.
-  \item \textbf{L. Profile and Help:} the platform shall allow users to manage
-    profile-level preferences, switch active roles where permitted, and
-    consult searchable help content.
-\end{itemize}
-
-\subsection{Non-Functional Requirements}\label{subsec:non_functional_requirements}
-
-\begin{itemize}
-  \item \textbf{Security and role-based access control:} access to
-    organizations, classes, files, assessments, and live-session resources
-    shall remain protected through authenticated, permission-controlled use.
-  \item \textbf{Privacy:} academic records, messages, submissions, and
-    results shall be handled with restricted visibility.
-  \item \textbf{Reliability:} the platform shall preserve correct state for
-    memberships, class records, materials, submissions, and examination data.
-  \item \textbf{Usability:} core workflows shall remain understandable to
-    organization owners, teachers, and students without unnecessary context
-    switching.
-  \item \textbf{Real-time responsiveness:} live sessions, chat, notifications,
-    and related synchronous interactions shall provide timely updates.
-  \item \textbf{Maintainability:} the system shall remain modular enough to
-    support continued evolution of features such as AI support, live sessions,
-    and IDE functionality.
-  \item \textbf{Scalability:} the platform shall remain suitable for multiple
-    organizations, multiple classes, and growing volumes of academic records
-    and uploaded files.
-  \item \textbf{Cross-client compatibility:} the mobile companion shall remain
-    consistent with the permission and data model of the web platform while
-    preserving its narrower scope.
-  \item \textbf{Performance:} dashboards, files, results views, and real-time
-    features shall perform at a level appropriate for regular educational
-    operation.
-\end{itemize}
-
-\section{Use Case Modeling}\label{sec:use_case_modeling}
-
-Use-case modeling expresses Eduverse through the interactions between the
-principal actors and the services available to them. The diagrams are the main
-analytical artifacts in this section, so the accompanying text notes only the
-main modeling relationships.
-
-\subsection{Actors and Modeling Scope}\label{subsec:use_case_actors}
-
-The principal human actors of Eduverse are summarized in
-Table~\ref{tab:eduverse_use_case_actors}. Their permissions are role-aware and
-organization-scoped, which means that the same individual may encounter
-different functional boundaries depending on the active organization and role.
+The main human actors of Eduverse are the Student, the Teacher, and the
+Organization Administrator. These actors do not represent separate accounts by
+necessity; the same user may hold more than one role, may belong to more than
+one Organization, and may switch context according to the selected workspace.
 
 \begin{table}[htbp]
   \centering
   \small
   \renewcommand{\arraystretch}{1.15}
   \setlength{\tabcolsep}{5pt}
-  \caption{Principal Eduverse Use-Case Actors}
-  \label{tab:eduverse_use_case_actors}
-  \begin{tabular}{|>{\raggedright\arraybackslash}p{0.23\textwidth}|>{\raggedright\arraybackslash}p{0.57\textwidth}|}
+  \caption{Primary Eduverse System Actors}
+  \label{tab:eduverse_system_actors}
+  \begin{tabular}{|p{0.23\textwidth}|p{0.57\textwidth}|}
     \hline
     \textbf{Actor} & \textbf{Analytical Role in the System} \\
     \hline
-    Organization Owner & Governs the organization workspace, manages memberships and roles, configures features and extensions, oversees classes, and monitors organization-level dashboards. \\
+    Organization Administrator & Manages organization setup, member access, public access settings, teacher permissions, organization defaults, class oversight, and organization-level dashboards. \\
     \hline
-    Teacher & Manages instructional workflows such as classes, materials, communication, assignments, exams, grading, live sessions, AI-assisted support, and IDE-enabled learning activities. \\
+    Teacher & Manages instructional workflows such as class operation, materials, communication, assignments, examinations, live sessions, results follow-up, AI-supported tasks, and coding-lab activities within granted permissions. \\
     \hline
-    Student & Participates in the learning process by joining classes, accessing materials, communicating, submitting assignments, taking exams, reviewing results, joining live sessions, using AI support, and using the IDE where the class enables it. \\
+    Student & Participates in classes by studying materials, using communication tools, submitting assignments, taking examinations, joining live sessions, using available AI support, and reviewing released results. \\
     \hline
   \end{tabular}
 \end{table}
 
-The mobile companion does not introduce a new human actor, and the AI layer
-is treated as a supporting service rather than as a primary actor.
+In practice, the actor visible to the interface is determined by the current
+workspace context. The selected organization, the Active Role, enabled
+organization features, enabled class features, and actual class membership all
+influence what the user can view or modify at a given moment.
 
-\subsection{Use Case Diagram Set}\label{subsec:use_case_diagrams}
+\section{Functional Requirements}\label{sec:functional_requirements}
 
-The following figures constitute the main use-case model of Eduverse. Each
-diagram corresponds to a functional module, while the project overview figure
-provides the high-level structure of the platform.
+The functional requirements of Eduverse are grouped by module so that the
+system scope remains aligned with the updated use-case model and the current
+platform terminology.
 
-\subsubsection{Project Overview}
+\subsection*{Authentication and Access}
+
+\begin{itemize}
+  \item \textbf{FR-01.} The system shall allow users to sign up, sign in,
+    verify email addresses, request password reset, and log out.
+  \item \textbf{FR-02.} The system shall authenticate access before opening
+    organization-scoped or class-scoped workspace routes.
+  \item \textbf{FR-03.} The system shall allow users with more than one
+    eligible workspace context to select the Active Organization and Active
+    Role.
+  \item \textbf{FR-04.} After successful authentication and context
+    resolution, the system shall open the role-appropriate workspace or
+    dashboard.
+\end{itemize}
+
+\subsection*{Organization and Role Management}
+
+\begin{itemize}
+  \item \textbf{FR-05.} The system shall allow an Organization Administrator
+    to create an Organization and configure its default settings.
+  \item \textbf{FR-06.} The system shall allow administrators to invite,
+    register, activate, and manage organization members and their roles.
+  \item \textbf{FR-07.} The system shall support invitation-based access and,
+    when enabled, Public Join Link access with target-role selection and
+    direct-join or approval-based entry modes.
+  \item \textbf{FR-08.} The system shall allow administrators to review join
+    requests, control public organization settings, manage teacher class
+    permissions, and associate previous-term student history where
+    applicable.
+\end{itemize}
+
+\subsection*{Class Management and Class History}
+
+\begin{itemize}
+  \item \textbf{FR-09.} The system shall allow authorized users to create and
+    edit classes with details such as title, code, term, stage, description,
+    and related settings.
+  \item \textbf{FR-10.} The system shall allow class membership management,
+    including assigning or changing the responsible Teacher and managing
+    student enrollment according to permissions.
+  \item \textbf{FR-11.} The system shall allow class-level configuration of
+    enabled tools, visibility rules, and Results visibility when these
+    controls are available.
+  \item \textbf{FR-12.} The system shall allow administrators or permitted
+    teachers to end a class, stage, or term and move the class into Past
+    Terms while preserving class history.
+\end{itemize}
+
+\subsection*{Course Content and Materials}
+
+\begin{itemize}
+  \item \textbf{FR-13.} The system shall allow authorized users to upload
+    materials together with descriptive details and the selected file.
+  \item \textbf{FR-14.} The system shall allow class members to view, search,
+    filter, preview, open, and download available materials according to
+    access permissions.
+  \item \textbf{FR-15.} The system shall allow authorized deletion of
+    materials and, when AI support is enabled, provide material-related study
+    summaries or AI context support.
+\end{itemize}
+
+\subsection*{Class Communication and Notifications}
+
+\begin{itemize}
+  \item \textbf{FR-16.} The system shall allow class members to send text or
+    media messages within the class communication space.
+  \item \textbf{FR-17.} The system shall allow authorized users to post
+    announcements, remove announcement entries from the announcement area, and
+    search the class conversation.
+  \item \textbf{FR-18.} The system shall generate notifications from relevant
+    system events and shall allow users to view, open, mark, mark all, and
+    delete notification entries.
+\end{itemize}
+
+\subsection*{Assignment Management}
+
+\begin{itemize}
+  \item \textbf{FR-19.} The system shall allow authorized users to create,
+    edit, delete, save as draft, and publish assignments.
+  \item \textbf{FR-20.} The system shall allow assignment configuration for
+    due date, score range, submission modes, and optional attached files.
+  \item \textbf{FR-21.} The system shall allow students to submit text, file,
+    or combined work according to assignment settings and to resubmit when the
+    assignment policy permits it.
+  \item \textbf{FR-22.} The system shall allow teachers and administrators to
+    review submissions, record grades, provide feedback, and use AI-supported
+    feedback assistance where enabled.
+\end{itemize}
+
+\subsection*{Exam Management and Integrity}
+
+\begin{itemize}
+  \item \textbf{FR-23.} The system shall allow authorized users to create,
+    edit, delete, draft, and publish exams, including question management and
+    passcode configuration when required.
+  \item \textbf{FR-24.} The system shall allow eligible students to start an
+    exam attempt, enter a passcode when required, answer questions, and submit
+    the attempt within the valid exam window.
+  \item \textbf{FR-25.} The system shall apply configured integrity controls,
+    including fullscreen requirements and integrity-event recording when the
+    required exam state is interrupted.
+  \item \textbf{FR-26.} The system shall allow teachers and administrators to
+    monitor attempts, review integrity events, grade manual answers, void
+    attempts, and grant retakes where permitted.
+  \item \textbf{FR-27.} The system shall allow release of exam results and,
+    after release, shall allow students to view result details and answer
+    review where the class settings permit it.
+\end{itemize}
+
+\subsection*{Live Sessions and Whiteboard}
+
+\begin{itemize}
+  \item \textbf{FR-28.} The system shall allow authorized class managers to
+    start, manage, and end live sessions.
+  \item \textbf{FR-29.} The system shall allow eligible participants to join
+    a live session and use session tools such as microphone, camera, screen
+    sharing, participants view, and session chat.
+  \item \textbf{FR-30.} The system shall allow whiteboard interaction or
+    whiteboard viewing according to the role and permissions of the current
+    participant.
+\end{itemize}
+
+\subsection*{Results and Dashboards}
+
+\begin{itemize}
+  \item \textbf{FR-31.} The system shall provide role-specific dashboards for
+    Students, Teachers, and Organization Administrators.
+  \item \textbf{FR-32.} The system shall allow students to view assignment
+    grades, feedback, released exam results, and related result details within
+    permitted classes.
+  \item \textbf{FR-33.} The system shall allow teachers and administrators to
+    review class results, assignment results, and exam results subject to the
+    configured visibility rules.
+\end{itemize}
+
+\subsection*{AI Learning Support}
+
+\begin{itemize}
+  \item \textbf{FR-34.} The system shall provide a class AI Agent for
+    contextual academic support when the AI feature is enabled.
+  \item \textbf{FR-35.} The system shall allow AI-assisted study support such
+    as material summaries and assignment-related guidance without replacing the
+    original material or teacher judgment.
+  \item \textbf{FR-36.} The system shall allow AI-assisted drafting of
+    assignments, exams, and feedback only where the corresponding AI tools are
+    enabled and available.
+\end{itemize}
+
+\subsection*{Integrated Coding Lab / IDE Extension}
+
+\begin{itemize}
+  \item \textbf{FR-37.} The system shall allow users to open the Integrated
+    Coding Lab / IDE Extension when it is enabled for the current class.
+  \item \textbf{FR-38.} The system shall allow users to choose an available
+    coding environment and manage the visible project files in the workspace.
+  \item \textbf{FR-39.} The system shall allow users to open, edit, save, and
+    run code, and to preview supported web or markdown output.
+  \item \textbf{FR-40.} The system shall allow users to review console or
+    problems output, reset the workspace when needed, and use the IDE terminal
+    where that capability is supported.
+\end{itemize}
+
+\subsection*{Profile and Help}
+
+\begin{itemize}
+  \item \textbf{FR-41.} The system shall allow users to view profile
+    information, change theme preferences, and manage password-related account
+    settings.
+  \item \textbf{FR-42.} The system shall allow users to switch the Active
+    Organization and Active Role through the available workspace controls.
+  \item \textbf{FR-43.} The system shall provide searchable help content for
+    account, class, administration, AI, coding, assignment, exam, results,
+    navigation, and troubleshooting topics.
+\end{itemize}
+
+\section{Non-Functional Requirements}\label{sec:non_functional_requirements}
+
+The main non-functional requirements of Eduverse are summarized below.
+
+\begin{itemize}
+  \item \textbf{NFR-01 Usability.} The interface shall keep common academic
+    workflows understandable for students, teachers, and administrators, with
+    clear navigation between organization, class, and feature contexts.
+  \item \textbf{NFR-02 Security and access control.} Access to organizations,
+    classes, files, assignments, examinations, results, and live-session
+    resources shall be protected through authenticated and role-aware control.
+  \item \textbf{NFR-03 Reliability.} The system shall preserve correct state
+    for memberships, materials, submissions, exam attempts, notifications, and
+    released results during regular operation.
+  \item \textbf{NFR-04 Performance.} The system shall provide acceptable
+    responsiveness for dashboards, materials, assignments, results, chat, and
+    live-session interaction under normal academic usage.
+  \item \textbf{NFR-05 Maintainability.} The platform shall remain modular
+    enough to support continued refinement of class tools, AI features,
+    assessment workflows, and coding-lab capabilities.
+  \item \textbf{NFR-06 Scalability.} The system shall remain suitable for
+    multiple organizations, growing class counts, increasing user membership,
+    and larger volumes of academic content and records.
+  \item \textbf{NFR-07 Data privacy.} Personal and academic data shall remain
+    visible only to permitted users, especially for grades, submissions,
+    examinations, notifications, and organization-scoped records.
+  \item \textbf{NFR-08 Configurable feature availability.} The system shall
+    respect organization-level and class-level feature configuration so that
+    disabled tools are hidden or blocked in a controlled and understandable
+    manner rather than failing unpredictably.
+\end{itemize}
+
+\section{Use-Case Model}\label{sec:use_case_model}
+
+The use-case model describes Eduverse through the interactions between the
+primary human actors and the services available to them within the selected
+organization and class context. The Project Overview diagram is a summary of
+the complete system, while the remaining diagrams focus on specific modules of
+behavior.
+
+\subsection*{Project Overview}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/project_overview.pdf}
-  {Eduverse project overview use-case diagram}
+  {Project Overview Use-Case Diagram}
   {fig:ch4_usecase_project_overview}
 
-Figure~\ref{fig:ch4_usecase_project_overview} presents the principal Eduverse
-modules and their relationship to the organization owner, teacher, and
-student. It frames the system as one coordinated educational environment.
+Figure~\ref{fig:ch4_usecase_project_overview} presents the high-level summary
+of Eduverse and shows how the Student, Teacher, and Organization
+Administrator relate to the platform's principal service areas.
 
-\subsubsection{Authentication and Access}
+\subsection*{Authentication and Access}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/authentication_access.pdf}
-  {Eduverse authentication and access use-case diagram}
+  {Authentication and Access Use-Case Diagram}
   {fig:ch4_usecase_authentication_access}
 
-This diagram shows the public entry workflow and the conditions required
-before the workspace opens. Register includes Send Verification Email, while
-Select Organization \& Active Role is conditional and applies only when the
-authenticated user has multiple eligible contexts.
+Figure~\ref{fig:ch4_usecase_authentication_access} represents the entry and
+workspace-access flow. It includes registration, sign-in, email verification,
+password reset, logout, and the conditional selection of the Active
+Organization and Active Role when more than one eligible context exists.
 
-\subsubsection{Organization and Role Management}
+\subsection*{Organization and Role Management}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/organization_role_management.pdf}
-  {Eduverse organization and role management use-case diagram}
+  {Organization and Role Management Use-Case Diagram}
   {fig:ch4_usecase_organization_role_management}
 
-The organization and role management diagram concentrates on institutional
-governance, including creation, membership control, roles, and configuration.
-Create Organization includes Apply Organization Feature Preset, which reflects
-that organizational setup and feature initialization occur together.
+Figure~\ref{fig:ch4_usecase_organization_role_management} models
+organization-scoped governance. It covers organization creation, member
+invitation or registration, public join access, join requests, role
+selection, active-context switching, public organization settings, teacher
+class permissions, and previous-term linkage where applicable.
 
-\subsubsection{Class Management}
+\subsection*{Class Management}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/class_management.pdf}
-  {Eduverse class management use-case diagram}
+  {Class Management Use-Case Diagram}
   {fig:ch4_usecase_class_management}
 
-This diagram positions the class as the main operational unit of the
-platform. It groups class creation, editing, teacher assignment, membership
-management, and feature configuration within one controlled instructional
-context.
+Figure~\ref{fig:ch4_usecase_class_management} positions the Class as the core
+operational unit of the platform. The diagram emphasizes class creation and
+editing, member and teacher management, feature configuration, visibility
+control, class ending, and movement to Past Terms while preserving history.
 
-\subsubsection{Course Content and Materials}
-
-\EduUseCasePdfFigure
-  {figures/chapter4/usecases/course_content_materials.pdf}
-  {Eduverse course content and materials use-case diagram}
-  {fig:ch4_usecase_course_content_materials}
-
-The materials diagram captures the life cycle of learning resources inside the
-class context. Upload Materials includes file selection and entry of material
-details, while search, filter, and download extend the main material-viewing
-workflow.
-
-\subsubsection{Class Communication and Notifications}
-
-\EduUseCasePdfFigure
-  {figures/chapter4/usecases/class_communication_notifications.pdf}
-  {Eduverse class communication and notifications use-case diagram}
-  {fig:ch4_usecase_class_communication_notifications}
-
-This figure distinguishes direct class interaction from event-driven
-awareness. Messages are initiated by users, whereas notifications are
-generated automatically by system events and are followed by read-state or
-deletion actions within the notification view.
-
-\subsubsection{Assignment Management}
+\subsection*{Assignment Management}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/assignment_management.pdf}
-  {Eduverse assignment management use-case diagram}
+  {Assignment Management Use-Case Diagram}
   {fig:ch4_usecase_assignment_management}
 
-The assignment diagram represents authoring, publication, submission,
-grading, and feedback as one connected workflow. Textual submission and
-file-based submission operate as conditional extensions according to the
-submission mode allowed for the assignment.
+Figure~\ref{fig:ch4_usecase_assignment_management} represents the assignment
+workflow from authoring and publication to submission, grading, and feedback.
+Its conditional relations are especially meaningful for submission-mode
+choices and draft-versus-published assignment state.
 
-\subsubsection{Exam Management and Integrity}
-
-\EduUseCasePdfFigure
-  {figures/chapter4/usecases/exam_management_integrity.pdf}
-  {Eduverse exam management and integrity use-case diagram}
-  {fig:ch4_usecase_exam_management_integrity}
-
-This diagram captures the controlled assessment workflow and its integrity
-checks. Enter Exam Passcode extends Start Exam Attempt only when a passcode is
-configured, Monitor Exam Attempt includes Review Integrity Events, and Release
-Exam Results remains an optional step after grading.
-
-\subsubsection{Results and Dashboards}
-
-\EduUseCasePdfFigure
-  {figures/chapter4/usecases/results_dashboards.pdf}
-  {Eduverse results and dashboards use-case diagram}
-  {fig:ch4_usecase_results_dashboards}
-
-The results and dashboards diagram emphasizes differentiated visibility across
-roles. It combines role-specific dashboards with controlled access to
-assignment and examination outcomes, including detailed review where policy
-and permissions permit it.
-
-\subsubsection{Live Sessions and Whiteboard}
-
-\EduUseCasePdfFigure
-  {figures/chapter4/usecases/live_sessions_whiteboard.pdf}
-  {Eduverse live sessions and whiteboard use-case diagram}
-  {fig:ch4_usecase_live_sessions_whiteboard}
-
-This diagram models the synchronous learning workspace of Eduverse. Media and
-collaboration features such as microphone, camera, screen sharing, chat, and
-whiteboard usage extend the main session workflow.
-
-\subsubsection{AI Learning Support}
+\subsection*{AI Learning Support}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/ai_learning_support.pdf}
-  {Eduverse AI learning support use-case diagram}
+  {AI Learning Support Use-Case Diagram}
   {fig:ch4_usecase_ai_learning_support}
 
-The AI learning support diagram positions the AI layer as contextual academic
-assistance inside the class environment. Summarization, drafting support, and
-learning help extend study, assignment, examination, and feedback workflows
-without replacing teacher judgment.
+Figure~\ref{fig:ch4_usecase_ai_learning_support} shows how the AI layer acts
+as contextual academic support rather than as a primary actor. The diagram
+captures the class AI Agent, material summaries, assignment guidance, and
+AI-supported drafting tasks that may be available when the feature is
+enabled.
 
-\subsubsection{Integrated Coding Lab / IDE Extension}
+\subsection*{Class Communication and Notifications}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/class_communication_notifications.pdf}
+  {Class Communication and Notifications Use-Case Diagram}
+  {fig:ch4_usecase_class_communication_notifications}
+
+Figure~\ref{fig:ch4_usecase_class_communication_notifications} distinguishes
+between direct class interaction and event-driven awareness. Messages,
+announcements, and chat search are user-initiated, while notifications are
+system-generated and are managed only through viewing, read-state handling,
+and deletion actions.
+
+\subsection*{Course Content and Materials}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/course_content_materials.pdf}
+  {Course Content and Materials Use-Case Diagram}
+  {fig:ch4_usecase_course_content_materials}
+
+Figure~\ref{fig:ch4_usecase_course_content_materials} models the material
+life cycle inside the class context. Uploading, material details, file
+selection, viewing, search, filtering, preview, download, and deletion are
+all organized around controlled class access.
+
+\subsection*{Exam Management and Integrity}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/exam_management_integrity.pdf}
+  {Exam Management and Integrity Use-Case Diagram}
+  {fig:ch4_usecase_exam_management_integrity}
+
+Figure~\ref{fig:ch4_usecase_exam_management_integrity} describes the
+controlled assessment workflow. Important conditional relations include
+passcode entry when required, integrity monitoring during the attempt,
+review of integrity events, result release, retake handling, and answer
+review after release.
+
+\subsection*{Live Sessions and Whiteboard}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/live_sessions_whiteboard.pdf}
+  {Live Sessions and Whiteboard Use-Case Diagram}
+  {fig:ch4_usecase_live_sessions_whiteboard}
+
+Figure~\ref{fig:ch4_usecase_live_sessions_whiteboard} captures the
+synchronous class environment. It centers on starting, joining, and ending
+sessions, while microphone, camera, screen sharing, participants, session
+chat, and whiteboard use appear as key collaboration capabilities.
+
+\subsection*{Integrated Coding Lab / IDE Extension}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/integrated_coding_lab_ide_extension.pdf}
-  {Eduverse integrated coding lab / IDE extension use-case diagram}
+  {Integrated Coding Lab / IDE Extension Use-Case Diagram}
   {fig:ch4_usecase_integrated_coding_lab_ide_extension}
 
-This figure represents the programming-learning environment integrated into
-Eduverse. File management, writing or editing code, code execution, terminal
-use, preview, and console or problem viewing all extend the main IDE
-workspace.
+Figure~\ref{fig:ch4_usecase_integrated_coding_lab_ide_extension} models the
+programming workspace integrated into Eduverse. It includes environment
+selection, file management, editing, saving, running code, previewing output,
+inspecting console or problem views, resetting the workspace, and using the
+IDE terminal where supported.
 
-\subsubsection{Profile and Help}
+\subsection*{Profile and Help}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/profile_help.pdf}
-  {Eduverse profile and help use-case diagram}
+  {Profile and Help Use-Case Diagram}
   {fig:ch4_usecase_profile_help}
 
-The profile and help diagram keeps the user-support scope intentionally
-simple. View Profile acts as the base interaction, while theme change, role
-switching, and help search extend profile or help viewing where appropriate.
+Figure~\ref{fig:ch4_usecase_profile_help} covers profile-oriented and
+support-oriented functions such as viewing the profile, changing password or
+theme settings, switching role context, opening help resources, and searching
+help content.
+
+\subsection*{Results and Dashboards}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/results_dashboards.pdf}
+  {Results and Dashboards Use-Case Diagram}
+  {fig:ch4_usecase_results_dashboards}
+
+Figure~\ref{fig:ch4_usecase_results_dashboards} emphasizes differentiated
+results visibility across actors. It combines role-specific dashboards with
+class results, assignment results, exam results, released student outcomes,
+feedback, and answer review where permitted.
 
 \clearpage
 
 \section{Activity Diagrams}\label{sec:activity_diagrams}
 
-The activity diagrams in this section model the operational workflows that
-connect user actions, visible system responses, and key decision points inside
-Eduverse. They intentionally omit low-level implementation detail so that each
-workflow remains clear at the analytical level.
+The following activity diagrams were redrawn from zero based on the updated
+use-case set and the current Eduverse workflow descriptions. They focus on
+user-visible actions and important system responses, avoid unnecessary
+implementation detail, and do not include an activity diagram for the Project
+Overview because that diagram is a system summary rather than a workflow.
 
-\EduActivityFigure{\EduOverallSystemActivityDiagram}
-  {Activity diagram representing the overall Eduverse system workflow}
-  {fig:activity-overall-system}
+\subsection*{AD-01 Authentication and Workspace Access}
 
-This figure presents the top-level flow from platform entry to completion of a
-visible academic task within the permitted workspace.
+\EduActivityFigure{\EduActivityAuthWorkspaceAccessDiagram}
+  {Authentication and Workspace Access Activity Diagram}
+  {fig:ch4_activity_auth_workspace_access}
 
-\EduActivityFigure{\EduAuthWorkspaceActivityDiagram}
-  {Activity diagram representing authentication and workspace access}
-  {fig:activity-auth-workspace}
+Figure~\ref{fig:ch4_activity_auth_workspace_access} models access entry,
+account verification, password recovery, workspace-context selection, and
+logout within one continuous user-facing flow.
 
-The authentication workflow links identity validation to the resolution of the
-active role and workspace.
+\subsection*{AD-02 Organization Member Access and Public Join Link}
 
-\EduActivityFigure{\EduClassContentActivityDiagram}
-  {Activity diagram representing class access and course content workflow}
-  {fig:activity-class-content}
+\EduActivityFigure{\EduActivityOrganizationAccessDiagram}
+  {Organization Member Access and Public Join Link Activity Diagram}
+  {fig:ch4_activity_organization_access}
 
-This workflow shows how class access control leads users into viewing or
-managing course content according to the active role.
+Figure~\ref{fig:ch4_activity_organization_access} shows both invitation-based
+membership onboarding and Public Join Link onboarding, including target-role
+selection, direct join, join-request review, and student-history attachment
+where applicable.
 
-\EduActivityFigure{\EduAssignmentWorkflowActivityDiagram}
-  {Activity diagram representing assignment creation, submission, and grading workflow}
-  {fig:activity-assignment}
+\subsection*{AD-03 Class Creation, Configuration, and Past Terms}
 
-The assignment workflow combines teacher-side publishing and grading with the
-student-side submission path in one controlled class context.
+\EduActivityFigure{\EduActivityClassLifecycleDiagram}
+  {Class Creation, Configuration, and Past Terms Activity Diagram}
+  {fig:ch4_activity_class_lifecycle}
 
-\EduActivityFigure{\EduExamWorkflowActivityDiagram}
-  {Activity diagram representing exam attempt, monitoring, grading, and result release workflow}
-  {fig:activity-exam}
+Figure~\ref{fig:ch4_activity_class_lifecycle} describes how a class is
+created or updated, configured, governed, and eventually moved to Past Terms
+while preserving historical records.
 
-This diagram captures the examination flow from publication and attempt access
-to submission, review, and result release.
+\subsection*{AD-04 Course Content and Materials}
 
-\EduActivityFigure{\EduLiveSessionWorkflowActivityDiagram}
-  {Activity diagram representing live session start, join, and end workflow}
-  {fig:activity-live-session}
+\EduActivityFigure{\EduActivityMaterialsWorkflowDiagram}
+  {Course Content and Materials Activity Diagram}
+  {fig:ch4_activity_materials}
 
-The live-session workflow emphasizes synchronous participation through session
-activation, student entry, and controlled session closure.
+Figure~\ref{fig:ch4_activity_materials} captures both manager-side material
+operations and member-side access behavior, including search, preview,
+download, deletion, and AI summary availability when enabled.
 
-\EduActivityFigure{\EduAILearningSupportActivityDiagram}
-  {Activity diagram representing AI learning support workflow}
-  {fig:activity-ai-learning-support}
+\subsection*{AD-05 Class Communication and Notifications}
 
-This workflow focuses on how the AI Agent supports learning interactions
-through question entry, controlled response generation, and continued use when
-needed.
+\EduActivityFigure{\EduActivityCommunicationNotificationsDiagram}
+  {Class Communication and Notifications Activity Diagram}
+  {fig:ch4_activity_communication_notifications}
 
-\EduActivityFigure{\EduIdeCodingLabExtensionsActivityDiagram}
-  {Activity diagram representing IDE, coding lab, and extensions workflow}
-  {fig:activity-ide-coding-lab-extensions}
+Figure~\ref{fig:ch4_activity_communication_notifications} combines class
+messaging, announcement handling, chat search, and notification review in one
+workflow while preserving the distinction between user-authored messages and
+system-generated notifications.
 
-This workflow models controlled access to programming and extension tools,
-including workspace entry, code execution or preview, and optional continued
-interaction.
+\subsection*{AD-06 Assignment Workflow}
 
-% TODO: If high-resolution exported PNG or SVG versions of these diagrams are
-% later produced from Figma, replace the in-document TikZ renderings with the
-% final image assets while preserving the same captions and labels.
+\EduActivityFigure{\EduActivityAssignmentWorkflowDiagram}
+  {Assignment Workflow Activity Diagram}
+  {fig:ch4_activity_assignment_workflow}
 
-Together, these activity models show how Eduverse organizes core academic
-workflows through connected but controlled interactions. The following
-chapters build on this analysis to explain the design and implementation
-decisions in greater technical detail.
+Figure~\ref{fig:ch4_activity_assignment_workflow} connects assignment
+authoring, publication, student submission, optional resubmission, grading,
+feedback, and student review of the returned outcome.
+
+\subsection*{AD-07 Exam Management and Integrity Workflow}
+
+\EduActivityFigure{\EduActivityExamIntegrityWorkflowDiagram}
+  {Exam Management and Integrity Workflow Activity Diagram}
+  {fig:ch4_activity_exam_integrity}
+
+Figure~\ref{fig:ch4_activity_exam_integrity} models exam preparation,
+attempt-taking, integrity-event handling, grading, release, voiding, and
+retake decisions in a single assessment workflow.
+
+\subsection*{AD-08 Live Session and Whiteboard Workflow}
+
+\EduActivityFigure{\EduActivityLiveSessionWorkflowDiagram}
+  {Live Session and Whiteboard Workflow Activity Diagram}
+  {fig:ch4_activity_live_session}
+
+Figure~\ref{fig:ch4_activity_live_session} represents the synchronous class
+session from session start through participation tools and whiteboard use to
+controlled session closure.
+
+\subsection*{AD-09 Results and Dashboard Workflow}
+
+\EduActivityFigure{\EduActivityResultsDashboardWorkflowDiagram}
+  {Results and Dashboard Workflow Activity Diagram}
+  {fig:ch4_activity_results_dashboard}
+
+Figure~\ref{fig:ch4_activity_results_dashboard} explains how the dashboard and
+Results area differ by actor while preserving controlled visibility for grades,
+feedback, released exam outcomes, and class-level summaries.
+
+\subsection*{AD-10 AI Learning Support Workflow}
+
+\EduActivityFigure{\EduActivityAiLearningSupportWorkflowDiagram}
+  {AI Learning Support Workflow Activity Diagram}
+  {fig:ch4_activity_ai_learning_support}
+
+Figure~\ref{fig:ch4_activity_ai_learning_support} models the main AI-enabled
+learning actions of Eduverse, including contextual AI questions, material
+summaries, assignment support, and AI-assisted drafting tasks where available.
+
+\subsection*{AD-11 Integrated Coding Lab / IDE Workflow}
+
+\EduActivityFigure{\EduActivityIdeWorkflowDiagram}
+  {Integrated Coding Lab / IDE Workflow Activity Diagram}
+  {fig:ch4_activity_ide_workflow}
+
+Figure~\ref{fig:ch4_activity_ide_workflow} describes entry into the coding
+workspace, file handling, editing, saving, running code, preview inspection,
+workspace reset, and terminal usage where that capability is supported.
+
+\subsection*{AD-12 Profile and Help Workflow}
+
+\EduActivityFigure{\EduActivityProfileHelpWorkflowDiagram}
+  {Profile and Help Workflow Activity Diagram}
+  {fig:ch4_activity_profile_help}
+
+Figure~\ref{fig:ch4_activity_profile_help} combines profile review, theme or
+password settings, workspace-context switching, help browsing, and help
+search within one user-support workflow.
+
+\section{Chapter Summary}\label{sec:chapter4_summary}
+
+This chapter defined the analytical scope of Eduverse through the system
+overview, actor model, functional requirements, non-functional requirements,
+updated use-case diagrams, and redrawn activity workflows. These artifacts
+establish the reference basis for the following design and implementation
+chapters, where the structure and technical realization of the platform are
+explained in greater detail.

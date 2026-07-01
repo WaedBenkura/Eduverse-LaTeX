@@ -1,0 +1,442 @@
+\tikzset{
+  ch4 act step/.style={
+    edu process,
+    text width=72mm,
+    minimum height=9mm
+  },
+  ch4 act step medium/.style={
+    edu process,
+    text width=62mm,
+    minimum height=9mm
+  },
+  ch4 act step branch/.style={
+    edu process,
+    text width=48mm,
+    minimum height=9mm
+  },
+  ch4 act decision/.style={
+    edu decision,
+    text width=30mm,
+    aspect=2.0
+  },
+  ch4 act decision wide/.style={
+    edu decision,
+    text width=34mm,
+    aspect=2.0
+  },
+  ch4 act merge/.style={
+    diamond,
+    draw=black!85,
+    line width=0.9pt,
+    fill=white,
+    minimum size=7mm,
+    inner sep=0pt,
+    outer sep=0pt
+  }
+}
+
+\newcommand{\EduActivityAuthWorkspaceAccessDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {User opens the Eduverse access page.};
+  \node (choice) [ch4 act decision wide, below=of open] {Choose access path?};
+  \node (reset) [ch4 act step branch, left=48mm of choice] {Request password reset and submit the account email.};
+  \node (newpass) [ch4 act step branch, below=of reset] {Open the reset link and set the new password.};
+  \node (signup) [ch4 act step branch, right=48mm of choice] {Register a new account and submit the required details.};
+  \node (verify) [ch4 act step branch, below=of signup] {Open the verification email and confirm the account.};
+  \node (signin) [ch4 act step, below=16mm of choice] {Sign in with valid credentials or continue after verification.};
+  \node (valid) [ch4 act decision wide, below=of signin] {Access validated?};
+  \node (orgreq) [ch4 act decision wide, below=14mm of valid] {Organization selection required?};
+  \node (orgsel) [ch4 act step medium, below=14mm of orgreq] {Select the Active Organization.};
+  \node (rolereq) [ch4 act decision wide, below=of orgsel] {Role selection required?};
+  \node (rolesel) [ch4 act step medium, below=14mm of rolereq] {Select the Active Role.};
+  \node (workspace) [ch4 act step, below=of rolesel] {System opens the permitted dashboard or requested workspace.};
+  \node (logout) [ch4 act step medium, below=of workspace] {User works in the selected context and logs out when finished.};
+  \node (error) [ch4 act step branch, right=48mm of valid] {Show the validation error and keep the user at the access screen.};
+  \node (end) [edu final, below=of logout] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (choice);
+  \path [edu arrow] (choice.west) -- node[edu label] {Reset} (reset.east);
+  \path [edu arrow] (choice.east) -- node[edu label] {Sign up} (signup.west);
+  \path [edu arrow] (choice) -- node[edu label] {Sign in} (signin);
+  \path [edu arrow] (reset) -- (newpass);
+  \path [edu arrow] (newpass.south) |- (signin.west);
+  \path [edu arrow] (signup) -- (verify);
+  \path [edu arrow] (verify.south) |- (signin.east);
+  \path [edu arrow] (signin) -- (valid);
+  \path [edu arrow] (valid) -- node[edu label] {Yes} (orgreq);
+  \path [edu arrow] (valid.east) -- node[edu label] {No} (error.west);
+  \path [edu arrow] (orgreq) -- node[edu label] {Yes} (orgsel);
+  \path [edu arrow] (orgreq.east) -- ++(10mm,0) node[edu label, pos=0.18] {No} |- (rolereq.east);
+  \path [edu arrow] (orgsel) -- (rolereq);
+  \path [edu arrow] (rolereq) -- node[edu label] {Yes} (rolesel);
+  \path [edu arrow] (rolereq.east) -- ++(10mm,0) node[edu label, pos=0.18] {No} |- (workspace.east);
+  \path [edu arrow] (rolesel) -- (workspace);
+  \path [edu arrow] (workspace) -- (logout);
+  \path [edu arrow] (logout) -- (end);
+  \path [edu arrow] (error.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityOrganizationAccessDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {Organization Administrator opens the people and access workspace.};
+  \node (mode) [ch4 act decision wide, below=of open] {Invitation flow or Public Join Link?};
+  \node (invite) [ch4 act step branch, left=50mm of mode] {Enter member details and choose the target role.};
+  \node (studentrole) [ch4 act decision, below=of invite] {Student role?};
+  \node (history) [ch4 act step branch, left=42mm of studentrole] {Attach or confirm previous-term student history when applicable.};
+  \node (sendinvite) [ch4 act step branch, below=16mm of studentrole] {Send the invitation link to the target member.};
+  \node (acceptinvite) [ch4 act step branch, below=of sendinvite] {Recipient signs in or registers, opens the link, and accepts the invite.};
+  \node (activateinvite) [ch4 act step branch, below=of acceptinvite] {System activates the organization membership and selected role.};
+  \node (publiccfg) [ch4 act step branch, right=50mm of mode] {Create the Public Join Link for the organization.};
+  \node (publicmode) [ch4 act step branch, below=of publiccfg] {Choose the target role and set direct-join or approval-based access mode.};
+  \node (openlink) [ch4 act step branch, below=of publicmode] {Applicant opens the public link and signs in or registers.};
+  \node (direct) [ch4 act decision, below=of openlink] {Direct join enabled?};
+  \node (request) [ch4 act step branch, right=42mm of direct] {Submit a join request for administrator review.};
+  \node (review) [ch4 act step branch, below=of request] {Administrator reviews the pending request.};
+  \node (approve) [ch4 act decision, below=of review] {Approve request?};
+  \node (reject) [ch4 act step branch, right=42mm of approve] {Reject the request and keep access pending.};
+  \node (activatepublic) [ch4 act step branch, below=16mm of direct] {System grants organization access with the chosen role.};
+  \node (end) [edu final, below=of activatepublic] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (mode);
+  \path [edu arrow] (mode.west) -- node[edu label] {Invitation} (invite.east);
+  \path [edu arrow] (mode.east) -- node[edu label] {Public link} (publiccfg.west);
+  \path [edu arrow] (invite) -- (studentrole);
+  \path [edu arrow] (studentrole.west) -- node[edu label] {Yes} (history.east);
+  \path [edu arrow] (studentrole) -- node[edu label] {No} (sendinvite);
+  \path [edu arrow] (history.south) |- (sendinvite.west);
+  \path [edu arrow] (sendinvite) -- (acceptinvite);
+  \path [edu arrow] (acceptinvite) -- (activateinvite);
+  \path [edu arrow] (activateinvite.south) |- (end.west);
+  \path [edu arrow] (publiccfg) -- (publicmode);
+  \path [edu arrow] (publicmode) -- (openlink);
+  \path [edu arrow] (openlink) -- (direct);
+  \path [edu arrow] (direct) -- node[edu label] {Yes} (activatepublic);
+  \path [edu arrow] (direct.east) -- node[edu label] {No} (request.west);
+  \path [edu arrow] (request) -- (review);
+  \path [edu arrow] (review) -- (approve);
+  \path [edu arrow] (approve) -- node[edu label] {Yes} (activatepublic);
+  \path [edu arrow] (approve.east) -- node[edu label] {No} (reject.west);
+  \path [edu arrow] (activatepublic) -- (end);
+  \path [edu arrow] (reject.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityClassLifecycleDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {Administrator or permitted Teacher opens the class-management workspace.};
+  \node (role) [ch4 act decision wide, below=of open] {Administrator view or Teacher view?};
+  \node (adminview) [ch4 act step branch, left=50mm of role] {Administrator manages organization-wide class setup and oversight.};
+  \node (teacherview) [ch4 act step branch, right=50mm of role] {Teacher opens the class controls allowed by organization permissions.};
+  \node (details) [ch4 act step, below=16mm of role] {Create or edit the class and define the title, code, term, stage, and other details.};
+  \node (members) [ch4 act step, below=of details] {Assign or change the Teacher and manage class membership.};
+  \node (features) [ch4 act step, below=of members] {Configure class tools, visibility rules, and Results visibility.};
+  \node (save) [ch4 act step medium, below=of features] {Save the class configuration.};
+  \node (ending) [ch4 act decision wide, below=of save] {End class, stage, or term?};
+  \node (pastterms) [ch4 act step medium, below=14mm of ending] {Move the class into Past Terms.};
+  \node (history) [ch4 act step medium, below=of pastterms] {Preserve class history, membership records, and academic outcomes.};
+  \node (end) [edu final, below=of history] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (role);
+  \path [edu arrow] (role.west) -- node[edu label] {Administrator} (adminview.east);
+  \path [edu arrow] (role.east) -- node[edu label] {Teacher} (teacherview.west);
+  \path [edu arrow] (adminview.south) |- (details.west);
+  \path [edu arrow] (teacherview.south) |- (details.east);
+  \path [edu arrow] (details) -- (members);
+  \path [edu arrow] (members) -- (features);
+  \path [edu arrow] (features) -- (save);
+  \path [edu arrow] (save) -- (ending);
+  \path [edu arrow] (ending) -- node[edu label] {Yes} (pastterms);
+  \path [edu arrow] (ending.east) -- ++(10mm,0) node[edu label, pos=0.18] {No} |- (end.east);
+  \path [edu arrow] (pastterms) -- (history);
+  \path [edu arrow] (history) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityMaterialsWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {User opens the Materials page of the selected class.};
+  \node (load) [ch4 act step medium, below=of open] {System loads the available course materials.};
+  \node (manage) [ch4 act decision wide, below=of load] {Manage materials or browse materials?};
+  \node (browse) [ch4 act step branch, left=50mm of manage] {Search or filter the available materials.};
+  \node (preview) [ch4 act step branch, below=of browse] {Preview or open the selected material.};
+  \node (download) [ch4 act step branch, below=of preview] {Download the material when needed.};
+  \node (aisummary) [ch4 act decision, below=of download] {AI summary enabled?};
+  \node (summary) [ch4 act step branch, left=42mm of aisummary] {Generate or read the study summary for the material.};
+  \node (manageroute) [ch4 act decision, right=50mm of manage] {Upload or delete?};
+  \node (upload) [ch4 act step branch, right=42mm of manageroute] {Enter material details, select the file, and upload the resource.};
+  \node (delete) [ch4 act step branch, below=16mm of manageroute] {Delete the selected material from the active list.};
+  \node (refresh) [ch4 act step medium, below=22mm of manageroute] {Refresh the materials list for the class.};
+  \node (end) [edu final, below=22mm of aisummary] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (load);
+  \path [edu arrow] (load) -- (manage);
+  \path [edu arrow] (manage.west) -- node[edu label] {Browse} (browse.east);
+  \path [edu arrow] (manage.east) -- node[edu label] {Manage} (manageroute.west);
+  \path [edu arrow] (browse) -- (preview);
+  \path [edu arrow] (preview) -- (download);
+  \path [edu arrow] (download) -- (aisummary);
+  \path [edu arrow] (aisummary.west) -- node[edu label] {Yes} (summary.east);
+  \path [edu arrow] (aisummary) -- node[edu label] {No} ++(0,-10mm) |- (end.west);
+  \path [edu arrow] (summary.south) |- (end.west);
+  \path [edu arrow] (manageroute.east) -- node[edu label] {Upload} (upload.west);
+  \path [edu arrow] (manageroute) -- node[edu label] {Delete} (delete);
+  \path [edu arrow] (upload.south) |- (refresh.east);
+  \path [edu arrow] (delete) -- (refresh);
+  \path [edu arrow] (refresh.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityCommunicationNotificationsDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (chat) [ch4 act step] {User opens the class chat workspace.};
+  \node (announce) [ch4 act decision wide, below=of chat] {Announcement or regular message?};
+  \node (regular) [ch4 act step branch, left=50mm of announce] {Compose the class message.};
+  \node (media) [ch4 act decision, below=of regular] {Attach media?};
+  \node (sendtext) [ch4 act step branch, left=42mm of media] {Send the text message to the class conversation.};
+  \node (sendmedia) [ch4 act step branch, below=16mm of media] {Upload media and send the message.};
+  \node (postannounce) [ch4 act step branch, right=50mm of announce] {Post the message as an announcement.};
+  \node (removeannounce) [ch4 act step branch, below=of postannounce] {Remove the announcement from the visible announcement area when no longer needed.};
+  \node (search) [ch4 act step medium, below=24mm of announce] {Search the chat when a message or announcement must be located.};
+  \node (notifygen) [ch4 act step medium, below=of search] {System generates notification entries for relevant class events.};
+  \node (notifopen) [ch4 act step medium, below=of notifygen] {User opens the notifications menu and reviews updates.};
+  \node (notifmanage) [ch4 act step medium, below=of notifopen] {Open a linked item or manage notification state by marking or deleting entries.};
+  \node (end) [edu final, below=of notifmanage] {};
+
+  \path [edu arrow] (start.south) -- (chat.north);
+  \path [edu arrow] (chat) -- (announce);
+  \path [edu arrow] (announce.west) -- node[edu label] {Regular} (regular.east);
+  \path [edu arrow] (announce.east) -- node[edu label] {Announcement} (postannounce.west);
+  \path [edu arrow] (regular) -- (media);
+  \path [edu arrow] (media.west) -- node[edu label] {No} (sendtext.east);
+  \path [edu arrow] (media) -- node[edu label] {Yes} (sendmedia);
+  \path [edu arrow] (sendtext.south) |- (search.west);
+  \path [edu arrow] (sendmedia.south) |- (search.west);
+  \path [edu arrow] (postannounce) -- (removeannounce);
+  \path [edu arrow] (removeannounce.south) |- (search.east);
+  \path [edu arrow] (search) -- (notifygen);
+  \path [edu arrow] (notifygen) -- (notifopen);
+  \path [edu arrow] (notifopen) -- (notifmanage);
+  \path [edu arrow] (notifmanage) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityAssignmentWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (author) [ch4 act step] {Teacher or Organization Administrator opens the Assignments page.};
+  \node (create) [ch4 act step, below=of author] {Create a new assignment or edit an existing assignment.};
+  \node (configure) [ch4 act step, below=of create] {Define the instructions, due date, score, submission modes, and optional files.};
+  \node (publish) [ch4 act decision wide, below=of configure] {Publish now?};
+  \node (draft) [ch4 act step branch, left=50mm of publish] {Save the assignment as a draft and publish it later when ready.};
+  \node (visible) [ch4 act step medium, below=16mm of publish] {Published assignment becomes visible to students.};
+  \node (studentopen) [ch4 act step medium, below=of visible] {Student opens the published assignment.};
+  \node (submit) [ch4 act step medium, below=of studentopen] {Student submits text, file, or combined work according to the assignment settings.};
+  \node (resubmit) [ch4 act decision wide, below=of submit] {Resubmission needed and allowed?};
+  \node (update) [ch4 act step branch, right=50mm of resubmit] {Update the submission with the revised work.};
+  \node (review) [ch4 act step medium, below=16mm of resubmit] {Teacher or administrator reviews the available submissions.};
+  \node (grade) [ch4 act step medium, below=of review] {Record the grade and feedback for the student.};
+  \node (result) [ch4 act step medium, below=of grade] {Student views the returned score and feedback.};
+  \node (end) [edu final, below=of result] {};
+
+  \path [edu arrow] (start.south) -- (author.north);
+  \path [edu arrow] (author) -- (create);
+  \path [edu arrow] (create) -- (configure);
+  \path [edu arrow] (configure) -- (publish);
+  \path [edu arrow] (publish.west) -- node[edu label] {No} (draft.east);
+  \path [edu arrow] (publish) -- node[edu label] {Yes} (visible);
+  \path [edu arrow] (draft.south) |- (visible.west);
+  \path [edu arrow] (visible) -- (studentopen);
+  \path [edu arrow] (studentopen) -- (submit);
+  \path [edu arrow] (submit) -- (resubmit);
+  \path [edu arrow] (resubmit.east) -- node[edu label] {Yes} (update.west);
+  \path [edu arrow] (resubmit) -- node[edu label] {No} (review);
+  \path [edu arrow] (update.south) |- (review.east);
+  \path [edu arrow] (review) -- (grade);
+  \path [edu arrow] (grade) -- (result);
+  \path [edu arrow] (result) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityExamIntegrityWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (manage) [ch4 act step] {Teacher or Organization Administrator opens exam management for the class.};
+  \node (configure) [ch4 act step, below=of manage] {Create or edit the exam, questions, passcode, timing, and integrity settings.};
+  \node (publish) [ch4 act decision wide, below=of configure] {Publish the exam?};
+  \node (draft) [ch4 act step branch, left=50mm of publish] {Save the exam as a draft and return later for publication.};
+  \node (studentopen) [ch4 act step medium, below=16mm of publish] {Student opens the active exam when it becomes available.};
+  \node (passcode) [ch4 act decision wide, below=of studentopen] {Passcode required?};
+  \node (entercode) [ch4 act step branch, right=50mm of passcode] {Enter the passcode before the attempt can start.};
+  \node (attempt) [ch4 act step medium, below=16mm of passcode] {Start the exam attempt and enter the required fullscreen mode.};
+  \node (answer) [ch4 act step medium, below=of attempt] {Answer the questions during the active attempt.};
+  \node (integrity) [ch4 act decision wide, below=of answer] {Leave fullscreen or lose focus?};
+  \node (event) [ch4 act step branch, right=50mm of integrity] {Record the integrity event and continue the monitored attempt.};
+  \node (submit) [ch4 act step medium, below=16mm of integrity] {Submit the exam attempt or allow automatic submission at expiry.};
+  \node (review) [ch4 act step medium, below=of submit] {Teacher or administrator monitors attempts and reviews integrity events.};
+  \node (grade) [ch4 act step medium, below=of review] {Grade manual answers and finalize the attempt outcome.};
+  \node (validattempt) [ch4 act decision wide, below=of grade] {Release result or void attempt?};
+  \node (release) [ch4 act step branch, left=50mm of validattempt] {Release the exam result to the student.};
+  \node (retake) [ch4 act step branch, right=50mm of validattempt] {Void the attempt and grant a retake when appropriate.};
+  \node (answerreview) [ch4 act step branch, below=16mm of validattempt] {Student opens result details and answer review after release.};
+  \node (end) [edu final, below=22mm of answerreview] {};
+
+  \path [edu arrow] (start.south) -- (manage.north);
+  \path [edu arrow] (manage) -- (configure);
+  \path [edu arrow] (configure) -- (publish);
+  \path [edu arrow] (publish.west) -- node[edu label] {No} (draft.east);
+  \path [edu arrow] (publish) -- node[edu label] {Yes} (studentopen);
+  \path [edu arrow] (draft.south) |- (studentopen.west);
+  \path [edu arrow] (studentopen) -- (passcode);
+  \path [edu arrow] (passcode.east) -- node[edu label] {Yes} (entercode.west);
+  \path [edu arrow] (passcode) -- node[edu label] {No} (attempt);
+  \path [edu arrow] (entercode.south) |- (attempt.east);
+  \path [edu arrow] (attempt) -- (answer);
+  \path [edu arrow] (answer) -- (integrity);
+  \path [edu arrow] (integrity) -- node[edu label] {No} (submit);
+  \path [edu arrow] (integrity.east) -- node[edu label] {Yes} (event.west);
+  \path [edu arrow] (event.south) |- (submit.east);
+  \path [edu arrow] (submit) -- (review);
+  \path [edu arrow] (review) -- (grade);
+  \path [edu arrow] (grade) -- (validattempt);
+  \path [edu arrow] (validattempt.west) -- node[edu label] {Release} (release.east);
+  \path [edu arrow] (validattempt.east) -- node[edu label] {Void or retake} (retake.west);
+  \path [edu arrow] (release.south) |- (answerreview.west);
+  \path [edu arrow] (retake.south) |- (end.east);
+  \path [edu arrow] (answerreview) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityLiveSessionWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {Teacher or Organization Administrator opens the Sessions page.};
+  \node (startsession) [ch4 act step medium, below=of open] {Start the live session for the selected class.};
+  \node (join) [ch4 act step medium, below=of startsession] {Eligible participants join the live session.};
+  \node (media) [ch4 act step medium, below=of join] {Participants manage microphone and camera controls.};
+  \node (tools) [ch4 act step medium, below=of media] {Use the participants panel, session chat, and screen sharing as needed.};
+  \node (whiteboard) [ch4 act step medium, below=of tools] {Use or view the shared whiteboard according to role permissions.};
+  \node (endingsession) [ch4 act step medium, below=of whiteboard] {Teacher ends the live session for the class.};
+  \node (end) [edu final, below=of endingsession] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (startsession);
+  \path [edu arrow] (startsession) -- (join);
+  \path [edu arrow] (join) -- (media);
+  \path [edu arrow] (media) -- (tools);
+  \path [edu arrow] (tools) -- (whiteboard);
+  \path [edu arrow] (whiteboard) -- (endingsession);
+  \path [edu arrow] (endingsession) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityResultsDashboardWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {User opens the dashboard or the Results page for the selected class.};
+  \node (load) [ch4 act step medium, below=of open] {System loads the role-specific summary and the permitted Results view.};
+  \node (studentview) [ch4 act decision wide, below=of load] {Student view or teacher-administrator view?};
+  \node (studentresults) [ch4 act step branch, left=50mm of studentview] {Open student results for the class and review assignment grades and feedback.};
+  \node (examresults) [ch4 act step branch, below=of studentresults] {View released exam results, result details, and answer review where available.};
+  \node (staffresults) [ch4 act step branch, right=50mm of studentview] {Open class-level dashboards, assignment results, and exam results.};
+  \node (visibility) [ch4 act step branch, below=of staffresults] {Review results according to the configured visibility rules for the class.};
+  \node (end) [edu final, below=22mm of studentview] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (load);
+  \path [edu arrow] (load) -- (studentview);
+  \path [edu arrow] (studentview.west) -- node[edu label] {Student} (studentresults.east);
+  \path [edu arrow] (studentview.east) -- node[edu label] {Teacher or admin} (staffresults.west);
+  \path [edu arrow] (studentresults) -- (examresults);
+  \path [edu arrow] (examresults.south) |- (end.west);
+  \path [edu arrow] (staffresults) -- (visibility);
+  \path [edu arrow] (visibility.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityAiLearningSupportWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {User opens an AI-enabled class tool.};
+  \node (action) [ch4 act step medium, below=of open] {Choose the AI action such as class question, material summary, assignment support, assignment draft, exam draft, or feedback draft.};
+  \node (enabled) [ch4 act decision wide, below=of action] {AI feature available for this context?};
+  \node (context) [ch4 act step medium, below=14mm of enabled] {System gathers the active class context and the requested support task.};
+  \node (generate) [ch4 act step medium, below=of context] {Generate the AI response or draft output.};
+  \node (review) [ch4 act step medium, below=of generate] {User reviews, refines, or applies the returned AI output.};
+  \node (blocked) [ch4 act step branch, right=50mm of enabled] {Show that the AI feature is unavailable or disabled for the current class.};
+  \node (end) [edu final, below=of review] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (action);
+  \path [edu arrow] (action) -- (enabled);
+  \path [edu arrow] (enabled) -- node[edu label] {Yes} (context);
+  \path [edu arrow] (enabled.east) -- node[edu label] {No} (blocked.west);
+  \path [edu arrow] (context) -- (generate);
+  \path [edu arrow] (generate) -- (review);
+  \path [edu arrow] (review) -- (end);
+  \path [edu arrow] (blocked.south) |- (end.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityIdeWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {User opens the Integrated Coding Lab / IDE workspace.};
+  \node (environment) [ch4 act step medium, below=of open] {Choose the available coding environment for the class.};
+  \node (workspace) [ch4 act step medium, below=of environment] {System loads the workspace and visible project files.};
+  \node (files) [ch4 act step medium, below=of workspace] {Browse, create, rename, delete, or open files as permitted.};
+  \node (edit) [ch4 act step medium, below=of files] {Edit code or markdown content and save the current work.};
+  \node (run) [ch4 act decision wide, below=of edit] {Run or preview the current work?};
+  \node (execute) [ch4 act step medium, below=14mm of run] {Run the code and open the available preview.};
+  \node (inspect) [ch4 act step medium, below=of execute] {Review the preview, console output, or problems panel.};
+  \node (extras) [ch4 act step medium, below=of inspect] {Use the IDE terminal where supported or reset the workspace when needed.};
+  \node (end) [edu final, below=of extras] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (environment);
+  \path [edu arrow] (environment) -- (workspace);
+  \path [edu arrow] (workspace) -- (files);
+  \path [edu arrow] (files) -- (edit);
+  \path [edu arrow] (edit) -- (run);
+  \path [edu arrow] (run) -- node[edu label] {Yes} (execute);
+  \path [edu arrow] (run.east) -- ++(10mm,0) node[edu label, pos=0.18] {No} |- (end.east);
+  \path [edu arrow] (execute) -- (inspect);
+  \path [edu arrow] (inspect) -- (extras);
+  \path [edu arrow] (extras) -- (end);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityProfileHelpWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
+  \node (start) [edu initial] {};
+  \node (open) [ch4 act step] {User opens the account controls or help area.};
+  \node (route) [ch4 act decision wide, below=of open] {Profile workflow or help workflow?};
+  \node (profile) [ch4 act step branch, left=50mm of route] {Open the profile page and review account information.};
+  \node (settings) [ch4 act step branch, below=of profile] {Change theme preferences or password-related account settings.};
+  \node (switch) [ch4 act step branch, below=of settings] {Switch the Active Organization or Active Role and refresh the workspace context.};
+  \node (help) [ch4 act step branch, right=50mm of route] {Open the help center.};
+  \node (search) [ch4 act step branch, below=of help] {Search or browse help topics and categories.};
+  \node (article) [ch4 act step branch, below=of search] {Open the selected article and follow the guidance.};
+  \node (end) [edu final, below=22mm of route] {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (route);
+  \path [edu arrow] (route.west) -- node[edu label] {Profile} (profile.east);
+  \path [edu arrow] (route.east) -- node[edu label] {Help} (help.west);
+  \path [edu arrow] (profile) -- (settings);
+  \path [edu arrow] (settings) -- (switch);
+  \path [edu arrow] (switch.south) |- (end.west);
+  \path [edu arrow] (help) -- (search);
+  \path [edu arrow] (search) -- (article);
+  \path [edu arrow] (article.south) |- (end.east);
+\end{tikzpicture}%
+}
