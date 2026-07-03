@@ -7,10 +7,19 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{graphicx}
+\usepackage{array}
+\usepackage{longtable}
 \usepackage[table]{xcolor}
 \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
+
+\DeclareRobustCommand{\db}[1]{%
+  \begingroup
+  \def\UrlFont{\ttfamily\upshape}%
+  \nolinkurl{#1}%
+  \endgroup
+}
 
 % Keep links clickable without visible boxes and reduce line-breaking pressure
 % after disabling automatic word hyphenation.

@@ -1,0 +1,1245 @@
+[
+  {
+    "heading": "`public.organizations`",
+    "keyColumns": [
+      "`id`",
+      "`slug`",
+      "`name`"
+    ],
+    "primaryKey": [
+      "`id` (referenced by many visible downstream FKs; original base `CREATE TABLE` is not present in the repo)"
+    ],
+    "foreignKeys": [
+      "No outgoing FK is visible in the checked-in base DDL slice."
+    ],
+    "enumStatus": [],
+    "notes": [
+      "Current create-organization RPCs insert `slug` and `name`, and later seed feature/settings state immediately."
+    ],
+    "relationships": [
+      "`organizations.id -> organization_feature_settings.organization_id` (**FK relationship**)",
+      "`organizations.id -> organization_extensions.organization_id` (**FK relationship**)",
+      "`organizations.id -> organization_settings.organization_id` (**FK relationship**)",
+      "`organizations.id -> organization_join_links.organization_id` (**FK relationship**)",
+      "`organizations.id -> organization_join_requests.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_feature_settings.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_extension_settings.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_invites.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_visibility_preferences.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_materials.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_messages.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_assignments.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_assignment_files.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_assignment_submissions.organization_id` (**FK relationship**)",
+      "`organizations.id -> class_live_sessions.organization_id` (**FK relationship**)",
+      "`organizations.id -> exams.organization_id` (**FK relationship**)",
+      "`organizations.id -> exam_questions.organization_id` (**FK relationship**)",
+      "`organizations.id -> exam_attempts.organization_id` (**FK relationship**)",
+      "`organizations.id -> exam_answers.organization_id` (**FK relationship**)",
+      "`organizations.id -> notifications.organization_id` (**FK relationship**)",
+      "`organizations.id -> organization_memberships.organization_id` (**logical relationship**)",
+      "`organizations.id -> organization_invites.organization_id` (**logical relationship**)",
+      "`organizations.id -> classes.organization_id` (**logical relationship**)",
+      "`organizations.id -> audit_logs.organization_id` (**logical relationship**)"
+    ],
+    "purpose": [
+      "Top-level tenant/organization record."
+    ]
+  },
+  {
+    "heading": "`public.profiles`",
+    "keyColumns": [
+      "`id`",
+      "`email`",
+      "`display_name`",
+      "`default_organization_id`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id` (used everywhere as the canonical profile/user key; original base DDL not present in repo)"
+    ],
+    "foreignKeys": [
+      "`default_organization_id -> organizations.id` is only visible through current updates/query usage, not through visible base DDL."
+    ],
+    "enumStatus": [],
+    "notes": [
+      "The app always loads a profile using `id = auth.uid()`, so profile identity is tightly coupled to Supabase auth identity even though the base FK/trigger is not visible here."
+    ],
+    "relationships": [
+      "`profiles.id -> class_materials.uploaded_by_user_id` (**FK relationship**)",
+      "`profiles.id -> class_messages.sender_user_id` (**FK relationship**)",
+      "`profiles.id -> class_assignments.created_by_user_id` (**FK relationship**)",
+      "`profiles.id -> class_assignment_files.uploaded_by_user_id` (**FK relationship**)",
+      "`profiles.id -> class_assignment_submissions.student_user_id` (**FK relationship**)",
+      "`profiles.id -> class_assignment_submissions.graded_by_user_id` (**FK relationship**)",
+      "`profiles.id -> class_live_sessions.started_by_user_id` (**FK relationship**)",
+      "`profiles.id -> notifications.recipient_user_id` (**FK relationship**)",
+      "`profiles.id -> notifications.actor_user_id` (**FK relationship**)",
+      "`profiles.id -> organization_teacher_class_permissions.teacher_user_id` (**FK relationship**)",
+      "`profiles.id <-> auth.users.id` (**logical relationship**, strongly implied by auth flows)",
+      "`profiles.default_organization_id -> organizations.id` (**logical relationship**)",
+      "`profiles.id <- classes.teacher_user_id` (**logical relationship**)",
+      "`profiles.id <- class_memberships.user_id` (**logical relationship**)",
+      "`profiles.id <- organization_memberships.user_id` (**logical relationship**)"
+    ],
+    "purpose": [
+      "Application profile record for authenticated users."
+    ]
+  },
+  {
+    "heading": "`public.organization_memberships`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`user_id`",
+      "`role`",
+      "`status`",
+      "`selected_role_id`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id` (used throughout the current app and referenced by `organization_membership_roles`)"
+    ],
+    "foreignKeys": [
+      "`selected_role_id -> organization_membership_roles.id` (**FK relationship**)",
+      "Original FK definitions for `organization_id`/`user_id` are not visible in the current repo slice."
+    ],
+    "enumStatus": [
+      "`role` uses `public.app_role`",
+      "`status` uses `public.membership_status`"
+    ],
+    "notes": [
+      "The newer authorization model uses `organization_membership_roles` for active roles while `organization_memberships.role` is kept as a compatibility/effective role field."
+    ],
+    "relationships": [
+      "`organization_memberships.id -> organization_membership_roles.organization_membership_id` (**FK relationship**)",
+      "`organization_memberships.organization_id -> organizations.id` (**logical relationship**)",
+      "`organization_memberships.user_id -> profiles/auth identity` (**logical relationship**)"
+    ],
+    "purpose": [
+      "Core organization-membership row for a user within one organization.",
+      "Also acts as the compatibility record for the newer multi-role model."
+    ]
+  },
+  {
+    "heading": "`public.organization_membership_roles`",
+    "keyColumns": [
+      "`id`",
+      "`organization_membership_id`",
+      "`role`",
+      "`status`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_membership_id -> organization_memberships.id`"
+    ],
+    "enumStatus": [
+      "`role` uses `public.app_role`",
+      "`status` uses `public.membership_status`"
+    ],
+    "notes": [
+      "This is the real role model used by `is_org_member`, `has_org_role`, and role-scoped notifications."
+    ],
+    "relationships": [
+      "`organization_memberships.id -> organization_membership_roles.organization_membership_id` (**FK relationship**)",
+      "`organization_memberships.selected_role_id -> organization_membership_roles.id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Per-membership role records that let one organization member hold multiple active roles."
+    ]
+  },
+  {
+    "heading": "`public.organization_invites`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`email`",
+      "`role`",
+      "`invited_by_user_id`",
+      "`token`",
+      "`status`",
+      "`expires_at`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id` (used throughout invite flows; base DDL is not present in repo)"
+    ],
+    "foreignKeys": [
+      "Direct base-table FK definitions are not visible in the checked-in base DDL slice.",
+      "`class_invites.organization_invite_id -> organization_invites.id` is visible downstream."
+    ],
+    "enumStatus": [
+      "`role` uses `public.app_role`",
+      "`status` behaves like membership status and is currently used with `invited`, `active`, and `suspended`"
+    ],
+    "notes": [
+      "Pending student invites can carry later class-level and past-term registration workflows."
+    ],
+    "relationships": [
+      "`organization_invites.id <- class_invites.organization_invite_id` (**FK relationship**)",
+      "`organization_invites.organization_id -> organizations.id` (**logical relationship**)",
+      "`organization_invites.invited_by_user_id -> auth.users.id` (**logical relationship**)"
+    ],
+    "purpose": [
+      "Pending or processed organization-wide invite records."
+    ]
+  },
+  {
+    "heading": "`public.organization_settings`",
+    "keyColumns": [
+      "`organization_id`",
+      "`public_features_enabled`",
+      "`public_features_locked_disabled`",
+      "`all_teachers_can_create_classes`",
+      "`all_teachers_can_manage_own_classes`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`organization_id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`"
+    ],
+    "enumStatus": [
+      "Boolean control flags only."
+    ],
+    "notes": [
+      "`public_features_locked_disabled` is enforced by trigger logic; once an organization is created with public access locked off, later enablement is rejected."
+    ],
+    "relationships": [
+      "`organizations.id -> organization_settings.organization_id` (**FK relationship**)",
+      "`organization_settings.organization_id -> organization_teacher_class_permissions.organization_id` (**logical parent-child relationship by organization**)"
+    ],
+    "purpose": [
+      "Per-organization settings for public access and teacher class-management permissions."
+    ]
+  },
+  {
+    "heading": "`public.organization_teacher_class_permissions`",
+    "keyColumns": [
+      "`organization_id`",
+      "`teacher_user_id`",
+      "`can_create_classes`",
+      "`can_manage_own_classes`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "Composite primary key: (`organization_id`, `teacher_user_id`)"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`teacher_user_id -> profiles.id`"
+    ],
+    "enumStatus": [],
+    "notes": [
+      "Writes are normalized through `update_organization_settings(...)`, which only keeps rows for users who currently hold an active teacher role in the organization."
+    ],
+    "relationships": [
+      "`organizations.id -> organization_teacher_class_permissions.organization_id` (**FK relationship**)",
+      "`profiles.id -> organization_teacher_class_permissions.teacher_user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Per-teacher permission overrides inside one organization."
+    ]
+  },
+  {
+    "heading": "`public.feature_definitions`",
+    "keyColumns": [
+      "`key`",
+      "`label`",
+      "`description`",
+      "`parent_key`",
+      "`kind`",
+      "`route_segment`",
+      "`default_enabled`",
+      "`is_system`",
+      "`sort_order`",
+      "`metadata`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`key`"
+    ],
+    "foreignKeys": [
+      "`parent_key -> feature_definitions.key`"
+    ],
+    "enumStatus": [
+      "`kind` uses enum `public.feature_kind` with values `core`, `extension`"
+    ],
+    "notes": [
+      "The actual database key remains `ai`; the visible label was renamed to “AI Agent”."
+    ],
+    "relationships": [
+      "`feature_definitions.key -> feature_definitions.parent_key` (**FK relationship**, self-reference)",
+      "`feature_definitions.key -> feature_preset_items.feature_key` (**FK relationship**)",
+      "`feature_definitions.key -> organization_feature_settings.feature_key` (**FK relationship**)",
+      "`feature_definitions.key -> class_feature_settings.feature_key` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Master catalog of built-in feature flags/tool definitions."
+    ]
+  },
+  {
+    "heading": "`public.feature_presets`",
+    "keyColumns": [
+      "`key`",
+      "`name`",
+      "`description`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`key`"
+    ],
+    "foreignKeys": [
+      "None."
+    ],
+    "enumStatus": [],
+    "notes": [],
+    "relationships": [
+      "`feature_presets.key -> feature_preset_items.preset_key` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Named preset bundles for organization creation defaults."
+    ]
+  },
+  {
+    "heading": "`public.feature_preset_items`",
+    "keyColumns": [
+      "`preset_key`",
+      "`feature_key`",
+      "`enabled`",
+      "`config`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "Composite primary key: (`preset_key`, `feature_key`)"
+    ],
+    "foreignKeys": [
+      "`preset_key -> feature_presets.key`",
+      "`feature_key -> feature_definitions.key`"
+    ],
+    "enumStatus": [],
+    "notes": [],
+    "relationships": [
+      "`feature_presets.key -> feature_preset_items.preset_key` (**FK relationship**)",
+      "`feature_definitions.key -> feature_preset_items.feature_key` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Junction table mapping presets to specific feature enablement/config values."
+    ]
+  },
+  {
+    "heading": "`public.organization_feature_settings`",
+    "keyColumns": [
+      "`organization_id`",
+      "`feature_key`",
+      "`enabled`",
+      "`config`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "Composite primary key: (`organization_id`, `feature_key`)"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`feature_key -> feature_definitions.key`"
+    ],
+    "enumStatus": [
+      "No enum columns; `config` can store lock metadata such as `locked_disabled`."
+    ],
+    "notes": [],
+    "relationships": [
+      "`organizations.id -> organization_feature_settings.organization_id` (**FK relationship**)",
+      "`feature_definitions.key -> organization_feature_settings.feature_key` (**FK relationship**)",
+      "`organization_feature_settings` seeds `class_feature_settings` rows at class creation (**logical workflow relationship**)"
+    ],
+    "purpose": [
+      "Per-organization feature enablement/config state."
+    ]
+  },
+  {
+    "heading": "`public.class_feature_settings`",
+    "keyColumns": [
+      "`organization_id`",
+      "`class_id`",
+      "`feature_key`",
+      "`enabled`",
+      "`config`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "Composite primary key: (`class_id`, `feature_key`)"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`feature_key -> feature_definitions.key`"
+    ],
+    "enumStatus": [],
+    "notes": [
+      "Earlier class-manager control was replaced by admin-only management in `20260621120000_restrict_class_settings_to_admins.sql`."
+    ],
+    "relationships": [
+      "`organizations.id -> class_feature_settings.organization_id` (**FK relationship**)",
+      "`classes.id -> class_feature_settings.class_id` (**FK relationship**)",
+      "`feature_definitions.key -> class_feature_settings.feature_key` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Per-class feature enablement/config state."
+    ]
+  },
+  {
+    "heading": "`public.organization_extensions`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`name`",
+      "`slug`",
+      "`description`",
+      "`launch_url`",
+      "`enabled`",
+      "`sort_order`",
+      "`config`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`"
+    ],
+    "enumStatus": [],
+    "notes": [],
+    "relationships": [
+      "`organizations.id -> organization_extensions.organization_id` (**FK relationship**)",
+      "`organization_extensions.id -> class_extension_settings.extension_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Organization-scoped custom extension definitions."
+    ]
+  },
+  {
+    "heading": "`public.class_extension_settings`",
+    "keyColumns": [
+      "`organization_id`",
+      "`class_id`",
+      "`extension_id`",
+      "`enabled`",
+      "`config`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "Composite primary key: (`class_id`, `extension_id`)"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`extension_id -> organization_extensions.id`"
+    ],
+    "enumStatus": [],
+    "notes": [
+      "Like `class_feature_settings`, this became admin-managed rather than manager-managed in later migrations."
+    ],
+    "relationships": [
+      "`organizations.id -> class_extension_settings.organization_id` (**FK relationship**)",
+      "`classes.id -> class_extension_settings.class_id` (**FK relationship**)",
+      "`organization_extensions.id -> class_extension_settings.extension_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Per-class enable/disable/config rows for organization-scoped extensions."
+    ]
+  },
+  {
+    "heading": "`public.classes`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`name`",
+      "`code`",
+      "`teacher_user_id`",
+      "`color`",
+      "`description`",
+      "`room`",
+      "`semester`",
+      "`stage`",
+      "`organization_visible`",
+      "`results_visible_to_students`",
+      "`teacher_can_toggle_results_visibility`",
+      "`is_archived`",
+      "`ended_at`",
+      "`ended_by_user_id`",
+      "`archived_edited_at`",
+      "`archived_edited_by_user_id`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id` (canonical class key used by all downstream FK tables; base class DDL itself is not present in repo)"
+    ],
+    "foreignKeys": [
+      "Visible later FKs:"
+    ],
+    "enumStatus": [
+      "`is_archived` is the active/archive lifecycle flag.",
+      "`semester` and `stage` are now required non-blank text fields."
+    ],
+    "notes": [
+      "`subject` and `schedule_text` were removed from the schema.",
+      "Past-term history uses archived classes instead of a separate history table."
+    ],
+    "relationships": [
+      "`classes.id -> class_feature_settings.class_id` (**FK relationship**)",
+      "`classes.id -> class_extension_settings.class_id` (**FK relationship**)",
+      "`classes.id -> class_invites.class_id` (**FK relationship**)",
+      "`classes.id -> class_visibility_preferences.class_id` (**FK relationship**)",
+      "`classes.id -> class_materials.class_id` (**FK relationship**)",
+      "`classes.id -> class_messages.class_id` (**FK relationship**)",
+      "`classes.id -> class_assignments.class_id` (**FK relationship**)",
+      "`classes.id -> class_assignment_files.class_id` (**FK relationship**)",
+      "`classes.id -> class_assignment_submissions.class_id` (**FK relationship**)",
+      "`classes.id -> class_live_sessions.class_id` (**FK relationship**)",
+      "`classes.id -> exams.class_id` (**FK relationship**)",
+      "`classes.id -> exam_attempts.class_id` (**FK relationship**)",
+      "`classes.id -> notifications.class_id` (**FK relationship**)",
+      "`classes.organization_id -> organizations.id` (**logical relationship**)",
+      "`classes.teacher_user_id -> profiles.id` (**logical relationship**)",
+      "`classes.id <- class_memberships.class_id` (**logical relationship**)"
+    ],
+    "purpose": [
+      "Core class/course record owned by an organization."
+    ]
+  },
+  {
+    "heading": "`public.class_memberships`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`user_id`",
+      "`role`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id` is used as the canonical row identifier in current code; original base DDL is not present in repo."
+    ],
+    "foreignKeys": [
+      "Direct base-table FK declarations are not visible in the checked-in base DDL slice."
+    ],
+    "enumStatus": [
+      "`role` is a class-level role field.",
+      "Current code and permission checks confirm `teacher`, `student`, and `ta` usage."
+    ],
+    "notes": [
+      "Later migrations enforce one active teacher row per class through a partial unique index on `class_id where role = 'teacher'`.",
+      "Current admin routes restrict roster management workflows to org admins, but some general manager checks still treat `teacher`/`ta` as class managers."
+    ],
+    "relationships": [
+      "`class_memberships.organization_id -> organizations.id` (**logical relationship**)",
+      "`class_memberships.class_id -> classes.id` (**logical relationship**)",
+      "`class_memberships.user_id -> profiles/auth identity` (**logical relationship**)"
+    ],
+    "purpose": [
+      "Class-level membership/roster rows."
+    ]
+  },
+  {
+    "heading": "`public.class_invites`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`email`",
+      "`role`",
+      "`organization_invite_id`",
+      "`invited_by_user_id`",
+      "`status`",
+      "`previous_grade_payload`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`organization_invite_id -> organization_invites.id`",
+      "`invited_by_user_id -> auth.users.id`"
+    ],
+    "enumStatus": [
+      "`role` uses `public.class_membership_role`",
+      "`status` uses `public.membership_status`"
+    ],
+    "notes": [
+      "`previous_grade_payload` is the current pending-storage mechanism for importing previous-term student grades during invite acceptance."
+    ],
+    "relationships": [
+      "`organizations.id -> class_invites.organization_id` (**FK relationship**)",
+      "`classes.id -> class_invites.class_id` (**FK relationship**)",
+      "`organization_invites.id -> class_invites.organization_invite_id` (**FK relationship**)",
+      "`auth.users.id -> class_invites.invited_by_user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Pending or activated class-level invite rows, optionally linked to an organization invite."
+    ]
+  },
+  {
+    "heading": "`public.class_visibility_preferences`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`user_id`",
+      "`hidden`",
+      "`hidden_at`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`user_id -> auth.users.id`"
+    ],
+    "enumStatus": [],
+    "notes": [
+      "This is a user-preference table, not a roster/history table."
+    ],
+    "relationships": [
+      "`organizations.id -> class_visibility_preferences.organization_id` (**FK relationship**)",
+      "`classes.id -> class_visibility_preferences.class_id` (**FK relationship**)",
+      "`auth.users.id -> class_visibility_preferences.user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Per-student hide/show preferences for organization-visible classes."
+    ]
+  },
+  {
+    "heading": "`public.organization_join_links`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`purpose`",
+      "`token`",
+      "`default_role`",
+      "`enabled`",
+      "`approval_required`",
+      "`max_uses`",
+      "`use_count`",
+      "`expires_at`",
+      "`created_by_user_id`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`created_by_user_id -> auth.users.id`"
+    ],
+    "enumStatus": [
+      "`default_role` uses `public.app_role`, constrained to teacher/student"
+    ],
+    "notes": [
+      "Older one-link-per-organization behavior was removed; multiple links are now supported, and `purpose` is part of the model."
+    ],
+    "relationships": [
+      "`organizations.id -> organization_join_links.organization_id` (**FK relationship**)",
+      "`auth.users.id -> organization_join_links.created_by_user_id` (**FK relationship**)",
+      "`organization_join_links.id -> organization_join_requests.join_link_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Public or semi-public organization join URLs/tokens."
+    ]
+  },
+  {
+    "heading": "`public.organization_join_requests`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`join_link_id`",
+      "`user_id`",
+      "`requested_role`",
+      "`status`",
+      "`reviewed_by_user_id`",
+      "`reviewed_at`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`join_link_id -> organization_join_links.id`",
+      "`user_id -> auth.users.id`",
+      "`reviewed_by_user_id -> auth.users.id`"
+    ],
+    "enumStatus": [
+      "`requested_role` uses `public.app_role`, constrained to teacher/student",
+      "`status` is checked to `pending`, `approved`, `rejected`"
+    ],
+    "notes": [],
+    "relationships": [
+      "`organizations.id -> organization_join_requests.organization_id` (**FK relationship**)",
+      "`organization_join_links.id -> organization_join_requests.join_link_id` (**FK relationship**)",
+      "`auth.users.id -> organization_join_requests.user_id` (**FK relationship**)",
+      "`auth.users.id -> organization_join_requests.reviewed_by_user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Pending/approved/rejected approval workflow for public join links."
+    ]
+  },
+  {
+    "heading": "`public.class_materials`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`uploaded_by_user_id`",
+      "`title`",
+      "`description`",
+      "`type`",
+      "`source`",
+      "`chat_message_id`",
+      "`storage_bucket`",
+      "`storage_key`",
+      "`original_filename`",
+      "`mime_type`",
+      "`size_bytes`",
+      "`ai_summary`",
+      "`ai_summary_used_file_text`",
+      "`ai_summary_generated_at`",
+      "`ai_extracted_content`",
+      "`ai_extracted_content_used_file_content`",
+      "`ai_extracted_content_generated_at`",
+      "`deleted_at`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`uploaded_by_user_id -> profiles.id`",
+      "`chat_message_id -> class_messages.id`"
+    ],
+    "enumStatus": [
+      "`type` uses enum `public.class_material_type`: `image`, `pdf`, `video`, `slide`",
+      "`source` uses enum `public.class_material_source`: `manual`, `chat`"
+    ],
+    "notes": [
+      "File storage is backed by AWS S3 (`AWS_S3_BUCKET`, signed URLs), not by a dedicated database storage table and not by Supabase Storage metadata in this repo."
+    ],
+    "relationships": [
+      "`organizations.id -> class_materials.organization_id` (**FK relationship**)",
+      "`classes.id -> class_materials.class_id` (**FK relationship**)",
+      "`profiles.id -> class_materials.uploaded_by_user_id` (**FK relationship**)",
+      "`class_messages.id -> class_materials.chat_message_id` (**FK relationship**)",
+      "`class_messages.material_id -> class_materials.id` (**FK relationship**, reverse optional link)"
+    ],
+    "purpose": [
+      "Persisted learning materials and chat-linked media files for a class."
+    ]
+  },
+  {
+    "heading": "`public.class_messages`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`sender_user_id`",
+      "`sender_role`",
+      "`content`",
+      "`kind`",
+      "`material_id`",
+      "`media_title`",
+      "`original_filename`",
+      "`mime_type`",
+      "`size_bytes`",
+      "`material_type`",
+      "`show_in_announcement_carousel`",
+      "`created_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`sender_user_id -> profiles.id`",
+      "`material_id -> class_materials.id`"
+    ],
+    "enumStatus": [
+      "`kind` uses enum `public.class_message_kind`: `text`, `announcement`, `media`",
+      "`sender_role` is checked to `student`, `teacher`, `admin`"
+    ],
+    "notes": [
+      "There is no separate announcements table."
+    ],
+    "relationships": [
+      "`organizations.id -> class_messages.organization_id` (**FK relationship**)",
+      "`classes.id -> class_messages.class_id` (**FK relationship**)",
+      "`profiles.id -> class_messages.sender_user_id` (**FK relationship**)",
+      "`class_materials.id -> class_messages.material_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Class chat, announcements, and chat-media message records."
+    ]
+  },
+  {
+    "heading": "`public.class_assignments`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`created_by_user_id`",
+      "`title`",
+      "`description`",
+      "`due_at`",
+      "`max_score`",
+      "`status`",
+      "`allow_late_submissions`",
+      "`allow_text_submission`",
+      "`allow_file_submission`",
+      "`created_at`",
+      "`updated_at`",
+      "`deleted_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`created_by_user_id -> profiles.id`"
+    ],
+    "enumStatus": [
+      "`status` is checked to `draft`, `published`"
+    ],
+    "notes": [
+      "Soft delete is modeled via `deleted_at`; there is no separate archive table."
+    ],
+    "relationships": [
+      "`organizations.id -> class_assignments.organization_id` (**FK relationship**)",
+      "`classes.id -> class_assignments.class_id` (**FK relationship**)",
+      "`profiles.id -> class_assignments.created_by_user_id` (**FK relationship**)",
+      "`class_assignments.id -> class_assignment_files.assignment_id` (**FK relationship**)",
+      "`class_assignments.id -> class_assignment_submissions.assignment_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Assignment definitions for a class."
+    ]
+  },
+  {
+    "heading": "`public.class_assignment_files`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`assignment_id`",
+      "`uploaded_by_user_id`",
+      "`storage_bucket`",
+      "`storage_key`",
+      "`original_filename`",
+      "`mime_type`",
+      "`size_bytes`",
+      "`created_at`",
+      "`deleted_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`assignment_id -> class_assignments.id`",
+      "`uploaded_by_user_id -> profiles.id`"
+    ],
+    "enumStatus": [],
+    "notes": [
+      "Files are stored in AWS S3; the table stores object references only."
+    ],
+    "relationships": [
+      "`organizations.id -> class_assignment_files.organization_id` (**FK relationship**)",
+      "`classes.id -> class_assignment_files.class_id` (**FK relationship**)",
+      "`class_assignments.id -> class_assignment_files.assignment_id` (**FK relationship**)",
+      "`profiles.id -> class_assignment_files.uploaded_by_user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Prompt/supporting files attached to assignments."
+    ]
+  },
+  {
+    "heading": "`public.class_assignment_submissions`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`assignment_id`",
+      "`student_user_id`",
+      "`text_response`",
+      "`file_storage_bucket`",
+      "`file_storage_key`",
+      "`file_original_filename`",
+      "`file_mime_type`",
+      "`file_size_bytes`",
+      "`submitted_at`",
+      "`is_late`",
+      "`score`",
+      "`feedback`",
+      "`graded_at`",
+      "`graded_by_user_id`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`assignment_id -> class_assignments.id`",
+      "`student_user_id -> profiles.id`",
+      "`graded_by_user_id -> profiles.id`"
+    ],
+    "enumStatus": [],
+    "notes": [
+      "This table stores assignment grades directly; there is no separate assignment-results table.",
+      "Imported previous-term grades are currently materialized here via helper RPCs."
+    ],
+    "relationships": [
+      "`organizations.id -> class_assignment_submissions.organization_id` (**FK relationship**)",
+      "`classes.id -> class_assignment_submissions.class_id` (**FK relationship**)",
+      "`class_assignments.id -> class_assignment_submissions.assignment_id` (**FK relationship**)",
+      "`profiles.id -> class_assignment_submissions.student_user_id` (**FK relationship**)",
+      "`profiles.id -> class_assignment_submissions.graded_by_user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Student submissions and assignment grading records."
+    ]
+  },
+  {
+    "heading": "`public.notifications`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`recipient_user_id`",
+      "`recipient_role`",
+      "`actor_user_id`",
+      "`type`",
+      "`title`",
+      "`body`",
+      "`href`",
+      "`metadata`",
+      "`event_key`",
+      "`read_at`",
+      "`created_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`recipient_user_id -> profiles.id`",
+      "`actor_user_id -> profiles.id`"
+    ],
+    "enumStatus": [
+      "`type` uses enum `public.notification_type` with current values:"
+    ],
+    "notes": [
+      "Role-scoped notifications are a major current-schema change versus earlier simpler inbox logic."
+    ],
+    "relationships": [
+      "`organizations.id -> notifications.organization_id` (**FK relationship**)",
+      "`classes.id -> notifications.class_id` (**FK relationship**)",
+      "`profiles.id -> notifications.recipient_user_id` (**FK relationship**)",
+      "`profiles.id -> notifications.actor_user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "User notification inbox records."
+    ]
+  },
+  {
+    "heading": "`public.exams`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`title`",
+      "`duration_minutes`",
+      "`total_points`",
+      "`start_at`",
+      "`end_at`",
+      "`status`",
+      "`created_by_user_id`",
+      "`published_at`",
+      "`passcode_hash`",
+      "`rules_override_json`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`created_by_user_id -> auth.users.id`"
+    ],
+    "enumStatus": [
+      "`status` uses enum `public.exam_status`: `upcoming`, `live`, `ended`"
+    ],
+    "notes": [
+      "Even though class members can read published exam headers directly, student attempt/question workflows are primarily mediated through server-side service code."
+    ],
+    "relationships": [
+      "`organizations.id -> exams.organization_id` (**FK relationship**)",
+      "`classes.id -> exams.class_id` (**FK relationship**)",
+      "`auth.users.id -> exams.created_by_user_id` (**FK relationship**)",
+      "`exams.id -> exam_questions.exam_id` (**FK relationship**)",
+      "`exams.id -> exam_attempts.exam_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Exam header/definition rows for a class."
+    ]
+  },
+  {
+    "heading": "`public.exam_questions`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`exam_id`",
+      "`position`",
+      "`question_type`",
+      "`prompt`",
+      "`options_json`",
+      "`correct_answer_json`",
+      "`points`",
+      "`language`",
+      "`starter_code`",
+      "`visible_tests_json`",
+      "`hidden_tests_json`",
+      "`evaluator_key`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`exam_id -> exams.id`"
+    ],
+    "enumStatus": [
+      "`question_type` uses enum `public.exam_question_kind`: `mcq`, `short`, `code`"
+    ],
+    "notes": [
+      "The current TypeScript student-facing types only expose `mcq` and `short`, but the database schema still includes `code` as a real question kind."
+    ],
+    "relationships": [
+      "`organizations.id -> exam_questions.organization_id` (**FK relationship**)",
+      "`exams.id -> exam_questions.exam_id` (**FK relationship**)",
+      "`exam_questions.id -> exam_answers.exam_question_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Question rows belonging to one exam."
+    ]
+  },
+  {
+    "heading": "`public.exam_attempts`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`exam_id`",
+      "`student_user_id`",
+      "`status`",
+      "`started_at`",
+      "`submitted_at`",
+      "`total_score`",
+      "`attempt_number`",
+      "`deadline_at`",
+      "`rules_snapshot_json`",
+      "`needs_manual_review`",
+      "`auto_submitted_at`",
+      "`integrity_status`",
+      "`flagged_at`",
+      "`flagged_by_user_id`",
+      "`flag_reason`",
+      "`voided_at`",
+      "`voided_by_user_id`",
+      "`void_reason`",
+      "`graded_at`",
+      "`graded_by_user_id`",
+      "`results_released_at`",
+      "`results_released_by_user_id`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`exam_id -> exams.id`",
+      "`student_user_id -> auth.users.id`",
+      "`flagged_by_user_id -> auth.users.id`",
+      "`voided_by_user_id -> auth.users.id`",
+      "`graded_by_user_id -> auth.users.id`",
+      "`results_released_by_user_id -> auth.users.id`"
+    ],
+    "enumStatus": [
+      "`status` uses enum `public.exam_attempt_status`: `in_progress`, `submitted`, `graded`, `voided`",
+      "`integrity_status` is text checked to `clear`, `reported`, `flagged`, `voided`"
+    ],
+    "notes": [
+      "This table stores exam-level grade aggregates directly.",
+      "Retake history and integrity event streams are not stored here as separate child tables; they are recorded in `audit_logs`."
+    ],
+    "relationships": [
+      "`organizations.id -> exam_attempts.organization_id` (**FK relationship**)",
+      "`classes.id -> exam_attempts.class_id` (**FK relationship**)",
+      "`exams.id -> exam_attempts.exam_id` (**FK relationship**)",
+      "`auth.users.id -> exam_attempts.student_user_id` (**FK relationship**)",
+      "`exam_attempts.id -> exam_answers.exam_attempt_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Per-student exam attempt records and exam result-release state."
+    ]
+  },
+  {
+    "heading": "`public.exam_answers`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`exam_attempt_id`",
+      "`exam_question_id`",
+      "`answer_json`",
+      "`auto_score`",
+      "`teacher_score`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`exam_attempt_id -> exam_attempts.id`",
+      "`exam_question_id -> exam_questions.id`"
+    ],
+    "enumStatus": [],
+    "notes": [
+      "There is no separate answer-review table; teacher scoring lives directly here."
+    ],
+    "relationships": [
+      "`organizations.id -> exam_answers.organization_id` (**FK relationship**)",
+      "`exam_attempts.id -> exam_answers.exam_attempt_id` (**FK relationship**)",
+      "`exam_questions.id -> exam_answers.exam_question_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Per-question answer rows within an attempt."
+    ]
+  },
+  {
+    "heading": "`public.class_live_sessions`",
+    "keyColumns": [
+      "`id`",
+      "`organization_id`",
+      "`class_id`",
+      "`room_name`",
+      "`live_session_id`",
+      "`started_by_user_id`",
+      "`status`",
+      "`started_at`",
+      "`last_seen_at`",
+      "`ended_at`",
+      "`created_at`",
+      "`updated_at`"
+    ],
+    "primaryKey": [
+      "`id`"
+    ],
+    "foreignKeys": [
+      "`organization_id -> organizations.id`",
+      "`class_id -> classes.id`",
+      "`started_by_user_id -> profiles.id`"
+    ],
+    "enumStatus": [
+      "`status` is text currently checked to `pending`, `live`, `ended`"
+    ],
+    "notes": [
+      "The database only tracks session lifecycle metadata.",
+      "Whiteboard operations and participant media state are not stored in dedicated database tables."
+    ],
+    "relationships": [
+      "`organizations.id -> class_live_sessions.organization_id` (**FK relationship**)",
+      "`classes.id -> class_live_sessions.class_id` (**FK relationship**)",
+      "`profiles.id -> class_live_sessions.started_by_user_id` (**FK relationship**)"
+    ],
+    "purpose": [
+      "Session state/header table for one live class session per class."
+    ]
+  },
+  {
+    "heading": "`public.audit_logs`",
+    "keyColumns": [],
+    "primaryKey": [
+      "Not directly verifiable from the checked-in repo slice."
+    ],
+    "foreignKeys": [
+      "No visible base-table DDL in the repo slice."
+    ],
+    "enumStatus": [],
+    "notes": [
+      "Exam integrity events and retake grant history are currently implemented through this table instead of dedicated child tables."
+    ],
+    "relationships": [
+      "`audit_logs.organization_id -> organizations.id` (**logical relationship**)",
+      "`audit_logs.actor_user_id -> auth.users.id` (**logical relationship**)",
+      "`audit_logs.entity_id` is a **polymorphic logical relationship** to many different entities, including organization memberships, invites, classes, join requests/links, exams, and exam attempts."
+    ],
+    "purpose": [
+      "Cross-cutting audit/event log table used across organizations, invites, classes, join flows, and exams."
+    ]
+  },
+  {
+    "heading": "External table: `auth.users`",
+    "keyColumns": [],
+    "primaryKey": [],
+    "foreignKeys": [],
+    "enumStatus": [],
+    "notes": [
+      "`profiles.id` behaves as the app-facing identity mirror of `auth.users.id`, but that base relationship is only code-visible in this repository snapshot."
+    ],
+    "relationships": [],
+    "purpose": [
+      "Supabase authentication user table referenced by many Eduverse tables."
+    ]
+  }
+]

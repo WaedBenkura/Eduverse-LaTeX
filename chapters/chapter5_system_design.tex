@@ -1,21 +1,625 @@
-\chapter{System Design}\label{chap:system_design}
+\chapterwithopening{System Design}{chap:system_design}{
+  \chaptercontentsitem{sec:system_design_introduction}
+  \chaptercontentsitem{sec:architectural_design_overview}
+  \chaptercontentsitem{sec:data_and_storage_design}
+  \chaptercontentsitem{sec:interface_and_interaction_design}
+  \chaptercontentsitem{sec:integration_and_security_design}
+}
 
-\noindent\textit{TODO: This chapter outline is reserved for a later
-documentation step.}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
-% TODO: Develop this chapter after the system analysis chapter is finalized.
+\newcommand{\EduSchemaTableStart}[1]{%
+  \begingroup
+  \footnotesize
+  \renewcommand{\arraystretch}{1.14}%
+  \setlength{\tabcolsep}{4pt}%
+  \begin{longtable}{|L{0.28\textwidth}|L{0.18\textwidth}|L{0.46\textwidth}|}
+    \caption{Schema for Table: \db{#1}} \\
+    \hline
+    \textbf{Column} & \textbf{Type} & \textbf{Attributes} \\
+    \hline
+    \endfirsthead
+    \hline
+    \textbf{Column} & \textbf{Type} & \textbf{Attributes} \\
+    \hline
+    \endhead
+    \hline
+    \multicolumn{3}{r}{\small\textit{Continued on the next page}} \\
+    \endfoot
+    \hline
+    \endlastfoot
+}
+
+\newcommand{\EduSchemaRow}[3]{%
+  \db{#1} & #2 & #3 \\
+  \hline
+}
+
+\newcommand{\EduSchemaNote}[1]{%
+  \multicolumn{3}{|L{0.92\textwidth}|}{\textit{#1}} \\
+  \hline
+}
+
+\newcommand{\EduSchemaTableEnd}{%
+  \end{longtable}
+  \endgroup
+}
 
 \section{Introduction}\label{sec:system_design_introduction}
-% TODO: Introduce the design chapter.
+
+This chapter presents the system design perspective of Eduverse. In the
+current revision, the chapter is intentionally focused on the database design
+because the verified schema, regenerated ERD, and supporting database notes
+are sufficiently stable to document in an academic manner. The remaining
+design sections are retained to preserve the full chapter structure and will
+be expanded in later documentation passes.
 
 \section{Architectural Design Overview}\label{sec:architectural_design_overview}
-% TODO: Present the high-level architecture of Eduverse.
+
+At a high level, Eduverse combines a web-based learning environment with a
+mobile companion scope, a Supabase-backed PostgreSQL database, AWS S3-backed
+file references for uploaded academic content, and LiveKit-related session
+metadata for synchronous learning. A fuller component-level architectural
+description is reserved for a later revision, while the present section
+establishes the context for the detailed data design discussed in
+Section~\ref{sec:data_and_storage_design}.
 
 \section{Data and Storage Design}\label{sec:data_and_storage_design}
-% TODO: Document the logical data design and storage strategy.
+
+This section documents the current verified database design of Eduverse,
+including the schema overview, the ERD, the physical schema tables derived
+from the latest analysis notes, and the main uncertainty caused by missing
+base-table DDL in part of the checked-in migration history.
+
+\subsection{Database Design Overview}\label{subsec:database_design_overview}
+
+Eduverse uses a Supabase-managed PostgreSQL database as the main persistent
+store for organizational, academic, and operational records. The schema
+follows a multi-organization structure in which the organization acts as the
+top-level tenant, while the class operates as the main instructional
+workspace. Within this arrangement, organization membership is modeled
+separately from class membership so that role selection, invitation flows,
+public join access, class rosters, and archived past-term history can evolve
+without being collapsed into one table.
+
+The current schema persists learning content through class materials,
+chat-linked media records, assignments, assignment attachments, and
+assignment submissions. Formal assessment is represented through exams, exam
+questions, attempts, and answers, with released results stored directly on
+assignment submission records and on exam attempt or answer records rather
+than in separate results tables. Announcements are represented through
+\db{class_messages}, AI persistence is limited to feature settings and
+cached material summary or extracted-content fields, and the database does
+not include dedicated tables for IDE workspace state or whiteboard state.
+
+\subsection{Entity Relationship Diagram (ERD)}\label{subsec:entity_relationship_diagram}
+
+Figure~\ref{fig:eduverse_database_erd} presents the current Eduverse database
+ERD derived from the latest checked-in schema evidence and summarizes the
+main organization, class, content, assessment, and operational relationships
+within the platform.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[
+    page=1,
+    angle=0,
+    width=\textwidth,
+    height=0.90\textheight,
+    keepaspectratio
+  ]{figures/chapter5/database-erd.pdf}
+  \caption{Entity Relationship Diagram of the Eduverse Database}
+  \label{fig:eduverse_database_erd}
+\end{figure}
+
+\clearpage
+
+\subsection{Database Tables}\label{subsec:database_tables}
+
+The following schema tables present the real Eduverse database tables on
+normal portrait thesis pages. Column names, primary keys, foreign keys,
+logical relationships, enum or status fields, and essential notes are taken
+from \db{database-analysis.md}; where exact SQL types are not directly
+visible, conservative generic types are used.
+
+\subsubsection*{Core Multi-Organization and User Model}
+
+\EduSchemaTableStart{organizations}
+\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{slug}{\db{text}}{Organization slug.}
+\EduSchemaRow{name}{\db{text}}{Organization display name.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{profiles}
+\EduSchemaRow{id}{\db{uuid}}{PK; logical identity mirror of \db{auth.users.id}.}
+\EduSchemaRow{email}{\db{text}}{Profile email address.}
+\EduSchemaRow{display_name}{\db{text}}{Visible user name.}
+\EduSchemaRow{default_organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Profile update timestamp.}
+\EduSchemaTableEnd
+
+\subsubsection*{Roles, Memberships, Invitations, and Public Join Access}
+
+\EduSchemaTableStart{organization_memberships}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{user_id}{\db{uuid}}{Logical relationship to the profile or auth identity.}
+\EduSchemaRow{role}{\db{public.app_role}}{Role enum.}
+\EduSchemaRow{status}{\db{public.membership_status}}{Membership status enum.}
+\EduSchemaRow{selected_role_id}{\db{uuid}}{\db{FK to organization_membership_roles.id}.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_membership_roles}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_membership_id}{\db{uuid}}{\db{FK to organization_memberships.id}.}
+\EduSchemaRow{role}{\db{public.app_role}}{Role enum.}
+\EduSchemaRow{status}{\db{public.membership_status}}{Membership status enum.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_invites}
+\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{email}{\db{text}}{Invite target email.}
+\EduSchemaRow{role}{\db{public.app_role}}{Role enum.}
+\EduSchemaRow{invited_by_user_id}{\db{uuid}}{Logical relationship to \db{auth.users.id}.}
+\EduSchemaRow{token}{\db{text}}{Invite token.}
+\EduSchemaRow{status}{\db{text}}{Membership-like status field; exact base type is not directly visible.}
+\EduSchemaRow{expires_at}{\db{timestamp}}{Invite expiry timestamp.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_settings}
+\EduSchemaRow{organization_id}{\db{uuid}}{PK; \db{FK to organizations.id}.}
+\EduSchemaRow{public_features_enabled}{\db{boolean}}{Public-feature availability flag.}
+\EduSchemaRow{public_features_locked_disabled}{\db{boolean}}{Preset lock flag for disabled public features.}
+\EduSchemaRow{all_teachers_can_create_classes}{\db{boolean}}{Teacher class-creation permission flag.}
+\EduSchemaRow{all_teachers_can_manage_own_classes}{\db{boolean}}{Teacher class self-management permission flag.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_teacher_class_permissions}
+\EduSchemaRow{organization_id}{\db{uuid}}{Composite PK; \db{FK to organizations.id}.}
+\EduSchemaRow{teacher_user_id}{\db{uuid}}{Composite PK; \db{FK to profiles.id}.}
+\EduSchemaRow{can_create_classes}{\db{boolean}}{Teacher override flag for class creation.}
+\EduSchemaRow{can_manage_own_classes}{\db{boolean}}{Teacher override flag for managing owned classes.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_join_links}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{purpose}{\db{text}}{Join-link purpose descriptor.}
+\EduSchemaRow{token}{\db{text}}{Join token.}
+\EduSchemaRow{default_role}{\db{public.app_role}}{Default role enum, constrained to teacher or student.}
+\EduSchemaRow{enabled}{\db{boolean}}{Link availability flag.}
+\EduSchemaRow{approval_required}{\db{boolean}}{Approval workflow flag.}
+\EduSchemaRow{max_uses}{\db{integer}}{Optional usage limit.}
+\EduSchemaRow{use_count}{\db{integer}}{Current usage counter.}
+\EduSchemaRow{expires_at}{\db{timestamp}}{Link expiry timestamp.}
+\EduSchemaRow{created_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_join_requests}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{join_link_id}{\db{uuid}}{\db{FK to organization_join_links.id}.}
+\EduSchemaRow{user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{requested_role}{\db{public.app_role}}{Requested role enum.}
+\EduSchemaRow{status}{\db{text}}{Status text; current values include \db{pending}, \db{approved}, and \db{rejected}.}
+\EduSchemaRow{reviewed_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{reviewed_at}{\db{timestamp}}{Review timestamp.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_invites}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{email}{\db{text}}{Invite target email.}
+\EduSchemaRow{role}{\db{public.class_membership_role}}{Class membership role enum.}
+\EduSchemaRow{organization_invite_id}{\db{uuid}}{\db{FK to organization_invites.id}.}
+\EduSchemaRow{invited_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{status}{\db{public.membership_status}}{Membership status enum.}
+\EduSchemaRow{previous_grade_payload}{\db{json/jsonb}}{Imported previous-term grade payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\subsubsection*{Classes and Class Visibility}
+
+\EduSchemaTableStart{classes}
+\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{name}{\db{text}}{Class name.}
+\EduSchemaRow{code}{\db{text}}{Class code.}
+\EduSchemaRow{teacher_user_id}{\db{uuid}}{Logical relationship to \db{profiles.id}.}
+\EduSchemaRow{color}{\db{text}}{Class color identifier.}
+\EduSchemaRow{description}{\db{text}}{Class description.}
+\EduSchemaRow{room}{\db{text}}{Room or location field.}
+\EduSchemaRow{semester}{\db{text}}{Required semester text.}
+\EduSchemaRow{stage}{\db{text}}{Required stage text.}
+\EduSchemaRow{organization_visible}{\db{boolean}}{Organization-wide visibility flag.}
+\EduSchemaRow{results_visible_to_students}{\db{boolean}}{Student results visibility flag.}
+\EduSchemaRow{teacher_can_toggle_results_visibility}{\db{boolean}}{Teacher permission flag for results visibility.}
+\EduSchemaRow{is_archived}{\db{boolean}}{Archive lifecycle flag.}
+\EduSchemaRow{ended_at}{\db{timestamp}}{Class end timestamp.}
+\EduSchemaRow{ended_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{archived_edited_at}{\db{timestamp}}{Archived-state edit timestamp.}
+\EduSchemaRow{archived_edited_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_memberships}
+\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{Logical relationship to \db{classes.id}.}
+\EduSchemaRow{user_id}{\db{uuid}}{Logical relationship to the profile or auth identity.}
+\EduSchemaRow{role}{\db{text}}{Class-level role field; current values include \db{teacher}, \db{student}, and \db{ta}.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_visibility_preferences}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{hidden}{\db{boolean}}{Student hide or show flag.}
+\EduSchemaRow{hidden_at}{\db{timestamp}}{Hide timestamp.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\subsubsection*{Feature Flags and Extensions}
+
+\EduSchemaTableStart{feature_definitions}
+\EduSchemaRow{key}{\db{text}}{PK.}
+\EduSchemaRow{label}{\db{text}}{Feature label.}
+\EduSchemaRow{description}{\db{text}}{Feature description.}
+\EduSchemaRow{parent_key}{\db{text}}{\db{FK to feature_definitions.key}.}
+\EduSchemaRow{kind}{\db{public.feature_kind}}{Feature kind enum.}
+\EduSchemaRow{route_segment}{\db{text}}{Navigation route segment.}
+\EduSchemaRow{default_enabled}{\db{boolean}}{Default enablement flag.}
+\EduSchemaRow{is_system}{\db{boolean}}{System-managed feature flag.}
+\EduSchemaRow{sort_order}{\db{integer}}{Display ordering value.}
+\EduSchemaRow{metadata}{\db{json/jsonb}}{Feature metadata payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{feature_presets}
+\EduSchemaRow{key}{\db{text}}{PK.}
+\EduSchemaRow{name}{\db{text}}{Preset name.}
+\EduSchemaRow{description}{\db{text}}{Preset description.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{feature_preset_items}
+\EduSchemaRow{preset_key}{\db{text}}{Composite PK; \db{FK to feature_presets.key}.}
+\EduSchemaRow{feature_key}{\db{text}}{Composite PK; \db{FK to feature_definitions.key}.}
+\EduSchemaRow{enabled}{\db{boolean}}{Preset enablement flag.}
+\EduSchemaRow{config}{\db{json/jsonb}}{Preset configuration payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_feature_settings}
+\EduSchemaRow{organization_id}{\db{uuid}}{Composite PK; \db{FK to organizations.id}.}
+\EduSchemaRow{feature_key}{\db{text}}{Composite PK; \db{FK to feature_definitions.key}.}
+\EduSchemaRow{enabled}{\db{boolean}}{Organization-level feature flag.}
+\EduSchemaRow{config}{\db{json/jsonb}}{Configuration payload; may store lock metadata.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_feature_settings}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{Composite PK; \db{FK to classes.id}.}
+\EduSchemaRow{feature_key}{\db{text}}{Composite PK; \db{FK to feature_definitions.key}.}
+\EduSchemaRow{enabled}{\db{boolean}}{Class-level feature flag.}
+\EduSchemaRow{config}{\db{json/jsonb}}{Class configuration payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{organization_extensions}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{name}{\db{text}}{Extension name.}
+\EduSchemaRow{slug}{\db{text}}{Extension slug.}
+\EduSchemaRow{description}{\db{text}}{Extension description.}
+\EduSchemaRow{launch_url}{\db{text}}{Extension launch URL.}
+\EduSchemaRow{enabled}{\db{boolean}}{Extension enablement flag.}
+\EduSchemaRow{sort_order}{\db{integer}}{Display ordering value.}
+\EduSchemaRow{config}{\db{json/jsonb}}{Extension configuration payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_extension_settings}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{Composite PK; \db{FK to classes.id}.}
+\EduSchemaRow{extension_id}{\db{uuid}}{Composite PK; \db{FK to organization_extensions.id}.}
+\EduSchemaRow{enabled}{\db{boolean}}{Class-level extension enablement flag.}
+\EduSchemaRow{config}{\db{json/jsonb}}{Class-level extension configuration payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\subsubsection*{Materials, Chat, and Announcements}
+
+\EduSchemaTableStart{class_materials}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{uploaded_by_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{title}{\db{text}}{Material title.}
+\EduSchemaRow{description}{\db{text}}{Material description.}
+\EduSchemaRow{type}{\db{public.class_material_type}}{Material type enum.}
+\EduSchemaRow{source}{\db{public.class_material_source}}{Source enum; chat-linked media is represented here rather than in a separate media table.}
+\EduSchemaRow{chat_message_id}{\db{uuid}}{\db{FK to class_messages.id}.}
+\EduSchemaRow{storage_bucket}{\db{text}}{AWS S3 bucket reference.}
+\EduSchemaRow{storage_key}{\db{text}}{AWS S3 object key reference.}
+\EduSchemaRow{original_filename}{\db{text}}{Original uploaded file name.}
+\EduSchemaRow{mime_type}{\db{text}}{Uploaded file MIME type.}
+\EduSchemaRow{size_bytes}{\db{integer}}{Stored file size.}
+\EduSchemaRow{ai_summary}{\db{text}}{Cached AI summary text; no separate AI history table is used.}
+\EduSchemaRow{ai_summary_used_file_text}{\db{boolean}}{Flag indicating whether file text was used to generate the cached AI summary.}
+\EduSchemaRow{ai_summary_generated_at}{\db{timestamp}}{AI summary generation timestamp.}
+\EduSchemaRow{ai_extracted_content}{\db{text}}{Cached extracted-content field.}
+\EduSchemaRow{ai_extracted_content_used_file_content}{\db{boolean}}{Flag indicating whether file content was used for cached extraction.}
+\EduSchemaRow{ai_extracted_content_generated_at}{\db{timestamp}}{Extracted-content generation timestamp.}
+\EduSchemaRow{deleted_at}{\db{timestamp}}{Soft-delete timestamp.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_messages}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{sender_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{sender_role}{\db{text}}{Checked text role field; current values include \db{student}, \db{teacher}, and \db{admin}.}
+\EduSchemaRow{content}{\db{text}}{Message body text.}
+\EduSchemaRow{kind}{\db{public.class_message_kind}}{Message kind enum; announcements are represented by rows where \db{kind = 'announcement'}.}
+\EduSchemaRow{material_id}{\db{uuid}}{\db{FK to class_materials.id}.}
+\EduSchemaRow{media_title}{\db{text}}{Chat-media title field.}
+\EduSchemaRow{original_filename}{\db{text}}{Original media file name.}
+\EduSchemaRow{mime_type}{\db{text}}{Media MIME type.}
+\EduSchemaRow{size_bytes}{\db{integer}}{Stored media size.}
+\EduSchemaRow{material_type}{\db{text}}{Chat-media material descriptor; exact base type is not directly visible.}
+\EduSchemaRow{show_in_announcement_carousel}{\db{boolean}}{Announcement carousel display flag.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaTableEnd
+
+\subsubsection*{Assignments and Submissions}
+
+\EduSchemaTableStart{class_assignments}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{created_by_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{title}{\db{text}}{Assignment title.}
+\EduSchemaRow{description}{\db{text}}{Assignment description.}
+\EduSchemaRow{due_at}{\db{timestamp}}{Submission due timestamp.}
+\EduSchemaRow{max_score}{\db{numeric}}{Maximum assignment score.}
+\EduSchemaRow{status}{\db{text}}{Status text; current values include \db{draft} and \db{published}.}
+\EduSchemaRow{allow_late_submissions}{\db{boolean}}{Late-submission policy flag.}
+\EduSchemaRow{allow_text_submission}{\db{boolean}}{Text-submission policy flag.}
+\EduSchemaRow{allow_file_submission}{\db{boolean}}{File-submission policy flag.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaRow{deleted_at}{\db{timestamp}}{Soft-delete timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_assignment_files}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{assignment_id}{\db{uuid}}{\db{FK to class_assignments.id}.}
+\EduSchemaRow{uploaded_by_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{storage_bucket}{\db{text}}{AWS S3 bucket reference.}
+\EduSchemaRow{storage_key}{\db{text}}{AWS S3 object key reference.}
+\EduSchemaRow{original_filename}{\db{text}}{Original attachment file name.}
+\EduSchemaRow{mime_type}{\db{text}}{Attachment MIME type.}
+\EduSchemaRow{size_bytes}{\db{integer}}{Attachment size.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{deleted_at}{\db{timestamp}}{Soft-delete timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_assignment_submissions}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{assignment_id}{\db{uuid}}{\db{FK to class_assignments.id}.}
+\EduSchemaRow{student_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{text_response}{\db{text}}{Text submission body.}
+\EduSchemaRow{file_storage_bucket}{\db{text}}{AWS S3 bucket reference for submitted files.}
+\EduSchemaRow{file_storage_key}{\db{text}}{AWS S3 object key reference for submitted files.}
+\EduSchemaRow{file_original_filename}{\db{text}}{Original submitted file name.}
+\EduSchemaRow{file_mime_type}{\db{text}}{Submitted file MIME type.}
+\EduSchemaRow{file_size_bytes}{\db{integer}}{Submitted file size.}
+\EduSchemaRow{submitted_at}{\db{timestamp}}{Submission timestamp.}
+\EduSchemaRow{is_late}{\db{boolean}}{Late-submission flag.}
+\EduSchemaRow{score}{\db{numeric}}{Stores the assignment result directly; no separate assignment-results table is used.}
+\EduSchemaRow{feedback}{\db{text}}{Grading feedback.}
+\EduSchemaRow{graded_at}{\db{timestamp}}{Grading timestamp.}
+\EduSchemaRow{graded_by_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\subsubsection*{Exams, Attempts, Answers, and Results}
+
+\EduSchemaTableStart{exams}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{title}{\db{text}}{Exam title.}
+\EduSchemaRow{duration_minutes}{\db{integer}}{Configured exam duration.}
+\EduSchemaRow{total_points}{\db{numeric}}{Total exam points.}
+\EduSchemaRow{start_at}{\db{timestamp}}{Exam start timestamp.}
+\EduSchemaRow{end_at}{\db{timestamp}}{Exam end timestamp.}
+\EduSchemaRow{status}{\db{public.exam_status}}{Exam status enum.}
+\EduSchemaRow{created_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{published_at}{\db{timestamp}}{Publish timestamp.}
+\EduSchemaRow{passcode_hash}{\db{text}}{Optional stored passcode hash.}
+\EduSchemaRow{rules_override_json}{\db{json/jsonb}}{Exam rules override payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{exam_questions}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{exam_id}{\db{uuid}}{\db{FK to exams.id}.}
+\EduSchemaRow{position}{\db{integer}}{Question ordering value.}
+\EduSchemaRow{question_type}{\db{public.exam_question_kind}}{Question type enum.}
+\EduSchemaRow{prompt}{\db{text}}{Question prompt text.}
+\EduSchemaRow{options_json}{\db{json/jsonb}}{Structured option payload.}
+\EduSchemaRow{correct_answer_json}{\db{json/jsonb}}{Structured correct-answer payload.}
+\EduSchemaRow{points}{\db{numeric}}{Question score value.}
+\EduSchemaRow{language}{\db{text}}{Question language marker.}
+\EduSchemaRow{starter_code}{\db{text}}{Starter code text for coding questions.}
+\EduSchemaRow{visible_tests_json}{\db{json/jsonb}}{Visible test payload.}
+\EduSchemaRow{hidden_tests_json}{\db{json/jsonb}}{Hidden test payload.}
+\EduSchemaRow{evaluator_key}{\db{text}}{Evaluator identifier.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{exam_attempts}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{exam_id}{\db{uuid}}{\db{FK to exams.id}.}
+\EduSchemaRow{student_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{status}{\db{public.exam_attempt_status}}{Attempt status enum.}
+\EduSchemaRow{started_at}{\db{timestamp}}{Attempt start timestamp.}
+\EduSchemaRow{submitted_at}{\db{timestamp}}{Attempt submission timestamp.}
+\EduSchemaRow{total_score}{\db{numeric}}{Stores the exam-level result directly.}
+\EduSchemaRow{attempt_number}{\db{integer}}{Retake or attempt counter.}
+\EduSchemaRow{deadline_at}{\db{timestamp}}{Effective attempt deadline.}
+\EduSchemaRow{rules_snapshot_json}{\db{json/jsonb}}{Applied rules snapshot payload.}
+\EduSchemaRow{needs_manual_review}{\db{boolean}}{Manual-review flag.}
+\EduSchemaRow{auto_submitted_at}{\db{timestamp}}{Automatic submission timestamp.}
+\EduSchemaRow{integrity_status}{\db{text}}{Integrity status text; current values include \db{clear}, \db{reported}, \db{flagged}, and \db{voided}.}
+\EduSchemaRow{flagged_at}{\db{timestamp}}{Integrity flag timestamp.}
+\EduSchemaRow{flagged_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{flag_reason}{\db{text}}{Integrity flag reason.}
+\EduSchemaRow{voided_at}{\db{timestamp}}{Void timestamp.}
+\EduSchemaRow{voided_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{void_reason}{\db{text}}{Void reason.}
+\EduSchemaRow{graded_at}{\db{timestamp}}{Grading timestamp.}
+\EduSchemaRow{graded_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{results_released_at}{\db{timestamp}}{Results-release timestamp.}
+\EduSchemaRow{results_released_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaNote{Exam integrity events and retake history are not stored in dedicated child tables; the current design records those events through \db{audit_logs}.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{exam_answers}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{exam_attempt_id}{\db{uuid}}{\db{FK to exam_attempts.id}.}
+\EduSchemaRow{exam_question_id}{\db{uuid}}{\db{FK to exam_questions.id}.}
+\EduSchemaRow{answer_json}{\db{json/jsonb}}{Stored submitted answer payload.}
+\EduSchemaRow{auto_score}{\db{numeric}}{Stores question-level auto-scoring directly.}
+\EduSchemaRow{teacher_score}{\db{numeric}}{Stores question-level teacher scoring directly.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaTableEnd
+
+\subsubsection*{Notifications and Live Sessions}
+
+\EduSchemaTableStart{notifications}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{recipient_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{recipient_role}{\db{public.app_role}}{Role-scoped notification enum field.}
+\EduSchemaRow{actor_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{type}{\db{public.notification_type}}{Notification type enum.}
+\EduSchemaRow{title}{\db{text}}{Notification title.}
+\EduSchemaRow{body}{\db{text}}{Notification body text.}
+\EduSchemaRow{href}{\db{text}}{Navigation target.}
+\EduSchemaRow{metadata}{\db{json/jsonb}}{Notification metadata payload.}
+\EduSchemaRow{event_key}{\db{text}}{Event deduplication or tracking key.}
+\EduSchemaRow{read_at}{\db{timestamp}}{Read timestamp.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{class_live_sessions}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{\db{FK to organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{\db{FK to classes.id}.}
+\EduSchemaRow{room_name}{\db{text}}{Session room name.}
+\EduSchemaRow{live_session_id}{\db{text}}{LiveKit-related session identifier.}
+\EduSchemaRow{started_by_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
+\EduSchemaRow{status}{\db{text}}{Session status text; current values include \db{pending}, \db{live}, and \db{ended}.}
+\EduSchemaRow{started_at}{\db{timestamp}}{Session start timestamp.}
+\EduSchemaRow{last_seen_at}{\db{timestamp}}{Last heartbeat timestamp.}
+\EduSchemaRow{ended_at}{\db{timestamp}}{Session end timestamp.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
+\EduSchemaNote{The database stores session lifecycle metadata only; no dedicated whiteboard-state table is used.}
+\EduSchemaTableEnd
+
+\subsubsection*{Audit Logs and External Auth References}
+
+\EduSchemaTableStart{audit_logs}
+\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{actor_user_id}{\db{uuid}}{Logical relationship to \db{auth.users.id}.}
+\EduSchemaRow{action}{\db{text}}{Audit action key.}
+\EduSchemaRow{entity_type}{\db{text}}{Polymorphic entity type discriminator.}
+\EduSchemaRow{entity_id}{not directly visible}{Polymorphic logical relationship to multiple entity tables.}
+\EduSchemaRow{payload}{\db{json/jsonb}}{Audit payload.}
+\EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
+\EduSchemaNote{The checked-in migration slice does not directly expose the primary key for this base table. The same table is also used for integrity events and retake-related audit history instead of dedicated child tables.}
+\EduSchemaTableEnd
+
+\EduSchemaTableStart{auth.users}
+\EduSchemaRow{id}{\db{uuid}}{PK; external Supabase authentication user identifier.}
+\EduSchemaNote{This external table is referenced by invite, join-link, join-request, exam, and class-lifecycle user fields in the Eduverse schema.}
+\EduSchemaTableEnd
+
+\subsection{Database Design Notes and Uncertain Relationships}
+\label{subsec:database_design_notes_uncertain}
+
+The original \db{CREATE TABLE} definitions for \db{organizations},
+\db{profiles}, \db{organization_memberships}, \db{organization_invites},
+\db{classes}, \db{class_memberships}, and \db{audit_logs} are not visible in
+the checked-in migration history. Accordingly, the schema tables above record
+only the columns and relationships confirmed by visible migrations, RPC
+logic, and active query usage, while any non-visible link is labeled as a
+logical relationship rather than an enforced foreign key.
 
 \section{Interface and Interaction Design}\label{sec:interface_and_interaction_design}
-% TODO: Present the UI/UX design structure for web and mobile clients.
+
+Detailed interface composition, screen-level interaction flows, and
+supporting screenshots are intentionally deferred in the present revision.
+This section is therefore retained as a placeholder for the later UI or UX
+documentation pass without introducing screenshots at this stage.
 
 \section{Integration and Security Design}\label{sec:integration_and_security_design}
-% TODO: Describe integrations, access control, and security-related design decisions.
+
+The broader integration and security design of Eduverse, including service
+boundaries, access-control flows, and environment-level protections, will be
+expanded in a later revision of this chapter. For the current database-focused
+pass, the most relevant design distinction is already captured in
+Section~\ref{subsec:database_design_notes_uncertain}, where enforced foreign
+keys are separated from logical relationships when the visible migration
+history is incomplete.

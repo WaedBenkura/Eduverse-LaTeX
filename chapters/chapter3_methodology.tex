@@ -2,109 +2,130 @@
   \chaptercontentsitem{sec:methodology_introduction}
   \chaptercontentsitem{sec:system_development_methodology}
   \chaptercontentsitem{sec:development_workflow_structure}
+  \chaptercontentsitem{sec:chapter3_summary}
 }
 
 \section{Introduction}\label{sec:methodology_introduction}
 
-This chapter explains the methodology adopted for planning, developing,
-validating, and refining Eduverse as a graduation project. It focuses on the
-practical development approach and workflow structure rather than on detailed
-implementation artifacts, which are discussed later in the thesis.
+Choosing a development methodology for Eduverse was not a routine decision.
+The platform's modules, including organization governance, class operation,
+learning content, assessment, communication, AI support, and integrated IDE
+support, are not independent; each depends on shared permissions, shared
+data, and the roles of the Organization Administrator, Teacher, and Student.
+A methodology that fixed requirements and structure at the outset, before
+these dependencies were understood, risked producing modules that worked in
+isolation but conflicted once integrated.
 
-Eduverse required repeated refinement because it combines the web application
-as the primary client with an MVP mobile companion, backend services,
-database migrations, role-based workflows, live sessions, AI-assisted
-features, and an IDE-based coding workspace.
+This chapter presents the methodological reasoning behind Eduverse's
+development: what approach was chosen, why it suited a multi-organization
+educational platform, and how it was applied consistently across features.
+Engineering practices and tool-specific execution are addressed separately
+in Chapter~6.
 
 \section{System Development Methodology}\label{sec:system_development_methodology}
 
-Eduverse is best described as having been developed through a hybrid
-iterative workflow with predominantly feature-based vertical slices. This
-description is more accurate than a strictly phase-based model because the
-repository evidence shows repeated feature increments rather than a simple
-sequence such as frontend first, backend later, and testing only at the end.
-After an initial prototype and project setup stage, the system progressed
-through iterative increments in which the selected module was implemented,
-reviewed, and refined in relation to the wider platform.
+Eduverse was developed using a hybrid iterative methodology with
+predominantly feature-based vertical-slice development, rather than a
+strict waterfall model in which analysis, design, implementation, and
+validation each occur once in a fixed sequence. The platform instead evolved
+through repeated increments, each centered on a meaningful academic or
+administrative capability, allowing requirements and structure to be refined
+as the relationships between modules became clearer through development.
 
-The methodology remained incremental, but it was not organized as isolated
-technical layers. When a feature required server-side behavior, permission
-updates, or data-model changes, those concerns were usually developed close
-to the same increment rather than postponed to a later project phase. Within
-this process, the web application remained the primary execution environment,
-while the mobile application was kept as an MVP companion for selected
-high-frequency academic activities.
+\subsection{Feature-Based Iterative Methodology}\label{subsec:feature_based_iterative_workflow}
 
-\subsection{Feature-Based Iterative Workflow}\label{subsec:feature_based_iterative_workflow}
+Development was organized around functional areas rather than technical
+layers. Iterations typically focused on modules such as organization
+management, class management, materials, assignments, examinations, live
+sessions, results, AI Agent support, and integrated IDE support. Within each
+iteration, the selected feature moved through recurring stages of analysis,
+design, development, and validation, with the outcome of one increment
+informing the next.
 
-Development generally proceeded through working slices organized around real
-academic or administrative workflows. Examples include organization
-management, class workflows, materials, assignments, examinations, live
-sessions, IDE support, and AI-assisted features. In many increments, the
-selected slice combined interface work with the corresponding API or server
-logic, shared domain services, and Supabase migrations when required.
+This structure also governed coordination between the web application, which
+served as the primary client, and the MVP mobile companion application.
+Because the mobile app targeted selected high-frequency academic actions
+rather than full feature parity, each iteration served as a checkpoint for
+deciding which workflows required cross-client refinement and which remained
+web-centered.
 
-This pattern allowed the project to evolve through usable increments rather
-than through disconnected partial implementations. At the same time, the
-repository evidence also shows refactoring, infrastructure work, and later
-refinements, so the methodology is most accurately described as
-predominantly feature-based rather than exclusively vertical-slice in every
-commit.
+\subsection{Vertical-Slice Development Approach}\label{subsec:vertical_slice_development_approach}
+
+A feature was generally treated as a coherent functional unit rather than
+split into isolated interface-only or backend-only stages. Depending on its
+scope, a slice could span user-interface behavior, business rules, backend
+or API behavior, permission handling, and data requirements. This suited a
+role-based platform: an action such as submitting an assignment or
+scheduling an examination cannot be understood as a user-interface concern
+alone, since it also depends on who may perform it, what rules govern it,
+and how the resulting record is stored and retrieved.
+
+This description is deliberately framed as predominantly vertical-slice
+rather than absolute. Some features required only a subset of system
+layers, while others extended across several and, in selected cases, into
+the MVP mobile companion application as well.
 
 \subsection{Justification for Methodology Selection}\label{subsec:justification_for_methodology_selection}
 
-This methodology suited Eduverse because the platform combines a
-multi-organization structure, role-based access, and diverse academic
-workflows with recurring integration between interface behavior, backend
-logic, and data constraints. A rigid linear model would have made it harder
-to adjust permissions, workflow boundaries, and feature integration as
-requirements became clearer through implementation.
+A rigid sequential methodology was a poor fit for Eduverse because the
+platform's module boundaries and dependencies were not fully knowable in
+advance; they became clear through implementation. Organization governance,
+class operation, learning content, assessment, communication, AI support,
+and integrated IDE support influence one another through shared permissions,
+shared data, and shared user context, so fixing their design before that
+interplay was understood would have risked structural rework later.
 
-It also supported continuous validation. As features evolved, the project
-needed repeated confirmation that interface behavior, backend logic,
-permissions, schema changes, and shared services remained coherent. This was
-especially important because some increments affected multiple workflows at
-the same time.
+The iterative, vertical-slice approach let the project refine permissions,
+workflows, interface behavior, and data structures incrementally, checking
+after each increment whether a feature remained coherent with the wider
+platform before expanding further. This mattered in particular because the
+Organization Administrator, Teacher, and Student each interact with related
+features from different perspectives, so role-based access and workflow
+consistency needed repeated, not one-time, validation.
 
-\section{Development Workflow Structure}\label{sec:development_workflow_structure}
+\section{Iterative Development Structure}\label{sec:development_workflow_structure}
 
-In practical terms, the workflow followed a recurring structure in which the
-team selected a feature or workflow, implemented the required slice,
-validated it, and integrated it into the main project history.
+Although development was iterative, each increment followed the same
+underlying cycle, adjusted in scope and depth to the complexity of the
+feature involved. Some increments centered mainly on the web application;
+others required supporting changes to the backend, database, permissions, or
+MVP mobile companion application. What stayed constant was not the shape of
+each iteration but the sequence it followed, moving from clarification,
+through realization and validation, to integration.
 
 \begin{table}[htbp]
   \centering
   \small
   \renewcommand{\arraystretch}{1.15}
   \setlength{\tabcolsep}{5pt}
-  \caption{Eduverse Development Workflow Structure}
-  \label{tab:eduverse_development_workflow_structure}
-  \begin{tabular}{|>{\raggedright\arraybackslash}p{0.25\textwidth}|>{\raggedright\arraybackslash}p{0.59\textwidth}|}
+  \caption{Repeated Iterative Development Structure in Eduverse}
+  \label{tab:eduverse_iterative_development_structure}
+  \begin{tabular}{|>{\raggedright\arraybackslash}p{0.27\textwidth}|>{\raggedright\arraybackslash}p{0.57\textwidth}|}
     \hline
-    \textbf{Workflow step} & \textbf{Main focus} \\
+    \textbf{Repeated phase} & \textbf{Methodological focus} \\
     \hline
-    Feature selection and scope clarification & Choose the next feature or module increment and define the user-facing workflow to be completed within the current scope. \\
+    Feature selection and scope clarification & Identify the next meaningful academic or administrative feature and define the intended workflow boundaries for the current increment. \\
     \hline
-    Slice implementation & Build the relevant interface behavior and supporting module code for the selected workflow. \\
+    Workflow and requirement analysis & Examine the target actors, conditions, information flow, constraints, and dependencies associated with the selected feature. \\
     \hline
-    Backend and domain integration & Add API routes, server logic, and shared services when the feature depends on server-owned behavior or shared rules. \\
+    Design of feature behavior and user interaction & Define how the feature should behave from the user perspective, including role-sensitive interaction, states, and decision points. \\
     \hline
-    Data-model refinement & Add Supabase migrations or policy changes when the feature changes permissions, workflow state, or stored academic records. \\
+    Feature-slice implementation & Realize the selected feature across the relevant system layers, including interface behavior, services, permissions, and data handling where the scope requires them. \\
     \hline
-    Validation & Use build, type-check, and format-check routines together with targeted tests for selected high-risk logic where such tests were available. \\
+    Validation and refinement & Review the implemented behavior against the intended workflow, resolve inconsistencies, and refine the feature before broader adoption. \\
     \hline
-    Integration & Integrate verified changes into the main project history and continue refinement through later increments when needed. \\
+    Integration into the wider platform & Connect the completed feature to the surrounding platform so it remains coherent with existing modules, shared rules, and user workflows. \\
     \hline
   \end{tabular}
 \end{table}
 
-Repository evidence also shows that build, type-check, and format-check
-validation was configured through GitHub Actions for pull requests and
-updates to the main branch. In practice, validation also included targeted
-\texttt{bun test} usage for selected higher-risk logic where such tests were
-available, together with Biome-backed formatting support. The repository does
-not support a claim of universal automated test coverage. Detailed CI/CD
-behavior, deployment setup, and broader engineering artifacts are therefore
-left for Chapter 6. Accordingly, this chapter describes the methodology as a
-controlled workflow for iterative feature integration rather than as a set of
-isolated development phases.
+\section{Chapter Summary}\label{sec:chapter3_summary}
+
+Eduverse followed an iterative, feature-based methodology with
+predominantly vertical-slice development. Through this structure, the
+project was developed in repeated increments centered on meaningful academic
+and administrative features, with each increment progressing through
+analysis, design, implementation, validation, and integration. The next
+chapters move from methodology to system analysis, system design,
+implementation, and testing, where the platform's structure and technical
+realization are presented in greater detail.
