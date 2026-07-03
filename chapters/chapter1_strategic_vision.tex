@@ -19,19 +19,19 @@ learning experience, increases administrative overhead, and weakens the
 institutional ability to manage educational workflows within one controlled
 environment.
 
-Eduverse is an integrated educational platform developed to address this
-problem through a unified, multi-organization, role-based environment. Its
-main implemented client is a web application, supported by an MVP mobile
-companion application that extends access to selected academic workflows for
-students and teachers. The platform is centered on the class as the primary
-digital workspace in which materials, assignments, examinations, results,
-notifications, live sessions, academic communication, and intelligent support
-services can be managed in a coordinated manner. Within this workspace,
-classes are organized by term and stage, can move to Past Terms when
-concluded, and preserve academic history under organization-level visibility
-and feature controls.
+EduVerse is an integrated and extensible educational platform developed to
+address this problem through a unified, multi-organization environment with
+role-aware and organization-aware control. Its main implemented client is a
+web application, supported by an MVP mobile companion application that
+extends access to selected academic workflows for students and teachers. The
+platform is centered on the class as the primary digital workspace in which
+materials, assignments, examinations, results, notifications, live sessions,
+academic communication, and intelligent support services can be managed in a
+coordinated manner. Within this workspace, classes are organized by term and
+stage, can move to Past Terms when concluded, and preserve academic history
+under organization-level visibility and feature controls.
 
-At a high level, Eduverse combines a modern web platform with supporting cloud
+At a high level, EduVerse combines a modern web platform with supporting cloud
 and real-time services in order to provide a realistic and extensible
 educational system. The web client is built using Next.js, React, TypeScript,
 Tailwind CSS, and Supabase, while the mobile companion is built using Expo,
@@ -41,14 +41,15 @@ discussion are reserved for later chapters.
 
 \section{Problem Statement}\label{sec:problem_statement}
 
-Educational institutions often manage closely related academic tasks through
+The main gap in current digital education practice is not the absence of
+educational tools, but the fragmentation of closely related workflows across
 separate systems that are not designed to operate as one coherent platform.
-Materials may be distributed through one service, communication may take place
-in another, live teaching may depend on a third platform, and assessment
-records may be maintained elsewhere. As a result, students are forced to move
-between disconnected interfaces, while teachers and administrators struggle to
-maintain consistent oversight of participation, submissions, communication, and
-evaluation.
+Class management, communication, material sharing, live meetings, whiteboards,
+programming practice, AI support, and assessment may each be available in
+some form, but they are often distributed across disconnected services.
+As a result, students, teachers, and administrators must move repeatedly
+between multiple interfaces, which reduces workflow continuity, weakens
+governance, and lowers instructional and administrative efficiency.
 
 This problem becomes more serious in institutions that must manage multiple
 organizations, classes, and user roles under different access conditions. A
@@ -69,7 +70,7 @@ one-client-for-all approach.
 
 \section{Project Motivations}\label{sec:project_motivations}
 
-The development of Eduverse is motivated by the need to provide a unified
+The development of EduVerse is motivated by the need to provide a unified
 academic environment in which essential educational workflows can be carried
 out without fragmentation. A coherent class-centered system can improve the
 student experience, reduce operational burden for teachers and administrators,
@@ -79,11 +80,12 @@ academic progress.
 The project is also motivated by the growing demand for flexible educational
 infrastructure. Modern institutions often require platforms that can support
 multiple organizations, distinct user roles, synchronous and asynchronous
-learning activities, and selective feature enablement within one extensible
-environment. Eduverse responds to this need by combining institutional control
-with practical support for daily teaching and learning workflows.
+learning activities, controlled feature availability, and future extension
+within one extensible environment. EduVerse responds to this need by combining
+institutional control with practical support for daily teaching and learning
+workflows.
 
-From an academic perspective, Eduverse is also motivated by its value as a
+From an academic perspective, EduVerse is also motivated by its value as a
 software engineering project. It provides a realistic setting in which
 requirements analysis, interface planning, system integration, data management,
 real-time communication, AI-assisted services, and technical documentation can
@@ -91,18 +93,19 @@ be studied and implemented within one coherent graduation project context.
 
 \section{Strategic Objectives}\label{sec:strategic_objectives}
 
-At the strategic level, Eduverse aims to establish an integrated educational
-platform whose primary implemented client is a web application, complemented by
-an MVP mobile companion application, in order to centralize essential academic
-workflows for organizations, teachers, and students within one role-aware and
-extensible system.
+At the strategic level, EduVerse aims to establish an integrated and
+extensible learning ecosystem whose primary implemented client is a web
+application, complemented by an MVP mobile companion application, in order to
+centralize essential academic workflows for organizations, teachers, and
+students within one role-aware and organization-aware system.
 
 The main strategic objectives of the project are as follows:
 
 \begin{itemize}
   \item To centralize core educational workflows such as class management,
-    materials, assignments, examinations, results, notifications,
-    communication, and live sessions within one coordinated platform.
+    materials, communication, live sessions, whiteboard interaction,
+    assignments, examinations, results, notifications, and academic follow-up
+    within one coordinated platform.
   \item To support multi-organization operation and role-based access for
     organization administrators, teachers, and students, including
     memberships spanning multiple organizations or roles with active
@@ -113,9 +116,17 @@ The main strategic objectives of the project are as follows:
   \item To extend selected high-frequency academic workflows to a mobile MVP
     companion application without claiming full feature parity with the web
     platform.
+  \item To support controlled feature availability so that supported tools can
+    be enabled or disabled according to organization or class needs.
   \item To incorporate distinctive educational capabilities such as an AI
     Agent and an integrated coding workspace as part of the platform's broader
     academic value.
+  \item To maintain an extensible platform structure that can integrate new
+    academic workflows or supporting services without returning to a
+    fragmented multi-platform model.
+  \item To support controlled public access and open sharing of learning
+    materials under organization-defined settings where such access is
+    enabled.
   \item To organize data and services in a maintainable and scalable manner
     suitable for educational institutions with different operational needs.
   \item To produce a graduation project that is both academically meaningful
@@ -124,7 +135,7 @@ The main strategic objectives of the project are as follows:
 
 \section{Educational and Professional Goals for the Team}\label{sec:team_goals}
 
-Eduverse also serves clear educational and professional goals for the project
+EduVerse also serves clear educational and professional goals for the project
 team. From an educational standpoint, it provides an opportunity to apply
 software engineering concepts to a realistic problem domain rather than to an
 isolated classroom exercise. The team must analyze institutional needs, define
@@ -140,7 +151,7 @@ teamwork, and academic reporting skills.
 
 \section{Project Scope and Boundaries}\label{sec:project_scope}
 
-The scope of Eduverse in this dissertation is defined around the implemented web
+The scope of EduVerse in this dissertation is defined around the implemented web
 platform and the existing mobile MVP companion application. Chapter 1 is
 limited to introducing the problem context, strategic direction, main user
 groups, system boundaries, and general dissertation structure. Detailed
@@ -149,7 +160,7 @@ testing evidence are reserved for later chapters.
 
 \subsection{System Boundaries and User Roles}\label{subsec:system_boundaries_roles}
 
-Eduverse operates within a multi-organization educational context and therefore
+EduVerse operates within a multi-organization educational context and therefore
 distinguishes clearly between administrative, instructional, and learner
 responsibilities. At the institutional level, the platform supports
 organization administrators who manage organizations, user access, public and
@@ -165,7 +176,11 @@ the learner level, students access the classes available to them in order to
 study materials, follow announcements, submit work, join sessions,
 communicate, and review academic outcomes.
 
-These role distinctions define important system boundaries. Eduverse is not a
+Where enabled, this organizational model can also support controlled public
+access so that institutions or communities may share educational materials
+more openly without removing governance from the organization itself.
+
+These role distinctions define important system boundaries. EduVerse is not a
 generic social platform in which all users have the same functional position.
 Instead, access is governed by organizational membership, class context, and
 academic responsibility. This role-aware structure supports accountability,
@@ -173,17 +188,22 @@ controlled visibility, and more reliable institutional management.
 
 \subsection{Functional Scope}\label{subsec:functional_scope}
 
-Within its current implemented scope, Eduverse includes authentication,
+Within its current implemented scope, EduVerse includes authentication,
 organization access and multi-organization membership, class management,
 materials, assignments, exams, results and academic history, notifications,
 live sessions, an AI Agent, and an integrated coding workspace. Together,
 these functions define the platform as more than a basic learning content
-portal. Eduverse is intended to support both academic management and active
+portal. EduVerse is intended to support both academic management and active
 instructional workflows within one system. Within this scope, classes can be
 visible across the organization, require term and stage definition, and move
 into Past Terms without losing preserved academic history. Teacher management
 abilities, class feature controls, student linkage to previous terms, and
 Results visibility are also governed through organization and class settings.
+
+A class workspace in EduVerse does not have to represent only a traditional
+course. For example, the same class model may be configured for a focused
+academic purpose such as a digital library class used mainly for sharing
+books and learning materials.
 
 At the same time, Chapter 1 remains introductory in nature. It does not attempt
 to document detailed database structures, API behavior, or low-level internal
@@ -192,7 +212,7 @@ and lie outside the present scope.
 
 \subsection{Web and Mobile Client Scope}\label{subsec:web_mobile_client_scope}
 
-The main implemented Eduverse client is the web application. It provides the
+The main implemented EduVerse client is the web application. It provides the
 widest operational coverage of the platform, including organization-aware
 navigation, role-based access, membership handling, class management,
 materials, assignments, exams, results, notifications, live sessions, AI
@@ -209,7 +229,7 @@ than a replacement for the primary platform.
 
 \subsection{Competitive Features and Technological Innovation}\label{subsec:competitive_features_innovation}
 
-Eduverse is distinguished by the combination of features it brings together in
+EduVerse is distinguished by the combination of features it brings together in
 one educational platform. A major distinguishing point is its
 multi-organization, role-based structure, which allows the same system to
 support organizational control, instructional management, and student
@@ -220,15 +240,20 @@ supports controlled public and invitation-based class access, term-and-stage
 class organization, and the transition of completed classes into Past Terms
 while preserving historical records.
 
+This distinction is not limited to combining current features. EduVerse is
+also intended as an extensible ecosystem in which supported features can be
+selectively enabled, disabled, or expanded according to institutional and
+classroom needs.
+
 Another important feature is the platform's attention to examinations and
-assessment integrity. Eduverse does not treat evaluation as a peripheral task,
+assessment integrity. EduVerse does not treat evaluation as a peripheral task,
 but as an integral part of the educational workflow that must be managed within
 a controlled digital environment, including controlled student-facing Results
 visibility where needed. In addition, the system deliberately combines
 a comprehensive web platform with an MVP mobile companion application, thereby
 balancing rich institutional workflows with accessible everyday mobile use.
 
-From a technological perspective, Eduverse also reflects a deliberate service
+From a technological perspective, EduVerse also reflects a deliberate service
 separation strategy. Structured and frequently queried academic data are stored
 through Supabase PostgreSQL, large educational files are handled through AWS
 S3, and real-time live-session interaction is supported through LiveKit. This

@@ -23,13 +23,13 @@
 
 \section{Introduction}\label{sec:system_analysis_introduction}
 
-This chapter presents the system analysis and requirements of Eduverse. It
+This chapter presents the system analysis and requirements of EduVerse. It
 defines the scope of the platform from an analytical perspective, identifies
 the principal actors, organizes the functional and non-functional
 requirements, and documents the updated use-case and activity models that
 describe the main user-visible workflows.
 
-The analysis is grounded in the current Eduverse platform scope represented by
+The analysis is grounded in the current EduVerse platform scope represented by
 the updated use-case diagrams and supporting project documentation. The
 chapter therefore focuses on verified platform behavior, configurable feature
 availability, and controlled role-based interaction rather than on low-level
@@ -37,26 +37,35 @@ implementation detail.
 
 \section{System Overview}\label{sec:system_overview}
 
-Eduverse is a multi-organization educational platform centered on the class as
+EduVerse is a multi-organization educational platform centered on the class as
 the main operational workspace. Its primary implemented client is the web
 application, while the companion mobile scope supports selected high-frequency
 academic actions. Within this environment, organizations can manage users,
 roles, class structures, course materials, communication, assignments,
 examinations, live sessions, results, profile settings, and help resources
-through one coordinated system.
+through one coordinated system. Where enabled, the same environment can also
+support controlled public access and broader sharing of educational materials
+under organization-defined rules.
 
-The platform is role-aware and configuration-sensitive. A single account may
-belong to more than one organization and may hold more than one role, so the
-visible pages and permitted actions depend on the selected Active
+The platform is role-aware, organization-aware, and configuration-sensitive.
+A single account may belong to more than one organization and may hold more
+than one role, so the visible pages and permitted actions depend on the
+selected Active
 Organization, the Active Role, organization-level settings, class-level
-feature settings, and class membership. As a result, Eduverse must be
+feature settings, and class membership. As a result, EduVerse must be
 analyzed not only as a collection of learning tools, but also as a governed
 workspace in which institutional control and daily educational activity are
-resolved together.
+resolved together. Supported features may be enabled or disabled at the
+organization level and, where supported, refined further at the class level so
+that unavailable capabilities are hidden or blocked in a controlled way.
+
+A class workspace does not need to represent only a conventional taught
+course. It may also be configured for a focused academic purpose, such as a
+digital library class used mainly for sharing books and learning resources.
 
 \section{System Actors}\label{sec:system_actors}
 
-The main human actors of Eduverse are the Student, the Teacher, and the
+The main human actors of EduVerse are the Student, the Teacher, and the
 Organization Administrator. These actors do not represent separate accounts by
 necessity; the same user may hold more than one role, may belong to more than
 one Organization, and may switch context according to the selected workspace.
@@ -66,7 +75,7 @@ one Organization, and may switch context according to the selected workspace.
   \small
   \renewcommand{\arraystretch}{1.15}
   \setlength{\tabcolsep}{5pt}
-  \caption{Primary Eduverse System Actors}
+  \caption{Primary EduVerse System Actors}
   \label{tab:eduverse_system_actors}
   \begin{tabular}{|p{0.23\textwidth}|p{0.57\textwidth}|}
     \hline
@@ -88,7 +97,7 @@ influence what the user can view or modify at a given moment.
 
 \section{Functional Requirements}\label{sec:functional_requirements}
 
-The functional requirements of Eduverse are grouped by module so that the
+The functional requirements of EduVerse are grouped by module so that the
 system scope remains aligned with the updated use-case model and the current
 platform terminology.
 
@@ -111,7 +120,8 @@ platform terminology.
 
 \begin{itemize}
   \item \textbf{FR-05.} The system shall allow an Organization Administrator
-    to create an Organization and configure its default settings.
+    to create an Organization and configure its default settings, including
+    supported public-access and feature-availability controls.
   \item \textbf{FR-06.} The system shall allow administrators to invite,
     register, activate, and manage organization members and their roles.
   \item \textbf{FR-07.} The system shall support invitation-based access and,
@@ -119,8 +129,8 @@ platform terminology.
     direct-join or approval-based entry modes.
   \item \textbf{FR-08.} The system shall allow administrators to review join
     requests, control public organization settings, manage teacher class
-    permissions, and associate previous-term student history where
-    applicable.
+    permissions, define organization-level feature defaults where supported,
+    and associate previous-term student history where applicable.
 \end{itemize}
 
 \subsection*{Class Management and Class History}
@@ -128,13 +138,14 @@ platform terminology.
 \begin{itemize}
   \item \textbf{FR-09.} The system shall allow authorized users to create and
     edit classes with details such as title, code, term, stage, description,
-    and related settings.
+    purpose, and related settings.
   \item \textbf{FR-10.} The system shall allow class membership management,
     including assigning or changing the responsible Teacher and managing
     student enrollment according to permissions.
   \item \textbf{FR-11.} The system shall allow class-level configuration of
-    enabled tools, visibility rules, and Results visibility when these
-    controls are available.
+    enabled or disabled tools, extension availability, visibility rules,
+    Results visibility, and focused class purpose when these controls are
+    available.
   \item \textbf{FR-12.} The system shall allow administrators or permitted
     teachers to end a class, stage, or term and move the class into Past
     Terms while preserving class history.
@@ -150,7 +161,9 @@ platform terminology.
     access permissions.
   \item \textbf{FR-15.} The system shall allow authorized deletion of
     materials and, when AI support is enabled, provide material-related study
-    summaries or AI context support.
+    summaries or AI context support. Where public organizations or public
+    join workflows are enabled, the system shall support broader sharing of
+    educational materials subject to organization-defined access rules.
 \end{itemize}
 
 \subsection*{Class Communication and Notifications}
@@ -231,13 +244,16 @@ platform terminology.
 
 \begin{itemize}
   \item \textbf{FR-34.} The system shall provide a class AI Agent for
-    contextual academic support when the AI feature is enabled.
+    contextual academic support when the AI feature is enabled for the current
+    organization and class context.
   \item \textbf{FR-35.} The system shall allow AI-assisted study support such
     as material summaries and assignment-related guidance without replacing the
     original material or teacher judgment.
   \item \textbf{FR-36.} The system shall allow AI-assisted drafting of
     assignments, exams, and feedback only where the corresponding AI tools are
-    enabled and available.
+    enabled and available, and shall allow AI features to be disabled for a
+    specific organization or class so that AI support remains unavailable in
+    learning contexts where institutions or teachers do not permit it.
 \end{itemize}
 
 \subsection*{Integrated Coding Lab / IDE Extension}
@@ -254,22 +270,36 @@ platform terminology.
     where that capability is supported.
 \end{itemize}
 
+\subsection*{Feature Configuration and Extensibility}
+
+\begin{itemize}
+  \item \textbf{FR-41.} The system shall allow supported platform features to
+    be enabled or disabled at the organization level and, where supported,
+    further configured at the class level.
+  \item \textbf{FR-42.} The system shall hide, block, or clearly mark
+    unavailable features according to the active organization and class
+    configuration rather than exposing unusable controls.
+  \item \textbf{FR-43.} The system shall support launching or exposing
+    available extensions and feature modules according to organization and
+    class configuration.
+\end{itemize}
+
 \subsection*{Profile and Help}
 
 \begin{itemize}
-  \item \textbf{FR-41.} The system shall allow users to view profile
+  \item \textbf{FR-44.} The system shall allow users to view profile
     information, change theme preferences, and manage password-related account
     settings.
-  \item \textbf{FR-42.} The system shall allow users to switch the Active
+  \item \textbf{FR-45.} The system shall allow users to switch the Active
     Organization and Active Role through the available workspace controls.
-  \item \textbf{FR-43.} The system shall provide searchable help content for
+  \item \textbf{FR-46.} The system shall provide searchable help content for
     account, class, administration, AI, coding, assignment, exam, results,
     navigation, and troubleshooting topics.
 \end{itemize}
 
 \section{Non-Functional Requirements}\label{sec:non_functional_requirements}
 
-The main non-functional requirements of Eduverse are summarized below.
+The main non-functional requirements of EduVerse are summarized below.
 
 \begin{itemize}
   \item \textbf{NFR-01 Usability.} The interface shall keep common academic
@@ -285,8 +315,9 @@ The main non-functional requirements of Eduverse are summarized below.
     responsiveness for dashboards, materials, assignments, results, chat, and
     live-session interaction under normal academic usage.
   \item \textbf{NFR-05 Maintainability.} The platform shall remain modular
-    enough to support continued refinement of class tools, AI features,
-    assessment workflows, and coding-lab capabilities.
+    enough to support continued refinement, selective enablement, and
+    extension of class tools, AI features, assessment workflows, and
+    coding-lab capabilities.
   \item \textbf{NFR-06 Scalability.} The system shall remain suitable for
     multiple organizations, growing class counts, increasing user membership,
     and larger volumes of academic content and records.
@@ -297,11 +328,15 @@ The main non-functional requirements of Eduverse are summarized below.
     respect organization-level and class-level feature configuration so that
     disabled tools are hidden or blocked in a controlled and understandable
     manner rather than failing unpredictably.
+  \item \textbf{NFR-09 Governed openness.} Where public access is enabled,
+    the system shall apply organization-defined access rules so that
+    educational materials or membership paths can be shared more broadly
+    without removing institutional control.
 \end{itemize}
 
 \section{Use-Case Model}\label{sec:use_case_model}
 
-The use-case model describes Eduverse through the interactions between the
+The use-case model describes EduVerse through the interactions between the
 primary human actors and the services available to them within the selected
 organization and class context. The Project Overview diagram is a summary of
 the complete system, while the remaining diagrams focus on specific modules of
@@ -315,8 +350,11 @@ behavior.
   {fig:ch4_usecase_project_overview}
 
 Figure~\ref{fig:ch4_usecase_project_overview} presents the high-level summary
-of Eduverse and shows how the Student, Teacher, and Organization
-Administrator relate to the platform's principal service areas.
+of EduVerse and shows how the Student, Teacher, and Organization
+Administrator relate to the platform's principal service areas. This
+analytical view is interpreted together with role and feature configuration,
+so some services are available only when enabled in the current organization
+or class context.
 
 \subsection*{Authentication and Access}
 
@@ -341,7 +379,8 @@ Figure~\ref{fig:ch4_usecase_organization_role_management} models
 organization-scoped governance. It covers organization creation, member
 invitation or registration, public join access, join requests, role
 selection, active-context switching, public organization settings, teacher
-class permissions, and previous-term linkage where applicable.
+class permissions, organization-level feature control, and previous-term
+linkage where applicable.
 
 \subsection*{Class Management}
 
@@ -354,6 +393,8 @@ Figure~\ref{fig:ch4_usecase_class_management} positions the Class as the core
 operational unit of the platform. The diagram emphasizes class creation and
 editing, member and teacher management, feature configuration, visibility
 control, class ending, and movement to Past Terms while preserving history.
+Within this analytical model, the same class structure may support a standard
+course or a focused workspace such as a digital library class.
 
 \subsection*{Assignment Management}
 
@@ -378,7 +419,7 @@ Figure~\ref{fig:ch4_usecase_ai_learning_support} shows how the AI layer acts
 as contextual academic support rather than as a primary actor. The diagram
 captures the class AI Agent, material summaries, assignment guidance, and
 AI-supported drafting tasks that may be available when the feature is
-enabled.
+enabled for the current organization or class context.
 
 \subsection*{Class Communication and Notifications}
 
@@ -438,10 +479,11 @@ chat, and whiteboard use appear as key collaboration capabilities.
   {fig:ch4_usecase_integrated_coding_lab_ide_extension}
 
 Figure~\ref{fig:ch4_usecase_integrated_coding_lab_ide_extension} models the
-programming workspace integrated into Eduverse. It includes environment
+programming workspace integrated into EduVerse. It includes environment
 selection, file management, editing, saving, running code, previewing output,
 inspecting console or problem views, resetting the workspace, and using the
-IDE terminal where supported.
+IDE terminal where supported. Its availability is also governed by the active
+organization and class configuration.
 
 \subsection*{Profile and Help}
 
@@ -472,7 +514,7 @@ feedback, and answer review where permitted.
 \section{Activity Diagrams}\label{sec:activity_diagrams}
 
 The following activity diagrams were redrawn from zero based on the updated
-use-case set and the current Eduverse workflow descriptions. They focus on
+use-case set and the current EduVerse workflow descriptions. They focus on
 user-visible actions and important system responses, avoid unnecessary
 implementation detail, and do not include an activity diagram for the Project
 Overview because that diagram is a system summary rather than a workflow.
@@ -496,7 +538,8 @@ logout within one continuous user-facing flow.
 Figure~\ref{fig:ch4_activity_organization_access} shows both invitation-based
 membership onboarding and Public Join Link onboarding, including target-role
 selection, direct join, join-request review, and student-history attachment
-where applicable.
+where applicable. In this context, public access remains governed by
+organization-defined rules rather than treated as unrestricted entry.
 
 \subsection*{AD-03 Class Creation, Configuration, and Past Terms}
 
@@ -506,7 +549,8 @@ where applicable.
 
 Figure~\ref{fig:ch4_activity_class_lifecycle} describes how a class is
 created or updated, configured, governed, and eventually moved to Past Terms
-while preserving historical records.
+while preserving historical records. This includes the possibility of using
+the class model for a focused purpose such as a digital library workspace.
 
 \subsection*{AD-04 Course Content and Materials}
 
@@ -576,8 +620,10 @@ feedback, released exam outcomes, and class-level summaries.
   {fig:ch4_activity_ai_learning_support}
 
 Figure~\ref{fig:ch4_activity_ai_learning_support} models the main AI-enabled
-learning actions of Eduverse, including contextual AI questions, material
-summaries, assignment support, and AI-assisted drafting tasks where available.
+learning actions of EduVerse, including contextual AI questions, material
+summaries, assignment support, and AI-assisted drafting tasks where
+available. The workflow also assumes that AI may be unavailable in
+organizations or classes where it has been disabled.
 
 \subsection*{AD-11 Integrated Coding Lab / IDE Workflow}
 
@@ -587,7 +633,9 @@ summaries, assignment support, and AI-assisted drafting tasks where available.
 
 Figure~\ref{fig:ch4_activity_ide_workflow} describes entry into the coding
 workspace, file handling, editing, saving, running code, preview inspection,
-workspace reset, and terminal usage where that capability is supported.
+workspace reset, and terminal usage where that capability is supported. This
+workflow applies only when the corresponding coding capability is enabled for
+the active class context.
 
 \subsection*{AD-12 Profile and Help Workflow}
 
@@ -601,7 +649,7 @@ search within one user-support workflow.
 
 \section{Chapter Summary}\label{sec:chapter4_summary}
 
-This chapter defined the analytical scope of Eduverse through the system
+This chapter defined the analytical scope of EduVerse through the system
 overview, actor model, functional requirements, non-functional requirements,
 updated use-case diagrams, and redrawn activity workflows. These artifacts
 establish the reference basis for the following design and implementation

@@ -38,7 +38,7 @@
 \newcommand{\EduActivityAuthWorkspaceAccessDiagram}{%
 \begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
   \node (start) [edu initial] {};
-  \node (open) [ch4 act step] {User opens the Eduverse access page.};
+  \node (open) [ch4 act step] {User opens the EduVerse access page.};
   \node (choice) [ch4 act decision wide, below=of open] {Choose access path?};
   \node (reset) [ch4 act step branch, left=48mm of choice] {Request password reset and submit the account email.};
   \node (newpass) [ch4 act step branch, below=of reset] {Open the reset link and set the new password.};
@@ -135,7 +135,7 @@
   \node (teacherview) [ch4 act step branch, right=50mm of role] {Teacher opens the class controls allowed by organization permissions.};
   \node (details) [ch4 act step, below=16mm of role] {Create or edit the class and define the title, code, term, stage, and other details.};
   \node (members) [ch4 act step, below=of details] {Assign or change the Teacher and manage class membership.};
-  \node (features) [ch4 act step, below=of members] {Configure class tools, visibility rules, and Results visibility.};
+  \node (features) [ch4 act step, below=of members] {Configure class purpose, tools, visibility rules, and Results visibility.};
   \node (save) [ch4 act step medium, below=of features] {Save the class configuration.};
   \node (ending) [ch4 act decision wide, below=of save] {End class, stage, or term?};
   \node (pastterms) [ch4 act step medium, below=14mm of ending] {Move the class into Past Terms.};
@@ -372,7 +372,7 @@
   \node (context) [ch4 act step medium, below=14mm of enabled] {System gathers the active class context and the requested support task.};
   \node (generate) [ch4 act step medium, below=of context] {Generate the AI response or draft output.};
   \node (review) [ch4 act step medium, below=of generate] {User reviews, refines, or applies the returned AI output.};
-  \node (blocked) [ch4 act step branch, right=50mm of enabled] {Show that the AI feature is unavailable or disabled for the current class.};
+  \node (blocked) [ch4 act step branch, right=50mm of enabled] {Show that AI is unavailable or disabled for the current organization or class.};
   \node (end) [edu final, below=of review] {};
 
   \path [edu arrow] (start.south) -- (open.north);
@@ -391,7 +391,7 @@
 \begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
   \node (start) [edu initial] {};
   \node (open) [ch4 act step] {User opens the Integrated Coding Lab / IDE workspace.};
-  \node (environment) [ch4 act step medium, below=of open] {Choose the available coding environment for the class.};
+  \node (environment) [ch4 act step medium, below=of open] {Choose the available coding environment or extension for the class.};
   \node (workspace) [ch4 act step medium, below=of environment] {System loads the workspace and visible project files.};
   \node (files) [ch4 act step medium, below=of workspace] {Browse, create, rename, delete, or open files as permitted.};
   \node (edit) [ch4 act step medium, below=of files] {Edit code or markdown content and save the current work.};

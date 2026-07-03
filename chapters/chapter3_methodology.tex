@@ -7,7 +7,7 @@
 
 \section{Introduction}\label{sec:methodology_introduction}
 
-Choosing a development methodology for Eduverse was not a routine decision.
+Choosing a development methodology for EduVerse was not a routine decision.
 The platform's modules, including organization governance, class operation,
 learning content, assessment, communication, AI support, and integrated IDE
 support, are not independent; each depends on shared permissions, shared
@@ -16,7 +16,7 @@ A methodology that fixed requirements and structure at the outset, before
 these dependencies were understood, risked producing modules that worked in
 isolation but conflicted once integrated.
 
-This chapter presents the methodological reasoning behind Eduverse's
+This chapter presents the methodological reasoning behind EduVerse's
 development: what approach was chosen, why it suited a multi-organization
 educational platform, and how it was applied consistently across features.
 Engineering practices and tool-specific execution are addressed separately
@@ -24,7 +24,7 @@ in Chapter~6.
 
 \section{System Development Methodology}\label{sec:system_development_methodology}
 
-Eduverse was developed using a hybrid iterative methodology with
+EduVerse was developed using a hybrid iterative methodology with
 predominantly feature-based vertical-slice development, rather than a
 strict waterfall model in which analysis, design, implementation, and
 validation each occur once in a fixed sequence. The platform instead evolved
@@ -37,10 +37,11 @@ as the relationships between modules became clearer through development.
 Development was organized around functional areas rather than technical
 layers. Iterations typically focused on modules such as organization
 management, class management, materials, assignments, examinations, live
-sessions, results, AI Agent support, and integrated IDE support. Within each
-iteration, the selected feature moved through recurring stages of analysis,
-design, development, and validation, with the outcome of one increment
-informing the next.
+sessions, results, AI Agent support, integrated IDE support, feature
+configuration, and public access workflows. Within each iteration, the
+selected feature moved through recurring stages of analysis, design,
+development, and validation, with the outcome of one increment informing the
+next.
 
 This structure also governed coordination between the web application, which
 served as the primary client, and the MVP mobile companion application.
@@ -67,7 +68,7 @@ the MVP mobile companion application as well.
 
 \subsection{Justification for Methodology Selection}\label{subsec:justification_for_methodology_selection}
 
-A rigid sequential methodology was a poor fit for Eduverse because the
+A rigid sequential methodology was a poor fit for EduVerse because the
 platform's module boundaries and dependencies were not fully knowable in
 advance; they became clear through implementation. Organization governance,
 class operation, learning content, assessment, communication, AI support,
@@ -98,7 +99,7 @@ through realization and validation, to integration.
   \small
   \renewcommand{\arraystretch}{1.15}
   \setlength{\tabcolsep}{5pt}
-  \caption{Repeated Iterative Development Structure in Eduverse}
+  \caption{Repeated Iterative Development Structure in EduVerse}
   \label{tab:eduverse_iterative_development_structure}
   \begin{tabular}{|>{\raggedright\arraybackslash}p{0.27\textwidth}|>{\raggedright\arraybackslash}p{0.57\textwidth}|}
     \hline
@@ -121,7 +122,7 @@ through realization and validation, to integration.
 
 \section{Chapter Summary}\label{sec:chapter3_summary}
 
-Eduverse followed an iterative, feature-based methodology with
+EduVerse followed an iterative, feature-based methodology with
 predominantly vertical-slice development. Through this structure, the
 project was developed in repeated increments centered on meaningful academic
 and administrative features, with each increment progressing through
