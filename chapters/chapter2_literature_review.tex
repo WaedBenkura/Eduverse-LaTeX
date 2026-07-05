@@ -9,338 +9,423 @@
 
 \section{Introduction}\label{sec:literature_review_introduction}
 
-This chapter presents the theoretical background for EduVerse. It reviews the
-evolution of digital learning systems, the limitations of fragmented
-educational tools, selected concepts from artificial intelligence in
-education, and the main foundations that inform the system's design. The
-discussion draws selectively from the literature on Learning Management
-Systems, Artificial Intelligence in Education, Role-Based Access Control, and
-educational platform architecture.
+The literature surrounding EduVerse becomes most meaningful when read not as a
+catalog of educational software, but as a debate over how institutions organize
+continuity, authority, and pedagogical presence under digital conditions. What
+appears on the surface as a proliferation of separate tools is, at a deeper
+level, a struggle over coordination, visibility, accountability, and the
+distribution of cognitive load across students, teachers, and institutions.
+Chapter 2 therefore situates EduVerse within the intersecting literatures on
+Learning Management Systems, Artificial Intelligence in Education, Role-Based
+Access Control, and educational platform architecture, arguing that the central
+problem is not merely feature scarcity but architectural dissonance between
+academic activities that ought to remain pedagogically contiguous.
+
+This argument requires more than a descriptive inventory of current platforms.
+It requires a theoretical explanation of why fragmentation produces systemic
+operational discontinuity, why asynchronous isolation intensifies when learning
+workflows are dispersed across unrelated services, and why a unified
+ecosystem-governance model offers a more coherent institutional response. The
+chapter therefore extrapolates from the literature toward a framework in which
+EduVerse is positioned not as another platform with additional features, but as
+an attempt to reorganize digital education around continuity, bounded
+scaffolding, and governed integration.
 
 \section{Evolution of Digital Education Platforms}\label{sec:evolution_of_digital_education_platforms}
 
 \subsection{From Traditional Classroom Management to Digital Learning Systems}\label{subsec:traditional_to_digital_learning_systems}
 
-Educational management has historically depended on face-to-face coordination,
-manual attendance records, printed materials, and locally maintained
-assessment processes. As educational institutions expanded in scale and digital
-communication became more common, Learning Management Systems emerged to
-centralize course materials, announcements, assignment handling, and academic
-tracking within a unified digital environment \cite{coates2005critical,dagger2007service}.
+Educational management historically relied on spatial proximity, face-to-face
+coordination, printed materials, manual attendance, and locally maintained
+assessment records. As institutions expanded in scale and digital communication
+became more ordinary, Learning Management Systems emerged not simply as
+electronic repositories but as infrastructural responses to the problem of
+organizing teaching, communication, submissions, and academic tracking within a
+shared institutional space \cite{coates2005critical,dagger2007service}.
 
-The move toward digital learning systems did not simply replace paper-based
-administration with electronic storage. It introduced new expectations about
-continuous access, asynchronous participation, online communication, and
-traceable academic workflows. Modern educational platforms are therefore judged
-not only by their capacity to store materials, but also by their ability to
-support coordination, interaction, assessment, and institutional oversight
-across different users and contexts \cite{selwyn2011education}.
+The transition toward digital learning systems therefore signaled more than the
+replacement of paper with storage. It reconfigured educational time and
+visibility: access became continuous rather than episodic; participation could
+be asynchronous rather than strictly co-present; communication became traceable;
+and administrative oversight could extend across dispersed learning contexts.
+Modern platforms are consequently judged not only by whether they store
+materials, but by whether they sustain coordination, interaction, assessment,
+and institutional accountability across multiple actors and moments of learning
+\cite{selwyn2011education}.
 
 \subsection{Limitations of Fragmented Learning Management Tools}\label{subsec:limitations_of_fragmented_learning_management_tools}
 
-Although digital tools have become common in education, many institutions still
-depend on separate services for class management, communication, file sharing,
-video sessions, assessment, and student support. This fragmented model creates
-operational discontinuity because activities that belong to the same academic
-process are distributed across unrelated systems. As a result, students must
-move repeatedly between platforms, while teachers and administrators face a
-reduced ability to maintain clear academic oversight \cite{selwyn2011education,dagger2007service}.
+The maturation of digital education did not automatically produce coherence.
+Many institutions still operate through assemblages of separate services for
+class management, messaging, file sharing, video meetings, assessment, and
+student support. This fragmented condition generates systemic operational
+discontinuity because activities belonging to the same pedagogical sequence are
+distributed across unrelated systems. Students must repeatedly reorient
+themselves between interfaces, while teachers and administrators lose a stable
+institutional view of the workflow they are supposed to govern
+\cite{selwyn2011education,dagger2007service}.
 
-When communication, submissions, live sessions, and evaluation records are
-distributed across multiple tools, consistency, accountability, and access
-governance become harder to maintain. The limitation is therefore
-organizational as well as technical, because it weakens the integrity of the
-educational environment itself.
+Such fragmentation is not only a technical inconvenience. It produces
+architectural dissonance between instruction, communication, submission,
+evaluation, and record keeping. Each transition between platforms introduces
+cognitive friction, weakens contextual continuity, and complicates the
+allocation of responsibility. When communication, submissions, live sessions,
+and assessment records reside in disconnected environments, the educational
+system becomes less legible precisely where accountability is most needed.
 
-Reference points from current digital practice help illustrate this
-fragmentation. Google Classroom may serve as a benchmark example for class
-communication, material sharing, and classroom coordination; Google Meet for
-live calls, meetings, and presentations; Excalidraw for collaborative
-whiteboard interaction; and coding-practice environments such as LeetCode for
-programming exercises and IDE-style learning workflows. These examples are not
-treated here as systems copied by EduVerse, but as familiar reference points
-showing how related educational activities are often distributed across
-separate platforms.
+Benchmark examples from current digital practice help make this dissonance
+visible. Google Classroom can stand as a reference point for class
+communication, material sharing, and coordination; Google Meet for live calls,
+meetings, and presentations; Excalidraw for collaborative whiteboard
+interaction; and coding-practice environments such as LeetCode for programming
+exercises and IDE-style workflows. These examples are not treated here as
+templates to be copied by EduVerse, but as familiar markers of how modern
+learning activity is often partitioned into separate technical territories.
 
 \section{Research Gap and Proposed Integrated Learning Ecosystem}\label{sec:research_gap_integrated_ecosystem}
 
-A clear gap exists between the broad range of activities required in modern
-education and the way those activities are often supported by disconnected
-systems. Many platforms solve individual parts of the learning workflow, such
-as class coordination, material sharing, chat, live sessions, collaborative
-whiteboards, programming practice, AI support, or assessment. However, the
-gap remains in combining these workflows with role-based institutional
-control, organization-aware governance, configurable feature availability, and
-preserved academic continuity inside one extensible system.
+The decisive gap in the literature is not the absence of digital functions; it
+is the absence of a coherent institutional architecture capable of governing
+those functions as one educational ecosystem. Contemporary platforms may solve
+individual tasks such as class coordination, material sharing, live meetings,
+collaborative explanation, programming practice, AI support, or assessment, yet
+they often leave those tasks epistemically and operationally isolated from one
+another. What remains underdeveloped is a model that coordinates these
+activities with organization-aware governance, differentiated roles,
+configurable feature exposure, and preserved academic continuity inside one
+bounded system.
 
-EduVerse addresses this gap by proposing an integrated learning ecosystem
-rather than a collection of separate utilities. It brings class management,
-communication, materials, assessment, live sessions, whiteboard interaction,
-AI-assisted support, and programming practice into one organizationally
-governed environment. The platform is informed by benchmark examples from
-existing educational and productivity tools, but its central argument is that
-comparable workflows should not remain scattered across unrelated services.
-The main implemented client is the web application, while the mobile client
-remains an MVP companion for selected daily-use workflows. This balance
-between integration and controlled scope is central to the academic identity
-of the project.
+EduVerse is proposed in response to that gap as a unified learning ecosystem
+rather than a loose collection of utilities. Its conceptual claim is that
+instructional continuity deteriorates when adjacent academic actions are forced
+into separate platforms, and that pedagogical integrity improves when those
+actions are reorganized under one governed environment. The platform therefore
+brings class management, communication, materials, assessment, synchronous
+interaction, collaborative whiteboard participation, programming practice, and
+bounded AI support into one institutional logic informed by familiar benchmark
+services but not reducible to them.
 
-This integrated approach also extends to institutional flexibility. EduVerse
-is framed not only as a platform that combines current learning features, but
-also as one that can support controlled public access, feature configuration,
-and future extension without returning to a fragmented multi-platform model.
+This argument also depends on asymmetrical client design. The web platform
+remains the primary site of comprehensive administrative depth, while the mobile
+client is intentionally positioned as an MVP companion for selected
+high-frequency tasks. Integration, in this sense, does not require every client
+to perform every workflow. It requires each interface to participate in one
+coherent academic environment rather than reopening the fragmented model under a
+different name.
+
+The same reasoning extends to future growth. EduVerse is not framed merely as a
+platform that aggregates current functions, but as one that can sustain
+controlled public access, configurable feature availability, and future
+extension without reproducing multi-platform sprawl. The research gap is
+therefore methodological as much as technical: it concerns how educational
+systems should be architected when governance, pedagogy, and continuity are
+treated as inseparable design problems.
 
 \section{Artificial Intelligence in Education}\label{sec:artificial_intelligence_in_education}
 
-Artificial intelligence in education is commonly discussed as a means of
-augmenting teaching and learning rather than replacing teachers or institutional
-judgment \cite{luckin2016intelligence,holmes2019ai}. In educational settings,
-AI systems are valuable when they improve access to explanations, support
-learning continuity, reduce routine workload, and provide structured assistance
-without undermining academic responsibility. In EduVerse, this perspective
-frames the AI Agent as a bounded academic support service embedded in the
-platform rather than as an authority over teaching or evaluation.
+Artificial Intelligence in Education is most defensible when understood as a
+means of augmenting teaching and learning rather than displacing teacher
+authority or institutional judgment \cite{luckin2016intelligence,holmes2019ai}.
+The relevant question is not whether an AI system can generate responses, but
+whether it can intervene productively in moments of asynchronous isolation,
+reduce unnecessary cognitive load, and extend access to explanation without
+eroding academic responsibility. Within this frame, EduVerse positions the AI
+Agent as a context-aware pedagogical agent whose legitimacy depends on bounded,
+contextualized scaffolding rather than ungoverned answer production.
+
+Such a position matters because AI support can either deepen or repair
+fragmentation. Detached AI services often intensify discontinuity by operating
+outside the learner's class context, institutional expectations, and active
+workflow. By contrast, an AI presence embedded inside the learning ecosystem can
+serve as an interpretive bridge between course materials, ongoing tasks, and
+teacher-defined boundaries. EduVerse therefore treats AI not as a generic
+productivity add-on, but as an academically situated support layer subordinate
+to instructional goals.
 
 \subsection{Context-Aware Learning Assistance}\label{subsec:context_aware_learning_assistance}
 
-One of the most important ideas in AI-supported education is that assistance is
-more useful when it is tied to the learner's actual academic context. Generic
-responses are often less effective than support that takes into account course
-materials, class discussion, ongoing tasks, and instructional expectations.
-Context-aware assistance can therefore improve relevance, reduce confusion, and
-support more focused academic interaction \cite{holmes2019ai}.
+One of the strongest insights in AI-supported learning is that assistance
+becomes more pedagogically valuable as it becomes more context aware. Generic
+responses often remain abstract and weakly aligned with what learners are
+actually studying, whereas support grounded in course materials, class
+discussion, ongoing tasks, and instructional expectations can reduce confusion
+and produce more focused academic interaction \cite{holmes2019ai}.
 
-In EduVerse, this means the AI Agent operates within the active class, user
-role, and immediate learning task so that support remains relevant to the
-current course activity. Its role is to assist understanding and clarification
-rather than to substitute for teaching.
+EduVerse translates this insight into an ecosystem principle. The AI Agent is
+not imagined as an all-purpose authority external to the class, but as a
+context-aware pedagogical agent operating within the active class, the current
+user role, and the immediate learning task. In theoretical terms, this reduces
+the distance between asynchronous help-seeking and synchronous teacher support;
+in architectural terms, it embeds scaffolding inside the learning environment
+instead of outsourcing it to disconnected services.
 
 \subsection{Material Summarization and Learning Support}\label{subsec:material_summarization_and_learning_support}
 
-Material summarization represents a practical form of AI assistance in
-education. Long documents, learning materials, and instructional resources can
-be difficult for students to process efficiently, especially when they are
-working under time constraints or trying to review several academic topics in
-parallel. AI-assisted summarization can support comprehension by highlighting
-main points, reducing information overload, and helping learners return more
-quickly to the central ideas of a topic \cite{luckin2016intelligence}.
+AI-mediated condensation of long educational materials is most useful when it
+functions as bounded pedagogical scaffolding rather than as a substitute for
+reading. Lengthy documents, instructional resources, and parallel course demands
+can generate extraneous cognitive load, especially when learners must recover
+the main structure of a topic quickly. Contextualized summarization can
+therefore help foreground central ideas, reduce overload, and support more
+efficient return to the core academic thread \cite{luckin2016intelligence}.
 
-This kind of support is most appropriate when it complements reading rather
-than replacing it. In EduVerse, it is most relevant to class materials and
-related course resources, where AI-generated summaries can complement
-class-based AI interaction while keeping the original material central.
+The crucial qualification is that such support must preserve the primacy of the
+source material. In EduVerse, AI-generated condensation remains subordinate to
+course documents and class interaction. Its value lies in helping learners
+re-enter the material with clearer orientation, not in replacing the document
+or displacing the teacher's interpretive role.
 
 \subsection{Assessment and Feedback Support}\label{subsec:assessment_and_feedback_support}
 
-AI can also support assessment-related workflows by assisting with draft
-guidance, formative feedback, and structured academic support around tasks and
-examinations. In theory, such support can help learners prepare, reflect on
-their work, and identify areas that require improvement \cite{holmes2019ai}.
-However, educational literature also emphasizes that AI use in assessment must
-be governed carefully so that it supports learning without weakening academic
-integrity or teacher responsibility \cite{luckin2016intelligence,holmes2019ai}.
+Assessment-related AI support is pedagogically legitimate only when it remains
+within formative boundaries. The literature suggests that AI can assist draft
+guidance, reflection, feedback preparation, and task clarification in ways that
+strengthen learning before final evaluation \cite{holmes2019ai}. At the same
+time, it repeatedly warns that academic integrity depends on preserving teacher
+judgment and preventing automated assistance from collapsing the distinction
+between preparation and unauthorized completion
+\cite{luckin2016intelligence,holmes2019ai}.
 
-For EduVerse, this means the AI Agent may assist students and teachers with
-preparatory guidance, clarification, and formative support around assignments
-and examinations, while final instructional judgment and assessment
-responsibility remain with the teacher. During active assessed work, such
-support must remain bounded and should not provide direct final answers in
-place of genuine student effort. This governance also extends to controlled
-student-facing Results visibility as part of assessment integrity.
+EduVerse adopts that caution as a design principle. The AI Agent may provide
+bounded, contextualized scaffolding around assignments and examinations, yet it
+cannot become a route around authentic student effort or final instructional
+authority. During active assessed work, support must remain constrained and must
+not deliver direct final answers in place of genuine academic performance. The
+same governance logic extends to controlled student-facing Results visibility,
+where assessment transparency is balanced against integrity and institutional
+responsibility.
 
 \section{Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach}\label{sec:benchmarking_fragmented_vs_integrated}
 
-Table~\ref{tab:fragmented_vs_integrated_eduverse} summarizes the difference
-between a fragmented educational-tool model and the integrated approach
-proposed by EduVerse. The fragmented side is described using benchmark
-categories inspired by familiar tools, while the right-hand side shows how
-EduVerse aims to integrate comparable workflows into one educational
-ecosystem.
+Table~\ref{tab:fragmented_vs_integrated_eduverse} should be read not as a
+consumer-style feature checklist, but as an anatomy of fragmentation. The
+left-hand column names familiar workflow reference points, while the right-hand
+column reframes those same activities inside a unified ecosystem-governance
+model. The contrast therefore concerns architectural logic: whether adjacent
+academic activities remain scattered across external services or are drawn into
+one role-aware, institutionally governed environment.
 
 \begin{table}[htbp]
 \centering
-\begingroup
-\small
-\setlength{\tabcolsep}{4.5pt}
-\renewcommand{\arraystretch}{1.18}
 \caption{Fragmented Educational Tools vs. Integrated EduVerse Approach}
 \label{tab:fragmented_vs_integrated_eduverse}
-\vspace{0.55em}
-\begin{tabular}{|p{0.19\textwidth}|p{0.27\textwidth}|p{0.27\textwidth}|}
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\newlength{\fragmentedtablewidth}
+\setlength{\fragmentedtablewidth}{\dimexpr\textwidth+0.8cm\relax}
+\makebox[\textwidth][c]{%
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.19\fragmentedtablewidth}|>{\raggedright\arraybackslash}p{0.34\fragmentedtablewidth}|>{\raggedright\arraybackslash}p{0.34\fragmentedtablewidth}|}
 \hline
 \rowcolor{gray!15}
-{\raggedright\textbf{Workflow Area}} &
-{\raggedright\textbf{Fragmented Reference Model}} &
-{\raggedright\textbf{Integrated EduVerse Approach}} \\
+\textbf{Workflow Area} &
+\textbf{Fragmented Reference Model} &
+\textbf{Integrated EduVerse Approach} \\
 \hline
-{\raggedright Class coordination and materials} &
-{\raggedright Often centered on classroom tools such as Google Classroom for announcements, material sharing, and basic coordination.} &
-{\raggedright Comparable coordination and material access remain within one role-aware and organization-aware academic workspace.} \\
+Class coordination and materials &
+Often centered on classroom tools such as Google Classroom for announcements,
+material sharing, and basic coordination. &
+Coordination and material access remain within one role-aware and
+organization-aware academic workspace rather than being detached from adjacent
+learning workflows. \\
 \hline
-{\raggedright Communication and notifications} &
-{\raggedright Messaging and announcements are distributed across external chat or notification tools.} &
-{\raggedright Communication remains connected to the academic environment and class context.} \\
+Communication and notifications &
+Messaging and announcements are distributed across external chat or
+notification tools. &
+Communication remains embedded in class context so that participation and
+instructional follow-up do not disperse across unrelated channels. \\
 \hline
-{\raggedright Live meetings and presentations} &
-{\raggedright Often delegated to meeting services such as Google Meet, separate from class records and follow-up.} &
-{\raggedright Live sessions remain linked to class membership, communication, and broader academic continuity.} \\
+Live meetings and presentations &
+Often delegated to meeting services such as Google Meet, separate from class
+records and follow-up. &
+Live sessions remain linked to class membership, communication, and broader
+academic continuity rather than becoming isolated synchronous events. \\
 \hline
-{\raggedright Collaborative whiteboard} &
-{\raggedright Shared sketching or explanation often depends on separate tools such as Excalidraw.} &
-{\raggedright Whiteboard interaction is treated as a class-linked collaboration capability within live learning workflows.} \\
+Collaborative whiteboard &
+Shared sketching or explanation often depends on separate tools such as
+Excalidraw. &
+Whiteboard participation remains inside the learning ecosystem as a
+class-linked collaboration space aligned with live instructional presence. \\
 \hline
-{\raggedright Programming practice} &
-{\raggedright Coding practice commonly relies on platforms such as LeetCode or separate web IDEs outside the class workspace.} &
-{\raggedright Programming practice can be launched from the same ecosystem through an integrated coding workspace.} \\
+Programming practice &
+Coding practice commonly relies on platforms such as LeetCode or separate web
+IDEs outside the class workspace. &
+Programming practice can be launched from the same ecosystem through an
+integrated coding workspace that preserves continuity between explanation and
+execution. \\
 \hline
-{\raggedright Assessment and results} &
-{\raggedright Assignments, examinations, and released results may rely on detached workflows with limited continuity or oversight.} &
-{\raggedright Assessment workflows and released outcomes remain part of the same governed academic environment.} \\
+Assessment and results &
+Assignments, examinations, and released results may rely on detached workflows
+with limited continuity or oversight. &
+Assessment workflows and released outcomes remain part of the same governed
+academic environment, preserving oversight and record continuity. \\
 \hline
-{\raggedright AI assistance} &
-{\raggedright AI tools are usually external and not directly tied to the learner's course context or institutional policy.} &
-{\raggedright AI support is contextual, bounded, and available only where enabled.} \\
+AI assistance &
+AI services are usually external and weakly connected to the learner's course
+context or institutional policy. &
+AI support remains contextual, bounded, and available only where enabled, so
+that scaffolding operates inside the academic environment rather than outside
+it. \\
 \hline
-{\raggedright Governance and feature control} &
-{\raggedright Institutional roles, public access rules, and feature choices are scattered or weakly coordinated across tools.} &
-{\raggedright Role-based governance, controlled public access, and organization/class feature configuration remain part of the same extensible platform.} \\
+Governance and feature control &
+Institutional roles, public access rules, and feature choices are scattered or
+weakly coordinated across tools. &
+Role-based governance, controlled public access, and organization/class feature
+configuration remain part of the same extensible platform. \\
 \hline
-\end{tabular}
+\end{tabular}%
+}
 \endgroup
 \end{table}
 
 \section{Theoretical and Technical Foundations of EduVerse}\label{sec:theoretical_technical_foundations_eduverse}
 
+The following subsections provide the theoretical grounding for the workflow
+areas synthesized in Table~\ref{tab:fragmented_vs_integrated_eduverse}, while
+the pedagogical role of AI has already been established in
+Section~\ref{sec:artificial_intelligence_in_education}.
+
 \subsection{Web-Based Educational Platforms}\label{subsec:web_based_educational_platforms}
 
-Web-based educational platforms remain the strongest medium for full academic
-management because they support richer interfaces, broader administrative
-workflows, and deeper integration across organizational functions. They are
-especially suitable for tasks such as class configuration, materials
-management, assessment setup, and detailed instructional coordination.
+The web remains the strongest medium for comprehensive academic management
+because it supports the administrative depth required for persistent records,
+multi-step workflows, governance controls, and dense instructional interfaces.
+Educational platforms become institutionally durable when they can centralize
+configuration, authoring, assessment setup, and cross-workflow coordination
+within one accessible environment rather than fragmenting them across thinner
+interaction surfaces.
 
-From a theoretical standpoint, web environments are architecturally well suited
-to full academic management because they can centralize complex interfaces,
-persistent records, administrative controls, and cross-workflow coordination
-within one accessible system.
+For EduVerse, the web platform therefore functions as the infrastructural core
+of the ecosystem. Its significance is not merely that it can host more screens,
+but that it can sustain the density of institutional logic required for class
+configuration, materials management, assessment orchestration, and detailed
+instructional coordination without breaking continuity between them.
 
 \subsection{Mobile Companion Learning Applications}\label{subsec:mobile_companion_learning_applications}
 
-Mobile educational applications play a different but still important role in
-digital learning environments. Their strength lies in quick access, timely
-participation, and support for routine high-frequency actions such as checking
-notifications, reviewing assignments, opening materials, and joining live
-sessions. As a result, they are especially useful as companion systems for
-daily academic engagement.
+Mobile educational applications are most compelling when interpreted as forms
+of ambient academic engagement rather than miniature copies of full academic
+systems. Their value lies in sustaining high-frequency participation:
+notifications, quick updates, assignment review, material access, and entry
+into live sessions. In this sense, the mobile device functions as a
+participatory companion that keeps learners near the academic environment even
+when they are away from the richer interface of the main platform.
 
-In EduVerse, the mobile client should therefore be understood as an MVP
-companion rather than as a complete replacement for the main platform. It
-extends accessibility to core user-facing workflows while more comprehensive
-management and authoring remain centered in the web application.
+EduVerse adopts precisely this asymmetry. The mobile client is intentionally an
+MVP companion rather than a substitute for the web application. It supports the
+high-frequency rhythms of daily academic participation, while comprehensive
+administrative depth, complex authoring, and broader governance remain centered
+in the web environment.
 
 % TODO: Add scholarly citation(s) specifically addressing mobile companion
 % applications in digital learning environments.
 
 \subsection{Real-Time Virtual Classrooms}\label{subsec:real_time_virtual_classrooms}
 
-Synchronous learning environments are an important part of modern educational
-theory because they strengthen immediacy, interaction, and instructional
-presence. When live classrooms are integrated into the broader academic
-platform rather than isolated in external services, continuity between teaching,
-communication, and follow-up becomes easier to maintain \cite{garrison2000critical}.
+Synchronous learning environments matter because they intensify instructional
+presence. Educational theory repeatedly associates live interaction with
+immediacy, responsiveness, and stronger relational contact between teacher and
+learner \cite{garrison2000critical}. Yet that presence becomes fragile when
+live sessions are treated as detached meetings outside the broader learning
+system, because the continuity between instruction, communication, and
+follow-up must then be reconstructed after the event.
 
-This foundation is relevant to EduVerse because live sessions are not treated
-as a separate product layer. Instead, they are part of the integrated learning
-environment and serve the broader goal of linking synchronous participation
-with the rest of the class workflow, including session chat, presentation
-annotation, and controlled whiteboard participation.
+EduVerse responds by embedding synchronous interaction inside the wider
+ecosystem. Live sessions are not isolated calls but moments of heightened
+instructional presence connected to class membership, communication history,
+presentation annotation, and controlled whiteboard participation. In this way,
+the synchronous event remains legible inside the same academic workflow that
+prepares it and interprets its aftermath.
 
 \subsection{Integrated Coding Environments for Programming Education}\label{subsec:integrated_coding_environments_programming_education}
 
-Programming education often requires an environment in which learners can write
-code, inspect results, practice problem solving, and remain connected to the
-instructional context of the class. When coding practice is separated entirely
-from the educational platform, students may lose continuity between learning
-materials, teacher guidance, assignments, and practical execution.
+Programming education exposes the pedagogical cost of fragmentation with
+particular clarity. When coding practice is outsourced to external platforms,
+the learner must repeatedly sever the link between theoretical instruction and
+practical execution. This rupture is not trivial: it interrupts seamless
+cognitive continuity, introduces additional context-switching, and weakens the
+teacher's capacity to align explanation, example, practice, and reflection
+inside one environment.
 
-An integrated coding environment addresses this problem by placing programming
-practice within the same educational ecosystem as the rest of the academic
-workflow. For EduVerse, this direction is interpreted pragmatically as a
-browser-safe coding workspace with guided runners and extension-launch support
-rather than as a full backend IDE or unrestricted backend execution
-environment.
+An integrated coding environment addresses this rupture by relocating
+programming practice inside the educational ecosystem itself. EduVerse follows
+this direction pragmatically through a browser-safe coding workspace with guided
+runners and extension-launch support. The theoretical importance of that move is
+not that the system contains an IDE-like surface, but that it reclaims
+continuity between conceptual instruction and executable practice.
 
 % TODO: Add scholarly citation(s) on integrated coding environments or browser-
 % based programming practice in education.
 
 \subsection{Extensible Educational Ecosystems and Governed Openness}\label{subsec:extensible_ecosystems_governed_openness}
 
-Educational platforms benefit from extensible ecosystem design when they must
-serve evolving academic needs without forcing institutions to adopt a new
-disconnected tool for each workflow. Service-oriented educational platform
-thinking emphasizes flexibility and modular capability composition rather than
-monolithic dependence or uncontrolled tool sprawl \cite{dagger2007service}.
-For EduVerse, this supports a platform model in which features can be
-introduced, integrated, or launched as extensions while remaining part of one
-coordinated institutional environment.
+Educational ecosystems must evolve without collapsing into tool sprawl.
+Service-oriented platform thinking is valuable here because it emphasizes
+modularity and controlled capability composition rather than monolithic
+dependence or centrifugal fragmentation \cite{dagger2007service}. The critical
+issue, however, is governance: extensibility is pedagogically useful only when
+new capabilities can be introduced without dissolving the continuity of the
+institutional environment.
 
-This perspective is closely related to configurable feature availability. Not
-every organization or class requires the same tools, and educational
-governance may call for enabling or disabling selected capabilities according
-to academic purpose, policy, or readiness. A coherent educational ecosystem
-should therefore support selective capability exposure without breaking
-continuity across the surrounding workflow.
+EduVerse interprets extensibility as a mode of ecosystem governance rather than
+as unrestricted accumulation. Feature availability can be configured at the
+organization or class level so that capability exposure follows academic need,
+policy, and readiness. Selective enablement is therefore not a convenience
+setting; it is a governance mechanism for controlling complexity without
+breaking surrounding workflows.
 
-The same theoretical direction is relevant to open learning. In institutional
-contexts, openness does not necessarily mean unrestricted anonymous access; it
-may instead take the form of controlled public access or open sharing of
-learning materials under defined organizational rules. An integrated and
-modular platform can support this governed openness more effectively than a
-fragmented collection of unrelated services \cite{siemens2011open}.
+The same logic applies to openness. In educational contexts, openness rarely
+means unbounded anonymity. More often it takes the form of controlled public
+access or open sharing under institutional rules. A modular yet governed
+platform can sustain this regulated openness more effectively than a fragmented
+collection of unrelated services because public visibility, internal authority,
+and feature boundaries remain part of one coherent architecture
+\cite{siemens2011open}.
 
 \subsection{Security, Roles, and Data Management}\label{subsec:security_roles_and_data_management}
 
-Trustworthy educational platforms depend on controlled access, clear role
-distinctions, and dependable data management. Role-Based Access Control is
-especially relevant in this context because it supports structured separation
-between administrative, teaching, and learner permissions
-\cite{sandhu1996rbac,ferraiolo2003rbac}. In educational systems, such
-distinctions are necessary not only for security, but also for accountability
-and appropriate institutional governance. In EduVerse, this perspective also
-supports multi-role memberships in which access is resolved according to the
-active role within the current organization and further shaped by
-organization-level or class-level feature availability. In broader
-institutional terms, this kind of governance also aligns with active-role
-selection, controlled public access requests, permission-scoped teacher
-management, and differentiated visibility across organizations and classes.
+Once openness and extensibility are treated as governance questions, security
+can no longer remain a backstage technical concern. Role-Based Access Control
+provides a formal vocabulary for separating organization administrator,
+teacher, and student permissions in ways that support not only protection, but
+also accountability and institutional order
+\cite{sandhu1996rbac,ferraiolo2003rbac}. Educational systems require such
+distinctions because authority in learning environments is differentiated by
+responsibility, not merely by identity.
 
-Data management is equally foundational. Educational systems must maintain
-reliable records, protect assessment-related information, and support different
-types of content ranging from structured academic data to larger learning
-materials and live-session interaction. In EduVerse, this also supports
-separation between relational academic records and larger instructional files
-so that storage handling, permissions, and delivery can be controlled more
-appropriately. It also supports the preservation of historical class records
-across archived terms so that academic continuity does not depend only on the
-active class state. From a theoretical perspective, this requires a design
-orientation that treats security, data organization, and permissions as core
-educational infrastructure rather than as secondary technical concerns. This
-view is consistent with EduVerse, where access control, data separation, and
-institutional structure are part of the platform's trust model.
+EduVerse translates this principle into multi-role institutional governance.
+Membership can span more than one role, but access is resolved through the
+active role within the current organization or class context. Permission-scoped
+teacher management, controlled public access, and organization-level and
+class-level feature availability together preserve differentiated visibility
+without collapsing governance boundaries. Security, in this sense, is part of
+pedagogical order because it structures who may intervene, observe, configure,
+or evaluate within the learning environment.
+
+Data management is equally constitutive. A dependable educational platform must
+protect assessment-related information, maintain reliable records, and preserve
+historical continuity across changing academic terms. This requires a data
+architecture that distinguishes core relational academic records from larger
+instructional materials while keeping both under coherent institutional rules.
+EduVerse reflects this orientation through the separation of structured
+academic records from larger instructional files and through the retention of
+Past Terms and Results within bounded access conditions. Data organization is
+therefore treated as educational infrastructure rather than as a secondary
+storage detail.
 
 % TODO: Add additional citation(s) specifically supporting educational data
 % governance and storage separation in learning platforms.
 
-Taken together, these theoretical threads show that effective educational
-platforms must reduce fragmentation while coordinating complementary forms of
-support across web, mobile, synchronous, and practice-oriented learning
-contexts. They also indicate that AI assistance, real-time instruction,
-integrated coding environments, extensible platform structure, and secure data
-management are most valuable when they operate within one coherent academic
-system rather than as detached services. For EduVerse, this combined
-perspective provides the conceptual basis for a unified platform model with
-differentiated client roles, configurable feature availability, governed
-public access, bounded AI support, live-session continuity, and protected
-institutional workflows.
-The following chapters build on this foundation to explain the analysis,
-design, and implementation choices of the project.
+Taken together, these theoretical strands do not justify another platform that
+merely accumulates tools. They point instead toward a governed learning
+ecosystem capable of reducing architectural dissonance, reclaiming instructional
+continuity, and coordinating web, mobile, synchronous, practice-oriented, and
+AI-mediated activity within one institutional logic.
+
+For EduVerse, this synthesis grounds a model of unified ecosystem governance in
+which differentiated roles, ambient participation, synchronous instructional
+presence, seamless cognitive continuity, bounded pedagogical scaffolding, and
+protected institutional records operate as parts of one coherent academic
+structure. Chapter 3 builds on this framework to explain the methodological
+choices that guide the project's analysis, design, and implementation.

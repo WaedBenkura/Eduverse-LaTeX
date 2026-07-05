@@ -607,12 +607,217 @@ only the columns and relationships confirmed by visible migrations, RPC
 logic, and active query usage, while any non-visible link is labeled as a
 logical relationship rather than an enforced foreign key.
 
-\section{Interface and Interaction Design}\label{sec:interface_and_interaction_design}
+% Fallback barrier for builds that do not load placeins in the active preamble.
+\providecommand{\FloatBarrier}{\clearpage}
 
-Detailed interface composition, screen-level interaction flows, and
-supporting screenshots are intentionally deferred in the present revision.
-This section is therefore retained as a placeholder for the later UI or UX
-documentation pass without introducing screenshots at this stage.
+\newcommand{\EduUiFigure}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[
+      width=0.95\textwidth,
+      height=0.82\textheight,
+      keepaspectratio
+    ]{#1}
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+\section{User Interface Design}\label{sec:interface_and_interaction_design}
+
+This section presents the main implemented EduVerse interfaces and
+illustrates how the platform supports administrative, instructional, and
+student-facing workflows through the web application and the broader
+companion-application architecture. The currently provided screenshots
+document the implemented web views that coordinate organization management,
+classroom activity, assessment, live collaboration, and AI-supported study
+workflows.
+
+\subsection{Authentication and Access Interfaces}
+
+The authentication and access interfaces define the entry point to EduVerse
+and establish the user context from which subsequent permissions are resolved.
+The provided views show account entry, organization and role selection for
+multi-context users, and the personal settings controls used after
+authentication.
+
+\EduUiFigure
+  {figures/screenshots/1_Authentication Screen.png}
+  {Authentication interface showing sign-in and sign-up forms for EduVerse users.}
+  {fig:ui-auth-signin-signup}
+
+\EduUiFigure
+  {figures/screenshots/2-organization-and-active-role-selection-switcher.png}
+  {Organization and active-role selector used to switch between available EduVerse workspaces.}
+  {fig:ui-auth-organization-role-switcher}
+
+\EduUiFigure
+  {figures/screenshots/26_Profile and User Settings.png}
+  {User profile and settings interface showing role context, theme preferences, and password management controls.}
+  {fig:ui-profile-settings}
+
+\FloatBarrier
+
+\subsection{Organization Administration Interfaces}
+
+The organization administration interfaces document the controls available to
+organization administrators for creating workspaces, governing class
+structures, managing members, and configuring public access. As shown in the
+dashboard views, the administrative workspace contains multiple tabs such as
+Classes, Past Terms, Users, Features, Public Link, and Settings, with
+representative screenshots included below.
+
+\EduUiFigure
+  {figures/screenshots/10_Organization Creation and Initial Feature Availability.png}
+  {Organization creation interface showing template selection and initial feature-availability controls.}
+  {fig:ui-admin-organization-creation}
+
+\EduUiFigure
+  {figures/screenshots/3_Administrator dashboard showing organization statistics and class management controls.png}
+  {Organization administrator dashboard showing class oversight and organization-wide statistics.}
+  {fig:ui-admin-dashboard}
+
+\EduUiFigure
+  {figures/screenshots/4_Class CreateEdit Settings Dialog.png}
+  {Class creation and feature-configuration dialog used to define class properties and enabled tools.}
+  {fig:ui-admin-class-settings}
+
+\EduUiFigure
+  {figures/screenshots/5_Past Terms (Admin interface).png}
+  {Past-terms administration interface used to review archived classes and historical academic records.}
+  {fig:ui-admin-past-terms}
+
+\EduUiFigure
+  {figures/screenshots/6_Organization Members and Invitations.png}
+  {Organization members and invitations interface showing role assignment and invitation-management controls.}
+  {fig:ui-admin-members}
+
+\EduUiFigure
+  {figures/screenshots/7_Public Join Links and Join Requests.png}
+  {Public join-link management interface showing join-link creation and request-handling controls.}
+  {fig:ui-admin-join-links}
+
+\EduUiFigure
+  {figures/screenshots/8_Public Join Page.png}
+  {Public join page used by a student to request access to an organization workspace.}
+  {fig:ui-admin-public-join}
+
+\EduUiFigure
+  {figures/screenshots/9_Organization Settings and Teacher Permissions.png}
+  {Organization settings interface showing public-feature controls and teacher class-permission settings.}
+  {fig:ui-admin-settings}
+
+\FloatBarrier
+
+\subsection{Classroom and Learning Workspace Interfaces}
+
+The classroom and learning workspace interfaces present the day-to-day views
+through which teachers and students interact with class resources. Together,
+these screenshots show the class landing page, shared materials,
+communication channels, and notifications that keep classroom activity
+coordinated.
+
+\EduUiFigure
+  {figures/screenshots/11-class-home-classroom-workspace.png}
+  {Class home interface showing the main classroom workspace and available learning tools.}
+  {fig:ui-class-home}
+
+\EduUiFigure
+  {figures/screenshots/12_Materials Library and Upload Controls (Teacher interface).png}
+  {Classroom materials interface used to access uploaded learning resources and study actions.}
+  {fig:ui-class-materials}
+
+\EduUiFigure
+  {figures/screenshots/14_Class Chat and Announcements.png}
+  {Class chat and announcements interface supporting class-wide discussion and instructor notices.}
+  {fig:ui-class-chat-announcements}
+
+\EduUiFigure
+  {figures/screenshots/15_Notifications Panel or Page.png}
+  {Notifications panel showing alerts for live sessions, materials, examinations, and announcements.}
+  {fig:ui-class-notifications}
+
+\FloatBarrier
+
+\subsection{Assignment and Assessment Interfaces}
+
+The assignment and assessment interfaces illustrate how EduVerse manages
+coursework, examinations, integrity controls, and released results across
+teacher and student roles. The sequence below follows the workflow from
+assignment creation and submission to exam authoring, exam participation,
+review, and performance reporting.
+
+\EduUiFigure
+  {figures/screenshots/16_Assignment Management and Submission Review (Teacher interface).png}
+  {Assignment management interface showing teacher-side assignment creation, submission review, and grading controls.}
+  {fig:ui-assignment-management}
+
+\EduUiFigure
+  {figures/screenshots/17_Student Assignment Submission Screen.png}
+  {Student assignment submission interface showing response entry and file-upload controls.}
+  {fig:ui-assignment-submission}
+
+\EduUiFigure
+  {figures/screenshots/18_Exam Manager and Question Management.png}
+  {Exam management interface showing teacher-side exam creation and question configuration.}
+  {fig:ui-exam-management}
+
+\EduUiFigure
+  {figures/screenshots/19.1_Student Exam Start and Exam-Taking Interface.png}
+  {Student exam start interface showing exam rules, timing, and attempt conditions before entry.}
+  {fig:ui-exam-start}
+
+\EduUiFigure
+  {figures/screenshots/19.2_Student Exam Start and Exam-Taking Interface.png}
+  {Student exam-taking interface showing timed question navigation during an active exam attempt.}
+  {fig:ui-exam-attempt}
+
+\EduUiFigure
+  {figures/screenshots/20_Exam Attempt Review and Integrity Events.png}
+  {Exam attempt review interface showing submitted answers, grading controls, and integrity-related events.}
+  {fig:ui-exam-review}
+
+\EduUiFigure
+  {figures/screenshots/21_Results and Grades Dashboard.png}
+  {Results dashboard showing released grades, score breakdowns, and detailed assessment feedback.}
+  {fig:ui-results-dashboard}
+
+\FloatBarrier
+
+\subsection{Live Session and Collaboration Interfaces}
+
+The live session interface captures the synchronous collaboration environment
+used during real-time classes. The provided screenshot demonstrates how
+whiteboard activity, participant presence, and in-session controls are
+integrated within a single teaching workspace.
+
+\EduUiFigure
+  {figures/screenshots/22_Live Session Room and Whiteboard.png}
+  {Live session room showing the shared whiteboard, participant list, and session controls.}
+  {fig:ui-session-whiteboard}
+
+\FloatBarrier
+
+\subsection{AI Learning Support and Coding Lab Interfaces}
+
+The AI learning support and coding-lab interfaces extend the classroom beyond
+static content delivery by offering guided assistance and hands-on technical
+practice. The provided screenshots demonstrate conversational study support
+alongside the embedded programming workspace.
+
+\EduUiFigure
+  {figures/screenshots/24_AI Learning Support Interface.png}
+  {AI learning support interface showing conversational assistance within the class workspace.}
+  {fig:ui-ai-learning-support}
+
+\EduUiFigure
+  {figures/screenshots/25_Integrated Coding Lab_IDE.png}
+  {Integrated coding workspace showing the file explorer, code editor, terminal, and live preview pane.}
+  {fig:ui-ide-workspace}
+
+\FloatBarrier
+
+% TODO: Insert mobile companion application screenshots when provided.
 
 \section{Integration and Security Design}\label{sec:integration_and_security_design}
 
