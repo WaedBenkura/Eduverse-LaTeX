@@ -79,6 +79,7 @@
 }
 
 \newcommand{\EduActivityAuthWorkspaceAccessDiagram}{%
+\resizebox{!}{0.76\textheight}{%
 \begin{tikzpicture}[edu activity, x=1mm, y=1mm]
   \node (start) [edu initial] at (0,0) {};
   \node (open) [ch4 rebuilt step wide] at (0,-12) {User opens the EduVerse access page.};
@@ -129,6 +130,7 @@
   \path [edu arrow] (workspace) -- (logout);
   \path [edu arrow] (logout) -- (end);
 \end{tikzpicture}%
+}%
 }
 
 \newcommand{\EduActivityOrganizationAccessDiagram}{%
@@ -225,33 +227,33 @@
   \node (open) [ch4 rebuilt step wide] at (0,-12) {Class member opens class materials.};
   \node (shown) [ch4 rebuilt step wide] at (0,-25) {Materials are displayed.};
   \node (select) [ch4 rebuilt step wide] at (0,-38) {Select a materials action.};
-  \node (fork) [ch4 rebuilt fork, minimum width=126mm] at (0,-51) {};
+  \node (fork) [ch4 rebuilt fork, minimum width=142mm] at (0,-54) {};
 
-  \draw[ch4 rebuilt card] (-80,-62) rectangle (-20,-176);
-  \node[ch4 rebuilt title] at (-76,-69) {A. Manage material};
-  \node (manage) [ch4 rebuilt step narrow] at (-50,-83) {Teacher/Admin manages material.};
-  \node (managechoice) [ch4 rebuilt decision] at (-50,-101) {Upload or delete?};
-  \node (delete) [ch4 rebuilt step narrow] at (-69,-124) {Delete selected material.};
-  \node (details) [ch4 rebuilt step narrow] at (-31,-124) {Enter details and attach file.};
-  \node (publish) [ch4 rebuilt step narrow] at (-31,-145) {Publish material.};
-  \node (updated) [ch4 rebuilt step] at (-50,-166) {Updated materials are shown.};
-  \node (manageend) [edu final] at (-50,-182) {};
+  \draw[ch4 rebuilt card] (-92,-66) rectangle (-28,-204);
+  \node[ch4 rebuilt title] at (-88,-73) {A. Manage material};
+  \node (manage) [ch4 rebuilt step narrow] at (-60,-89) {Teacher/Admin manages material.};
+  \node (managechoice) [ch4 rebuilt decision] at (-60,-114) {Upload or delete?};
+  \node (delete) [ch4 rebuilt step narrow] at (-79,-144) {Delete selected material.};
+  \node (details) [ch4 rebuilt step narrow] at (-41,-144) {Enter details and attach file.};
+  \node (publish) [ch4 rebuilt step narrow] at (-41,-169) {Publish material.};
+  \node (updated) [ch4 rebuilt step] at (-60,-194) {Updated materials are shown.};
+  \node (manageend) [edu final] at (-60,-216) {};
 
-  \draw[ch4 rebuilt card] (-17,-62) rectangle (17,-140);
-  \node[ch4 rebuilt title] at (-13,-69) {B. View material};
-  \node (browse) [ch4 rebuilt step narrow] at (0,-87) {Student browses, searches, or filters materials.};
-  \node (preview) [ch4 rebuilt step narrow] at (0,-114) {Student previews, opens, or downloads material.};
-  \node (viewend) [edu final] at (0,-135) {};
+  \draw[ch4 rebuilt card] (-22,-66) rectangle (22,-166);
+  \node[ch4 rebuilt title] at (-18,-73) {B. View material};
+  \node (browse) [ch4 rebuilt step narrow] at (0,-94) {Student browses, searches, or filters materials.};
+  \node (preview) [ch4 rebuilt step narrow] at (0,-128) {Student previews, opens, or downloads material.};
+  \node (viewend) [edu final] at (0,-157) {};
 
-  \draw[ch4 rebuilt card] (20,-62) rectangle (80,-186);
-  \node[ch4 rebuilt title] at (24,-69) {C. AI summary};
-  \node (aiopen) [ch4 rebuilt step narrow] at (50,-83) {Choose AI support.};
-  \node (aiq) [ch4 rebuilt decision] at (50,-101) {AI summary enabled?};
-  \node (blocked) [ch4 rebuilt step narrow] at (31,-124) {Unavailable message is shown.};
-  \node (summary) [ch4 rebuilt step narrow] at (69,-124) {Generate or open summary.};
-  \node (aiout) [ch4 rebuilt step narrow] at (69,-154) {AI output is displayed.};
-  \node (blockedend) [edu final] at (31,-154) {};
-  \node (aiend) [edu final] at (69,-181) {};
+  \draw[ch4 rebuilt card] (28,-66) rectangle (92,-214);
+  \node[ch4 rebuilt title] at (32,-73) {C. AI summary};
+  \node (aiopen) [ch4 rebuilt step narrow] at (60,-89) {Choose AI support.};
+  \node (aiq) [ch4 rebuilt decision] at (60,-114) {AI summary enabled?};
+  \node (blocked) [ch4 rebuilt step narrow] at (41,-144) {Unavailable message is shown.};
+  \node (summary) [ch4 rebuilt step narrow] at (79,-144) {Generate or open summary.};
+  \node (aiout) [ch4 rebuilt step narrow] at (79,-176) {AI output is displayed.};
+  \node (blockedend) [edu final] at (41,-176) {};
+  \node (aiend) [edu final] at (79,-207) {};
 
   \path [edu arrow] (start.south) -- (open.north);
   \path [edu arrow] (open) -- (shown);
@@ -586,39 +588,39 @@
 }
 
 \newcommand{\EduActivityAiLearningSupportWorkflowDiagram}{%
-\resizebox{!}{0.74\textheight}{%
+\resizebox{!}{0.78\textheight}{%
 \begin{tikzpicture}[edu activity, x=1mm, y=1mm]
-  \draw[ch4 rebuilt card] (-60,5) rectangle (60,-58);
-  \node[ch4 rebuilt title] at (-56,0) {AI availability};
+  \draw[ch4 rebuilt card] (-82,8) rectangle (82,-68);
+  \node[ch4 rebuilt title] at (-78,1) {AI availability};
   \node (start) [edu initial] at (0,-4) {};
-  \node (select) [ch4 rebuilt step wide] at (0,-16) {User selects an AI-related action.};
-  \node (enabled) [ch4 rebuilt decision] at (0,-32) {AI enabled for current organization and class?};
-  \node (blocked) [ch4 rebuilt step narrow] at (40,-32) {AI unavailable message is shown.};
-  \node (blockedend) [edu final] at (40,-51) {};
-  \node (category) [ch4 rebuilt step wide] at (0,-52) {Choose AI support category.};
-  \node (fork) [ch4 rebuilt fork, minimum width=118mm] at (0,-67) {};
+  \node (select) [ch4 rebuilt step wide] at (0,-18) {User selects an AI-related action.};
+  \node (enabled) [ch4 rebuilt decision] at (0,-38) {AI enabled for current organization and class?};
+  \node (blocked) [ch4 rebuilt step narrow] at (56,-38) {AI unavailable message is shown.};
+  \node (blockedend) [edu final] at (56,-60) {};
+  \node (category) [ch4 rebuilt step wide] at (0,-60) {Choose AI support category.};
+  \node (fork) [ch4 rebuilt fork, minimum width=146mm] at (0,-82) {};
 
-  \draw[ch4 rebuilt card] (-74,-76) rectangle (-6,-137);
-  \node[ch4 rebuilt title] at (-70,-83) {A. Class AI Agent};
-  \node (ask) [ch4 rebuilt step] at (-40,-98) {Ask the Class AI Agent.};
-  \node (askout) [ch4 rebuilt step] at (-40,-120) {AI response is displayed using the current class context.};
-  \node (askend) [edu final] at (-40,-134) {};
+  \draw[ch4 rebuilt card] (-82,-94) rectangle (-8,-160);
+  \node[ch4 rebuilt title] at (-78,-101) {A. Class AI Agent};
+  \node (ask) [ch4 rebuilt step] at (-45,-118) {Ask the Class AI Agent.};
+  \node (askout) [ch4 rebuilt step] at (-45,-144) {AI response is displayed using the current class context.};
+  \node (askend) [edu final] at (-45,-158) {};
 
-  \draw[ch4 rebuilt card] (6,-76) rectangle (74,-137);
-  \node[ch4 rebuilt title] at (10,-83) {B. Study support};
-  \node (summary) [ch4 rebuilt step] at (40,-98) {Generate material summary.};
-  \node (studyout) [ch4 rebuilt step] at (40,-120) {AI study support is displayed using the current class context.};
-  \node (studyend) [edu final] at (40,-134) {};
+  \draw[ch4 rebuilt card] (8,-94) rectangle (82,-160);
+  \node[ch4 rebuilt title] at (12,-101) {B. Study support};
+  \node (summary) [ch4 rebuilt step] at (45,-118) {Generate material summary.};
+  \node (studyout) [ch4 rebuilt step] at (45,-144) {AI study support is displayed using the current class context.};
+  \node (studyend) [edu final] at (45,-158) {};
 
-  \draw[ch4 rebuilt card] (-74,-151) rectangle (74,-232);
-  \node[ch4 rebuilt title] at (-70,-158) {C. Drafting and feedback support};
-  \node (request) [ch4 rebuilt step wide] at (0,-173) {Request assignment support or drafting assistance.};
-  \node (task) [ch4 rebuilt decision] at (0,-192) {Selected support type?};
-  \node (support) [ch4 rebuilt step narrow] at (-48,-215) {Request assignment support.};
-  \node (draft) [ch4 rebuilt step narrow] at (0,-215) {Generate assignment or exam draft if enabled.};
-  \node (feedback) [ch4 rebuilt step narrow] at (48,-215) {Generate draft feedback if supported.};
-  \node (draftout) [ch4 rebuilt step wide] at (0,-232) {Draft AI output is displayed for user review.};
-  \node (draftend) [edu final] at (0,-247) {};
+  \draw[ch4 rebuilt card] (-82,-178) rectangle (82,-286);
+  \node[ch4 rebuilt title] at (-78,-185) {C. Drafting and feedback support};
+  \node (request) [ch4 rebuilt step wide] at (0,-202) {Request assignment support or drafting assistance.};
+  \node (task) [ch4 rebuilt decision] at (0,-226) {Selected support type?};
+  \node (support) [ch4 rebuilt step narrow] at (-52,-258) {Request assignment support.};
+  \node (draft) [ch4 rebuilt step narrow] at (0,-258) {Generate assignment or exam draft if enabled.};
+  \node (feedback) [ch4 rebuilt step narrow] at (52,-258) {Generate draft feedback if supported.};
+  \node (draftout) [ch4 rebuilt step wide] at (0,-286) {Draft AI output is displayed for user review.};
+  \node (draftend) [edu final] at (0,-307) {};
 
   \path [edu arrow] (start.south) -- (select.north);
   \path [edu arrow] (select) -- (enabled);
@@ -627,8 +629,8 @@
   \path [edu arrow] (enabled) -- node[edu label] {Yes} (category);
 
   \path [edu arrow] (category) -- (fork);
-  \path [edu arrow] (fork) -| (ask.north);
-  \path [edu arrow] (fork) -| (summary.north);
+  \path [edu arrow] (fork.west) -| (ask.north);
+  \path [edu arrow] (fork.east) -| (summary.north);
   \path [edu arrow] (fork) -- (request.north);
   \path [edu arrow] (ask) -- (askout);
   \path [edu arrow] (askout) -- (askend);
