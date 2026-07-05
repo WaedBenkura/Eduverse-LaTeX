@@ -84,27 +84,30 @@
   \node (open) [ch4 rebuilt step wide] at (0,-12) {User opens the EduVerse access page.};
   \node (choice) [ch4 rebuilt decision] at (0,-31) {Choose access path?};
 
-  \draw[ch4 rebuilt card] (-74,-48) rectangle (-25,-102);
+  \draw[ch4 rebuilt card] (-78,-48) rectangle (-24,-126);
   \node[ch4 rebuilt title] at (-70,-55) {Sign up};
   \node (signup) [ch4 rebuilt step narrow] at (-49,-69) {Register a new account.};
   \node (verify) [ch4 rebuilt step narrow] at (-49,-91) {Confirm the verification email.};
+  \node (signupreturn) [ch4 rebuilt step narrow] at (-49,-113) {Return to sign in.};
 
   \draw[ch4 rebuilt card] (-20,-48) rectangle (20,-82);
   \node[ch4 rebuilt title] at (-16,-55) {Sign in};
   \node (signin) [ch4 rebuilt step narrow] at (0,-72) {Sign in with credentials.};
 
-  \draw[ch4 rebuilt card] (25,-48) rectangle (74,-102);
+  \draw[ch4 rebuilt card] (24,-48) rectangle (78,-148);
   \node[ch4 rebuilt title] at (29,-55) {Reset access};
   \node (reset) [ch4 rebuilt step narrow] at (49,-69) {Request password reset.};
-  \node (newpass) [ch4 rebuilt step narrow] at (49,-91) {Set the new password.};
+  \node (resetmail) [ch4 rebuilt step narrow] at (49,-91) {Receive password-reset email.};
+  \node (resetlink) [ch4 rebuilt step narrow] at (49,-113) {Open the reset link.};
+  \node (newpass) [ch4 rebuilt step narrow] at (49,-135) {Set the new password.};
 
-  \node (valid) [ch4 rebuilt decision] at (0,-122) {Access accepted?};
-  \node (error) [ch4 rebuilt step narrow] at (56,-133) {Error message is shown.};
-  \node (errorend) [edu final] at (56,-156) {};
-  \node (context) [ch4 rebuilt step wide] at (0,-151) {Select active organization or role if needed.};
-  \node (workspace) [ch4 rebuilt step wide] at (0,-174) {Dashboard or workspace is displayed.};
-  \node (logout) [ch4 rebuilt step wide] at (0,-197) {User works in the selected context and logs out.};
-  \node (end) [edu final] at (0,-218) {};
+  \node (valid) [ch4 rebuilt decision] at (0,-162) {Access accepted?};
+  \node (error) [ch4 rebuilt step narrow] at (56,-173) {Error message is shown.};
+  \node (errorend) [edu final] at (56,-196) {};
+  \node (context) [ch4 rebuilt step wide] at (0,-191) {Select active organization or role if needed.};
+  \node (workspace) [ch4 rebuilt step wide] at (0,-214) {Dashboard or workspace is displayed.};
+  \node (logout) [ch4 rebuilt step wide] at (0,-237) {User works in the selected context and logs out.};
+  \node (end) [edu final] at (0,-258) {};
 
   \path [edu arrow] (start.south) -- (open.north);
   \path [edu arrow] (open) -- (choice);
@@ -112,10 +115,13 @@
   \path [edu arrow] (choice) -- (signin.north);
   \path [edu arrow] (choice.east) -| (reset.north);
   \path [edu arrow] (signup) -- (verify);
-  \path [edu arrow] (reset) -- (newpass);
-  \path [edu arrow] (verify.south) |- (valid.west);
+  \path [edu arrow] (verify) -- (signupreturn);
+  \path [edu arrow] (reset) -- (resetmail);
+  \path [edu arrow] (resetmail) -- (resetlink);
+  \path [edu arrow] (resetlink) -- (newpass);
+  \path [edu arrow] (signupreturn.east) -- ++(8mm,0) |- (signin.west);
   \path [edu arrow] (signin) -- (valid);
-  \path [edu arrow] (newpass.south) |- (valid.east);
+  \path [edu arrow] (newpass.west) -- ++(-8mm,0) |- (signin.east);
   \path [edu arrow] (valid.east) -- node[edu label, above] {No} ++(8mm,0) -| (error.north);
   \path [edu arrow] (error) -- (errorend);
   \path [edu arrow] (valid) -- node[edu label] {Yes} (context);
@@ -189,7 +195,7 @@
   \node (teacherview) [ch4 act step branch, right=50mm of role] {Teacher opens the class controls allowed by organization permissions.};
   \node (details) [ch4 act step, below=16mm of role] {Create or edit the class and define the title, code, term, stage, and other details.};
   \node (members) [ch4 act step, below=of details] {Assign or change the Teacher and manage class membership.};
-  \node (features) [ch4 act step, below=of members] {Configure class purpose, tools, visibility rules, and Results visibility.};
+  \node (features) [ch4 act step, below=of members] {Configure class tools, visibility rules, and Results visibility.};
   \node (save) [ch4 act step medium, below=of features] {Save the class configuration.};
   \node (ending) [ch4 act decision wide, below=of save] {End class, stage, or term?};
   \node (pastterms) [ch4 act step medium, below=14mm of ending] {Move the class into Past Terms.};
@@ -216,25 +222,25 @@
 \newcommand{\EduActivityMaterialsWorkflowDiagram}{%
 \begin{tikzpicture}[edu activity, x=1mm, y=1mm]
   \node (start) [edu initial] at (0,0) {};
-  \node (open) [ch4 rebuilt step wide] at (0,-12) {User opens class materials.};
+  \node (open) [ch4 rebuilt step wide] at (0,-12) {Class member opens class materials.};
   \node (shown) [ch4 rebuilt step wide] at (0,-25) {Materials are displayed.};
-  \node (select) [ch4 rebuilt step wide] at (0,-38) {User selects a materials action.};
+  \node (select) [ch4 rebuilt step wide] at (0,-38) {Select a materials action.};
   \node (fork) [ch4 rebuilt fork, minimum width=126mm] at (0,-51) {};
 
   \draw[ch4 rebuilt card] (-80,-62) rectangle (-20,-176);
   \node[ch4 rebuilt title] at (-76,-69) {A. Manage material};
-  \node (manage) [ch4 rebuilt step narrow] at (-50,-83) {Manage material.};
+  \node (manage) [ch4 rebuilt step narrow] at (-50,-83) {Teacher/Admin manages material.};
   \node (managechoice) [ch4 rebuilt decision] at (-50,-101) {Upload or delete?};
   \node (delete) [ch4 rebuilt step narrow] at (-69,-124) {Delete selected material.};
   \node (details) [ch4 rebuilt step narrow] at (-31,-124) {Enter details and attach file.};
-  \node (publish) [ch4 rebuilt step narrow] at (-31,-145) {Save or publish.};
+  \node (publish) [ch4 rebuilt step narrow] at (-31,-145) {Publish material.};
   \node (updated) [ch4 rebuilt step] at (-50,-166) {Updated materials are shown.};
   \node (manageend) [edu final] at (-50,-182) {};
 
   \draw[ch4 rebuilt card] (-17,-62) rectangle (17,-140);
   \node[ch4 rebuilt title] at (-13,-69) {B. View material};
-  \node (browse) [ch4 rebuilt step narrow] at (0,-87) {Browse, search, or filter materials.};
-  \node (preview) [ch4 rebuilt step narrow] at (0,-114) {Preview, open, or download material.};
+  \node (browse) [ch4 rebuilt step narrow] at (0,-87) {Student browses, searches, or filters materials.};
+  \node (preview) [ch4 rebuilt step narrow] at (0,-114) {Student previews, opens, or downloads material.};
   \node (viewend) [edu final] at (0,-135) {};
 
   \draw[ch4 rebuilt card] (20,-62) rectangle (80,-186);
@@ -280,7 +286,7 @@
   \node (open) [ch4 rebuilt step wide] at (0,-12) {User opens the class communication area.};
   \node (select) [ch4 rebuilt step wide] at (0,-26) {Select communication action.};
   \node (fork) [ch4 rebuilt fork, minimum width=118mm] at (0,-39) {};
-  \node (lowerfork) [ch4 rebuilt fork, minimum width=58mm] at (0,-160) {};
+  \node (lowerfork) [ch4 rebuilt fork, minimum width=58mm] at (0,-164) {};
 
   \draw[ch4 rebuilt card] (-74,-50) rectangle (-5,-151);
   \node[ch4 rebuilt title] at (-70,-57) {A. Send message};
@@ -357,9 +363,9 @@
   \draw[ch4 rebuilt card] (-62,-120) rectangle (62,-185);
   \node[ch4 rebuilt title] at (-58,-127) {Student submission};
   \node (studentopen) [ch4 rebuilt step wide] at (0,-139) {Student opens the published assignment.};
-  \node (submit) [ch4 rebuilt step wide] at (0,-158) {Student submits text, file, or combined work.};
-  \node (resubmit) [ch4 rebuilt decision] at (0,-179) {Resubmission needed and allowed?};
-  \node (update) [ch4 rebuilt step narrow] at (49,-179) {Update the submission.};
+  \node (submit) [ch4 rebuilt step wide] at (0,-158) {Student submits text or file.};
+  \node (resubmit) [ch4 rebuilt decision] at (0,-179) {Resubmit before deadline?};
+  \node (update) [ch4 rebuilt step narrow] at (49,-179) {Student updates the submission.};
 
   \draw[ch4 rebuilt card] (-62,-198) rectangle (62,-254);
   \node[ch4 rebuilt title] at (-58,-205) {Grading and feedback};
@@ -393,7 +399,7 @@
   \draw[ch4 rebuilt card] (-66,-8) rectangle (66,-82);
   \node[ch4 rebuilt title] at (-62,-15) {Teacher/Admin exam setup};
   \node (manage) [ch4 rebuilt step wide] at (0,-26) {Teacher or administrator opens exam management.};
-  \node (configure) [ch4 rebuilt step wide] at (0,-45) {Create or edit exam, questions, passcode, timing, and integrity settings.};
+  \node (configure) [ch4 rebuilt step wide] at (0,-45) {Enter exam title, add questions, and configure passcode and timing.};
   \node (publish) [ch4 rebuilt decision] at (0,-67) {Publish exam?};
   \node (draft) [ch4 rebuilt step narrow] at (-51,-67) {Save as draft.};
   \node (draftend) [edu final] at (-51,-90) {};
@@ -410,15 +416,19 @@
   \node (event) [ch4 rebuilt step narrow] at (49,-205) {Warning or event is shown.};
   \node (submit) [ch4 rebuilt step wide] at (0,-230) {Submit the attempt or finish at expiry.};
 
-  \draw[ch4 rebuilt card] (-66,-244) rectangle (66,-332);
+  \draw[ch4 rebuilt card] (-74,-244) rectangle (74,-389);
   \node[ch4 rebuilt title] at (-62,-251) {Review and release};
   \node (review) [ch4 rebuilt step wide] at (0,-263) {Teacher or administrator reviews attempts and integrity information.};
   \node (grade) [ch4 rebuilt step wide] at (0,-282) {Manual answers are graded and outcome is finalized.};
-  \node (validattempt) [ch4 rebuilt decision] at (0,-305) {Release result or void/retake?};
-  \node (release) [ch4 rebuilt step narrow] at (-42,-330) {Student views released result and answer review.};
-  \node (retake) [ch4 rebuilt step narrow] at (42,-330) {Void or retake message is shown.};
-  \node (releaseend) [edu final] at (-42,-352) {};
-  \node (retakeend) [edu final] at (42,-352) {};
+  \node (postreview) [ch4 rebuilt decision] at (0,-305) {Select post-review action.};
+  \node (releaseaction) [ch4 rebuilt step narrow] at (-52,-332) {Release exam results.};
+  \node (voidaction) [ch4 rebuilt step narrow] at (0,-332) {Void selected attempt.};
+  \node (retakeaction) [ch4 rebuilt step narrow] at (52,-332) {Grant retake.};
+  \node (studentresult) [ch4 rebuilt step narrow] at (-52,-358) {Student views released result and answer review.};
+  \node (voidmessage) [ch4 rebuilt step narrow] at (0,-358) {Void status is shown for the attempt.};
+  \node (retakeavailable) [ch4 rebuilt step narrow] at (52,-358) {Student can open a new attempt.};
+  \node (releaseend) [edu final] at (-52,-381) {};
+  \node (voidend) [edu final] at (0,-381) {};
 
   \path [edu arrow] (start.south) -- (manage.north);
   \path [edu arrow] (manage) -- (configure);
@@ -438,74 +448,140 @@
   \path [edu arrow] (event.south) |- (submit.east);
   \path [edu arrow] (submit) -- (review);
   \path [edu arrow] (review) -- (grade);
-  \path [edu arrow] (grade) -- (validattempt);
-  \path [edu arrow] (validattempt.west) -| node[edu label, pos=0.25] {Release} (release.north);
-  \path [edu arrow] (validattempt.east) -| node[edu label, pos=0.25] {Void/retake} (retake.north);
-  \path [edu arrow] (release) -- (releaseend);
-  \path [edu arrow] (retake) -- (retakeend);
+  \path [edu arrow] (grade) -- (postreview);
+  \path [edu arrow] (postreview.west) -| node[edu label, pos=0.25] {Release} (releaseaction.north);
+  \path [edu arrow] (postreview) -- node[edu label] {Void} (voidaction);
+  \path [edu arrow] (postreview.east) -| node[edu label, pos=0.25] {Retake} (retakeaction.north);
+  \path [edu arrow] (releaseaction) -- (studentresult);
+  \path [edu arrow] (studentresult) -- (releaseend);
+  \path [edu arrow] (voidaction) -- (voidmessage);
+  \path [edu arrow] (voidmessage) -- (voidend);
+  \path [edu arrow] (retakeaction) -- (retakeavailable);
+  \path [edu arrow] (retakeavailable.east) -- ++(18mm,0) |- node[edu label, pos=0.78] {New attempt} (studentopen.east);
 \end{tikzpicture}%
 }
 
 \newcommand{\EduActivityLiveSessionWorkflowDiagram}{%
-\begin{tikzpicture}[edu activity, node distance=8.5mm and 28mm]
-  \node (start) [edu initial] {};
-  \node (open) [ch4 act step, below=9mm of start] {Teacher or Organization Administrator opens the Sessions page.};
-  \node (startsession) [ch4 act step medium, below=of open] {Start the live session for the selected class.};
-  \node (join) [ch4 act step medium, below=of startsession] {Eligible participants join the live session.};
-  \node (media) [ch4 act step medium, below=of join] {Participants manage microphone and camera controls.};
-  \node (tools) [ch4 act step medium, below=of media] {Use the participants panel, session chat, and screen sharing as needed.};
-  \node (whiteboard) [ch4 act step medium, below=of tools] {Use or view the shared whiteboard according to role permissions.};
-  \node (endingsession) [ch4 act step medium, below=of whiteboard] {Teacher ends the live session for the class.};
-  \node (end) [edu final, below=of endingsession] {};
+\begin{tikzpicture}[edu activity, x=1mm, y=1mm]
+  \node (start) [edu initial] at (0,0) {};
+  \node (open) [ch4 rebuilt step wide] at (0,-13) {Teacher opens the Sessions page.};
+  \node (startsession) [ch4 rebuilt step wide] at (0,-29) {Teacher starts the live session for the selected class.};
+  \node (available) [ch4 rebuilt step wide] at (0,-45) {Live session is available to enrolled students.};
+  \node (fork) [ch4 rebuilt fork, minimum width=114mm] at (0,-59) {};
+
+  \draw[ch4 rebuilt card] (-74,-70) rectangle (-5,-173);
+  \node[ch4 rebuilt title] at (-70,-77) {Teacher controls};
+  \node (teacherjoin) [ch4 rebuilt step] at (-39,-93) {Teacher joins and manages microphone and camera.};
+  \node (share) [ch4 rebuilt step] at (-39,-119) {Teacher uses screen sharing when needed.};
+  \node (teachertools) [ch4 rebuilt step] at (-39,-145) {Teacher uses participants list, session chat, and whiteboard tools.};
+  \node (endingsession) [ch4 rebuilt step] at (-39,-166) {Teacher ends the live session.};
+  \node (teacherend) [edu final] at (-39,-186) {};
+
+  \draw[ch4 rebuilt card] (5,-70) rectangle (74,-173);
+  \node[ch4 rebuilt title] at (9,-77) {Student participation};
+  \node (studentjoin) [ch4 rebuilt step] at (39,-93) {Enrolled student joins the live session.};
+  \node (studentchat) [ch4 rebuilt step] at (39,-119) {Student views participants and uses session chat.};
+  \node (studentwhiteboard) [ch4 rebuilt step] at (39,-145) {Student views the shared whiteboard.};
+  \node (studentleave) [ch4 rebuilt step] at (39,-166) {Student leaves or the session ends.};
+  \node (studentend) [edu final] at (39,-186) {};
 
   \path [edu arrow] (start.south) -- (open.north);
   \path [edu arrow] (open) -- (startsession);
-  \path [edu arrow] (startsession) -- (join);
-  \path [edu arrow] (join) -- (media);
-  \path [edu arrow] (media) -- (tools);
-  \path [edu arrow] (tools) -- (whiteboard);
-  \path [edu arrow] (whiteboard) -- (endingsession);
-  \path [edu arrow] (endingsession) -- (end);
+  \path [edu arrow] (startsession) -- (available);
+  \path [edu arrow] (available) -- (fork);
+  \path [edu arrow] (fork.west) -| node[edu label, pos=0.25] {Teacher} (teacherjoin.north);
+  \path [edu arrow] (fork.east) -| node[edu label, pos=0.25] {Student} (studentjoin.north);
+  \path [edu arrow] (teacherjoin) -- (share);
+  \path [edu arrow] (share) -- (teachertools);
+  \path [edu arrow] (teachertools) -- (endingsession);
+  \path [edu arrow] (endingsession) -- (teacherend);
+  \path [edu arrow] (studentjoin) -- (studentchat);
+  \path [edu arrow] (studentchat) -- (studentwhiteboard);
+  \path [edu arrow] (studentwhiteboard) -- (studentleave);
+  \path [edu arrow] (studentleave) -- (studentend);
 \end{tikzpicture}%
 }
 
-\newcommand{\EduActivityResultsDashboardWorkflowDiagram}{%
+\newcommand{\EduActivityResultsWorkflowDiagram}{%
 \begin{tikzpicture}[edu activity, x=1mm, y=1mm]
   \node (start) [edu initial] at (0,0) {};
-  \node (open) [ch4 rebuilt step wide] at (0,-12) {User opens the dashboard or Results area.};
-  \node (shown) [ch4 rebuilt step wide] at (0,-26) {Role-specific dashboard is displayed.};
-  \node (select) [ch4 rebuilt step wide] at (0,-40) {Select result view.};
-  \node (fork) [ch4 rebuilt fork, minimum width=88mm] at (0,-54) {};
+  \node (open) [ch4 rebuilt step wide] at (0,-12) {User opens the Results area.};
+  \node (select) [ch4 rebuilt step wide] at (0,-28) {Select result or score view.};
+  \node (fork) [ch4 rebuilt fork, minimum width=94mm] at (0,-42) {};
 
-  \draw[ch4 rebuilt card] (-72,-66) rectangle (-4,-171);
-  \node[ch4 rebuilt title] at (-68,-73) {Student branch};
-  \node (released) [ch4 rebuilt decision] at (-38,-92) {Results released or visible?};
-  \node (hidden) [ch4 rebuilt step narrow] at (-57,-119) {Unavailable results remain hidden or marked not released.};
-  \node (hiddenend) [edu final] at (-57,-144) {};
-  \node (grades) [ch4 rebuilt step narrow] at (-19,-119) {View assignment grades and feedback.};
-  \node (exams) [ch4 rebuilt step narrow] at (-19,-148) {View released exam results and answer review where allowed.};
-  \node (studentend) [edu final] at (-19,-167) {};
+  \draw[ch4 rebuilt card] (-74,-54) rectangle (-4,-196);
+  \node[ch4 rebuilt title] at (-70,-61) {Student branch};
+  \node (released) [ch4 rebuilt decision] at (-39,-78) {Results released or visible?};
+  \node (hidden) [ch4 rebuilt step narrow] at (-58,-107) {Unavailable results remain hidden or marked not released.};
+  \node (hiddenend) [edu final] at (-58,-132) {};
+  \node (ownresults) [ch4 rebuilt step narrow] at (-20,-107) {View own scores, grades, and feedback.};
+  \node (examreview) [ch4 rebuilt step narrow] at (-20,-134) {View released exam review where allowed.};
+  \node (sharedq) [ch4 rebuilt decision] at (-20,-160) {Classmate scores enabled?};
+  \node (sharedscores) [ch4 rebuilt step narrow] at (-55,-182) {View shared class scores/results.};
+  \node (studentend) [edu final] at (-20,-205) {};
 
-  \draw[ch4 rebuilt card] (4,-66) rectangle (72,-171);
-  \node[ch4 rebuilt title] at (8,-73) {Teacher/Admin branch};
-  \node (staffopen) [ch4 rebuilt step] at (38,-95) {Open class, assignment, or exam results.};
-  \node (staffreview) [ch4 rebuilt step] at (38,-126) {Review results according to visibility rules.};
-  \node (staffend) [edu final] at (38,-154) {};
+  \draw[ch4 rebuilt card] (4,-54) rectangle (74,-158);
+  \node[ch4 rebuilt title] at (8,-61) {Teacher/Admin branch};
+  \node (staffopen) [ch4 rebuilt step] at (39,-83) {Open class, assignment, or exam results.};
+  \node (staffreview) [ch4 rebuilt step] at (39,-112) {Review results.};
+  \node (staffend) [edu final] at (39,-144) {};
 
   \path [edu arrow] (start.south) -- (open.north);
-  \path [edu arrow] (open) -- (shown);
-  \path [edu arrow] (shown) -- (select);
+  \path [edu arrow] (open) -- (select);
   \path [edu arrow] (select) -- (fork);
   \path [edu arrow] (fork) -| node[edu label, pos=0.25] {Student} (released.north);
   \path [edu arrow] (fork) -| node[edu label, pos=0.25] {Teacher/Admin} (staffopen.north);
   \path [edu arrow] (released.west) -| node[edu label, pos=0.25] {No} (hidden.north);
   \path [edu arrow] (hidden) -- (hiddenend);
-  \path [edu arrow] (released.east) -| node[edu label, pos=0.25] {Yes} (grades.north);
-  \path [edu arrow] (grades) -- (exams);
-  \path [edu arrow] (exams) -- (studentend);
+  \path [edu arrow] (released.east) -| node[edu label, pos=0.25] {Yes} (ownresults.north);
+  \path [edu arrow] (ownresults) -- (examreview);
+  \path [edu arrow] (examreview) -- (sharedq);
+  \path [edu arrow] (sharedq.west) -| node[edu label, pos=0.25] {Yes} (sharedscores.north);
+  \path [edu arrow] (sharedscores.south) |- (studentend.west);
+  \path [edu arrow] (sharedq) -- node[edu label] {No} (studentend);
 
   \path [edu arrow] (staffopen) -- (staffreview);
   \path [edu arrow] (staffreview) -- (staffend);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduActivityDashboardWorkflowDiagram}{%
+\begin{tikzpicture}[edu activity, x=1mm, y=1mm]
+  \node (start) [edu initial] at (0,0) {};
+  \node (open) [ch4 rebuilt step wide] at (0,-12) {User opens the dashboard.};
+  \node (role) [ch4 rebuilt step wide] at (0,-28) {Active role and organization context are shown.};
+  \node (fork) [ch4 rebuilt fork, minimum width=118mm] at (0,-43) {};
+
+  \draw[ch4 rebuilt card] (-74,-55) rectangle (-26,-151);
+  \node[ch4 rebuilt title] at (-70,-62) {Student dashboard};
+  \node (studentdash) [ch4 rebuilt step narrow] at (-50,-80) {Student dashboard overview is displayed.};
+  \node (studentitems) [ch4 rebuilt step narrow] at (-50,-110) {Review active classes, tasks, notifications, and learning links.};
+  \node (studentend) [edu final] at (-50,-142) {};
+
+  \draw[ch4 rebuilt card] (-22,-55) rectangle (22,-151);
+  \node[ch4 rebuilt title] at (-18,-62) {Teacher dashboard};
+  \node (teacherdash) [ch4 rebuilt step narrow] at (0,-80) {Teacher dashboard overview is displayed.};
+  \node (teacheritems) [ch4 rebuilt step narrow] at (0,-110) {Review classes, grading workload, sessions, and class activity.};
+  \node (teacherend) [edu final] at (0,-142) {};
+
+  \draw[ch4 rebuilt card] (26,-55) rectangle (74,-151);
+  \node[ch4 rebuilt title] at (30,-62) {Admin dashboard};
+  \node (admindash) [ch4 rebuilt step narrow] at (50,-80) {Admin dashboard overview is displayed.};
+  \node (adminitems) [ch4 rebuilt step narrow] at (50,-110) {Review organization statistics, members, classes, and settings summary.};
+  \node (adminend) [edu final] at (50,-142) {};
+
+  \path [edu arrow] (start.south) -- (open.north);
+  \path [edu arrow] (open) -- (role);
+  \path [edu arrow] (role) -- (fork);
+  \path [edu arrow] (fork.west) -| node[edu label, pos=0.25] {Student} (studentdash.north);
+  \path [edu arrow] (fork) -- node[edu label] {Teacher} (teacherdash);
+  \path [edu arrow] (fork.east) -| node[edu label, pos=0.25] {Admin} (admindash.north);
+  \path [edu arrow] (studentdash) -- (studentitems);
+  \path [edu arrow] (studentitems) -- (studentend);
+  \path [edu arrow] (teacherdash) -- (teacheritems);
+  \path [edu arrow] (teacheritems) -- (teacherend);
+  \path [edu arrow] (admindash) -- (adminitems);
+  \path [edu arrow] (adminitems) -- (adminend);
 \end{tikzpicture}%
 }
 
@@ -536,9 +612,9 @@
 
   \draw[ch4 rebuilt card] (-74,-151) rectangle (74,-232);
   \node[ch4 rebuilt title] at (-70,-158) {C. Drafting and feedback support};
-  \node (request) [ch4 rebuilt step wide] at (0,-173) {Request assignment guidance or drafting assistance.};
-  \node (task) [ch4 rebuilt decision] at (0,-192) {Drafting task?};
-  \node (guidance) [ch4 rebuilt step narrow] at (-48,-215) {Request assignment guidance.};
+  \node (request) [ch4 rebuilt step wide] at (0,-173) {Request assignment support or drafting assistance.};
+  \node (task) [ch4 rebuilt decision] at (0,-192) {Selected support type?};
+  \node (support) [ch4 rebuilt step narrow] at (-48,-215) {Request assignment support.};
   \node (draft) [ch4 rebuilt step narrow] at (0,-215) {Generate assignment or exam draft if enabled.};
   \node (feedback) [ch4 rebuilt step narrow] at (48,-215) {Generate draft feedback if supported.};
   \node (draftout) [ch4 rebuilt step wide] at (0,-232) {Draft AI output is displayed for user review.};
@@ -561,10 +637,10 @@
   \path [edu arrow] (studyout) -- (studyend);
 
   \path [edu arrow] (request) -- (task);
-  \path [edu arrow] (task.west) -| node[edu label, pos=0.25] {Guidance} (guidance.north);
+  \path [edu arrow] (task.west) -| node[edu label, pos=0.25] {Support} (support.north);
   \path [edu arrow] (task) -- node[edu label] {Assignment/exam} (draft);
   \path [edu arrow] (task.east) -| node[edu label, pos=0.25] {Feedback} (feedback.north);
-  \path [edu arrow] (guidance.south) |- (draftout.west);
+  \path [edu arrow] (support.south) |- (draftout.west);
   \path [edu arrow] (draft) -- (draftout);
   \path [edu arrow] (feedback.south) |- (draftout.east);
   \path [edu arrow] (draftout) -- (draftend);

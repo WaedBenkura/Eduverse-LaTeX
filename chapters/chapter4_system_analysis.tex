@@ -57,7 +57,10 @@ analyzed not only as a collection of learning tools, but also as a governed
 workspace in which institutional control and daily educational activity are
 resolved together. Supported features may be enabled or disabled at the
 organization level and, where supported, refined further at the class level so
-that unavailable capabilities are hidden or blocked in a controlled way.
+that unavailable capabilities are hidden or blocked in a controlled way. The
+same analytical model also assumes reuse of one protected API layer so that the
+web application and companion clients can apply the same access rules and
+workflow logic.
 
 A class workspace does not need to represent only a conventional taught
 course. It may also be configured for a focused academic purpose, such as a
@@ -332,6 +335,14 @@ The main non-functional requirements of EduVerse are summarized below.
     the system shall apply organization-defined access rules so that
     educational materials or membership paths can be shared more broadly
     without removing institutional control.
+  \item \textbf{NFR-10 Shared API consistency.} The system shall preserve one
+    consistent protected API behavior for the web application and companion
+    clients so that authentication, role resolution, and core workflow rules
+    do not diverge across interfaces.
+  \item \textbf{NFR-11 Reuse and integration readiness.} The system shall
+    remain suitable for controlled API reuse or future integrations so that
+    authorized external clients can reuse academic data and workflow services
+    without bypassing platform security or business rules.
 \end{itemize}
 
 \section{Use-Case Model}\label{sec:use_case_model}
@@ -603,17 +614,28 @@ Figure~\ref{fig:ch4_activity_live_session} represents the synchronous class
 session from session start through participation tools and whiteboard use to
 controlled session closure.
 
-\subsection*{AD-09 Results and Dashboard Workflow}
+\subsection*{AD-09 Results Workflow}
 
-\EduActivityFigureReadable{\EduActivityResultsDashboardWorkflowDiagram}
-  {Results and Dashboard Workflow Activity Diagram}
-  {fig:ch4_activity_results_dashboard}
+\EduActivityFigureReadable{\EduActivityResultsWorkflowDiagram}
+  {Results Workflow Activity Diagram}
+  {fig:ch4_activity_results}
 
-Figure~\ref{fig:ch4_activity_results_dashboard} explains how the dashboard and
-Results area differ by actor while preserving controlled visibility for grades,
-feedback, released exam outcomes, and class-level summaries.
+Figure~\ref{fig:ch4_activity_results} focuses on the Results area, including
+student access to released scores, feedback, exam review where allowed,
+optional classmate score visibility when enabled by the teacher, and
+Teacher/Admin result review.
 
-\subsection*{AD-10 AI Learning Support Workflow}
+\subsection*{AD-10 Dashboard Workflow}
+
+\EduActivityFigureReadable{\EduActivityDashboardWorkflowDiagram}
+  {Dashboard Workflow Activity Diagram}
+  {fig:ch4_activity_dashboard}
+
+Figure~\ref{fig:ch4_activity_dashboard} models the separate role-based
+dashboard overview for Student, Teacher, and Admin users without merging it
+with the Results page workflow.
+
+\subsection*{AD-11 AI Learning Support Workflow}
 
 \EduActivityFigureReadable{\EduActivityAiLearningSupportWorkflowDiagram}
   {AI Learning Support Workflow Activity Diagram}
@@ -625,7 +647,7 @@ summaries, assignment support, and AI-assisted drafting tasks where
 available. The workflow also assumes that AI may be unavailable in
 organizations or classes where it has been disabled.
 
-\subsection*{AD-11 Integrated Coding Lab / IDE Workflow}
+\subsection*{AD-12 Integrated Coding Lab / IDE Workflow}
 
 \EduActivityFigure{\EduActivityIdeWorkflowDiagram}
   {Integrated Coding Lab / IDE Workflow Activity Diagram}
@@ -637,7 +659,7 @@ workspace reset, and terminal usage where that capability is supported. This
 workflow applies only when the corresponding coding capability is enabled for
 the active class context.
 
-\subsection*{AD-12 Profile and Help Workflow}
+\subsection*{AD-13 Profile and Help Workflow}
 
 \EduActivityFigureReadable{\EduActivityProfileHelpWorkflowDiagram}
   {Profile and Help Workflow Activity Diagram}

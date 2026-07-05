@@ -3,7 +3,6 @@
   \chaptercontentsitem{sec:architectural_design_overview}
   \chaptercontentsitem{sec:data_and_storage_design}
   \chaptercontentsitem{sec:interface_and_interaction_design}
-  \chaptercontentsitem{sec:integration_and_security_design}
 }
 
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
@@ -47,33 +46,31 @@
 
 \section{Introduction}\label{sec:system_design_introduction}
 
-This chapter presents the system design perspective of Eduverse. In the
+This chapter presents the system design perspective of EduVerse. In the
 current revision, the chapter is intentionally focused on the database design
 because the verified schema, regenerated ERD, and supporting database notes
-are sufficiently stable to document in an academic manner. The remaining
-design sections are retained to preserve the full chapter structure and will
-be expanded in later documentation passes.
+are sufficiently stable to document in an academic manner. The chapter
+structure is retained so that the database design can be situated clearly
+within the broader system-design discussion.
 
 \section{Architectural Design Overview}\label{sec:architectural_design_overview}
 
-At a high level, Eduverse combines a web-based learning environment with a
+At a high level, EduVerse combines a web-based learning environment with a
 mobile companion scope, a Supabase-backed PostgreSQL database, AWS S3-backed
 file references for uploaded academic content, and LiveKit-related session
-metadata for synchronous learning. A fuller component-level architectural
-description is reserved for a later revision, while the present section
-establishes the context for the detailed data design discussed in
-Section~\ref{sec:data_and_storage_design}.
+metadata for synchronous learning. This section establishes the context for the
+detailed data design discussed in Section~\ref{sec:data_and_storage_design}.
 
 \section{Data and Storage Design}\label{sec:data_and_storage_design}
 
-This section documents the current verified database design of Eduverse,
+This section documents the current verified database design of EduVerse,
 including the schema overview, the ERD, the physical schema tables derived
 from the latest analysis notes, and the main uncertainty caused by missing
 base-table DDL in part of the checked-in migration history.
 
 \subsection{Database Design Overview}\label{subsec:database_design_overview}
 
-Eduverse uses a Supabase-managed PostgreSQL database as the main persistent
+EduVerse uses a Supabase-managed PostgreSQL database as the main persistent
 store for organizational, academic, and operational records. The schema
 follows a multi-organization structure in which the organization acts as the
 top-level tenant, while the class operates as the main instructional
@@ -94,7 +91,7 @@ not include dedicated tables for IDE workspace state or whiteboard state.
 
 \subsection{Entity Relationship Diagram (ERD)}\label{subsec:entity_relationship_diagram}
 
-Figure~\ref{fig:eduverse_database_erd} presents the current Eduverse database
+Figure~\ref{fig:eduverse_database_erd} presents the current EduVerse database
 ERD derived from the latest checked-in schema evidence and summarizes the
 main organization, class, content, assessment, and operational relationships
 within the platform.
@@ -108,7 +105,7 @@ within the platform.
     height=0.90\textheight,
     keepaspectratio
   ]{figures/chapter5/database-erd.pdf}
-  \caption{Entity Relationship Diagram of the Eduverse Database}
+  \caption{Entity Relationship Diagram of the EduVerse Database}
   \label{fig:eduverse_database_erd}
 \end{figure}
 
@@ -116,7 +113,7 @@ within the platform.
 
 \subsection{Database Tables}\label{subsec:database_tables}
 
-The following schema tables present the real Eduverse database tables on
+The following schema tables present the real EduVerse database tables on
 normal portrait thesis pages. Column names, primary keys, foreign keys,
 logical relationships, enum or status fields, and essential notes are taken
 from \db{database-analysis.md}; where exact SQL types are not directly
@@ -593,7 +590,7 @@ visible, conservative generic types are used.
 
 \EduSchemaTableStart{auth.users}
 \EduSchemaRow{id}{\db{uuid}}{PK; external Supabase authentication user identifier.}
-\EduSchemaNote{This external table is referenced by invite, join-link, join-request, exam, and class-lifecycle user fields in the Eduverse schema.}
+\EduSchemaNote{This external table is referenced by invite, join-link, join-request, exam, and class-lifecycle user fields in the EduVerse schema.}
 \EduSchemaTableEnd
 
 \subsection{Database Design Notes and Uncertain Relationships}
@@ -818,13 +815,3 @@ alongside the embedded programming workspace.
 \FloatBarrier
 
 % TODO: Insert mobile companion application screenshots when provided.
-
-\section{Integration and Security Design}\label{sec:integration_and_security_design}
-
-The broader integration and security design of Eduverse, including service
-boundaries, access-control flows, and environment-level protections, will be
-expanded in a later revision of this chapter. For the current database-focused
-pass, the most relevant design distinction is already captured in
-Section~\ref{subsec:database_design_notes_uncertain}, where enforced foreign
-keys are separated from logical relationships when the visible migration
-history is incomplete.

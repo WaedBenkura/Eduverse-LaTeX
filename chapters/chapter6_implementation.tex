@@ -1,21 +1,432 @@
-\chapter{Software and Engineering Implementation}\label{chap:implementation}
-
-\noindent\textit{TODO: This chapter outline is reserved for a later
-documentation step.}
-
-% TODO: Develop this chapter after the system design chapter is approved.
+\chapterwithopening{Software and Engineering Implementation}{chap:implementation}{
+  \chaptercontentsitem{sec:implementation_introduction}
+  \chaptercontentsitem{sec:implementation_environment}
+  \chaptercontentsitem{sec:implementation_system_architecture}
+  \chaptercontentsitem{sec:web_application_implementation}
+  \chaptercontentsitem{sec:backend_database_storage_implementation}
+  \chaptercontentsitem{sec:authentication_authorization_security}
+  \chaptercontentsitem{sec:role_based_multi_organization_access}
+  \chaptercontentsitem{sec:feature_availability_extension_implementation}
+  \chaptercontentsitem{sec:real_time_communication_live_sessions}
+  \chaptercontentsitem{sec:ai_learning_support_ide_implementation}
+  \chaptercontentsitem{sec:development_workflow_deployment}
+  \chaptercontentsitem{sec:implementation_challenges_adopted_solutions}
+  \chaptercontentsitem{sec:implementation_chapter_summary}
+}
 
 \section{Introduction}\label{sec:implementation_introduction}
-% TODO: Introduce the implementation chapter.
+
+This chapter documents the verified software and engineering implementation of
+EduVerse based on the current repository, the implementation analysis report,
+and the accompanying project notes. It explains how the platform was realized
+as a web-first educational workspace and how its main services, security
+controls, role model, and modular academic tools were integrated into one
+coherent system.
+
+The chapter is deliberately limited to what is supported by the available
+implementation evidence. The current repository clearly contains the web
+application and its supporting server logic. It does not contain the mobile
+companion source code, although project documentation references that mobile
+client as a separate sibling repository. Accordingly, the discussion below
+describes the shared web-facing implementation in detail and refers to mobile
+integration only where the repository explicitly supports it through shared API
+behavior.
+
+\section{Implementation Environment}\label{sec:implementation_environment}
+
+EduVerse was implemented as a full-stack web application rather than as a thin
+frontend connected to a separately maintained backend service. The browser
+client, server-side route handlers, shared domain logic, database access, and
+external service integrations are coordinated within the same engineering
+environment.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.15}
+  \setlength{\tabcolsep}{5pt}
+  \caption{Main EduVerse Implementation Environment}
+  \label{tab:eduverse_implementation_environment}
+  \begin{tabular}{|p{0.24\textwidth}|p{0.27\textwidth}|p{0.39\textwidth}|}
+    \hline
+    \textbf{Implementation layer} & \textbf{Main technologies} & \textbf{Implementation purpose} \\
+    \hline
+    Web client & Next.js App Router, React, TypeScript & Role-specific dashboards, class workspaces, forms, navigation, interactive learning tools, and client-side state. \\
+    \hline
+    Server/API layer & Next.js route handlers, shared domain logic in \texttt{lib/*}, validation helpers & Authenticated reads, mutations, workflow rules, file handling, integration calls, and reusable server-owned APIs. \\
+    \hline
+    Data and authentication & Supabase Postgres, Supabase Auth, RPC functions, row-level security & Persistent academic records, identity management, role selection, guarded data access, and workflow-level database operations. \\
+    \hline
+    File storage & AWS S3 & Storage of large educational files such as materials and assignment files, with signed retrieval. \\
+    \hline
+    Real-time and live sessions & LiveKit, Supabase Realtime & Live session entry, session presence coordination, and live update synchronization. \\
+    \hline
+    AI support & OpenRouter, PDF/image extraction helpers, browser-side AI interfaces & Class AI assistance, study summaries, drafting support, and contextual academic help. \\
+    \hline
+    Messaging and invite delivery & Gmail API when configured & Organization invite delivery through email when the required server configuration is available. \\
+    \hline
+    Review and deployment support & Bun test execution, GitHub workflow, GitHub Actions, Vercel preview deployments & Automated checks, branch review, and safe pre-merge inspection of feature increments. \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\FloatBarrier
+
+The implementation environment also reflects an intentional client asymmetry.
+The web application is the primary and fully evidenced interface in the current
+repository, while the mobile companion is treated as a separate client expected
+to consume the same protected API layer rather than re-implement core business
+logic independently.
+
+\section{System Architecture}\label{sec:implementation_system_architecture}
+
+The implemented architecture follows a web-first, service-integrated model. The
+browser renders role-sensitive application pages, while most guarded reads and
+mutations pass through server-side route handlers under \texttt{app/api/*}.
+Those routes coordinate with Supabase for authentication, relational data,
+database RPC functions, and some realtime-aware state. Specialized services are
+then used only where they add a distinct capability that is not naturally
+stored inside the relational database.
+
+At a high level, the implemented request flow can be described as follows:
+
+\begin{itemize}
+  \item The browser loads the Next.js application and renders role-specific
+    dashboard and class pages.
+  \item The application shell resolves the authenticated user and the active
+    organization/role context before protected workspaces are opened.
+  \item Client actions call server-owned API routes, which apply validation,
+    authorization checks, and workflow rules.
+  \item The API layer reads and writes structured academic data through
+    Supabase tables and, where appropriate, invokes Supabase RPC functions for
+    higher-level workflow control.
+  \item Large files, live-session access, and AI generation are delegated from
+    the server layer to AWS S3, LiveKit, and OpenRouter respectively.
+\end{itemize}
+
+This architecture solves an important consistency problem. Because the platform
+centralizes business rules in shared server-owned routes and helpers, the same
+authorization rules and academic data flows can be reused by the web
+application, by the separate mobile companion, and by future controlled
+integrations without duplicating the role model in multiple clients.
+
+The repository structure also reflects modular engineering. Application routes,
+feature modules, shared libraries, and service helpers are separated so that
+feature slices such as assignments, exams, live sessions, AI, and IDE behavior
+can evolve while still depending on a shared organization-aware core.
 
 \section{Web Application Implementation}\label{sec:web_application_implementation}
-% TODO: Document the Eduverse web implementation.
 
-\section{Mobile Companion Implementation}\label{sec:mobile_companion_implementation}
-% TODO: Document the Eduverse mobile MVP implementation.
+The EduVerse web application is the main operational client of the system. It
+implements the complete educational workspace visible in the current
+repository, including organization administration, class participation,
+materials, communication, assignments, exams, results, live sessions, AI
+support, and the browser-based coding lab.
 
-\section{Backend and Service Integration}\label{sec:backend_and_service_integration}
-% TODO: Document Supabase, AWS S3, LiveKit, and OpenRouter integration.
+The interface is organized around role-specific dashboards and class-centered
+workspaces. Organization Administrators receive organization-scoped views for
+class oversight, membership management, public access, feature configuration,
+teacher permissions, archived terms, and settings. Teachers receive dashboards
+and class tools oriented toward teaching activity, grading workload, and class
+management. Students receive dashboards and class views focused on active
+learning tasks such as materials, submissions, results, notifications, live
+session participation, and available study tools.
 
-\section{Engineering Challenges and Resolutions}\label{sec:engineering_challenges_and_resolutions}
-% TODO: Document key implementation challenges and how they were addressed.
+At the class level, the web application acts as a unified academic workspace
+rather than a simple content portal. Chat, announcements, uploaded materials,
+assignment workflows, exam workflows, results visibility, live sessions,
+whiteboard interaction, AI support, and IDE access are all exposed within the
+same class environment when enabled. This reduces the fragmentation that would
+otherwise occur if each activity were moved to a different external tool.
+
+The same class structure is also flexible in purpose. A class can operate as a
+conventional taught course, but the implementation also supports narrower uses,
+such as a library-style class dedicated mainly to sharing books and learning
+resources. This confirms that EduVerse is not limited to a single pedagogical
+format; it provides a governed academic workspace that can be specialized
+according to organizational needs.
+
+Although the broader project includes a mobile companion direction, the current
+repository proves the web application only. For that reason, this chapter treats
+the web client as the verified primary implementation and does not claim proven
+mobile feature parity from the available source tree.
+
+\section{Backend, Database, and Storage Implementation}
+\label{sec:backend_database_storage_implementation}
+
+EduVerse uses a Supabase-centered backend model implemented from within the
+Next.js project. No separate standalone backend service was identified in the
+repository. Instead, the route handlers and shared server libraries perform the
+main backend responsibilities: access control, request validation, workflow
+execution, data persistence, and integration with external services.
+
+The relational data model is organized into several main domains: organization
+membership and access, class management, feature and extension settings,
+materials and messages, assignments, exams, notifications, live-session
+records, and historical academic data. Route handlers query these tables
+directly where appropriate and also invoke Supabase RPC functions for higher
+level actions such as organization creation, selected-role updates, class
+management checks, join-link acceptance, results visibility updates, and
+live-session claiming.
+
+An important design choice concerns file handling. Large media and document
+objects are not stored directly inside the frequently queried relational tables.
+Instead, EduVerse keeps structured academic metadata in the database while
+storing uploaded files in AWS S3. Materials, assignment attachments, and
+student-submitted files therefore preserve their class ownership, uploader,
+access, and descriptive metadata in Supabase, while the binary content itself
+is stored separately in object storage. This separation reduces unnecessary
+load on the transactional database and keeps routine academic queries focused
+on structured records rather than large file payloads.
+
+File handling is also server-mediated. The browser sends uploads to the server,
+the server validates the request, writes the file to S3 using protected
+credentials, and then stores the related metadata in the database. Download
+access is issued through short-lived signed URLs, and some material content is
+also proxied through authenticated server routes for inline viewing. This
+approach keeps storage credentials outside the browser and aligns file delivery
+with the same access-control model used for the rest of the platform.
+
+Selective privileged access is used where necessary. The repository includes a
+service-role Supabase client for restricted server-only operations such as
+audit-log writes and selected aggregation or registration tasks. Even so, the
+general pattern remains consistent: privileged access is limited, while most
+application behavior stays inside request-scoped authenticated route handling.
+
+\section{Authentication, Authorization, and Security}
+\label{sec:authentication_authorization_security}
+
+Authentication in EduVerse is built on Supabase Auth. The repository shows
+sign-in, sign-up, password reset, password change, authentication callbacks,
+and protected route entry behavior. Once the user is authenticated, the system
+still requires organization and role context before organization-scoped or
+class-scoped pages may be opened.
+
+Authorization is implemented in multiple layers rather than through one
+front-end check alone. The application shell prevents unauthenticated access to
+protected areas, route handlers enforce access through server-side user
+resolution, selected-role records determine which role the user is currently
+operating under, helper logic and RPC functions perform class-level permission
+checks, and database migrations define row-level security policies across major
+tables. This layered model is important for a platform in which the same person
+may hold different roles in different organizations.
+
+The implementation also contains several concrete security controls:
+
+\begin{itemize}
+  \item server-side validation for uploads, assignments, exams, and other
+    guarded inputs before persistence;
+  \item short-lived signed S3 URLs for protected file downloads;
+  \item invite acceptance tied to the authenticated email address rather than
+    token possession alone;
+  \item public join links with enable/disable state, expiry, usage limits,
+    approval options, and role targeting;
+  \item privacy filtering for student-facing results summaries;
+  \item exam passcode hashing, invalid-attempt cooldown handling, integrity
+    event recording, flagging, voiding, and audit logging.
+\end{itemize}
+
+The repository did not show webcam-based proctoring, biometric checks, or
+direct browser-owned upload credentials. Security is therefore centered on
+authenticated access, row-level policies, route protection, signed file
+delivery, and event-based integrity monitoring rather than on intrusive
+surveillance mechanisms.
+
+\section{Role-Based and Multi-Organization Access}
+\label{sec:role_based_multi_organization_access}
+
+One of the central implementation problems solved by EduVerse is the need for a
+single user to belong to multiple organizations and to operate under different
+roles inside one organization. The repository addresses this through
+organization-aware membership records, multi-role membership support, active
+role selection, and role-filtered API behavior.
+
+In the underlying implementation, the Organization Administrator role uses the
+legacy internal identifier \texttt{org\_admin}. In the thesis wording,
+however, it is more accurate to describe this role as the Organization
+Administrator because that title better reflects its institutional
+responsibilities. Those responsibilities include organization setup, user and
+invite management, public access configuration, teacher permissions, class
+oversight, archived term review, and organization-level settings.
+
+Multi-role support is realized through dedicated membership-role records and a
+selected-role pointer. A user can therefore hold more than one role within the
+same organization, but the active interface and permitted operations are always
+resolved through the currently selected role. This prevents the platform from
+collapsing all privileges into a single undifferentiated identity and makes
+role transitions explicit and auditable.
+
+The same access model continues at class level. Teacher activity is constrained
+by organization permissions and class assignment. Student access depends on
+class membership, active role, feature settings, and visibility rules.
+Organization-visible classes and controlled public join workflows expand access
+only within the boundaries defined by organization policy. Archived classes and
+previous-term data are likewise preserved without abandoning the same access
+structure.
+
+\section{Feature Availability and Extension Implementation}
+\label{sec:feature_availability_extension_implementation}
+
+EduVerse was designed as a configurable platform rather than as a fixed bundle
+in which every organization and every class must use the same tool set. The
+implementation report shows this clearly through feature definitions, presets,
+organization-level feature settings, class-level feature settings, organization
+extensions, and class extension settings.
+
+This configuration model serves two purposes. First, it reduces interface and
+workflow clutter by hiding or blocking tools that are not enabled for the
+current organization or class. Second, it allows the same academic platform to
+serve different institutional policies and teaching styles without fragmenting
+into separate products. The AI feature is a strong example of this approach:
+AI-assisted help, summaries, drafting, and feedback support can be enabled
+where useful and disabled where instructors or organizations consider it
+counterproductive.
+
+The same flexibility extends to extensions and special-purpose classes. Because
+tool exposure is governed through organization and class settings, a class can
+be configured around a narrow purpose, such as a resource-sharing or
+library-oriented workspace, without forcing unrelated assessment or coding
+tools into the user experience. Similarly, public organizations and public join
+workflows can support broader sharing and open-learning access while still
+preserving role constraints, approval logic, and organization-level control.
+
+From an engineering perspective, this modular feature model also improves
+integration potential. Since core behavior is exposed through shared protected
+API routes rather than through web-only client assumptions, future clients or
+external institutional integrations can reuse the same academic data model and
+authorization rules without duplicating the platform's business logic.
+
+\section{Real-Time Communication and Live Sessions}
+\label{sec:real_time_communication_live_sessions}
+
+EduVerse implements both asynchronous and synchronous communication inside the
+same class workspace. Asynchronous interaction is provided through class chat,
+announcements, notifications, and message-linked media. Synchronous interaction
+is provided through live-session entry, session presence control, and a shared
+whiteboard environment.
+
+The live-session implementation integrates LiveKit and Supabase Realtime. The
+server issues LiveKit access tokens for authorized participants, while
+Supabase-backed session records are used to claim the active session, update
+heartbeats, recover from stale sessions, and synchronize state in the client
+store. This avoids treating live teaching as an isolated external meeting and
+keeps it connected to the same class membership and access rules used
+elsewhere in the platform.
+
+The whiteboard implementation further strengthens this integration. The
+repository evidences synchronized whiteboard behavior with strokes, shapes,
+text, viewport synchronization, clear, undo, and redo actions. At the same
+time, the database evidence shows no dedicated whiteboard-state table, which
+suggests that live collaboration behavior is coordinated primarily through the
+session layer rather than through a separate long-term whiteboard persistence
+schema.
+
+\section{AI Learning Support and IDE Implementation}
+\label{sec:ai_learning_support_ide_implementation}
+
+AI support in EduVerse is implemented as a contextual academic service rather
+than as an unrestricted external chatbot. The repository shows class AI agent
+routes, material extraction and summary generation, assignment-related support,
+exam drafting assistance, and AI-backed feedback support. These flows gather
+class context from the system before generating responses through OpenRouter.
+
+The implementation is also role-aware. Student-facing AI behavior is bounded by
+prompt policies intended to avoid direct final answers during active assessed
+work, while teacher-facing AI support is more oriented toward drafting,
+preparation, and assistance. Because AI is treated as one governed feature among
+others, it can be disabled at organization level or class level when a learning
+context requires a more restrictive policy.
+
+The integrated coding lab follows the same embedded-tool philosophy. EduVerse
+implements a browser-based programming workspace with Monaco editor support,
+file-tree management, previews, templates, a virtual terminal, and browser-safe
+runners. The repository does not show real operating-system process execution
+for the IDE. Instead, the implementation deliberately avoids unsafe direct
+command execution and keeps the coding lab inside a browser-safe execution
+model. This makes the current IDE appropriate for guided educational practice,
+while more powerful execution remains a future enhancement rather than an
+unsupported claim.
+
+\section{Development Workflow and Deployment}
+\label{sec:development_workflow_deployment}
+
+The implementation approach described in Chapter~3 was supported by a practical
+engineering workflow that kept feature increments reviewable and safe to
+integrate. Project development notes indicate a GitHub-based fork, branch, and
+pull-request workflow in which individual changes were developed in bounded
+feature branches and reviewed before merge. This process aligned well with the
+project's vertical-slice methodology because each increment could be evaluated
+as one coherent academic feature rather than as disconnected interface and
+backend fragments.
+
+Automated checks also supported this workflow. GitHub Actions was used to run
+build, formatting, and type-consistency checks before integration, while Vercel
+preview deployments provided a practical environment for reviewing UI behavior
+and cross-page interactions before a change entered the main branch. These
+deployment previews were especially helpful for a platform such as EduVerse,
+where role-sensitive behavior and feature-gated pages often need visual review
+in addition to code inspection.
+
+The shared server-owned API layer further contributed to workflow stability.
+Because the same protected routes could be reused across the web client and the
+separate mobile companion direction, the project avoided scattering business
+rules across multiple client implementations. That engineering decision reduces
+future maintenance effort and makes later client expansion more manageable.
+
+\section{Implementation Challenges and Adopted Solutions}
+\label{sec:implementation_challenges_adopted_solutions}
+
+The implementation of EduVerse required more than the accumulation of isolated
+features. Several recurring engineering challenges had to be addressed so that
+the platform would remain coherent across roles, organizations, storage needs,
+and review workflows.
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \renewcommand{\arraystretch}{1.15}
+  \setlength{\tabcolsep}{4pt}
+  \caption{Implementation Challenges and Adopted Solutions in EduVerse}
+  \label{tab:implementation_challenges_solutions}
+  \begin{tabular}{|p{0.28\textwidth}|p{0.60\textwidth}|}
+    \hline
+    \textbf{Implementation challenge} & \textbf{Adopted solution} \\
+    \hline
+    One user needing access to multiple organizations & Active organization selection, organization-aware API behavior, and organization-scoped payload loading through the authenticated user context. \\
+    \hline
+    One membership needing more than one role & Separate membership-role records, selected-role storage, role-switching UI, and route checks tied to the current active role. \\
+    \hline
+    Keeping web and mobile behavior consistent & Reuse of server-owned authenticated API routes and bearer-token-aware request handling instead of duplicating business rules per client. \\
+    \hline
+    Storing large educational files without weakening relational queries & Separation of binary file storage into AWS S3 while keeping structured metadata, ownership, and access rules in Supabase tables. \\
+    \hline
+    Supporting public access without losing governance & Public join links, approval-required modes, expiration controls, role targeting, visibility rules, and organization-level public-feature settings. \\
+    \hline
+    Handling live-session concurrency and reconnect behavior & Session claiming, heartbeat updates, stale-session recovery windows, synchronized live-session records, and realtime updates. \\
+    \hline
+    Preserving exam fairness and traceability & Passcode protection, exam lock mode, integrity-event capture, audit logging, flagged/voided attempt states, retakes, and explicit results release. \\
+    \hline
+    Allowing different organizations and classes to use different tool sets & Feature registry, organization/class feature settings, presets, extension settings, and controlled hiding/blocking of unavailable tools. \\
+    \hline
+    Integrating team contributions safely & GitHub branch and pull-request review, automated GitHub Actions checks, and Vercel preview deployments before merge. \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\FloatBarrier
+
+These adopted solutions show that the platform's main technical contribution is
+not only the presence of features, but the way those features were organized so
+that governance, access control, academic data, live interaction, storage, and
+review workflow all remained compatible with one another.
+
+\section{Chapter Summary}\label{sec:implementation_chapter_summary}
+
+This chapter explained how EduVerse was implemented as a web-first,
+multi-organization educational workspace built around shared server-owned APIs,
+Supabase-backed data and access control, S3-based file storage, LiveKit-backed
+live sessions, OpenRouter-based AI support, and a browser-safe integrated
+coding lab. It also showed how modular feature control, role-aware security,
+and disciplined review/deployment practices were used to keep the platform
+coherent as it expanded. Chapter~7 evaluates this implementation through the
+available testing and validation evidence.
