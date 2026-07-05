@@ -2,125 +2,48 @@
   \chaptercontentsitem{sec:future_work_introduction}
   \chaptercontentsitem{sec:scalability_improvements}
   \chaptercontentsitem{sec:user_feedback_usability_refinement}
-  \chaptercontentsitem{sec:mobile_companion_expansion}
-  \chaptercontentsitem{sec:testing_quality_assurance_expansion}
-  \chaptercontentsitem{sec:localization_accessibility}
-  \chaptercontentsitem{sec:advanced_ide_assessment_enhancements}
   \chaptercontentsitem{sec:future_work_summary}
 }
 
 \section{Introduction}\label{sec:future_work_introduction}
 
-EduVerse already demonstrates a broad and coherent educational workspace, but
-the current implementation also reveals several realistic directions for future
-improvement. These directions do not represent missing fundamentals of the
-implemented system. Rather, they reflect the next stage of refinement expected
-when a multi-organization academic platform moves from successful feature
-integration toward wider adoption, heavier usage, and more formal evaluation.
-
-The most immediate future work concerns scalability and structured user
-feedback. Additional improvements remain valuable as well, especially in the
-areas of mobile expansion, testing maturity, localization, accessibility, and
-advanced educational tooling.
+EduVerse already demonstrates a coherent integrated educational platform, but
+its continued development should remain focused and realistic. The most useful
+future work is not the addition of many unrelated ideas. Instead, it should
+concentrate on the next improvements that would help the platform mature under
+wider use.
 
 \section{Scalability Improvements}\label{sec:scalability_improvements}
 
-The first major future-work direction is scalability. EduVerse already manages
-organizations, classes, files, results, notifications, live sessions, and
-several feature-gated tools, so future growth will depend on how efficiently
-these services continue to operate as user counts, class counts, and stored
-content increase.
+An important future direction for EduVerse is scalability. As the number of
+organizations, users, classes, files, messages, and live sessions increases,
+the platform will need continued refinement in query efficiency, caching,
+resource usage, and operational monitoring.
 
-In practical terms, scalability work should focus on heavier roster loading,
-message volume, results aggregation, large material libraries, and concurrent
-live-session usage. The current implementation already separates large binary
-files from relational records, which is a strong foundation. Future work can
-extend that foundation through deeper performance monitoring, query
-optimization, caching strategy review, and operational tuning based on real
-usage patterns.
+The current implementation already provides a good foundation through modular
+services and the separation of structured database records from large binary
+file storage. Future work should build on that foundation by improving
+performance under heavier academic usage and by refining the platform based on
+observed operational needs.
 
 \section{User Feedback and Usability Refinement}
 \label{sec:user_feedback_usability_refinement}
 
-The second major future-work direction is systematic feedback collection from
-real users. EduVerse serves Organization Administrators, Teachers, and
-Students, and each of these groups experiences the platform differently. As the
-system is used more widely, direct feedback from those groups should guide
-refinement of navigation clarity, role switching, classroom workflow
-understandability, notification usefulness, and help content quality.
+Another major area for future work is systematic feedback from real users.
+EduVerse serves Organization Administrators, Teachers, and Students, and each
+group experiences the platform differently. Wider use would make it possible to
+collect feedback about navigation clarity, workflow understanding, feature
+discoverability, and the overall usability of the integrated environment.
 
-This kind of refinement is especially important in a platform that combines
-many related academic tools within one workspace. The technical integration is
-already a strength, but long-term usability depends on whether the integrated
-experience remains clear and low-friction for different users under everyday
-academic conditions.
-
-\section{Mobile Companion Expansion}\label{sec:mobile_companion_expansion}
-
-The project documentation references a separate mobile companion repository, but
-that codebase is not part of the current implementation evidence reviewed in
-this thesis. Future work should therefore focus on expanding that companion in
-a controlled way while keeping the web application as the primary source of
-full administrative depth.
-
-The most important objective is not simple screen duplication. It is
-contract-level consistency between the mobile client and the shared API layer so
-that authentication, role resolution, class access, notifications, materials,
-assignments, and live-session entry remain aligned across clients. Future work
-in this area should include stronger mobile/web contract validation and careful
-selection of which workflows genuinely benefit from mobile-first interaction.
-
-\section{Testing and Quality Assurance Expansion}
-\label{sec:testing_quality_assurance_expansion}
-
-The current repository shows meaningful logic-level test coverage, but the next
-stage of quality assurance should add broader end-to-end workflow testing.
-Cross-role scenarios such as invite acceptance, class entry, submission,
-grading, result release, and public join flows would benefit from automated
-browser-level verification.
-
-This work is particularly important because EduVerse combines access control,
-feature gating, and multi-step academic workflows. As the platform grows,
-end-to-end testing will help reduce regression risk in ways that unit and
-helper-level tests alone cannot fully cover. The same expansion should also
-include stronger integration checks between the main web client and the mobile
-companion direction.
-
-\section{Localization and Accessibility}
-\label{sec:localization_accessibility}
-
-The implementation evidence shows that language switching is not yet complete
-for end users. Future work should therefore address localization if the system
-is expected to support multilingual academic environments. This includes both
-translation of interface text and review of how role-specific terminology,
-notifications, and help content are presented across languages.
-
-Accessibility should advance in parallel with localization. A platform intended
-for long-term educational use should be reviewed for keyboard access, visual
-clarity, screen-reader compatibility, focus management, and the accessibility
-of assessments, live-session controls, and coding interfaces.
-
-\section{Advanced IDE and Assessment Enhancements}
-\label{sec:advanced_ide_assessment_enhancements}
-
-The current browser-based IDE is appropriate for guided educational coding
-practice, but future work could extend it through a secure backend execution
-sandbox if real command execution or compiled-language support becomes a
-requirement. Such an enhancement would need strong isolation and careful
-resource control so that flexibility does not compromise security.
-
-Assessment workflows can also be extended further if institutional needs become
-more demanding. The current implementation already supports event-based exam
-integrity monitoring, passcodes, retakes, and explicit result release. Future
-work may explore stronger integrity controls or richer assessment analytics, but
-such additions should remain proportionate to actual educational requirements
-rather than being treated as mandatory by default.
+That feedback should then guide targeted usability refinement. As the platform
+grows, continued improvement will depend not only on adding capabilities, but
+also on keeping the combined experience clear, efficient, and manageable for
+its users.
 
 \section{Chapter Summary}\label{sec:future_work_summary}
 
-Future work for EduVerse should focus first on scalability improvements and
-structured feedback from real users, because those two areas most directly
-shape whether the integrated platform can mature beyond its current successful
-implementation scope. Additional priorities include mobile companion
-expansion, end-to-end testing, localization, accessibility, and carefully
-governed enhancement of the IDE and assessment subsystems.
+Future work for EduVerse should remain centered on scalability improvements and
+on user feedback that can guide usability refinement after wider use. These
+directions are the most practical next steps for strengthening the platform
+without turning the future-work chapter into a list of already implemented or
+unverified ideas.

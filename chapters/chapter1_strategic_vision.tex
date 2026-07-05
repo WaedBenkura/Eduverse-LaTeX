@@ -10,204 +10,192 @@
 
 \section{Project Vision}\label{sec:project_vision}
 
-Digital transformation has reshaped how educational institutions support
-teaching, communication, learning access, and academic follow-up beyond the
-physical classroom. As institutions adopt broader digital practices, the
-expected quality of educational environments has also changed. Learners,
-teachers, and administrators increasingly require systems that support
-continuity, accountability, and consistent academic coordination.
+EduVerse is envisioned as an integrated educational platform that brings
+related academic workflows into one governed digital environment. Rather than
+treating class communication, materials, assignments, assessment, live
+teaching, coding practice, and AI support as separate technical islands, the
+project aims to coordinate them within a single role-based system that can be
+managed at institutional scale.
 
-Within this context, EduVerse is envisioned as a governed digital academic
-environment that can support institutional growth while preserving coherence
-across educational activity. The vision is intentionally strategic rather than
-technical: to provide a stable and adaptable direction for organizing academic
-work in a way that remains institutionally manageable and educationally
-meaningful. The specific conditions that justify this vision are explained in
-the following section.
+This vision is shaped by two practical goals. The first is to reduce
+fragmentation for students, teachers, and organizations that would otherwise
+need to move repeatedly between unrelated tools. The second is to provide a
+platform that remains adaptable: different organizations and classes should be
+able to enable, disable, extend, or restrict features according to their own
+policies and teaching needs. EduVerse is therefore not only a bundle of
+features, but a configurable academic workspace designed for continuity,
+governance, and future growth.
 
 \section{Problem Statement}\label{sec:problem_statement}
 
-Current digital education practice is often weakened by the fragmentation of
-closely related workflows across separate systems. Communication, content
-access, live interaction, assessment, and routine class follow-up may all be
-available, but they are frequently distributed across disconnected tools. As a
-result, students, teachers, and administrators must move repeatedly between
-multiple interfaces, which weakens workflow continuity, reduces institutional
-oversight, and lowers instructional and administrative efficiency.
+Many educational workflows are currently distributed across separate systems.
+One platform may be used for class communication and sharing materials, another
+for live meetings and presentations, another for collaborative whiteboard
+interaction, and another for programming practice. Familiar examples include
+Google Classroom for announcements and materials, Google Meet for live calls,
+Excalidraw-like tools for shared whiteboard work, and LeetCode-like
+environments for coding exercises. While each tool can be useful on its own,
+their separation introduces repeated context switching, inconsistent workflow
+boundaries, and weaker institutional coordination.
 
-The problem becomes more serious when institutions operate across multiple
-organizations, user roles, and access conditions. Membership handling,
-permission control, class participation, and responsibility boundaries become
-harder to manage when educational activity is scattered across unrelated
-services. In such settings, weak coordination does not only inconvenience
-users; it also limits accountability and makes reliable academic governance
-more difficult.
+This fragmentation becomes more serious in multi-organization educational
+settings. A platform must not only expose features; it must also manage roles,
+permissions, memberships, public access rules, class visibility, and the
+relationship between administrative governance and daily learning activity.
+When these concerns are spread across unrelated services, both usability and
+accountability become harder to maintain.
 
-A further challenge concerns device suitability. Rich authoring,
-administration, and class-management tasks are better handled in a full web
-environment, whereas frequent day-to-day actions such as checking classes,
-following notifications, reviewing assignments, opening materials, joining
-sessions, and reading messages should also remain practical on mobile devices.
-This creates a concrete design problem for educational systems that must
-support both depth of workflow and accessibility of use.
+The problem also has a client-design dimension. Rich administrative workflows,
+content management, assessment authoring, and complex class control are better
+suited to a full web environment. At the same time, many high-frequency actions
+such as checking updates, opening materials, reading chat, reviewing class
+summaries, and joining live sessions should remain practical from mobile
+devices. A realistic educational platform therefore needs both a strong primary
+web application and a carefully scoped mobile companion rather than an
+unstructured duplication of screens.
 
 \section{Project Motivations}\label{sec:project_motivations}
 
-EduVerse was worth building because it addresses a realistic educational
-setting in which institutions need clearer digital coordination, teachers need
-more dependable class workspaces, and students benefit from more consistent
-access to academic activity. The project therefore has value beyond concept
-development: it responds to operational needs that affect governance,
-instruction, and day-to-day learning use.
+EduVerse was motivated by the need for a more coherent digital learning
+environment. Educational institutions increasingly depend on digital systems,
+yet many still operate through fragmented combinations of messaging tools, file
+sharing services, meeting software, whiteboards, and coding platforms. The
+project responds to that condition by proposing one integrated platform in
+which closely related academic actions remain connected to one another.
 
-The project was also a strong graduation topic because it allowed the team to
-develop a practical educational system with relevance to contemporary digital
-learning environments. It provided a meaningful opportunity to connect academic
-software engineering work with an application domain that is socially useful,
-operationally demanding, and suitable for future extension.
+The project was also academically and professionally valuable for the team. It
+required the combination of requirements analysis, system modeling,
+implementation, service integration, security-aware design, testing, and
+technical reporting within one sustained engineering effort. In this sense,
+EduVerse served not only as a software product, but also as a realistic
+graduation project through which the team could practice disciplined
+collaborative development.
 
 \section{Strategic Objectives}\label{sec:strategic_objectives}
 
-The strategic objectives of EduVerse translate the project vision into clear
-institutional and functional targets. They define what the system is intended
-to support, govern, and extend within its educational context.
-
-The main strategic objectives of the project are as follows:
+The strategic objectives of EduVerse translate the project vision into concrete
+institutional and functional targets.
 
 \begin{itemize}
-  \item To provide a multi-organization educational management environment that
-    can serve distinct institutions or organizational units within one system.
-  \item To support multi-organization operation and role-based access for
-    organization administrators, teachers, and students, including users with
-    responsibilities across more than one organizational context.
-  \item To organize classes, materials, communication, assignments,
-    examinations, Results, and preserved academic history within a coherent
-    class-centered workflow.
-  \item To enable live sessions, AI Agent assistance, and the integrated
-    coding workspace as built-in academic tools rather than external add-ons.
-  \item To provide a primary web platform for full institutional and
-    instructional workflows while extending selected high-frequency tasks
-    through an MVP mobile companion application.
-  \item To maintain controlled governance through configurable permissions,
-    feature availability, teacher management controls, and visibility rules
-    suited to different organizations and classes.
-  \item To preserve Past Terms, academic records, and controlled assessment
-    processes in a way that supports continuity and academic accountability.
-  \item To extend the platform through controlled configuration and future
-    service growth without compromising institutional structure.
+  \item To provide a multi-organization educational platform that can support
+    distinct institutions or organizational units within one governed system.
+  \item To support role-based operation for Organization Administrators,
+    Teachers, and Students, including users who belong to more than one
+    organization or hold more than one role.
+  \item To unify classes, materials, chat, assignments, exams, results,
+    notifications, live sessions, whiteboard collaboration, AI support, and
+    coding practice within one academic environment.
+  \item To allow supported features to be enabled or disabled at organization
+    level and, where appropriate, refined further at class level.
+  \item To allow AI-supported features to be disabled for organizations or
+    classes that do not wish to use them.
+  \item To support public or open-learning access where enabled, so that
+    organizations can share educational materials or membership paths more
+    broadly without giving up institutional control.
+  \item To support controlled extension and future integration so that new
+    capabilities or external clients can reuse the same protected academic API
+    model rather than rebuilding business rules from scratch.
+  \item To provide a primary web platform for complete academic and
+    administrative workflows while extending selected day-to-day actions
+    through a mobile companion application.
 \end{itemize}
 
 \section{Educational and Professional Goals for the Team}\label{sec:team_goals}
 
-For the project team, EduVerse serves as a full-cycle software engineering
-exercise grounded in a realistic domain. It requires requirements analysis,
-scope definition, workflow modeling, system design, implementation, service
-integration, testing, and technical documentation within one sustained
-development effort.
+For the project team, EduVerse represents a complete software engineering
+exercise grounded in a realistic problem domain. The work required the team to
+move from problem framing to requirements analysis, methodology selection,
+system design, implementation, validation, and documentation in a coordinated
+way.
 
-It also strengthens professional engineering practice. The project gives the
-team experience in problem decomposition, collaborative development,
-implementation trade-offs, verification, and disciplined reporting. In this
-sense, its value for the team lies not only in producing software, but also in
-practicing the standards of teamwork and technical responsibility expected in
-professional software projects.
+The project also supported professional growth. It strengthened experience in
+problem decomposition, collaborative planning, technical trade-off analysis,
+review discipline, and responsibility for system quality. These outcomes are
+important because the value of a graduation project lies not only in the final
+software, but also in the maturity of the engineering process used to produce
+it.
 
 \section{Project Scope and Boundaries}\label{sec:project_scope}
 
-The scope of EduVerse in this dissertation is defined around the implemented web
-platform and the existing mobile MVP companion application. Chapter 1 is
-limited to introducing the problem context, strategic direction, main user
-groups, system boundaries, and general dissertation structure. Detailed
-requirements, architecture, database design, implementation decisions, and
-testing evidence are reserved for later chapters.
+This dissertation focuses on the implemented EduVerse platform and its current
+mobile companion direction. Chapter 1 is limited to the strategic problem
+context, the main user roles, the platform boundaries, and the overall report
+structure. Detailed requirements, architecture, database design, implementation
+evidence, and testing results are developed in the later chapters.
 
 \subsection{System Boundaries and User Roles}\label{subsec:system_boundaries_roles}
 
-EduVerse operates within a multi-organization educational context and therefore
-is governed through three principal user roles: organization administrator,
-teacher, and student. Organization administrators oversee membership
-management, permission control, class oversight, feature configuration, and
-broader organizational governance. Teachers manage instructional activities
-within the permissions defined by organization settings, while students
-participate in the academic spaces made available to them for learning and
-follow-up.
+EduVerse operates through three principal human roles: Organization
+Administrator, Teacher, and Student. The same person may hold more than one
+role, and a user may belong to more than one organization. For that reason, the
+system resolves access according to the selected organization, the active role,
+class membership, and the current feature configuration rather than by assuming
+that every user belongs to one fixed category.
 
-A user may belong to multiple organizations, and the same individual may hold
-more than one active role, with the interface and permissions resolved
-according to the currently selected organization and role. Where enabled, the
-system can also support controlled public access so that materials or
-class-facing resources may be shared without removing governance from the
-organization itself.
-
-These role distinctions define important system boundaries. EduVerse is not a
-generic social platform in which all users have the same functional position.
-Instead, access is governed by organizational membership, class context, and
-academic responsibility. This role-aware structure supports accountability,
-controlled visibility, and more reliable institutional management.
+This role structure defines an important project boundary. EduVerse is not a
+general social platform in which all users share the same permissions. It is a
+governed educational workspace in which visibility, management authority,
+assessment control, and feature access are deliberately differentiated.
 
 \subsection{Functional Scope}\label{subsec:functional_scope}
 
-Within its current implemented scope, EduVerse includes authentication,
-organization access and membership, class management, materials,
-communication, assignments, exams, results and academic history,
-notifications, live sessions, an AI Agent, and an integrated coding
-workspace. Together, these areas define the platform as an environment for
-both academic management and active instructional workflows rather than as a
-basic content portal. Within this scope, classes can be visible across the
-organization, require term and stage definition, and move into Past Terms
-while preserving academic history. Class feature controls, teacher management
-abilities, student linkage to previous terms, and Results visibility are also
-governed through organization and class settings.
+Within its implemented scope, EduVerse includes authentication, organization
+access and membership, class management, materials, chat, assignments, exams,
+results, notifications, live sessions, whiteboard collaboration, an AI Agent,
+and an integrated coding workspace. It also includes organization-level and
+class-level feature controls, extension support, and optional public or
+open-learning access where those capabilities are enabled.
 
-The class workspace is also flexible enough to represent more than a
-traditional course. The same class model can support focused academic uses,
-including a digital library class organized primarily around sharing books and
-learning materials.
-
-At the same time, Chapter 1 remains introductory in nature. It does not attempt
-to document detailed database structures, API behavior, or low-level internal
-logic. Those aspects are part of the later analytical and technical chapters
-and lie outside the present scope.
+The class model is intentionally flexible. A class can support a conventional
+course, but it can also be used for a narrower academic purpose. For example, a
+class may function as a digital library space dedicated mainly to sharing books
+and learning materials. This flexibility shows that EduVerse is not restricted
+to one teaching pattern; it is a configurable academic workspace that can be
+adapted to different institutional uses.
 
 \subsection{Web and Mobile Client Scope}\label{subsec:web_mobile_client_scope}
 
-The web application is the primary and most complete EduVerse client. It
-supports the full institutional and instructional workflow and therefore
-defines the main operational environment of the system.
+The EduVerse web application is the primary and most complete client. It
+supports the broader administrative, instructional, and assessment workflows
+that define the platform as a full educational system.
 
-The mobile application has a more focused scope. It is an MVP mobile companion
-application intended to extend access to selected workflows such as
-authentication, dashboard access, classes, assignments, notifications, chat,
-materials, and live sessions. It is connected to the same broader platform
-environment, but it is not intended to replace the web application or claim
-full feature parity with it.
+EduVerse Mobile already exists as an Expo and React Native companion
+application developed in TypeScript, but its scope is intentionally narrower.
+The current mobile implementation supports authenticated access, class
+summaries, notifications, materials, class chat, organization switching, and
+basic live-session participation. It is therefore best described as a companion
+under active development rather than as a feature-complete replacement for the
+web platform. Administrative workflows and several advanced learning features
+remain mainly web-side.
 
-\subsection{Distinctive Features and Extensible Design}\label{subsec:competitive_features_innovation}
+\subsection{Distinctive Features and Extensible Design}
+\label{subsec:competitive_features_innovation}
 
-EduVerse is distinguished by its governed multi-organization structure and by
-the way academic workflows are coordinated within that structure. Organization
-administration, instructional management, and student participation are kept
-within the same institutional model rather than being treated as unrelated
-system layers.
+EduVerse is distinctive because it combines integration with control. The
+platform brings together communication, materials, live collaboration,
+assessment, AI assistance, and coding practice, but it does so inside a
+governed multi-organization model rather than through a loose collection of
+independent tools.
 
-The platform is also distinctive in treating the AI Agent and the integrated
-coding workspace as built-in academic tools. Alongside these capabilities, the
-system is designed for controlled extension: supported features may be
-enabled, restricted, or expanded according to organizational and class needs,
-while assessment practices and academic visibility remain subject to governed
-rules.
+Its extensible design is also central to the project. Supported features can be
+enabled or disabled at organization level and, where supported, refined further
+at class level. AI features can likewise be disabled when an organization or a
+specific class considers them unsuitable. The same underlying API model also
+creates reuse potential for future integrations or companion clients, because
+core workflows are exposed through protected shared routes rather than being
+hard-wired to one interface only.
 
-At a high level, the platform follows a separated-service approach so that
-major categories of academic data, learning resources, and real-time
-interaction can evolve without collapsing into one tightly coupled service
-layer. The detailed technical realization of this approach is discussed in the
-later design and implementation chapters.
+Public access adds another important dimension. When enabled, public
+organizations or public join paths can support broader sharing of educational
+materials and more open learning participation, while still remaining under
+organization-defined governance rules.
 
 \section{Report Organization}\label{sec:report_organization}
 
-This dissertation is organized as follows. Chapter 2 presents the literature
-review and theoretical framework. Chapter 3 describes the adopted methodology.
-Chapter 4 covers system analysis and requirements. Chapter 5 presents system
-design. Chapter 6 discusses software and engineering implementation.
-Chapter 7 presents testing and evaluation. Chapter 8 addresses future work and
-planned extensions, followed by the conclusion and appendices.
+This dissertation is organized into eight numbered chapters. Chapter 2 presents
+the literature review and theoretical framework. Chapter 3 explains the adopted
+methodology. Chapter 4 covers system analysis and requirements. Chapter 5
+presents system design. Chapter 6 documents software and engineering
+implementation. Chapter 7 evaluates the system through testing and validation
+evidence. Chapter 8 outlines future work. These chapters are followed by an
+unnumbered conclusion and the references.

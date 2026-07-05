@@ -1,4 +1,35 @@
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-% Placeholder for the project abstract.
+EduVerse is presented in this thesis as an integrated educational platform
+designed to reduce the fragmentation that commonly arises when class
+communication, learning materials, live meetings, whiteboard collaboration,
+programming practice, assessment, and academic follow-up are distributed across
+separate tools. The platform follows a multi-organization, role-based model in
+which Organization Administrators, Teachers, and Students operate within a
+governed workspace that can adapt to different institutional needs. Within that
+workspace, EduVerse supports classes, materials, chat, assignments, exams,
+results, notifications, live sessions, whiteboard collaboration, an AI Agent,
+an integrated browser-based IDE, configurable feature availability, extension
+support, and public or open-learning access where enabled.
+
+The main implementation is a web platform built with Next.js, React, and
+TypeScript. It uses Supabase for authentication and relational data, AWS S3 for
+file storage, LiveKit for live-session participation, and OpenRouter for
+AI-supported learning services. EduVerse also includes a mobile companion
+application implemented with Expo, React Native, and TypeScript. The current
+mobile client provides authenticated access, class summaries, notifications,
+materials, class chat, organization switching, and basic live-session
+participation. However, it remains under active development and is not a full
+replacement for the web platform, where broader administrative and advanced
+learning workflows are still concentrated.
+
+The thesis documents the problem context, system analysis, design,
+implementation, and evaluation of EduVerse using the available implementation
+evidence, project documentation, and targeted validation. The evaluation shows
+credible support for role-based academic workflows, shared API reuse, modular
+feature enablement, and integrated educational services, while also identifying
+realistic limitations in end-to-end testing breadth and in the current scope of
+the mobile companion. Overall, EduVerse contributes a coherent and extensible
+approach to building a governed digital learning environment around one
+connected academic platform rather than a collection of disconnected tools.

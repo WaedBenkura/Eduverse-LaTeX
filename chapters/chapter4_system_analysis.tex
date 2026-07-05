@@ -24,10 +24,10 @@
 \section{Introduction}\label{sec:system_analysis_introduction}
 
 This chapter presents the system analysis and requirements of EduVerse. It
-defines the scope of the platform from an analytical perspective, identifies
-the principal actors, organizes the functional and non-functional
-requirements, and documents the updated use-case and activity models that
-describe the main user-visible workflows.
+defines the platform scope from an analytical perspective, identifies the
+principal actors, organizes the functional and non-functional requirements, and
+documents the updated use-case and activity models that describe the main
+user-visible workflows.
 
 The analysis is grounded in the current EduVerse platform scope represented by
 the updated use-case diagrams and supporting project documentation. The
@@ -49,18 +49,16 @@ under organization-defined rules.
 
 The platform is role-aware, organization-aware, and configuration-sensitive.
 A single account may belong to more than one organization and may hold more
-than one role, so the visible pages and permitted actions depend on the
-selected Active
-Organization, the Active Role, organization-level settings, class-level
-feature settings, and class membership. As a result, EduVerse must be
-analyzed not only as a collection of learning tools, but also as a governed
-workspace in which institutional control and daily educational activity are
-resolved together. Supported features may be enabled or disabled at the
-organization level and, where supported, refined further at the class level so
-that unavailable capabilities are hidden or blocked in a controlled way. The
-same analytical model also assumes reuse of one protected API layer so that the
-web application and companion clients can apply the same access rules and
-workflow logic.
+than one role, so the visible pages and permitted actions depend on the active
+organization, the active role, organization-level settings, class-level feature
+settings, and class membership. As a result, EduVerse must be analyzed not only
+as a collection of learning tools, but also as a governed workspace in which
+institutional control and daily educational activity are resolved together.
+Supported features may be enabled or disabled at the organization level and,
+where supported, refined further at the class level so that unavailable
+capabilities are hidden or blocked in a controlled way. The same analytical
+model also assumes reuse of one protected API layer so that the web application
+and companion clients can apply the same access rules and workflow logic.
 
 A class workspace does not need to represent only a conventional taught
 course. It may also be configured for a focused academic purpose, such as a
@@ -97,6 +95,14 @@ In practice, the actor visible to the interface is determined by the current
 workspace context. The selected organization, the Active Role, enabled
 organization features, enabled class features, and actual class membership all
 influence what the user can view or modify at a given moment.
+
+In the diagrams used in this chapter, the main drawn actors are the
+Organization Administrator, Teacher, and Student. The system itself is not
+drawn as a separate actor in every diagram because that would add unnecessary
+visual complexity. Nevertheless, the analysis assumes important automatic
+system responsibilities such as sending notifications, enforcing access rules,
+applying feature availability, recording exam integrity events, controlling
+result visibility, and supporting routine workflow transitions.
 
 \section{Functional Requirements}\label{sec:functional_requirements}
 
@@ -351,7 +357,9 @@ The use-case model describes EduVerse through the interactions between the
 primary human actors and the services available to them within the selected
 organization and class context. The Project Overview diagram is a summary of
 the complete system, while the remaining diagrams focus on specific modules of
-behavior.
+behavior. These diagrams emphasize human interaction with the platform, while
+automatic system responses remain described in the surrounding text rather than
+being expanded into separate actors throughout the full model.
 
 \subsection*{Project Overview}
 
@@ -575,7 +583,7 @@ download, deletion, and AI summary availability when enabled.
 
 \subsection*{AD-05 Class Communication and Notifications}
 
-\EduActivityFigureReadable{\EduActivityCommunicationNotificationsDiagram}
+\EduActivityFigureCompact{\EduActivityCommunicationNotificationsDiagram}
   {Class Communication and Notifications Activity Diagram}
   {fig:ch4_activity_communication_notifications}
 
@@ -616,7 +624,7 @@ controlled session closure.
 
 \subsection*{AD-09 Results Workflow}
 
-\EduActivityFigureReadable{\EduActivityResultsWorkflowDiagram}
+\EduActivityFigureCompact{\EduActivityResultsWorkflowDiagram}
   {Results Workflow Activity Diagram}
   {fig:ch4_activity_results}
 

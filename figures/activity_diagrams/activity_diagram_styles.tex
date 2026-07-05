@@ -112,6 +112,22 @@
   \end{figure}
 }
 
+\newcommand{\EduActivityFigureCompact}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \sbox{\EduActivityBox}{#1}%
+    \ifdim\wd\EduActivityBox>0.96\textwidth
+      \resizebox{0.96\textwidth}{!}{\usebox{\EduActivityBox}}%
+    \else\ifdim\dimexpr\ht\EduActivityBox+\dp\EduActivityBox\relax>0.74\textheight
+      \resizebox{!}{0.74\textheight}{\usebox{\EduActivityBox}}%
+    \else
+      \usebox{\EduActivityBox}%
+    \fi\fi
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
 \newcommand{\EduActivityFigureTall}[3]{%
   \begin{figure}[htbp]
     \centering
