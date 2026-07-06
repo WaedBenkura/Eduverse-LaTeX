@@ -110,42 +110,61 @@ data persistence.
 The ERD plays a central role in this design chapter because it expresses the
 relational structure through which EduVerse operates before that structure is
 expanded into the detailed physical schema tables. At this level, the diagram
-does more than identify entities: it clarifies the cardinalities and junctions
-that allow governance, academic activity, and configurable feature behavior to
-coexist within one platform model.
+does more than list entities: it clarifies cardinalities, one-to-one control
+links, one-to-many instructional flows, and many-to-many relationships resolved
+through junction tables.
 
-At the core of the ERD, one organization can govern many classes, while one
-user can belong to many organizations through membership records. Those
-memberships do not collapse governance into one fixed permission entry; a
-single membership can connect to one or more role records so that access can be
-resolved according to the active context. The same many-to-many pattern appears
-again at class level, where users participate in classes through class-membership
-links rather than by direct ownership alone. Within each class, one-to-many
-relationships extend to materials, messages, assignments, exams,
-notifications, and live sessions. One assignment can receive many submissions,
-and one exam can expand into many questions, attempts, and answers. Feature
-settings then connect both organizations and classes to enabled or disabled
-tools, allowing the same academic structure to behave differently according to
-institutional policy.
+\paragraph*{Principal Relationship Structure}
+\begin{itemize}
+  \item \textbf{Organization structure.} One organization can govern many
+    classes, invitations, join links, settings, and feature records. The
+    companion \db{organization_settings} relationship behaves as a one-to-one
+    administrative extension of the main organization record.
+  \item \textbf{User and membership structure.} One user can belong to many
+    organizations through membership records, and each membership connects a
+    user to a specific organization context. A membership may then connect to
+    one or more role records, allowing active-role resolution without reducing
+    governance to one fixed permission entry.
+  \item \textbf{Class participation structure.} One class can have many
+    members, while users may participate in many classes. This is a many-to-many
+    academic relationship resolved through class-membership tables rather than
+    through direct ownership alone.
+  \item \textbf{Learning-resource structure.} One class can contain many
+    materials, messages, notifications, and live sessions, which keeps content,
+    communication, and real-time activity tied to the same governed class
+    context.
+  \item \textbf{Assessment structure.} One class can contain many assignments
+    and many exams. One assignment can receive many submissions, while one exam
+    can expand into many questions, attempts, and answers, forming the full
+    assessment chain from authoring to participation and review.
+  \item \textbf{Feature-governance structure.} Feature definitions connect to
+    organizations and classes through organization-level and class-level feature
+    settings. These are configuration relationships rather than ordinary content
+    records, and they determine which tools remain enabled, disabled, or
+    further constrained in each context.
+\end{itemize}
 
-These relationships matter because they are the basis of role-based access
-control, organization governance, class visibility, assessment management, and
-day-to-day academic workflows. They also explain why some relationships are
-modeled through explicit junction tables rather than direct foreign keys alone:
-users and classes, memberships and roles, and organizations and configurable
-features all require many-to-many or context-sensitive resolution. The ERD
-therefore provides the clearest design-level view of how EduVerse connects
-institutional control with practical teaching and learning activity.
+\paragraph*{Design Significance}
+These relationships matter because they support role-based access control,
+organization governance, class visibility, academic workflow continuity,
+assessment management, and configurable feature availability within one design
+model. They also explain why EduVerse relies on intermediate structures rather
+than only on direct foreign keys: users and organizations, users and classes,
+memberships and roles, and platform contexts and feature settings all require
+many-to-many or context-sensitive resolution. The ERD therefore provides the
+clearest design-level view of how EduVerse connects institutional control with
+practical teaching and learning activity.
 
 \begin{figure}[p]
   \centering
-  \includegraphics[
-    page=1,
-    angle=0,
-    width=\textwidth,
-    height=0.90\textheight,
-    keepaspectratio
-  ]{figures/chapter5/database-erd.pdf}
+  \makebox[\textwidth][c]{%
+    \includegraphics[
+      page=1,
+      angle=90,
+      width=\textwidth,
+      totalheight=0.92\textheight,
+      keepaspectratio
+    ]{figures/chapter5/database-erd.pdf}}
   \caption{Entity Relationship Diagram of the EduVerse Database}
   \label{fig:eduverse_database_erd}
 \end{figure}
