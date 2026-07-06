@@ -1,0 +1,18 @@
+
+rename to EduVerse
+
+we used references like google classrooms for the chat and sharing of material, google meet for live calls and presentation, Excalidraw for the whiteboard, leetcode for the IDE, etc etc
+
+The gap is that there are multiple platforms with some features, we combined those featires all in one platform with the ability to extend and integrate new features
+
+we have the ability to disable AI features for any classroom or organization if anyone doesn't like it or finds it counterintuitive
+
+talk about how each feature can be enabled/disabled on organization level or class level
+
+Talk about API integration it would help if you or someone were to use it in some other usecase or application they can since they can reuse the data for something else
+
+Example of a classroom that is just a library, this showcases how in your organization(university) you can create a classroom for one specific purpose, that is sharing books in this case
+
+talk about open learning and how we have public orgs so anyone can share materials for free to the world(very important point)
+
+make future work very simple, maybe just talk about scalability and collecting feedback from users

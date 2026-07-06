@@ -7,18 +7,16 @@
   \chaptercontentsitem{sec:security_access_control_testing}
   \chaptercontentsitem{sec:non_functional_testing}
   \chaptercontentsitem{sec:preview_deployment_review}
-  \chaptercontentsitem{sec:testing_limitations}
   \chaptercontentsitem{sec:testing_summary}
 }
 
 \section{Introduction}\label{sec:testing_evaluation_introduction}
 
-This chapter evaluates EduVerse using the available implementation evidence,
-documented engineering workflow, and the repository-oriented analysis supplied
-for the project. The discussion therefore focuses on what can be supported
-credibly: automated tests that are clearly present, route-level validation,
-manual functional review, role-sensitive behavior, and quality checks used
-before integration.
+The evaluation of EduVerse must remain aligned with the evidence that is
+actually available. For that reason, this chapter focuses on what can be
+supported credibly: automated tests that are clearly present, route-level
+validation, manual functional review of representative workflows,
+role-sensitive behavior, and quality checks used before integration.
 
 The strongest evidence concerns the web platform, because its implementation is
 the best documented and its automated tests are visible in the analyzed
@@ -40,10 +38,9 @@ visibility, exam integrity, and browser-safe IDE behavior are all examples of
 cases where correctness depends on business logic and access control as much as
 on interface appearance.
 
-At the same time, the testing strategy also has a clear limitation: the
-available evidence does not show a full end-to-end browser automation suite
-such as Playwright or Cypress. As a result, integrated user journeys still
-depend partly on manual functional validation and preview-based review.
+The evaluation was therefore scoped to the available automated checks,
+selected logic-level tests, and representative manual validation of integrated
+user journeys rather than to a full end-to-end browser automation suite.
 
 \section{Automated Code Quality Checks}
 \label{sec:automated_code_quality_checks}
@@ -70,7 +67,7 @@ The available automated evidence includes the following areas:
 
 Automated quality control also extends beyond \texttt{bun test}. The documented
 engineering workflow indicates that GitHub Actions was used to run checks such
-as build validation and type-related consistency review before merge. These
+as build, type, and formatting-related consistency review before merge. These
 checks do not replace functional testing, but they strengthen confidence that
 changes remain structurally consistent before integration.
 
@@ -207,26 +204,6 @@ integration into the main branch. They help reviewers confirm page behavior,
 feature-gated visibility, and broader workflow coherence before changes become
 part of the shared platform.
 
-\section{Testing Limitations}\label{sec:testing_limitations}
-
-The current evaluation has several realistic limitations that should be stated
-explicitly.
-
-\begin{itemize}
-  \item The visible automated test suite is selective and logic-oriented rather
-    than comprehensive across all user journeys.
-  \item A dedicated end-to-end browser automation suite was not identified in
-    the reviewed implementation evidence.
-  \item Formal load testing and structured cross-browser benchmarking were not
-    evident in the available material.
-  \item Testing evidence for the mobile companion is narrower than the evidence
-    for the web platform and should be described more cautiously.
-\end{itemize}
-
-Broader end-to-end automation can be considered in later refinement if the
-project requires stronger cross-role workflow assurance, but the current thesis
-should avoid presenting that as already completed work.
-
 \section{Testing Summary}\label{sec:testing_summary}
 
 The evaluation of EduVerse shows a credible testing foundation built on
@@ -235,8 +212,10 @@ manual functional review, GitHub Actions checks, and preview-based inspection.
 Core areas such as exam logic, feature availability, IDE behavior, class-access
 helpers, and protected routes are supported by direct implementation evidence.
 
-The main limitation is equally clear: broader end-to-end automation, formal
-performance evaluation, and deeper mobile-side testing evidence remain limited.
+The evaluation was scoped to the available automated checks, selected
+logic-level tests, and representative manual validation. No full end-to-end
+browser automation suite was identified, and formal performance measurement or
+deeper mobile-side testing evidence should therefore not be overstated.
 Accordingly, the strongest current claims concern correctness of core logic,
 governed access control, and the practical review discipline used around the
 implemented platform.

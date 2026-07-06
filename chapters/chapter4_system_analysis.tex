@@ -23,17 +23,18 @@
 
 \section{Introduction}\label{sec:system_analysis_introduction}
 
-This chapter presents the system analysis and requirements of EduVerse. It
-defines the platform scope from an analytical perspective, identifies the
-principal actors, organizes the functional and non-functional requirements, and
-documents the updated use-case and activity models that describe the main
-user-visible workflows.
+System analysis in EduVerse must clarify more than a list of features. It must
+also define how governance, roles, feature availability, and shared workflow
+rules shape the behavior of the platform. This chapter therefore establishes
+the analytical scope of EduVerse, identifies the principal actors, organizes
+the functional and non-functional requirements, and documents the updated
+use-case and activity models that describe the main user-visible workflows.
 
 The analysis is grounded in the current EduVerse platform scope represented by
-the updated use-case diagrams and supporting project documentation. The
-chapter therefore focuses on verified platform behavior, configurable feature
-availability, and controlled role-based interaction rather than on low-level
-implementation detail.
+the updated use-case diagrams and supporting project documentation. The chapter
+therefore concentrates on verified platform behavior, configurable feature
+availability, controlled public access, and role-based interaction rather than
+on low-level implementation detail.
 
 \section{System Overview}\label{sec:system_overview}
 
@@ -129,8 +130,9 @@ platform terminology.
 
 \begin{itemize}
   \item \textbf{FR-05.} The system shall allow an Organization Administrator
-    to create an Organization and configure its default settings, including
-    supported public-access and feature-availability controls.
+    to create an Organization by selecting an appropriate organization
+    template and configuring its default settings, including supported
+    public-access and feature-availability controls.
   \item \textbf{FR-06.} The system shall allow administrators to invite,
     register, activate, and manage organization members and their roles.
   \item \textbf{FR-07.} The system shall support invitation-based access and,
@@ -368,12 +370,11 @@ being expanded into separate actors throughout the full model.
   {Project Overview Use-Case Diagram}
   {fig:ch4_usecase_project_overview}
 
-Figure~\ref{fig:ch4_usecase_project_overview} presents the high-level summary
-of EduVerse and shows how the Student, Teacher, and Organization
-Administrator relate to the platform's principal service areas. This
-analytical view is interpreted together with role and feature configuration,
-so some services are available only when enabled in the current organization
-or class context.
+The project overview use-case diagram offers a high-level summary of EduVerse
+and shows how the Student, Teacher, and Organization Administrator relate to
+the platform's principal service areas. This analytical view is interpreted
+together with role and feature configuration, so some services are available
+only when enabled in the current organization or class context.
 
 \subsection*{Authentication and Access}
 

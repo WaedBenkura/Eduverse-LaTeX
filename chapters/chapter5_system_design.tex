@@ -46,29 +46,42 @@
 
 \section{Introduction}\label{sec:system_design_introduction}
 
-This chapter presents the system design perspective of EduVerse. In the
-current revision, the chapter is intentionally focused on the database design
-because the verified schema, regenerated ERD, and supporting database notes
-are sufficiently stable to document in an academic manner. The chapter
-structure is retained so that the database design can be situated clearly
-within the broader system-design discussion.
+System design in EduVerse translates the analytical requirements of the
+previous chapter into structures capable of sustaining governance, academic
+workflows, and continued refinement. Because the platform combines
+multi-organization administration, class-centered interaction, assessment,
+live collaboration, AI support, configurable features, and extension points,
+the design discussion must explain both the underlying information model and
+the user-facing surfaces through which that model becomes operational.
 
-\section{Architectural Design Overview}\label{sec:architectural_design_overview}
+The chapter therefore concentrates on the design elements that are most
+directly supported by the verified implementation: the architectural context,
+the database and storage model, and the implemented interface surfaces.
+Together, these elements show how EduVerse connects persistence, governance,
+and interaction instead of treating them as separate design concerns.
 
-At a high level, EduVerse combines a web-based learning environment with a
-mobile companion scope, a Supabase-backed PostgreSQL database, AWS S3-backed
-file references for uploaded academic content, and LiveKit-related session
-metadata for synchronous learning. This section establishes the context for the
-detailed data design discussed in Section~\ref{sec:data_and_storage_design}.
+\section{Design Context and Architectural Structure}\label{sec:architectural_design_overview}
 
-\section{Data and Storage Design}\label{sec:data_and_storage_design}
+At design level, EduVerse is shaped by one central decision: related academic
+functions should remain inside one governed platform even when they depend on
+different technical services. The resulting structure combines a web-first
+learning environment, a mobile companion scope, a Supabase-backed PostgreSQL
+database, AWS S3-backed file references for uploaded academic content, and
+LiveKit-related session metadata for synchronous learning. This architectural
+context explains why the later database and interface decisions are organized
+around shared roles, shared class context, and configuration-aware workflows.
 
-This section documents the current verified database design of EduVerse,
-including the schema overview, the ERD, the physical schema tables derived
-from the latest analysis notes, and the main uncertainty caused by missing
-base-table DDL in part of the checked-in migration history.
+\section{Information Model and Persistence Design}\label{sec:data_and_storage_design}
 
-\subsection{Database Design Overview}\label{subsec:database_design_overview}
+Persistence design in EduVerse is not only a matter of storage. The database
+structure carries organization governance, role resolution, class membership,
+visibility rules, feature enablement, and the academic workflows built on top
+of them. This section therefore documents the verified database design of
+EduVerse through the schema overview, the ERD, the physical schema tables
+derived from the latest analysis notes, and the main uncertainty caused by
+missing base-table DDL in part of the checked-in migration history.
+
+\subsection{Logical Database Design}\label{subsec:database_design_overview}
 
 EduVerse uses a Supabase-managed PostgreSQL database as the main persistent
 store for organizational, academic, and operational records. The schema
@@ -88,13 +101,24 @@ than in separate results tables. Announcements are represented through
 \db{class_messages}, AI persistence is limited to feature settings and
 cached material summary or extracted-content fields, and the database does
 not include dedicated tables for IDE workspace state or whiteboard state.
+Viewed as a whole, the logical model is designed to support governance,
+visibility, feature control, and academic continuity alongside conventional
+data persistence.
 
-\subsection{Entity Relationship Diagram (ERD)}\label{subsec:entity_relationship_diagram}
+\subsection{Relational Structure Through the ERD}\label{subsec:entity_relationship_diagram}
 
-Figure~\ref{fig:eduverse_database_erd} presents the current EduVerse database
-ERD derived from the latest checked-in schema evidence and summarizes the
-main organization, class, content, assessment, and operational relationships
-within the platform.
+The ERD plays a central role in this design chapter because it condenses the
+logical structure of EduVerse before that structure is unfolded into the later
+physical schema tables. It shows how organizations relate to classes, how
+users connect to organization memberships, how memberships resolve into roles,
+how classes connect to members and materials, how assignments connect to
+submissions, how exams connect to questions, attempts, and answers, how
+organizations and classes connect to feature settings, and how classes connect
+to notifications and live sessions. These relationships matter because they
+govern role-based access, visibility boundaries, academic workflow continuity,
+and feature governance across the platform. The same diagram therefore acts as
+the bridge between EduVerse as an academic system model and EduVerse as a
+concrete relational database design.
 
 \begin{figure}[p]
   \centering
@@ -111,13 +135,16 @@ within the platform.
 
 \clearpage
 
-\subsection{Database Tables}\label{subsec:database_tables}
+\subsection{Physical Schema Tables}\label{subsec:database_tables}
 
-The following schema tables present the real EduVerse database tables on
-normal portrait thesis pages. Column names, primary keys, foreign keys,
+The physical schema tables below translate the logical model into the concrete
+database structures used by EduVerse. Column names, primary keys, foreign keys,
 logical relationships, enum or status fields, and essential notes are taken
-from \db{database-analysis.md}; where exact SQL types are not directly
-visible, conservative generic types are used.
+from \db{database-analysis.md}; where exact SQL types are not directly visible,
+conservative generic types are used. Keeping these tables in the design
+chapter is important because the platform's governance, visibility, feature
+availability, and academic workflows depend directly on how these relations are
+persisted.
 
 \subsubsection*{Core Multi-Organization and User Model}
 
@@ -593,7 +620,7 @@ visible, conservative generic types are used.
 \EduSchemaNote{This external table is referenced by invite, join-link, join-request, exam, and class-lifecycle user fields in the EduVerse schema.}
 \EduSchemaTableEnd
 
-\subsection{Database Design Notes and Uncertain Relationships}
+\subsection{Schema Interpretation Notes and Uncertain Relationships}
 \label{subsec:database_design_notes_uncertain}
 
 The original \db{CREATE TABLE} definitions for \db{organizations},
@@ -620,23 +647,22 @@ logical relationship rather than an enforced foreign key.
   \end{figure}
 }
 
-\section{User Interface Design}\label{sec:interface_and_interaction_design}
+\section{Interface Design and Implemented Workflow Surfaces}\label{sec:interface_and_interaction_design}
 
-This section presents the main implemented EduVerse interfaces and
-illustrates how the platform supports administrative, instructional, and
-student-facing workflows through the web application and the broader
-companion-application architecture. The currently provided screenshots
-document the implemented web views that coordinate organization management,
-classroom activity, assessment, live collaboration, and AI-supported study
-workflows.
+The interface layer of EduVerse is documented here as evidence of design
+realization rather than as decoration. The screenshots demonstrate how the
+implemented system exposes administrative governance, teaching activity,
+student participation, assessment, live collaboration, AI support, and coding
+workflows through actual user-facing surfaces. Read together, they show how the
+underlying design becomes operational for Organization Administrators,
+Teachers, and Students across the implemented web experience.
 
-\subsection{Authentication and Access Interfaces}
+\subsection{Access and Identity Interfaces}
 
-The authentication and access interfaces define the entry point to EduVerse
-and establish the user context from which subsequent permissions are resolved.
-The provided views show account entry, organization and role selection for
-multi-context users, and the personal settings controls used after
-authentication.
+Access and identity interfaces establish the user context from which every
+subsequent permission decision is resolved. The following views show account
+entry, organization and role selection for users with more than one workspace
+context, and the personal settings controls used after authentication.
 
 \EduUiFigure
   {figures/screenshots/1_Authentication Screen.png}
@@ -655,18 +681,29 @@ authentication.
 
 \FloatBarrier
 
-\subsection{Organization Administration Interfaces}
+\subsection{Administrative Governance Interfaces}
 
-The organization administration interfaces document the controls available to
-organization administrators for creating workspaces, governing class
-structures, managing members, and configuring public access. As shown in the
-dashboard views, the administrative workspace contains multiple tabs such as
-Classes, Past Terms, Users, Features, Public Link, and Settings, with
-representative screenshots included below.
+Administrative governance interfaces expose the control layer through which an
+organization defines how EduVerse should operate. These views show workspace
+creation, class governance, member management, public-access handling, teacher
+permissions, and feature configuration, all of which shape the later learning
+experience inside classes.
+
+The organization-creation interface is especially important because it
+documents one of the platform's core design ideas rather than serving as a
+decorative screenshot. It shows that a new organization can be created through
+template-based setup for different educational contexts, including Custom,
+Open Learning, University, Online Academy, Bootcamp, Tutoring Center, Exam
+Prep, Corporate Training, Primary School, and Kindergarten. The same workflow
+also establishes initial feature availability for tools such as Chat,
+Materials, Assignments, Sessions, Exams, Results, Extensions, and the IDE,
+while allowing public-access and open-learning behavior to be configured from
+the beginning. This confirms that governance, institutional identity, and
+feature selection are connected from the first administrative step.
 
 \EduUiFigure
   {figures/screenshots/10_Organization Creation and Initial Feature Availability.png}
-  {Organization creation interface showing template selection and initial feature-availability controls.}
+  {Organization creation interface showing template-based setup and initial feature-availability controls for different educational contexts.}
   {fig:ui-admin-organization-creation}
 
 \EduUiFigure
@@ -706,13 +743,13 @@ representative screenshots included below.
 
 \FloatBarrier
 
-\subsection{Classroom and Learning Workspace Interfaces}
+\subsection{Classroom and Learning Interfaces}
 
-The classroom and learning workspace interfaces present the day-to-day views
-through which teachers and students interact with class resources. Together,
-these screenshots show the class landing page, shared materials,
-communication channels, and notifications that keep classroom activity
-coordinated.
+Classroom and learning interfaces present the day-to-day environment through
+which teachers and students interact with class resources. Together, these
+screenshots show how the class workspace connects learning materials,
+communication channels, and notifications rather than exposing them as isolated
+pages.
 
 \EduUiFigure
   {figures/screenshots/11-class-home-classroom-workspace.png}
@@ -736,9 +773,9 @@ coordinated.
 
 \FloatBarrier
 
-\subsection{Assignment and Assessment Interfaces}
+\subsection{Assessment and Submission Interfaces}
 
-The assignment and assessment interfaces illustrate how EduVerse manages
+Assessment and submission interfaces illustrate how EduVerse organizes
 coursework, examinations, integrity controls, and released results across
 teacher and student roles. The sequence below follows the workflow from
 assignment creation and submission to exam authoring, exam participation,
@@ -781,12 +818,13 @@ review, and performance reporting.
 
 \FloatBarrier
 
-\subsection{Live Session and Collaboration Interfaces}
+\subsection{Synchronous Collaboration Interfaces}
 
-The live session interface captures the synchronous collaboration environment
+The live-session interface captures the synchronous collaboration environment
 used during real-time classes. The provided screenshot demonstrates how
 whiteboard activity, participant presence, and in-session controls are
-integrated within a single teaching workspace.
+integrated within a single teaching workspace rather than delegated to a
+separate external meeting flow.
 
 \EduUiFigure
   {figures/screenshots/22_Live Session Room and Whiteboard.png}
@@ -795,12 +833,12 @@ integrated within a single teaching workspace.
 
 \FloatBarrier
 
-\subsection{AI Learning Support and Coding Lab Interfaces}
+\subsection{AI Support and Coding-Lab Interfaces}
 
-The AI learning support and coding-lab interfaces extend the classroom beyond
-static content delivery by offering guided assistance and hands-on technical
-practice. The provided screenshots demonstrate conversational study support
-alongside the embedded programming workspace.
+AI support and coding-lab interfaces extend the classroom beyond static content
+delivery by offering guided assistance and hands-on technical practice. The
+provided screenshots demonstrate how advanced tools are surfaced inside the
+class environment when they are enabled for the relevant learning context.
 
 \EduUiFigure
   {figures/screenshots/24_AI Learning Support Interface.png}
@@ -813,5 +851,3 @@ alongside the embedded programming workspace.
   {fig:ui-ide-workspace}
 
 \FloatBarrier
-
-% TODO: Insert mobile companion application screenshots when provided.

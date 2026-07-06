@@ -17,20 +17,21 @@
 
 \section{Introduction}\label{sec:implementation_introduction}
 
-This chapter documents the software and engineering implementation of EduVerse
-using the thesis source tree, the EduVerse implementation analysis report, the
-mobile implementation analysis, and the supporting project notes as its main
-sources of truth. The goal is to explain how the platform was actually realized
-rather than to describe an idealized design that is not supported by available
-evidence.
+Implementation is the stage at which the requirements, workflows, database
+structures, interface designs, and governance rules of EduVerse become a
+working software system. For this project, implementation did not mean merely
+assembling pages around a database. It required translating multi-organization
+control, role-sensitive academic workflows, configurable features, live
+collaboration, AI support, and coding-lab behavior into one operable platform.
 
-The resulting picture is a web-first educational system with a companion mobile
-application under active development. The web application provides the broadest
-set of academic and administrative workflows, while the mobile client extends a
-smaller set of high-frequency actions through the same authenticated platform
-environment. Across both clients, the key implementation themes are shared API
-reuse, role-aware access control, modular feature availability, and careful
-integration of storage, live-session, and AI services.
+The implemented result is a web-first educational environment supported by a
+companion mobile client. The web application carries the complete
+administrative and academic workflow of the current platform, while the mobile
+application extends selected high-frequency actions to mobile users without
+claiming full parity. Across both clients, the engineering stack combines the
+web interface, the mobile companion, an authenticated shared API layer,
+Supabase-backed relational data and authentication, AWS S3 file storage,
+LiveKit-based live sessions, and OpenRouter-powered AI services.
 
 \section{Implementation Environment}\label{sec:implementation_environment}
 
@@ -347,7 +348,7 @@ Chapter~3 by allowing changes to be developed as bounded slices, discussed, and
 merged in a controlled way.
 
 Automated quality checks also formed part of this workflow. GitHub Actions was
-used to run project checks such as build validation and type-related
+used to run project checks such as build, type, and format-related
 verification before integration. Vercel preview deployments then provided a
 reviewable running environment for inspecting role-sensitive pages, feature
 gating behavior, and broader interface changes before merge.
@@ -399,5 +400,8 @@ multi-organization educational platform supported by shared protected APIs,
 Supabase-backed data and authentication, S3-based file storage, LiveKit-based
 live sessions, OpenRouter-based AI support, and a browser-based coding
 workspace. It also clarified the role of EduVerse Mobile as a real but narrower
-companion application under active development. The next chapter evaluates the
-implemented system through the available testing and validation evidence.
+companion application under active development. The implementation also shows
+how controlled feature enablement, governed public access, and future reuse
+through shared APIs are built into the platform rather than added as
+afterthoughts. The next chapter evaluates the implemented system through the
+available testing and validation evidence.

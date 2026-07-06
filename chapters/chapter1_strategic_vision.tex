@@ -5,26 +5,38 @@
   \chaptercontentsitem{sec:strategic_objectives}
   \chaptercontentsitem{sec:team_goals}
   \chaptercontentsitem{sec:project_scope}
-  \chaptercontentsitem{sec:report_organization}
 }
 
 \section{Project Vision}\label{sec:project_vision}
 
-EduVerse is envisioned as an integrated educational platform that brings
-related academic workflows into one governed digital environment. Rather than
-treating class communication, materials, assignments, assessment, live
-teaching, coding practice, and AI support as separate technical islands, the
-project aims to coordinate them within a single role-based system that can be
-managed at institutional scale.
+Digital transformation has become a defining condition of contemporary
+education. Institutions increasingly depend on online systems not only to store
+materials, but also to coordinate communication, teaching, assessment,
+feedback, collaboration, and daily academic follow-up across time and location.
+As that dependence grows, the quality of the learning environment depends less
+on the presence of isolated tools and more on whether those tools form a
+coherent academic system.
 
-This vision is shaped by two practical goals. The first is to reduce
-fragmentation for students, teachers, and organizations that would otherwise
-need to move repeatedly between unrelated tools. The second is to provide a
-platform that remains adaptable: different organizations and classes should be
-able to enable, disable, extend, or restrict features according to their own
-policies and teaching needs. EduVerse is therefore not only a bundle of
-features, but a configurable academic workspace designed for continuity,
-governance, and future growth.
+Within this broader context, educational workflows often remain fragmented.
+Class communication may occur in one platform, materials in another, live
+teaching in another, and practical technical work elsewhere. EduVerse is
+proposed as a response to that condition: an integrated educational platform
+that brings related academic workflows into one governed digital environment
+instead of leaving them scattered across loosely connected services.
+
+This strategic direction is intentionally broader than any single institutional
+type. EduVerse is conceived as a governed academic environment that can serve
+universities, schools, online academies, bootcamps, tutoring centers,
+exam-preparation spaces, corporate training contexts, and open-learning
+communities without assuming that all of them need the same configuration.
+
+Its vision is shaped by two practical goals. The first is to provide a
+coherent digital environment in which related academic work can remain
+connected. The second is to preserve adaptability, so that organizations and
+classes can enable, disable, extend, or restrict features according to their
+own policies and teaching needs. EduVerse is therefore framed not as a fixed
+bundle of tools, but as a configurable academic workspace designed for
+continuity, governance, and long-term growth.
 
 \section{Problem Statement}\label{sec:problem_statement}
 
@@ -36,7 +48,8 @@ Google Classroom for announcements and materials, Google Meet for live calls,
 Excalidraw-like tools for shared whiteboard work, and LeetCode-like
 environments for coding exercises. While each tool can be useful on its own,
 their separation introduces repeated context switching, inconsistent workflow
-boundaries, and weaker institutional coordination.
+boundaries, weaker continuity between related academic tasks, and scattered
+responsibility for governance and follow-up.
 
 This fragmentation becomes more serious in multi-organization educational
 settings. A platform must not only expose features; it must also manage roles,
@@ -56,12 +69,12 @@ unstructured duplication of screens.
 
 \section{Project Motivations}\label{sec:project_motivations}
 
-EduVerse was motivated by the need for a more coherent digital learning
-environment. Educational institutions increasingly depend on digital systems,
-yet many still operate through fragmented combinations of messaging tools, file
-sharing services, meeting software, whiteboards, and coding platforms. The
-project responds to that condition by proposing one integrated platform in
-which closely related academic actions remain connected to one another.
+EduVerse was motivated by the opportunity to build a digital learning
+environment in which academic continuity and institutional control could be
+designed together. Rather than treating governance, communication, assessment,
+and learning support as loosely related concerns, the project aimed to realize
+them within one environment that could remain useful across different
+educational contexts.
 
 The project was also academically and professionally valuable for the team. It
 required the combination of requirements analysis, system modeling,
@@ -116,13 +129,6 @@ software, but also in the maturity of the engineering process used to produce
 it.
 
 \section{Project Scope and Boundaries}\label{sec:project_scope}
-
-This dissertation focuses on the implemented EduVerse platform and its current
-mobile companion direction. Chapter 1 is limited to the strategic problem
-context, the main user roles, the platform boundaries, and the overall report
-structure. Detailed requirements, architecture, database design, implementation
-evidence, and testing results are developed in the later chapters.
-
 \subsection{System Boundaries and User Roles}\label{subsec:system_boundaries_roles}
 
 EduVerse operates through three principal human roles: Organization
@@ -146,6 +152,12 @@ and an integrated coding workspace. It also includes organization-level and
 class-level feature controls, extension support, and optional public or
 open-learning access where those capabilities are enabled.
 
+This scope is not restricted to higher education alone. The same model can be
+adapted for primary schools and kindergartens through narrower feature
+selection and closer organization-level control, just as it can support more
+specialized contexts such as technical courses, tutoring programs, or open
+learning initiatives.
+
 The class model is intentionally flexible. A class can support a conventional
 course, but it can also be used for a narrower academic purpose. For example, a
 class may function as a digital library space dedicated mainly to sharing books
@@ -159,14 +171,14 @@ The EduVerse web application is the primary and most complete client. It
 supports the broader administrative, instructional, and assessment workflows
 that define the platform as a full educational system.
 
-EduVerse Mobile already exists as an Expo and React Native companion
-application developed in TypeScript, but its scope is intentionally narrower.
-The current mobile implementation supports authenticated access, class
-summaries, notifications, materials, class chat, organization switching, and
-basic live-session participation. It is therefore best described as a companion
-under active development rather than as a feature-complete replacement for the
-web platform. Administrative workflows and several advanced learning features
-remain mainly web-side.
+EduVerse Mobile already exists as a companion mobile application, developed to
+extend selected platform features to mobile users. Its scope is intentionally
+narrower than the web platform. The current mobile implementation supports
+authenticated access, class summaries, notifications, materials, class chat,
+organization switching, and basic live-session participation. It is therefore
+best described as a companion under active development rather than as a
+feature-complete replacement for the web platform. Administrative workflows and
+several advanced learning features remain mainly web-side.
 
 \subsection{Distinctive Features and Extensible Design}
 \label{subsec:competitive_features_innovation}
@@ -189,13 +201,3 @@ Public access adds another important dimension. When enabled, public
 organizations or public join paths can support broader sharing of educational
 materials and more open learning participation, while still remaining under
 organization-defined governance rules.
-
-\section{Report Organization}\label{sec:report_organization}
-
-This dissertation is organized into eight numbered chapters. Chapter 2 presents
-the literature review and theoretical framework. Chapter 3 explains the adopted
-methodology. Chapter 4 covers system analysis and requirements. Chapter 5
-presents system design. Chapter 6 documents software and engineering
-implementation. Chapter 7 evaluates the system through testing and validation
-evidence. Chapter 8 outlines future work. These chapters are followed by an
-unnumbered conclusion and the references.

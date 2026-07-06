@@ -9,21 +9,25 @@
 
 \section{Introduction}\label{sec:literature_review_introduction}
 
-The literature relevant to EduVerse spans several connected areas: learning
-management systems, digital communication in education, synchronous online
-teaching, role-based access control, AI in education, and modular platform
-architecture. Taken together, these areas show that the main challenge in
-digital education is not simply adding more tools. It is organizing related
-educational activities so that they remain coherent, governable, and useful to
-students, teachers, and institutions.
+A literature review is necessary here not to restate the project description,
+but to ground EduVerse within the bodies of theory and practice that make its
+design intelligible. The platform depends on more than one academic and
+technical tradition: learning management systems explain structured educational
+coordination; digital communication research clarifies class interaction and
+continuity; synchronous online teaching informs live academic presence;
+role-based access control explains governed differentiation between users; AI
+in education informs the design of assisted learning; coding-practice
+environments clarify the value of integrated technical workspaces; mobile
+companion learning applications frame client asymmetry; and modular platform
+architecture explains controlled extensibility.
 
-This chapter therefore reviews the literature with a specific question in mind:
-why do many digital learning environments still feel fragmented even when they
-offer strong individual tools? The discussion leads to the central claim of
-EduVerse: many platforms solve separate educational problems, but fewer systems
-combine learning management, communication, live collaboration, assessment, AI
-support, coding practice, open or public access, and extensibility within one
-role-aware academic workspace.
+These areas matter to EduVerse because the platform is not defined by one
+isolated feature. It combines administrative governance, class operation,
+real-time collaboration, AI support, practical coding activity, and companion
+client access within one academic environment. The purpose of this chapter is
+therefore to establish the theoretical and comparative foundation for those
+design choices before the thesis moves into methodology, analysis, and
+implementation.
 
 \section{Evolution of Digital Education Platforms}
 \label{sec:evolution_of_digital_education_platforms}
@@ -66,9 +70,10 @@ distributed across separate technical environments.
 
 When communication, content access, synchronous teaching, assessment follow-up,
 and practical work are divided in this way, students and teachers repeatedly
-switch context. The result is reduced workflow continuity, weaker visibility,
-and more difficulty maintaining one coherent institutional view of learning
-activity.
+switch context. The result is weaker continuity between related tasks, less
+consistent governance over permissions and visibility, repeated duplication of
+context across systems, and more difficulty maintaining one coherent
+institutional view of learning activity and responsibility.
 
 \section{Research Gap and Proposed Integrated Learning Ecosystem}
 \label{sec:research_gap_integrated_ecosystem}
@@ -79,7 +84,8 @@ into one governed workspace. Existing tools may support communication, live
 teaching, whiteboard explanation, learning materials, coding practice, or AI
 assistance separately. However, institutions still need a platform that can
 coordinate those functions with differentiated roles, organization boundaries,
-feature controls, and preserved academic continuity.
+feature controls, preserved academic continuity, and a clear line of
+responsibility for access, visibility, and workflow transitions.
 
 EduVerse is proposed as a response to that gap. Its contribution is not the
 mere presence of familiar features, but the integration of those features in a
@@ -95,6 +101,13 @@ feature availability, including the ability to disable AI where it is not
 wanted. Integration in EduVerse therefore does not mean forcing the same tool
 set onto every learning context. It means keeping related workflows inside one
 shared platform while allowing controlled variation within that platform.
+
+The same gap has an architectural dimension as well. When data and workflow
+rules are scattered across unrelated tools, future integration becomes harder
+because each new client or service must rebuild institutional behavior from the
+outside. EduVerse addresses this by centering its ecosystem on a protected
+shared API model that can support web, mobile, and later reuse scenarios
+without duplicating academic business rules.
 
 This integrated approach also supports client asymmetry without reintroducing
 fragmentation. The web platform remains the primary location of deep
@@ -164,31 +177,39 @@ than treated as an unlimited external shortcut.
 \section{Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach}
 \label{sec:benchmarking_fragmented_vs_integrated}
 
-Table~\ref{tab:fragmented_vs_integrated_eduverse} summarizes the contrast
-between fragmented educational workflows and the integrated EduVerse approach.
-It should be read as a structural comparison rather than as a product
-comparison. The goal is to show how related academic activities can either
-remain dispersed across separate tools or be coordinated inside one role-aware
+Benchmarking is useful here not as a product ranking exercise, but as a way to
+clarify structural differences between fragmented educational workflows and the
+integrated EduVerse model. Table~\ref{tab:fragmented_vs_integrated_eduverse}
+therefore contrasts how related academic activities behave when they are
+dispersed across specialized tools versus coordinated inside one role-aware
 platform.
 
-\begin{table}[htbp]
-\centering
-\caption{Fragmented Educational Tools vs. Integrated EduVerse Approach}
-\label{tab:fragmented_vs_integrated_eduverse}
 \begingroup
 \footnotesize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.15}
-\newlength{\fragmentedtablewidth}
-\setlength{\fragmentedtablewidth}{\dimexpr\textwidth+0.8cm\relax}
-\makebox[\textwidth][c]{%
-\begin{tabular}{|>{\raggedright\arraybackslash}p{0.19\fragmentedtablewidth}|>{\raggedright\arraybackslash}p{0.34\fragmentedtablewidth}|>{\raggedright\arraybackslash}p{0.34\fragmentedtablewidth}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.17\textwidth}|>{\raggedright\arraybackslash}p{0.34\textwidth}|>{\raggedright\arraybackslash}p{0.34\textwidth}|}
+\caption{Fragmented Educational Tools vs. Integrated EduVerse Approach}
+\label{tab:fragmented_vs_integrated_eduverse} \\
 \hline
 \rowcolor{gray!15}
 \textbf{Workflow Area} &
 \textbf{Fragmented Reference Model} &
 \textbf{Integrated EduVerse Approach} \\
 \hline
+\endfirsthead
+\hline
+\rowcolor{gray!15}
+\textbf{Workflow Area} &
+\textbf{Fragmented Reference Model} &
+\textbf{Integrated EduVerse Approach} \\
+\hline
+\endhead
+\hline
+\multicolumn{3}{r}{\small\textit{Continued on the next page}} \\
+\endfoot
+\hline
+\endlastfoot
 Class coordination and materials &
 Class communication and learning resources are often centered on a classroom
 tool such as Google Classroom, while adjacent workflows remain elsewhere. &
@@ -236,17 +257,25 @@ distributed across tools. &
 Governance, feature availability, public access, and extensions remain part of
 the same configurable platform. \\
 \hline
-\end{tabular}%
-}
+Integration and reuse &
+Expanding to another client or reuse case often requires reconnecting separate
+systems or duplicating workflow rules. &
+Shared protected APIs support companion clients and future integrations without
+rebuilding core academic rules in each interface. \\
+\hline
+\end{longtable}
 \endgroup
-\end{table}
+
+The comparison reinforces an important distinction: EduVerse is not defined by
+the novelty of isolated features, but by the governed integration of workflows
+that are often separated across unrelated systems.
 
 \section{Theoretical and Technical Foundations of EduVerse}
 \label{sec:theoretical_technical_foundations_eduverse}
 
 The preceding sections establish why EduVerse is framed as an integrated
-educational ecosystem. The following subsections provide the main theoretical
-and technical foundations of that framing.
+educational ecosystem. The following subsections identify the main theoretical
+and technical foundations that support that position.
 
 \subsection{Web-Based Educational Platforms}
 \label{subsec:web_based_educational_platforms}
@@ -273,7 +302,9 @@ with mobile usage.
 
 EduVerse follows this companion model. The mobile client extends access to
 selected workflows while the web platform retains broader administrative and
-instructional depth.
+instructional depth. The same model also benefits from shared protected APIs,
+because mobility can then extend the ecosystem without creating a separate
+governance logic for academic data and access rules.
 
 % TODO: Add scholarly citation(s) specifically addressing mobile companion
 % applications in digital learning environments.
@@ -302,7 +333,8 @@ to the surrounding academic context.
 
 EduVerse follows this idea through its browser-based IDE and coding tools. The
 importance of this design choice lies not in copying external coding platforms,
-but in preserving continuity between explanation, practice, and class context.
+but in preserving continuity between explanation, practice, and class context
+as part of the wider learning-support environment.
 
 % TODO: Add scholarly citation(s) on integrated coding environments or browser-
 % based programming practice in education.
@@ -323,8 +355,8 @@ available without turning the platform into an unbounded collection of add-ons.
 The same logic applies to openness. Public or open-learning access is useful
 only when it remains subject to clear institutional rules. A governed platform
 can support broader sharing more effectively than a fragmented tool set because
-public visibility, internal authority, and feature boundaries are all managed
-within one architecture \cite{siemens2011open}.
+public visibility, internal authority, feature boundaries, and extension
+behavior are all managed within one architecture \cite{siemens2011open}.
 
 \subsection{Security, Roles, and Data Management}
 \label{subsec:security_roles_and_data_management}
