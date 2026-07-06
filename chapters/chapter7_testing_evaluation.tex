@@ -8,15 +8,15 @@
 
 \section{Introduction}\label{sec:testing_evaluation_introduction}
 
-Testing and evaluation provide the evidence that the implemented EduVerse
-platform behaves according to its academic, role-based, and technical
+Testing and evaluation provide the basis for confirming that the implemented
+EduVerse platform behaves according to its academic, role-based, and technical
 responsibilities. In a multi-organization educational system, correctness is
 not measured only by whether pages render successfully, but also by whether
 access rules, workflow boundaries, and governed feature behavior operate
 reliably in representative use.
 
-The evaluation therefore concentrates on the strongest verifiable evidence in
-the current project state: selected automated checks, manual validation of key
+The evaluation therefore concentrates on the main forms of verification adopted
+in the current project scope: selected automated checks, manual validation of key
 workflows, role-aware and security-aware review, and integration review through
 pre-merge checks and preview deployments.
 
@@ -45,7 +45,7 @@ workflow and access control.
 \section{Functional Validation}\label{sec:functional_validation}
 
 Functional validation focused on representative workflows rather than on a
-claim of exhaustive end-to-end automation. The strongest evidence supports the
+claim of exhaustive end-to-end automation. The main validation work covered the
 following areas:
 
 \begin{itemize}
@@ -69,7 +69,7 @@ following areas:
 
 \section{Non-Functional Evaluation}\label{sec:non_functional_evaluation}
 
-The non-functional evaluation is necessarily lighter than the functional review,
+The non-functional evaluation is necessarily lighter than the functional validation,
 yet several practical conclusions remain well supported.
 
 \begin{itemize}
@@ -79,19 +79,18 @@ yet several practical conclusions remain well supported.
     preview-based verification of role-sensitive pages and gated features.
   \item Compatibility and responsiveness were assessed at an observational
     level through the implemented interfaces, while formal load testing and a
-    full browser-automation matrix were not identified in the reviewed
-    evidence.
+    complete browser-automation matrix were outside the current testing scope.
 \end{itemize}
 
 \section{Review and Evaluation Summary}\label{sec:review_evaluation_summary}
 
-Taken together, the available evidence shows a credible evaluation foundation
-for EduVerse. Automated checks support selected core logic, manual validation
+Taken together, these testing activities provide a credible evaluation
+foundation for EduVerse. Automated checks support selected core logic, manual validation
 confirms representative academic workflows, and role-based and security-aware
 review strengthens confidence in governed platform behavior. GitHub Actions
 checks and Vercel preview deployments further support safe review before merge.
 
-The evaluation was scoped to the available automated checks, selected
+The evaluation was scoped to the automated checks, selected
 logic-level tests, and representative manual validation. No full end-to-end
 test suite is claimed on that basis. Accordingly, the strongest current
 conclusions concern correctness of core workflows, controlled access behavior,

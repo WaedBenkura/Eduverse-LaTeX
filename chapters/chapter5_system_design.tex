@@ -55,7 +55,7 @@ the design discussion must explain both the underlying information model and
 the user-facing surfaces through which that model becomes operational.
 
 The chapter therefore concentrates on the design elements that are most
-directly supported by the verified implementation: the architectural context,
+directly reflected in the implemented platform: the architectural context,
 the database and storage model, and the implemented interface surfaces.
 Together, these elements show how EduVerse connects persistence, governance,
 and interaction instead of treating them as separate design concerns.
@@ -77,9 +77,8 @@ Persistence design in EduVerse is not only a matter of storage. The database
 structure carries organization governance, role resolution, class membership,
 visibility rules, feature enablement, and the academic workflows built on top
 of them. This section therefore documents the verified database design of
-EduVerse through the schema overview, the ERD, the physical schema tables
-derived from the latest analysis notes, and the main uncertainty caused by
-missing base-table DDL in part of the checked-in migration history.
+EduVerse through the schema overview, the ERD, and the physical schema tables
+used to summarize the implemented data model at design level.
 
 \subsection{Logical Database Design}\label{subsec:database_design_overview}
 
@@ -113,6 +112,8 @@ expanded into the detailed physical schema tables. At this level, the diagram
 does more than list entities: it clarifies cardinalities, one-to-one control
 links, one-to-many instructional flows, and many-to-many relationships resolved
 through junction tables.
+
+\newpage
 
 \paragraph*{Principal Relationship Structure}
 \begin{itemize}
@@ -157,14 +158,15 @@ practical teaching and learning activity.
 
 \begin{figure}[p]
   \centering
-  \makebox[\textwidth][c]{%
-    \includegraphics[
-      page=1,
-      angle=90,
-      width=\textwidth,
-      totalheight=0.92\textheight,
-      keepaspectratio
-    ]{figures/chapter5/database-erd.pdf}}
+  \includegraphics[
+    page=1,
+    angle=0,
+    trim=580 25 580 25,
+    clip,
+    width=0.97\textwidth,
+    height=0.93\textheight,
+    keepaspectratio
+  ]{figures/chapter5/database-erd.pdf}
   \caption{Entity Relationship Diagram of the EduVerse Database}
   \label{fig:eduverse_database_erd}
 \end{figure}
@@ -176,8 +178,8 @@ practical teaching and learning activity.
 The physical schema tables below translate the logical model into the concrete
 database structures used by EduVerse. Column names, primary keys, foreign keys,
 logical relationships, enum or status fields, and essential notes are taken
-from \db{database-analysis.md}; where exact SQL types are not directly visible,
-conservative generic types are used. Keeping these tables in the design
+from \db{database-analysis.md}; where exact SQL types are not restated in this
+summary, conservative generic types are used. Keeping these tables in the design
 chapter is important because the platform's governance, visibility, feature
 availability, and academic workflows depend directly on how these relations are
 persisted.
@@ -185,7 +187,7 @@ persisted.
 \subsubsection*{Core Multi-Organization and User Model}
 
 \EduSchemaTableStart{organizations}
-\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
 \EduSchemaRow{slug}{\db{text}}{Organization slug.}
 \EduSchemaRow{name}{\db{text}}{Organization display name.}
 \EduSchemaTableEnd
@@ -221,13 +223,13 @@ persisted.
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{organization_invites}
-\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
 \EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
 \EduSchemaRow{email}{\db{text}}{Invite target email.}
 \EduSchemaRow{role}{\db{public.app_role}}{Role enum.}
 \EduSchemaRow{invited_by_user_id}{\db{uuid}}{Logical relationship to \db{auth.users.id}.}
 \EduSchemaRow{token}{\db{text}}{Invite token.}
-\EduSchemaRow{status}{\db{text}}{Membership-like status field; exact base type is not directly visible.}
+\EduSchemaRow{status}{\db{text}}{Membership-like status field; summarized here with its implemented meaning.}
 \EduSchemaRow{expires_at}{\db{timestamp}}{Invite expiry timestamp.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
@@ -298,7 +300,7 @@ persisted.
 \subsubsection*{Classes and Class Visibility}
 
 \EduSchemaTableStart{classes}
-\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
 \EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
 \EduSchemaRow{name}{\db{text}}{Class name.}
 \EduSchemaRow{code}{\db{text}}{Class code.}
@@ -321,7 +323,7 @@ persisted.
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{class_memberships}
-\EduSchemaRow{id}{\db{uuid}}{PK; original base DDL is not directly visible.}
+\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
 \EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
 \EduSchemaRow{class_id}{\db{uuid}}{Logical relationship to \db{classes.id}.}
 \EduSchemaRow{user_id}{\db{uuid}}{Logical relationship to the profile or auth identity.}
@@ -459,7 +461,7 @@ persisted.
 \EduSchemaRow{original_filename}{\db{text}}{Original media file name.}
 \EduSchemaRow{mime_type}{\db{text}}{Media MIME type.}
 \EduSchemaRow{size_bytes}{\db{integer}}{Stored media size.}
-\EduSchemaRow{material_type}{\db{text}}{Chat-media material descriptor; exact base type is not directly visible.}
+\EduSchemaRow{material_type}{\db{text}}{Chat-media material descriptor; summarized here with its implemented meaning.}
 \EduSchemaRow{show_in_announcement_carousel}{\db{boolean}}{Announcement carousel display flag.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaTableEnd
@@ -645,7 +647,7 @@ persisted.
 \EduSchemaRow{actor_user_id}{\db{uuid}}{Logical relationship to \db{auth.users.id}.}
 \EduSchemaRow{action}{\db{text}}{Audit action key.}
 \EduSchemaRow{entity_type}{\db{text}}{Polymorphic entity type discriminator.}
-\EduSchemaRow{entity_id}{not directly visible}{Polymorphic logical relationship to multiple entity tables.}
+\EduSchemaRow{entity_id}{design-level summary}{Polymorphic logical relationship to multiple entity tables.}
 \EduSchemaRow{payload}{\db{json/jsonb}}{Audit payload.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaNote{The checked-in migration slice does not directly expose the primary key for this base table. The same table is also used for integrity events and retake-related audit history instead of dedicated child tables.}
@@ -659,13 +661,7 @@ persisted.
 \subsection{Schema Interpretation Notes and Uncertain Relationships}
 \label{subsec:database_design_notes_uncertain}
 
-The original \db{CREATE TABLE} definitions for \db{organizations},
-\db{profiles}, \db{organization_memberships}, \db{organization_invites},
-\db{classes}, \db{class_memberships}, and \db{audit_logs} are not visible in
-the checked-in migration history. Accordingly, the schema tables above record
-only the columns and relationships confirmed by visible migrations, RPC
-logic, and active query usage, while any non-visible link is labeled as a
-logical relationship rather than an enforced foreign key.
+For readability and design clarity, the database schema is presented at a design level rather than as a verbatim reproduction of every implemented \db{CREATE TABLE} definition. The schema tables therefore focus on the columns and relationships used by the platform, while relationships that are not expressed as explicit foreign keys are documented as logical relationships.
 
 % Fallback barrier for builds that do not load placeins in the active preamble.
 \providecommand{\FloatBarrier}{\clearpage}

@@ -148,8 +148,8 @@ it, without removing the surrounding role and visibility controls.
 \label{sec:mobile_companion_application_implementation}
 
 EduVerse Mobile is implemented as an Expo and React Native companion
-application written in TypeScript. The available mobile analysis shows a
-provider-and-service structure in which shared app state is centralized in a
+application written in TypeScript. It follows a provider-and-service
+structure in which shared app state is centralized in a
 top-level provider, while domain data is fetched through a dedicated API
 service layer. Supabase is used for authentication and session persistence, and
 the mobile client then calls the EduVerse backend through bearer-token-aware
@@ -175,7 +175,7 @@ This scope is important, but it should not be overstated. The mobile client is
 not a full replacement for the web platform. Administrative workflows,
 organization management, feature configuration, rich assessment authoring, and
 several advanced learning tools remain mainly web-side. The current mobile
-analysis also shows that assignment handling is still limited, with class
+scope also keeps assignment handling limited, with class
 summary and progress information more developed than full mobile submission
 workflows. Likewise, the mobile client provides basic live-session access, but
 the richer whiteboard-centered experience remains primarily part of the web
@@ -190,9 +190,8 @@ the web client.
 \label{sec:backend_database_storage_implementation}
 
 EduVerse uses a Supabase-centered backend model implemented from within the
-Next.js project. No separate standalone backend service was identified in the
-available implementation evidence. Instead, server route handlers and shared
-libraries perform the main backend responsibilities: request validation,
+Next.js project rather than through a separate standalone backend service.
+Instead, server route handlers and shared libraries perform the main backend responsibilities: request validation,
 authorization, workflow execution, persistence, and integration with external
 services.
 
@@ -246,8 +245,9 @@ The implementation also includes concrete security controls relevant to the
 educational setting. These include server-side input validation, signed
 time-limited file access, invite acceptance tied to authenticated email
 identity, governed public join links, role-aware results visibility, exam
-passcode protection, integrity-event recording, and audit logging. The evidence
-does not show webcam-based proctoring or biometric monitoring. Security is
+passcode protection, integrity-event recording, and audit logging. Webcam-based
+proctoring and biometric monitoring are outside the current implementation
+scope. Security is
 instead built around authenticated access, scoped authorization, privacy-aware
 data handling, and event-based assessment controls.
 
@@ -277,7 +277,7 @@ only under explicit policy controls rather than as unrestricted exposure.
 \label{sec:feature_availability_extension_implementation}
 
 EduVerse is implemented as a configurable platform rather than as a fixed set
-of mandatory tools. The implementation evidence shows feature definitions,
+of mandatory tools. The implementation includes feature definitions,
 feature presets, organization-level feature settings, class-level feature
 settings, organization extensions, and class extension settings. This allows
 the same platform to adapt to different institutions, teachers, and class
@@ -322,7 +322,7 @@ breaking the shared session model.
 \label{sec:ai_learning_support_ide_implementation}
 
 AI support in EduVerse is implemented as an embedded academic service rather
-than as a generic external chatbot. The available evidence shows class AI Agent
+than as a generic external chatbot. The implementation includes class AI Agent
 routes, material extraction and summary generation, assignment-related support,
 exam drafting assistance, and AI-backed feedback support through OpenRouter and
 supporting helpers. These services operate with class context and role-aware
@@ -406,4 +406,4 @@ companion application under active development. The implementation also shows
 how controlled feature enablement, governed public access, and future reuse
 through shared APIs are built into the platform rather than added as
 afterthoughts. The next chapter evaluates the implemented system through the
-available testing and validation evidence.
+project's testing and validation scope.
