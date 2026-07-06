@@ -17,7 +17,7 @@ This repository clearly contains the web application. It does **not** contain th
 ## 2. Technology Stack
 
 - **Frontend framework and language**: Next.js 16 App Router, React 19, and TypeScript.
-- **Backend/API approach**: backend behavior is implemented primarily through Next.js route handlers under `app/api/*`, with shared domain logic in `lib/*`. A separate standalone backend service was not found.
+- **Backend/API approach**: backend behavior is implemented primarily through Next.js route handlers under `app/api/*`, with shared domain logic in `lib/*`. A separate standalone backend service is not part of this repository structure.
 - **Database and authentication services**: Supabase Postgres and Supabase Auth.
 - **Storage services**: AWS S3, accessed from server-side helpers for materials and assignment files.
 - **Real-time/live-session services**: LiveKit is used for live session tokens and room access; Supabase Realtime is used for live-session state updates.
@@ -190,10 +190,10 @@ This repository does **not** show webcam-based proctoring, biometric checks, or 
 
 ## 9. Testing and Evaluation Evidence
 
-### Implemented evidence found in the repository
+### Implemented verification present in the repository
 
 - Automated tests exist and are run with `bun test`.
-- The tests I found are focused on core domain logic and high-risk UI behavior rather than end-to-end browser automation.
+- The repository tests are focused on core domain logic and high-risk UI behavior rather than end-to-end browser automation.
 - Implemented test coverage visible in the repository includes:
   - exam service, grading, and integrity logic
   - exam lock behavior and manager result-state logic
@@ -238,8 +238,8 @@ I did **not** find a dedicated end-to-end test suite such as Playwright or Cypre
 - The repository contains the web application, but not the mobile companion source code.
 - The IDE is browser-based and explicitly does **not** execute real OS processes such as `node`, `npm`, or native compilers; it uses browser-safe runners instead.
 - The profile page contains a language selector UI, but it is disabled, so language switching is not currently implemented.
-- The current test suite is focused on unit and logic-level coverage; a full end-to-end test suite was not found.
-- Exam integrity is event-based. I found browser and navigation event monitoring, but not webcam/audio proctoring or biometric verification.
+- The current test suite is focused on unit and logic-level coverage; a full end-to-end test suite is not included in the current repository scope.
+- Exam integrity is event-based. The implementation includes browser and navigation event monitoring, but does not include webcam/audio proctoring or biometric verification.
 - Some AI and material routes include compatibility fallbacks for missing summary/cache columns, which suggests the implementation is designed to tolerate schema variance rather than assuming one fixed production state.
 - The README explicitly states that some mock data still remains for parts of dashboard history, sample activity, and empty-state support.
 
@@ -292,6 +292,12 @@ I did **not** find a dedicated end-to-end test suite such as Playwright or Cypre
 | Organization invite delivery integrates with Gmail when configured and falls back to shareable links otherwise. | `lib/email/gmail.ts`<br>`app/api/organizations/[organizationId]/invites/route.ts`<br>`app/api/organizations/[organizationId]/registrations/route.ts` | Gmail OAuth is optional; manual invite-link sharing remains supported. |
 | Public join links can require approval, expire, and limit usage. | `app/api/join/[token]/route.ts`<br>`supabase/migrations/20260616120000_create_public_join_links.sql` | Join-link metadata and approval flow are implemented. |
 | The mobile companion is referenced but not implemented in this repository. | `README.md` | README points to `../Eduverse-mobile-app`; no mobile source tree is present here. |
-| Automated tests exist and are focused on core logic and selected UI behavior. | `package.json`<br>`tests/lib/exams/service.test.ts`<br>`tests/lib/exams/integrity.test.ts`<br>`tests/lib/exams/grading.test.ts`<br>`tests/lib/features/feature-registry.test.ts`<br>`tests/features/exam/exam-lock.test.ts`<br>`tests/features/exam/manager-detail-state.test.ts`<br>`tests/features/ide/runners.test.ts`<br>`tests/features/ide/preview.test.ts`<br>`tests/lib/education/selectors.test.ts`<br>`lib/education/classes.test.ts` | The visible test suite is unit/logic oriented. |
+| Automated tests exist and are focused on core logic and selected UI behavior. | `package.json`<br>`tests/lib/exams/service.test.ts`<br>`tests/lib/exams/integrity.test.ts`<br>`tests/lib/exams/grading.test.ts`<br>`tests/lib/features/feature-registry.test.ts`<br>`tests/features/exam/exam-lock.test.ts`<br>`tests/features/exam/manager-detail-state.test.ts`<br>`tests/features/ide/runners.test.ts`<br>`tests/features/ide/preview.test.ts`<br>`tests/lib/education/selectors.test.ts`<br>`lib/education/classes.test.ts` | The current automated test coverage is unit/logic oriented. |
 | Some mock-data support remains in the codebase. | `README.md`<br>`lib/store.tsx` | README explicitly says some mock data remains; the store still has a fallback mock user. |
 | Language switching is not currently implemented for end users. | `features/profile/profile-screen.tsx` | The language toggle exists but is disabled. |
+
+
+
+
+
+

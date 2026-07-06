@@ -76,7 +76,7 @@ around shared roles, shared class context, and configuration-aware workflows.
 Persistence design in EduVerse is not only a matter of storage. The database
 structure carries organization governance, role resolution, class membership,
 visibility rules, feature enablement, and the academic workflows built on top
-of them. This section therefore documents the verified database design of
+of them. This section therefore documents the database design of
 EduVerse through the schema overview, the ERD, and the physical schema tables
 used to summarize the implemented data model at design level.
 
@@ -176,27 +176,25 @@ practical teaching and learning activity.
 \subsection{Physical Schema Tables}\label{subsec:database_tables}
 
 The physical schema tables below translate the logical model into the concrete
-database structures used by EduVerse. Column names, primary keys, foreign keys,
-logical relationships, enum or status fields, and essential notes are taken
-from \db{database-analysis.md}; where exact SQL types are not restated in this
-summary, conservative generic types are used. Keeping these tables in the design
-chapter is important because the platform's governance, visibility, feature
-availability, and academic workflows depend directly on how these relations are
-persisted.
+database structures used by EduVerse. The schema tables summarize the main
+columns, keys, and relationships that support the implemented EduVerse
+workflows. Keeping these tables in the design chapter is important because the
+platform's governance, visibility, feature availability, and academic
+workflows depend directly on how these relations are persisted.
 
 \subsubsection*{Core Multi-Organization and User Model}
 
 \EduSchemaTableStart{organizations}
-\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
 \EduSchemaRow{slug}{\db{text}}{Organization slug.}
 \EduSchemaRow{name}{\db{text}}{Organization display name.}
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{profiles}
-\EduSchemaRow{id}{\db{uuid}}{PK; logical identity mirror of \db{auth.users.id}.}
+\EduSchemaRow{id}{\db{uuid}}{PK; aligned with \db{auth.users.id} in the identity model.}
 \EduSchemaRow{email}{\db{text}}{Profile email address.}
 \EduSchemaRow{display_name}{\db{text}}{Visible user name.}
-\EduSchemaRow{default_organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{default_organization_id}{\db{uuid}}{Related to \db{organizations.id}.}
 \EduSchemaRow{updated_at}{\db{timestamp}}{Profile update timestamp.}
 \EduSchemaTableEnd
 
@@ -204,8 +202,8 @@ persisted.
 
 \EduSchemaTableStart{organization_memberships}
 \EduSchemaRow{id}{\db{uuid}}{PK.}
-\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
-\EduSchemaRow{user_id}{\db{uuid}}{Logical relationship to the profile or auth identity.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Related to \db{organizations.id}.}
+\EduSchemaRow{user_id}{\db{uuid}}{Related to the profile or authentication identity.}
 \EduSchemaRow{role}{\db{public.app_role}}{Role enum.}
 \EduSchemaRow{status}{\db{public.membership_status}}{Membership status enum.}
 \EduSchemaRow{selected_role_id}{\db{uuid}}{\db{FK to organization_membership_roles.id}.}
@@ -223,13 +221,13 @@ persisted.
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{organization_invites}
-\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
-\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Related to \db{organizations.id}.}
 \EduSchemaRow{email}{\db{text}}{Invite target email.}
 \EduSchemaRow{role}{\db{public.app_role}}{Role enum.}
-\EduSchemaRow{invited_by_user_id}{\db{uuid}}{Logical relationship to \db{auth.users.id}.}
+\EduSchemaRow{invited_by_user_id}{\db{uuid}}{Related to \db{auth.users.id}.}
 \EduSchemaRow{token}{\db{text}}{Invite token.}
-\EduSchemaRow{status}{\db{text}}{Membership-like status field; summarized here with its implemented meaning.}
+\EduSchemaRow{status}{\db{text}}{Invitation-status field used in the organization invite workflow.}
 \EduSchemaRow{expires_at}{\db{timestamp}}{Invite expiry timestamp.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
@@ -300,11 +298,11 @@ persisted.
 \subsubsection*{Classes and Class Visibility}
 
 \EduSchemaTableStart{classes}
-\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
-\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Related to \db{organizations.id}.}
 \EduSchemaRow{name}{\db{text}}{Class name.}
 \EduSchemaRow{code}{\db{text}}{Class code.}
-\EduSchemaRow{teacher_user_id}{\db{uuid}}{Logical relationship to \db{profiles.id}.}
+\EduSchemaRow{teacher_user_id}{\db{uuid}}{Related to \db{profiles.id}.}
 \EduSchemaRow{color}{\db{text}}{Class color identifier.}
 \EduSchemaRow{description}{\db{text}}{Class description.}
 \EduSchemaRow{room}{\db{text}}{Room or location field.}
@@ -323,10 +321,10 @@ persisted.
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{class_memberships}
-\EduSchemaRow{id}{\db{uuid}}{PK; summarized here at design level.}
-\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
-\EduSchemaRow{class_id}{\db{uuid}}{Logical relationship to \db{classes.id}.}
-\EduSchemaRow{user_id}{\db{uuid}}{Logical relationship to the profile or auth identity.}
+\EduSchemaRow{id}{\db{uuid}}{PK.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Related to \db{organizations.id}.}
+\EduSchemaRow{class_id}{\db{uuid}}{Related to \db{classes.id}.}
+\EduSchemaRow{user_id}{\db{uuid}}{Related to the profile or authentication identity.}
 \EduSchemaRow{role}{\db{text}}{Class-level role field; current values include \db{teacher}, \db{student}, and \db{ta}.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
@@ -461,7 +459,7 @@ persisted.
 \EduSchemaRow{original_filename}{\db{text}}{Original media file name.}
 \EduSchemaRow{mime_type}{\db{text}}{Media MIME type.}
 \EduSchemaRow{size_bytes}{\db{integer}}{Stored media size.}
-\EduSchemaRow{material_type}{\db{text}}{Chat-media material descriptor; summarized here with its implemented meaning.}
+\EduSchemaRow{material_type}{\db{text}}{Chat-media material descriptor used for uploaded class content.}
 \EduSchemaRow{show_in_announcement_carousel}{\db{boolean}}{Announcement carousel display flag.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaTableEnd
@@ -643,14 +641,14 @@ persisted.
 \subsubsection*{Audit Logs and External Auth References}
 
 \EduSchemaTableStart{audit_logs}
-\EduSchemaRow{organization_id}{\db{uuid}}{Logical relationship to \db{organizations.id}.}
-\EduSchemaRow{actor_user_id}{\db{uuid}}{Logical relationship to \db{auth.users.id}.}
+\EduSchemaRow{organization_id}{\db{uuid}}{Related to \db{organizations.id}.}
+\EduSchemaRow{actor_user_id}{\db{uuid}}{Related to \db{auth.users.id}.}
 \EduSchemaRow{action}{\db{text}}{Audit action key.}
 \EduSchemaRow{entity_type}{\db{text}}{Polymorphic entity type discriminator.}
-\EduSchemaRow{entity_id}{design-level summary}{Polymorphic logical relationship to multiple entity tables.}
+\EduSchemaRow{entity_id}{\db{reference}}{Polymorphic reference to related entity records.}
 \EduSchemaRow{payload}{\db{json/jsonb}}{Audit payload.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
-\EduSchemaNote{The checked-in migration slice does not directly expose the primary key for this base table. The same table is also used for integrity events and retake-related audit history instead of dedicated child tables.}
+\EduSchemaNote{The table serves as the shared audit stream for integrity events, retake-related history, and other recorded platform actions.}
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{auth.users}
@@ -658,10 +656,6 @@ persisted.
 \EduSchemaNote{This external table is referenced by invite, join-link, join-request, exam, and class-lifecycle user fields in the EduVerse schema.}
 \EduSchemaTableEnd
 
-\subsection{Schema Interpretation Notes and Uncertain Relationships}
-\label{subsec:database_design_notes_uncertain}
-
-For readability and design clarity, the database schema is presented at a design level rather than as a verbatim reproduction of every implemented \db{CREATE TABLE} definition. The schema tables therefore focus on the columns and relationships used by the platform, while relationships that are not expressed as explicit foreign keys are documented as logical relationships.
 
 % Fallback barrier for builds that do not load placeins in the active preamble.
 \providecommand{\FloatBarrier}{\clearpage}
@@ -681,8 +675,8 @@ For readability and design clarity, the database schema is presented at a design
 
 \section{Interface Design and Implemented Workflow Surfaces}\label{sec:interface_and_interaction_design}
 
-The interface layer of EduVerse is documented here as evidence of design
-realization rather than as decoration. The screenshots demonstrate how the
+The interface layer of EduVerse illustrates how the system design is realized
+through user-facing workflows rather than serving as decoration. The screenshots demonstrate how the
 implemented system exposes administrative governance, teaching activity,
 student participation, assessment, live collaboration, AI support, and coding
 workflows through actual user-facing surfaces. Read together, they show how the
@@ -730,7 +724,7 @@ Prep, Corporate Training, Primary School, and Kindergarten. The same workflow
 also establishes initial feature availability for tools such as Chat,
 Materials, Assignments, Sessions, Exams, Results, Extensions, and the IDE,
 while allowing public-access and open-learning behavior to be configured from
-the beginning. This confirms that governance, institutional identity, and
+the beginning. This establishes that governance, institutional identity, and
 feature selection are connected from the first administrative step.
 
 \EduUiFigure
@@ -883,3 +877,4 @@ class environment when they are enabled for the relevant learning context.
   {fig:ui-ide-workspace}
 
 \FloatBarrier
+

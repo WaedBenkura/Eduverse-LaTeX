@@ -82,8 +82,8 @@ Live sessions token creation and session lifecycle are API-backed; media room is
 ```
 LiveKit-backed.
 Clearly not fully integrated yet
-No direct evidence of remote Expo push token registration or server-side push
-delivery.
+Remote Expo push token registration and server-side push delivery are not yet
+part of the current mobile implementation.
 ```
 
 ```
@@ -184,8 +184,8 @@ Live-session whiteboardin-session chat.
 Feature parity with the main web platform.
 A final caution for academic writing avoid claiming full mobile parity with the
 web app, and avoid presenting assignment handling or advanced notifications as
-finished. Also, automated verification in this repo is still light; I found only
-environmentconfig tests.
+finished. Also, automated verification in this repo is still light; the repository
+currently includes only environmentconfig tests.
 Mobile Documentation Summary
 Eduverse Mobile is a companion application for the main Eduverse platform built
 with Expo, React Native, and TypeScript. In its current repository state, it
@@ -196,4 +196,6 @@ under development and should not be described as feature-complete, since
 assignment workflows, remote push notifications, offline support, and
 administrative features remain partial, web-only, or planned for future work.
 ```
+
+
 

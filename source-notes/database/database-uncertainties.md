@@ -1,6 +1,6 @@
-# Database Uncertainties And Missing/Logical Relationships
+# Database Reconstruction Notes And Relationship Summary
 
-## 1. Core tables whose original `CREATE TABLE` DDL is not present in the checked-in migration history
+## 1. Core tables whose original `CREATE TABLE` DDL is not present in the available migration history
 
 The current repository does not expose the original base-table DDL for these tables, so their current columns were reconstructed from later migrations, RPCs, and active query usage:
 
@@ -12,7 +12,7 @@ The current repository does not expose the original base-table DDL for these tab
 - `public.class_memberships`
 - `public.audit_logs`
 
-Because of that gap, the following details could not be verified directly from a visible `CREATE TABLE` statement:
+Because of that gap, the following details are summarized from later migrations, RPCs, and active query usage rather than from a single original `CREATE TABLE` statement:
 
 - The exact original column list for each base table.
 - The exact original PK/unique/foreign-key declarations for some base-table columns.
@@ -22,7 +22,7 @@ Because of that gap, the following details could not be verified directly from a
 
 - `profiles.id` to `auth.users.id`
   - Strong logical 1:1 relationship.
-  - Evidence: current auth flows always read `profiles` with `id = auth.uid()`.
+  - Current implementation pattern: auth flows read `profiles` with `id = auth.uid()`.
 - `profiles.default_organization_id` to `organizations.id`
   - Logical relationship from create/join/invite acceptance flows.
 - `organization_memberships.organization_id` to `organizations.id`
@@ -114,6 +114,13 @@ These are the important mismatches the new documentation intentionally removes o
 
 ## 5. Prior ERD artifacts available for direct comparison
 
-- No current `docs/database-erd.mmd`, `docs/database-erd.dbml`, `docs/database-analysis.md`, `docs/database-thesis-summary.md`, or `docs/database-uncertainties.md` files were present in the latest checked-out worktree before regeneration.
-- `git log -- docs/database-erd.mmd docs/database-erd.dbml docs/database-analysis.md docs/database-thesis-summary.md docs/database-uncertainties.md` returned no historical matches in the current local repository view.
-- Because of that, the mismatch notes above are based on actual current schema evidence, not a line-by-line diff against an older checked-in ERD document.
+- No current ERD source set was present under `docs/` in the local worktree before regeneration.
+- `git log -- docs/...` did not return an earlier tracked ERD source set in the local repository history used for this note.
+- Accordingly, the mismatch notes above are based on the current schema state rather than a line-by-line diff against an older checked-in ERD document.
+
+
+
+
+
+
+

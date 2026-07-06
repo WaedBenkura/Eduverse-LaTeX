@@ -75,7 +75,7 @@ System feature usage:
 - Organization switching, public join access, feature presets, settings, membership, class ownership, notifications, archived history.
 
 RLS/access:
-- Base-table RLS is not visible in the current checked-in migration slice.
+- Base-table RLS is not restated in the current migration set.
 
 Notes:
 - Current create-organization RPCs insert `slug` and `name`, and later seed feature/settings state immediately.
@@ -119,7 +119,7 @@ System feature usage:
 - Auth context, organization switching, class hydration, roster displays, materials, assignments, notifications, teacher permission overrides.
 
 RLS/access:
-- Base-table RLS is not visible in the current checked-in migration slice.
+- Base-table RLS is not restated in the current migration set.
 
 Notes:
 - The app always loads a profile using `id = auth.uid()`, so profile identity is tightly coupled to Supabase auth identity even though the base FK/trigger is not visible here.
@@ -160,7 +160,7 @@ System feature usage:
 - Organization access, selected-role switching, membership status, invite acceptance, admin/teacher/student authorization.
 
 RLS/access:
-- Base-table RLS is not directly visible in the checked-in migrations.
+- Base-table RLS is not restated in the current migration set.
 
 Notes:
 - The newer authorization model uses `organization_membership_roles` for active roles while `organization_memberships.role` is kept as a compatibility/effective role field.
@@ -1552,3 +1552,5 @@ Notes:
   - No dedicated IDE workspace database table.
 - Archived/past-term history:
   - Real and current, using archived `classes`, imported assignment rows, submission rows, and `class_invites.previous_grade_payload`.
+
+
