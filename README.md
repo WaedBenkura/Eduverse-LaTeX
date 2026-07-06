@@ -1,46 +1,105 @@
 # EduVerse Thesis Documentation
 
-This repository contains the LaTeX source for the thesis:
+This repository contains the LaTeX source files for the graduation thesis:
 
 **EduVerse: An Integrated Educational Web Platform with a Mobile Companion Application**
 
-The project documents the academic analysis, design, implementation, testing, and conclusion chapters for the EduVerse platform, together with the front matter, figures, references, and supporting thesis assets required to build the final PDF.
+The thesis documents the analysis, design, implementation, testing, future work, and conclusion of the EduVerse platform. The project is organized into separate LaTeX files for the front matter, chapters, figures, bibliography, and back matter.
 
-## Repository Structure
+## Project Structure
 
-- `main.tex` � main thesis entry point.
-- `frontmatter/` � cover page, abstract, acknowledgements, and other opening sections.
-- `chapters/` � numbered thesis chapters.
-- `figures/` � diagrams, screenshots, ERD assets, and supporting figure sources.
-- `backmatter/` � conclusion and closing sections.
-- `references.bib` � bibliography entries used by the thesis.
-- `OxfordTeXThesis.cls` � adapted thesis class used to format the document.
+```text
+Eduverse - LaTex/
+├── main.tex
+├── references.bib
+├── frontmatter/
+│   ├── cover_page.tex
+│   ├── abstract.tex
+│   └── acknowledgements.tex
+├── chapters/
+│   ├── chapter1_strategic_vision.tex
+│   ├── chapter2_literature_review.tex
+│   ├── chapter3_methodology.tex
+│   ├── chapter4_system_analysis.tex
+│   ├── chapter5_system_design.tex
+│   ├── chapter6_implementation.tex
+│   ├── chapter7_testing_evaluation.tex
+│   └── chapter8_future_work.tex
+├── figures/
+│   └── ...
+└── backmatter/
+    └── conclusion.tex
+Main Entry Point
 
-## Compilation
+The main file is:
 
-Compile the thesis with the standard LaTeX and BibTeX sequence:
+main.tex
 
-```bash
+This file imports the front matter, chapters, figures, references, and back matter. To compile the thesis, open main.tex and run the LaTeX build process from the project root directory.
+
+Requirements
+
+The project requires a working LaTeX distribution, such as:
+
+MiKTeX on Windows
+TeX Live on Linux or macOS
+Overleaf, if compiling online
+
+The document is compiled using pdflatex and bibtex.
+
+Build Instructions
+
+Run the following commands from the project root directory:
+
 pdflatex main.tex
 bibtex main
 pdflatex main.tex
 pdflatex main.tex
-```
 
-If the local toolchain is configured for XeLaTeX or an automated build script, keep the same multi-pass bibliography workflow so that references, contents pages, figure numbers, and table numbers update correctly.
+The repeated pdflatex runs are required so that the table of contents, references, citations, figure numbers, and bibliography are updated correctly.
 
-## Figures and Screenshots
+Output File
 
-- Figures are stored under `figures/` and may include PDF diagrams, exported screenshots, and supporting LaTeX figure sources.
-- Screenshot paths and filenames should remain stable unless the thesis text is updated to match.
-- When replacing a figure, preserve readability, caption relevance, and the intended chapter context.
+After a successful build, the final thesis PDF will be generated as:
 
-## References
+main.pdf
 
-- Bibliographic entries are maintained in `references.bib`.
-- After adding or editing citations, rerun the full compile sequence so that the bibliography and in-text references resolve correctly.
-- Avoid removing bibliography entries unless they are clearly unused or replaced.
+If the PDF is not updated correctly after one build, run the full build sequence again.
 
-## Template Attribution
+Figures and Diagrams
 
-This thesis project uses an adapted `OxfordTeXThesis` class and template as its LaTeX formatting base. The repository content, chapter structure, figures, and documentation text are maintained for the EduVerse thesis project rather than as a generic upstream template distribution.
+All figures, diagrams, screenshots, and exported PDF graphics are stored inside the figures/ directory.
+
+When replacing or renaming any figure, make sure the corresponding \includegraphics{...} path in the related chapter is also updated.
+
+Bibliography
+
+Bibliographic references are stored in:
+
+references.bib
+
+After adding or editing citations, run the full build sequence again so that the bibliography and in-text citations resolve correctly.
+
+Generated Files
+
+LaTeX may generate temporary files during compilation, such as:
+
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+These files are generated automatically and do not need to be edited manually.
+
+Template Attribution
+
+This thesis project was initially based on an Oxford LaTeX thesis template and was later adapted for the EduVerse graduation project structure. The thesis content, chapters, figures, diagrams, and project-specific documentation belong to the EduVerse thesis work.
+
+The original template license is kept in LICENSE.txt for attribution.
