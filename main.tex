@@ -21,6 +21,9 @@
   \endgroup
 }
 
+% Prevent chapter-local fallback FloatBarrier definitions from forcing blank pages.
+\providecommand{\FloatBarrier}{}
+
 % Keep links clickable without visible boxes and reduce line-breaking pressure
 % after disabling automatic word hyphenation.
 \hypersetup{
@@ -80,6 +83,24 @@
   \renewcommand{\headrulewidth}{0pt}
 }
 
+\makeatletter
+\newcommand{\smartclearpage}{%
+  \ifvmode
+    \ifdim\pagetotal>\topskip
+      \clearpage
+    \fi
+  \else
+    \clearpage
+  \fi
+}
+\renewcommand\chapter{%
+  \if@openright\cleardoublepage\else\smartclearpage\fi
+  \thispagestyle{plain}%
+  \global\@topnum\z@
+  \@afterindentfalse
+  \secdef\@chapter\@schapter}
+\makeatother
+
 \newlength{\chaptercontentsrefwidth}
 \setlength{\chaptercontentsrefwidth}{0.2\textwidth}
 
@@ -112,11 +133,57 @@
   \clearpage
 }
 
+\newcommand{\chapteropeningcontentsinline}[1]{%
+  \vspace{0.75\baselineskip}%
+  \begin{list}{}{%
+      \setlength{\leftmargin}{0.04\textwidth}%
+      \setlength{\rightmargin}{0.04\textwidth}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\itemindent}{0pt}%
+      \setlength{\parsep}{0pt}%
+      \setlength{\topsep}{0pt}%
+      \setlength{\partopsep}{0pt}%
+      \setlength{\itemsep}{0pt}%
+    }%
+    \item[] {\large\bfseries Contents\par}
+    \vspace{0.45\baselineskip}%
+    \begingroup
+      \setlength{\parindent}{0pt}%
+      \setlength{\parskip}{0.1\baselineskip}%
+      \setlength{\chaptercontentsrefwidth}{0.18\linewidth}%
+      #1
+    \endgroup
+  \end{list}%
+}
+
 \newcommand{\chapterwithopening}[3]{%
   \chapter{#1}%
   \label{#2}%
   \chapteropeningcontents{#3}%
 }
+
+\makeatletter
+\newcommand{\chapterwithopeninginline}[3]{%
+  \clearpage
+  \thispagestyle{plain}%
+  \global\@topnum\z@
+  \@afterindentfalse
+  \refstepcounter{chapter}%
+  \typeout{Chapter \thechapter.}%
+  \chaptermark{#1}%
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
+  \vspace*{36\p@}%
+  {\parindent\z@ \raggedright \normalfont
+    \Huge\bfseries \@chapapp\space \thechapter\par\nobreak
+    \vskip 16\p@
+    \Huge\bfseries #1\par\nobreak
+    \vskip 24\p@
+  }%
+  \label{#2}%
+  \chapteropeningcontentsinline{#3}%
+  \clearpage
+}
+\makeatother
 
 \begin{document}
 
@@ -128,8 +195,16 @@
 \include{frontmatter/abstract}
 \include{frontmatter/acknowledgements}
 
+\phantomsection
+\addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
 
 \clearpage
@@ -141,7 +216,7 @@
 \include{chapters/chapter3_methodology}
 \include{chapters/chapter4_system_analysis}
 \include{chapters/chapter5_system_design}
-\include{chapters/chapter6_implementation}
+\input{chapters/chapter6_implementation}
 \include{chapters/chapter7_testing_evaluation}
 \include{chapters/chapter8_future_work}
 
