@@ -4,7 +4,7 @@ This repository contains the LaTeX source files for the graduation thesis:
 
 **EduVerse: An Integrated Educational Web Platform with a Mobile Companion Application**
 
-The thesis documents the analysis, design, implementation, testing, future work, and conclusion of the EduVerse platform. The project is organized into separate LaTeX files for the front matter, chapters, figures, bibliography, and back matter.
+The thesis documents the academic analysis, design, implementation, testing, future work, and conclusion of the EduVerse platform. The project is organized into separate LaTeX files for the front matter, chapters, figures, bibliography, and back matter.
 
 ## Project Structure
 
@@ -26,64 +26,79 @@ Eduverse - LaTex/
 │   ├── chapter7_testing_evaluation.tex
 │   └── chapter8_future_work.tex
 ├── figures/
+│   ├── activity_diagrams/
+│   ├── diagrams/
 │   └── ...
-└── backmatter/
-    └── conclusion.tex
-Main Entry Point
+├── backmatter/
+│   └── conclusion.tex
+├── LICENSE.txt
+└── README.md
+```
 
-The main file is:
+## Main Entry Point
 
+The main LaTeX entry file is:
+
+```text
 main.tex
+```
 
-This file imports the front matter, chapters, figures, references, and back matter. To compile the thesis, open main.tex and run the LaTeX build process from the project root directory.
+This file controls the full thesis build. It includes the front matter, chapters, figures, bibliography, and back matter. To compile the thesis correctly, run the build commands from the root directory of the project.
 
-Requirements
+## Requirements
 
-The project requires a working LaTeX distribution, such as:
+To compile the thesis locally, install a working LaTeX distribution such as:
 
-MiKTeX on Windows
-TeX Live on Linux or macOS
-Overleaf, if compiling online
+- MiKTeX on Windows
+- TeX Live on Linux or macOS
+- Overleaf, if compiling online
 
-The document is compiled using pdflatex and bibtex.
+The thesis is compiled using `pdflatex` and `bibtex`.
 
-Build Instructions
+## Build Instructions
 
 Run the following commands from the project root directory:
 
-pdflatex main.tex
+```bash
+pdflatex -interaction=nonstopmode -synctex=1 main.tex
 bibtex main
-pdflatex main.tex
-pdflatex main.tex
+pdflatex -interaction=nonstopmode -synctex=1 main.tex
+pdflatex -interaction=nonstopmode -synctex=1 main.tex
+```
 
-The repeated pdflatex runs are required so that the table of contents, references, citations, figure numbers, and bibliography are updated correctly.
+The repeated `pdflatex` runs are required so that the table of contents, citations, bibliography, figure numbers, table numbers, and cross-references are updated correctly.
 
-Output File
+## Output File
 
 After a successful build, the final thesis PDF will be generated as:
 
+```text
 main.pdf
+```
 
-If the PDF is not updated correctly after one build, run the full build sequence again.
+If the PDF does not update correctly after one build, run the full build sequence again.
 
-Figures and Diagrams
+## Figures and Diagrams
 
-All figures, diagrams, screenshots, and exported PDF graphics are stored inside the figures/ directory.
+All figures, diagrams, screenshots, exported PDF graphics, and supporting figure files are stored inside the `figures/` directory.
 
-When replacing or renaming any figure, make sure the corresponding \includegraphics{...} path in the related chapter is also updated.
+When replacing or renaming a figure, make sure the related `\includegraphics{...}` path in the corresponding chapter is also updated.
 
-Bibliography
+## Bibliography
 
 Bibliographic references are stored in:
 
+```text
 references.bib
+```
 
-After adding or editing citations, run the full build sequence again so that the bibliography and in-text citations resolve correctly.
+After adding, removing, or editing citations, run the full build sequence again so that the bibliography and in-text citations resolve correctly.
 
-Generated Files
+## Generated Files
 
 LaTeX may generate temporary files during compilation, such as:
 
+```text
 *.aux
 *.log
 *.out
@@ -95,11 +110,18 @@ LaTeX may generate temporary files during compilation, such as:
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+```
 
-These files are generated automatically and do not need to be edited manually.
+These files are generated automatically and do not need to be edited manually. They can be safely deleted because LaTeX will recreate them during the next build.
 
-Template Attribution
+## Notes About the Final PDF
 
-This thesis project was initially based on an Oxford LaTeX thesis template and was later adapted for the EduVerse graduation project structure. The thesis content, chapters, figures, diagrams, and project-specific documentation belong to the EduVerse thesis work.
+The generated `main.pdf` file is the final compiled thesis output. It may be excluded from version control using `.gitignore`, but it should be shared when submitting or sending the final thesis for review.
 
-The original template license is kept in LICENSE.txt for attribution.
+## Template Attribution
+
+This thesis project was initially based on an Oxford LaTeX thesis template and was later adapted for the EduVerse graduation project structure.
+
+The thesis content, chapters, diagrams, figures, and documentation text are maintained for the EduVerse graduation project, not as a generic Oxford template distribution.
+
+The original template license is kept in `LICENSE.txt` for attribution.
