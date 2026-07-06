@@ -107,18 +107,35 @@ data persistence.
 
 \subsection{Relational Structure Through the ERD}\label{subsec:entity_relationship_diagram}
 
-The ERD plays a central role in this design chapter because it condenses the
-logical structure of EduVerse before that structure is unfolded into the later
-physical schema tables. It shows how organizations relate to classes, how
-users connect to organization memberships, how memberships resolve into roles,
-how classes connect to members and materials, how assignments connect to
-submissions, how exams connect to questions, attempts, and answers, how
-organizations and classes connect to feature settings, and how classes connect
-to notifications and live sessions. These relationships matter because they
-govern role-based access, visibility boundaries, academic workflow continuity,
-and feature governance across the platform. The same diagram therefore acts as
-the bridge between EduVerse as an academic system model and EduVerse as a
-concrete relational database design.
+The ERD plays a central role in this design chapter because it expresses the
+relational structure through which EduVerse operates before that structure is
+expanded into the detailed physical schema tables. At this level, the diagram
+does more than identify entities: it clarifies the cardinalities and junctions
+that allow governance, academic activity, and configurable feature behavior to
+coexist within one platform model.
+
+At the core of the ERD, one organization can govern many classes, while one
+user can belong to many organizations through membership records. Those
+memberships do not collapse governance into one fixed permission entry; a
+single membership can connect to one or more role records so that access can be
+resolved according to the active context. The same many-to-many pattern appears
+again at class level, where users participate in classes through class-membership
+links rather than by direct ownership alone. Within each class, one-to-many
+relationships extend to materials, messages, assignments, exams,
+notifications, and live sessions. One assignment can receive many submissions,
+and one exam can expand into many questions, attempts, and answers. Feature
+settings then connect both organizations and classes to enabled or disabled
+tools, allowing the same academic structure to behave differently according to
+institutional policy.
+
+These relationships matter because they are the basis of role-based access
+control, organization governance, class visibility, assessment management, and
+day-to-day academic workflows. They also explain why some relationships are
+modeled through explicit junction tables rather than direct foreign keys alone:
+users and classes, memberships and roles, and organizations and configurable
+features all require many-to-many or context-sensitive resolution. The ERD
+therefore provides the clearest design-level view of how EduVerse connects
+institutional control with practical teaching and learning activity.
 
 \begin{figure}[p]
   \centering

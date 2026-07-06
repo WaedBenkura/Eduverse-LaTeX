@@ -1,221 +1,98 @@
 \chapterwithopening{System Testing and Evaluation}{chap:testing_evaluation}{
   \chaptercontentsitem{sec:testing_evaluation_introduction}
   \chaptercontentsitem{sec:testing_strategy}
-  \chaptercontentsitem{sec:automated_code_quality_checks}
-  \chaptercontentsitem{sec:functional_testing}
-  \chaptercontentsitem{sec:role_based_testing}
-  \chaptercontentsitem{sec:security_access_control_testing}
-  \chaptercontentsitem{sec:non_functional_testing}
-  \chaptercontentsitem{sec:preview_deployment_review}
-  \chaptercontentsitem{sec:testing_summary}
+  \chaptercontentsitem{sec:functional_validation}
+  \chaptercontentsitem{sec:non_functional_evaluation}
+  \chaptercontentsitem{sec:review_evaluation_summary}
 }
 
 \section{Introduction}\label{sec:testing_evaluation_introduction}
 
-The evaluation of EduVerse must remain aligned with the evidence that is
-actually available. For that reason, this chapter focuses on what can be
-supported credibly: automated tests that are clearly present, route-level
-validation, manual functional review of representative workflows,
-role-sensitive behavior, and quality checks used before integration.
+Testing and evaluation provide the evidence that the implemented EduVerse
+platform behaves according to its academic, role-based, and technical
+responsibilities. In a multi-organization educational system, correctness is
+not measured only by whether pages render successfully, but also by whether
+access rules, workflow boundaries, and governed feature behavior operate
+reliably in representative use.
 
-The strongest evidence concerns the web platform, because its implementation is
-the best documented and its automated tests are visible in the analyzed
-repository. The mobile companion is also considered, but its current evidence
-is narrower and is better described as targeted companion validation than as a
-fully tested platform equal to the web client.
+The evaluation therefore concentrates on the strongest verifiable evidence in
+the current project state: selected automated checks, manual validation of key
+workflows, role-aware and security-aware review, and integration review through
+pre-merge checks and preview deployments.
 
 \section{Testing Strategy}\label{sec:testing_strategy}
 
-The testing strategy used for EduVerse can be described as layered. It combines
-automated logic-level tests, protected route validation, manual functional
-checking of high-value workflows, role-based verification, and pre-merge review
-through automated checks and preview deployments.
-
-This approach is appropriate for a system such as EduVerse because several of
-its most important behaviors depend on rules rather than on isolated screen
-rendering alone. Role selection, class access, feature availability, results
-visibility, exam integrity, and browser-safe IDE behavior are all examples of
-cases where correctness depends on business logic and access control as much as
-on interface appearance.
-
-The evaluation was therefore scoped to the available automated checks,
-selected logic-level tests, and representative manual validation of integrated
-user journeys rather than to a full end-to-end browser automation suite.
-
-\section{Automated Code Quality Checks}
-\label{sec:automated_code_quality_checks}
-
-Automated testing evidence is present in the project and is centered on
-\texttt{bun test}. The visible test coverage is selective rather than
-all-encompassing, but it targets several of the most important rule-heavy
-subsystems in the platform.
-
-The available automated evidence includes the following areas:
+EduVerse was evaluated through a layered strategy that combined several
+complementary forms of verification:
 
 \begin{itemize}
-  \item Exam service behavior, grading logic, and integrity-related rules are
-    directly covered by automated tests.
-  \item Exam lock behavior and manager-side result-state handling are covered by
-    dedicated tests.
-  \item Feature-registry resolution is tested, which is important because it
-    controls whether tools are available or unavailable in a given context.
-  \item IDE preview and runner behavior is tested, confirming important parts of
-    the browser-safe coding workflow.
-  \item Class-access and selector helpers are tested, supporting confidence in
-    role-aware and context-aware class resolution.
+  \item selected automated logic-level tests for rule-heavy platform services;
+  \item manual validation of representative academic and administrative
+    workflows;
+  \item role-based review of permissions, visibility, and feature gating;
+  \item security-aware checking of protected routes, join flows, file access,
+    and assessment controls;
+  \item pre-merge review through GitHub Actions checks and Vercel preview
+    deployments.
 \end{itemize}
 
-Automated quality control also extends beyond \texttt{bun test}. The documented
-engineering workflow indicates that GitHub Actions was used to run checks such
-as build, type, and formatting-related consistency review before merge. These
-checks do not replace functional testing, but they strengthen confidence that
-changes remain structurally consistent before integration.
+This approach suits EduVerse because several of its most important behaviors
+depend on governed logic rather than on isolated interface rendering alone.
+Results visibility, active-role resolution, feature availability, exam
+integrity, and protected academic data all require validation at the level of
+workflow and access control.
 
-\section{Functional Testing}\label{sec:functional_testing}
+\section{Functional Validation}\label{sec:functional_validation}
 
-Functional evaluation in EduVerse combines automated evidence with targeted
-manual review of important user-facing workflows. This is necessary because a
-multi-step academic platform cannot be evaluated solely through isolated helper
-tests.
-
-Representative functional validation areas include the following:
+Functional validation focused on representative workflows rather than on a
+claim of exhaustive end-to-end automation. The strongest evidence supports the
+following areas:
 
 \begin{itemize}
-  \item Authentication and protected-route entry were validated through the
-    implemented app-shell and route-user protections that redirect or block
-    unauthorized access.
-  \item Organization creation and feature-preset workflows were validated
-    through the documented creation flows and organization-aware configuration
-    behavior.
-  \item Material upload, protected retrieval, inline viewing, and signed
-    download access were validated through the storage and API implementation.
-  \item Assignment creation, submission modes, grading, and notification side
-    effects were validated through the implemented route logic and surrounding
-    workflow behavior.
-  \item Exam start, passcode handling, integrity-event capture, grading, retake
-    management, and result release were validated through implemented services
-    and partially through direct automated tests.
-  \item Live-session participation and whiteboard-centered teaching workflows
-    were validated through the LiveKit and realtime integration already present
-    in the platform.
-  \item Result-visibility behavior was validated through the presence of
-    explicit visibility controls and privacy-aware student-facing summaries.
-  \item The integrated IDE was validated through its implemented editing,
-    running, and preview behavior, while acknowledging that real operating-
-    system execution is intentionally outside the current scope.
+  \item automated tests are present for selected logic-heavy components,
+    including exam behavior, integrity-related rules, feature-registry
+    resolution, IDE preview behavior, and class-access helpers;
+  \item manual validation confirms protected authentication flow, organization
+    creation, feature enablement, class configuration, material access,
+    assignment handling, exam participation, results visibility, and live-session
+    operation in the web platform;
+  \item role-based validation confirms that Organization Administrator,
+    Teacher, and Student views remain differentiated by access rights, class
+    membership, and enabled features;
+  \item security and access-control review confirms protected workspace entry,
+    governed invite and public-join behavior, signed file access, and recorded
+    exam integrity events;
+  \item the mobile companion was validated more narrowly through authenticated
+    access, organization switching, notifications, materials, class chat, and
+    basic live-session participation.
 \end{itemize}
 
-The mobile companion was validated more narrowly. Current evidence supports
-manual validation of authenticated access, organization switching,
-notifications, materials, class chat, and basic live-session participation.
-This should be described as targeted companion validation rather than as full
-feature-level parity with the web platform.
+\section{Non-Functional Evaluation}\label{sec:non_functional_evaluation}
 
-\section{Role-Based Testing}\label{sec:role_based_testing}
-
-Role-based testing is central to EduVerse because the platform's correctness
-depends heavily on whether actions are exposed only to the roles that should be
-able to perform them. A visually correct screen is not sufficient if a student
-can reach teacher actions or if administrative controls are exposed in the
-wrong context.
-
-The role-based evaluation therefore focused on the following areas:
+The non-functional evaluation is necessarily lighter than the functional review,
+yet several practical conclusions remain well supported.
 
 \begin{itemize}
-  \item Switching the active role inside one organization needed to change the
-    visible workspace and permitted actions consistently.
-  \item Organization administration views needed to remain restricted to the
-    Organization Administrator role.
-  \item Teacher actions needed to remain bounded by organization permissions and
-    class assignment rather than by broad unrestricted access.
-  \item Student workflows needed to remain protected from management actions in
-    assignments, exams, announcements, and broader class governance.
-  \item Feature gating needed to remain consistent so that disabled tools were
-    hidden or blocked according to organization and class settings.
+  \item Maintainability is strengthened by the modular project structure, the
+    shared API layer, and configuration-driven feature control.
+  \item Usability was reviewed through representative workflow inspection and
+    preview-based verification of role-sensitive pages and gated features.
+  \item Compatibility and responsiveness were assessed at an observational
+    level through the implemented interfaces, while formal load testing and a
+    full browser-automation matrix were not identified in the reviewed
+    evidence.
 \end{itemize}
 
-This is one of the strongest parts of the current evaluation because the
-available implementation evidence exposes both the authorization model and the
-role-sensitive interface behavior that depends on it.
+\section{Review and Evaluation Summary}\label{sec:review_evaluation_summary}
 
-\section{Security and Access Control Testing}
-\label{sec:security_access_control_testing}
-
-Security evaluation in EduVerse is based mainly on implementation evidence and
-manual verification of expected protected behavior rather than on a separate
-penetration-testing framework. Even so, the platform provides several concrete
-security mechanisms that can be evaluated in a structured way.
-
-The main security and access-control validation areas are as follows:
-
-\begin{itemize}
-  \item Unauthenticated users are prevented from entering protected workspace
-    routes through app-shell and route-level protection.
-  \item Invite acceptance is tied to authenticated email identity rather than
-    to token possession alone.
-  \item Public join links are governed by enablement, expiry, usage limits,
-    approval modes, and role targeting.
-  \item File access is protected through authenticated routes and short-lived
-    signed S3 download URLs.
-  \item Exam integrity controls record suspicious interruption events such as
-    fullscreen exit, route leave attempts, visibility loss, and window blur for
-    later review.
-\end{itemize}
-
-These findings support the conclusion that EduVerse approaches security as
-layered workflow protection rather than as a single gateway check.
-
-\section{Non-Functional Testing}\label{sec:non_functional_testing}
-
-Non-functional evaluation is more limited than functional evaluation, but the
-available evidence still supports several useful conclusions.
-
-\begin{itemize}
-  \item Maintainability is supported by the modular project structure, shared
-    API layer, and configuration-driven feature model.
-  \item Reliability is supported by the presence of structured validation,
-    guarded routes, and selective automated coverage of high-risk logic.
-  \item Security-aware design is supported by row-level security, signed file
-    access, role-aware APIs, and protected results handling.
-  \item Usability review is supported by preview-based inspection before merge,
-    especially for role-sensitive and feature-gated pages.
-  \item Performance and scalability are supported more by architectural choices
-    than by formal measurement, because no dedicated load-testing evidence was
-    identified in the reviewed material.
-  \item Browser and device compatibility appear to have been considered in the
-    implemented interfaces, but no formal cross-browser matrix was identified in
-    the available evidence.
-\end{itemize}
-
-This means the project shows good engineering discipline, but its strongest
-non-functional claims concern maintainability and protected design rather than
-formal benchmark results.
-
-\section{Preview Deployment and Review}\label{sec:preview_deployment_review}
-
-The documented workflow shows that Vercel preview deployments were used as an
-intermediate review stage before merge. This is especially useful in EduVerse
-because many issues become visible only when a feature is inspected in a
-running multi-role interface rather than in isolated source code.
-
-When combined with pull-request review and GitHub Actions checks, preview
-deployments provide a practical safety layer between local implementation and
-integration into the main branch. They help reviewers confirm page behavior,
-feature-gated visibility, and broader workflow coherence before changes become
-part of the shared platform.
-
-\section{Testing Summary}\label{sec:testing_summary}
-
-The evaluation of EduVerse shows a credible testing foundation built on
-automated logic tests, route-level validation, role-aware access control,
-manual functional review, GitHub Actions checks, and preview-based inspection.
-Core areas such as exam logic, feature availability, IDE behavior, class-access
-helpers, and protected routes are supported by direct implementation evidence.
+Taken together, the available evidence shows a credible evaluation foundation
+for EduVerse. Automated checks support selected core logic, manual validation
+confirms representative academic workflows, and role-based and security-aware
+review strengthens confidence in governed platform behavior. GitHub Actions
+checks and Vercel preview deployments further support safe review before merge.
 
 The evaluation was scoped to the available automated checks, selected
 logic-level tests, and representative manual validation. No full end-to-end
-browser automation suite was identified, and formal performance measurement or
-deeper mobile-side testing evidence should therefore not be overstated.
-Accordingly, the strongest current claims concern correctness of core logic,
-governed access control, and the practical review discipline used around the
-implemented platform.
+test suite is claimed on that basis. Accordingly, the strongest current
+conclusions concern correctness of core workflows, controlled access behavior,
+and the practical engineering discipline surrounding the implemented platform.
