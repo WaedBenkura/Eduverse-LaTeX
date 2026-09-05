@@ -7,96 +7,93 @@
 
 \section{Introduction}\label{sec:methodology_introduction}
 
-Selecting a methodology for EduVerse was not a routine academic step. The
-project is not a single-feature application; it combines interdependent
-workflows, multiple roles, web and mobile clients, backend or API behavior,
-feature toggles, assessment, live sessions, AI support, and an integrated IDE.
-These areas influence one another through shared permissions, shared data, and
-shared workflow rules, so the development process needed to support refinement
-and integration rather than assume that everything could be fixed correctly in
-one pass.
+EduVerse combines multiple academic and administrative workflows that share
+user roles, data, permissions, and interaction rules. Developing these
+capabilities therefore required a methodology that could accommodate
+progressive refinement while preserving consistency across the wider platform.
 
-A feature-based iterative methodology was therefore appropriate. EduVerse
-required repeated cycles of clarification, implementation, validation, and
-integration as the platform matured. Vertical-slice development was equally
-suitable because each feature needed to become meaningful across analysis,
-design, implementation, access control, and testing, while version control and
-pull-request review provided a controlled path for integration.
+Because dependencies between features often became clearer during
+implementation and testing, the development process needed to support repeated
+analysis, refinement, and integration rather than rely on a single fixed
+development sequence.
 
 \section{Methodological Approach}\label{sec:system_development_methodology}
 
-EduVerse was developed using a hybrid iterative methodology with
-predominantly feature-based vertical-slice development, rather than a
-strict waterfall model in which analysis, design, implementation, and
-validation each occur once in a fixed sequence. The platform instead evolved
-through repeated increments, each centered on a meaningful academic or
-administrative capability, allowing requirements and structure to be refined
-as the relationships between modules became clearer through development.
+EduVerse was developed using a hybrid iterative methodology with predominantly
+feature-based vertical-slice development. The approach was hybrid in the sense
+that iterative refinement was combined with feature-centered planning and
+predominantly vertical-slice implementation.
+
+Development progressed through repeated increments centered on meaningful
+academic or administrative capabilities. Each increment allowed requirements,
+interaction behavior, technical dependencies, and integration needs to be
+refined as the platform evolved.
 
 \subsection{Iterative Feature-Centered Development}\label{subsec:feature_based_iterative_workflow}
 
-Development was organized around functional areas rather than technical
-layers. Iterations typically focused on modules such as organization
-management, class management, materials, assignments, examinations, live
-sessions, results, AI Agent support, integrated IDE support, feature
-configuration, and public access workflows. Within each iteration, the
-selected feature moved through recurring stages of analysis, design,
-development, and validation, with the outcome of one increment informing the
-next.
+Development was organized around meaningful functional capabilities rather
+than around isolated technical layers. Each iteration focused on a selected
+academic or administrative feature and moved it through analysis, interaction
+design, implementation, testing, and integration.
 
-This structure also governed coordination between the web application, which
-served as the primary client, and the MVP mobile companion application.
-Because the mobile app targeted selected high-frequency academic actions
-rather than full feature parity, each iteration served as a checkpoint for
-deciding which workflows required cross-client refinement and which remained
-web-centered.
+This feature-centered organization kept development tied to recognizable user
+or institutional outcomes while still allowing the required technical work to
+span multiple system layers. One completed increment could also reveal
+requirements or dependencies that informed the planning and refinement of
+subsequent work.
+
+The iterative process also supported coordination between the primary web
+application and the mobile companion application. Cross-client behavior was
+refined where mobile participation was appropriate, while broader
+administrative and instructional workflows remained primarily web-centered.
 
 \subsection{Vertical-Slice Realization}\label{subsec:vertical_slice_development_approach}
 
 A feature was generally treated as a coherent functional unit rather than
-split into isolated interface-only or backend-only stages. Depending on its
-scope, a slice could span user-interface behavior, business rules, backend
-or API behavior, permission handling, and data requirements. This suited a
-role-based platform: an action such as submitting an assignment or
-scheduling an examination cannot be understood as a user-interface concern
-alone, since it also depends on who may perform it, what rules govern it,
-and how the resulting record is stored and retrieved.
+divided into separate interface-only or backend-only development stages.
+Depending on its scope, a feature slice could involve user interaction,
+business rules, APIs, permissions, and persistent data.
 
-This description is deliberately framed as predominantly vertical-slice
-rather than absolute. Some features required only a subset of system
-layers, while others extended across several and, in selected cases, into
-the MVP mobile companion application as well.
+For example, workflows such as assignment submission or examination scheduling
+require more than an interface change because their behavior also depends on
+the acting user, governing rules, and stored academic information.
+
+The approach was predominantly, rather than exclusively, vertical. Some
+features required changes across several system layers, while others involved
+only a subset of those layers or extended into the mobile companion
+application. The methodology therefore favored complete functional paths where
+appropriate without requiring every increment to modify every layer of the
+system.
 
 \subsection{Why This Methodology Fits EduVerse}\label{subsec:justification_for_methodology_selection}
 
-A rigid sequential methodology was a poor fit for EduVerse because the
-platform's module boundaries and dependencies were not fully knowable in
-advance; they became clear through implementation. Organization governance,
-class operation, learning content, assessment, communication, AI support,
-and integrated IDE support influence one another through shared permissions,
-shared data, and shared user context, so fixing their design before that
-interplay was understood would have risked structural rework later.
+A rigid sequential methodology was less suitable for EduVerse because many
+platform capabilities share permissions, data, user context, and interaction
+rules. Their dependencies could not always be understood completely before
+related functionality was implemented and examined in practice.
 
-The iterative, vertical-slice approach let the project refine permissions,
-workflows, interface behavior, and data structures incrementally, checking
-after each increment whether a feature remained coherent with the wider
-platform before expanding further. This mattered in particular because the
-Organization Administrator, Teacher, and Student each interact with related
-features from different perspectives, so role-based access and workflow
-consistency needed repeated, not one-time, validation. The same logic also
-suited a platform whose important modules span web and mobile clients, shared
-backend or API behavior, configurable features, assessment rules, live-session
-flows, AI services, and IDE support.
+An iterative approach allowed these dependencies to be addressed progressively.
+Testing and refinement provided opportunities to identify inconsistencies in
+workflows, permissions, interfaces, and data behavior before each feature
+became fully integrated with the surrounding platform.
+
+The vertical-slice emphasis complemented this iterative process by keeping
+development focused on functional user outcomes rather than isolated technical
+components. This was particularly useful in a multi-role system where related
+workflows may behave differently for Organization Administrators, Teachers,
+and Students.
 
 \section{Repeated Development Cycle}\label{sec:development_workflow_structure}
 
-Although development was iterative, each increment followed the same
-underlying cycle, adjusted in scope and depth to the complexity of the
-feature involved. Some increments centered mainly on the web application;
-others required supporting changes to the backend, database, permissions, or
-MVP mobile companion application. What stayed constant was not the shape of
-each iteration but the sequence it followed, moving from clarification,
-through realization and validation, to integration.
+Each development increment followed a repeated six-stage cycle, with the depth
+of each stage adjusted according to the feature and the system layers involved.
+A relatively localized change could require limited supporting work, while a
+broader feature might involve interface behavior, services, permissions,
+persistent data, and mobile participation.
+
+Regardless of scope, the same progression was maintained from feature selection
+through analysis, design, implementation, testing, and final integration into
+the wider platform.
 
 \begin{table}[htbp]
   \centering
@@ -109,34 +106,32 @@ through realization and validation, to integration.
     \hline
     \textbf{Repeated phase} & \textbf{Methodological focus} \\
     \hline
-    Feature selection and scope clarification & Identify the next meaningful academic or administrative feature and define the intended workflow boundaries for the current increment. \\
+    Feature Selection & Identify the next meaningful academic or administrative capability, clarify its scope, and define the intended workflow boundaries for the current increment. \\
     \hline
-    Workflow and requirement analysis & Examine the target actors, conditions, information flow, constraints, and dependencies associated with the selected feature. \\
+    Workflow Analysis & Examine the relevant actors, requirements, conditions, information flow, constraints, permissions, and dependencies associated with the selected feature. \\
     \hline
-    Design of feature behavior and user interaction & Define how the feature should behave from the user perspective, including role-sensitive interaction, states, and decision points. \\
+    Behavior and Interaction Design & Define how the feature should behave from the user perspective, including role-sensitive interaction, states, transitions, and decision points. \\
     \hline
-    Feature-slice implementation & Realize the selected feature across the relevant system layers, including interface behavior, services, permissions, and data handling where the scope requires them. \\
+    Feature Slice Implementation & Implement the selected feature across the system layers required by its scope, including interface behavior, services, permissions, APIs, and data handling where applicable. \\
     \hline
-    Validation and refinement & Review the implemented behavior against the intended workflow, resolve inconsistencies, and refine the feature before broader adoption. \\
+    Testing and Refinement & Test the implemented behavior against the intended workflow, identify inconsistencies or defects, and refine the feature before broader platform integration. \\
     \hline
-    Integration into the wider platform & Connect the completed feature to the surrounding platform so it remains coherent with existing modules, shared rules, and user workflows. \\
+    Platform Integration & Integrate the completed feature with existing modules, shared rules, data relationships, and user workflows so that it remains coherent with the wider platform. \\
     \hline
   \end{tabular}
 \end{table}
 
-The iterative process was also supported by version control and pull-request
-review, allowing each feature increment to be reviewed and integrated safely
-before becoming part of the main codebase. In methodological terms, this
-support mechanism helped keep changes bounded to one feature slice while still
-checking integration effects before merge.
+Version control and pull-request review supported this iterative process by
+keeping feature changes bounded and allowing integration effects to be reviewed
+before merge.
 
 \section{Chapter Summary}\label{sec:chapter3_summary}
 
-EduVerse followed an iterative, feature-based methodology with
-predominantly vertical-slice development. Through this structure, the
-project was developed in repeated increments centered on meaningful academic
-and administrative features, with each increment progressing through
-analysis, design, implementation, validation, and integration. The next
-chapters move from methodology to system analysis, system design,
-implementation, and testing, where the platform's structure and technical
-realization are presented in greater detail.
+EduVerse was developed using a hybrid iterative methodology that combined
+feature-centered planning with predominantly vertical-slice implementation.
+Development progressed through repeated cycles of feature selection, workflow
+analysis, behavior and interaction design, feature-slice implementation,
+testing and refinement, and platform integration. This approach supported
+progressive refinement while preserving coherence across related academic and
+administrative workflows. The following chapters present the resulting system
+analysis, design, implementation, and testing.

@@ -7,6 +7,20 @@
 
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
+% Reserve space for a heading and the opening of the content that follows it.
+\newcommand{\EduNeedspace}[1]{%
+  \par
+  \begingroup
+    \dimen0=#1\relax
+    \dimen2=\pagegoal
+    \advance\dimen2 by -\pagetotal
+    \ifdim\dimen0>\dimen2
+      \vfil
+      \break
+    \fi
+  \endgroup
+}
+
 \newcommand{\EduSchemaTableStart}[1]{%
   \begingroup
   \footnotesize
@@ -25,17 +39,16 @@
     \hline
     \multicolumn{3}{r}{\small\textit{Continued on the next page}} \\
     \endfoot
-    \hline
     \endlastfoot
 }
 
 \newcommand{\EduSchemaRow}[3]{%
-  \db{#1} & #2 & #3 \\
+  \db{#1} & #2 & #3 \\*
   \hline
 }
 
 \newcommand{\EduSchemaNote}[1]{%
-  \multicolumn{3}{|L{0.92\textwidth}|}{\textit{#1}} \\
+  \multicolumn{3}{|L{0.92\textwidth}|}{\textit{#1}} \\*
   \hline
 }
 
@@ -46,115 +59,129 @@
 
 \section{Introduction}\label{sec:system_design_introduction}
 
-System design in EduVerse translates the analytical requirements of the
-previous chapter into structures capable of sustaining governance, academic
-workflows, and continued refinement. Because the platform combines
-multi-organization administration, class-centered interaction, assessment,
-live collaboration, AI support, configurable features, and extension points,
-the design discussion must explain both the underlying information model and
-the user-facing surfaces through which that model becomes operational.
+System design translates the analytical requirements established in the
+previous chapter into a structured model for the organization of EduVerse.
+This chapter presents the architectural context, information model, relational
+database structure, and interface design principles that connect users,
+academic workflows, data, and configurable access.
 
-The chapter therefore concentrates on the design elements that are most
-directly reflected in the implemented platform: the architectural context,
-the database and storage model, and the implemented interface surfaces.
-Together, these elements show how EduVerse connects persistence, governance,
-and interaction instead of treating them as separate design concerns.
+The emphasis is placed on how the major parts of the system are organized and
+related at design level, while the technical realization of these decisions is
+discussed separately in the implementation chapter.
 
 \section{Design Context and Architectural Structure}\label{sec:architectural_design_overview}
 
-At design level, EduVerse is shaped by one central decision: related academic
-functions should remain inside one governed platform even when they depend on
-different technical services. The resulting structure combines a web-first
-learning environment, a mobile companion scope, a Supabase-backed PostgreSQL
-database, AWS S3-backed file references for uploaded academic content, and
-LiveKit-related session metadata for synchronous learning. This architectural
-context explains why the later database and interface decisions are organized
-around shared roles, shared class context, and configuration-aware workflows.
+EduVerse is designed as a coordinated educational platform in which related
+academic and administrative workflows operate within a shared organizational
+and class context. The architecture separates the main user-facing clients
+from persistent data, file-handling services, and real-time communication
+capabilities while preserving common access and governance rules.
+
+The web application serves as the primary interface for comprehensive academic
+and administrative workflows, while the mobile companion extends selected
+forms of participation. Persistent academic and organizational data are
+managed through the relational data layer, and specialized services support
+capabilities such as uploaded learning resources and synchronous sessions.
+
+This structure allows individual services to remain technically distinct while
+presenting users with a coherent educational environment governed by shared
+organizational, role, class, and feature context.
 
 \section{Information Model and Persistence Design}\label{sec:data_and_storage_design}
 
-Persistence design in EduVerse is not only a matter of storage. The database
-structure carries organization governance, role resolution, class membership,
-visibility rules, feature enablement, and the academic workflows built on top
-of them. This section therefore documents the database design of
-EduVerse through the schema overview, the ERD, and the physical schema tables
-used to summarize the implemented data model at design level.
+The EduVerse information model represents the relationships between
+organizations, users, roles, classes, learning resources, assessments,
+communication, and configurable platform capabilities. The database design
+supports these relationships while preserving the separation between
+organization-level governance and class-level academic participation.
+
+This section presents the logical database structure, the Entity Relationship
+Diagram (ERD), and the principal schema groups required to support the system
+at design level.
 
 \subsection{Logical Database Design}\label{subsec:database_design_overview}
 
-EduVerse uses a Supabase-managed PostgreSQL database as the main persistent
-store for organizational, academic, and operational records. The schema
-follows a multi-organization structure in which the organization acts as the
-top-level tenant, while the class operates as the main instructional
-workspace. Within this arrangement, organization membership is modeled
-separately from class membership so that role selection, invitation flows,
-public join access, class rosters, and archived past-term history can evolve
-without being collapsed into one table.
+EduVerse uses a relational data model organized around the relationship
+between organizations, users, and classes. The organization forms the primary
+institutional context, while the class represents the main academic workspace.
 
-The current schema persists learning content through class materials,
-chat-linked media records, assignments, assignment attachments, and
-assignment submissions. Formal assessment is represented through exams, exam
-questions, attempts, and answers, with released results stored directly on
-assignment submission records and on exam attempt or answer records rather
-than in separate results tables. Announcements are represented through
-\db{class_messages}, AI persistence is limited to feature settings and
-cached material summary or extracted-content fields, and the database does
-not include dedicated tables for IDE workspace state or whiteboard state.
-Viewed as a whole, the logical model is designed to support governance,
-visibility, feature control, and academic continuity alongside conventional
-data persistence.
+Organization membership is separated from class membership so that
+institutional roles and class participation can be managed independently. This
+distinction supports users who participate in multiple organizations, hold
+different roles, or belong to multiple classes.
+
+Academic entities such as materials, communication records, assignments,
+examinations, notifications, and live sessions are associated with the relevant
+organization and class context. Configuration entities are maintained
+separately from ordinary academic content so that feature availability and
+institutional settings can be applied without changing the underlying learning
+records.
+
+The resulting model supports multi-organization governance, role-aware access,
+class participation, academic history, assessment workflows, and configurable
+feature availability within one relational structure.
 
 \subsection{Relational Structure Through the ERD}\label{subsec:entity_relationship_diagram}
 
-The ERD plays a central role in this design chapter because it expresses the
-relational structure through which EduVerse operates before that structure is
-expanded into the detailed physical schema tables. At this level, the diagram
-does more than list entities: it clarifies cardinalities, one-to-one control
-links, one-to-many instructional flows, and many-to-many relationships resolved
-through junction tables.
+The Entity Relationship Diagram provides the central design-level
+representation of the EduVerse data model. It shows how institutional,
+academic, and configuration entities relate to one another and clarifies the
+cardinalities that connect users, organizations, classes, learning resources,
+assessments, and platform settings.
+
+The model includes direct one-to-many relationships as well as many-to-many
+relationships resolved through intermediate membership or configuration
+structures. These relationships are important because users may participate in
+multiple organizational and academic contexts rather than belonging to one
+fixed system role or class.
 
 \newpage
 
 \paragraph*{Principal Relationship Structure}
+
 \begin{itemize}
-  \item \textbf{Organization structure.} One organization can govern many
-    classes, invitations, join links, settings, and feature records. The
-    companion \db{organization_settings} relationship behaves as a one-to-one
-    administrative extension of the main organization record.
-  \item \textbf{User and membership structure.} One user can belong to many
-    organizations through membership records, and each membership connects a
-    user to a specific organization context. A membership may then connect to
-    one or more role records, allowing active-role resolution without reducing
-    governance to one fixed permission entry.
-  \item \textbf{Class participation structure.} One class can have many
-    members, while users may participate in many classes. This is a many-to-many
-    academic relationship resolved through class-membership tables rather than
-    through direct ownership alone.
-  \item \textbf{Learning-resource structure.} One class can contain many
-    materials, messages, notifications, and live sessions, which keeps content,
-    communication, and real-time activity tied to the same governed class
-    context.
-  \item \textbf{Assessment structure.} One class can contain many assignments
-    and many exams. One assignment can receive many submissions, while one exam
-    can expand into many questions, attempts, and answers, forming the full
-    assessment chain from authoring to participation and review.
-  \item \textbf{Feature-governance structure.} Feature definitions connect to
-    organizations and classes through organization-level and class-level feature
-    settings. These are configuration relationships rather than ordinary content
-    records, and they determine which tools remain enabled, disabled, or
-    further constrained in each context.
+  \item \textbf{Organization and membership structure.}
+    Organizations provide the institutional context for memberships, classes,
+    settings, invitations, and configurable capabilities. User membership
+    records connect individual accounts to the organizations in which they
+    participate.
+
+  \item \textbf{Role structure.}
+    Membership and role relationships allow access responsibilities to be
+    represented within an organization context rather than assigning one
+    permanent platform-wide role to each user.
+
+  \item \textbf{Class participation structure.}
+    Classes belong to organizations, while class-membership relationships
+    connect users to the academic workspaces in which they participate. This
+    resolves the many-to-many relationship between users and classes.
+
+  \item \textbf{Learning and communication structure.}
+    Materials and communication records are associated with classes so that
+    learning resources and class interaction remain tied to the appropriate
+    academic context.
+
+  \item \textbf{Assessment structure.}
+    Classes contain assignments and examinations, with related submission,
+    question, attempt, and answer records representing the main assessment
+    relationships.
+
+  \item \textbf{Configuration structure.}
+    Feature and extension settings relate platform capabilities to organization
+    and class contexts, allowing supported tools to vary without changing the
+    core academic data model.
 \end{itemize}
 
 \paragraph*{Design Significance}
-These relationships matter because they support role-based access control,
-organization governance, class visibility, academic workflow continuity,
-assessment management, and configurable feature availability within one design
-model. They also explain why EduVerse relies on intermediate structures rather
-than only on direct foreign keys: users and organizations, users and classes,
-memberships and roles, and platform contexts and feature settings all require
-many-to-many or context-sensitive resolution. The ERD therefore provides the
-clearest design-level view of how EduVerse connects institutional control with
-practical teaching and learning activity.
+
+The relational structure separates institutional membership, class
+participation, academic content, assessment, and feature configuration while
+preserving the relationships required between them. Intermediate membership
+and configuration entities are particularly important because several
+EduVerse relationships depend on context rather than simple ownership.
+
+The ERD therefore provides the main design-level view of how organizational
+governance and academic activity are represented within the same data model.
 
 \begin{figure}[p]
   \centering
@@ -173,14 +200,103 @@ practical teaching and learning activity.
 
 \clearpage
 
-\subsection{Physical Schema Tables}\label{subsec:database_tables}
+\subsection{Principal Schema Groups}\label{subsec:principal_schema_groups}
 
-The physical schema tables below translate the logical model into the concrete
-database structures used by EduVerse. The schema tables summarize the main
-columns, keys, and relationships that support the implemented EduVerse
-workflows. Keeping these tables in the design chapter is important because the
-platform's governance, visibility, feature availability, and academic
-workflows depend directly on how these relations are persisted.
+The relational model is organized into several schema groups that correspond
+to the main institutional and academic responsibilities of EduVerse. The
+following overview introduces the principal table groups and their design
+purpose before the detailed physical schema documentation.
+
+\begingroup
+\footnotesize
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{|L{0.18\textwidth}|L{0.35\textwidth}|L{0.39\textwidth}|}
+  \caption{Principal Schema Groups in EduVerse}
+  \label{tab:principal_schema_groups} \\
+  \hline
+  \textbf{Schema Group} & \textbf{Principal Tables} & \textbf{Design Purpose} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Schema Group} & \textbf{Principal Tables} & \textbf{Design Purpose} \\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{3}{r}{\small\textit{Continued on the next page}} \\
+  \endfoot
+  \hline
+  \endlastfoot
+
+  Core Organization and Identity &
+  \db{organizations}, \db{profiles}, \db{organization_memberships},
+  \db{organization_membership_roles} &
+  Represents institutional workspaces, user identity context, organization
+  membership, and role relationships. \\
+  \hline
+
+  Organization Access and Governance &
+  \db{organization_invites}, \db{organization_settings},
+  \db{organization_teacher_class_permissions}, \db{organization_join_links},
+  \db{organization_join_requests} &
+  Supports controlled membership entry, administrative settings, teacher
+  permissions, and organization-level access governance. \\
+  \hline
+
+  Classes and Participation &
+  \db{classes}, \db{class_memberships}, \db{class_visibility_preferences},
+  \db{class_invites} &
+  Represents class workspaces, participation, visibility, membership, and class
+  lifecycle relationships. \\
+  \hline
+
+  Features and Extensions &
+  \db{feature_definitions}, \db{feature_presets},
+  \db{feature_preset_items}, \db{organization_feature_settings},
+  \db{class_feature_settings}, \db{organization_extensions},
+  \db{class_extension_settings} &
+  Represents configurable platform capabilities and their organization- or
+  class-level availability. \\
+  \hline
+
+  Materials and Communication &
+  \db{class_materials}, \db{class_messages}, \db{notifications} &
+  Supports class learning resources, communication, announcements, and user
+  notification records. \\
+  \hline
+
+  Assignments and Submissions &
+  \db{class_assignments}, \db{class_assignment_files},
+  \db{class_assignment_submissions} &
+  Represents assignment authoring, attached resources, student submission,
+  grading, and feedback relationships. \\
+  \hline
+
+  Examinations &
+  \db{exams}, \db{exam_questions}, \db{exam_attempts}, \db{exam_answers} &
+  Represents examination definition, questions, student attempts, answers,
+  grading, and assessment-state relationships. \\
+  \hline
+
+  Live Learning &
+  \db{class_live_sessions} &
+  Represents the lifecycle and class association of synchronous learning
+  sessions. \\
+  \hline
+
+  System Audit &
+  \db{audit_logs} &
+  Represents recorded platform actions used for governance, traceability, and
+  workflow history. \\
+\end{longtable}
+\endgroup
+
+\subsection{Physical Schema Tables}
+\label{subsec:database_tables}
+
+The following tables document the principal columns, data types, keys, and
+relationships of the EduVerse database. Table and column names are preserved
+exactly as they appear in the documented schema.
 
 \subsubsection*{Core Multi-Organization and User Model}
 
@@ -341,6 +457,7 @@ workflows depend directly on how these relations are persisted.
 \EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
 \EduSchemaTableEnd
 
+\EduNeedspace{10\baselineskip}
 \subsubsection*{Feature Flags and Extensions}
 
 \EduSchemaTableStart{feature_definitions}
@@ -428,14 +545,14 @@ workflows depend directly on how these relations are persisted.
 \EduSchemaRow{title}{\db{text}}{Material title.}
 \EduSchemaRow{description}{\db{text}}{Material description.}
 \EduSchemaRow{type}{\db{public.class_material_type}}{Material type enum.}
-\EduSchemaRow{source}{\db{public.class_material_source}}{Source enum; chat-linked media is represented here rather than in a separate media table.}
+\EduSchemaRow{source}{\db{public.class_material_source}}{Source enum.}
 \EduSchemaRow{chat_message_id}{\db{uuid}}{\db{FK to class_messages.id}.}
 \EduSchemaRow{storage_bucket}{\db{text}}{AWS S3 bucket reference.}
 \EduSchemaRow{storage_key}{\db{text}}{AWS S3 object key reference.}
 \EduSchemaRow{original_filename}{\db{text}}{Original uploaded file name.}
 \EduSchemaRow{mime_type}{\db{text}}{Uploaded file MIME type.}
 \EduSchemaRow{size_bytes}{\db{integer}}{Stored file size.}
-\EduSchemaRow{ai_summary}{\db{text}}{Cached AI summary text; no separate AI history table is used.}
+\EduSchemaRow{ai_summary}{\db{text}}{Cached AI summary text.}
 \EduSchemaRow{ai_summary_used_file_text}{\db{boolean}}{Flag indicating whether file text was used to generate the cached AI summary.}
 \EduSchemaRow{ai_summary_generated_at}{\db{timestamp}}{AI summary generation timestamp.}
 \EduSchemaRow{ai_extracted_content}{\db{text}}{Cached extracted-content field.}
@@ -513,7 +630,7 @@ workflows depend directly on how these relations are persisted.
 \EduSchemaRow{file_size_bytes}{\db{integer}}{Submitted file size.}
 \EduSchemaRow{submitted_at}{\db{timestamp}}{Submission timestamp.}
 \EduSchemaRow{is_late}{\db{boolean}}{Late-submission flag.}
-\EduSchemaRow{score}{\db{numeric}}{Stores the assignment result directly; no separate assignment-results table is used.}
+\EduSchemaRow{score}{\db{numeric}}{Recorded assignment score.}
 \EduSchemaRow{feedback}{\db{text}}{Grading feedback.}
 \EduSchemaRow{graded_at}{\db{timestamp}}{Grading timestamp.}
 \EduSchemaRow{graded_by_user_id}{\db{uuid}}{\db{FK to profiles.id}.}
@@ -521,6 +638,7 @@ workflows depend directly on how these relations are persisted.
 \EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
 \EduSchemaTableEnd
 
+\EduNeedspace{10\baselineskip}
 \subsubsection*{Exams, Attempts, Answers, and Results}
 
 \EduSchemaTableStart{exams}
@@ -588,7 +706,6 @@ workflows depend directly on how these relations are persisted.
 \EduSchemaRow{results_released_by_user_id}{\db{uuid}}{\db{FK to auth.users.id}.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
-\EduSchemaNote{Exam integrity events and retake history are not stored in dedicated child tables; the current design records those events through \db{audit_logs}.}
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{exam_answers}
@@ -635,10 +752,9 @@ workflows depend directly on how these relations are persisted.
 \EduSchemaRow{ended_at}{\db{timestamp}}{Session end timestamp.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
 \EduSchemaRow{updated_at}{\db{timestamp}}{Update timestamp.}
-\EduSchemaNote{The database stores session lifecycle metadata only; no dedicated whiteboard-state table is used.}
 \EduSchemaTableEnd
 
-\subsubsection*{Audit Logs and External Auth References}
+\subsubsection*{Audit Logs and External Authentication References}
 
 \EduSchemaTableStart{audit_logs}
 \EduSchemaRow{organization_id}{\db{uuid}}{Related to \db{organizations.id}.}
@@ -648,7 +764,6 @@ workflows depend directly on how these relations are persisted.
 \EduSchemaRow{entity_id}{\db{reference}}{Polymorphic reference to related entity records.}
 \EduSchemaRow{payload}{\db{json/jsonb}}{Audit payload.}
 \EduSchemaRow{created_at}{\db{timestamp}}{Creation timestamp.}
-\EduSchemaNote{The table serves as the shared audit stream for integrity events, retake-related history, and other recorded platform actions.}
 \EduSchemaTableEnd
 
 \EduSchemaTableStart{auth.users}
@@ -658,7 +773,6 @@ workflows depend directly on how these relations are persisted.
 
 
 % Fallback barrier for builds that do not load placeins in the active preamble.
-\providecommand{\FloatBarrier}{\clearpage}
 
 \newcommand{\EduUiFigure}[3]{%
   \begin{figure}[htbp]
@@ -673,22 +787,24 @@ workflows depend directly on how these relations are persisted.
   \end{figure}
 }
 
-\section{Interface Design and Implemented Workflow Surfaces}\label{sec:interface_and_interaction_design}
+\section{Interface and Interaction Design}\label{sec:interface_and_interaction_design}
 
-The interface layer of EduVerse illustrates how the system design is realized
-through user-facing workflows rather than serving as decoration. The screenshots demonstrate how the
-implemented system exposes administrative governance, teaching activity,
-student participation, assessment, live collaboration, AI support, and coding
-workflows through actual user-facing surfaces. Read together, they show how the
-underlying design becomes operational for Organization Administrators,
-Teachers, and Students across the implemented web experience.
+The EduVerse interface design reflects the role-aware and class-centered
+structure established in the system model. Administrative, instructional, and
+student-facing actions are presented through different workspace contexts
+while maintaining consistent navigation and interaction patterns across the
+platform.
+
+The screenshots in this section illustrate how these design principles appear
+in the implemented web interface. They are included as evidence of the
+resulting interaction design rather than as a complete feature inventory.
 
 \subsection{Access and Identity Interfaces}
 
-Access and identity interfaces establish the user context from which every
-subsequent permission decision is resolved. The following views show account
-entry, organization and role selection for users with more than one workspace
-context, and the personal settings controls used after authentication.
+Access and identity interfaces establish the organization and role context used
+throughout the platform. Their design separates account authentication from
+workspace selection and personal account settings so that users who participate
+in multiple contexts can move between them without changing account identity.
 
 \EduUiFigure
   {figures/screenshots/1_Authentication Screen.png}
@@ -705,27 +821,18 @@ context, and the personal settings controls used after authentication.
   {User profile and settings interface showing role context, theme preferences, and password management controls.}
   {fig:ui-profile-settings}
 
-\FloatBarrier
+\clearpage
 
 \subsection{Administrative Governance Interfaces}
 
-Administrative governance interfaces expose the control layer through which an
-organization defines how EduVerse should operate. These views show workspace
-creation, class governance, member management, public-access handling, teacher
-permissions, and feature configuration, all of which shape the later learning
-experience inside classes.
+Administrative interfaces group organization setup, membership,
+permissions, class oversight, and feature configuration within a dedicated
+governance context. This separation keeps institution-level controls distinct
+from the day-to-day instructional activity that occurs inside classes.
 
-The organization-creation interface is especially important because it
-documents one of the platform's core design ideas rather than serving as a
-decorative screenshot. It shows that a new organization can be created through
-template-based setup for different educational contexts, including Custom,
-Open Learning, University, Online Academy, Bootcamp, Tutoring Center, Exam
-Prep, Corporate Training, Primary School, and Kindergarten. The same workflow
-also establishes initial feature availability for tools such as Chat,
-Materials, Assignments, Sessions, Exams, Results, Extensions, and the IDE,
-while allowing public-access and open-learning behavior to be configured from
-the beginning. This establishes that governance, institutional identity, and
-feature selection are connected from the first administrative step.
+The interface design also presents configurable options through structured
+settings and management views rather than exposing the same controls to every
+actor.
 
 \EduUiFigure
   {figures/screenshots/10_Organization Creation and Initial Feature Availability.png}
@@ -767,15 +874,14 @@ feature selection are connected from the first administrative step.
   {Organization settings interface showing public-feature controls and teacher class-permission settings.}
   {fig:ui-admin-settings}
 
-\FloatBarrier
+\clearpage
 
 \subsection{Classroom and Learning Interfaces}
 
-Classroom and learning interfaces present the day-to-day environment through
-which teachers and students interact with class resources. Together, these
-screenshots show how the class workspace connects learning materials,
-communication channels, and notifications rather than exposing them as isolated
-pages.
+Classroom interfaces provide the primary day-to-day learning context for
+Teachers and Students. Class navigation keeps learning resources,
+communication, notifications, and other enabled tools associated with the same
+academic workspace while presenting actions according to the current role.
 
 \EduUiFigure
   {figures/screenshots/11-class-home-classroom-workspace.png}
@@ -797,15 +903,17 @@ pages.
   {Notifications panel showing alerts for live sessions, materials, examinations, and announcements.}
   {fig:ui-class-notifications}
 
-\FloatBarrier
+\clearpage
 
 \subsection{Assessment and Submission Interfaces}
 
-Assessment and submission interfaces illustrate how EduVerse organizes
-coursework, examinations, integrity controls, and released results across
-teacher and student roles. The sequence below follows the workflow from
-assignment creation and submission to exam authoring, exam participation,
-review, and performance reporting.
+Assessment interfaces separate authoring and review controls from student
+participation surfaces. Teacher-facing views emphasize creation, configuration,
+grading, and review, while student-facing views focus on the actions required
+to complete and review permitted assessment tasks.
+
+This role-oriented separation reduces interface complexity and prevents
+administrative or authoring controls from appearing in student task flows.
 
 \EduUiFigure
   {figures/screenshots/16_Assignment Management and Submission Review (Teacher interface).png}
@@ -842,29 +950,29 @@ review, and performance reporting.
   {Results dashboard showing released grades, score breakdowns, and detailed assessment feedback.}
   {fig:ui-results-dashboard}
 
-\FloatBarrier
+\clearpage
 
 \subsection{Synchronous Collaboration Interfaces}
 
-The live-session interface captures the synchronous collaboration environment
-used during real-time classes. The provided screenshot demonstrates how
-whiteboard activity, participant presence, and in-session controls are
-integrated within a single teaching workspace rather than delegated to a
-separate external meeting flow.
+The synchronous collaboration interface combines live-session participation
+with the controls required for real-time class interaction. The design keeps
+participant presence, session controls, and collaborative whiteboard activity
+within the same class-oriented interaction surface.
 
 \EduUiFigure
   {figures/screenshots/22_Live Session Room and Whiteboard.png}
   {Live session room showing the shared whiteboard, participant list, and session controls.}
   {fig:ui-session-whiteboard}
 
-\FloatBarrier
+\clearpage
 
 \subsection{AI Support and Coding-Lab Interfaces}
 
-AI support and coding-lab interfaces extend the classroom beyond static content
-delivery by offering guided assistance and hands-on technical practice. The
-provided screenshots demonstrate how advanced tools are surfaced inside the
-class environment when they are enabled for the relevant learning context.
+AI and coding interfaces expose optional capabilities within the same
+class-oriented navigation model used by other learning tools. Their
+availability remains dependent on the applicable feature configuration, while
+their interface placement keeps these capabilities connected to the
+surrounding academic context.
 
 \EduUiFigure
   {figures/screenshots/24_AI Learning Support Interface.png}
@@ -876,5 +984,4 @@ class environment when they are enabled for the relevant learning context.
   {Integrated coding workspace showing the file explorer, code editor, terminal, and live preview pane.}
   {fig:ui-ide-workspace}
 
-\FloatBarrier
-
+\clearpage
