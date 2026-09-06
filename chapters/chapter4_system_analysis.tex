@@ -57,6 +57,10 @@ Teacher, and Student. These roles represent different levels of responsibility
 within the platform rather than permanently separate account types. A user may
 belong to more than one organization or hold more than one role, with access
 resolved according to the current workspace context.
+The diagrams in this chapter focus on the three principal human actors.
+Automatic responsibilities such as access enforcement, notification generation,
+integrity-event recording, and workflow-state changes are represented through
+the surrounding analysis and workflow behavior where relevant.
 
 \begin{table}[htbp]
   \centering
@@ -78,10 +82,7 @@ resolved according to the current workspace context.
   \end{tabular}
 \end{table}
 
-The diagrams in this chapter focus on the three principal human actors.
-Automatic responsibilities such as access enforcement, notification generation,
-integrity-event recording, and workflow-state changes are represented through
-the surrounding analysis and workflow behavior where relevant.
+
 
 \section{Functional Requirements}\label{sec:functional_requirements}
 
@@ -170,9 +171,7 @@ area to maintain traceability with the use-case model and system workflows.
     edit, delete, save as draft, and publish assignments.
   \item \textbf{FR-20.} The system shall allow assignment configuration for
     due date, score range, submission modes, and optional attached files.
-  \item \textbf{FR-21.} The system shall allow students to submit text, file,
-    or combined work according to assignment settings and to resubmit when the
-    assignment policy permits it.
+  \item \textbf{FR-21.} The system shall allow students to submit text or file work according to the assignment settings and to resubmit when the assignment policy permits it.
   \item \textbf{FR-22.} The system shall allow Teachers to review submissions,
     record grades, provide feedback, and use AI-assisted feedback tools when
     enabled. The system shall allow Organization Administrators to review
@@ -185,9 +184,7 @@ area to maintain traceability with the use-case model and system workflows.
   \item \textbf{FR-23.} The system shall allow authorized users to create,
     edit, delete, draft, and publish exams, including question management and
     passcode configuration when required.
-  \item \textbf{FR-24.} The system shall allow eligible students to start an
-    exam attempt, enter a passcode when required, answer questions, and submit
-    the attempt within the valid exam window.
+  \item \textbf{FR-24.} The system shall allow students enrolled in the relevant class to start an exam attempt, enter a passcode when required, answer questions, and submit the attempt within the valid exam window.
   \item \textbf{FR-25.} The system shall apply configured integrity controls,
     including fullscreen requirements and integrity-event recording when the
     required exam state is interrupted.
@@ -204,9 +201,7 @@ area to maintain traceability with the use-case model and system workflows.
 \begin{itemize}
   \item \textbf{FR-28.} The system shall allow authorized class managers to
     start, manage, and end live sessions.
-  \item \textbf{FR-29.} The system shall allow eligible participants to join
-    a live session and use session tools such as microphone, camera, screen
-    sharing, participants view, and session chat.
+  \item \textbf{FR-29.} The system shall allow authorized users to join live sessions and access available session tools, such as microphone, camera, screen sharing, participants view, and session chat, according to their role and permissions.
   \item \textbf{FR-30.} The system shall allow whiteboard interaction or
     whiteboard viewing according to the role and permissions of the current
     participant.
@@ -220,9 +215,7 @@ area to maintain traceability with the use-case model and system workflows.
   \item \textbf{FR-32.} The system shall allow students to view assignment
     grades, feedback, released exam results, and related result details within
     permitted classes.
-  \item \textbf{FR-33.} The system shall allow teachers and administrators to
-    review class results, assignment results, and exam results subject to the
-    configured visibility rules.
+  \item \textbf{FR-33.} The system shall allow teachers and administrators to review assignment and exam results.
 \end{itemize}
 
 \subsection*{AI Learning Support}
@@ -231,9 +224,7 @@ area to maintain traceability with the use-case model and system workflows.
   \item \textbf{FR-34.} The system shall provide a class AI Agent for
     contextual academic support when the AI feature is enabled for the current
     organization and class context.
-  \item \textbf{FR-35.} The system shall allow AI-assisted study support such
-    as material summaries and assignment-related guidance without replacing the
-    original material or teacher judgment.
+  \item \textbf{FR-35.} The system shall allow users to generate AI-assisted summaries of available class materials.
   \item \textbf{FR-36.} The system shall allow authorized Teachers and
     Organization Administrators to use AI-assisted drafting for assignments,
     examinations, and assignment feedback when AI support is available in the
@@ -250,9 +241,7 @@ area to maintain traceability with the use-case model and system workflows.
   \item \textbf{FR-39.} The system shall allow users to open, edit, and save
     code, and to run or preview supported code according to the selected coding
     environment.
-  \item \textbf{FR-40.} The system shall allow users to review console or
-    problems output, reset the workspace when needed, and use the IDE terminal
-    where that capability is supported.
+  \item \textbf{FR-40.} The system shall allow users to review console or problems output, reset the workspace when needed, and use the IDE terminal.
 \end{itemize}
 
 \subsection*{Feature Configuration and Extensibility}
@@ -284,26 +273,13 @@ area to maintain traceability with the use-case model and system workflows.
 
 \section{Non-Functional Requirements}\label{sec:non_functional_requirements}
 
-The non-functional requirements define the principal quality, security,
-operational, and maintainability constraints expected of EduVerse within the
-evaluated project scope.
+The non-functional requirements define the principal quality, security, operational, and maintainability constraints expected of EduVerse within the scope of this project.
 
 \begin{itemize}
-  \item \textbf{NFR-01 Usability.} The interface shall maintain consistent
-    navigation and clear context indication across the evaluated organization,
-    role, class, and feature workflows.
-  \item \textbf{NFR-02 Security and Access Control.} The system shall enforce
-    authenticated, organization-aware, role-aware, and class-aware access
-    controls for protected resources. Public or externally reachable
-    educational resources shall remain subject to authenticated or
-    organization-defined access rules where required.
-  \item \textbf{NFR-03 Reliability.} The system shall preserve consistent
-    workflow state and stored records during the evaluated membership,
-    materials, submission, examination, notification, live-session, and Results
-    workflows.
-  \item \textbf{NFR-04 Performance.} Within the evaluated project context,
-    interactive pages and tested academic workflows shall respond without
-    delays that prevent normal task completion.
+  \item \textbf{NFR-01 Usability.} The interface shall maintain consistent navigation and clear context indication across organization, role, class, and feature workflows.
+  \item \textbf{NFR-02 Security and Access Control.} The system shall enforce access control based on authentication, organization membership, user role, and class access. Public access features shall follow the access rules defined by the organization.
+  \item \textbf{NFR-03 Reliability.} The system shall preserve consistent workflow state and stored records during membership, materials, submission, examination, notification, live-session, and results workflows.
+  \item \textbf{NFR-04 Performance.} Interactive pages and academic workflows shall respond without delays that prevent normal task completion.
   \item \textbf{NFR-05 Maintainability.} The system shall keep supported
     features and shared services structurally separated so that correcting or
     extending one workflow does not require unrelated workflows to be
@@ -322,8 +298,7 @@ evaluated project scope.
 
 \section{Use-Case Model}\label{sec:use_case_model}
 
-The use-case model represents the principal interactions between EduVerse users
-and the services available within the active organization and class context.
+The use-case model represents the principal interactions between EduVerse users and the services available within the selected organization and class.
 The Project Overview provides a high-level system view, while the remaining
 diagrams focus on specific functional areas.
 
@@ -386,10 +361,7 @@ permissions.
   {Assignment Management Use-Case Diagram}
   {fig:ch4_usecase_assignment_management}
 
-Figure~\ref{fig:ch4_usecase_assignment_management} models the assignment
-lifecycle and distinguishes teacher-managed authoring and grading activities
-from student-controlled submission behavior. Conditional relations represent
-states such as publication, submission mode, and permitted resubmission.
+Figure~\ref{fig:ch4_usecase_assignment_management} represents the assignment workflow and distinguishes teacher activities, such as assignment creation and grading, from student submission activities. Some actions depend on assignment settings, such as publication status, the selected submission mode, and whether late submission is allowed.
 
 \subsection*{AI Learning Support}
 
