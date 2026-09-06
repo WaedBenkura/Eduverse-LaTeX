@@ -169,6 +169,7 @@
   \global\@topnum\z@
   \@afterindentfalse
   \refstepcounter{chapter}%
+  \def\@currentlabelname{#1}%
   \typeout{Chapter \thechapter.}%
   \chaptermark{#1}%
   \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
@@ -199,10 +200,12 @@
 \addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
 
+\clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
 
+\clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Tables}
 \listoftables

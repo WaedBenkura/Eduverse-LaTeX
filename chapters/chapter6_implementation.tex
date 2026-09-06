@@ -25,10 +25,8 @@ features, real-time communication, AI support, the integrated coding
 environment, and the engineering workflow used to integrate and review
 changes.
 
-The discussion focuses on implementation mechanisms rather than repeating the
-functional scope established in earlier chapters. Where the web and mobile
-clients differ in depth, their current implementation boundaries are stated
-explicitly.
+The discussion focuses on implementation mechanisms and the distinct workflow
+depth provided by the web and mobile clients.
 
 \section{Implementation Environment}
 \label{sec:implementation_environment}
@@ -77,10 +75,9 @@ authenticated application workflows. Supabase provides authentication and
 relational persistence, while specialized services are used for capabilities
 such as file storage, live communication, and AI-assisted operations.
 
-The mobile companion does not maintain a separate academic backend. After
-authentication, it interacts with the same protected EduVerse service layer
-used by the web application, allowing access rules and workflow behavior to
-remain centralized rather than duplicated between clients.
+After authentication, the mobile companion interacts with the same protected
+EduVerse service layer used by the web application. This keeps access rules and
+workflow behavior centralized across both clients.
 
 Protected client actions are resolved through the server layer, where input
 validation, organization and role context, permissions, and workflow conditions
@@ -127,16 +124,12 @@ access token as a bearer token and reuse the platform's server-side academic
 workflows rather than reproducing the web application's business logic inside
 the mobile client.
 
-The current mobile implementation covers authentication and organization
-selection. It also provides class summaries, notifications, material access,
-class communication, profile utilities, and basic live-session participation.
-
-The mobile application is intentionally narrower than the web client. Broad
-administrative workflows, detailed configuration, richer
-assessment-authoring flows, and the complete whiteboard-centered live
-experience remain primarily web-based. The mobile client therefore extends
-high-frequency participation without attempting full feature parity with the
-web application.
+The mobile implementation provides authentication, organization selection,
+class summaries, notifications, material access, class communication, profile
+utilities, and basic live-session participation. The web client provides the
+broader administrative, configuration, assessment-authoring, and
+whiteboard-centered live-session workflows, while the mobile client focuses on
+high-frequency participation.
 
 \section{Backend, Database, and Storage Implementation}
 \label{sec:backend_database_storage_implementation}
@@ -149,11 +142,11 @@ with external services.
 
 The relational backend follows the domain structures documented in Chapter~5.
 Route handlers access the required tables directly where appropriate and use
-Supabase RPC functions for centralized database operations. Verified examples
-include \texttt{can\_manage\_class},
-\texttt{set\_selected\_organization\_role},
-\texttt{is\_class\_feature\_enabled}, and
-\texttt{claim\_class\_live\_session}.
+Supabase RPC functions for centralized database operations. Examples
+include \db{can_manage_class},
+\db{set_selected_organization_role},
+\db{is_class_feature_enabled}, and
+\db{claim_class_live_session}.
 
 Uploaded binary content is handled separately from relational academic
 records. Server-side upload handlers validate incoming files, write permitted
@@ -187,8 +180,8 @@ applied.
 
 Additional security mechanisms include server-side input validation, protected
 file access, controlled invitation and join workflows, role-sensitive result
-visibility, exam passcode handling, integrity-event recording, and audit
-logging where implemented.
+visibility, exam passcode handling, integrity-event recording, and platform
+audit logging.
 
 \section{Role-Based and Multi-Organization Access}
 \label{sec:role_based_multi_organization_access}
@@ -204,9 +197,9 @@ relationship. Server-side access checks then determine whether the requested
 action is permitted in that context.
 
 Internal role identifiers differ from some user-facing terminology used in the
-dissertation. For example, the Organization Administrator role appears in the
-current codebase as \texttt{org\_admin}, while the thesis consistently uses
-the user-facing term Organization Administrator.
+dissertation. The Organization Administrator role uses the internal identifier
+\texttt{org\_admin}, while the thesis consistently uses the user-facing term
+Organization Administrator.
 
 \section{Feature Availability and Extension Implementation}
 \label{sec:feature_availability_extension_implementation}
@@ -254,7 +247,7 @@ routes.
 
 AI functionality is integrated through authenticated server-side routes and
 supporting helpers that connect class context to OpenRouter-backed generation.
-Verified workflows include contextual class assistance, material extraction and
+Supported workflows include contextual class assistance, material extraction and
 summarization, teacher-facing assignment and examination drafting, and feedback
 drafting for submitted work.
 
@@ -267,16 +260,16 @@ a prompt-level academic guardrail, not deterministic answer filtering.
 The integrated coding environment is a browser-oriented workspace with a file
 tree, Monaco-based editing, project templates, virtual terminal commands,
 lightweight language runners, and sandboxed HTML or Markdown preview behavior.
-It does not expose unrestricted operating-system process execution; unsupported
-operations are reported by the browser-side runner model.
+Supported operations execute through the browser-side runner model to provide a
+browser-safe coding environment.
 
 \section{Development Workflow and Deployment}
 \label{sec:development_workflow_deployment}
 
 Implementation changes were managed through version-controlled branches or
 forks and pull-request review, supporting the feature-centered development
-process described in Chapter~3. Repository history contains merged pull-request
-commits, providing traceable integration of reviewed changes.
+process described in Chapter~3. Merged pull-request commits provide traceable
+integration of reviewed changes.
 
 Three GitHub Actions workflows run on pushes and pull requests to the main
 branch: a Next.js production build with Bun, a Biome formatting check, and a

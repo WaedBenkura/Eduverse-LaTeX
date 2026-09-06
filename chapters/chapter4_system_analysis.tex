@@ -78,9 +78,8 @@ resolved according to the current workspace context.
   \end{tabular}
 \end{table}
 
-The diagrams in this chapter focus on the three principal human actors. The
-system itself is not drawn as a separate actor in every diagram; automatic
-responsibilities such as access enforcement, notification generation,
+The diagrams in this chapter focus on the three principal human actors.
+Automatic responsibilities such as access enforcement, notification generation,
 integrity-event recording, and workflow-state changes are represented through
 the surrounding analysis and workflow behavior where relevant.
 
@@ -494,9 +493,6 @@ represented by the use-case set. They emphasize user-visible actions, decision
 points, and relevant automatic system responses while avoiding unnecessary
 implementation detail.
 
-No separate activity diagram is provided for the Project Overview because it
-represents a system-level summary rather than a single workflow.
-
 \subsection*{AD-01 Authentication and Workspace Access}
 
 \EduActivityFigureReadable{\EduActivityAuthWorkspaceAccessDiagram}
@@ -539,7 +535,7 @@ resources.
 
 \subsection*{AD-05 Class Communication and Notifications}
 
-\EduActivityFigureCompact{\EduActivityCommunicationNotificationsDiagram}
+\EduActivityFigureTall{\EduActivityCommunicationNotificationsDiagram}
   {Class Communication and Notifications Activity Diagram}
   {fig:ch4_activity_communication_notifications}
 
@@ -579,7 +575,7 @@ to closure.
 
 \subsection*{AD-09 Results Workflow}
 
-\EduActivityFigureCompact{\EduActivityResultsWorkflowDiagram}
+\EduActivityFigureTall{\EduActivityResultsWorkflowDiagram}
   {Results Workflow Activity Diagram}
   {fig:ch4_activity_results}
 
