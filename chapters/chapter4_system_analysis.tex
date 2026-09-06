@@ -306,155 +306,203 @@ The diagrams emphasize human interaction with the platform. Automatic system
 behavior is represented through the surrounding analysis and related workflow
 descriptions rather than modeled repeatedly as a separate system actor.
 
+\begingroup
+\makeatletter
+\renewenvironment{figure}[1][]{%
+  \par\addvspace{\intextsep}%
+  \noindent\begin{minipage}{\textwidth}%
+    \def\@captype{figure}%
+}{%
+  \end{minipage}%
+  \par\addvspace{\intextsep}%
+}
+\renewenvironment{samepage}{%
+\par\addvspace{0.75\baselineskip}%
+
+  \noindent\begin{minipage}{\textwidth}%
+}{%
+  \end{minipage}\par\addvspace{0.65\baselineskip}%
+}
+\makeatother
+
+\begin{samepage}
+
 \subsection*{Project Overview}
+
+The Project Overview use-case diagram provides a high-level representation of
+the relationship between the three principal human actors and the main
+EduVerse service areas. Detailed interactions are decomposed into the
+module-specific diagrams that follow.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Authentication and Access}
+
+Figure~\ref{fig:ch4_usecase_authentication_access} represents entry into the
+EduVerse workspace and the conditions required to resolve the user's active
+context. It distinguishes account access from organization- and role-selection
+behavior when multiple valid contexts are available.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Organization and Role Management}
+
+Figure~\ref{fig:ch4_usecase_organization_role_management} represents
+organization-level governance and membership control. It emphasizes how
+administrative authority, role assignment, access pathways, and institutional
+settings are resolved within an organization context.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Class Management}
+
+Figure~\ref{fig:ch4_usecase_class_management} models the Class as the central
+operational unit of EduVerse. It emphasizes class lifecycle, membership,
+configuration, visibility, and historical continuity under the applicable
+permissions.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Assignment Management}
+
+Figure~\ref{fig:ch4_usecase_assignment_management} represents the assignment workflow and distinguishes teacher activities, such as assignment creation and grading, from student submission activities. Some actions depend on assignment settings, such as publication status, the selected submission mode, and whether late submission is allowed.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AI Learning Support}
+
+Figure~\ref{fig:ch4_usecase_ai_learning_support} represents AI as a supporting
+capability within the academic workflow rather than as an independent human
+actor. Availability depends on the applicable organization and class
+configuration.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Class Communication and Notifications}
+
+Figure~\ref{fig:ch4_usecase_class_communication_notifications} distinguishes
+user-generated class communication from system-generated notification
+behavior. The model separates direct interaction from event-driven awareness
+while keeping both within the class context.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Course Content and Materials}
+
+Figure~\ref{fig:ch4_usecase_course_content_materials} represents the controlled
+lifecycle of class learning resources and the distinction between authorized
+content management and member access.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Exam Management and Integrity}
+
+Figure~\ref{fig:ch4_usecase_exam_management_integrity} models the controlled
+examination lifecycle and the relationship between attempt eligibility,
+integrity monitoring, grading, result release, and post-attempt administrative
+decisions.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Live Sessions and Whiteboard}
+
+Figure~\ref{fig:ch4_usecase_live_sessions_whiteboard} represents synchronous
+participation within the class context and the collaboration capabilities
+available to eligible participants according to their role and permissions.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Integrated Coding Lab / IDE Extension}
+
+Figure~\ref{fig:ch4_usecase_integrated_coding_lab_ide_extension} represents
+access to the integrated coding workspace as a configurable class capability.
+The model emphasizes the relationship between workspace interaction and
+feature availability.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Profile and Help}
+
+Figure~\ref{fig:ch4_usecase_profile_help} represents account-oriented and
+user-support interactions that apply across the wider platform rather than to
+one specific academic workflow.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Results and Dashboards}
+
+Figure~\ref{fig:ch4_usecase_results_dashboards} represents role-sensitive
+access to dashboard information and academic outcomes. The model emphasizes
+that result visibility depends on actor responsibility, result release, and
+applicable class settings.
+\end{samepage}
+
+\clearpage
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/project_overview.pdf}
   {Project Overview Use-Case Diagram}
   {fig:ch4_usecase_project_overview}
 
-The Project Overview use-case diagram provides a high-level representation of
-the relationship between the three principal human actors and the main
-EduVerse service areas. Detailed interactions are decomposed into the
-module-specific diagrams that follow.
-
-\subsection*{Authentication and Access}
-
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/authentication_access.pdf}
   {Authentication and Access Use-Case Diagram}
   {fig:ch4_usecase_authentication_access}
-
-Figure~\ref{fig:ch4_usecase_authentication_access} represents entry into the
-EduVerse workspace and the conditions required to resolve the user's active
-context. It distinguishes account access from organization- and role-selection
-behavior when multiple valid contexts are available.
-
-\subsection*{Organization and Role Management}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/organization_role_management.pdf}
   {Organization and Role Management Use-Case Diagram}
   {fig:ch4_usecase_organization_role_management}
 
-Figure~\ref{fig:ch4_usecase_organization_role_management} represents
-organization-level governance and membership control. It emphasizes how
-administrative authority, role assignment, access pathways, and institutional
-settings are resolved within an organization context.
-
-\subsection*{Class Management}
-
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/class_management.pdf}
   {Class Management Use-Case Diagram}
   {fig:ch4_usecase_class_management}
-
-Figure~\ref{fig:ch4_usecase_class_management} models the Class as the central
-operational unit of EduVerse. It emphasizes class lifecycle, membership,
-configuration, visibility, and historical continuity under the applicable
-permissions.
-
-\subsection*{Assignment Management}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/assignment_management.pdf}
   {Assignment Management Use-Case Diagram}
   {fig:ch4_usecase_assignment_management}
 
-Figure~\ref{fig:ch4_usecase_assignment_management} represents the assignment workflow and distinguishes teacher activities, such as assignment creation and grading, from student submission activities. Some actions depend on assignment settings, such as publication status, the selected submission mode, and whether late submission is allowed.
-
-\subsection*{AI Learning Support}
-
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/ai_learning_support.pdf}
   {AI Learning Support Use-Case Diagram}
   {fig:ch4_usecase_ai_learning_support}
-
-Figure~\ref{fig:ch4_usecase_ai_learning_support} represents AI as a supporting
-capability within the academic workflow rather than as an independent human
-actor. Availability depends on the applicable organization and class
-configuration.
-
-\subsection*{Class Communication and Notifications}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/class_communication_notifications.pdf}
   {Class Communication and Notifications Use-Case Diagram}
   {fig:ch4_usecase_class_communication_notifications}
 
-Figure~\ref{fig:ch4_usecase_class_communication_notifications} distinguishes
-user-generated class communication from system-generated notification
-behavior. The model separates direct interaction from event-driven awareness
-while keeping both within the class context.
-
-\subsection*{Course Content and Materials}
-
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/course_content_materials.pdf}
   {Course Content and Materials Use-Case Diagram}
   {fig:ch4_usecase_course_content_materials}
-
-Figure~\ref{fig:ch4_usecase_course_content_materials} represents the controlled
-lifecycle of class learning resources and the distinction between authorized
-content management and member access.
-
-\subsection*{Exam Management and Integrity}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/exam_management_integrity.pdf}
   {Exam Management and Integrity Use-Case Diagram}
   {fig:ch4_usecase_exam_management_integrity}
 
-Figure~\ref{fig:ch4_usecase_exam_management_integrity} models the controlled
-examination lifecycle and the relationship between attempt eligibility,
-integrity monitoring, grading, result release, and post-attempt administrative
-decisions.
-
-\subsection*{Live Sessions and Whiteboard}
-
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/live_sessions_whiteboard.pdf}
   {Live Sessions and Whiteboard Use-Case Diagram}
   {fig:ch4_usecase_live_sessions_whiteboard}
-
-Figure~\ref{fig:ch4_usecase_live_sessions_whiteboard} represents synchronous
-participation within the class context and the collaboration capabilities
-available to eligible participants according to their role and permissions.
-
-\subsection*{Integrated Coding Lab / IDE Extension}
 
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/integrated_coding_lab_ide_extension.pdf}
   {Integrated Coding Lab / IDE Extension Use-Case Diagram}
   {fig:ch4_usecase_integrated_coding_lab_ide_extension}
 
-Figure~\ref{fig:ch4_usecase_integrated_coding_lab_ide_extension} represents
-access to the integrated coding workspace as a configurable class capability.
-The model emphasizes the relationship between workspace interaction and
-feature availability.
-
-\subsection*{Profile and Help}
-
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/profile_help.pdf}
   {Profile and Help Use-Case Diagram}
   {fig:ch4_usecase_profile_help}
 
-Figure~\ref{fig:ch4_usecase_profile_help} represents account-oriented and
-user-support interactions that apply across the wider platform rather than to
-one specific academic workflow.
-
-\subsection*{Results and Dashboards}
-
 \EduUseCasePdfFigure
   {figures/chapter4/usecases/results_dashboards.pdf}
   {Results and Dashboards Use-Case Diagram}
   {fig:ch4_usecase_results_dashboards}
-
-Figure~\ref{fig:ch4_usecase_results_dashboards} represents role-sensitive
-access to dashboard information and academic outcomes. The model emphasizes
-that result visibility depends on actor responsibility, result release, and
-applicable class settings.
 
 \clearpage
 
@@ -465,134 +513,164 @@ represented by the use-case set. They emphasize user-visible actions, decision
 points, and relevant automatic system responses while avoiding unnecessary
 implementation detail.
 
+\begin{samepage}
 \subsection*{AD-01 Authentication and Workspace Access}
+
+Figure~\ref{fig:ch4_activity_auth_workspace_access} emphasizes the main
+decision paths involved in account access, verification, recovery,
+workspace-context resolution, and exit from the authenticated session.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-02 Organization Member Access and Public Join Link}
+
+Figure~\ref{fig:ch4_activity_organization_access} emphasizes the alternative
+membership-entry paths and the administrative decisions required when access
+depends on invitation, public joining, or approval.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-03 Class Creation, Configuration, and Past Terms}
+
+Figure~\ref{fig:ch4_activity_class_lifecycle} represents the class lifecycle
+from creation and configuration through controlled closure and preservation in
+Past Terms.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-04 Course Content and Materials}
+
+Figure~\ref{fig:ch4_activity_materials} represents the main decision paths
+between authorized material management and member access to available learning
+resources.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-05 Class Communication and Notifications}
+
+Figure~\ref{fig:ch4_activity_communication_notifications} distinguishes direct
+class communication actions from event-driven notification handling within the
+same class context.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-06 Assignment Workflow}
+
+Figure~\ref{fig:ch4_activity_assignment_workflow} emphasizes the assignment
+lifecycle and the decision points surrounding publication, submission,
+permitted resubmission, grading, and returned outcomes.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-07 Exam Management and Integrity Workflow}
+
+Figure~\ref{fig:ch4_activity_exam_integrity} emphasizes the principal
+examination decision paths involving attempt eligibility, integrity handling,
+grading, result release, voiding, and retake outcomes.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-08 Live Session and Whiteboard Workflow}
+
+Figure~\ref{fig:ch4_activity_live_session} represents the controlled
+synchronous-session lifecycle from session availability through participation
+to closure.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-09 Results Workflow}
+
+Figure~\ref{fig:ch4_activity_results} represents the conditions under which
+academic results become available to different actors and how visibility rules
+affect subsequent review.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-10 Dashboard Workflow}
+
+Figure~\ref{fig:ch4_activity_dashboard} represents role-specific dashboard
+access and preserves the distinction between summary information and detailed
+Results workflows.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-11 AI Learning Support Workflow}
+
+Figure~\ref{fig:ch4_activity_ai_learning_support} represents access to
+AI-supported learning actions and the configuration conditions that determine
+whether those capabilities are available.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-12 Integrated Coding Lab / IDE Workflow}
+
+Figure~\ref{fig:ch4_activity_ide_workflow} represents the main coding-workspace
+interaction flow under the condition that the corresponding class capability
+is enabled.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-13 Profile and Help Workflow}
+
+Figure~\ref{fig:ch4_activity_profile_help} represents the user-support workflow
+for account-oriented settings, workspace-context access, and help resources.
+\end{samepage}
+
+\clearpage
 
 \EduActivityFigureReadable{\EduActivityAuthWorkspaceAccessDiagram}
   {Authentication and Workspace Access Activity Diagram}
   {fig:ch4_activity_auth_workspace_access}
 
-Figure~\ref{fig:ch4_activity_auth_workspace_access} emphasizes the main
-decision paths involved in account access, verification, recovery,
-workspace-context resolution, and exit from the authenticated session.
-
-\subsection*{AD-02 Organization Member Access and Public Join Link}
-
 \EduActivityFigureReadable{\EduActivityOrganizationAccessDiagram}
   {Organization Member Access and Public Join Link Activity Diagram}
   {fig:ch4_activity_organization_access}
-
-Figure~\ref{fig:ch4_activity_organization_access} emphasizes the alternative
-membership-entry paths and the administrative decisions required when access
-depends on invitation, public joining, or approval.
-
-\subsection*{AD-03 Class Creation, Configuration, and Past Terms}
 
 \EduActivityFigure{\EduActivityClassLifecycleDiagram}
   {Class Creation, Configuration, and Past Terms Activity Diagram}
   {fig:ch4_activity_class_lifecycle}
 
-Figure~\ref{fig:ch4_activity_class_lifecycle} represents the class lifecycle
-from creation and configuration through controlled closure and preservation in
-Past Terms.
-
-\subsection*{AD-04 Course Content and Materials}
-
 \EduActivityFigureReadable{\EduActivityMaterialsWorkflowDiagram}
   {Course Content and Materials Activity Diagram}
   {fig:ch4_activity_materials}
-
-Figure~\ref{fig:ch4_activity_materials} represents the main decision paths
-between authorized material management and member access to available learning
-resources.
-
-\subsection*{AD-05 Class Communication and Notifications}
 
 \EduActivityFigureTall{\EduActivityCommunicationNotificationsDiagram}
   {Class Communication and Notifications Activity Diagram}
   {fig:ch4_activity_communication_notifications}
 
-Figure~\ref{fig:ch4_activity_communication_notifications} distinguishes direct
-class communication actions from event-driven notification handling within the
-same class context.
-
-\subsection*{AD-06 Assignment Workflow}
-
 \EduActivityFigureReadable{\EduActivityAssignmentWorkflowDiagram}
   {Assignment Workflow Activity Diagram}
   {fig:ch4_activity_assignment_workflow}
-
-Figure~\ref{fig:ch4_activity_assignment_workflow} emphasizes the assignment
-lifecycle and the decision points surrounding publication, submission,
-permitted resubmission, grading, and returned outcomes.
-
-\subsection*{AD-07 Exam Management and Integrity Workflow}
 
 \EduActivityFigureTall{\EduActivityExamIntegrityWorkflowDiagram}
   {Exam Management and Integrity Workflow Activity Diagram}
   {fig:ch4_activity_exam_integrity}
 
-Figure~\ref{fig:ch4_activity_exam_integrity} emphasizes the principal
-examination decision paths involving attempt eligibility, integrity handling,
-grading, result release, voiding, and retake outcomes.
-
-\subsection*{AD-08 Live Session and Whiteboard Workflow}
-
 \EduActivityFigure{\EduActivityLiveSessionWorkflowDiagram}
   {Live Session and Whiteboard Workflow Activity Diagram}
   {fig:ch4_activity_live_session}
-
-Figure~\ref{fig:ch4_activity_live_session} represents the controlled
-synchronous-session lifecycle from session availability through participation
-to closure.
-
-\subsection*{AD-09 Results Workflow}
 
 \EduActivityFigureTall{\EduActivityResultsWorkflowDiagram}
   {Results Workflow Activity Diagram}
   {fig:ch4_activity_results}
 
-Figure~\ref{fig:ch4_activity_results} represents the conditions under which
-academic results become available to different actors and how visibility rules
-affect subsequent review.
-
-\subsection*{AD-10 Dashboard Workflow}
-
 \EduActivityFigureReadable{\EduActivityDashboardWorkflowDiagram}
   {Dashboard Workflow Activity Diagram}
   {fig:ch4_activity_dashboard}
-
-Figure~\ref{fig:ch4_activity_dashboard} represents role-specific dashboard
-access and preserves the distinction between summary information and detailed
-Results workflows.
-
-\subsection*{AD-11 AI Learning Support Workflow}
 
 \EduActivityFigureReadable{\EduActivityAiLearningSupportWorkflowDiagram}
   {AI Learning Support Workflow Activity Diagram}
   {fig:ch4_activity_ai_learning_support}
 
-Figure~\ref{fig:ch4_activity_ai_learning_support} represents access to
-AI-supported learning actions and the configuration conditions that determine
-whether those capabilities are available.
-
-\subsection*{AD-12 Integrated Coding Lab / IDE Workflow}
-
 \EduActivityFigure{\EduActivityIdeWorkflowDiagram}
   {Integrated Coding Lab / IDE Workflow Activity Diagram}
   {fig:ch4_activity_ide_workflow}
-
-Figure~\ref{fig:ch4_activity_ide_workflow} represents the main coding-workspace
-interaction flow under the condition that the corresponding class capability
-is enabled.
-
-\subsection*{AD-13 Profile and Help Workflow}
 
 \EduActivityFigureReadable{\EduActivityProfileHelpWorkflowDiagram}
   {Profile and Help Workflow Activity Diagram}
   {fig:ch4_activity_profile_help}
 
-Figure~\ref{fig:ch4_activity_profile_help} represents the user-support workflow
-for account-oriented settings, workspace-context access, and help resources.
+\endgroup
 
 \clearpage
 
