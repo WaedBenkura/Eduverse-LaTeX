@@ -38,7 +38,7 @@ summarized in Table~\ref{tab:eduverse_implementation_environment}.
 \begin{table}[htbp]
   \centering
   \small
-  \renewcommand{\arraystretch}{1.15}
+  \renewcommand{\arraystretch}{1.05}
   \setlength{\tabcolsep}{5pt}
   \caption{Main EduVerse Implementation Environment}
   \label{tab:eduverse_implementation_environment}
@@ -46,13 +46,13 @@ summarized in Table~\ref{tab:eduverse_implementation_environment}.
     \hline
     \textbf{Implementation layer} & \textbf{Main technologies} & \textbf{Implementation purpose} \\
     \hline
-    Web client & Next.js App Router, React, TypeScript & Role-aware web interfaces, class-scoped workflows, administrative views, and integrated learning tools. \\
+    Web client & Next.js 16 App Router, React 19, TypeScript, Tailwind CSS 4, reusable Radix/shadcn-style components & Role-aware web interfaces, class-scoped workflows, administrative views, and integrated learning tools. \\
     \hline
     Mobile companion & Expo, React Native, TypeScript, NativeWind & Authenticated mobile access to selected high-frequency workflows through shared platform services. \\
     \hline
     Server and API layer & Next.js route handlers, shared server libraries, Zod & Authenticated request handling, validation, authorization, workflow execution, and external-service integration. \\
     \hline
-    Data and authentication & Supabase Auth, PostgreSQL, RPC functions, Row-Level Security & Identity, relational persistence, database-side workflows, and additional access boundaries. \\
+    Data and authentication & Supabase Auth, Supabase-hosted PostgreSQL, RPC functions, Row-Level Security & Identity, relational persistence, database-side workflows, and additional access boundaries. \\
     \hline
     File storage & AWS S3, AWS SDK for JavaScript & Server-controlled object upload and time-limited signed retrieval. \\
     \hline
@@ -60,7 +60,7 @@ summarized in Table~\ref{tab:eduverse_implementation_environment}.
     \hline
     AI services & OpenRouter, material-extraction helpers & Server-side contextual generation, extraction, summarization, drafting, and feedback support. \\
     \hline
-    Review and deployment support & Git, GitHub pull requests, GitHub Actions, Vercel & Reviewed integration, automated build and code-quality checks, production deployment, and pull-request preview environments. \\
+    Review and deployment support & Git, GitHub pull requests, GitHub Actions, Bun, Biome, Vercel & Reviewed integration, automated build, formatting, and type checks, production deployment, and pull-request preview environments. \\
     \hline
   \end{tabular}
 \end{table}
@@ -69,11 +69,13 @@ summarized in Table~\ref{tab:eduverse_implementation_environment}.
 
 \section{System Architecture}\label{sec:implementation_system_architecture}
 
-The implemented architecture follows a web-first, service-integrated model. The
-web client uses Next.js route handlers and shared server libraries to coordinate
-authenticated application workflows. Supabase provides authentication and
-relational persistence, while specialized services are used for capabilities
-such as file storage, live communication, and AI-assisted operations.
+The implemented architecture follows a web-first, service-integrated cloud
+model. Vercel hosts the deployed Next.js application, whose route handlers and
+shared server libraries contain the server-side application logic for
+authenticated workflows. The application integrates with managed services:
+Supabase provides authentication, hosted PostgreSQL persistence, RPC access,
+and selected realtime updates; AWS S3 stores binary files; LiveKit provides
+live media infrastructure; and OpenRouter provides AI inference.
 
 After authentication, the mobile companion interacts with the same protected
 EduVerse service layer used by the web application. This keeps access rules and
@@ -88,11 +90,12 @@ different clients to expose different levels of interaction.
 \section{Web Application Implementation}
 \label{sec:web_application_implementation}
 
-The web application is implemented with Next.js, React, and TypeScript and
-serves as the primary operational client of EduVerse. Its structure combines
-role-aware application routing with organization- and class-scoped workspaces
-so that the active user context determines which interface and server
-operations are available.
+The web application is implemented with the Next.js 16 App Router, React 19,
+and TypeScript and serves as the primary operational client of EduVerse.
+Tailwind CSS 4 and reusable Radix/shadcn-style interface components support a
+consistent presentation layer. The application structure combines role-aware
+routing with organization- and class-scoped workspaces so that the active user
+context determines which interface and server operations are available.
 
 Web workflows interact with server-owned route handlers rather than embedding
 academic business rules directly in presentation components. Shared server
@@ -125,35 +128,37 @@ workflows rather than reproducing the web application's business logic inside
 the mobile client.
 
 The mobile implementation provides authentication, organization selection,
-class summaries, notifications, material access, class communication, profile
-utilities, and basic live-session participation. The web client provides the
-broader administrative, configuration, assessment-authoring, and
-whiteboard-centered live-session workflows, while the mobile client focuses on
-high-frequency participation.
+class summaries, and notifications. It also provides material access, class
+communication, profile utilities, and basic live-session participation. The
+web client provides the broader administrative, configuration,
+assessment-authoring, and whiteboard-centered live-session workflows, while the
+mobile client focuses on high-frequency participation.
 
 \section{Backend, Database, and Storage Implementation}
 \label{sec:backend_database_storage_implementation}
 
-EduVerse uses a Supabase-centered backend model implemented from within the
-Next.js project rather than through a separate standalone backend application.
-Next.js server route handlers and shared server libraries perform request
-validation, authorization, workflow execution, persistence, and integration
-with external services.
+EduVerse uses a Supabase-centered data layer coordinated by the Next.js
+application rather than by a separate standalone backend application. Next.js
+route handlers form the main application and API backend, while shared server
+libraries perform request validation, authorization, workflow execution,
+persistence, and integration with external services. Zod is used for
+schema-based validation in selected structured request workflows.
 
-The relational backend follows the domain structures documented in Chapter~5.
-Route handlers access the required tables directly where appropriate and use
-Supabase RPC functions for centralized database operations. Examples
-include \db{can_manage_class},
-\db{set_selected_organization_role},
-\db{is_class_feature_enabled}, and
-\db{claim_class_live_session}.
+Relational persistence is provided by Supabase-hosted PostgreSQL and follows the
+domain structures documented in Chapter~5. Route handlers access the required
+records where appropriate and invoke PostgreSQL functions through Supabase RPC
+for centralized database operations. These operations include evaluating
+class-management permissions, selecting the active organization role,
+resolving feature availability, and coordinating live-session claiming and
+lifecycle state.
 
 Uploaded binary content is handled separately from relational academic
-records. Server-side upload handlers validate incoming files, write permitted
-content to AWS S3 using protected credentials, and persist the associated
-academic metadata through the platform data layer. Protected downloads use
-five-minute signed URLs, while material content can also be delivered through
-an authenticated server route.
+records. Supabase-hosted PostgreSQL stores academic records and associated file
+metadata, while AWS S3 stores the binary content. Server-side upload logic
+validates incoming files, writes permitted content to S3 using protected
+credentials, and persists the corresponding metadata. Protected downloads use
+signed URLs that expire after five minutes, while material content can also be
+delivered through authenticated server-side logic.
 
 This server-mediated approach prevents storage credentials from being exposed
 to clients and keeps file access subject to the authenticated academic context
@@ -211,11 +216,10 @@ feature state. An organization-disabled capability cannot be enabled by a
 class setting; a class can further disable a capability that remains available
 to the organization.
 
-The resolved configuration controls class navigation and guarded feature pages.
-Protected AI and examination services also invoke the database-side
-\texttt{is\_class\_feature\_enabled} check before executing their configurable
-operations. Feature enforcement is therefore not limited to hiding interface
-elements.
+The resolved configuration controls class navigation and feature exposure.
+Database-side feature checks are also used in applicable protected workflows,
+so the same configuration model can inform both application presentation and
+server-controlled operations.
 
 Extensions follow the same context-sensitive model. Organization extension
 records define enabled extension entries, while class extension settings can
@@ -246,22 +250,35 @@ routes.
 \label{sec:ai_learning_support_ide_implementation}
 
 AI functionality is integrated through authenticated server-side routes and
-supporting helpers that connect class context to OpenRouter-backed generation.
-Supported workflows include contextual class assistance, material extraction and
-summarization, teacher-facing assignment and examination drafting, and feedback
-drafting for submitted work.
+supporting services that connect class context to OpenRouter, which provides
+the AI inference layer. The default model for general generation is
+\nolinkurl{nvidia/nemotron-3-super-120b-a12b:free}. It supports contextual class
+assistance, material study summarization, assignment support and drafting,
+examination drafting, and feedback drafting. The default vision model is
+\nolinkurl{google/gemini-2.5-flash}, which supports visual extraction when
+image-based or visually rendered material requires vision processing. Both
+defaults can be overridden through deployment-environment configuration.
 
-AI access is subject to class membership, management permission where required,
-and the same class-feature check used by the wider configuration model. For
-student-facing class assistance, the system prompt instructs the model to guide
-learning without supplying direct final answers to active assessments. This is
-a prompt-level academic guardrail, not deterministic answer filtering.
+Material processing does not rely exclusively on AI vision. Suitable PDF
+content is processed through text extraction, while vision-based processing is
+used when the material is image-based or depends on visual rendering. AI access
+is subject to authenticated class context, class membership, and management
+permission where required. For student-facing class assistance, the system
+prompt instructs the model to guide learning without supplying direct final
+answers to active assessments. This is a prompt-level academic guardrail, not
+deterministic answer filtering.
 
-The integrated coding environment is a browser-oriented workspace with a file
-tree, Monaco-based editing, project templates, virtual terminal commands,
-lightweight language runners, and sandboxed HTML or Markdown preview behavior.
-Supported operations execute through the browser-side runner model to provide a
-browser-safe coding environment.
+The integrated development environment is a browser-oriented workspace with a
+file tree, Monaco-based editing, project templates, virtual terminal commands,
+persistent browser-local workspace state, and browser previews. Templates cover
+Web, Python, C, C++, and SQL projects; however, execution is intentionally
+constrained to client-side mechanisms. JavaScript can execute in the browser,
+and Web and Markdown content can be previewed. Python uses limited client-side
+interpretation or translation, C and C++ behavior is simulated rather than
+native-compiled, and SQL uses a restricted client-side simulation rather than a
+full database runtime. The result is a browser-oriented coding environment with
+constrained client-side execution rather than a collection of native language
+runtimes.
 
 \section{Development Workflow and Deployment}
 \label{sec:development_workflow_deployment}
@@ -291,9 +308,10 @@ Four recurring engineering challenges shaped the implementation:
   \item \textbf{Cross-client consistency.} Both clients needed consistent rules
     without duplicated business logic. They reuse protected server workflows
     while exposing different interface depths.
-  \item \textbf{Large-file handling.} Binary files had to stay linked to
-    protected records without entering relational queries. PostgreSQL holds
-    metadata; server-controlled AWS S3 handles upload and retrieval.
+  \item \textbf{Large-file handling.} Binary files had to remain associated
+    with protected academic records without storing the binary content in the
+    relational database. Supabase-hosted PostgreSQL holds their metadata, while
+    server-controlled AWS S3 handles binary upload and retrieval.
   \item \textbf{Live-session state and recovery.} LiveKit participation also
     required a reliable class lifecycle. Persistent records, claim and end
     operations, heartbeats, and stale-state checks coordinate it.
