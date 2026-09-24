@@ -1,0 +1,90 @@
+--- HEAD page 5
++++ current page 5
+@@ -19,7 +19,7 @@
+ 3.2.1 Iterative Feature-Centered Development . . . . . . . . 16
+ 3.2.2 Vertical-Slice Realization . . . . . . . . . . . . . . . . . 17
+ 3.2.3 Why This Methodology Fits EduVerse . . . . . . . . . 17
+-3.3 Repeated Development Cycle . . . . . . . . . . . . . . . . . . 17
++3.3 Repeated Development Cycle . . . . . . . . . . . . . . . . . . 18
+ 3.4 Chapter Summary . . . . . . . . . . . . . . . . . . . . . . . . 19
+ 4 System Analysis and Requirements 20
+ 4.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+
+--- HEAD page 27
++++ current page 27
+@@ -3,6 +3,6 @@
+ Contents
+ Introduction .................................. 3.1, p. 16
+ Methodological Approach...................... 3.2, p. 16
+-Repeated Development Cycle .................. 3.3, p. 17
++Repeated Development Cycle .................. 3.3, p. 18
+ Chapter Summary............................. 3.4, p. 19
+ 15
+
+--- HEAD page 28
++++ current page 28
+@@ -12,7 +12,9 @@
+ 3.2 Methodological Approach
+ EduVerse was developed using a hybrid iterative methodology with a mainly
+ feature-based vertical-slice approach. Development was organized around
+-individual academic and administrative features. Each feature was analyzed,
++individual academic and administrative features. Initial requirements were
++identified primarily through the project team’s prior life experience with
++educational and digital learning environments. Each feature was analyzed,
+ implemented across the required system layers, tested, and refined before
+ being integrated with the wider platform. This iterative process allowed
+ requirements and implementation details to be adjusted as development
+@@ -29,5 +31,3 @@
+ subsequent work.
+ The iterative process also supported coordination between the primary
+ web application and the mobile companion application. Features intended
+-for mobile use were refined across both applications, while more extensive
+-administrative and teaching workflows remained mainly on the web.
+
+--- HEAD page 29
++++ current page 29
+@@ -1,4 +1,6 @@
+ Chapter 3. Methodology 17
++for mobile use were refined across both applications, while more extensive
++administrative and teaching workflows remained mainly on the web.
+ 3.2.2 Vertical-Slice Realization
+ A feature was generally treated as a coherent functional unit rather than
+ divided into separate interface-only or backend-only development stages.
+@@ -27,7 +29,3 @@
+ isolated technical components. This was particularly useful in a multi-role
+ system where related workflows may behave differently for Organization
+ Administrators, Teachers, and Students.
+-3.3 Repeated Development Cycle
+-Each development increment followed a repeated six-stage cycle, with the
+-depth of each stage adjusted according to the feature and the system layers
+-involved. A relatively localized change could require limited supporting
+
+--- HEAD page 30
++++ current page 30
+@@ -1,4 +1,8 @@
+ Chapter 3. Methodology 18
++3.3 Repeated Development Cycle
++Each development increment followed a repeated six-stage cycle, with the
++depth of each stage adjusted according to the feature and the system layers
++involved. A relatively localized change could require limited supporting
+ work, while a broader feature might involve interface behavior, services,
+ permissions, persistent data, and mobile participation.
+ Regardless of scope, the same progression was maintained from feature
+@@ -36,6 +40,3 @@
+ modules, shared rules, data relationships, and
+ user workflows so that it remains coherent
+ with the wider platform.
+-Version control and pull-request review supported this iterative process
+-by keeping feature changes bounded and allowing integration effects to be
+-reviewed before merge.
+
+--- HEAD page 31
++++ current page 31
+@@ -1,4 +1,7 @@
+ Chapter 3. Methodology 19
++Version control and pull-request review supported this iterative process
++by keeping feature changes bounded and allowing integration effects to be
++reviewed before merge.
+ 3.4 Chapter Summary
+ EduVerse was developed using a hybrid iterative methodology that
+ combined feature-centered planning with predominantly vertical-slice

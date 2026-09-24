@@ -1,0 +1,77 @@
+\newcommand{\EduversePlatformUseCaseDiagram}{%
+\begin{tikzpicture}[edu usecase diagram]
+  \node[edu system boundary, minimum width=11.2cm, minimum height=7.4cm] (system) at (0,0) {};
+  \node[anchor=north west, font=\small\bfseries] at ([xshift=2mm,yshift=-2mm]system.north west) {Eduverse Platform};
+
+  \node[edu usecase] (auth) at (0,2.15) {Authenticate\\and Select Role};
+  \node[edu usecase] (org) at (-2.7,0.95) {Manage\\Organization};
+  \node[edu usecase] (users) at (-2.7,-0.35) {Manage Users and\\Memberships};
+  \node[edu usecase] (classes) at (-2.7,-1.65) {Manage Classes};
+  \node[edu usecase] (mobile) at (2.7,0.2) {Access Mobile\\Companion Features};
+  \node[edu usecase] (notify) at (2.7,-1.35) {Send and Receive\\Notifications};
+
+  \EduActor{(-6.2,1.35)}{Organization\\Owner}
+  \EduActor{(-6.2,-1.3)}{Organization\\Admin}
+  \EduActor{(6.2,-0.55)}{Mobile Companion\\User}
+
+  \draw[edu actor link] (-5.75,1.35) -- (auth.west);
+  \draw[edu actor link] (-5.75,1.18) -- (org.west);
+  \draw[edu actor link] (-5.75,1.0) -- (users.west);
+  \draw[edu actor link] (-5.75,0.8) -- (classes.west);
+  \draw[edu actor link] (-5.75,0.62) -- (notify.west);
+
+  \draw[edu actor link] (-5.75,-1.3) -- (auth.west);
+  \draw[edu actor link] (-5.75,-1.1) -- (users.west);
+  \draw[edu actor link] (-5.75,-0.92) -- (classes.west);
+  \draw[edu actor link] (-5.75,-0.74) -- (notify.west);
+
+  \draw[edu actor link] (5.75,-0.55) -- (mobile.east);
+  \draw[edu actor link] (5.75,-0.75) -- (notify.east);
+  \draw[edu actor link] (5.75,-0.35) -- (auth.east);
+\end{tikzpicture}%
+}
+
+\newcommand{\EduverseLearningUseCaseDiagram}{%
+\begin{tikzpicture}[edu usecase diagram]
+  \node[edu system boundary, minimum width=11.8cm, minimum height=8.4cm] (system) at (0,0) {};
+  \node[anchor=north west, font=\small\bfseries] at ([xshift=2mm,yshift=-2mm]system.north west) {Eduverse Learning Services};
+
+  \node[edu usecase] (materials) at (-3.2,2.15) {Manage\\Materials};
+  \node[edu usecase] (assignments) at (0,2.15) {Manage\\Assignments};
+  \node[edu usecase] (exams) at (3.2,2.15) {Manage Exams};
+  \node[edu usecase] (results) at (-3.2,0.55) {View Results};
+  \node[edu usecase] (chat) at (0,0.55) {Use Class Chat};
+  \node[edu usecase] (ai) at (3.2,0.55) {Interact with\\AI Agent};
+  \node[edu usecase] (joinlive) at (-3.2,-1.05) {Join Live\\Session};
+  \node[edu usecase] (startlive) at (0,-1.05) {Start / End\\Live Session};
+  \node[edu usecase] (ide) at (3.2,-1.05) {Use Integrated\\IDE};
+
+  \EduActor{(-6.45,1.2)}{Teacher}
+  \EduActor{(6.45,1.2)}{Student}
+  \EduActor{(6.45,-1.55)}{AI Agent}
+  \EduActor{(-6.45,-1.55)}{External\\Services}
+
+  \draw[edu actor link] (-6.0,1.2) -- (materials.west);
+  \draw[edu actor link] (-6.0,1.02) -- (assignments.west);
+  \draw[edu actor link] (-6.0,0.82) -- (exams.west);
+  \draw[edu actor link] (-6.0,0.62) -- (results.west);
+  \draw[edu actor link] (-6.0,0.42) -- (chat.west);
+  \draw[edu actor link] (-6.0,0.22) -- (startlive.west);
+  \draw[edu actor link] (-6.0,0.02) -- (ai.west);
+  \draw[edu actor link] (-6.0,-0.18) -- (ide.west);
+
+  \draw[edu actor link] (6.0,1.2) -- (materials.east);
+  \draw[edu actor link] (6.0,1.0) -- (assignments.east);
+  \draw[edu actor link] (6.0,0.8) -- (exams.east);
+  \draw[edu actor link] (6.0,0.6) -- (results.east);
+  \draw[edu actor link] (6.0,0.4) -- (chat.east);
+  \draw[edu actor link] (6.0,0.2) -- (joinlive.east);
+  \draw[edu actor link] (6.0,0.0) -- (ai.east);
+  \draw[edu actor link] (6.0,-0.2) -- (ide.east);
+
+  \draw[edu actor link] (6.0,-1.55) -- (ai.east);
+  \draw[edu actor link] (-6.0,-1.55) -- (joinlive.west);
+  \draw[edu actor link] (-6.0,-1.35) -- (startlive.west);
+  \draw[edu actor link] (-6.0,-1.15) -- (ai.west);
+\end{tikzpicture}%
+}

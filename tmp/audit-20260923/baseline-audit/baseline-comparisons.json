@@ -1,0 +1,4079 @@
+{
+  "pre-audit-main": {
+    "changed_destinations": [],
+    "removed_destinations": []
+  },
+  "git-head": {
+    "changed_destinations": [
+      {
+        "destination": "section.3.3",
+        "old": "17",
+        "new": "18"
+      }
+    ],
+    "removed_destinations": []
+  },
+  "build": {
+    "changed_destinations": [
+      {
+        "destination": "chapter.2",
+        "old": "8",
+        "new": "7"
+      },
+      {
+        "destination": "chapter.3",
+        "old": "17",
+        "new": "15"
+      },
+      {
+        "destination": "chapter.4",
+        "old": "22",
+        "new": "20"
+      },
+      {
+        "destination": "chapter.5",
+        "old": "63",
+        "new": "60"
+      },
+      {
+        "destination": "chapter.6",
+        "old": "110",
+        "new": "108"
+      },
+      {
+        "destination": "chapter.7",
+        "old": "123",
+        "new": "118"
+      },
+      {
+        "destination": "chapter.8",
+        "old": "131",
+        "new": "121"
+      },
+      {
+        "destination": "figure.4.1",
+        "old": "33",
+        "new": "31"
+      },
+      {
+        "destination": "figure.4.10",
+        "old": "42",
+        "new": "40"
+      },
+      {
+        "destination": "figure.4.11",
+        "old": "43",
+        "new": "41"
+      },
+      {
+        "destination": "figure.4.12",
+        "old": "44",
+        "new": "42"
+      },
+      {
+        "destination": "figure.4.13",
+        "old": "45",
+        "new": "43"
+      },
+      {
+        "destination": "figure.4.14",
+        "old": "47",
+        "new": "46"
+      },
+      {
+        "destination": "figure.4.15",
+        "old": "48",
+        "new": "47"
+      },
+      {
+        "destination": "figure.4.16",
+        "old": "49",
+        "new": "48"
+      },
+      {
+        "destination": "figure.4.17",
+        "old": "50",
+        "new": "49"
+      },
+      {
+        "destination": "figure.4.18",
+        "old": "51",
+        "new": "50"
+      },
+      {
+        "destination": "figure.4.19",
+        "old": "53",
+        "new": "51"
+      },
+      {
+        "destination": "figure.4.2",
+        "old": "34",
+        "new": "32"
+      },
+      {
+        "destination": "figure.4.20",
+        "old": "54",
+        "new": "52"
+      },
+      {
+        "destination": "figure.4.21",
+        "old": "55",
+        "new": "53"
+      },
+      {
+        "destination": "figure.4.22",
+        "old": "56",
+        "new": "54"
+      },
+      {
+        "destination": "figure.4.23",
+        "old": "57",
+        "new": "55"
+      },
+      {
+        "destination": "figure.4.24",
+        "old": "58",
+        "new": "56"
+      },
+      {
+        "destination": "figure.4.25",
+        "old": "59",
+        "new": "57"
+      },
+      {
+        "destination": "figure.4.26",
+        "old": "61",
+        "new": "58"
+      },
+      {
+        "destination": "figure.4.3",
+        "old": "35",
+        "new": "33"
+      },
+      {
+        "destination": "figure.4.4",
+        "old": "36",
+        "new": "34"
+      },
+      {
+        "destination": "figure.4.5",
+        "old": "37",
+        "new": "35"
+      },
+      {
+        "destination": "figure.4.6",
+        "old": "38",
+        "new": "36"
+      },
+      {
+        "destination": "figure.4.7",
+        "old": "39",
+        "new": "37"
+      },
+      {
+        "destination": "figure.4.8",
+        "old": "40",
+        "new": "38"
+      },
+      {
+        "destination": "figure.4.9",
+        "old": "41",
+        "new": "39"
+      },
+      {
+        "destination": "figure.5.1",
+        "old": "66",
+        "new": "64"
+      },
+      {
+        "destination": "figure.5.10",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "figure.5.11",
+        "old": "94",
+        "new": "92"
+      },
+      {
+        "destination": "figure.5.12",
+        "old": "95",
+        "new": "93"
+      },
+      {
+        "destination": "figure.5.13",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "figure.5.14",
+        "old": "97",
+        "new": "95"
+      },
+      {
+        "destination": "figure.5.15",
+        "old": "98",
+        "new": "96"
+      },
+      {
+        "destination": "figure.5.16",
+        "old": "99",
+        "new": "97"
+      },
+      {
+        "destination": "figure.5.17",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "figure.5.18",
+        "old": "101",
+        "new": "99"
+      },
+      {
+        "destination": "figure.5.19",
+        "old": "102",
+        "new": "100"
+      },
+      {
+        "destination": "figure.5.2",
+        "old": "85",
+        "new": "83"
+      },
+      {
+        "destination": "figure.5.20",
+        "old": "103",
+        "new": "101"
+      },
+      {
+        "destination": "figure.5.21",
+        "old": "104",
+        "new": "102"
+      },
+      {
+        "destination": "figure.5.22",
+        "old": "105",
+        "new": "103"
+      },
+      {
+        "destination": "figure.5.23",
+        "old": "106",
+        "new": "104"
+      },
+      {
+        "destination": "figure.5.24",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "figure.5.25",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "figure.5.26",
+        "old": "109",
+        "new": "107"
+      },
+      {
+        "destination": "figure.5.3",
+        "old": "86",
+        "new": "84"
+      },
+      {
+        "destination": "figure.5.4",
+        "old": "87",
+        "new": "85"
+      },
+      {
+        "destination": "figure.5.5",
+        "old": "89",
+        "new": "87"
+      },
+      {
+        "destination": "figure.5.6",
+        "old": "90",
+        "new": "88"
+      },
+      {
+        "destination": "figure.5.7",
+        "old": "91",
+        "new": "89"
+      },
+      {
+        "destination": "figure.5.8",
+        "old": "92",
+        "new": "90"
+      },
+      {
+        "destination": "figure.5.9",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "section.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.2",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.3",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "section.2.4",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "section.2.5",
+        "old": "12",
+        "new": "11"
+      },
+      {
+        "destination": "section.2.6",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "section.3.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.2",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.3",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "section.3.4",
+        "old": "21",
+        "new": "19"
+      },
+      {
+        "destination": "section.4.1",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.2",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.3",
+        "old": "24",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.4",
+        "old": "25",
+        "new": "22"
+      },
+      {
+        "destination": "section.4.5",
+        "old": "30",
+        "new": "27"
+      },
+      {
+        "destination": "section.4.6",
+        "old": "31",
+        "new": "28"
+      },
+      {
+        "destination": "section.4.7",
+        "old": "46",
+        "new": "44"
+      },
+      {
+        "destination": "section.4.8",
+        "old": "62",
+        "new": "59"
+      },
+      {
+        "destination": "section.5.1",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.2",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.3",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.4",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "section.6.1",
+        "old": "111",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.10",
+        "old": "119",
+        "new": "114"
+      },
+      {
+        "destination": "section.6.11",
+        "old": "119",
+        "new": "115"
+      },
+      {
+        "destination": "section.6.12",
+        "old": "120",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.13",
+        "old": "120",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.14",
+        "old": "121",
+        "new": "117"
+      },
+      {
+        "destination": "section.6.2",
+        "old": "111",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.3",
+        "old": "113",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.4",
+        "old": "114",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.5",
+        "old": "115",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.6",
+        "old": "116",
+        "new": "112"
+      },
+      {
+        "destination": "section.6.7",
+        "old": "117",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.8",
+        "old": "117",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.9",
+        "old": "118",
+        "new": "114"
+      },
+      {
+        "destination": "section.7.1",
+        "old": "124",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.2",
+        "old": "124",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.3",
+        "old": "124",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.4",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.5",
+        "old": "126",
+        "new": "120"
+      },
+      {
+        "destination": "section.8.1",
+        "old": "132",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.2",
+        "old": "132",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.3",
+        "old": "132",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.4",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "subsection.2.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "subsection.2.2.2",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "subsection.2.4.1",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.2",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.3",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.6.1",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "subsection.2.6.4",
+        "old": "15",
+        "new": "13"
+      },
+      {
+        "destination": "subsection.2.6.5",
+        "old": "15",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.2.6.6",
+        "old": "16",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.3.2.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "subsection.3.2.2",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.3.2.3",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.5.3.1",
+        "old": "64",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.2",
+        "old": "65",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.3",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "subsection.5.3.4",
+        "old": "83",
+        "new": "66"
+      },
+      {
+        "destination": "subsection.5.4.1",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "subsection.5.4.2",
+        "old": "88",
+        "new": "86"
+      },
+      {
+        "destination": "subsection.5.4.3",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "subsection.5.4.4",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "subsection.5.4.5",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "subsection.5.4.6",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "table.2.1",
+        "old": "14",
+        "new": "11"
+      },
+      {
+        "destination": "table.3.1",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "table.4.1",
+        "old": "24",
+        "new": "22"
+      },
+      {
+        "destination": "table.5.1",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "table.5.10",
+        "old": "71",
+        "new": "69"
+      },
+      {
+        "destination": "table.5.11",
+        "old": "71",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.12",
+        "old": "72",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.13",
+        "old": "72",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.14",
+        "old": "73",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.15",
+        "old": "73",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.16",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.17",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.18",
+        "old": "74",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.19",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.2",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.20",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.21",
+        "old": "75",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.22",
+        "old": "76",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.23",
+        "old": "77",
+        "new": "75"
+      },
+      {
+        "destination": "table.5.24",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.25",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.26",
+        "old": "79",
+        "new": "77"
+      },
+      {
+        "destination": "table.5.27",
+        "old": "79",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.28",
+        "old": "80",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.29",
+        "old": "81",
+        "new": "79"
+      },
+      {
+        "destination": "table.5.3",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.30",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.31",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.32",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.33",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.34",
+        "old": null,
+        "new": "82"
+      },
+      {
+        "destination": "table.5.4",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.5",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.6",
+        "old": "69",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.7",
+        "old": "69",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.8",
+        "old": "70",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.9",
+        "old": "70",
+        "new": "69"
+      },
+      {
+        "destination": "table.6.1",
+        "old": "112",
+        "new": "110"
+      }
+    ],
+    "removed_destinations": [
+      "section.1.7",
+      "section.7.10",
+      "section.7.6",
+      "section.7.7",
+      "section.7.8",
+      "section.7.9"
+    ]
+  },
+  "output": {
+    "changed_destinations": [
+      {
+        "destination": "chapter.3",
+        "old": "16",
+        "new": "15"
+      },
+      {
+        "destination": "chapter.4",
+        "old": "21",
+        "new": "20"
+      },
+      {
+        "destination": "chapter.5",
+        "old": "62",
+        "new": "60"
+      },
+      {
+        "destination": "chapter.6",
+        "old": "110",
+        "new": "108"
+      },
+      {
+        "destination": "chapter.7",
+        "old": "122",
+        "new": "118"
+      },
+      {
+        "destination": "chapter.8",
+        "old": "126",
+        "new": "121"
+      },
+      {
+        "destination": "figure.4.1",
+        "old": "32",
+        "new": "31"
+      },
+      {
+        "destination": "figure.4.10",
+        "old": "41",
+        "new": "40"
+      },
+      {
+        "destination": "figure.4.11",
+        "old": "42",
+        "new": "41"
+      },
+      {
+        "destination": "figure.4.12",
+        "old": "43",
+        "new": "42"
+      },
+      {
+        "destination": "figure.4.13",
+        "old": "44",
+        "new": "43"
+      },
+      {
+        "destination": "figure.4.19",
+        "old": "52",
+        "new": "51"
+      },
+      {
+        "destination": "figure.4.2",
+        "old": "33",
+        "new": "32"
+      },
+      {
+        "destination": "figure.4.20",
+        "old": "53",
+        "new": "52"
+      },
+      {
+        "destination": "figure.4.21",
+        "old": "54",
+        "new": "53"
+      },
+      {
+        "destination": "figure.4.22",
+        "old": "55",
+        "new": "54"
+      },
+      {
+        "destination": "figure.4.23",
+        "old": "56",
+        "new": "55"
+      },
+      {
+        "destination": "figure.4.24",
+        "old": "57",
+        "new": "56"
+      },
+      {
+        "destination": "figure.4.25",
+        "old": "58",
+        "new": "57"
+      },
+      {
+        "destination": "figure.4.26",
+        "old": "60",
+        "new": "58"
+      },
+      {
+        "destination": "figure.4.3",
+        "old": "34",
+        "new": "33"
+      },
+      {
+        "destination": "figure.4.4",
+        "old": "35",
+        "new": "34"
+      },
+      {
+        "destination": "figure.4.5",
+        "old": "36",
+        "new": "35"
+      },
+      {
+        "destination": "figure.4.6",
+        "old": "37",
+        "new": "36"
+      },
+      {
+        "destination": "figure.4.7",
+        "old": "38",
+        "new": "37"
+      },
+      {
+        "destination": "figure.4.8",
+        "old": "39",
+        "new": "38"
+      },
+      {
+        "destination": "figure.4.9",
+        "old": "40",
+        "new": "39"
+      },
+      {
+        "destination": "figure.5.1",
+        "old": "67",
+        "new": "64"
+      },
+      {
+        "destination": "figure.5.10",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "figure.5.11",
+        "old": "94",
+        "new": "92"
+      },
+      {
+        "destination": "figure.5.12",
+        "old": "95",
+        "new": "93"
+      },
+      {
+        "destination": "figure.5.13",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "figure.5.14",
+        "old": "97",
+        "new": "95"
+      },
+      {
+        "destination": "figure.5.15",
+        "old": "98",
+        "new": "96"
+      },
+      {
+        "destination": "figure.5.16",
+        "old": "99",
+        "new": "97"
+      },
+      {
+        "destination": "figure.5.17",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "figure.5.18",
+        "old": "101",
+        "new": "99"
+      },
+      {
+        "destination": "figure.5.19",
+        "old": "102",
+        "new": "100"
+      },
+      {
+        "destination": "figure.5.2",
+        "old": "85",
+        "new": "83"
+      },
+      {
+        "destination": "figure.5.20",
+        "old": "103",
+        "new": "101"
+      },
+      {
+        "destination": "figure.5.21",
+        "old": "104",
+        "new": "102"
+      },
+      {
+        "destination": "figure.5.22",
+        "old": "105",
+        "new": "103"
+      },
+      {
+        "destination": "figure.5.23",
+        "old": "106",
+        "new": "104"
+      },
+      {
+        "destination": "figure.5.24",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "figure.5.25",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "figure.5.26",
+        "old": "109",
+        "new": "107"
+      },
+      {
+        "destination": "figure.5.3",
+        "old": "86",
+        "new": "84"
+      },
+      {
+        "destination": "figure.5.4",
+        "old": "87",
+        "new": "85"
+      },
+      {
+        "destination": "figure.5.5",
+        "old": "89",
+        "new": "87"
+      },
+      {
+        "destination": "figure.5.6",
+        "old": "90",
+        "new": "88"
+      },
+      {
+        "destination": "figure.5.7",
+        "old": "91",
+        "new": "89"
+      },
+      {
+        "destination": "figure.5.8",
+        "old": "92",
+        "new": "90"
+      },
+      {
+        "destination": "figure.5.9",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "section.2.6",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "section.3.1",
+        "old": "17",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.2",
+        "old": "17",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.4",
+        "old": "20",
+        "new": "19"
+      },
+      {
+        "destination": "section.4.1",
+        "old": "22",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.2",
+        "old": "22",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.3",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.4",
+        "old": "24",
+        "new": "22"
+      },
+      {
+        "destination": "section.4.5",
+        "old": "29",
+        "new": "27"
+      },
+      {
+        "destination": "section.4.6",
+        "old": "30",
+        "new": "28"
+      },
+      {
+        "destination": "section.4.7",
+        "old": "45",
+        "new": "44"
+      },
+      {
+        "destination": "section.4.8",
+        "old": "61",
+        "new": "59"
+      },
+      {
+        "destination": "section.5.1",
+        "old": "63",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.2",
+        "old": "63",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.3",
+        "old": "63",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.4",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "section.6.1",
+        "old": "111",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.10",
+        "old": "118",
+        "new": "114"
+      },
+      {
+        "destination": "section.6.11",
+        "old": "118",
+        "new": "115"
+      },
+      {
+        "destination": "section.6.12",
+        "old": "119",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.13",
+        "old": "120",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.14",
+        "old": "121",
+        "new": "117"
+      },
+      {
+        "destination": "section.6.2",
+        "old": "111",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.3",
+        "old": "111",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.4",
+        "old": "113",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.5",
+        "old": "114",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.6",
+        "old": "115",
+        "new": "112"
+      },
+      {
+        "destination": "section.6.7",
+        "old": "116",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.8",
+        "old": "117",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.9",
+        "old": "117",
+        "new": "114"
+      },
+      {
+        "destination": "section.7.1",
+        "old": "123",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.2",
+        "old": "123",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.3",
+        "old": "123",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.4",
+        "old": "124",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.5",
+        "old": "125",
+        "new": "120"
+      },
+      {
+        "destination": "section.8.1",
+        "old": "127",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.2",
+        "old": "127",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.3",
+        "old": "127",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.4",
+        "old": "127",
+        "new": "122"
+      },
+      {
+        "destination": "subsection.2.4.3",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.6.1",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "subsection.2.6.4",
+        "old": "14",
+        "new": "13"
+      },
+      {
+        "destination": "subsection.2.6.6",
+        "old": "15",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.3.2.1",
+        "old": "17",
+        "new": "16"
+      },
+      {
+        "destination": "subsection.3.2.2",
+        "old": "18",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.3.2.3",
+        "old": "18",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.5.3.1",
+        "old": "63",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.2",
+        "old": "64",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.3",
+        "old": "68",
+        "new": "65"
+      },
+      {
+        "destination": "subsection.5.3.4",
+        "old": null,
+        "new": "66"
+      },
+      {
+        "destination": "subsection.5.4.1",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "subsection.5.4.2",
+        "old": "84",
+        "new": "86"
+      },
+      {
+        "destination": "subsection.5.4.3",
+        "old": "88",
+        "new": "94"
+      },
+      {
+        "destination": "subsection.5.4.4",
+        "old": "88",
+        "new": "98"
+      },
+      {
+        "destination": "subsection.5.4.5",
+        "old": "88",
+        "new": "105"
+      },
+      {
+        "destination": "subsection.5.4.6",
+        "old": "88",
+        "new": "106"
+      },
+      {
+        "destination": "table.3.1",
+        "old": "19",
+        "new": "18"
+      },
+      {
+        "destination": "table.4.1",
+        "old": "23",
+        "new": "22"
+      },
+      {
+        "destination": "table.5.1",
+        "old": "68",
+        "new": "65"
+      },
+      {
+        "destination": "table.5.10",
+        "old": "72",
+        "new": "69"
+      },
+      {
+        "destination": "table.5.11",
+        "old": "72",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.12",
+        "old": "73",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.13",
+        "old": "73",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.14",
+        "old": "74",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.15",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.16",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.17",
+        "old": "75",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.18",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.19",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.2",
+        "old": "68",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.20",
+        "old": "76",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.21",
+        "old": "76",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.22",
+        "old": "77",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.23",
+        "old": "78",
+        "new": "75"
+      },
+      {
+        "destination": "table.5.24",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.25",
+        "old": "79",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.26",
+        "old": "80",
+        "new": "77"
+      },
+      {
+        "destination": "table.5.27",
+        "old": "80",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.28",
+        "old": "81",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.29",
+        "old": "82",
+        "new": "79"
+      },
+      {
+        "destination": "table.5.3",
+        "old": "68",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.30",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.31",
+        "old": "83",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.32",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.33",
+        "old": "84",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.34",
+        "old": null,
+        "new": "82"
+      },
+      {
+        "destination": "table.5.4",
+        "old": "69",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.5",
+        "old": "69",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.6",
+        "old": "70",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.7",
+        "old": "70",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.8",
+        "old": "71",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.9",
+        "old": "71",
+        "new": "69"
+      },
+      {
+        "destination": "table.6.1",
+        "old": "112",
+        "new": "110"
+      }
+    ],
+    "removed_destinations": []
+  },
+  "thesischeck": {
+    "changed_destinations": [
+      {
+        "destination": "chapter.2",
+        "old": "8",
+        "new": "7"
+      },
+      {
+        "destination": "chapter.3",
+        "old": "17",
+        "new": "15"
+      },
+      {
+        "destination": "chapter.4",
+        "old": "22",
+        "new": "20"
+      },
+      {
+        "destination": "chapter.5",
+        "old": "63",
+        "new": "60"
+      },
+      {
+        "destination": "chapter.6",
+        "old": "110",
+        "new": "108"
+      },
+      {
+        "destination": "chapter.7",
+        "old": "123",
+        "new": "118"
+      },
+      {
+        "destination": "chapter.8",
+        "old": "131",
+        "new": "121"
+      },
+      {
+        "destination": "figure.4.1",
+        "old": "33",
+        "new": "31"
+      },
+      {
+        "destination": "figure.4.10",
+        "old": "42",
+        "new": "40"
+      },
+      {
+        "destination": "figure.4.11",
+        "old": "43",
+        "new": "41"
+      },
+      {
+        "destination": "figure.4.12",
+        "old": "44",
+        "new": "42"
+      },
+      {
+        "destination": "figure.4.13",
+        "old": "45",
+        "new": "43"
+      },
+      {
+        "destination": "figure.4.14",
+        "old": "47",
+        "new": "46"
+      },
+      {
+        "destination": "figure.4.15",
+        "old": "48",
+        "new": "47"
+      },
+      {
+        "destination": "figure.4.16",
+        "old": "49",
+        "new": "48"
+      },
+      {
+        "destination": "figure.4.17",
+        "old": "50",
+        "new": "49"
+      },
+      {
+        "destination": "figure.4.18",
+        "old": "51",
+        "new": "50"
+      },
+      {
+        "destination": "figure.4.19",
+        "old": "53",
+        "new": "51"
+      },
+      {
+        "destination": "figure.4.2",
+        "old": "34",
+        "new": "32"
+      },
+      {
+        "destination": "figure.4.20",
+        "old": "54",
+        "new": "52"
+      },
+      {
+        "destination": "figure.4.21",
+        "old": "55",
+        "new": "53"
+      },
+      {
+        "destination": "figure.4.22",
+        "old": "56",
+        "new": "54"
+      },
+      {
+        "destination": "figure.4.23",
+        "old": "57",
+        "new": "55"
+      },
+      {
+        "destination": "figure.4.24",
+        "old": "58",
+        "new": "56"
+      },
+      {
+        "destination": "figure.4.25",
+        "old": "59",
+        "new": "57"
+      },
+      {
+        "destination": "figure.4.26",
+        "old": "61",
+        "new": "58"
+      },
+      {
+        "destination": "figure.4.3",
+        "old": "35",
+        "new": "33"
+      },
+      {
+        "destination": "figure.4.4",
+        "old": "36",
+        "new": "34"
+      },
+      {
+        "destination": "figure.4.5",
+        "old": "37",
+        "new": "35"
+      },
+      {
+        "destination": "figure.4.6",
+        "old": "38",
+        "new": "36"
+      },
+      {
+        "destination": "figure.4.7",
+        "old": "39",
+        "new": "37"
+      },
+      {
+        "destination": "figure.4.8",
+        "old": "40",
+        "new": "38"
+      },
+      {
+        "destination": "figure.4.9",
+        "old": "41",
+        "new": "39"
+      },
+      {
+        "destination": "figure.5.1",
+        "old": "66",
+        "new": "64"
+      },
+      {
+        "destination": "figure.5.10",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "figure.5.11",
+        "old": "94",
+        "new": "92"
+      },
+      {
+        "destination": "figure.5.12",
+        "old": "95",
+        "new": "93"
+      },
+      {
+        "destination": "figure.5.13",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "figure.5.14",
+        "old": "97",
+        "new": "95"
+      },
+      {
+        "destination": "figure.5.15",
+        "old": "98",
+        "new": "96"
+      },
+      {
+        "destination": "figure.5.16",
+        "old": "99",
+        "new": "97"
+      },
+      {
+        "destination": "figure.5.17",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "figure.5.18",
+        "old": "101",
+        "new": "99"
+      },
+      {
+        "destination": "figure.5.19",
+        "old": "102",
+        "new": "100"
+      },
+      {
+        "destination": "figure.5.2",
+        "old": "85",
+        "new": "83"
+      },
+      {
+        "destination": "figure.5.20",
+        "old": "103",
+        "new": "101"
+      },
+      {
+        "destination": "figure.5.21",
+        "old": "104",
+        "new": "102"
+      },
+      {
+        "destination": "figure.5.22",
+        "old": "105",
+        "new": "103"
+      },
+      {
+        "destination": "figure.5.23",
+        "old": "106",
+        "new": "104"
+      },
+      {
+        "destination": "figure.5.24",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "figure.5.25",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "figure.5.26",
+        "old": "109",
+        "new": "107"
+      },
+      {
+        "destination": "figure.5.3",
+        "old": "86",
+        "new": "84"
+      },
+      {
+        "destination": "figure.5.4",
+        "old": "87",
+        "new": "85"
+      },
+      {
+        "destination": "figure.5.5",
+        "old": "89",
+        "new": "87"
+      },
+      {
+        "destination": "figure.5.6",
+        "old": "90",
+        "new": "88"
+      },
+      {
+        "destination": "figure.5.7",
+        "old": "91",
+        "new": "89"
+      },
+      {
+        "destination": "figure.5.8",
+        "old": "92",
+        "new": "90"
+      },
+      {
+        "destination": "figure.5.9",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "section.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.2",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.3",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "section.2.4",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "section.2.5",
+        "old": "12",
+        "new": "11"
+      },
+      {
+        "destination": "section.2.6",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "section.3.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.2",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.3",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "section.3.4",
+        "old": "21",
+        "new": "19"
+      },
+      {
+        "destination": "section.4.1",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.2",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.3",
+        "old": "24",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.4",
+        "old": "25",
+        "new": "22"
+      },
+      {
+        "destination": "section.4.5",
+        "old": "30",
+        "new": "27"
+      },
+      {
+        "destination": "section.4.6",
+        "old": "31",
+        "new": "28"
+      },
+      {
+        "destination": "section.4.7",
+        "old": "46",
+        "new": "44"
+      },
+      {
+        "destination": "section.4.8",
+        "old": "62",
+        "new": "59"
+      },
+      {
+        "destination": "section.5.1",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.2",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.3",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.4",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "section.6.1",
+        "old": "111",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.10",
+        "old": "119",
+        "new": "114"
+      },
+      {
+        "destination": "section.6.11",
+        "old": "119",
+        "new": "115"
+      },
+      {
+        "destination": "section.6.12",
+        "old": "120",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.13",
+        "old": "120",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.14",
+        "old": "121",
+        "new": "117"
+      },
+      {
+        "destination": "section.6.2",
+        "old": "111",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.3",
+        "old": "113",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.4",
+        "old": "114",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.5",
+        "old": "115",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.6",
+        "old": "116",
+        "new": "112"
+      },
+      {
+        "destination": "section.6.7",
+        "old": "117",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.8",
+        "old": "117",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.9",
+        "old": "118",
+        "new": "114"
+      },
+      {
+        "destination": "section.7.1",
+        "old": "124",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.2",
+        "old": "124",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.3",
+        "old": "124",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.4",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.5",
+        "old": "126",
+        "new": "120"
+      },
+      {
+        "destination": "section.8.1",
+        "old": "132",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.2",
+        "old": "132",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.3",
+        "old": "132",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.4",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "subsection.2.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "subsection.2.2.2",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "subsection.2.4.1",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.2",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.3",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.6.1",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "subsection.2.6.4",
+        "old": "15",
+        "new": "13"
+      },
+      {
+        "destination": "subsection.2.6.5",
+        "old": "15",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.2.6.6",
+        "old": "16",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.3.2.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "subsection.3.2.2",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.3.2.3",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.5.3.1",
+        "old": "64",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.2",
+        "old": "65",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.3",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "subsection.5.3.4",
+        "old": "83",
+        "new": "66"
+      },
+      {
+        "destination": "subsection.5.4.1",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "subsection.5.4.2",
+        "old": "88",
+        "new": "86"
+      },
+      {
+        "destination": "subsection.5.4.3",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "subsection.5.4.4",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "subsection.5.4.5",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "subsection.5.4.6",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "table.2.1",
+        "old": "14",
+        "new": "11"
+      },
+      {
+        "destination": "table.3.1",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "table.4.1",
+        "old": "24",
+        "new": "22"
+      },
+      {
+        "destination": "table.5.1",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "table.5.10",
+        "old": "71",
+        "new": "69"
+      },
+      {
+        "destination": "table.5.11",
+        "old": "71",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.12",
+        "old": "72",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.13",
+        "old": "72",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.14",
+        "old": "73",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.15",
+        "old": "73",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.16",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.17",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.18",
+        "old": "74",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.19",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.2",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.20",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.21",
+        "old": "75",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.22",
+        "old": "76",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.23",
+        "old": "77",
+        "new": "75"
+      },
+      {
+        "destination": "table.5.24",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.25",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.26",
+        "old": "79",
+        "new": "77"
+      },
+      {
+        "destination": "table.5.27",
+        "old": "79",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.28",
+        "old": "80",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.29",
+        "old": "81",
+        "new": "79"
+      },
+      {
+        "destination": "table.5.3",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.30",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.31",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.32",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.33",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.34",
+        "old": null,
+        "new": "82"
+      },
+      {
+        "destination": "table.5.4",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.5",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.6",
+        "old": "69",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.7",
+        "old": "69",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.8",
+        "old": "70",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.9",
+        "old": "70",
+        "new": "69"
+      },
+      {
+        "destination": "table.6.1",
+        "old": "112",
+        "new": "110"
+      }
+    ],
+    "removed_destinations": [
+      "section.1.7",
+      "section.7.10",
+      "section.7.6",
+      "section.7.7",
+      "section.7.8",
+      "section.7.9"
+    ]
+  },
+  "thesisfinalcheck": {
+    "changed_destinations": [
+      {
+        "destination": "chapter.2",
+        "old": "8",
+        "new": "7"
+      },
+      {
+        "destination": "chapter.3",
+        "old": "17",
+        "new": "15"
+      },
+      {
+        "destination": "chapter.4",
+        "old": "22",
+        "new": "20"
+      },
+      {
+        "destination": "chapter.5",
+        "old": "63",
+        "new": "60"
+      },
+      {
+        "destination": "chapter.6",
+        "old": "110",
+        "new": "108"
+      },
+      {
+        "destination": "chapter.7",
+        "old": "124",
+        "new": "118"
+      },
+      {
+        "destination": "chapter.8",
+        "old": "132",
+        "new": "121"
+      },
+      {
+        "destination": "figure.4.1",
+        "old": "33",
+        "new": "31"
+      },
+      {
+        "destination": "figure.4.10",
+        "old": "42",
+        "new": "40"
+      },
+      {
+        "destination": "figure.4.11",
+        "old": "43",
+        "new": "41"
+      },
+      {
+        "destination": "figure.4.12",
+        "old": "44",
+        "new": "42"
+      },
+      {
+        "destination": "figure.4.13",
+        "old": "45",
+        "new": "43"
+      },
+      {
+        "destination": "figure.4.14",
+        "old": "47",
+        "new": "46"
+      },
+      {
+        "destination": "figure.4.15",
+        "old": "48",
+        "new": "47"
+      },
+      {
+        "destination": "figure.4.16",
+        "old": "49",
+        "new": "48"
+      },
+      {
+        "destination": "figure.4.17",
+        "old": "50",
+        "new": "49"
+      },
+      {
+        "destination": "figure.4.18",
+        "old": "51",
+        "new": "50"
+      },
+      {
+        "destination": "figure.4.19",
+        "old": "53",
+        "new": "51"
+      },
+      {
+        "destination": "figure.4.2",
+        "old": "34",
+        "new": "32"
+      },
+      {
+        "destination": "figure.4.20",
+        "old": "54",
+        "new": "52"
+      },
+      {
+        "destination": "figure.4.21",
+        "old": "55",
+        "new": "53"
+      },
+      {
+        "destination": "figure.4.22",
+        "old": "56",
+        "new": "54"
+      },
+      {
+        "destination": "figure.4.23",
+        "old": "57",
+        "new": "55"
+      },
+      {
+        "destination": "figure.4.24",
+        "old": "58",
+        "new": "56"
+      },
+      {
+        "destination": "figure.4.25",
+        "old": "59",
+        "new": "57"
+      },
+      {
+        "destination": "figure.4.26",
+        "old": "61",
+        "new": "58"
+      },
+      {
+        "destination": "figure.4.3",
+        "old": "35",
+        "new": "33"
+      },
+      {
+        "destination": "figure.4.4",
+        "old": "36",
+        "new": "34"
+      },
+      {
+        "destination": "figure.4.5",
+        "old": "37",
+        "new": "35"
+      },
+      {
+        "destination": "figure.4.6",
+        "old": "38",
+        "new": "36"
+      },
+      {
+        "destination": "figure.4.7",
+        "old": "39",
+        "new": "37"
+      },
+      {
+        "destination": "figure.4.8",
+        "old": "40",
+        "new": "38"
+      },
+      {
+        "destination": "figure.4.9",
+        "old": "41",
+        "new": "39"
+      },
+      {
+        "destination": "figure.5.1",
+        "old": "66",
+        "new": "64"
+      },
+      {
+        "destination": "figure.5.10",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "figure.5.11",
+        "old": "94",
+        "new": "92"
+      },
+      {
+        "destination": "figure.5.12",
+        "old": "95",
+        "new": "93"
+      },
+      {
+        "destination": "figure.5.13",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "figure.5.14",
+        "old": "97",
+        "new": "95"
+      },
+      {
+        "destination": "figure.5.15",
+        "old": "98",
+        "new": "96"
+      },
+      {
+        "destination": "figure.5.16",
+        "old": "99",
+        "new": "97"
+      },
+      {
+        "destination": "figure.5.17",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "figure.5.18",
+        "old": "101",
+        "new": "99"
+      },
+      {
+        "destination": "figure.5.19",
+        "old": "102",
+        "new": "100"
+      },
+      {
+        "destination": "figure.5.2",
+        "old": "85",
+        "new": "83"
+      },
+      {
+        "destination": "figure.5.20",
+        "old": "103",
+        "new": "101"
+      },
+      {
+        "destination": "figure.5.21",
+        "old": "104",
+        "new": "102"
+      },
+      {
+        "destination": "figure.5.22",
+        "old": "105",
+        "new": "103"
+      },
+      {
+        "destination": "figure.5.23",
+        "old": "106",
+        "new": "104"
+      },
+      {
+        "destination": "figure.5.24",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "figure.5.25",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "figure.5.26",
+        "old": "109",
+        "new": "107"
+      },
+      {
+        "destination": "figure.5.3",
+        "old": "86",
+        "new": "84"
+      },
+      {
+        "destination": "figure.5.4",
+        "old": "87",
+        "new": "85"
+      },
+      {
+        "destination": "figure.5.5",
+        "old": "89",
+        "new": "87"
+      },
+      {
+        "destination": "figure.5.6",
+        "old": "90",
+        "new": "88"
+      },
+      {
+        "destination": "figure.5.7",
+        "old": "91",
+        "new": "89"
+      },
+      {
+        "destination": "figure.5.8",
+        "old": "92",
+        "new": "90"
+      },
+      {
+        "destination": "figure.5.9",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "section.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.2",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.3",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "section.2.4",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "section.2.5",
+        "old": "12",
+        "new": "11"
+      },
+      {
+        "destination": "section.2.6",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "section.3.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.2",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.3",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "section.3.4",
+        "old": "21",
+        "new": "19"
+      },
+      {
+        "destination": "section.4.1",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.2",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.3",
+        "old": "24",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.4",
+        "old": "25",
+        "new": "22"
+      },
+      {
+        "destination": "section.4.5",
+        "old": "30",
+        "new": "27"
+      },
+      {
+        "destination": "section.4.6",
+        "old": "31",
+        "new": "28"
+      },
+      {
+        "destination": "section.4.7",
+        "old": "46",
+        "new": "44"
+      },
+      {
+        "destination": "section.4.8",
+        "old": "62",
+        "new": "59"
+      },
+      {
+        "destination": "section.5.1",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.2",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.3",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.4",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "section.6.1",
+        "old": "112",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.10",
+        "old": "120",
+        "new": "114"
+      },
+      {
+        "destination": "section.6.11",
+        "old": "120",
+        "new": "115"
+      },
+      {
+        "destination": "section.6.12",
+        "old": "121",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.13",
+        "old": "121",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.14",
+        "old": "122",
+        "new": "117"
+      },
+      {
+        "destination": "section.6.2",
+        "old": "112",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.3",
+        "old": "114",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.4",
+        "old": "115",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.5",
+        "old": "116",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.6",
+        "old": "117",
+        "new": "112"
+      },
+      {
+        "destination": "section.6.7",
+        "old": "118",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.8",
+        "old": "118",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.9",
+        "old": "119",
+        "new": "114"
+      },
+      {
+        "destination": "section.7.1",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.2",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.3",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.4",
+        "old": "126",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.5",
+        "old": "127",
+        "new": "120"
+      },
+      {
+        "destination": "section.8.1",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.2",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.3",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.4",
+        "old": "134",
+        "new": "122"
+      },
+      {
+        "destination": "subsection.2.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "subsection.2.2.2",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "subsection.2.4.1",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.2",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.3",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.6.1",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "subsection.2.6.4",
+        "old": "15",
+        "new": "13"
+      },
+      {
+        "destination": "subsection.2.6.5",
+        "old": "15",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.2.6.6",
+        "old": "16",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.3.2.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "subsection.3.2.2",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.3.2.3",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.5.3.1",
+        "old": "64",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.2",
+        "old": "65",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.3",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "subsection.5.3.4",
+        "old": "83",
+        "new": "66"
+      },
+      {
+        "destination": "subsection.5.4.1",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "subsection.5.4.2",
+        "old": "88",
+        "new": "86"
+      },
+      {
+        "destination": "subsection.5.4.3",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "subsection.5.4.4",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "subsection.5.4.5",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "subsection.5.4.6",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "table.2.1",
+        "old": "14",
+        "new": "11"
+      },
+      {
+        "destination": "table.3.1",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "table.4.1",
+        "old": "24",
+        "new": "22"
+      },
+      {
+        "destination": "table.5.1",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "table.5.10",
+        "old": "71",
+        "new": "69"
+      },
+      {
+        "destination": "table.5.11",
+        "old": "71",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.12",
+        "old": "72",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.13",
+        "old": "72",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.14",
+        "old": "73",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.15",
+        "old": "73",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.16",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.17",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.18",
+        "old": "74",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.19",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.2",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.20",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.21",
+        "old": "75",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.22",
+        "old": "76",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.23",
+        "old": "77",
+        "new": "75"
+      },
+      {
+        "destination": "table.5.24",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.25",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.26",
+        "old": "79",
+        "new": "77"
+      },
+      {
+        "destination": "table.5.27",
+        "old": "79",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.28",
+        "old": "80",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.29",
+        "old": "81",
+        "new": "79"
+      },
+      {
+        "destination": "table.5.3",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.30",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.31",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.32",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.33",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.34",
+        "old": null,
+        "new": "82"
+      },
+      {
+        "destination": "table.5.4",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.5",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.6",
+        "old": "69",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.7",
+        "old": "69",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.8",
+        "old": "70",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.9",
+        "old": "70",
+        "new": "69"
+      },
+      {
+        "destination": "table.6.1",
+        "old": "113",
+        "new": "110"
+      }
+    ],
+    "removed_destinations": [
+      "section.1.7",
+      "section.7.10",
+      "section.7.6",
+      "section.7.7",
+      "section.7.8",
+      "section.7.9"
+    ]
+  },
+  "thesisfinalcheck2": {
+    "changed_destinations": [
+      {
+        "destination": "chapter.2",
+        "old": "8",
+        "new": "7"
+      },
+      {
+        "destination": "chapter.3",
+        "old": "17",
+        "new": "15"
+      },
+      {
+        "destination": "chapter.4",
+        "old": "22",
+        "new": "20"
+      },
+      {
+        "destination": "chapter.5",
+        "old": "63",
+        "new": "60"
+      },
+      {
+        "destination": "chapter.6",
+        "old": "110",
+        "new": "108"
+      },
+      {
+        "destination": "chapter.7",
+        "old": "124",
+        "new": "118"
+      },
+      {
+        "destination": "chapter.8",
+        "old": "132",
+        "new": "121"
+      },
+      {
+        "destination": "figure.4.1",
+        "old": "33",
+        "new": "31"
+      },
+      {
+        "destination": "figure.4.10",
+        "old": "42",
+        "new": "40"
+      },
+      {
+        "destination": "figure.4.11",
+        "old": "43",
+        "new": "41"
+      },
+      {
+        "destination": "figure.4.12",
+        "old": "44",
+        "new": "42"
+      },
+      {
+        "destination": "figure.4.13",
+        "old": "45",
+        "new": "43"
+      },
+      {
+        "destination": "figure.4.14",
+        "old": "47",
+        "new": "46"
+      },
+      {
+        "destination": "figure.4.15",
+        "old": "48",
+        "new": "47"
+      },
+      {
+        "destination": "figure.4.16",
+        "old": "49",
+        "new": "48"
+      },
+      {
+        "destination": "figure.4.17",
+        "old": "50",
+        "new": "49"
+      },
+      {
+        "destination": "figure.4.18",
+        "old": "51",
+        "new": "50"
+      },
+      {
+        "destination": "figure.4.19",
+        "old": "53",
+        "new": "51"
+      },
+      {
+        "destination": "figure.4.2",
+        "old": "34",
+        "new": "32"
+      },
+      {
+        "destination": "figure.4.20",
+        "old": "54",
+        "new": "52"
+      },
+      {
+        "destination": "figure.4.21",
+        "old": "55",
+        "new": "53"
+      },
+      {
+        "destination": "figure.4.22",
+        "old": "56",
+        "new": "54"
+      },
+      {
+        "destination": "figure.4.23",
+        "old": "57",
+        "new": "55"
+      },
+      {
+        "destination": "figure.4.24",
+        "old": "58",
+        "new": "56"
+      },
+      {
+        "destination": "figure.4.25",
+        "old": "59",
+        "new": "57"
+      },
+      {
+        "destination": "figure.4.26",
+        "old": "61",
+        "new": "58"
+      },
+      {
+        "destination": "figure.4.3",
+        "old": "35",
+        "new": "33"
+      },
+      {
+        "destination": "figure.4.4",
+        "old": "36",
+        "new": "34"
+      },
+      {
+        "destination": "figure.4.5",
+        "old": "37",
+        "new": "35"
+      },
+      {
+        "destination": "figure.4.6",
+        "old": "38",
+        "new": "36"
+      },
+      {
+        "destination": "figure.4.7",
+        "old": "39",
+        "new": "37"
+      },
+      {
+        "destination": "figure.4.8",
+        "old": "40",
+        "new": "38"
+      },
+      {
+        "destination": "figure.4.9",
+        "old": "41",
+        "new": "39"
+      },
+      {
+        "destination": "figure.5.1",
+        "old": "66",
+        "new": "64"
+      },
+      {
+        "destination": "figure.5.10",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "figure.5.11",
+        "old": "94",
+        "new": "92"
+      },
+      {
+        "destination": "figure.5.12",
+        "old": "95",
+        "new": "93"
+      },
+      {
+        "destination": "figure.5.13",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "figure.5.14",
+        "old": "97",
+        "new": "95"
+      },
+      {
+        "destination": "figure.5.15",
+        "old": "98",
+        "new": "96"
+      },
+      {
+        "destination": "figure.5.16",
+        "old": "99",
+        "new": "97"
+      },
+      {
+        "destination": "figure.5.17",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "figure.5.18",
+        "old": "101",
+        "new": "99"
+      },
+      {
+        "destination": "figure.5.19",
+        "old": "102",
+        "new": "100"
+      },
+      {
+        "destination": "figure.5.2",
+        "old": "85",
+        "new": "83"
+      },
+      {
+        "destination": "figure.5.20",
+        "old": "103",
+        "new": "101"
+      },
+      {
+        "destination": "figure.5.21",
+        "old": "104",
+        "new": "102"
+      },
+      {
+        "destination": "figure.5.22",
+        "old": "105",
+        "new": "103"
+      },
+      {
+        "destination": "figure.5.23",
+        "old": "106",
+        "new": "104"
+      },
+      {
+        "destination": "figure.5.24",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "figure.5.25",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "figure.5.26",
+        "old": "109",
+        "new": "107"
+      },
+      {
+        "destination": "figure.5.3",
+        "old": "86",
+        "new": "84"
+      },
+      {
+        "destination": "figure.5.4",
+        "old": "87",
+        "new": "85"
+      },
+      {
+        "destination": "figure.5.5",
+        "old": "89",
+        "new": "87"
+      },
+      {
+        "destination": "figure.5.6",
+        "old": "90",
+        "new": "88"
+      },
+      {
+        "destination": "figure.5.7",
+        "old": "91",
+        "new": "89"
+      },
+      {
+        "destination": "figure.5.8",
+        "old": "92",
+        "new": "90"
+      },
+      {
+        "destination": "figure.5.9",
+        "old": "93",
+        "new": "91"
+      },
+      {
+        "destination": "section.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.2",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "section.2.3",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "section.2.4",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "section.2.5",
+        "old": "12",
+        "new": "11"
+      },
+      {
+        "destination": "section.2.6",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "section.3.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.2",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "section.3.3",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "section.3.4",
+        "old": "21",
+        "new": "19"
+      },
+      {
+        "destination": "section.4.1",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.2",
+        "old": "23",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.3",
+        "old": "24",
+        "new": "21"
+      },
+      {
+        "destination": "section.4.4",
+        "old": "25",
+        "new": "22"
+      },
+      {
+        "destination": "section.4.5",
+        "old": "30",
+        "new": "27"
+      },
+      {
+        "destination": "section.4.6",
+        "old": "31",
+        "new": "28"
+      },
+      {
+        "destination": "section.4.7",
+        "old": "46",
+        "new": "44"
+      },
+      {
+        "destination": "section.4.8",
+        "old": "62",
+        "new": "59"
+      },
+      {
+        "destination": "section.5.1",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.2",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.3",
+        "old": "64",
+        "new": "61"
+      },
+      {
+        "destination": "section.5.4",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "section.6.1",
+        "old": "112",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.10",
+        "old": "120",
+        "new": "114"
+      },
+      {
+        "destination": "section.6.11",
+        "old": "120",
+        "new": "115"
+      },
+      {
+        "destination": "section.6.12",
+        "old": "121",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.13",
+        "old": "121",
+        "new": "116"
+      },
+      {
+        "destination": "section.6.14",
+        "old": "122",
+        "new": "117"
+      },
+      {
+        "destination": "section.6.2",
+        "old": "112",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.3",
+        "old": "114",
+        "new": "109"
+      },
+      {
+        "destination": "section.6.4",
+        "old": "115",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.5",
+        "old": "116",
+        "new": "111"
+      },
+      {
+        "destination": "section.6.6",
+        "old": "117",
+        "new": "112"
+      },
+      {
+        "destination": "section.6.7",
+        "old": "118",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.8",
+        "old": "118",
+        "new": "113"
+      },
+      {
+        "destination": "section.6.9",
+        "old": "119",
+        "new": "114"
+      },
+      {
+        "destination": "section.7.1",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.2",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.3",
+        "old": "125",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.4",
+        "old": "126",
+        "new": "119"
+      },
+      {
+        "destination": "section.7.5",
+        "old": "127",
+        "new": "120"
+      },
+      {
+        "destination": "section.8.1",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.2",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.3",
+        "old": "133",
+        "new": "122"
+      },
+      {
+        "destination": "section.8.4",
+        "old": "134",
+        "new": "122"
+      },
+      {
+        "destination": "subsection.2.2.1",
+        "old": "9",
+        "new": "8"
+      },
+      {
+        "destination": "subsection.2.2.2",
+        "old": "10",
+        "new": "9"
+      },
+      {
+        "destination": "subsection.2.4.1",
+        "old": "11",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.2",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.4.3",
+        "old": "12",
+        "new": "10"
+      },
+      {
+        "destination": "subsection.2.6.1",
+        "old": "13",
+        "new": "12"
+      },
+      {
+        "destination": "subsection.2.6.4",
+        "old": "15",
+        "new": "13"
+      },
+      {
+        "destination": "subsection.2.6.5",
+        "old": "15",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.2.6.6",
+        "old": "16",
+        "new": "14"
+      },
+      {
+        "destination": "subsection.3.2.1",
+        "old": "18",
+        "new": "16"
+      },
+      {
+        "destination": "subsection.3.2.2",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.3.2.3",
+        "old": "19",
+        "new": "17"
+      },
+      {
+        "destination": "subsection.5.3.1",
+        "old": "64",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.2",
+        "old": "65",
+        "new": "62"
+      },
+      {
+        "destination": "subsection.5.3.3",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "subsection.5.3.4",
+        "old": "83",
+        "new": "66"
+      },
+      {
+        "destination": "subsection.5.4.1",
+        "old": "84",
+        "new": "82"
+      },
+      {
+        "destination": "subsection.5.4.2",
+        "old": "88",
+        "new": "86"
+      },
+      {
+        "destination": "subsection.5.4.3",
+        "old": "96",
+        "new": "94"
+      },
+      {
+        "destination": "subsection.5.4.4",
+        "old": "100",
+        "new": "98"
+      },
+      {
+        "destination": "subsection.5.4.5",
+        "old": "107",
+        "new": "105"
+      },
+      {
+        "destination": "subsection.5.4.6",
+        "old": "108",
+        "new": "106"
+      },
+      {
+        "destination": "table.2.1",
+        "old": "14",
+        "new": "11"
+      },
+      {
+        "destination": "table.3.1",
+        "old": "20",
+        "new": "18"
+      },
+      {
+        "destination": "table.4.1",
+        "old": "24",
+        "new": "22"
+      },
+      {
+        "destination": "table.5.1",
+        "old": "67",
+        "new": "65"
+      },
+      {
+        "destination": "table.5.10",
+        "old": "71",
+        "new": "69"
+      },
+      {
+        "destination": "table.5.11",
+        "old": "71",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.12",
+        "old": "72",
+        "new": "70"
+      },
+      {
+        "destination": "table.5.13",
+        "old": "72",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.14",
+        "old": "73",
+        "new": "71"
+      },
+      {
+        "destination": "table.5.15",
+        "old": "73",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.16",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.17",
+        "old": "74",
+        "new": "72"
+      },
+      {
+        "destination": "table.5.18",
+        "old": "74",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.19",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.2",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.20",
+        "old": "75",
+        "new": "73"
+      },
+      {
+        "destination": "table.5.21",
+        "old": "75",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.22",
+        "old": "76",
+        "new": "74"
+      },
+      {
+        "destination": "table.5.23",
+        "old": "77",
+        "new": "75"
+      },
+      {
+        "destination": "table.5.24",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.25",
+        "old": "78",
+        "new": "76"
+      },
+      {
+        "destination": "table.5.26",
+        "old": "79",
+        "new": "77"
+      },
+      {
+        "destination": "table.5.27",
+        "old": "79",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.28",
+        "old": "80",
+        "new": "78"
+      },
+      {
+        "destination": "table.5.29",
+        "old": "81",
+        "new": "79"
+      },
+      {
+        "destination": "table.5.3",
+        "old": "67",
+        "new": "66"
+      },
+      {
+        "destination": "table.5.30",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.31",
+        "old": "82",
+        "new": "80"
+      },
+      {
+        "destination": "table.5.32",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.33",
+        "old": "83",
+        "new": "81"
+      },
+      {
+        "destination": "table.5.34",
+        "old": null,
+        "new": "82"
+      },
+      {
+        "destination": "table.5.4",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.5",
+        "old": "68",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.6",
+        "old": "69",
+        "new": "67"
+      },
+      {
+        "destination": "table.5.7",
+        "old": "69",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.8",
+        "old": "70",
+        "new": "68"
+      },
+      {
+        "destination": "table.5.9",
+        "old": "70",
+        "new": "69"
+      },
+      {
+        "destination": "table.6.1",
+        "old": "113",
+        "new": "110"
+      }
+    ],
+    "removed_destinations": [
+      "section.1.7",
+      "section.7.10",
+      "section.7.6",
+      "section.7.7",
+      "section.7.8",
+      "section.7.9"
+    ]
+  }
+}

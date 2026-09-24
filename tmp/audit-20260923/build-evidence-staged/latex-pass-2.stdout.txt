@@ -1,0 +1,890 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def)))
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-co
+mmon.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-la
+tex.def)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.cod
+e.tex
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty
+
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty
+
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.c
+ode.tex
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.co
+de.tex
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslib
+raryfiltered.code.tex))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg)
+
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-p
+dftex.def
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-c
+ommon-pdf.def)))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysso
+ftpath.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyspr
+otocol.code.tex))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.c
+ode.tex
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.te
+x
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.cod
+e.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.c
+ode.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.basic.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.trigonometric.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.random.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.comparison.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.base.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.round.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.misc.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunction
+s.integerarithmetics.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.cod
+e.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.co
+de.tex))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex
+)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepo
+ints.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepa
+thconstruct.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepa
+thusage.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoresc
+opes.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregr
+aphicstate.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretr
+ansformations.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequ
+ick.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreob
+jects.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepa
+thprocessing.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorear
+rows.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoresh
+ade.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreim
+age.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreex
+ternal.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorela
+yers.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretr
+ansparency.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepa
+tterns.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerd
+f.code.tex)))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulesha
+pes.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplo
+t.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-
+version-0-65.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-
+version-1-18.sty))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.co
+de.tex))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.te
+x))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.cod
+e.tex))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\t
+ikz.code.tex
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrary
+plothandlers.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulemat
+rix.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/l
+ibraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekey
+s.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.st
+y
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty)
+)) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitles
+tring.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty)))
+ (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.st
+y))) (C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilech
+eck.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecoun
+ter.sty)))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrary
+arrows.meta.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/l
+ibraries\tikzlibrarypositioning.code.tex)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/l
+ibraries\tikzlibraryshapes.geometric.code.tex
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgf
+libraryshapes.geometric.code.tex))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex
+.def) (main.aux (frontmatter/abstract.aux) (frontmatter/acknowledgements.aux)
+(chapters/chapter1_strategic_vision.aux)
+(chapters/chapter2_literature_review.aux) (chapters/chapter3_methodology.aux)
+(chapters/chapter4_system_analysis.aux) (chapters/chapter5_system_design.aux)
+(chapters/chapter7_testing_evaluation.aux) (chapters/chapter8_future_work.aux)
+(backmatter/conclusion.aux))
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base
+.sty
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg)
+) (main.out) (main.out) (frontmatter/cover_page.tex [1{C:/Users/HP/AppData/Loca
+l/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/HP/AppData/Local/Programs/MiKTeX
+/fonts/enc/dvips/lm/lm-ec.enc} <./figures/frontmatter/college_logo.jpg>])
+(frontmatter/abstract.tex
+Underfull \hbox (badness 1496) in paragraph at lines 12--22
+[]\T1/lmr/m/n/12 EduVerse pro-vides a com-pre-hen-sive suite of learn-ing man-a
+ge-ment
+
+Underfull \hbox (badness 1824) in paragraph at lines 12--22
+\T1/lmr/m/n/12 via live ses-sions and white-boards, an AI agent, and an in-te-g
+rated
+
+Underfull \hbox (badness 1297) in paragraph at lines 12--22
+\T1/lmr/m/n/12 browser-based IDE. The web plat-form is built us-ing Next.js, Re
+-act,
+
+Underfull \hbox (badness 4518) in paragraph at lines 12--22
+\T1/lmr/m/n/12 work-flows, in-clud-ing class overviews, chat, no-ti-fi-ca-tions
+, ma-te-ri-als,
+) [1] (frontmatter/acknowledgements.tex) [2] (main.toc
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd)
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd) [3]
+Underfull \hbox (badness 1067) in paragraph at lines 32--32
+ [][] [][]\T1/lmr/m/n/12 Integrated Cod-ing En-vi-ron-ments for Pro-gram-ming 
+
+Underfull \hbox (badness 1852) in paragraph at lines 33--33
+ [][] [][]\T1/lmr/m/n/12 Extensible Ed-u-ca-tional Ecosys-tems and Gov-erned 
+[4] [5]) [6] (main.lof [7]
+Underfull \hbox (badness 5417) in paragraph at lines 36--36
+ [][] [][]\T1/lmr/m/n/12 Organization cre-ation in-ter-face show-ing template-b
+ased 
+
+Underfull \hbox (badness 2486) in paragraph at lines 41--41
+ [][] [][]\T1/lmr/m/n/12 Public join-link man-age-ment in-ter-face show-ing joi
+n-link 
+
+Underfull \hbox (badness 5711) in paragraph at lines 48--48
+ [][] [][]\T1/lmr/m/n/12 Assignment man-age-ment in-ter-face show-ing teacher-s
+ide 
+
+Underfull \hbox (badness 2556) in paragraph at lines 50--50
+ [][] [][]\T1/lmr/m/n/12 Exam man-age-ment in-ter-face show-ing teacher-side ex
+am 
+[8]
+Underfull \hbox (badness 4779) in paragraph at lines 52--52
+ [][] [][]\T1/lmr/m/n/12 Student exam-taking in-ter-face show-ing timed ques-ti
+on 
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+ [][] [][]\T1/lmr/m/n/12 AI learn-ing sup-port in-ter-face show-ing con-ver-sa-
+tional 
+) [9] (main.lot
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+ [][] [][]\T1/lmr/m/n/12 Schema for Ta-ble: $\T1/lmtt/m/n/12 organization _ tea
+cher _ class _ 
+[10]) [11] (chapters/chapter1_strategic_vision.tex
+Chapter 1.
+[1]
+Underfull \hbox (badness 1424) in paragraph at lines 24--33
+\T1/lmr/m/n/12 Many ed-u-ca-tional work-flows are cur-rently dis-tributed acros
+s sep-a-rate
+
+Underfull \hbox (badness 1609) in paragraph at lines 24--33
+\T1/lmr/m/n/12 sys-tems. One plat-form may be used for class com-mu-ni-ca-tion 
+and
+
+Underfull \hbox (badness 6396) in paragraph at lines 34--40
+[]\T1/lmr/m/n/12 This frag-men-ta-tion be-comes more se-ri-ous in multi-organiz
+ation
+
+Underfull \hbox (badness 1087) in paragraph at lines 34--40
+\T1/lmr/m/n/12 ed-u-ca-tional set-tings. A plat-form must not only ex-pose fea-
+tures; it
+[2]
+Underfull \hbox (badness 1448) in paragraph at lines 52--56
+\T1/lmr/m/n/12 EduVerse was mo-ti-vated by the need to de-sign aca-demic con-ti
+-nu-ity
+
+Underfull \hbox (badness 2426) in paragraph at lines 52--56
+\T1/lmr/m/n/12 and in-sti-tu-tional con-trol to-gether. The project brings gov-
+er-nance,
+
+Underfull \hbox (badness 1377) in paragraph at lines 52--56
+\T1/lmr/m/n/12 com-mu-ni-ca-tion, as-sess-ment, and learn-ing sup-port into one
+ adapt-able
+(C:\Users\HP\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd)
+Underfull \hbox (badness 2205) in paragraph at lines 68--71
+[]\T1/lmr/m/n/12 To unify classes, ma-te-ri-als, chat, as-sign-ments, ex-ams, r
+e-sults,
+[3{C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \hbox (badness 1776) in paragraph at lines 96--101
+\T1/lmr/m/n/12 in which ed-u-ca-tional re-sources and learn-ing op-por-tu-ni-ti
+es can reach
+[4]
+Underfull \hbox (badness 1424) in paragraph at lines 121--125
+\T1/lmr/m/n/12 is not a gen-eral so-cial plat-form in which all users share the
+ same
+
+Underfull \hbox (badness 4543) in paragraph at lines 121--125
+\T1/lmr/m/n/12 man-age-ment au-thor-ity, as-sess-ment con-trol, and fea-ture ac
+-cess are
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--134
+\T1/lmr/m/n/12 Within its im-ple-mented scope, Edu-Verse in-cludes au-then-ti-c
+a-tion,
+
+Underfull \hbox (badness 4686) in paragraph at lines 128--134
+\T1/lmr/m/n/12 or-ga-ni-za-tion ac-cess and mem-ber-ship, class man-age-ment, m
+a-te-ri-als,
+
+Underfull \hbox (badness 1383) in paragraph at lines 141--147
+\T1/lmr/m/n/12 a con-fig-urable aca-demic workspace that can be adapted to dif-
+fer-ent
+[5]
+Underfull \hbox (badness 1057) in paragraph at lines 154--162
+\T1/lmr/m/n/12 de-vel-oped to ex-tend se-lected plat-form fea-tures to mo-bile 
+users. Its
+
+Underfull \hbox (badness 1472) in paragraph at lines 154--162
+\T1/lmr/m/n/12 no-ti-fi-ca-tions, ma-te-ri-als, class chat, or-ga-ni-za-tion sw
+itch-ing, and ba-sic
+) [6] (chapters/chapter2_literature_review.tex
+Chapter 2.
+[7]
+Underfull \hbox (badness 1057) in paragraph at lines 12--18
+\T1/lmr/m/n/12 aca-demic ac-tiv-ity, its the-o-ret-i-cal ba-sis ex-tends across
+ dig-i-tal learn-ing
+
+Underfull \hbox (badness 4832) in paragraph at lines 19--24
+\T1/lmr/m/n/12 ac-tiv-i-ties can re-main co-or-di-nated while sup-port-ing dif-
+fer-ent users,
+
+Underfull \hbox (badness 1648) in paragraph at lines 19--24
+\T1/lmr/m/n/12 in-sti-tu-tional re-quire-ments, and modes of par-tic-i-pa-tion.
+ The re-view
+
+LaTeX Warning: Citation `chugh2023edtech' on page 8 undefined on input line 36.
+
+
+
+LaTeX Warning: Citation `bygstad2022digital' on page 8 undefined on input line 
+36.
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 31--37
+\T1/lmr/m/n/12 Educational man-age-ment has grad-u-ally moved from paper-based 
+and
+
+Underfull \hbox (badness 1642) in paragraph at lines 31--37
+\T1/lmr/m/n/12 face-to-face co-or-di-na-tion to-ward per-sis-tent dig-i-tal sys
+-tems ca-pa-ble of
+
+LaTeX Warning: Citation `chugh2023edtech' on page 8 undefined on input line 41.
+
+
+
+LaTeX Warning: Citation `bygstad2022digital' on page 8 undefined on input line 
+53.
+
+
+LaTeX Warning: Citation `oecd2023outlook' on page 8 undefined on input line 53.
+
+
+[8]
+
+LaTeX Warning: Citation `bygstad2022digital' on page 9 undefined on input line 
+60.
+
+
+LaTeX Warning: Citation `oecd2023outlook' on page 9 undefined on input line 60.
+
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 55--61
+[]\T1/lmr/m/n/12 Such frag-men-ta-tion can re-quire users to re-peat-edly move 
+be-tween
+
+Underfull \hbox (badness 6173) in paragraph at lines 55--61
+\T1/lmr/m/n/12 sep-a-rate con-texts while in-sti-tu-tions man-age per-mis-sions
+, vis-i-bil-ity,
+
+Underfull \hbox (badness 1325) in paragraph at lines 65--71
+\T1/lmr/m/n/12 The gap rel-e-vant to Edu-Verse con-cerns co-or-di-nated op-er-a
+-tion across
+
+Underfull \hbox (badness 1117) in paragraph at lines 65--71
+\T1/lmr/m/n/12 prac-ti-cal work in-de-pen-dently; how-ever, in-sti-tu-tions als
+o re-quire these
+
+LaTeX Warning: Citation `bond2024ai' on page 9 undefined on input line 87.
+
+
+LaTeX Warning: Citation `labadze2023chatbots' on page 9 undefined on input line
+ 87.
+
+[9]
+
+LaTeX Warning: Citation `alsafari2024teaching' on page 10 undefined on input li
+ne 103.
+
+
+LaTeX Warning: Citation `labadze2023chatbots' on page 10 undefined on input lin
+e 103.
+
+
+LaTeX Warning: Citation `xie2025summarization' on page 10 undefined on input li
+ne 116.
+
+
+LaTeX Warning: Citation `labadze2023chatbots' on page 10 undefined on input lin
+e 127.
+
+
+LaTeX Warning: Citation `unesco2023genai' on page 10 undefined on input line 12
+9.
+
+
+LaTeX Warning: Citation `labadze2023chatbots' on page 10 undefined on input lin
+e 129.
+
+[10]
+Underfull \hbox (badness 1648) in paragraph at lines 131--135
+[]\T1/lmr/m/n/12 These con-cerns sup-port a cau-tious role for AI within Edu-Ve
+rse.
+
+Overfull \hbox (2.86642pt too wide) in paragraph at lines 172--172
+\T1/lmr/m/n/10 Com-mu-ni-ca-tion|  
+ignored error: Infinite glue shrinkage found in box being split [11]
+Underfull \hbox (badness 1024) in paragraph at lines 214--220
+\T1/lmr/m/n/12 of an in-te-grated ed-u-ca-tional en-vi-ron-ment. The fol-low-in
+g sub-sec-tions
+
+Underfull \hbox (badness 2042) in paragraph at lines 224--229
+\T1/lmr/m/n/12 Web plat-forms re-main cen-tral to com-pre-hen-sive ed-u-ca-tion
+al sys-tems
+[12]
+Underfull \hbox (badness 1546) in paragraph at lines 230--233
+\T1/lmr/m/n/12 for com-pre-hen-sive Edu-Verse work-flows, while more fo-cused f
+orms of
+
+LaTeX Warning: Citation `rangel2023mobile' on page 13 undefined on input line 2
+42.
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 237--243
+\T1/lmr/m/n/12 fre-quent and lightweight par-tic-i-pa-tion rather than re-pro-d
+uce the full
+
+Underfull \hbox (badness 2913) in paragraph at lines 244--247
+[]\T1/lmr/m/n/12 This lit-er-a-ture sup-ports the companion-client model adopte
+d by
+
+LaTeX Warning: Citation `lee2024synchronous' on page 13 undefined on input line
+ 253.
+
+
+Underfull \hbox (badness 2753) in paragraph at lines 251--256
+\T1/lmr/m/n/12 Synchronous on-line teach-ing re-mains im-por-tant be-cause it s
+up-ports
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--261
+[]\T1/lmr/m/n/12 For Edu-Verse, this prin-ci-ple sup-ports em-bed-ding syn-chro
+nous
+
+LaTeX Warning: Citation `noor2023ide' on page 13 undefined on input line 270.
+
+[13]
+
+LaTeX Warning: Citation `sorkun2022modularity' on page 14 undefined on input li
+ne 282.
+
+
+LaTeX Warning: Citation `oecd2023outlook' on page 14 undefined on input line 28
+7.
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 285--290
+\T1/lmr/m/n/12 re-main gov-erned by in-sti-tu-tional rules [[]]. These prin-ci-
+ples sup-port
+
+LaTeX Warning: Citation `kabier2023rbac' on page 14 undefined on input line 298
+.
+
+
+LaTeX Warning: Citation `liu2023privacy' on page 14 undefined on input line 306
+.
+
+
+LaTeX Warning: Citation `kabier2023rbac' on page 14 undefined on input line 306
+.
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 304--309
+\T1/lmr/m/n/12 pre-serve aca-demic records, pro-tect sen-si-tive in-for-ma-tion
+, and pro-vide
+)
+Underfull \hbox (badness 1946) in paragraph at lines 311--218
+[]\T1/lmr/m/n/12 Together, these foun-da-tions es-tab-lish the aca-demic and te
+ch-ni-cal
+[14] (chapters/chapter3_methodology.tex
+Chapter 3.
+[15]
+Underfull \hbox (badness 2478) in paragraph at lines 10--14
+\T1/lmr/m/n/12 pro-gres-sive re-fine-ment while pre-serv-ing con-sis-tency acro
+ss the wider
+[16]
+Underfull \hbox (badness 1107) in paragraph at lines 70--75
+[]\T1/lmr/m/n/12 The vertical-slice em-pha-sis com-ple-mented this it-er-a-tive
+ pro-cess by
+[17]
+Underfull \hbox (badness 1331) in paragraph at lines 84--87
+\T1/lmr/m/n/12 se-lec-tion through anal-y-sis, de-sign, im-ple-men-ta-tion, tes
+t-ing, and fi-nal
+[18])
+Underfull \hbox (badness 2359) in paragraph at lines 120--219
+\T1/lmr/m/n/12 EduVerse was de-vel-oped us-ing a hy-brid it-er-a-tive method-ol
+-ogy that
+
+Underfull \hbox (badness 4366) in paragraph at lines 120--219
+\T1/lmr/m/n/12 com-bined feature-centered plan-ning with pre-dom-i-nantly verti
+cal-slice
+[19] (chapters/chapter4_system_analysis.tex
+Chapter 4.
+[20] (figures/activity_diagrams/activity_diagram_styles.tex)
+(figures/activity_diagrams/chapter4_activity_diagrams.tex)
+Underfull \hbox (badness 1565) in paragraph at lines 26--30
+\T1/lmr/m/n/12 an-a-lyt-i-cal el-e-ments. It iden-ti-fies the sys-tem ac-tors, 
+func-tional and
+
+Underfull \hbox (badness 1199) in paragraph at lines 31--35
+[]\T1/lmr/m/n/12 The chap-ter then presents the use-case and ac-tiv-ity mod-els
+ used
+
+Underfull \hbox (badness 1616) in paragraph at lines 43--47
+\T1/lmr/m/n/12 mem-ber-ship, and ap-pli-ca-ble fea-ture con-fig-u-ra-tion. Thes
+e con-di-tions
+
+Underfull \hbox (badness 1436) in paragraph at lines 48--52
+\T1/lmr/m/n/12 re-quire-ments, per-mis-sions, and work-flows rather than im-ple
+-men-ta-tion
+
+Underfull \hbox (badness 5592) in paragraph at lines 55--64
+\T1/lmr/m/n/12 re-spon-si-bil-i-ties such as ac-cess en-force-ment, no-ti-fi-ca
+-tion gen-er-a-tion,
+
+Underfull \hbox (badness 2205) in paragraph at lines 55--64
+\T1/lmr/m/n/12 integrity-event record-ing, and workflow-state changes are rep-r
+e-sented
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+[]|\T1/lmr/m/n/10.95 Organization
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[]|\T1/lmr/m/n/10.95 Manages organization-level gov-er-nance,
+
+Underfull \hbox (badness 2426) in paragraph at lines 76--77
+\T1/lmr/m/n/10.95 mem-ber-ship, role as-sign-ment, in-sti-tu-tional
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+\T1/lmr/m/n/10.95 set-tings, class over-sight, and other
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+\T1/lmr/m/n/10.95 joins com-mu-ni-ca-tion and live-learning
+
+Underfull \hbox (badness 2856) in paragraph at lines 80--81
+\T1/lmr/m/n/10.95 work-flows, and re-views re-leased aca-demic
+[22] [23]
+Overfull \hbox (4.78584pt too wide) in paragraph at lines 159--162
+[]\T1/lmr/bx/n/12 FR-17. \T1/lmr/m/n/12 The sys-tem shall al-low au-tho-rized u
+sers to post an-nounce-ments,
+[24] [25]
+Underfull \hbox (badness 1371) in paragraph at lines 227--228
+[]\T1/lmr/bx/n/12 FR-35. \T1/lmr/m/n/12 The sys-tem shall al-low users to gen-e
+r-ate AI-assisted
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--232
+\T1/lmr/m/n/12 Ad-min-is-tra-tors to use AI-assisted draft-ing for as-sign-ment
+s,
+[26]
+Underfull \hbox (badness 1132) in paragraph at lines 263--266
+\T1/lmr/m/n/12 change theme pref-er-ences, and man-age password-related ac-coun
+t
+
+Underfull \hbox (badness 1205) in paragraph at lines 269--272
+[]\T1/lmr/bx/n/12 FR-46. \T1/lmr/m/n/12 The sys-tem shall pro-vide search-able 
+help con-tent for
+
+Underfull \hbox (badness 1024) in paragraph at lines 276--277
+\T1/lmr/m/n/12 The non-functional re-quire-ments de-fine the prin-ci-pal qual-i
+ty, se-cu-rity,
+
+Underfull \hbox (badness 2865) in paragraph at lines 279--280
+[]\T1/lmr/bx/n/12 NFR-01 Us-abil-ity. \T1/lmr/m/n/12 The in-ter-face shall main
+-tain con-sis-tent
+[27]
+Underfull \hbox (badness 1189) in paragraph at lines 283--287
+\T1/lmr/m/n/12 and shared ser-vices struc-turally sep-a-rated so that cor-rect-
+ing or
+
+Underfull \hbox (badness 4686) in paragraph at lines 305--308
+[]\T1/lmr/m/n/12 The di-a-grams em-pha-size hu-man in-ter-ac-tion with the plat
+-form.
+
+Underfull \hbox (badness 3460) in paragraph at lines 305--308
+\T1/lmr/m/n/12 Au-to-matic sys-tem be-hav-ior is rep-re-sented through the sur-
+round-ing
+[28]
+Underfull \hbox (badness 2486) in paragraph at lines 350--354
+\T1/lmr/m/n/12 It em-pha-sizes how ad-min-is-tra-tive au-thor-ity, role as-sign
+-ment, ac-cess
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--387
+\T1/lmr/m/n/12 Figure []4.7[] dis-tin-guishes user-generated class com-mu-ni-ca
+-tion from
+
+Underfull \hbox (badness 2126) in paragraph at lines 383--387
+\T1/lmr/m/n/12 system-generated no-ti-fi-ca-tion be-hav-ior. The model sep-a-ra
+tes di-rect
+[29] [30] [31 <./figures/chapter4/usecases/project_overview.pdf>] [32 <./figure
+s/chapter4/usecases/authentication_access.pdf>] [33 <./figures/chapter4/usecase
+s/organization_role_management.pdf>] [34 <./figures/chapter4/usecases/class_man
+agement.pdf>] [35 <./figures/chapter4/usecases/assignment_management.pdf>]
+[36 <./figures/chapter4/usecases/ai_learning_support.pdf>] [37 <./figures/chapt
+er4/usecases/class_communication_notifications.pdf>] [38 <./figures/chapter4/us
+ecases/course_content_materials.pdf>] [39 <./figures/chapter4/usecases/exam_man
+agement_integrity.pdf>] [40 <./figures/chapter4/usecases/live_sessions_whiteboa
+rd.pdf>] [41 <./figures/chapter4/usecases/integrated_coding_lab_ide_extension.p
+df>] [42 <./figures/chapter4/usecases/profile_help.pdf>] [43 <./figures/chapter
+4/usecases/results_dashboards.pdf>]
+Underfull \hbox (badness 5533) in paragraph at lines 551--554
+\T1/lmr/m/n/12 Figure []4.18[] dis-tin-guishes di-rect class com-mu-ni-ca-tion 
+ac-tions from
+[44]
+Underfull \hbox (badness 1292) in paragraph at lines 615--617
+\T1/lmr/m/n/12 Figure []4.26[] rep-re-sents the user-support work-flow for acco
+unt-oriented
+[45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]) [59]
+(chapters/chapter5_system_design.tex
+Chapter 5.
+[60]
+Underfull \hbox (badness 2875) in paragraph at lines 62--67
+\T1/lmr/m/n/12 This chap-ter presents the ar-chi-tec-tural con-text, in-for-ma-
+tion model,
+
+Underfull \hbox (badness 4024) in paragraph at lines 92--97
+\T1/lmr/m/n/12 or-ga-ni-za-tions, users, roles, classes, learn-ing re-sources, 
+as-sess-ments,
+[61]
+Underfull \hbox (badness 2735) in paragraph at lines 98--101
+[]\T1/lmr/m/n/12 This sec-tion presents the log-i-cal database struc-ture, the 
+En-tity
+
+Underfull \hbox (badness 4531) in paragraph at lines 126--131
+\T1/lmr/m/n/12 The En-tity Re-la-tion-ship Di-a-gram pro-vides the cen-tral des
+ign-level
+
+Underfull \hbox (badness 3158) in paragraph at lines 132--137
+[]\T1/lmr/m/n/12 The model in-cludes di-rect one-to-many re-la-tion-ships as we
+ll as
+[62]
+Underfull \hbox (badness 4060) in paragraph at lines 143--148
+[]\T1/lmr/bx/n/12 Organization and mem-ber-ship struc-ture. \T1/lmr/m/n/12 Or-g
+a-ni-za-tions
+
+Underfull \hbox (badness 1424) in paragraph at lines 143--148
+\T1/lmr/m/n/12 con-nect in-di-vid-ual ac-counts to the or-ga-ni-za-tions in whi
+ch they
+
+Underfull \hbox (badness 4120) in paragraph at lines 159--163
+[]\T1/lmr/bx/n/12 Learning and com-mu-ni-ca-tion struc-ture. \T1/lmr/m/n/12 Ma-
+te-ri-als and
+
+Underfull \hbox (badness 7667) in paragraph at lines 164--168
+[]\T1/lmr/bx/n/12 Assessment struc-ture. \T1/lmr/m/n/12 Classes con-tain as-sig
+n-ments and
+
+Underfull \hbox (badness 2435) in paragraph at lines 164--168
+\T1/lmr/m/n/12 ex-am-i-na-tions, with re-lated sub-mis-sion, ques-tion, at-temp
+t, and
+
+Underfull \hbox (badness 1424) in paragraph at lines 177--182
+ []\T1/lmr/bx/n/12 Design Sig-nif-i-cance \T1/lmr/m/n/12 The re-la-tional struc
+-ture sep-a-rates in-sti-tu-tional
+
+Underfull \hbox (badness 4132) in paragraph at lines 177--182
+\T1/lmr/m/n/12 In-ter-me-di-ate mem-ber-ship and con-fig-u-ra-tion en-ti-ties a
+re par-tic-u-larly
+
+Underfull \hbox (badness 2229) in paragraph at lines 183--185
+[]\T1/lmr/m/n/12 The ERD there-fore pro-vides the main design-level view of how
+
+[63] [64 <./figures/chapter5/database-erd.pdf>]
+ignored error: Infinite glue shrinkage found in box being split [65] [66]
+ignored error: Infinite glue shrinkage found in box being split [67] [68]
+[69]
+ignored error: Infinite glue shrinkage found in box being split [70] [71]
+ignored error: Infinite glue shrinkage found in box being split [72]
+ignored error: Infinite glue shrinkage found in box being split [73]
+ignored error: Infinite glue shrinkage found in box being split [74]
+ignored error: Infinite glue shrinkage found in box being split [75]
+ignored error: Infinite glue shrinkage found in box being split [76] [77]
+ignored error: Infinite glue shrinkage found in box being split [78]
+ignored error: Infinite glue shrinkage found in box being split [79]
+ignored error: Infinite glue shrinkage found in box being split [80] [81]
+Underfull \hbox (badness 1748) in paragraph at lines 794--799
+\T1/lmr/m/n/12 and student-facing ac-tions are pre-sented through dif-fer-ent w
+orkspace
+[82] [83 <./figures/screenshots/1_Authentication Screen.png (PNG copy)>]
+[84 <./figures/screenshots/2-organization-and-active-role-selection-switcher.pn
+g (PNG copy)>] [85 <./figures/screenshots/26_Profile and User Settings.png (PNG
+ copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 829--833
+\T1/lmr/m/n/12 Administrative in-ter-faces group or-ga-ni-za-tion setup, mem-be
+r-ship,
+[86] [87 <./figures/screenshots/10_Organization Creation and Initial Feature Av
+ailability.png (PNG copy)>] [88 <./figures/screenshots/3_Administrator dashboar
+d showing organization statistics and class management controls.png (PNG copy)>
+] [89 <./figures/screenshots/4_Class CreateEdit Settings Dialog.png (PNG copy)>
+] [90 <./figures/screenshots/5_Past Terms (Admin interface).png (PNG copy)>]
+[91 <./figures/screenshots/6_Organization Members and Invitations.png (PNG copy
+)> <./figures/screenshots/7_Public Join Links and Join Requests.png (PNG copy)>
+] [92 <./figures/screenshots/8_Public Join Page.png (PNG copy)>] [93 <./figures
+/screenshots/9_Organization Settings and Teacher Permissions.png (PNG copy)>]
+Underfull \hbox (badness 1281) in paragraph at lines 882--886
+\T1/lmr/m/n/12 Classroom in-ter-faces pro-vide the pri-mary day-to-day learn-in
+g con-text
+[94 <./figures/screenshots/11-class-home-classroom-workspace.png (PNG copy)>]
+[95 <./figures/screenshots/12_Materials Library and Upload Controls (Teacher in
+terface).png (PNG copy)>] [96 <./figures/screenshots/14_Class Chat and Announce
+ments.png (PNG copy)>] [97 <./figures/screenshots/15_Notifications Panel or Pag
+e.png (PNG copy)>]
+Underfull \hbox (badness 4242) in paragraph at lines 911--915
+\T1/lmr/m/n/12 Assessment in-ter-faces sep-a-rate au-thor-ing and re-view con-t
+rols from
+[98 <./figures/screenshots/16_Assignment Management and Submission Review (Teac
+her interface).png (PNG copy)>] [99 <./figures/screenshots/17_Student Assignmen
+t Submission Screen.png (PNG copy)>] [100 <./figures/screenshots/18_Exam Manage
+r and Question Management.png (PNG copy)>] [101 <./figures/screenshots/19.1_Stu
+dent Exam Start and Exam-Taking Interface.png (PNG copy)>] [102 <./figures/scre
+enshots/19.2_Student Exam Start and Exam-Taking Interface.png (PNG copy)>]
+[103 <./figures/screenshots/20_Exam Attempt Review and Integrity Events.png (PN
+G copy)>] [104 <./figures/screenshots/21_Results and Grades Dashboard.png (PNG 
+copy)>] [105 <./figures/screenshots/22_Live Session Room and Whiteboard.png (PN
+G copy)>]
+Underfull \hbox (badness 1189) in paragraph at lines 972--977
+\T1/lmr/m/n/12 class-oriented nav-i-ga-tion model used by other learn-ing tools
+. Their
+[106 <./figures/screenshots/24_AI Learning Support Interface.png>] [107 <./figu
+res/screenshots/25_Integrated Coding Lab_IDE.png (PNG copy)>])
+(chapters/chapter6_implementation.tex
+Chapter 6.
+[108] [109] [110]
+Underfull \hbox (badness 3291) in paragraph at lines 123--129
+[]\T1/lmr/m/n/12 Supabase pro-vides mo-bile au-then-ti-ca-tion and ses-sion per
+-sis-tence.
+
+Underfull \hbox (badness 4096) in paragraph at lines 130--136
+[]\T1/lmr/m/n/12 The mo-bile im-ple-men-ta-tion pro-vides au-then-ti-ca-tion, o
+r-ga-ni-za-tion
+
+Underfull \hbox (badness 3354) in paragraph at lines 130--136
+\T1/lmr/m/n/12 ac-cess, class com-mu-ni-ca-tion, pro-file util-i-ties, and ba-s
+ic live-session
+
+Underfull \hbox (badness 2158) in paragraph at lines 130--136
+\T1/lmr/m/n/12 par-tic-i-pa-tion. The web client pro-vides the broader ad-min-i
+s-tra-tive,
+[111]
+Underfull \hbox (badness 2671) in paragraph at lines 155--162
+\T1/lmr/m/n/12 records. Supabase-hosted Post-greSQL stores aca-demic records an
+d
+
+Underfull \hbox (badness 2221) in paragraph at lines 155--162
+\T1/lmr/m/n/12 as-so-ci-ated file meta-data, while AWS S3 stores the bi-nary co
+n-tent.
+[112]
+Underfull \hbox (badness 3291) in paragraph at lines 176--181
+[]\T1/lmr/m/n/12 Authorization is ap-plied through mul-ti-ple im-ple-men-ta-tio
+n lay-ers,
+
+Underfull \hbox (badness 5802) in paragraph at lines 176--181
+\T1/lmr/m/n/12 in-clud-ing au-then-ti-cated ap-pli-ca-tion en-try, server-side 
+route checks,
+
+Underfull \hbox (badness 1194) in paragraph at lines 176--181
+\T1/lmr/m/n/12 active-role res-o-lu-tion, or-ga-ni-za-tion and class mem-ber-sh
+ip checks, and
+
+Underfull \hbox (badness 2229) in paragraph at lines 176--181
+\T1/lmr/m/n/12 and per-mis-sion RPCs keep these checks con-sis-tent across pro-
+tected
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
+\T1/lmr/m/n/12 Multi-organization and multi-role ac-cess is im-ple-mented throu
+gh
+[113]
+Underfull \hbox (badness 4441) in paragraph at lines 212--218
+\T1/lmr/m/n/12 Feature avail-abil-ity is im-ple-mented through shared def-i-ni-
+tions and
+
+Underfull \hbox (badness 1057) in paragraph at lines 224--228
+[]\T1/lmr/m/n/12 Extensions fol-low the same context-sensitive model. Or-ga-ni-
+za-tion
+[114]
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
+\T1/lmr/m/n/12 Implementation changes were man-aged through version-controlled
+[115]
+Underfull \hbox (badness 2418) in paragraph at lines 304--308
+[]\T1/lmr/bx/n/12 Multi-organization and multi-role au-tho-riza-tion. \T1/lmr/m
+/n/12 Ac-cess
+
+Underfull \hbox (badness 1783) in paragraph at lines 304--308
+\T1/lmr/m/n/12 de-ci-sions had to re-main cor-rect across mem-ber-ships and rol
+es.
+
+Underfull \hbox (badness 1062) in paragraph at lines 308--311
+\T1/lmr/m/n/12 with-out du-pli-cated busi-ness logic. They reuse pro-tected ser
+ver
+[116]) [117] (chapters/chapter7_testing_evaluation.tex
+Chapter 7.
+[118] [119]) [120] (chapters/chapter8_future_work.tex
+Chapter 8.
+[121]) [122] (backmatter/conclusion.tex
+Underfull \hbox (badness 8000) in paragraph at lines 4--9
+\T1/lmr/m/n/12 role-based en-vi-ron-ment can co-or-di-nate learn-ing man-age-me
+nt, live
+
+Underfull \hbox (badness 1365) in paragraph at lines 4--9
+\T1/lmr/m/n/12 col-lab-o-ra-tion, AI-driven sup-port, and cod-ing prac-tice un-
+der com-mon
+) [123] (main.bbl
+Underfull \hbox (badness 4242) in paragraph at lines 24--29
+[]\T1/lmr/m/n/12 Ritesh Chugh, Dar-ren Turn-bull, Michael A. Cowl-ing, Robert
+
+Underfull \hbox (badness 1127) in paragraph at lines 31--36
+\T1/lmr/m/n/12 To-wards for de-sign-ing ed-u-ca-tional sys-tem us-ing role-base
+d ac-cess
+[124]
+Underfull \hbox (badness 3965) in paragraph at lines 44--47
+[]\T1/lmr/m/n/12 Yong Keow Lee, No-rasykin Mohd Zaid, and Zai-datun Tasir.
+
+Underfull \hbox (badness 7888) in paragraph at lines 61--67
+\T1/lmr/m/n/12 de-vel-op-ment en-vi-ron-ment to learn pro-gram-ming fun-da-men-
+tals.
+
+Underfull \hbox (badness 1014) in paragraph at lines 75--80
+\T1/lmr/m/n/12 ed-u-ca-tion.  \T1/lmr/m/it/12 Jour-nal of New Ap-proaches in Ed
+-u-ca-tional Re-search\T1/lmr/m/n/12 ,
+
+Underfull \hbox (badness 3407) in paragraph at lines 82--87
+\T1/lmr/m/n/12 use-ful-ness per-spec-tive.  \T1/lmr/m/it/12 In-ter-na-tional Jo
+ur-nal of Op-er-a-tions &
+
+Underfull \hbox (badness 1062) in paragraph at lines 89--93
+[]\T1/lmr/m/n/12 Tao Xie, Yuanyuan Kuang, Ying Tang, Jian Liao, and Yunong
+
+Underfull \hbox (badness 1521) in paragraph at lines 89--93
+\T1/lmr/m/n/12 knowl-edge re-call and stu-dent sat-is-fac-tion.  \T1/lmr/m/it/1
+2 Ex-pert Sys-tems with
+) [125] (main.aux (frontmatter/abstract.aux) (frontmatter/acknowledgements.aux)
+(chapters/chapter1_strategic_vision.aux)
+(chapters/chapter2_literature_review.aux) (chapters/chapter3_methodology.aux)
+(chapters/chapter4_system_analysis.aux) (chapters/chapter5_system_design.aux)
+(chapters/chapter7_testing_evaluation.aux) (chapters/chapter8_future_work.aux)
+(backmatter/conclusion.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)<C:/Users/HP/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/HP/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/HP/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/HP/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmr8.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmri10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/lm/lmri12.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmtt10.pfb><C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/lm/lmtt12.pfb>
+Output written on main.pdf (137 pages, 33558233 bytes).
+SyncTeX written on main.synctex.gz.
+Transcript written on main.log.

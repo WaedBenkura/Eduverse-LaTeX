@@ -1,0 +1,4 @@
+This is BibTeX, Version 0.99e (MiKTeX 25.12)
+The top-level auxiliary file: C:\Users\HP\Desktop\Eduverse - LaTex\tmp\audit-20260923\final-build\main.aux
+The style file: plain.bst
+Database file #1: references.bib

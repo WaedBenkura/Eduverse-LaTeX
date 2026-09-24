@@ -1,0 +1,65 @@
+\chapterwithopening{System Testing and Evaluation}{chap:testing_evaluation}{
+  \chaptercontentsitem{sec:testing_evaluation_introduction}
+  \chaptercontentsitem{sec:testing_strategy}
+  \chaptercontentsitem{sec:functional_testing}
+  \chaptercontentsitem{sec:non_functional_evaluation}
+  \chaptercontentsitem{sec:review_evaluation_summary}
+}
+
+\section{Introduction}\label{sec:testing_evaluation_introduction}
+
+Testing and evaluation examine whether the implemented EduVerse platform
+behaves according to its academic, role-based, and technical responsibilities.
+In a multi-organization educational system, correctness depends not only on
+successful interface operation, but also on access control, assessment logic,
+feature configuration, and other governed platform behavior.
+
+This chapter summarizes the testing activities applied to EduVerse and
+provides a concise evaluation of selected functional and non-functional
+characteristics.
+
+\section{Testing Strategy}\label{sec:testing_strategy}
+
+EduVerse was evaluated using automated logic-level testing together with
+engineering verification during development. Automated tests focus on
+rule-intensive platform behavior, while GitHub Actions verify production
+builds, formatting, and TypeScript correctness. Vercel preview deployments
+also support review of changes before merge.
+
+\begin{itemize}
+  \item automated logic-level testing;
+  \item GitHub Actions build, formatting, and type checks;
+  \item Vercel preview deployments for development review.
+\end{itemize}
+
+\section{Functional Testing}\label{sec:functional_testing}
+
+The automated test suite covers selected rule-intensive areas of EduVerse,
+including class access and visibility, examination rules and integrity
+handling, grading, feature resolution, education selectors, and selected IDE
+behavior.
+
+The complete suite was executed using Bun Test and completed with 76 passed
+tests, 0 failed tests, and 105 assertions across 10 test files. These results
+verify the tested logic-level behaviors of the platform.
+
+\section{Non-Functional Evaluation}\label{sec:non_functional_evaluation}
+
+The non-functional evaluation focused on practical characteristics supported
+by the implemented EduVerse platform. Security and access control were
+evaluated through authentication, authorization, protected resource access,
+role-based permissions, and selected automated tests.
+
+Maintainability is supported by the modular project structure, shared
+utilities, configuration-driven feature control, and automated engineering
+checks. Usability and responsiveness were reviewed through representative
+workflows across the implemented web and mobile interfaces.
+
+\section{Review and Evaluation Summary}
+\label{sec:review_evaluation_summary}
+
+Overall, the testing and evaluation activities verify the main rule-intensive
+areas of EduVerse and support the correctness of its core platform behavior.
+The automated test suite completed successfully with 76 passed tests and no
+failures, while GitHub Actions checks and Vercel preview deployments provided
+additional engineering verification throughout development.

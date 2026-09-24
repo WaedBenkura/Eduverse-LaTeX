@@ -1,0 +1,6288 @@
+
+
+=== Physical 1 printed -11 ===
+               STATEOFLIBYA
+
+      MinistryofTechnicalandVocationalEducation
+
+
+
+
+
+ CollegeofComputerTechnologies-Zawia
+
+               GraduationProject
+
+             ToObtainaBachelor’sDegree
+
+EduVerse:AnIntegratedEducational
+                WebPlatform
+withaMobileCompanionApplication
+
+
+                   PreparedBy:
+
+               AbdolsalamAdelAllawlabi
+                AhmedAmirAlshaybani
+                  AnasAlsayidSarkiz
+                 WaedReyadBenkura
+
+
+                  SupervisedBy:
+
+                Dr.KhariAmirArmih
+
+
+          FinalYearProjectDissertation–2026
+
+=== Physical 2 printed -10 ===
+Abstract
+
+
+
+Digital education often relies on disparate platforms for communication,
+contentdelivery,liveteaching,andassessment. Althoughthesetoolsmay
+be individually effective, their separation creates fragmented workflows,
+repeatedcontextswitching,andweakerinstitutionalcontinuity.Thisthesis
+presentsEduVerse,anintegratededucationalwebplatformwithamobile
+companion application, designed to consolidate these activities within a
+governed,role-basedenvironmentforadministrators,teachers,andstudents.
+   EduVerse provides a comprehensive suite of learning management
+features,includingcontentdistribution,assessments,real-timecollaboration
+via live sessions and whiteboards, an AI agent, and an integrated
+browser-based IDE. The web platform is built using Next.js, React,
+and TypeScript, integrating Supabase for authentication and relational
+data, AWSS3forfilestorage, LiveKitforreal-timecommunication, and
+OpenRouter for AI services.  EduVerse Mobile—developed with Expo
+and ReactNative—extendsthe platform through selected high-frequency
+workflows,  including class overviews,  chat,  notifications,  materials,
+organizationswitching,andbasiclive-sessionparticipation.
+   Theevaluationcombinesautomatedlogic-leveltestingwithengineering
+verificationduringdevelopment. Theautomatedsuitecompletedwith76
+passedtests,0failures,and105assertionsacross10testfiles,whileshared
+APIreuseandmodularfeatureenablementsupportconsistentrole-based
+academicworkflowsacrosstheimplementedclients.Consequently,EduVerse
+contributesagoverned,extensiblemodelforreducingfragmentationindigital
+learningenvironments.
+
+
+
+
+
+
+
+                                         i
+
+=== Physical 3 printed -9 ===
+Acknowledgements
+
+
+
+Everymeaningfuljourneybeginswithasinglespark.Allpraiseandprofound
+gratitudeareduetoAllah,thesourceofknowledge,guidance,andstrength,
+forgrantingusthevision,resilience,andgracetobringtheEduVerseproject
+tolife.
+   Toourparentsandfamilies: youhavebeenourfoundation. Yourquiet
+sacrifices,steadfastbelief,andendlesspatiencekeptusgroundedwhilewe
+reachedforourgoals. Thismilestoneisnotonlyourachievement;itisthe
+harvestofyourlifelongdedication.
+   Aprojectofthismagnituderequiresatruecompass,andwefoundoursin
+oursupervisor,Dr.KhariAmirArmih.Thankyouforchallengingourlimits,
+refiningourideas,andinstillinginusadeepsenseofacademicdiscipline.
+Yourmentorshipturnedourrawambitionintoastructuredreality.
+   To the brilliant minds of the EduVerse team: we built more than
+just a project; we built a lasting synergy. Thank you for the relentless
+problem-solving,thesharedlate-nightefforts,andthespiritofcollaboration
+thatmadewhatonceseemedimpossiblepossible.
+   Finally,tooursupportivecircleoffriendsandwell-wishers,everyword
+of encouragement and every sincere prayer fueled our momentum.  The
+foundationislaid,butourjourneyisjustbeginning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       ii
+
+=== Physical 4 printed -8 ===
+Contents
+
+
+
+
+Abstract                                                 i
+
+Acknowledgements                                        ii
+
+Contents                                                iii
+
+ListofFigures                                          vii
+
+ListofTables                                            x
+
+1 StrategicVisionandProjectScope                       1
+   1.1  ProjectVision. . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+   1.2  ProblemStatement . . . . . . . . . . . . . . . . . . . . . . . .  2
+   1.3  ProjectMotivations. . . . . . . . . . . . . . . . . . . . . . . .  3
+   1.4  StrategicObjectives. . . . . . . . . . . . . . . . . . . . . . . .  3
+   1.5  ProjectBenefitsandBroaderImpact . . . . . . . . . . . . . .  4
+   1.6  ProjectScopeandBoundaries . . . . . . . . . . . . . . . . . .  5
+         1.6.1  SystemBoundariesandUserRoles . . . . . . . . . . .  5
+         1.6.2  FunctionalScope . . . . . . . . . . . . . . . . . . . . .  5
+         1.6.3  WebandMobileClientScope . . . . . . . . . . . . . .  6
+         1.6.4  DistinctiveFeaturesandExtensibleDesign. . . . . . .  6
+
+2 LiteratureReviewandTheoreticalFramework             7
+   2.1  Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . .  8
+   2.2  EvolutionofDigitalEducationPlatforms. . . . . . . . . . . .  8
+         2.2.1  FromTraditionalClassroomManagementtoDigital
+                 LearningSystems . . . . . . . . . . . . . . . . . . . . .  8
+         2.2.2  LimitationsofFragmentedLearningManagementTools9
+   2.3  ResearchGapandIntegratedLearningEcosystems . . . . . .  9
+
+                                        iii
+
+=== Physical 5 printed -7 ===
+    2.4  ArtificialIntelligenceinEducation. . . . . . . . . . . . . . . . 10
+          2.4.1  Context-AwareLearningAssistance . . . . . . . . . . . 10
+          2.4.2  MaterialSummarizationandLearningSupport  . . . . 10
+          2.4.3  AssessmentandFeedbackSupport . . . . . . . . . . . 10
+    2.5  Benchmarking: FragmentedToolsvs. IntegratedEduVerse
+          Approach . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+    2.6  TheoreticalandTechnicalFoundationsofEduVerse . . . . . . 12
+          2.6.1  Web-BasedEducationalPlatforms. . . . . . . . . . . . 12
+          2.6.2  MobileCompanionLearningApplications . . . . . . . 13
+          2.6.3  Real-TimeVirtualClassrooms. . . . . . . . . . . . . . 13
+          2.6.4  Integrated Coding Environments for Programming
+                  Education . . . . . . . . . . . . . . . . . . . . . . . . . 13
+          2.6.5  Extensible Educational Ecosystems and Governed
+                  Openness . . . . . . . . . . . . . . . . . . . . . . . . . 14
+          2.6.6  Security,Roles,andDataManagement . . . . . . . . . 14
+
+3 Methodology                                         15
+    3.1  Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+    3.2  MethodologicalApproach  . . . . . . . . . . . . . . . . . . . . 16
+          3.2.1  IterativeFeature-CenteredDevelopment . . . . . . . . 16
+          3.2.2  Vertical-SliceRealization. . . . . . . . . . . . . . . . . 17
+          3.2.3  WhyThisMethodologyFitsEduVerse . . . . . . . . . 17
+    3.3  RepeatedDevelopmentCycle . . . . . . . . . . . . . . . . . . 18
+    3.4  ChapterSummary . . . . . . . . . . . . . . . . . . . . . . . . 19
+
+4 SystemAnalysisandRequirements                      20
+    4.1  Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+    4.2  SystemOverview . . . . . . . . . . . . . . . . . . . . . . . . . 21
+    4.3  SystemActors. . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+    4.4  FunctionalRequirements . . . . . . . . . . . . . . . . . . . . . 22
+    4.5  Non-FunctionalRequirements . . . . . . . . . . . . . . . . . . 27
+    4.6  Use-CaseModel. . . . . . . . . . . . . . . . . . . . . . . . . . 28
+    4.7  ActivityDiagrams. . . . . . . . . . . . . . . . . . . . . . . . . 44
+    4.8  ChapterSummary . . . . . . . . . . . . . . . . . . . . . . . . 59
+
+5 SystemDesign                                        60
+    5.1  Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+    5.2  DesignContextandArchitecturalStructure . . . . . . . . . . 61
+
+
+                                           iv
+
+=== Physical 6 printed -6 ===
+   5.3  InformationModelandPersistenceDesign . . . . . . . . . . . 61
+          5.3.1  LogicalDatabaseDesign . . . . . . . . . . . . . . . . . 62
+          5.3.2  RelationalStructureThroughtheERD. . . . . . . . . 62
+          5.3.3  PrincipalSchemaGroups. . . . . . . . . . . . . . . . . 65
+          5.3.4  PhysicalSchemaTables . . . . . . . . . . . . . . . . . 66
+   5.4  InterfaceandInteractionDesign. . . . . . . . . . . . . . . . . 82
+          5.4.1  AccessandIdentityInterfaces . . . . . . . . . . . . . . 82
+          5.4.2  AdministrativeGovernanceInterfaces. . . . . . . . . . 86
+          5.4.3  ClassroomandLearningInterfaces . . . . . . . . . . . 94
+          5.4.4  AssessmentandSubmissionInterfaces  . . . . . . . . . 98
+          5.4.5  SynchronousCollaborationInterfaces . . . . . . . . . .105
+          5.4.6  AISupportandCoding-LabInterfaces . . . . . . . . .106
+
+6 SoftwareandEngineeringImplementation               108
+   6.1  Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . .109
+   6.2  ImplementationEnvironment . . . . . . . . . . . . . . . . . .109
+   6.3  SystemArchitecture . . . . . . . . . . . . . . . . . . . . . . .109
+   6.4  WebApplicationImplementation . . . . . . . . . . . . . . . .111
+   6.5  MobileCompanionApplicationImplementation . . . . . . . .111
+   6.6  Backend,Database,andStorageImplementation. . . . . . . .112
+   6.7  Authentication,Authorization,andSecurity . . . . . . . . . .113
+   6.8  Role-BasedandMulti-OrganizationAccess . . . . . . . . . . .113
+   6.9  FeatureAvailabilityandExtensionImplementation . . . . . .114
+   6.10 Real-TimeCommunicationandLiveSessions. . . . . . . . . .114
+   6.11 AILearningSupportandIDEImplementation. . . . . . . . .115
+   6.12 DevelopmentWorkflowandDeployment . . . . . . . . . . . .116
+   6.13 ImplementationChallengesandAdoptedSolutions  . . . . . .116
+   6.14 ChapterSummary . . . . . . . . . . . . . . . . . . . . . . . .117
+
+7 SystemTestingandEvaluation                        118
+   7.1  Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . .119
+   7.2  TestingStrategy. . . . . . . . . . . . . . . . . . . . . . . . . .119
+   7.3  FunctionalTesting . . . . . . . . . . . . . . . . . . . . . . . .119
+   7.4  Non-FunctionalEvaluation. . . . . . . . . . . . . . . . . . . .119
+   7.5  ReviewandEvaluationSummary . . . . . . . . . . . . . . . .120
+
+
+
+
+
+                                           v
+
+=== Physical 7 printed -5 ===
+8 FutureWorkandRecommendations                    121
+   8.1  Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . .122
+   8.2  ScalabilityImprovements. . . . . . . . . . . . . . . . . . . . .122
+   8.3  UserFeedbackandUsabilityRefinement . . . . . . . . . . . .122
+   8.4  ChapterSummary . . . . . . . . . . . . . . . . . . . . . . . .122
+
+Conclusion                                             123
+
+References                                             124
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        vi
+
+=== Physical 8 printed -4 ===
+ListofFigures
+
+
+
+   4.1  ProjectOverviewUse-CaseDiagram . . . . . . . . . . . . . . 31
+   4.2  AuthenticationandAccessUse-CaseDiagram . . . . . . . . . 32
+   4.3  OrganizationandRoleManagementUse-CaseDiagram . . . . 33
+   4.4  ClassManagementUse-CaseDiagram. . . . . . . . . . . . . . 34
+   4.5  AssignmentManagementUse-CaseDiagram . . . . . . . . . . 35
+   4.6  AILearningSupportUse-CaseDiagram . . . . . . . . . . . . 36
+   4.7  ClassCommunicationandNotificationsUse-CaseDiagram . . 37
+   4.8  CourseContentandMaterialsUse-CaseDiagram . . . . . . . 38
+   4.9  ExamManagementandIntegrityUse-CaseDiagram. . . . . . 39
+   4.10 LiveSessionsandWhiteboardUse-CaseDiagram . . . . . . . 40
+   4.11 IntegratedCodingLab/IDEExtensionUse-CaseDiagram. . 41
+   4.12 ProfileandHelpUse-CaseDiagram . . . . . . . . . . . . . . . 42
+   4.13 ResultsandDashboardsUse-CaseDiagram. . . . . . . . . . . 43
+   4.14 AuthenticationandWorkspaceAccessActivityDiagram . . . 46
+   4.15 OrganizationMemberAccessandPublicJoinLinkActivity
+         Diagram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+   4.16 ClassCreation,Configuration,andPastTermsActivityDiagram48
+   4.17 CourseContentandMaterialsActivityDiagram . . . . . . . . 49
+   4.18 ClassCommunicationandNotificationsActivityDiagram. . . 50
+   4.19 AssignmentWorkflowActivityDiagram. . . . . . . . . . . . . 51
+   4.20 ExamManagementandIntegrityWorkflowActivityDiagram. 52
+   4.21 LiveSessionandWhiteboardWorkflowActivityDiagram. . . 53
+   4.22 ResultsWorkflowActivityDiagram . . . . . . . . . . . . . . . 54
+   4.23 DashboardWorkflowActivityDiagram . . . . . . . . . . . . . 55
+   4.24 AILearningSupportWorkflowActivityDiagram . . . . . . . 56
+   4.25 IntegratedCodingLab/IDEWorkflowActivityDiagram. . . 57
+   4.26 ProfileandHelpWorkflowActivityDiagram . . . . . . . . . . 58
+
+   5.1  EntityRelationshipDiagramoftheEduVerseDatabase. . . . 64
+
+                                       vii
+
+=== Physical 9 printed -3 ===
+5.2  Authenticationinterfaceshowingsign-inandsign-upformsfor
+      EduVerseusers. . . . . . . . . . . . . . . . . . . . . . . . . . . 83
+5.3  Organizationandactive-roleselectorusedtoswitchbetween
+      availableEduVerseworkspaces. . . . . . . . . . . . . . . . . . 84
+5.4  Userprofileandsettingsinterfaceshowingrolecontext,theme
+      preferences,andpasswordmanagementcontrols.. . . . . . . . 85
+5.5  Organization creation interface showing template-based
+      setup and initial feature-availability controls for different
+      educationalcontexts. . . . . . . . . . . . . . . . . . . . . . . . 87
+5.6  Organizationadministratordashboardshowingclassoversight
+      andorganization-widestatistics.. . . . . . . . . . . . . . . . . 88
+5.7  Classcreationandfeature-configurationdialogusedtodefine
+      classpropertiesandenabledtools.. . . . . . . . . . . . . . . . 89
+5.8  Past-termsadministrationinterfaceusedtoreviewarchived
+      classesandhistoricalacademicrecords. . . . . . . . . . . . . . 90
+5.9  Organizationmembersandinvitationsinterfaceshowingrole
+      assignmentandinvitation-managementcontrols.. . . . . . . . 91
+5.10 Public join-link management interface showing join-link
+      creationandrequest-handlingcontrols. . . . . . . . . . . . . . 91
+5.11 Publicjoinpageusedbyastudenttorequestaccesstoan
+      organizationworkspace. . . . . . . . . . . . . . . . . . . . . . 92
+5.12 Organizationsettingsinterfaceshowingpublic-featurecontrols
+      andteacherclass-permissionsettings. . . . . . . . . . . . . . . 93
+5.13 Classhomeinterfaceshowingthemainclassroomworkspace
+      andavailablelearningtools. . . . . . . . . . . . . . . . . . . . 94
+5.14 Classroommaterialsinterfaceusedtoaccessuploadedlearning
+      resourcesandstudyactions. . . . . . . . . . . . . . . . . . . . 95
+5.15 Classchatandannouncementsinterfacesupportingclass-wide
+      discussionandinstructornotices. . . . . . . . . . . . . . . . . 96
+5.16 Notificationspanelshowingalertsforlivesessions,materials,
+      examinations,andannouncements. . . . . . . . . . . . . . . . 97
+5.17 Assignment management interface showing teacher-side
+      assignmentcreation,submissionreview,andgradingcontrols.98
+5.18 Student assignment submission interface showing response
+      entryandfile-uploadcontrols. . . . . . . . . . . . . . . . . . . 99
+5.19 Exam management interface showing teacher-side exam
+      creationandquestionconfiguration.. . . . . . . . . . . . . . .100
+
+
+                                      viii
+
+=== Physical 10 printed -2 ===
+5.20 Studentexamstartinterfaceshowingexamrules,timing,and
+      attemptconditionsbeforeentry. . . . . . . . . . . . . . . . . .101
+5.21 Student exam-taking interface showing timed question
+      navigationduringanactiveexamattempt. . . . . . . . . . . .102
+5.22 Examattemptreviewinterfaceshowingsubmittedanswers,
+      gradingcontrols,andintegrity-relatedevents. . . . . . . . . .103
+5.23 Resultsdashboardshowingreleasedgrades,scorebreakdowns,
+      anddetailedassessmentfeedback. . . . . . . . . . . . . . . . .104
+5.24 Livesessionroomshowingthesharedwhiteboard,participant
+      list,andsessioncontrols. . . . . . . . . . . . . . . . . . . . . .105
+5.25 AI  learning  support  interface  showing  conversational
+      assistancewithintheclassworkspace.. . . . . . . . . . . . . .106
+5.26 Integratedcodingworkspaceshowingthefileexplorer,code
+      editor,terminal,andlivepreviewpane.. . . . . . . . . . . . .107
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      ix
+
+=== Physical 11 printed -1 ===
+ListofTables
+
+
+
+    2.1  Fragmented Educational Tools vs.   Integrated EduVerse
+          Approach . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+    3.1  RepeatedIterativeDevelopmentStructureinEduVerse . . . . 18
+
+    4.1  PrimaryEduVerseSystemActors . . . . . . . . . . . . . . . . 22
+
+    5.1  PrincipalSchemaGroupsinEduVerse  . . . . . . . . . . . . . 65
+    5.2  SchemaforTable:organizations. . . . . . . . . . . . . . . 66
+    5.3  SchemaforTable:profiles. . . . . . . . . . . . . . . . . . . 66
+    5.4  SchemaforTable:organization_memberships. . . . . . . . 67
+    5.5  SchemaforTable:organization_membership_roles. . . . . 67
+    5.6  SchemaforTable:organization_invites. . . . . . . . . . . 67
+    5.7  SchemaforTable:organization_settings. . . . . . . . . . 68
+    5.8  Schema  for  Table: organization_teacher_class_
+          permissions. . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+    5.9  SchemaforTable:organization_join_links. . . . . . . . . 69
+    5.10 SchemaforTable:organization_join_requests. . . . . . . 69
+    5.11 SchemaforTable:class_invites. . . . . . . . . . . . . . . 70
+    5.12 SchemaforTable:classes. . . . . . . . . . . . . . . . . . . 70
+    5.13 SchemaforTable:class_memberships. . . . . . . . . . . . . 71
+    5.14 SchemaforTable:class_visibility_preferences. . . . . 71
+    5.15 SchemaforTable:feature_definitions. . . . . . . . . . . 72
+    5.16 SchemaforTable:feature_presets. . . . . . . . . . . . . . 72
+    5.17 SchemaforTable:feature_preset_items. . . . . . . . . . . 72
+    5.18 SchemaforTable:organization_feature_settings. . . . . 73
+    5.19 SchemaforTable:class_feature_settings. . . . . . . . . 73
+    5.20 SchemaforTable:organization_extensions. . . . . . . . . 73
+    5.21 SchemaforTable:class_extension_settings. . . . . . . . 74
+
+
+                                            x
+
+=== Physical 12 printed 0 ===
+5.22 SchemaforTable:class_materials. . . . . . . . . . . . . . 74
+5.23 SchemaforTable:class_messages. . . . . . . . . . . . . . . 75
+5.24 SchemaforTable:class_assignments. . . . . . . . . . . . . 76
+5.25 SchemaforTable:class_assignment_files. . . . . . . . . 76
+5.26 SchemaforTable:class_assignment_submissions. . . . . 77
+5.27 SchemaforTable:exams. . . . . . . . . . . . . . . . . . . . . 78
+5.28 SchemaforTable:exam_questions. . . . . . . . . . . . . . . 78
+5.29 SchemaforTable:exam_attempts. . . . . . . . . . . . . . . 79
+5.30 SchemaforTable:exam_answers. . . . . . . . . . . . . . . . 80
+5.31 SchemaforTable:notifications. . . . . . . . . . . . . . . 80
+5.32 SchemaforTable:class_live_sessions. . . . . . . . . . . 81
+5.33 SchemaforTable:audit_logs. . . . . . . . . . . . . . . . . 81
+5.34 SchemaforTable:auth.users. . . . . . . . . . . . . . . . . 82
+6.1  MainEduVerseImplementationEnvironment . . . . . . . . .110
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                         xi
+
+=== Physical 13 printed 1 ===
+Chapter1
+
+StrategicVisionandProject
+Scope
+
+
+
+
+     Contents
+
+     ProjectVision.................................      1.1,p.2
+     ProblemStatement............................      1.2,p.2
+     ProjectMotivations...........................      1.3,p.3
+     StrategicObjectives...........................      1.4,p.3
+     ProjectBenefitsandBroaderImpact...........      1.5,p.4
+     ProjectScopeandBoundaries.................      1.6,p.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    1
+
+=== Physical 14 printed 2 ===
+Chapter1.StrategicVisionandProjectScope                             2
+
+1.1 ProjectVision
+
+Digitaltransformationhasmadeonlinesystemscentraltocommunication,
+teaching,assessment,feedback,collaboration,anddailyacademicfollow-up.
+Asthisdependencegrows,thequalityofalearningenvironmentincreasingly
+dependsonwhetheritscapabilitiesoperateasacoherentacademicsystem.
+   EduVerse advances a vision of an integrated educational platform in
+whichrelatedacademicworkflowsremainconnectedwithinonegoverned
+environment.Theplatformisdesignedtosupportcontinuityacrosslearning
+activitieswhilepreservingclearinstitutionalcontrol.
+   This vision extends beyond a single institutional model.  EduVerse
+is conceived as an adaptable academic environment that can support
+universities,schools,onlineacademies,bootcamps,tutoringcenters,training
+contexts, and open-learning communities while accommodating different
+educationalneeds.
+   Atitscore,thevisionistoprovideacoherentandconfigurableacademic
+workspaceinwhichlearning,communication,assessment,andinstitutional
+governancecancoexistwithinaunifiedplatform.
+
+1.2 ProblemStatement
+
+Many educational workflows are currently distributed across separate
+systems.   One platform may be used for class communication and
+sharing materials, another for live meetings and presentations, another
+for collaborative whiteboard interaction, and another for programming
+practice. FamiliarexamplesincludeGoogleClassroomforannouncements
+andmaterials,GoogleMeetforlivecalls,Excalidraw-liketoolsforshared
+whiteboard work, and LeetCode-like environments for coding exercises.
+While each tool can be useful on its own, their separation introduces
+repeatedcontextswitching,disconnectedworkflowstages,weakercontinuity
+betweenrelatedacademictasks,andscatteredresponsibilityforgovernance
+andfollow-up.
+   This  fragmentation  becomes more  serious in  multi-organization
+educational settings.   A platform must not only expose features; it
+mustalsomanageroles,permissions,memberships,publicaccessrules,class
+visibility,andtherelationshipbetweenadministrativegovernanceanddaily
+learningactivity.Whentheseconcernsarespreadacrossunrelatedservices,
+
+=== Physical 15 printed 3 ===
+Chapter1.StrategicVisionandProjectScope                             3
+
+
+bothusabilityandaccountabilitybecomehardertomaintain.
+   Theproblemalsohasaclient-designdimension. Richadministrative
+workflows,contentmanagement,assessmentauthoring,andcomplexclass
+controlarebettersuitedtoafullwebenvironment.Atthesametime,many
+high-frequencyactionssuchascheckingupdates,openingmaterials,reading
+chat, reviewing class summaries, and joining live sessions should remain
+practicalfrommobiledevices. Arealisticeducationalplatformtherefore
+needsbothastrongprimarywebapplicationandacarefullyscopedmobile
+companionratherthananunstructuredduplicationofscreens.
+
+1.3 ProjectMotivations
+
+EduVerse was motivated by the need to design academic continuity
+and institutional control together.   The project brings governance,
+communication, assessment, and learning support into one adaptable
+environmentsothatrelatedworkflowscanremaincoherentacrossdifferent
+educationalcontexts.
+
+1.4 StrategicObjectives
+
+ThestrategicobjectivesofEduVersetranslatetheprojectvisionintoconcrete
+institutionalandfunctionaltargets.
+   •Toprovideamulti-organizationeducationalplatformthatcansupport
+      distinctinstitutionsororganizationalunitswithinonegovernedsystem.
+   •To support role-based operation for Organization Administrators,
+      Teachers,andStudents,includinguserswhobelongtomorethanone
+      organizationorholdmorethanonerole.
+   •To unify classes, materials, chat, assignments, exams, results,
+      notifications,livesessions,whiteboardcollaboration,AIsupport,and
+      codingpracticewithinoneacademicenvironment.
+   •Toallowsupportedfeaturestobeenabledordisabledatorganization
+      leveland,whereappropriate,refinedfurtheratclasslevel.
+   •To allow AI-supported features to be disabled for organizations or
+      classesthatdonotwishtousethem.
+
+=== Physical 16 printed 4 ===
+Chapter1.StrategicVisionandProjectScope                             4
+
+
+   •To support public or open-learning access where enabled, so that
+      organizations can share educational materials or membership paths
+      morebroadlywithoutgivingupinstitutionalcontrol.
+
+   •Tosupportcontrolledextensionandfutureintegrationsothatnew
+      capabilitiesorexternalclientscanreusethesameprotectedacademic
+      APImodelratherthanrebuildingbusinessrulesfromscratch.
+
+   •To provide a primary web platform for complete academic and
+      administrativeworkflowswhileextendingselectedday-to-dayactions
+      throughamobilecompanionapplication.
+
+1.5 ProjectBenefitsandBroaderImpact
+
+EduVerseprovidesvaluebeyondthedeliveryofasinglesoftwareproduct.For
+educationalandtrainingorganizations,itoffersaconfigurableenvironment
+for managing learning activities, communication, assessment, and access
+withinaunifiedandgovernedplatform. Individualteachers,trainers,and
+other participants in educational delivery can use the same environment
+toorganizecontent,interactwithlearners,conductlearningactivities,and
+followacademicprogressmorecoherently.
+   Theprojectalsosupportsbroadereducationalparticipation. Through
+optional public organizations, shared learning materials, and controlled
+publicjoiningmechanisms, EduVerse cansupportopen-learningcontexts
+in which educational resources and learning opportunities can reach
+participantsbeyondasingletraditionalinstitutionwhileremainingsubject
+toorganizationalgovernance.
+   Fortheprojectteam,EduVerseprovidedacompletesoftwareengineering
+experience grounded in a realistic problem domain.  The development
+process strengthened experience in problem decomposition, requirements
+analysis,collaborativeplanning,technicaldecision-making,systemdesign,
+implementation, testing, reviewdiscipline, andresponsibilityforsoftware
+quality. Inthissense,thevalueoftheprojectliesbothintheplatformit
+providesandintheeducational,professional,andbroaderpracticalbenefits
+createdthroughitsdevelopmentanduse.
+
+=== Physical 17 printed 5 ===
+Chapter1.StrategicVisionandProjectScope                             5
+
+1.6 ProjectScopeandBoundaries
+
+1.6.1 SystemBoundariesandUserRoles
+EduVerse operates through three principal human roles:  Organization
+Administrator,Teacher,andStudent.Thesamepersonmayholdmorethan
+onerole,andausermaybelongtomorethanoneorganization. Forthat
+reason,thesystemresolvesaccessaccordingtotheselectedorganization,the
+activerole,classmembership,andthecurrentfeatureconfigurationrather
+thanbyassumingthateveryuserbelongstoonefixedcategory.
+   Thisrolestructuredefinesanimportantprojectboundary. EduVerse
+is not a general social platform in which all users share the same
+permissions.  It is a governed educational workspace in which visibility,
+management authority,  assessment control,  and feature access are
+deliberatelydifferentiated.
+
+1.6.2 FunctionalScope
+Within  its  implemented  scope,  EduVerse  includes  authentication,
+organization access and membership,  class management,  materials,
+chat, assignments, exams, results, notifications, live sessions, whiteboard
+collaboration, an AI Agent, and an integrated coding workspace.  It
+also includes organization-level and class-level feature controls, extension
+support,andoptionalpublicoropen-learningaccesswherethosecapabilities
+areenabled.
+   Thisscopeisnotrestrictedtohighereducationalone. Thesamemodel
+can be adapted for primary schools and kindergartens through narrower
+featureselectionandcloserorganization-levelcontrol,justasitcansupport
+morespecializedcontextssuchastechnicalcourses,tutoringprograms,or
+openlearninginitiatives.
+   The class model is intentionally flexible.   A class can support a
+conventional course, but it can also be used for a narrower academic
+purpose.  For example, a class may function as a digital library space
+dedicatedmainlytosharingbooksandlearningmaterials. Thisflexibility
+shows that EduVerse is not restricted to one teaching pattern; it is
+a configurable academic workspace that can be adapted to different
+institutionaluses.
+
+=== Physical 18 printed 6 ===
+Chapter1.StrategicVisionandProjectScope                             6
+
+1.6.3 WebandMobileClientScope
+TheEduVersewebapplicationistheprimaryandmostcompleteclient. It
+supportsthebroaderadministrative,instructional,andassessmentworkflows
+thatdefinetheplatformasafulleducationalsystem.
+   EduVerse Mobile already exists as a companion mobile application,
+developed to extend selected platform features to mobile users.   Its
+scope is intentionally narrower than the web platform.  The current
+mobile implementation supports authenticated access, class summaries,
+notifications, materials, class chat, organization switching, and basic
+live-session participation.  It is therefore best described as a companion
+underactivedevelopmentratherthanasafeature-completereplacementfor
+thewebplatform. Administrativeworkflowsandseveraladvancedlearning
+featuresremainmainlyweb-side.
+
+1.6.4 DistinctiveFeaturesandExtensibleDesign
+EduVersecombinescommunication,materials,livecollaboration,assessment,
+AI assistance, and coding practice within a governed multi-organization
+model.
+   Itsextensibledesignisalsocentraltotheproject. Supportedfeatures
+can be enabled or disabled at organization level and, where supported,
+refinedfurtheratclasslevel. AIfeaturescanlikewisebedisabledwhen
+anorganizationoraspecificclassconsidersthemunsuitable. Thesame
+underlyingAPImodelalsocreatesreusepotentialforfutureintegrationsor
+companionclients,becausecoreworkflowsareexposedthroughprotected
+sharedroutesratherthanbeinghard-wiredtooneinterfaceonly.
+   Publicaccessaddsanotherimportantdimension. Whenenabled,public
+organizationsorpublicjoinpathscansupportbroadersharingofeducational
+materialsandmoreopenlearningparticipation,whilestillremainingunder
+organization-definedgovernancerules.
+
+=== Physical 19 printed 7 ===
+Chapter2
+
+LiteratureReviewand
+TheoreticalFramework
+
+
+
+
+     Contents
+
+     Introduction..................................      2.1,p.8
+     EvolutionofDigitalEducationPlatforms......      2.2,p.8
+     ResearchGapandIntegratedLearning                      2.3,p.9
+     Ecosystems...................................
+     ArtificialIntelligenceinEducation.............     2.4,p.10
+     Benchmarking:FragmentedToolsvs.Integrated            2.5,p.11
+     EduVerseApproach...........................
+     TheoreticalandTechnicalFoundationsof                 2.6,p.12
+     EduVerse.....................................
+
+
+
+
+
+
+
+
+
+
+
+
+                                    7
+
+=== Physical 20 printed 8 ===
+Chapter2.LiteratureReviewandTheoreticalFramework                   8
+
+2.1 Introduction
+
+Thisliteraturereviewestablishestheconceptualandtechnicalfoundations
+relevanttoEduVerseandsituatestheprojectwithinexistingapproaches
+to digital education.  Because the platform combines several forms of
+academic activity, its theoretical basis extends across digital learning
+systems,communicationandsynchronousteaching,artificialintelligencein
+education,accesscontrol,mobilelearning,andextensibleplatformdesign.
+   Together,theseareasprovidethebasisforexamininghoweducational
+activities can remain coordinated while supporting different users,
+institutional requirements, and modes of participation.   The review
+alsoidentifieslimitationsinfragmentededucationalenvironmentsandthe
+designprinciplesthatmotivateamoreconnectedapproach.
+
+2.2 EvolutionofDigitalEducation
+         Platforms
+
+2.2.1 FromTraditionalClassroomManagementto
+          DigitalLearningSystems
+Educational management has gradually moved from paper-based and
+face-to-face coordination toward persistent digital systems capable of
+organizing materials, communication, submissions, and academic records
+atinstitutionalscale. Learningmanagementsystemsemergedaspartof
+thistransition,providingshareddigitalspacesthroughwhichteachingand
+learningcouldbeorganizedmoreconsistently[4,3].
+   Thistransitionalsochangeduserexpectations. Studentsandteachers
+increasinglyexpectcontinuousaccess,asynchronousparticipation,traceable
+communication, and structured academic follow-up rather than isolated
+interactions[4]. Moderneducationalplatformsarethereforeevaluatednot
+onlybytheirabilitytostoreresources, butalsobyhoweffectivelythey
+supportongoingacademicactivity.
+
+=== Physical 21 printed 9 ===
+Chapter2.LiteratureReviewandTheoreticalFramework                   9
+
+2.2.2 LimitationsofFragmentedLearning
+          ManagementTools
+Research on educational digitalization shows that institutions commonly
+rely on combinations of specialized systems for learning management,
+communication, synchronous teaching, collaboration, and practical work.
+Althoughindividualtoolsmayperformtheirintendedfunctionseffectively,
+using multiple disconnected environments can weaken continuity across
+academicactivitiesandincreasecoordinationoverhead[3,11].
+   Such fragmentation can require users to repeatedly move between
+separate contexts while institutions manage permissions,  visibility,
+communication,andresponsibilityacrossdifferentservices. Theresulting
+challenge is maintaining consistent academic coordination when related
+activitiesaredistributedacrossseparatetools[3,11].
+
+2.3 ResearchGapandIntegratedLearning
+         Ecosystems
+
+The gap relevant to EduVerse concerns coordinated operation across
+individualeducationaltools. Existingsystemscansupportcommunication,
+learning resources, assessment, synchronous teaching, collaboration, and
+practical work independently; however, institutions also require these
+activitiestooperatewithinconsistentboundariesofresponsibility,access,
+andacademiccontext.
+   Thiscreatesabroaderrequirementforeducationalenvironmentsthat
+combinefunctionalintegrationwithinstitutionalflexibility.Integrationalone
+maybeinsufficientwhendifferentinstitutionsorclassesareexpectedtouse
+thesamecapabilitiesinthesameway.Conversely,flexibilitybecomesdifficult
+tomanagewhenrelatedworkflowsaredistributedacrossunrelatedsystems.
+   EduVerseaddressesthisgapbyadoptinganintegratedbutconfigurable
+educationalmodel.Thesignificanceofthisapproachliesnotinintroducing
+entirely new categories of educational tools, but in coordinating familiar
+academicfunctionswithinasharedinstitutionalcontext.
+
+=== Physical 22 printed 10 ===
+Chapter2.LiteratureReviewandTheoreticalFramework                  10
+
+2.4 ArtificialIntelligenceinEducation
+
+Artificialintelligencehasbecomeincreasinglyrelevanttoeducationbecause
+it can support explanation, summarization, drafting, and personalized
+academicassistancewhenusedwithinappropriatepedagogicalboundaries
+[2,6]. Itseducationalvalue,however,dependsnotonlyonitsabilityto
+generatecontent,butalsoonhowitsuseaffectsteacherjudgment,academic
+integrity,andthelearner’sengagementwithsourcematerial.
+   ForEduVerse,thisliteraturesupportstreatingAIasasupplementary
+learningcapabilityratherthanasareplacementforinstructionalauthority
+orestablishedacademicresources.
+
+2.4.1 Context-AwareLearningAssistance
+AIassistanceisgenerallymoreusefulwhenitisinformedbythelearner’s
+currentacademiccontext. Responsesrelatedtotheactiveclass,learning
+material,ortaskcanprovidemorerelevantsupportthangenericanswers
+detachedfromtheeducationalsetting[1,6].Contextawarenesscantherefore
+improvebothrelevanceandpedagogicalalignment.
+   ThisprinciplesupportstheuseofembeddedAIassistanceinEduVerse,
+wherelearningsupportisintendedtoremainconnectedtotheacademic
+environmentinwhichitisrequested.
+
+2.4.2 MaterialSummarizationandLearningSupport
+Longornumerouseducationalresourcescanmakeitdifficultforstudents
+to quickly recover the structure and key ideas of a topic. AI-supported
+summarizationcanassistbyforegroundingimportantconceptsandreducing
+theeffortrequiredtore-entercomplexmaterial[14].
+   Suchsummariesshouldremainsupportiveratherthansubstitutive. In
+thecontextofEduVerse,summarizationisthereforetreatedasanaidfor
+navigatinglearningmaterialratherthanasareplacementfortheoriginal
+resource.
+
+2.4.3 AssessmentandFeedbackSupport
+TheliteratureindicatesthatAIcancontributetoformativelearningsupport,
+drafting,andfeedback-relatedactivitieswhenusedwithincleareducational
+
+=== Physical 23 printed 11 ===
+Chapter2.LiteratureReviewandTheoreticalFramework                  11
+
+
+boundaries[6]. Atthesametime,unrestrictedusecanweakenauthentic
+assessmentandblurthedistinctionbetweenassistanceandtaskcompletion
+[9,6].
+   These concerns support a cautious role for AI within EduVerse.
+AI-assistedlearningshouldcomplementteacher-ledassessmentandstudy
+activities without replacing instructional authority or undermining the
+integrityofassessedwork.
+
+2.5 Benchmarking:FragmentedToolsvs.
+         IntegratedEduVerseApproach
+
+The purpose of this benchmarking comparison is not to rank individual
+products, but to contrast two different organizational models for digital
+learning:  workflows distributed across specialized tools and workflows
+coordinatedwithinasharededucationalenvironment.Table2.1summarizes
+themainstructuraldifferencesrelevanttoEduVerse.
+
+          Table2.1:FragmentedEducationalToolsvs.IntegratedEduVerse
+          Approach
+
+    Workflow         FragmentedReference            IntegratedEduVerse
+    Area             Model                          Approach
+    Learning         Learningresources,             Learningcontentandclass
+    Contentand       announcements,                 communicationremain
+    Communication    communication,andrelated       connectedtothesame
+                     classactivitymaybe             organizationalandclass
+                     distributedacrossdifferent     context.
+                     systems,requiringusersto
+                     moverepeatedlybetween
+                     contexts.
+    Synchronous      Liveteaching,presentation      Synchronouslearningand
+    Collaboration    interaction,andcollaborative   collaborativeactivityremain
+                     whiteboardactivitymay          associatedwiththe
+                     dependonseparate               surroundingclass
+                     communicationand               environment.
+                     collaborationtools.
+                                                    Continuedonthenextpage
+
+=== Physical 24 printed 12 ===
+Chapter2.LiteratureReviewandTheoreticalFramework                  12
+
+
+    Workflow         FragmentedReference            IntegratedEduVerse
+    Area             Model                          Approach
+    Assessment       Assignments,examinations,      Assessmentandsupported
+    andPractical     results,andpractical           practicallearningactivities
+    Learning         activitiessuchas               canremainconnectedtothe
+                     programmingmaybehandled        wideracademicworkflow.
+                     throughseparateacademicor
+                     specialistsystems.
+    Governance       Roles,permissions,visibility,  Institutionalgovernanceand
+    and              andavailablecapabilitiesmay    supportedfeature
+    Configurability  needtobemanaged                configurationarecoordinated
+                     separatelyacrossdifferent      withinthesameeducational
+                     services.                      environment.
+    Integration      Extendingadistributed          Asharedplatformmodel
+    andExtension     environmentmayrequire          providesacommon
+                     additionalintegrationbetween   foundationforsupported
+                     independentsystemsand          extensionsandconnected
+                     duplicatedcoordinationlogic.   clients.
+
+   Thecomparisonindicatesthatthemaindistinctionliesincoordination
+acrossrelatedacademicactivitiesratherthaninanysinglefeature.EduVerse
+thereforedrawsitsvaluefromtherelationshipbetweenthesecapabilitiesand
+theinstitutionalcontextinwhichtheyoperate.
+
+2.6 TheoreticalandTechnicalFoundations
+         ofEduVerse
+
+Theprecedingliteratureidentifiesseveralprinciplesrelevanttothedesign
+of an integrated educational environment.   The following subsections
+summarize the foundations most directly related to EduVerse, including
+web-basededucationalsystems,mobilecompanionapplications,synchronous
+learning,integratedprogrammingenvironments,extensibility,accesscontrol,
+anddatamanagement.
+
+2.6.1 Web-BasedEducationalPlatforms
+Web platforms remain central to comprehensive educational systems
+becausetheycansupportrichadministrativeinterfaces,detailedauthoring
+workflows, andpersistentacademicrecords. Theirvalueliesnotonlyin
+
+=== Physical 25 printed 13 ===
+Chapter2.LiteratureReviewandTheoreticalFramework                  13
+
+
+browseraccessibility, butalsointheircapacitytoaccommodatecomplex
+institutionalandinstructionalactivitieswithinaconsistentinterface.
+   Thesecharacteristicssupporttheuseofthewebastheprimaryclient
+for comprehensive EduVerse workflows, while more focused forms of
+participationcanbeextendedthroughotherclients.
+
+2.6.2 MobileCompanionLearningApplications
+Mobileeducationalapplicationsareoftenmosteffectivewhentheysupport
+frequent and lightweight participation rather than reproduce the full
+complexity of a comprehensive academic platform.  Notifications, quick
+updates,accesstomaterials,communication,andentryintoliveactivities
+areexamplesofinteractionsthatalignnaturallywithmobileusage[12].
+   This literature supports the companion-client model adopted by
+EduVerse,inwhichmobileaccessextendsselectededucationalinteractions
+whilethewebapplicationretainsbroaderfunctionaldepth.
+
+2.6.3 Real-TimeVirtualClassrooms
+Synchronous online teaching remains important because it supports
+immediacy, responsiveness, andastrongersenseofinstructionalpresence
+[7].Itseducationaleffectiveness,however,isinfluencedbyhowwellthelive
+activityremainsconnectedtothewiderlearningcontext.
+   For  EduVerse,  this  principle  supports  embedding  synchronous
+participation within the class environment rather than treating a live
+sessionasanisolatedeventdisconnectedfromcommunication, materials,
+andsubsequentacademicactivity.
+
+2.6.4 IntegratedCodingEnvironmentsfor
+          ProgrammingEducation
+Programmingeducationillustratesthecostoffragmenteddigitalworkflows
+particularlyclearly. Whenexplanationandpracticalcodingareseparated
+across unrelated environments, students must repeatedly switch between
+learning and execution contexts.  Integrated coding environments can
+reducethisseparationbybringingpracticalworkclosertothesurrounding
+instructionalactivity[10].
+
+=== Physical 26 printed 14 ===
+Chapter2.LiteratureReviewandTheoreticalFramework                  14
+
+
+   This principle supports the inclusion of browser-based coding within
+EduVerseasawayofmaintainingacloserrelationshipbetweenprogramming
+practiceandthewiderlearningcontext.
+
+2.6.5 ExtensibleEducationalEcosystemsand
+          GovernedOpenness
+Educationalinstitutionsrarelyrequireeveryavailablecapabilityinevery
+learningcontext. Modularplatformapproachesaddressthisvariationby
+allowingfunctionalitytobecombinedwithoutforcingarigidall-or-nothing
+structure[13].Extensibilityismostuseful,however,whenitremainssubject
+toclearinstitutionalcontrol.
+   The same principle applies to openness.  Broader access to learning
+resources or participation can be valuable when visibility and authority
+remain governed by institutional rules [11].  These principles support
+EduVerse’sconfigurableapproachwithoutrequiringeveryorganizationor
+classtooperateidentically.
+
+2.6.6 Security,Roles,andDataManagement
+Role management is a foundational requirement in educational systems
+because students, teachers, and administrators interact with academic
+information from different positions of responsibility. Role-Based Access
+Control provides an established approach for separating permissions and
+responsibilitiesamongdifferentactors[5].
+   Thisprinciplesupportstherole-awareaccessmodelusedbyEduVerse,
+whereacademicandadministrativeactionsaredifferentiatedaccordingto
+theuser’sinstitutionalcontext.
+   Data management is equally important.  Educational systems must
+preserve academic records, protect sensitive information, and provide
+structuredaccesstolearningmaterialsandresults[8,5].Theserequirements
+providethetheoreticalbasisfortreatingdataprotection,controlledaccess,
+andacademic-historypreservationascoresystemconcerns.
+   Together, these foundations establish the academic and technical
+rationaleforEduVerseasanintegratededucationalplatform.Theliterature
+indicatesthateffectivedigitallearningenvironmentsdependnotonlyon
+individual capabilities, but also on how communication, participation,
+assessment,accesscontrol,andlearningsupportarecoordinated. Thenext
+chapterbuildsonthesefoundationsbypresentingthemethodologyusedto
+analyze,design,implement,andrefinethesystem.
+
+=== Physical 27 printed 15 ===
+Chapter3
+
+Methodology
+
+
+
+
+     Contents
+
+     Introduction..................................     3.1,p.16
+     MethodologicalApproach......................     3.2,p.16
+     RepeatedDevelopmentCycle..................     3.3,p.18
+     ChapterSummary.............................     3.4,p.19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    15
+
+=== Physical 28 printed 16 ===
+Chapter3.Methodology                                               16
+
+3.1 Introduction
+
+EduVerse combines multiple academic and administrative workflows that
+shareuserroles,data,permissions,andinteractionrules. Developingthese
+capabilities therefore required a methodology that could accommodate
+progressive refinement while preserving consistency across the wider
+platform.
+   Because dependencies between features often became clearer during
+implementation and testing, the development process needed to support
+repeatedanalysis,refinement,andintegrationratherthanrelyonasingle
+fixeddevelopmentsequence.
+
+3.2 MethodologicalApproach
+
+EduVersewasdevelopedusingahybriditerativemethodologywithamainly
+feature-basedvertical-sliceapproach. Developmentwasorganizedaround
+individualacademicandadministrativefeatures. Initialrequirementswere
+identifiedprimarilythroughtheprojectteam’spriorlifeexperiencewith
+educationalanddigitallearningenvironments. Eachfeaturewasanalyzed,
+implementedacrosstherequiredsystemlayers,tested,andrefinedbefore
+beingintegratedwiththewiderplatform. Thisiterativeprocessallowed
+requirements and implementation details to be adjusted as development
+progressed.
+
+3.2.1 IterativeFeature-CenteredDevelopment
+Developmentwasorganizedaroundmeaningfulfunctionalcapabilitiesrather
+thanaroundisolatedtechnicallayers. Eachiterationfocusedonaselected
+academicoradministrativefeatureandmoveditthroughanalysis,interaction
+design,implementation,testing,andintegration.
+   Thisfeature-centeredorganizationkeptdevelopmenttiedtorecognizable
+userorinstitutionaloutcomeswhilestillallowingtherequiredtechnicalwork
+tospanmultiplesystemlayers. Onecompletedincrementcouldalsoreveal
+requirementsordependenciesthatinformedtheplanningandrefinementof
+subsequentwork.
+   Theiterativeprocessalsosupportedcoordinationbetweentheprimary
+webapplicationandthemobilecompanionapplication. Featuresintended
+
+=== Physical 29 printed 17 ===
+Chapter3.Methodology                                               17
+
+
+formobileusewererefinedacrossbothapplications,whilemoreextensive
+administrativeandteachingworkflowsremainedmainlyontheweb.
+
+3.2.2 Vertical-SliceRealization
+Afeaturewasgenerallytreatedasacoherentfunctionalunitratherthan
+divided into separate interface-only or backend-only development stages.
+Dependingonitsscope,afeatureslicecouldinvolveuserinteraction,business
+rules,APIs,permissions,andpersistentdata.
+   Forexample,workflowssuchasassignmentsubmissionorexamination
+schedulingrequiremorethananinterfacechangebecausetheirbehavioralso
+dependsontheactinguser,governingrules,andstoredacademicinformation.
+   The approach was predominantly, rather than exclusively, vertical.
+Somefeaturesrequiredchangesacrossseveralsystemlayers,whileothers
+involvedonlyasubsetofthoselayersorextendedintothemobilecompanion
+application. Themethodologythereforefavoredcompletefunctionalpaths
+whereappropriatewithoutrequiringeveryincrementtomodifyeverylayer
+ofthesystem.
+
+3.2.3 WhyThisMethodologyFitsEduVerse
+ArigidsequentialmethodologywaslesssuitableforEduVersebecausemany
+platformcapabilitiessharepermissions,data,usercontext,andinteraction
+rules.Implementingandexaminingrelatedfunctionalityinpracticeclarified
+thesedependenciesprogressively.
+   An iterative approach allowed these dependencies to be addressed
+progressively.  Testing and refinement provided opportunities to identify
+inconsistencies in workflows, permissions, interfaces, and data behavior
+beforeeachfeaturebecamefullyintegratedwiththesurroundingplatform.
+   The vertical-slice emphasis complemented this iterative process by
+keeping development focused on functional user outcomes rather than
+isolatedtechnicalcomponents. Thiswasparticularlyusefulinamulti-role
+system where related workflows may behave differently for Organization
+Administrators,Teachers,andStudents.
+
+=== Physical 30 printed 18 ===
+Chapter3.Methodology                                               18
+
+3.3 RepeatedDevelopmentCycle
+
+Eachdevelopmentincrementfollowedarepeatedsix-stagecycle,withthe
+depthofeachstageadjustedaccordingtothefeatureandthesystemlayers
+involved.  A relatively localized change could require limited supporting
+work, while a broader feature might involve interface behavior, services,
+permissions,persistentdata,andmobileparticipation.
+   Regardlessofscope,thesameprogressionwasmaintainedfromfeature
+selection through analysis, design, implementation, testing, and final
+integrationintothewiderplatform.
+
+
+       Table3.1.RepeatedIterativeDevelopmentStructureinEduVerse
+     Repeatedphase             Methodologicalfocus
+     FeatureSelection          Identifythenextmeaningfulacademicor
+                               administrativecapability,clarifyitsscope,
+                               anddefinetheintendedworkflowboundaries
+                               forthecurrentincrement.
+     WorkflowAnalysis          Examinetherelevantactors,requirements,
+                               conditions,informationflow,constraints,
+                               permissions,anddependenciesassociatedwith
+                               theselectedfeature.
+     Behaviorand               Definehowthefeatureshouldbehavefrom
+     InteractionDesign         theuserperspective,includingrole-sensitive
+                               interaction,states,transitions,anddecision
+                               points.
+     FeatureSlice              Implementtheselectedfeatureacrossthe
+     Implementation            systemlayersrequiredbyitsscope,including
+                               interfacebehavior,services,permissions,
+                               APIs,anddatahandlingwhereapplicable.
+     Testingand                Testtheimplementedbehavioragainstthe
+     Refinement                intendedworkflow,identifyinconsistenciesor
+                               defects,andrefinethefeaturebeforebroader
+                               platformintegration.
+     PlatformIntegration       Integratethecompletedfeaturewithexisting
+                               modules,sharedrules,datarelationships,and
+                               userworkflowssothatitremainscoherent
+                               withthewiderplatform.
+
+=== Physical 31 printed 19 ===
+Chapter3.Methodology                                               19
+
+
+   Versioncontrolandpull-requestreviewsupportedthisiterativeprocess
+bykeepingfeaturechangesboundedandallowingintegrationeffectstobe
+reviewedbeforemerge.
+
+3.4 ChapterSummary
+
+EduVerse was developed using a hybrid iterative methodology that
+combined feature-centered planning with predominantly vertical-slice
+implementation.Developmentprogressedthroughrepeatedcyclesoffeature
+selection,workflowanalysis,behaviorandinteractiondesign,feature-slice
+implementation, testing and refinement, and platform integration.  This
+approachsupportedprogressiverefinementwhilepreservingcoherenceacross
+related academic and administrative workflows.  The following chapters
+presenttheresultingsystemanalysis,design,implementation,andtesting.
+
+=== Physical 32 printed 20 ===
+Chapter4
+
+SystemAnalysisand
+Requirements
+
+
+
+
+      Contents
+
+      Introduction..................................     4.1,p.21
+      SystemOverview..............................     4.2,p.21
+      SystemActors ................................     4.3,p.21
+      FunctionalRequirements......................     4.4,p.22
+      Non-FunctionalRequirements .................     4.5,p.27
+      Use-CaseModel...............................     4.6,p.28
+      ActivityDiagrams.............................     4.7,p.44
+      ChapterSummary.............................     4.8,p.59
+
+
+
+
+
+
+
+
+
+
+
+
+                                    20
+
+=== Physical 33 printed 21 ===
+Chapter4.SystemAnalysisandRequirements                            21
+
+4.1 Introduction
+
+ThischaptertranslatesthestrategicdirectionofEduVerseintoitsprincipal
+analytical elements.   It identifies the system actors, functional and
+non-functionalrequirements,accessconditions,andinteractionmodelsthat
+defineexpectedplatformbehavior.
+   The chapter then presents the use-case and activity models used
+to represent user interaction and major workflow sequences.  Together,
+these elements provide the analytical basis for the system design and
+implementationdescribedinthefollowingchapters.
+
+4.2 SystemOverview
+
+EduVerseisamulti-organizationeducationalplatforminwhichtheclassacts
+astheprimaryoperationalworkspace.Thesystemsupportsthreeprincipal
+humanroles: OrganizationAdministrator,Teacher,andStudent,whilethe
+sameaccountmaybelongtomultipleorganizationsorholdmorethanone
+role.
+   Systembehaviordependsontheactiveorganization,activerole,class
+membership, and applicable feature configuration.   These conditions
+determinewhichresources,workflows,andmanagementactionsareavailable
+tothecurrentuser.
+   The web application provides the primary operational environment,
+while the mobile companion extends selected high-frequency academic
+interactions.  This chapter analyzes the system at the level of actors,
+requirements, permissions, and workflows rather than implementation
+architecture.
+
+4.3 SystemActors
+
+TheprincipalhumanactorsofEduVersearetheOrganizationAdministrator,
+Teacher,andStudent.Theserolesrepresentdifferentlevelsofresponsibility
+withintheplatformratherthanpermanentlyseparateaccounttypes.Auser
+maybelongtomorethanoneorganizationorholdmorethanonerole,with
+accessresolvedaccordingtothecurrentworkspacecontext. Thediagrams
+in this chapter focus on the three principal human actors.  Automatic
+responsibilities such as access enforcement,  notification generation,
+
+=== Physical 34 printed 22 ===
+Chapter4.SystemAnalysisandRequirements                            22
+
+
+integrity-event recording, and workflow-state changes are represented
+throughthesurroundinganalysisandworkflowbehaviorwhererelevant.
+
+                  Table4.1.PrimaryEduVerseSystemActors
+       Actor                 AnalyticalRoleintheSystem
+       Organization          Manages   organization-level   governance,
+       Administrator         membership, role assignment, institutional
+                             settings,   class   oversight,   and   other
+                             administrativecapabilities.
+       Teacher               Managesinstructionalandclass-levelacademic
+                             workflowswithinthepermissionsgrantedby
+                             theorganizationandclasscontext.
+       Student               Participates in permitted learning activities,
+                             accessesclassresources,completesassessments,
+                             joins   communication   and   live-learning
+                             workflows, and reviews released academic
+                             outcomes.
+
+
+4.4 FunctionalRequirements
+
+The functional requirements define the main behaviors that EduVerse
+mustprovidewithintheimplementedprojectscope. Theyaregroupedby
+functionalareatomaintaintraceabilitywiththeuse-casemodelandsystem
+workflows.
+
+AuthenticationandAccess
+   •FR-01.Thesystemshallallowuserstosignup,signin,verifyemail
+      addresses,requestpasswordreset,andlogout.
+   •FR-02.Thesystemshallrequireauthenticatedaccessbeforeopening
+      organization-scopedorclass-scopedworkspaces.
+   •FR-03.The system shall allow users with more than one eligible
+      workspacecontexttoselecttheActiveOrganizationandActiveRole.
+   •FR-04.The system shall open the role-appropriate workspace or
+      dashboardaftersuccessfulauthenticationandcontextresolution.
+
+=== Physical 35 printed 23 ===
+Chapter4.SystemAnalysisandRequirements                            23
+
+OrganizationandRoleManagement
+   •FR-05.The system shall allow an Organization Administrator to
+      createanorganizationfromaselectedtemplateandconfigureitsinitial
+      institutionalsettings.
+
+   •FR-06.The system shall allow Organization Administrators to
+      invite or reinvite members, revoke outstanding invitations, manage
+      organizationmembership,andgrantorremovepermittedorganization
+      roles.
+   •FR-07.The system shall support invitation-based access and,
+      whenenabled,PublicJoinLinkaccesswithtarget-roleselectionand
+      direct-joinorapproval-basedentrymodes.
+   •FR-08.The system shall allow Organization Administrators to
+      manage organization-level access governance, including join-request
+      decisions,public-accesssettings,andteacherclasspermissions.
+
+ClassManagementandClassHistory
+   •FR-09.Thesystemshallallowauthorizeduserstocreateandedit
+      classeswithdetailssuchastitle,code,term,stage,description,purpose,
+      andrelatedsettings.
+
+   •FR-10.The system shall allow class membership management,
+      includingassigningorchangingtheresponsibleTeacherandmanaging
+      studentenrollmentaccordingtopermissions.
+   •FR-11.Thesystemshallallowauthorizeduserstoconfigureclass
+      tools,extensionavailability,visibilityrules,Resultsvisibility,andclass
+      purposewithinthecontrolsexposedfortheclass.
+   •FR-12.Thesystemshallallowadministratorsorpermittedteachers
+      toendaclass,stage,ortermandmovetheclassintoPastTermswhile
+      preservingclasshistoryandauthorizedprevious-termstudentlinkage.
+
+CourseContentandMaterials
+   •FR-13.Thesystemshallallowauthorizeduserstouploadmaterials
+      togetherwithdescriptivedetailsandtheselectedfile.
+
+=== Physical 36 printed 24 ===
+Chapter4.SystemAnalysisandRequirements                            24
+
+
+  •FR-14.Thesystemshallallowclassmemberstoview,search,filter,
+      preview,open,anddownloadavailablematerialsaccordingtoaccess
+      permissions.
+
+  •FR-15.Thesystemshallallowauthorizeduserstodeletematerials
+      fromtheapplicableclassworkspace.
+
+ClassCommunicationandNotifications
+  •FR-16.Thesystemshallallowclassmemberstosendtextormedia
+      messageswithintheclasscommunicationspace.
+
+  •FR-17.Thesystemshallallowauthorizeduserstopostannouncements,
+      removeannouncemententriesfromtheannouncementarea,andsearch
+      theclassconversation.
+
+  •FR-18.Thesystemshallgeneratenotificationsfromrelevantsystem
+      eventsandshallallowuserstoview,open,mark,markall,anddelete
+      notificationentries.
+
+AssignmentManagement
+  •FR-19.Thesystemshallallowauthorizeduserstocreate,edit,delete,
+      saveasdraft,andpublishassignments.
+
+  •FR-20.Thesystemshallallowassignmentconfigurationforduedate,
+      scorerange,submissionmodes,andoptionalattachedfiles.
+
+  •FR-21.The system shall allow students to submit text or file
+      workaccordingtotheassignmentsettingsandtoresubmitwhenthe
+      assignmentpolicypermitsit.
+
+  •FR-22.The system shall allow Teachers to review submissions,
+      recordgrades, providefeedback, anduseAI-assistedfeedbacktools
+      whenenabled.ThesystemshallallowOrganizationAdministratorsto
+      reviewsubmissionsandgradingoutcomesforoversight.
+
+=== Physical 37 printed 25 ===
+Chapter4.SystemAnalysisandRequirements                            25
+
+ExamManagementandIntegrity
+  •FR-23.Thesystemshallallowauthorizeduserstocreate,edit,delete,
+      draft,andpublishexams,includingquestionmanagementandpasscode
+      configurationwhenrequired.
+
+  •FR-24.Thesystemshallallowstudentsenrolledintherelevantclass
+      tostartanexamattempt, enterapasscodewhenrequired, answer
+      questions,andsubmittheattemptwithinthevalidexamwindow.
+
+  •FR-25.Thesystemshallapplyconfiguredintegritycontrols,including
+      fullscreenrequirementsandintegrity-eventrecordingwhentherequired
+      examstateisinterrupted.
+
+  •FR-26.The system shall allow teachers and administrators to
+      monitorattempts,reviewintegrityevents,grademanualanswers,void
+      attempts,andgrantretakeswherepermitted.
+
+  •FR-27.The system shall allow release of exam results and, after
+      release,shallallowstudentstoviewresultdetailsandanswerreview
+      wheretheclasssettingspermitit.
+
+LiveSessionsandWhiteboard
+  •FR-28.Thesystemshallallowauthorizedclassmanagerstostart,
+      manage,andendlivesessions.
+
+  •FR-29.Thesystemshallallowauthorizeduserstojoinlivesessions
+      andaccessavailablesessiontools,suchasmicrophone,camera,screen
+      sharing,participantsview,andsessionchat,accordingtotheirroleand
+      permissions.
+
+  •FR-30.Thesystemshallallowwhiteboardinteractionorwhiteboard
+      viewingaccordingtotheroleandpermissionsofthecurrentparticipant.
+
+ResultsandDashboards
+  •FR-31.Thesystemshallproviderole-specificdashboardsforStudents,
+      Teachers,andOrganizationAdministrators.
+
+=== Physical 38 printed 26 ===
+Chapter4.SystemAnalysisandRequirements                            26
+
+
+  •FR-32.Thesystemshallallowstudentstoviewassignmentgrades,
+     feedback, released exam results, and related result details within
+     permittedclasses.
+  •FR-33.Thesystemshallallowteachersandadministratorstoreview
+     assignmentandexamresults.
+
+AILearningSupport
+  •FR-34.ThesystemshallprovideaclassAIAgentforcontextual
+     academic support when the AI feature is enabled for the current
+     organizationandclasscontext.
+  •FR-35.The system shall allow users to generate AI-assisted
+     summariesofavailableclassmaterials.
+  •FR-36.ThesystemshallallowauthorizedTeachersandOrganization
+     Administrators  to  use  AI-assisted  drafting  for  assignments,
+     examinations,andassignmentfeedbackwhenAIsupportisavailable
+     inthecurrentcontext.
+
+IntegratedCodingLab/IDEExtension
+  •FR-37.ThesystemshallallowuserstoopentheIntegratedCoding
+     Lab/IDEExtensionwhenitisenabledforthecurrentclass.
+  •FR-38.Thesystemshallallowuserstochooseanavailablecoding
+     environmentandmanagethevisibleprojectfilesintheworkspace.
+  •FR-39.Thesystemshallallowuserstoopen,edit,andsavecode,
+     andtorunorpreviewsupportedcodeaccordingtotheselectedcoding
+     environment.
+  •FR-40.Thesystemshallallowuserstoreviewconsoleorproblems
+     output,resettheworkspacewhenneeded,andusetheIDEterminal.
+
+FeatureConfigurationandExtensibility
+  •FR-41.Thesystemshallallowsupportedplatformfeaturestobe
+     enabledordisabledattheorganizationlevelandattheclasslevelfor
+     featuresthatprovideclass-levelcontrol.
+
+=== Physical 39 printed 27 ===
+Chapter4.SystemAnalysisandRequirements                            27
+
+
+   •FR-42.Thesystemshallhide, block, orclearlymarkunavailable
+      featuresaccordingtotheactiveorganizationandclassconfiguration
+      ratherthanexposingunusablecontrols.
+
+   •FR-43.Thesystemshallallowuserstoopenenabledextensionsand
+      featuremodulesfromtheapplicableorganizationorclasscontext.
+
+ProfileandHelp
+   •FR-44.The system shall allow users to view profile information,
+      change theme preferences, and manage password-related account
+      settings.
+
+   •FR-45.The system shall allow authenticated users to return to
+      workspace selection and change the Active Organization or Active
+      Rolewithoutsigningout.
+
+   •FR-46.The system shall provide searchable help content for
+      account,class,administration,AI,coding,assignment,exam,results,
+      navigation,andtroubleshootingtopics.
+
+4.5 Non-FunctionalRequirements
+
+The non-functional requirements define the principal quality, security,
+operational, andmaintainabilityconstraintsexpectedofEduVersewithin
+thescopeofthisproject.
+
+   •NFR-01 Usability.   The interface shall maintain consistent
+      navigationandclearcontextindicationacrossorganization,role,class,
+      andfeatureworkflows.
+
+   •NFR-02SecurityandAccessControl.Thesystemshallenforce
+      accesscontrolbasedonauthentication,organizationmembership,user
+      role,andclassaccess. Publicaccessfeaturesshallfollowtheaccess
+      rulesdefinedbytheorganization.
+
+   •NFR-03Reliability.Thesystemshallpreserveconsistentworkflow
+      stateandstoredrecordsduringmembership, materials, submission,
+      examination,notification,live-session,andresultsworkflows.
+
+=== Physical 40 printed 28 ===
+Chapter4.SystemAnalysisandRequirements                            28
+
+
+  •NFR-04Performance.Interactivepagesandacademicworkflows
+      shallrespondwithoutdelaysthatpreventnormaltaskcompletion.
+
+  •NFR-05Maintainability.Thesystemshallkeepsupportedfeatures
+      and shared services structurally separated so that correcting or
+      extendingoneworkflowdoesnotrequireunrelatedworkflowstobe
+      rewritten.
+
+  •NFR-06 Scalability. The data and access model shall support
+      multiple organizations, classes, memberships, and academic records
+      withoutrequiringaseparateapplicationinstanceforeachorganization.
+
+  •NFR-07DataPrivacy.Personalandacademicdatashallbeexposed
+      onlytoauthorizedusersandcontexts,withparticularprotectionfor
+      profiles,submissions,integrityrecords,grades,andorganization-scoped
+      data.
+
+  •NFR-08 Cross-Client Consistency.  The system shall apply
+      consistentauthentication,role-resolution,andcoreaccessrulesacross
+      supportedclientsthatusethesharedplatformservices.
+
+4.6 Use-CaseModel
+
+Theuse-casemodelrepresentstheprincipalinteractionsbetweenEduVerse
+usersandtheservicesavailablewithintheselectedorganizationandclass.
+TheProjectOverviewprovidesahigh-levelsystemview,whiletheremaining
+diagramsfocusonspecificfunctionalareas.
+   The diagrams emphasize human interaction with the platform.
+Automatic system behavior is represented through the surrounding
+analysisandrelatedworkflowdescriptionsratherthanmodeledrepeatedly
+asaseparatesystemactor.
+ProjectOverview
+TheProjectOverviewuse-casediagramprovidesahigh-levelrepresentation
+oftherelationshipbetweenthethreeprincipalhumanactorsandthemain
+EduVerse service areas.  Detailed interactions are decomposed into the
+module-specificdiagramsthatfollow.
+
+=== Physical 41 printed 29 ===
+Chapter4.SystemAnalysisandRequirements                            29
+
+AuthenticationandAccess
+Figure4.2representsentryintotheEduVerseworkspaceandtheconditions
+requiredtoresolvetheuser’sactivecontext.Itdistinguishesaccountaccess
+fromorganization-androle-selectionbehaviorwhenmultiplevalidcontexts
+areavailable.
+OrganizationandRoleManagement
+Figure4.3representsorganization-levelgovernanceandmembershipcontrol.
+It emphasizes how administrative authority, role assignment, access
+pathways, and institutional settings are resolved within an organization
+context.
+ClassManagement
+Figure4.4modelstheClassasthecentraloperationalunitofEduVerse.
+It emphasizes class lifecycle, membership, configuration, visibility, and
+historicalcontinuityundertheapplicablepermissions.
+AssignmentManagement
+Figure 4.5 represents the assignment workflow and distinguishes teacher
+activities,suchasassignmentcreationandgrading,fromstudentsubmission
+activities.Someactionsdependonassignmentsettings,suchaspublication
+status,theselectedsubmissionmode,andwhetherlatesubmissionisallowed.
+AILearningSupport
+Figure 4.6 represents AI as a supporting capability within the academic
+workflowratherthanasanindependenthumanactor. Availabilitydepends
+ontheapplicableorganizationandclassconfiguration.
+ClassCommunicationandNotifications
+Figure  4.7  distinguishes  user-generated  class  communication  from
+system-generated notification behavior.   The model separates direct
+interactionfromevent-drivenawarenesswhilekeepingbothwithintheclass
+context.
+CourseContentandMaterials
+Figure4.8representsthecontrolledlifecycleofclasslearningresourcesand
+thedistinctionbetweenauthorizedcontentmanagementandmemberaccess.
+
+=== Physical 42 printed 30 ===
+Chapter4.SystemAnalysisandRequirements                            30
+
+ExamManagementandIntegrity
+Figure4.9modelsthecontrolledexaminationlifecycleandtherelationship
+betweenattempteligibility,integritymonitoring,grading,resultrelease,and
+post-attemptadministrativedecisions.
+LiveSessionsandWhiteboard
+Figure4.10representssynchronousparticipationwithintheclasscontextand
+thecollaborationcapabilitiesavailabletoeligibleparticipantsaccordingto
+theirroleandpermissions.
+IntegratedCodingLab/IDEExtension
+Figure 4.11 represents access to the integrated coding workspace as a
+configurableclasscapability.Themodelemphasizestherelationshipbetween
+workspaceinteractionandfeatureavailability.
+ProfileandHelp
+Figure4.12representsaccount-orientedanduser-supportinteractionsthat
+apply across the wider platform rather than to one specific academic
+workflow.
+ResultsandDashboards
+Figure4.13representsrole-sensitiveaccesstodashboardinformationand
+academicoutcomes.Themodelemphasizesthatresultvisibilitydependson
+actorresponsibility,resultrelease,andapplicableclasssettings.
+
+=== Physical 43 printed 31 ===
+Chapter4.SystemAnalysisandRequirements                            31
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Figure4.1.ProjectOverviewUse-CaseDiagram
+
+=== Physical 44 printed 32 ===
+Chapter4.SystemAnalysisandRequirements                            32
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           Figure4.2.AuthenticationandAccessUse-CaseDiagram
+
+=== Physical 45 printed 33 ===
+Chapter4.SystemAnalysisandRequirements                            33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Figure4.3.OrganizationandRoleManagementUse-CaseDiagram
+
+=== Physical 46 printed 34 ===
+Chapter4.SystemAnalysisandRequirements                            34
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               Figure4.4.ClassManagementUse-CaseDiagram
+
+=== Physical 47 printed 35 ===
+Chapter4.SystemAnalysisandRequirements                            35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Figure4.5.AssignmentManagementUse-CaseDiagram
+
+=== Physical 48 printed 36 ===
+Chapter4.SystemAnalysisandRequirements                            36
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              Figure4.6.AILearningSupportUse-CaseDiagram
+
+=== Physical 49 printed 37 ===
+Chapter4.SystemAnalysisandRequirements                            37
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Figure4.7.ClassCommunicationandNotificationsUse-CaseDiagram
+
+=== Physical 50 printed 38 ===
+Chapter4.SystemAnalysisandRequirements                            38
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         Figure4.8.CourseContentandMaterialsUse-CaseDiagram
+
+=== Physical 51 printed 39 ===
+Chapter4.SystemAnalysisandRequirements                            39
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Figure4.9.ExamManagementandIntegrityUse-CaseDiagram
+
+=== Physical 52 printed 40 ===
+Chapter4.SystemAnalysisandRequirements                            40
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         Figure4.10.LiveSessionsandWhiteboardUse-CaseDiagram
+
+=== Physical 53 printed 41 ===
+Chapter4.SystemAnalysisandRequirements                            41
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   Figure4.11.IntegratedCodingLab/IDEExtensionUse-CaseDiagram
+
+=== Physical 54 printed 42 ===
+Chapter4.SystemAnalysisandRequirements                            42
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Figure4.12.ProfileandHelpUse-CaseDiagram
+
+=== Physical 55 printed 43 ===
+Chapter4.SystemAnalysisandRequirements                            43
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Figure4.13.ResultsandDashboardsUse-CaseDiagram
+
+=== Physical 56 printed 44 ===
+Chapter4.SystemAnalysisandRequirements                            44
+
+4.7 ActivityDiagrams
+
+The following activity diagrams model the principal EduVerse workflows
+representedbytheuse-caseset.Theyemphasizeuser-visibleactions,decision
+points,andrelevantautomaticsystemresponseswhileavoidingunnecessary
+implementationdetail.
+AD-01AuthenticationandWorkspaceAccess
+Figure4.14emphasizesthemaindecisionpathsinvolvedinaccountaccess,
+verification, recovery, workspace-context resolution, and exit from the
+authenticatedsession.
+AD-02OrganizationMemberAccessandPublicJoin
+Link
+Figure 4.15 emphasizes the alternative membership-entry paths and the
+administrativedecisionsrequiredwhenaccessdependsoninvitation,public
+joining,orapproval.
+AD-03ClassCreation,Configuration,andPastTerms
+Figure 4.16 represents the class lifecycle from creation and configuration
+throughcontrolledclosureandpreservationinPastTerms.
+AD-04CourseContentandMaterials
+Figure4.17representsthemaindecisionpathsbetweenauthorizedmaterial
+managementandmemberaccesstoavailablelearningresources.
+AD-05ClassCommunicationandNotifications
+Figure 4.18 distinguishes direct class communication actions from
+event-drivennotificationhandlingwithinthesameclasscontext.
+AD-06AssignmentWorkflow
+Figure 4.19 emphasizes the assignment lifecycle and the decision points
+surroundingpublication,submission,permittedresubmission,grading,and
+returnedoutcomes.
+
+=== Physical 57 printed 45 ===
+Chapter4.SystemAnalysisandRequirements                            45
+
+AD-07ExamManagementandIntegrityWorkflow
+Figure4.20emphasizestheprincipalexaminationdecisionpathsinvolving
+attempteligibility,integrityhandling,grading,resultrelease,voiding,and
+retakeoutcomes.
+AD-08LiveSessionandWhiteboardWorkflow
+Figure 4.21 represents the controlled synchronous-session lifecycle from
+sessionavailabilitythroughparticipationtoclosure.
+AD-09ResultsWorkflow
+Figure4.22representstheconditionsunderwhichacademicresultsbecome
+availabletodifferentactorsandhowvisibilityrulesaffectsubsequentreview.
+AD-10DashboardWorkflow
+Figure 4.23 represents role-specific dashboard access and preserves the
+distinctionbetweensummaryinformationanddetailedResultsworkflows.
+AD-11AILearningSupportWorkflow
+Figure 4.24 represents access to AI-supported learning actions and the
+configuration conditions that determine whether those capabilities are
+available.
+AD-12IntegratedCodingLab/IDEWorkflow
+Figure4.25representsthemaincoding-workspaceinteractionflowunderthe
+conditionthatthecorrespondingclasscapabilityisenabled.
+AD-13ProfileandHelpWorkflow
+Figure 4.26 represents the user-support workflow for account-oriented
+settings,workspace-contextaccess,andhelpresources.
+
+=== Physical 58 printed 46 ===
+                                  Chapter4.SystemAnalysisandRequirements                            46
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                Useropensthe
+                             EduVerseaccesspage.
+
+
+
+                                   Choose
+                                 accesspath?
+
+
+
+
+
+Signup                        Signin                    Resetaccess
+
+
+      Registera                  Signinwith                    Request
+     newaccount.                                            passwordreset.
+                                  credentials.
+
+
+     Confirmthe                                                Receive
+   verificationemail.                                       password-reset
+                                                                email.
+
+
+
+   Returntosignin.                                        Opentheresetlink.
+                                           Figure4.14.AuthenticationandWorkspaceAccessActivityDiagram
+
+
+                                                             Setthenew
+                                                              password.
+
+
+
+
+
+                                    Access          No
+                                  accepted?
+                                                                Errormessage
+                                                                   isshown.
+                                     Yes
+
+                           Selectactiveorganization
+                               orroleifneeded.
+
+
+
+
+                                 Dashboardor
+                            workspaceisdisplayed.
+
+
+
+
+                           Userworksintheselected
+                             contextandlogsout.
+
+=== Physical 59 printed 47 ===
+                                        Chapter4.SystemAnalysisandRequirements                            47
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Administratoropensthe
+                         peopleandaccessworkspace.
+
+
+
+                                 Selectaccess
+                                  method.
+
+
+
+        Invitation                                          Publiclink
+
+
+
+
+A.Invitation-basedaccess                    B.PublicJoinLinkaccess
+
+
+
+      Administratorinvites                            Useropensthe
+      orregistersamember.               Figure4.15.OrganizationMemberAccessandPublicJoinLinkActivitypublicjoinlink.
+                                        Diagram
+
+
+           Useropens                                  Usersignsinor
+         theinvitation.                             signsupifrequired.
+
+
+
+
+         Usersignsinor                           No      Approval     Yes
+       signsupifrequired.                               required?
+
+
+
+
+
+          Organization                     Accessisgranted.      Usersubmits
+       workspaceisopened.                                       ajoinrequest.
+
+
+
+
+
+                                                                Administrator
+                                                              reviewstherequest.
+
+
+
+
+
+
+                                                       No         Approved?
+
+
+                                              Rejectionor            Yes
+                                             pendingstatus       Organization
+                                               isshown.           workspace
+                                                                  isopened.
+
+=== Physical 60 printed 48 ===
+                                       Chapter4.SystemAnalysisandRequirements                            48
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        Figure4.16.ClassCreation,Configuration,andPastTermsActivityDiagramAdministratororpermittedTeacher
+                                                   openstheclass-managementworkspace.
+
+
+
+
+Administratormanages                                        Administratorview                                        Teacheropenstheclass
+organization-wideclass            Administrator              orTeacherview?                    Teacher                 controlsallowedby
+ setupandoversight.                                                                                                 organizationpermissions.
+
+
+
+
+
+
+                                                    Createoredittheclassanddefinethe
+                                                  title,code,term,stage,andotherdetails.
+
+
+
+                                                        AssignorchangetheTeacher
+                                                       andmanageclassmembership.
+
+
+
+                                                       Configureclasstools,visibility
+                                                        rules,andResultsvisibility.
+
+
+
+                                                        Savetheclassconfiguration.
+
+
+
+
+
+                                                                Endclass,           No
+                                                              stage,orterm?
+
+
+
+
+
+                                                                    Yes
+
+
+                                                      MovetheclassintoPastTerms.
+
+
+
+                                                     Preserveclasshistory,membership
+                                                      records,andacademicoutcomes.
+
+=== Physical 61 printed 49 ===
+                                Chapter4.SystemAnalysisandRequirements                            49
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                              Classmemberopens
+                                                 classmaterials.
+
+                                             Materialsaredisplayed.
+
+
+                                            Selectamaterialsaction.
+
+
+
+
+
+
+
+
+  A.Managematerial                            B.Viewmaterial                 C.AIsummary
+
+
+           Teacher/Admin                        Studentbrowses,                     ChooseAIsupport.
+          managesmaterial.                         searches,or
+
+                                                filtersmaterials.
+
+
+
+    Delete     Upload       Upload            Figure4.17.CourseContentandMaterialsActivityDiagramNoAIsummaryYes
+              ordelete?                                                                   enabled?
+
+                                                Studentpreviews,
+                                                    opens,or
+                                               downloadsmaterial.
+
+Deleteselected          Enterdetails                                        Unavailable             Generateor
+  material.            andattachfile.                                    messageisshown.          opensummary.
+
+
+
+
+
+                      Publishmaterial.
+                                                                                                    AIoutputis
+                                                                                                     displayed.
+
+
+
+          Updatedmaterials
+             areshown.
+
+=== Physical 62 printed 50 ===
+                                  Chapter4.SystemAnalysisandRequirements                            50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Useropenstheclass
+                                  communicationarea.
+
+
+                              Selectcommunicationaction.
+
+
+
+
+
+
+
+  A.Sendmessage                                   D.Notifications
+
+
+
+                 Choose                                    Opennotifications.
+      Text    messagetype.    Media
+
+
+
+
+                                                            Viewnotification
+Sendtextmessage.          Sendmedia                          orrelateditem.
+                            message.
+
+
+                                                           Markasread,mark
+  Conversation            Conversation                   all,ordeleteifneeded.
+   isupdated.              isupdated.
+                                         Figure4.18.ClassCommunicationandNotificationsActivityDiagram
+                                                          Updatednotifications
+                                                               areshown.
+
+
+
+
+
+
+
+  B.Postannouncement                              C.Searchconversation
+
+
+
+           Postannouncement                               Searchconversation.
+              ifauthorized.
+
+
+
+
+            Announcementor                                 Matchingmessages
+         conversationisupdated.                               aredisplayed.
+
+=== Physical 63 printed 51 ===
+                                     Chapter4.SystemAnalysisandRequirements                            51
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Teacher/Adminauthoring
+
+                       Teacheroradministrator
+                          opensAssignments.
+
+
+
+                     Createoredittheassignment.
+
+
+
+                      Enterinstructions,duedate,
+                     score,andsubmissionsettings.
+
+
+
+
+
+Saveasdraft.       No        Publishnow?
+
+
+
+                                 Yes
+
+                         Publishedassignment
+                         isvisibletostudents.
+
+
+
+ Studentsubmission
+
+                          Studentopensthe
+                         publishedassignment.
+
+
+
+                      Studentsubmitstextorfile.             Figure4.19.AssignmentWorkflowActivityDiagram
+
+
+
+
+                              Resubmit           Yes    Studentupdates
+                           beforedeadline?               thesubmission.
+
+
+
+
+
+                                  No
+ Gradingandfeedback
+
+                       Teacheroradministrator
+                         reviewssubmissions.
+
+
+
+                   Gradeandfeedbackarerecorded.
+
+
+
+                      Studentviewsthereturned
+                          scoreandfeedback.
+
+=== Physical 64 printed 52 ===
+                                                 Chapter4.SystemAnalysisandRequirements                            52
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   Teacher/Adminexamsetup
+
+                          Teacheroradministrator
+                         opensexammanagement.
+
+
+                           Enterexamtitle,add
+                          questions,andconfigurepasscodeandtiming.
+
+
+
+
+
+  Saveasdraft.       No       Publishexam?
+
+
+
+                                   Yes
+
+                          Examisavailableduring
+                             thevalidwindow.
+
+
+
+
+   Studentattempt
+
+
+                       Studentopenstheactiveexam.            Newattempt
+
+
+
+
+                                 required?PasscodeYes    Enterpasscode.
+
+
+
+
+                                   No
+                        followvisibleintegrityrules.Starttheattemptand
+
+
+
+                          Answerquestionsduring
+                            theactiveattempt.
+
+
+
+                                 Integrity        Yes      Warningor
+                              warningoccurs?             eventisshown.
+
+
+
+                                   No
+                            Submittheattempt           Figure4.20.ExamManagementandIntegrityWorkflowActivityDiagram
+
+                             orfinishatexpiry.
+
+
+
+
+   Reviewandrelease
+                          Teacheroradministrator
+                           reviewsattemptsand
+                           integrityinformation.
+
+
+                         Manualanswersaregraded
+                          andoutcomeisfinalized.
+
+
+
+                                  Select
+            Release             post-review            Retake
+                                  action.
+
+
+
+                                   Void
+
+  Releaseexam                  Voidselected                 Grantretake.
+    results.                     attempt.
+
+
+
+
+  Studentviews                  Voidstatus                Studentcanopen
+releasedresultand              isshownfor                  anewattempt.
+ answerreview.                 theattempt.
+
+=== Physical 65 printed 53 ===
+                          Chapter4.SystemAnalysisandRequirements                            53
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             TeacheropenstheSessionspage.
+
+
+                                   Teacherstartsthelive
+                               sessionfortheselectedclass.
+
+
+                                  Livesessionisavailable
+                                    toenrolledstudents.
+
+
+
+          Teacher                                                           Student
+
+
+
+
+Teachercontrols                                      Studentparticipation
+
+
+          Teacherjoinsand                                       Enrolledstudent
+         managesmicrophone                                    joinsthelivesession.
+             andcamera.
+
+
+
+         Teacherusesscreen                                        Studentviews
+        sharingwhenneeded.                                      participantsand
+                                Figure4.21.LiveSessionandWhiteboardWorkflowActivityDiagramusessessionchat.
+
+
+
+             Teacheruses
+           participantslist,                                   Studentviewsthe
+           sessionchat,and                                     sharedwhiteboard.
+           whiteboardtools.
+
+
+             Teacherends                                        Studentleavesor
+            thelivesession.                                     thesessionends.
+
+=== Physical 66 printed 54 ===
+                               Chapter4.SystemAnalysisandRequirements                            54
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               UseropenstheResultsarea.
+
+
+
+                                Selectresultorscoreview.
+
+
+
+               Student                                             Teacher/Admin
+
+
+
+
+ Studentbranch                                      Teacher/Adminbranch
+
+
+
+
+       No    Resultsreleased    Yes
+               orvisible?                                  Openclass,assignment,
+                                                               orexamresults.
+
+
+
+  Unavailable               Viewown
+ resultsremain            scores,grades,
+hiddenormarked            andfeedback.                         Reviewresults.
+  notreleased.
+                                                     Figure4.22.ResultsWorkflowActivityDiagram
+
+
+                          Viewreleased
+                          examreview
+                         whereallowed.
+
+
+
+
+
+
+             Yes            Classmate
+                         scoresenabled?
+
+
+
+ Viewsharedclass
+   scores/results.             No
+
+=== Physical 67 printed 55 ===
+                          Chapter4.SystemAnalysisandRequirements                            55
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                Useropensthedashboard.
+
+
+                               Activeroleandorganization
+                                    contextareshown.
+
+
+
+      Student                                                                    Admin
+                                            Figure4.23.DashboardWorkflowActivityDiagram
+
+                                           Teacher
+Studentdashboard                   Teacherdashboard                 Admindashboard
+
+
+  Studentdashboard                  Teacherdashboard                   Admindashboard
+      overviewis                         overviewis                        overviewis
+       displayed.                        displayed.                        displayed.
+
+
+
+     Reviewactive                     Reviewclasses,                         Review
+     classes,tasks,                  gradingworkload,                     organization
+   notifications,and                    sessions,and                  statistics,members,
+     learninglinks.                    classactivity.                     classes,and
+                                                                       settingssummary.
+
+=== Physical 68 printed 56 ===
+                                           Chapter4.SystemAnalysisandRequirements                            56
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AIavailability
+
+
+
+
+                             UserselectsanAI-relatedaction.
+
+
+                                      AIenabled
+                                      forcurrent              No     AIunavailable
+                                      organization                 messageisshown.
+                                       andclass?
+
+
+                                          Yes
+                               ChooseAIsupportcategory.
+
+
+
+
+
+
+
+
+
+
+A.ClassAIAgent                                     B.Studysupport
+
+
+
+       AsktheClassAIAgent.                                   Generatematerial
+                                                                summary.
+
+
+
+
+           AIresponseis                                     AIstudysupportis
+         displayedusingthe                                  displayedusingthe
+        currentclasscontext.                               currentclasscontext.
+                                                             Figure4.24.AILearningSupportWorkflowActivityDiagram
+
+
+
+
+
+
+
+
+C.Draftingandfeedbacksupport
+
+
+
+                               Requestassignmentsupport
+                                 ordraftingassistance.
+
+
+
+
+
+                   Support              Selected             Feedback
+                                     supporttype?
+
+
+
+
+                                    Assignment/exam
+
+     Requestassignment                 Generate                   Generatedraft
+          support.                assignmentorexam                  feedbackif
+                                    draftifenabled.                 supported.
+
+
+
+
+
+                                   DraftAIoutputis
+                                displayedforuserreview.
+
+=== Physical 69 printed 57 ===
+                                Chapter4.SystemAnalysisandRequirements                            57
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     UseropenstheIntegrated
+   CodingLab/IDEworkspace.
+
+
+
+    Choosetheavailablecoding           Figure4.25.IntegratedCodingLab/IDEWorkflowActivityDiagram
+environmentorextensionfortheclass.
+
+
+    Systemloadstheworkspace
+      andvisibleprojectfiles.
+
+
+
+   Browse,create,rename,delete,
+     oropenfilesaspermitted.
+
+
+
+   Editcodeormarkdowncontent
+     andsavethecurrentwork.
+
+
+
+
+
+          Runorpreview         No
+         thecurrentwork?
+
+
+
+
+
+                Yes
+
+      Runthecodeandopen
+       theavailablepreview.
+
+
+
+    Reviewthepreview,console
+     output,orproblemspanel.
+
+
+
+UsetheIDEterminalwheresupported
+ orresettheworkspacewhenneeded.
+
+=== Physical 70 printed 58 ===
+                         Chapter4.SystemAnalysisandRequirements                            58
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Useropensaccount
+                                 controlsorthehelparea.
+
+
+
+                                      Selectsupport
+                                          action.
+
+
+
+            Profile                                                       Help
+
+
+
+
+A.Profileandworkspace                                B.Helpcenter
+
+
+
+             Viewprofile                                     Openthehelpcenter.
+             information.
+
+
+
+
+         Updateimplemented                                     Searchorbrowse
+               profileor                                         helparticles.
+           displaysettings.
+
+
+                                       Figure4.26.ProfileandHelpWorkflowActivityDiagram
+            Switchactive                                           Openthe
+            organizationor                                      selectedarticle.
+           roleifavailable.
+
+
+
+          Workspacecontext
+             isrefreshed.
+
+=== Physical 71 printed 59 ===
+Chapter4.SystemAnalysisandRequirements                            59
+
+4.8 ChapterSummary
+
+ThischapterdefinedtheanalyticalstructureofEduVersethroughitsactor
+model, functional and non-functional requirements, use-case model, and
+activityworkflows. Together,theseelementsestablishtheexpectedsystem
+behavior,accessconditions,andprincipalinteractionpatternsthatinform
+thedesignandimplementationdescribedinthefollowingchapters.
+
+=== Physical 72 printed 60 ===
+Chapter5
+
+SystemDesign
+
+
+
+
+     Contents
+
+     Introduction..................................     5.1,p.61
+     DesignContextandArchitecturalStructure....     5.2,p.61
+     InformationModelandPersistenceDesign.....     5.3,p.61
+     InterfaceandInteractionDesign...............     5.4,p.82
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   60
+
+=== Physical 73 printed 61 ===
+Chapter5.SystemDesign                                              61
+
+5.1 Introduction
+
+System design translates the analytical requirements established in the
+previouschapterintoastructuredmodelfortheorganizationofEduVerse.
+This chapter presents the architectural context, information model,
+relationaldatabasestructure,andinterfacedesignprinciplesthatconnect
+users,academicworkflows,data,andconfigurableaccess.
+   Theemphasisisplacedonhowthemajorpartsofthesystemareorganized
+andrelatedatdesignlevel,whilethetechnicalrealizationofthesedecisions
+isdiscussedseparatelyintheimplementationchapter.
+
+5.2 DesignContextandArchitectural
+         Structure
+
+EduVerse is designed as a coordinated educational platform in which
+related academic and administrative workflows operate within a shared
+organizational and class context.  The architecture separates the main
+user-facingclientsfrompersistentdata,file-handlingservices,andreal-time
+communicationcapabilitieswhilepreservingcommonaccessandgovernance
+rules.
+   Thewebapplicationservesastheprimaryinterfaceforcomprehensive
+academicandadministrativeworkflows,whilethemobilecompanionextends
+selectedformsofparticipation.Persistentacademicandorganizationaldata
+are managed through the relational data layer, and specialized services
+supportcapabilitiessuchasuploadedlearningresourcesandsynchronous
+sessions.
+   Thisstructureallowsindividualservicestoremaintechnicallydistinct
+whilepresentinguserswithacoherenteducationalenvironmentgovernedby
+sharedorganizational,role,class,andfeaturecontext.
+
+5.3 InformationModelandPersistence
+         Design
+
+The EduVerse information model represents the relationships between
+organizations,  users,  roles,  classes,  learning resources,  assessments,
+communication, and configurable platform capabilities.  The database
+
+=== Physical 74 printed 62 ===
+Chapter5.SystemDesign                                              62
+
+
+designsupportstheserelationshipswhilepreservingtheseparationbetween
+organization-levelgovernanceandclass-levelacademicparticipation.
+   This section presents the logical database structure, the Entity
+RelationshipDiagram(ERD),andtheprincipalschemagroupsrequiredto
+supportthesystematdesignlevel.
+
+5.3.1 LogicalDatabaseDesign
+EduVerseusesarelationaldatamodelorganizedaroundtherelationship
+between organizations, users, and classes.  The organization forms the
+primaryinstitutionalcontext,whiletheclassrepresentsthemainacademic
+workspace.
+   Organizationmembershipisseparatedfromclassmembershipsothat
+institutionalrolesandclassparticipationcanbemanagedindependently.
+Thisdistinctionsupportsuserswhoparticipateinmultipleorganizations,
+holddifferentroles,orbelongtomultipleclasses.
+   Academicentitiessuchasmaterials,communicationrecords,assignments,
+examinations,notifications,andlivesessionsareassociatedwiththerelevant
+organization and class context.  Configuration entities are maintained
+separately from ordinary academic content so that feature availability
+andinstitutionalsettingscanbeappliedwithoutchangingtheunderlying
+learningrecords.
+   Theresultingmodelsupportsmulti-organizationgovernance,role-aware
+access, class participation, academic history, assessment workflows, and
+configurablefeatureavailabilitywithinonerelationalstructure.
+
+5.3.2 RelationalStructureThroughtheERD
+The Entity Relationship Diagram provides the central design-level
+representation of the EduVerse data model. It shows how institutional,
+academic,andconfigurationentitiesrelatetooneanotherandclarifiesthe
+cardinalitiesthatconnectusers, organizations,classes, learningresources,
+assessments,andplatformsettings.
+   The model includes direct one-to-many relationships as well as
+many-to-manyrelationshipsresolvedthroughintermediatemembershipor
+configurationstructures. Theserelationshipsareimportantbecauseusers
+may participate in multiple organizational and academic contexts rather
+thanbelongingtoonefixedsystemroleorclass.
+
+=== Physical 75 printed 63 ===
+Chapter5.SystemDesign                                              63
+
+
+PrincipalRelationshipStructure
+   •Organization and membership structure.Organizations
+      provide the institutional context for memberships, classes, settings,
+      invitations, andconfigurablecapabilities. Usermembershiprecords
+      connect individual accounts to the organizations in which they
+      participate.
+
+   •Role structure.Membership and role relationships allow access
+      responsibilitiestoberepresentedwithinanorganizationcontextrather
+      thanassigningonepermanentplatform-wideroletoeachuser.
+
+   •Class participation structure.Classes belong to organizations,
+      whileclass-membershiprelationshipsconnectuserstotheacademic
+      workspacesinwhichtheyparticipate.Thisresolvesthemany-to-many
+      relationshipbetweenusersandclasses.
+
+   •Learning and communication structure.Materials and
+      communication records are associated with classes so that learning
+      resourcesandclassinteractionremaintiedtotheappropriateacademic
+      context.
+
+   •Assessment  structure.Classes  contain  assignments  and
+      examinations, with related submission, question, attempt, and
+      answerrecordsrepresentingthemainassessmentrelationships.
+
+   •Configuration structure.Feature and extension settings relate
+      platform capabilities to organization and class contexts, allowing
+      supported tools to vary without changing the core academic data
+      model.
+
+Design SignificanceThe relational structure separates institutional
+membership,classparticipation,academiccontent,assessment,andfeature
+configuration while preserving the relationships required between them.
+Intermediate membership and configuration entities are particularly
+importantbecauseseveralEduVerserelationshipsdependoncontextrather
+thansimpleownership.
+   The ERD therefore provides the main design-level view of how
+organizationalgovernanceandacademicactivityarerepresentedwithinthe
+samedatamodel.
+
+=== Physical 76 printed 64 ===
+Chapter5.SystemDesign                                              64
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Figure5.1.EntityRelationshipDiagramoftheEduVerseDatabase
+
+=== Physical 77 printed 65 ===
+Chapter5.SystemDesign                                              65
+
+5.3.3 PrincipalSchemaGroups
+Therelationalmodelisorganizedintoseveralschemagroupsthatcorrespond
+tothemaininstitutionalandacademicresponsibilitiesofEduVerse. The
+followingoverviewintroducestheprincipaltablegroupsandtheirdesign
+purposebeforethedetailedphysicalschemadocumentation.
+
+                    Table5.1:PrincipalSchemaGroupsinEduVerse
+
+  Schema            PrincipalTables                   DesignPurpose
+  Group
+  Core              organizations,profiles,           Representsinstitutional
+  Organization      organization_memberships,         workspaces,useridentitycontext,
+  andIdentity       organization_membership_          organizationmembership,androle
+                    roles                             relationships.
+  Organization      organization_invites,             Supportscontrolledmembership
+  Accessand         organization_settings,            entry,administrativesettings,
+  Governance        organization_teacher_             teacherpermissions,and
+                    class_permissions,                organization-levelaccess
+                    organization_join_links,          governance.
+                    organization_join_requests
+  Classesand        classes,class_memberships,        Representsclassworkspaces,
+  Participation     class_visibility_                 participation,visibility,
+                    preferences,class_invites         membership,andclasslifecycle
+                                                      relationships.
+  Featuresand       feature_definitions,              Representsconfigurableplatform
+  Extensions        feature_presets,                  capabilitiesandtheirorganization-
+                    feature_preset_items,             orclass-levelavailability.
+                    organization_feature_
+                    settings,
+                    class_feature_settings,
+                    organization_extensions,
+                    class_extension_settings
+  Materialsand      class_materials,                  Supportsclasslearningresources,
+  Communication     class_messages,                   communication,announcements,
+                    notifications                     andusernotificationrecords.
+  Assignments       class_assignments,                Representsassignmentauthoring,
+  and               class_assignment_files,           attachedresources,student
+  Submissions       class_assignment_                 submission,grading,andfeedback
+                    submissions                       relationships.
+                                                           Continuedonthenextpage
+
+=== Physical 78 printed 66 ===
+Chapter5.SystemDesign                                              66
+
+
+  Schema            PrincipalTables                  DesignPurpose
+  Group
+  Examinations      exams,exam_questions,            Representsexaminationdefinition,
+                    exam_attempts,                   questions,studentattempts,
+                    exam_answers                     answers,grading,and
+                                                     assessment-staterelationships.
+  LiveLearning      class_live_sessions              Representsthelifecycleandclass
+                                                     associationofsynchronous
+                                                     learningsessions.
+  SystemAudit       audit_logs                       Representsrecordedplatform
+                                                     actionsusedforgovernance,
+                                                     traceability,andworkflowhistory.
+
+5.3.4 PhysicalSchemaTables
+Thefollowingtablesdocumenttheprincipalcolumns,datatypes,keys,and
+relationshipsoftheEduVersedatabase.
+
+
+CoreMulti-OrganizationandUserModel
+
+
+                     Table5.2:SchemaforTable:organizations
+
+ Column                      Type              Attributes
+ id                          uuid              PK.
+ slug                        text              Organizationslug.
+ name                        text              Organizationdisplayname.
+
+
+                         Table5.3:SchemaforTable:profiles
+
+ Column                      Type              Attributes
+ id                          uuid              PK;alignedwithauth.users.idinthe
+                                               identitymodel.
+ email                       text              Profileemailaddress.
+ display_name                text              Visibleusername.
+ default_                    uuid              Relatedtoorganizations.id.
+ organization_id
+ updated_at                  timestamp         Profileupdatetimestamp.
+
+=== Physical 79 printed 67 ===
+Chapter5.SystemDesign                                              67
+
+
+Roles,Memberships,Invitations,andPublicJoinAccess
+
+
+               Table5.4:SchemaforTable:organization_memberships
+
+ Column                      Type              Attributes
+ id                          uuid              PK.
+ organization_id             uuid              Relatedtoorganizations.id.
+ user_id                     uuid              Relatedtotheprofileorauthentication
+                                               identity.
+ role                        public.app_       Roleenum.
+                             role
+ status                      public.           Membershipstatusenum.
+                             membership_
+                             status
+ selected_role_id            uuid              FKtoorganization_membership_roles.
+                                               id.
+ created_at                  timestamp         Creationtimestamp.
+ updated_at                  timestamp         Updatetimestamp.
+
+
+            Table5.5:SchemaforTable:organization_membership_roles
+
+ Column                      Type              Attributes
+ id                          uuid              PK.
+ organization_               uuid              FKtoorganization_memberships.id.
+ membership_id
+ role                        public.app_       Roleenum.
+                             role
+ status                      public.           Membershipstatusenum.
+                             membership_
+                             status
+ created_at                  timestamp         Creationtimestamp.
+ updated_at                  timestamp         Updatetimestamp.
+
+
+                 Table5.6:SchemaforTable:organization_invites
+
+ Column                      Type              Attributes
+ id                          uuid              PK.
+ organization_id             uuid              Relatedtoorganizations.id.
+                                                          Continuedonthenextpage
+
+=== Physical 80 printed 68 ===
+Chapter5.SystemDesign                                              68
+
+
+ Column                       Type               Attributes
+ email                        text               Invitetargetemail.
+ role                         public.app_        Roleenum.
+                              role
+ invited_by_user_id           uuid               Relatedtoauth.users.id.
+ token                        text               Invitetoken.
+ status                       text               Invitation-statusfieldusedinthe
+                                                 organizationinviteworkflow.
+ expires_at                   timestamp          Inviteexpirytimestamp.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+
+                 Table5.7:SchemaforTable:organization_settings
+
+ Column                       Type               Attributes
+ organization_id              uuid               PK;FKtoorganizations.id.
+ public_features_             boolean            Public-featureavailabilityflag.
+ enabled
+ public_features_             boolean            Presetlockflagfordisabledpublic
+ locked_disabled                                 features.
+ all_teachers_can_            boolean            Teacherclass-creationpermissionflag.
+ create_classes
+ all_teachers_can_            boolean            Teacherclassself-management
+ manage_own_classes                              permissionflag.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+
+           Table 5.8: Schema for Table:organization_teacher_class_
+           permissions
+
+ Column                       Type               Attributes
+ organization_id              uuid               CompositePK;FKtoorganizations.id.
+ teacher_user_id              uuid               CompositePK;FKtoprofiles.id.
+ can_create_classes           boolean            Teacheroverrideflagforclasscreation.
+ can_manage_own_              boolean            Teacheroverrideflagformanaging
+ classes                                         ownedclasses.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+=== Physical 81 printed 69 ===
+Chapter5.SystemDesign                                              69
+
+
+
+
+
+
+                Table5.9:SchemaforTable:organization_join_links
+
+ Column                       Type               Attributes
+ id                           uuid               PK.
+ organization_id              uuid               FKtoorganizations.id.
+ purpose                      text               Join-linkpurposedescriptor.
+ token                        text               Jointoken.
+ default_role                 public.app_        Defaultroleenum,constrainedto
+                              role               teacherorstudent.
+ enabled                      boolean            Linkavailabilityflag.
+ approval_required            boolean            Approvalworkflowflag.
+ max_uses                     integer            Optionalusagelimit.
+ use_count                    integer            Currentusagecounter.
+ expires_at                   timestamp          Linkexpirytimestamp.
+ created_by_user_id           uuid               FKtoauth.users.id.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+
+             Table5.10:SchemaforTable:organization_join_requests
+
+ Column                       Type               Attributes
+ id                           uuid               PK.
+ organization_id              uuid               FKtoorganizations.id.
+ join_link_id                 uuid               FKtoorganization_join_links.id.
+ user_id                      uuid               FKtoauth.users.id.
+ requested_role               public.app_        Requestedroleenum.
+                              role
+ status                       text               Statustext;currentvaluesinclude
+                                                 pending,approved,andrejected.
+ reviewed_by_user_id          uuid               FKtoauth.users.id.
+ reviewed_at                  timestamp          Reviewtimestamp.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+=== Physical 82 printed 70 ===
+Chapter5.SystemDesign                                              70
+
+
+                     Table5.11:SchemaforTable:class_invites
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               FKtoclasses.id.
+ email                       text               Invitetargetemail.
+ role                        public.class_      Classmembershiproleenum.
+                             membership_
+                             role
+ organization_invite_        uuid               FKtoorganization_invites.id.
+ id
+ invited_by_user_id          uuid               FKtoauth.users.id.
+ status                      public.            Membershipstatusenum.
+                             membership_
+                             status
+ previous_grade_             json/jsonb         Importedprevious-termgradepayload.
+ payload
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+ClassesandClassVisibility
+
+
+                         Table5.12:SchemaforTable:classes
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               Relatedtoorganizations.id.
+ name                        text               Classname.
+ code                        text               Classcode.
+ teacher_user_id             uuid               Relatedtoprofiles.id.
+ color                       text               Classcoloridentifier.
+ description                 text               Classdescription.
+ room                        text               Roomorlocationfield.
+ semester                    text               Requiredsemestertext.
+ stage                       text               Requiredstagetext.
+ organization_visible        boolean            Organization-widevisibilityflag.
+ results_visible_to_         boolean            Studentresultsvisibilityflag.
+ students
+                                                            Continuedonthenextpage
+
+=== Physical 83 printed 71 ===
+Chapter5.SystemDesign                                              71
+
+
+ Column                       Type               Attributes
+ teacher_can_toggle_          boolean            Teacherpermissionflagforresults
+ results_visibility                              visibility.
+ is_archived                  boolean            Archivelifecycleflag.
+ ended_at                     timestamp          Classendtimestamp.
+ ended_by_user_id             uuid               FKtoauth.users.id.
+ archived_edited_at           timestamp          Archived-stateedittimestamp.
+ archived_edited_by_          uuid               FKtoauth.users.id.
+ user_id
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+
+                   Table5.13:SchemaforTable:class_memberships
+
+ Column                       Type               Attributes
+ id                           uuid               PK.
+ organization_id              uuid               Relatedtoorganizations.id.
+ class_id                     uuid               Relatedtoclasses.id.
+ user_id                      uuid               Relatedtotheprofileorauthentication
+                                                 identity.
+ role                         text               Class-levelrolefield;currentvalues
+                                                 includeteacher,student,andta.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+
+            Table5.14:SchemaforTable:class_visibility_preferences
+
+ Column                       Type               Attributes
+ id                           uuid               PK.
+ organization_id              uuid               FKtoorganizations.id.
+ class_id                     uuid               FKtoclasses.id.
+ user_id                      uuid               FKtoauth.users.id.
+ hidden                       boolean            Studenthideorshowflag.
+ hidden_at                    timestamp          Hidetimestamp.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+=== Physical 84 printed 72 ===
+Chapter5.SystemDesign                                              72
+
+
+FeatureFlagsandExtensions
+
+
+                 Table5.15:SchemaforTable:feature_definitions
+
+ Column                      Type               Attributes
+ key                         text               PK.
+ label                       text               Featurelabel.
+ description                 text               Featuredescription.
+ parent_key                  text               FKtofeature_definitions.key.
+ kind                        public.            Featurekindenum.
+                             feature_kind
+ route_segment               text               Navigationroutesegment.
+ default_enabled             boolean            Defaultenablementflag.
+ is_system                   boolean            System-managedfeatureflag.
+ sort_order                  integer            Displayorderingvalue.
+ metadata                    json/jsonb         Featuremetadatapayload.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+                    Table5.16:SchemaforTable:feature_presets
+
+ Column                      Type               Attributes
+ key                         text               PK.
+ name                        text               Presetname.
+ description                 text               Presetdescription.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+                 Table5.17:SchemaforTable:feature_preset_items
+
+ Column                      Type               Attributes
+ preset_key                  text               CompositePK;
+                                                FKtofeature_presets.key.
+ feature_key                 text               CompositePK;
+                                                FKtofeature_definitions.key.
+ enabled                     boolean            Presetenablementflag.
+ config                      json/jsonb         Presetconfigurationpayload.
+                                                           Continuedonthenextpage
+
+=== Physical 85 printed 73 ===
+Chapter5.SystemDesign                                              73
+
+
+ Column                      Type               Attributes
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+           Table5.18:SchemaforTable:organization_feature_settings
+
+ Column                      Type               Attributes
+ organization_id             uuid               CompositePK;FKtoorganizations.id.
+ feature_key                 text               CompositePK;
+                                                FKtofeature_definitions.key.
+ enabled                     boolean            Organization-levelfeatureflag.
+ config                      json/jsonb         Configurationpayload;maystorelock
+                                                metadata.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+                Table5.19:SchemaforTable:class_feature_settings
+
+ Column                      Type               Attributes
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               CompositePK;FKtoclasses.id.
+ feature_key                 text               CompositePK;
+                                                FKtofeature_definitions.key.
+ enabled                     boolean            Class-levelfeatureflag.
+ config                      json/jsonb         Classconfigurationpayload.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+               Table5.20:SchemaforTable:organization_extensions
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ name                        text               Extensionname.
+ slug                        text               Extensionslug.
+ description                 text               Extensiondescription.
+ launch_url                  text               ExtensionlaunchURL.
+                                                           Continuedonthenextpage
+
+=== Physical 86 printed 74 ===
+Chapter5.SystemDesign                                              74
+
+
+ Column                      Type               Attributes
+ enabled                     boolean            Extensionenablementflag.
+ sort_order                  integer            Displayorderingvalue.
+ config                      json/jsonb         Extensionconfigurationpayload.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+              Table5.21:SchemaforTable:class_extension_settings
+
+ Column                      Type               Attributes
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               CompositePK;FKtoclasses.id.
+ extension_id                uuid               CompositePK;
+                                                FKtoorganization_extensions.id.
+ enabled                     boolean            Class-levelextensionenablementflag.
+ config                      json/jsonb         Class-levelextensionconfiguration
+                                                payload.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+Materials,Chat,andAnnouncements
+
+
+                    Table5.22:SchemaforTable:class_materials
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               FKtoclasses.id.
+ uploaded_by_user_id         uuid               FKtoprofiles.id.
+ title                       text               Materialtitle.
+ description                 text               Materialdescription.
+ type                        public.class_      Materialtypeenum.
+                             material_type
+ source                      public.class_      Sourceenum.
+                             material_
+                             source
+ chat_message_id             uuid               FKtoclass_messages.id.
+ storage_bucket              text               AWSS3bucketreference.
+                                                           Continuedonthenextpage
+
+=== Physical 87 printed 75 ===
+Chapter5.SystemDesign                                              75
+
+
+ Column                      Type               Attributes
+ storage_key                 text               AWSS3objectkeyreference.
+ original_filename           text               Originaluploadedfilename.
+ mime_type                   text               UploadedfileMIMEtype.
+ size_bytes                  integer            Storedfilesize.
+ ai_summary                  text               CachedAIsummarytext.
+ ai_summary_used_            boolean            Flagindicatingwhetherfiletextwas
+ file_text                                      usedtogeneratethecachedAIsummary.
+ ai_summary_                 timestamp          AIsummarygenerationtimestamp.
+ generated_at
+ ai_extracted_content        text               Cachedextracted-contentfield.
+ ai_extracted_               boolean            Flagindicatingwhetherfilecontentwas
+ content_used_file_                             usedforcachedextraction.
+ content
+ ai_extracted_               timestamp          Extracted-contentgenerationtimestamp.
+ content_generated_at
+ deleted_at                  timestamp          Soft-deletetimestamp.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+                     Table5.23:SchemaforTable:class_messages
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               FKtoclasses.id.
+ sender_user_id              uuid               FKtoprofiles.id.
+ sender_role                 text               Checkedtextrolefield;currentvalues
+                                                includestudent,teacher,andadmin.
+ content                     text               Messagebodytext.
+ kind                        public.class_      Messagekindenum;announcementsare
+                             message_kind       representedbyrowswhere
+                                                kind=’announcement’.
+ material_id                 uuid               FKtoclass_materials.id.
+ media_title                 text               Chat-mediatitlefield.
+ original_filename           text               Originalmediafilename.
+ mime_type                   text               MediaMIMEtype.
+ size_bytes                  integer            Storedmediasize.
+                                                            Continuedonthenextpage
+
+=== Physical 88 printed 76 ===
+Chapter5.SystemDesign                                              76
+
+
+ Column                      Type               Attributes
+ material_type               text               Chat-mediamaterialdescriptorusedfor
+                                                uploadedclasscontent.
+ show_in_                    boolean            Announcementcarouseldisplayflag.
+ announcement_
+ carousel
+ created_at                  timestamp          Creationtimestamp.
+
+
+AssignmentsandSubmissions
+
+
+                   Table5.24:SchemaforTable:class_assignments
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               FKtoclasses.id.
+ created_by_user_id          uuid               FKtoprofiles.id.
+ title                       text               Assignmenttitle.
+ description                 text               Assignmentdescription.
+ due_at                      timestamp          Submissionduetimestamp.
+ max_score                   numeric            Maximumassignmentscore.
+ status                      text               Statustext;currentvaluesincludedraft
+                                                andpublished.
+ allow_late_                 boolean            Late-submissionpolicyflag.
+ submissions
+ allow_text_                 boolean            Text-submissionpolicyflag.
+ submission
+ allow_file_                 boolean            File-submissionpolicyflag.
+ submission
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+ deleted_at                  timestamp          Soft-deletetimestamp.
+
+
+                Table5.25:SchemaforTable:class_assignment_files
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+                                                            Continuedonthenextpage
+
+=== Physical 89 printed 77 ===
+Chapter5.SystemDesign                                              77
+
+
+ Column                      Type               Attributes
+ class_id                    uuid               FKtoclasses.id.
+ assignment_id               uuid               FKtoclass_assignments.id.
+ uploaded_by_user_id         uuid               FKtoprofiles.id.
+ storage_bucket              text               AWSS3bucketreference.
+ storage_key                 text               AWSS3objectkeyreference.
+ original_filename           text               Originalattachmentfilename.
+ mime_type                   text               AttachmentMIMEtype.
+ size_bytes                  integer            Attachmentsize.
+ created_at                  timestamp          Creationtimestamp.
+ deleted_at                  timestamp          Soft-deletetimestamp.
+
+
+            Table5.26:SchemaforTable:class_assignment_submissions
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               FKtoclasses.id.
+ assignment_id               uuid               FKtoclass_assignments.id.
+ student_user_id             uuid               FKtoprofiles.id.
+ text_response               text               Textsubmissionbody.
+ file_storage_bucket         text               AWSS3bucketreferenceforsubmitted
+                                                files.
+ file_storage_key            text               AWSS3objectkeyreferencefor
+                                                submittedfiles.
+ file_original_              text               Originalsubmittedfilename.
+ filename
+ file_mime_type              text               SubmittedfileMIMEtype.
+ file_size_bytes             integer            Submittedfilesize.
+ submitted_at                timestamp          Submissiontimestamp.
+ is_late                     boolean            Late-submissionflag.
+ score                       numeric            Recordedassignmentscore.
+ feedback                    text               Gradingfeedback.
+ graded_at                   timestamp          Gradingtimestamp.
+ graded_by_user_id           uuid               FKtoprofiles.id.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+=== Physical 90 printed 78 ===
+Chapter5.SystemDesign                                              78
+
+
+Exams,Attempts,Answers,andResults
+
+
+                          Table5.27:SchemaforTable:exams
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               FKtoclasses.id.
+ title                       text               Examtitle.
+ duration_minutes            integer            Configuredexamduration.
+ total_points                numeric            Totalexampoints.
+ start_at                    timestamp          Examstarttimestamp.
+ end_at                      timestamp          Examendtimestamp.
+ status                      public.exam_       Examstatusenum.
+                             status
+ created_by_user_id          uuid               FKtoauth.users.id.
+ published_at                timestamp          Publishtimestamp.
+ passcode_hash               text               Optionalstoredpasscodehash.
+ rules_override_json         json/jsonb         Examrulesoverridepayload.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+                    Table5.28:SchemaforTable:exam_questions
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ exam_id                     uuid               FKtoexams.id.
+ position                    integer            Questionorderingvalue.
+ question_type               public.exam_       Questiontypeenum.
+                             question_kind
+ prompt                      text               Questionprompttext.
+ options_json                json/jsonb         Structuredoptionpayload.
+ correct_answer_json         json/jsonb         Structuredcorrect-answerpayload.
+ points                      numeric            Questionscorevalue.
+ language                    text               Questionlanguagemarker.
+ starter_code                text               Startercodetextforcodingquestions.
+ visible_tests_json          json/jsonb         Visibletestpayload.
+                                                           Continuedonthenextpage
+
+=== Physical 91 printed 79 ===
+Chapter5.SystemDesign                                              79
+
+
+ Column                       Type               Attributes
+ hidden_tests_json            json/jsonb         Hiddentestpayload.
+ evaluator_key                text               Evaluatoridentifier.
+ created_at                   timestamp          Creationtimestamp.
+ updated_at                   timestamp          Updatetimestamp.
+
+
+                      Table5.29:SchemaforTable:exam_attempts
+
+ Column                       Type               Attributes
+ id                           uuid               PK.
+ organization_id              uuid               FKtoorganizations.id.
+ class_id                     uuid               FKtoclasses.id.
+ exam_id                      uuid               FKtoexams.id.
+ student_user_id              uuid               FKtoauth.users.id.
+ status                       public.exam_       Attemptstatusenum.
+                              attempt_
+                              status
+ started_at                   timestamp          Attemptstarttimestamp.
+ submitted_at                 timestamp          Attemptsubmissiontimestamp.
+ total_score                  numeric            Storestheexam-levelresultdirectly.
+ attempt_number               integer            Retakeorattemptcounter.
+ deadline_at                  timestamp          Effectiveattemptdeadline.
+ rules_snapshot_json          json/jsonb         Appliedrulessnapshotpayload.
+ needs_manual_review          boolean            Manual-reviewflag.
+ auto_submitted_at            timestamp          Automaticsubmissiontimestamp.
+ integrity_status             text               Integritystatustext;currentvalues
+                                                 includeclear,reported,flagged,and
+                                                 voided.
+ flagged_at                   timestamp          Integrityflagtimestamp.
+ flagged_by_user_id           uuid               FKtoauth.users.id.
+ flag_reason                  text               Integrityflagreason.
+ voided_at                    timestamp          Voidtimestamp.
+ voided_by_user_id            uuid               FKtoauth.users.id.
+ void_reason                  text               Voidreason.
+ graded_at                    timestamp          Gradingtimestamp.
+ graded_by_user_id            uuid               FKtoauth.users.id.
+ results_released_at          timestamp          Results-releasetimestamp.
+                                                            Continuedonthenextpage
+
+=== Physical 92 printed 80 ===
+Chapter5.SystemDesign                                              80
+
+
+ Column                      Type               Attributes
+ results_released_by_        uuid               FKtoauth.users.id.
+ user_id
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+                      Table5.30:SchemaforTable:exam_answers
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ exam_attempt_id             uuid               FKtoexam_attempts.id.
+ exam_question_id            uuid               FKtoexam_questions.id.
+ answer_json                 json/jsonb         Storedsubmittedanswerpayload.
+ auto_score                  numeric            Storesquestion-levelauto-scoring
+                                                directly.
+ teacher_score               numeric            Storesquestion-levelteacherscoring
+                                                directly.
+ created_at                  timestamp          Creationtimestamp.
+ updated_at                  timestamp          Updatetimestamp.
+
+
+NotificationsandLiveSessions
+
+                     Table5.31:SchemaforTable:notifications
+
+ Column                      Type               Attributes
+ id                          uuid               PK.
+ organization_id             uuid               FKtoorganizations.id.
+ class_id                    uuid               FKtoclasses.id.
+ recipient_user_id           uuid               FKtoprofiles.id.
+ recipient_role              public.app_        Role-scopednotificationenumfield.
+                             role
+ actor_user_id               uuid               FKtoprofiles.id.
+ type                        public.            Notificationtypeenum.
+                             notification_
+                             type
+ title                       text               Notificationtitle.
+ body                        text               Notificationbodytext.
+                                                            Continuedonthenextpage
+
+=== Physical 93 printed 81 ===
+Chapter5.SystemDesign                                              81
+
+
+ Column                       Type              Attributes
+ href                         text              Navigationtarget.
+ metadata                     json/jsonb        Notificationmetadatapayload.
+ event_key                    text              Eventdeduplicationortrackingkey.
+ read_at                      timestamp         Readtimestamp.
+ created_at                   timestamp         Creationtimestamp.
+
+
+                  Table5.32:SchemaforTable:class_live_sessions
+
+ Column                       Type              Attributes
+ id                           uuid              PK.
+ organization_id              uuid              FKtoorganizations.id.
+ class_id                     uuid              FKtoclasses.id.
+ room_name                    text              Sessionroomname.
+ live_session_id              text              LiveKit-relatedsessionidentifier.
+ started_by_user_id           uuid              FKtoprofiles.id.
+ status                       text              Sessionstatustext;currentvalues
+                                                includepending,live,andended.
+ started_at                   timestamp         Sessionstarttimestamp.
+ last_seen_at                 timestamp         Lastheartbeattimestamp.
+ ended_at                     timestamp         Sessionendtimestamp.
+ created_at                   timestamp         Creationtimestamp.
+ updated_at                   timestamp         Updatetimestamp.
+
+
+AuditLogsandExternalAuthenticationReferences
+
+
+                       Table5.33:SchemaforTable:audit_logs
+
+ Column                       Type              Attributes
+ organization_id              uuid              Relatedtoorganizations.id.
+ actor_user_id                uuid              Relatedtoauth.users.id.
+ action                       text              Auditactionkey.
+ entity_type                  text              Polymorphicentitytypediscriminator.
+ entity_id                    reference         Polymorphicreferencetorelatedentity
+                                                records.
+ payload                      json/jsonb        Auditpayload.
+ created_at                   timestamp         Creationtimestamp.
+
+=== Physical 94 printed 82 ===
+Chapter5.SystemDesign                                              82
+
+
+
+
+
+
+                     Table5.34:SchemaforTable:auth.users
+
+ Column                   Type             Attributes
+ id                       uuid             PK;externalSupabaseauthentication
+                                           useridentifier.
+ Thisexternaltableisreferencedbyinvite,join-link,join-request,exam,and
+ class-lifecycleuserfieldsintheEduVerseschema.
+
+5.4 InterfaceandInteractionDesign
+
+The EduVerse interface design reflects the role-aware and class-centered
+structureestablishedinthesystemmodel. Administrative, instructional,
+and student-facing actions are presented through different workspace
+contextswhilemaintainingconsistentnavigationandinteractionpatterns
+acrosstheplatform.
+   Thescreenshotsinthissectionshowhowthesedesignprinciplesappear
+intheimplementedwebinterfaceanddemonstratetheresultinginteraction
+design.
+
+5.4.1 AccessandIdentityInterfaces
+Accessandidentityinterfacesestablishtheorganizationandrolecontext
+usedthroughouttheplatform.Theirdesignseparatesaccountauthentication
+fromworkspaceselectionandpersonalaccountsettingssothatuserswho
+participateinmultiplecontextscanmovebetweenthemwithoutchanging
+accountidentity.
+
+=== Physical 95 printed 83 ===
+Chapter5.SystemDesign                                              83
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.2.Authenticationinterfaceshowingsign-inandsign-upformsfor
+EduVerseusers.
+
+=== Physical 96 printed 84 ===
+Chapter5.SystemDesign                                              84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.3.Organizationandactive-roleselectorusedtoswitchbetween
+availableEduVerseworkspaces.
+
+=== Physical 97 printed 85 ===
+Chapter5.SystemDesign                                              85
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.4.Userprofileandsettingsinterfaceshowingrolecontext,theme
+preferences,andpasswordmanagementcontrols.
+
+=== Physical 98 printed 86 ===
+Chapter5.SystemDesign                                              86
+
+5.4.2 AdministrativeGovernanceInterfaces
+Administrative  interfaces  group  organization  setup,  membership,
+permissions, classoversight, andfeatureconfigurationwithinadedicated
+governancecontext.Thisseparationkeepsinstitution-levelcontrolsdistinct
+fromtheday-to-dayinstructionalactivitythatoccursinsideclasses.
+   Theinterfacedesignalsopresentsconfigurableoptionsthroughstructured
+settingsandmanagementviewsratherthanexposingthesamecontrolsto
+everyactor.
+
+=== Physical 99 printed 87 ===
+Chapter5.SystemDesign                                              87
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.5.Organizationcreationinterfaceshowingtemplate-basedsetupand
+initialfeature-availabilitycontrolsfordifferenteducationalcontexts.
+
+=== Physical 100 printed 88 ===
+Chapter5.SystemDesign                                              88
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.6.Organizationadministratordashboardshowingclassoversightand
+organization-widestatistics.
+
+=== Physical 101 printed 89 ===
+Chapter5.SystemDesign                                              89
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.7.Classcreationandfeature-configurationdialogusedtodefineclass
+propertiesandenabledtools.
+
+=== Physical 102 printed 90 ===
+Chapter5.SystemDesign                                              90
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.8.Past-termsadministrationinterfaceusedtoreviewarchivedclasses
+andhistoricalacademicrecords.
+
+=== Physical 103 printed 91 ===
+Chapter5.SystemDesign                                              91
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.9.Organizationmembersandinvitationsinterfaceshowingrole
+assignmentandinvitation-managementcontrols.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.10.Publicjoin-linkmanagementinterfaceshowingjoin-linkcreation
+andrequest-handlingcontrols.
+
+=== Physical 104 printed 92 ===
+Chapter5.SystemDesign                                              92
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.11.Publicjoinpageusedbyastudenttorequestaccesstoan
+organizationworkspace.
+
+=== Physical 105 printed 93 ===
+Chapter5.SystemDesign                                              93
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.12.Organizationsettingsinterfaceshowingpublic-featurecontrolsand
+teacherclass-permissionsettings.
+
+=== Physical 106 printed 94 ===
+Chapter5.SystemDesign                                              94
+
+5.4.3 ClassroomandLearningInterfaces
+Classroom interfaces provide the primary day-to-day learning context
+for Teachers and Students.  Class navigation keeps learning resources,
+communication,notifications,andotherenabledtoolsassociatedwiththe
+sameacademicworkspacewhilepresentingactionsaccordingtothecurrent
+role.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.13.Classhomeinterfaceshowingthemainclassroomworkspaceand
+availablelearningtools.
+
+=== Physical 107 printed 95 ===
+Chapter5.SystemDesign                                              95
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.14.Classroommaterialsinterfaceusedtoaccessuploadedlearning
+resourcesandstudyactions.
+
+=== Physical 108 printed 96 ===
+Chapter5.SystemDesign                                              96
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.15.Classchatandannouncementsinterfacesupportingclass-wide
+discussionandinstructornotices.
+
+=== Physical 109 printed 97 ===
+Chapter5.SystemDesign                                              97
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.16.Notificationspanelshowingalertsforlivesessions,materials,
+examinations,andannouncements.
+
+=== Physical 110 printed 98 ===
+Chapter5.SystemDesign                                              98
+
+5.4.4 AssessmentandSubmissionInterfaces
+Assessment interfaces separate authoring and review controls from
+student participation surfaces.  Teacher-facing views emphasize creation,
+configuration,grading,andreview,whilestudent-facingviewsfocusonthe
+actionsrequiredtocompleteandreviewpermittedassessmenttasks.
+   Thisrole-orientedseparationreducesinterfacecomplexityandprevents
+administrativeorauthoringcontrolsfromappearinginstudenttaskflows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.17.Assignmentmanagementinterfaceshowingteacher-side
+assignmentcreation,submissionreview,andgradingcontrols.
+
+=== Physical 111 printed 99 ===
+Chapter5.SystemDesign                                              99
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.18.Studentassignmentsubmissioninterfaceshowingresponseentry
+andfile-uploadcontrols.
+
+=== Physical 112 printed 100 ===
+Chapter5.SystemDesign                                             100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.19.Exammanagementinterfaceshowingteacher-sideexamcreation
+andquestionconfiguration.
+
+=== Physical 113 printed 101 ===
+Chapter5.SystemDesign                                             101
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.20.Studentexamstartinterfaceshowingexamrules,timing,and
+attemptconditionsbeforeentry.
+
+=== Physical 114 printed 102 ===
+Chapter5.SystemDesign                                             102
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.21.Studentexam-takinginterfaceshowingtimedquestionnavigation
+duringanactiveexamattempt.
+
+=== Physical 115 printed 103 ===
+Chapter5.SystemDesign                                             103
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.22.Examattemptreviewinterfaceshowingsubmittedanswers,
+gradingcontrols,andintegrity-relatedevents.
+
+=== Physical 116 printed 104 ===
+Chapter5.SystemDesign                                             104
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.23.Resultsdashboardshowingreleasedgrades,scorebreakdowns,and
+detailedassessmentfeedback.
+
+=== Physical 117 printed 105 ===
+Chapter5.SystemDesign                                             105
+
+5.4.5 SynchronousCollaborationInterfaces
+Thesynchronouscollaborationinterfacecombineslive-sessionparticipation
+withthecontrolsrequiredforreal-timeclassinteraction. Thedesignkeeps
+participantpresence,sessioncontrols,andcollaborativewhiteboardactivity
+withinthesameclass-orientedinteractionsurface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.24.Livesessionroomshowingthesharedwhiteboard,participantlist,
+andsessioncontrols.
+
+=== Physical 118 printed 106 ===
+Chapter5.SystemDesign                                             106
+
+5.4.6 AISupportandCoding-LabInterfaces
+AI and coding interfaces expose optional capabilities within the same
+class-oriented navigation model used by other learning tools.   Their
+availability remains dependent on the applicable feature configuration,
+while their interface placement keeps these capabilities connected to the
+surroundingacademiccontext.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.25.AIlearningsupportinterfaceshowingconversationalassistance
+withintheclassworkspace.
+
+=== Physical 119 printed 107 ===
+Chapter5.SystemDesign                                             107
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure5.26.Integratedcodingworkspaceshowingthefileexplorer,codeeditor,
+terminal,andlivepreviewpane.
+
+=== Physical 120 printed 108 ===
+Chapter6
+SoftwareandEngineering
+Implementation
+
+
+   Contents
+   Introduction..........................................  6.1,p.109
+   ImplementationEnvironment..........................  6.2,p.109
+   SystemArchitecture...................................  6.3,p.109
+   WebApplicationImplementation......................  6.4,p.111
+   MobileCompanionApplicationImplementation........  6.5,p.111
+   Backend,Database,andStorageImplementation.......  6.6,p.112
+   Authentication,Authorization,andSecurity............  6.7,p.113
+   Role-BasedandMulti-OrganizationAccess.............  6.8,p.113
+   FeatureAvailabilityandExtensionImplementation.....  6.9,p.114
+   Real-TimeCommunicationandLiveSessions........... 6.10,p.114
+   AILearningSupportandIDEImplementation......... 6.11,p.115
+   DevelopmentWorkflowandDeployment............... 6.12,p.116
+   ImplementationChallengesandAdoptedSolutions..... 6.13,p.116
+   ChapterSummary..................................... 6.14,p.117
+
+
+
+
+
+
+
+                                    108
+
+=== Physical 121 printed 109 ===
+Chapter6.SoftwareandEngineeringImplementation                     109
+
+6.1 Introduction
+
+Chapter5describedthestructuraldesignofEduVerse;thischapterexplains
+howthatdesignwasrealizedasanoperationalsoftwaresystem. Itcovers
+the implementation of the web and mobile clients, shared server-side
+services, persistence and file handling, authentication and authorization,
+configurablefeatures,real-timecommunication,AIsupport,theintegrated
+codingenvironment, andtheengineeringworkflowusedtointegrateand
+reviewchanges.
+   Thediscussionfocusesonimplementationmechanismsandthedistinct
+workflowdepthprovidedbythewebandmobileclients.
+
+6.2 ImplementationEnvironment
+
+Theimplementationenvironmentcomprisesthebrowserandmobileclients,
+theauthenticatedAPIlayer,thedatabase,andspecializedexternalservices
+summarizedinTable6.1.
+
+6.3 SystemArchitecture
+
+Theimplementedarchitecturefollowsaweb-first,service-integratedcloud
+model. VercelhoststhedeployedNext.jsapplication,whoseroutehandlers
+and shared server libraries contain the server-side application logic for
+authenticatedworkflows.Theapplicationintegrateswithmanagedservices:
+Supabase provides authentication, hosted PostgreSQL persistence, RPC
+access,andselectedrealtimeupdates;AWSS3storesbinaryfiles;LiveKit
+provideslivemediainfrastructure;andOpenRouterprovidesAIinference.
+   After authentication, the mobile companion interacts with the same
+protectedEduVerseservicelayerusedbythewebapplication. Thiskeeps
+accessrulesandworkflowbehaviorcentralizedacrossbothclients.
+   Protected client actions are resolved through the server layer, where
+inputvalidation,organizationandrolecontext,permissions,andworkflow
+conditionsareappliedbeforepersistenceorexternal-serviceoperationsare
+performed.Thisstructurekeepsacademicbusinessrulesserver-ownedwhile
+allowingdifferentclientstoexposedifferentlevelsofinteraction.
+
+=== Physical 122 printed 110 ===
+Chapter6.SoftwareandEngineeringImplementation                     110
+
+
+
+             Table6.1.MainEduVerseImplementationEnvironment
+  Implementation          Maintechnologies           Implementationpurpose
+  layer
+  Webclient               Next.js16App               Role-awarewebinterfaces,
+                          Router,React19,            class-scopedworkflows,
+                          TypeScript,Tailwind        administrativeviews,and
+                          CSS4,reusable              integratedlearningtools.
+                          Radix/shadcn-style
+                          components
+  Mobilecompanion         Expo,ReactNative,          Authenticatedmobileaccessto
+                          TypeScript,                selectedhigh-frequency
+                          NativeWind                 workflowsthroughshared
+                                                     platformservices.
+  ServerandAPI            Next.jsroute               Authenticatedrequest
+  layer                   handlers,shared            handling,validation,
+                          serverlibraries,Zod        authorization,workflow
+                                                     execution,andexternal-service
+                                                     integration.
+  Dataand                 SupabaseAuth,              Identity,relationalpersistence,
+  authentication          Supabase-hosted            database-sideworkflows,and
+                          PostgreSQL,RPC             additionalaccessboundaries.
+                          functions,Row-Level
+                          Security
+  Filestorage             AWSS3,AWSSDK               Server-controlledobjectupload
+                          forJavaScript              andtime-limitedsigned
+                                                     retrieval.
+  Liveandrealtime         LiveKit,Supabase           Authorizedroomaccess,
+  services                Realtime                   live-sessionstate
+                                                     synchronization,andrealtime
+                                                     updates.
+  AIservices              OpenRouter,                Server-sidecontextual
+                          material-extraction        generation,extraction,
+                          helpers                    summarization,drafting,and
+                                                     feedbacksupport.
+  Reviewand               Git,GitHubpull             Reviewedintegration,
+  deployment              requests,GitHub            automatedbuild,formatting,
+  support                 Actions,Bun,Biome,         andtypechecks,production
+                          Vercel                     deployment,andpull-request
+                                                     previewenvironments.
+
+=== Physical 123 printed 111 ===
+Chapter6.SoftwareandEngineeringImplementation                     111
+
+6.4 WebApplicationImplementation
+
+The web application is implemented with the Next.js 16 App Router,
+React 19, and TypeScript and serves as the primary operational client
+of EduVerse. Tailwind CSS 4 and reusable Radix/shadcn-style interface
+components support a consistent presentation layer.  The application
+structurecombinesrole-awareroutingwithorganization-andclass-scoped
+workspacessothattheactiveusercontextdetermineswhichinterfaceand
+serveroperationsareavailable.
+   Webworkflowsinteractwithserver-ownedroutehandlersratherthan
+embedding academic business rules directly in presentation components.
+Sharedserverutilitiesresolveauthenticatedcontext,validaterequests,apply
+accesschecks,andcoordinatepersistenceorexternal-serviceoperations.
+   The class workspace provides a common interaction shell for enabled
+academiccapabilitieswhilepreservingfeatureavailabilityandrole-specific
+behavior.  This allows the interface to remain consistent across classes
+even when the available tools differ according to organization or class
+configuration.
+   TheAppRouterseparatesauthenticatedworkspaceroutesfrompublic
+entryroutes.Sharedcontextproviderssupplyapplicationstateandcompose
+theauthenticatedshellwithlive-sessionandexam-lockstate.
+
+6.5 MobileCompanionApplication
+         Implementation
+
+EduVerseMobileisimplementedwithExpo,ReactNative,andTypeScript
+as a companion to the primary web platform. Shared application state
+iscoordinatedthroughthemobileproviderlayer,whiledomainoperations
+areaccessedthroughadedicatedservicelayerthatcommunicateswiththe
+protectedEduVersebackend.
+   Supabase provides mobile authentication and session persistence.
+Its mobile client stores the session through AsyncStorage and refreshes
+authenticationtokensautomatically. Authenticatedservicerequeststhen
+attachthecurrentaccesstokenasabearertokenandreusetheplatform’s
+server-sideacademicworkflowsratherthanreproducingthewebapplication’s
+businesslogicinsidethemobileclient.
+
+=== Physical 124 printed 112 ===
+Chapter6.SoftwareandEngineeringImplementation                     112
+
+
+   The mobile implementation provides authentication,  organization
+selection, class summaries, and notifications.  It also provides material
+access,  class communication,  profile utilities,  and basic live-session
+participation.   The web client provides the broader administrative,
+configuration, assessment-authoring, and whiteboard-centered live-session
+workflows,whilethemobileclientfocusesonhigh-frequencyparticipation.
+
+6.6 Backend,Database,andStorage
+         Implementation
+
+EduVerseusesaSupabase-centereddatalayercoordinatedbytheNext.js
+application rather than by a separate standalone backend application.
+Next.jsroutehandlersformthemainapplicationandAPIbackend,while
+sharedserverlibrariesperformrequestvalidation,authorization,workflow
+execution,persistence,andintegrationwithexternalservices. Zodisused
+forschema-basedvalidationinselectedstructuredrequestworkflows.
+   RelationalpersistenceisprovidedbySupabase-hostedPostgreSQLand
+followsthedomainstructuresdocumentedinChapter5. Routehandlers
+access the required records where appropriate and invoke PostgreSQL
+functionsthroughSupabaseRPCforcentralizeddatabaseoperations.These
+operationsincludeevaluatingclass-managementpermissions,selectingthe
+active organization role, resolving feature availability, and coordinating
+live-sessionclaimingandlifecyclestate.
+   Uploadedbinarycontentishandledseparatelyfromrelationalacademic
+records.   Supabase-hosted PostgreSQL stores academic records and
+associated file metadata, while AWS S3 stores the binary content.
+Server-sideuploadlogicvalidatesincomingfiles,writespermittedcontent
+toS3usingprotectedcredentials,andpersiststhecorrespondingmetadata.
+ProtecteddownloadsusesignedURLsthatexpireafterfiveminutes,while
+material content can also be delivered through authenticated server-side
+logic.
+   Thisserver-mediatedapproachpreventsstoragecredentialsfrombeing
+exposedtoclientsandkeepsfileaccesssubjecttotheauthenticatedacademic
+contextofthesurroundingworkflow.
+
+=== Physical 125 printed 113 ===
+Chapter6.SoftwareandEngineeringImplementation                     113
+
+6.7 Authentication,Authorization,and
+         Security
+
+AuthenticationisimplementedthroughSupabaseAuth,includingaccount
+entry,recovery,sessionhandling,andprotected-routeaccess.Authentication
+establishes user identity, but protected EduVerse workflows also require
+organization, role, membership, and class context to be resolved before
+accessisgranted.
+   Authorization is applied through multiple implementation layers,
+including authenticated application entry,  server-side route checks,
+active-role resolution, organization and class membership checks, and
+database-levelprotectionswhereconfigured. Sharedauthorizationhelpers
+and permission RPCs keep these checks consistent across protected
+workflows.
+   Row-LevelSecuritypoliciesdefinedinthedatabasemigrationsprovide
+anadditionalaccessboundaryfortheschemaareastowhichthosepolicies
+areapplied.
+   Additional security mechanisms include server-side input validation,
+protectedfileaccess,controlledinvitationandjoinworkflows,role-sensitive
+result visibility, exam passcode handling, integrity-event recording, and
+platformauditlogging.
+
+6.8 Role-BasedandMulti-Organization
+         Access
+
+Multi-organization  and  multi-role  access  is  implemented  through
+organizationmembershiprecords,separateroleassociations,active-context
+selection,andserver-sideaccessresolution. Asingleaccountcantherefore
+participateinmorethanoneinstitutionalcontextwithoutrequiringseparate
+identities.
+   Whenaprotectedworkflowisopened,theimplementationresolvesthe
+activeorganizationandroletogetherwiththerelevantmembershiporclass
+relationship.Server-sideaccesschecksthendeterminewhethertherequested
+actionispermittedinthatcontext.
+   Internal role identifiers differ from some user-facing terminology used
+inthedissertation. TheOrganizationAdministratorroleusestheinternal
+
+=== Physical 126 printed 114 ===
+Chapter6.SoftwareandEngineeringImplementation                     114
+
+
+identifierorg_admin,whilethethesisconsistentlyusestheuser-facingterm
+OrganizationAdministrator.
+
+6.9 FeatureAvailabilityandExtension
+         Implementation
+
+Feature availability is implemented through shared definitions and
+configuration records scoped to organization and class contexts.  The
+resolvercombinesdefinitiondefaults, organizationsettings, classsettings,
+and parent feature state. An organization-disabled capability cannot be
+enabled by a class setting; a class can further disable a capability that
+remainsavailabletotheorganization.
+   Theresolvedconfigurationcontrolsclassnavigationandfeatureexposure.
+Database-sidefeaturechecksarealsousedinapplicableprotectedworkflows,
+sothesameconfigurationmodelcaninformbothapplicationpresentation
+andserver-controlledoperations.
+   Extensions follow the same context-sensitive model.   Organization
+extension records define enabled extension entries, while class extension
+settingscanfurtherrestricttheirexposure. Databasevalidationpreventsa
+classfromenablinganextensionthatisdisabledforitsorganization.
+
+6.10 Real-TimeCommunicationandLive
+           Sessions
+
+Real-timelearninginEduVersecombinesLiveKit-basedmediaparticipation
+withplatform-managedsessionstate.Anauthenticatedserverrouteverifies
+classmembershipormanagementpermissionbeforeissuingaroom-scoped
+LiveKittoken,whileSupabaserecordscoordinatetheactiveclasssessionand
+itslifecycle.
+   Session-statehandlingincludesclaimingorstartingasession,markingit
+live,endingit,andmaintainingitslast_seen_atactivitytimestamp.Host
+clientssendaheartbeatevery60seconds,andserver-sidetokenandclaim
+logicusesafive-minutethresholdwhenrejectingorreplacingstalesession
+state.SupabaseRealtimesubscriptionspropagatelive-sessionrecordchanges
+totheapplicationcontext.
+
+=== Physical 127 printed 115 ===
+Chapter6.SoftwareandEngineeringImplementation                     115
+
+
+   Thewebapplicationprovidestherichersynchronousinterface,including
+theintegratedwhiteboardexperience,whilethemobilecompanionsupports
+anarrowerlevelofLiveKitparticipationthroughthesametokenandsession
+routes.
+
+6.11 AILearningSupportandIDE
+           Implementation
+
+AI functionality is integrated through authenticated server-side routes
+andsupportingservicesthatconnectclasscontexttoOpenRouter,which
+providestheAIinferencelayer. Thedefaultmodelforgeneralgeneration
+isnvidia/nemotron-3-super-120b-a12b:free.  It supports contextual
+class assistance, material study summarization, assignment support and
+drafting,examinationdrafting,andfeedbackdrafting. Thedefaultvision
+modelisgoogle/gemini-2.5-flash,whichsupportsvisualextractionwhen
+image-basedorvisuallyrenderedmaterialrequiresvisionprocessing. Both
+defaultscanbeoverriddenthroughdeployment-environmentconfiguration.
+   MaterialprocessingdoesnotrelyexclusivelyonAIvision.SuitablePDF
+contentisprocessedthroughtextextraction,whilevision-basedprocessing
+isusedwhenthematerialisimage-basedordependsonvisualrendering.
+AIaccessissubjecttoauthenticatedclasscontext,classmembership,and
+managementpermissionwhererequired.Forstudent-facingclassassistance,
+thesystempromptinstructsthemodeltoguidelearningwithoutsupplying
+directfinalanswerstoactiveassessments. Thisisaprompt-levelacademic
+guardrail,notdeterministicanswerfiltering.
+   Theintegrateddevelopmentenvironmentisabrowser-orientedworkspace
+withafiletree,Monaco-basedediting,projecttemplates,virtualterminal
+commands,persistentbrowser-localworkspacestate,andbrowserpreviews.
+Templates cover Web, Python, C, C++, and SQL projects; however,
+executionisintentionallyconstrainedtoclient-sidemechanisms.JavaScript
+can execute in the browser, and Web and Markdown content can be
+previewed. Pythonuseslimitedclient-sideinterpretationortranslation,C
+andC++behaviorissimulatedratherthannative-compiled,andSQLuses
+arestrictedclient-sidesimulationratherthanafulldatabaseruntime. The
+resultisabrowser-orientedcodingenvironmentwithconstrainedclient-side
+executionratherthanacollectionofnativelanguageruntimes.
+
+=== Physical 128 printed 116 ===
+Chapter6.SoftwareandEngineeringImplementation                     116
+
+6.12 DevelopmentWorkflowand
+           Deployment
+
+Implementation  changes  were  managed  through  version-controlled
+branchesorforksandpull-requestreview,supportingthefeature-centered
+developmentprocessdescribedinChapter3. Mergedpull-requestcommits
+providetraceableintegrationofreviewedchanges.
+   ThreeGitHubActionsworkflowsrunonpushesandpullrequeststothe
+mainbranch: aNext.jsproductionbuildwithBun, aBiomeformatting
+check, and a TypeScript check usingtsc –noEmit.  The EduVerse web
+applicationisdeployedthroughVercel,andeachpullrequestgeneratesa
+preview deployment that provides a running environment for reviewing
+proposedchangesbeforetheyaremerged.
+
+6.13 ImplementationChallengesand
+           AdoptedSolutions
+
+Fourrecurringengineeringchallengesshapedtheimplementation:
+
+  •Multi-organization and multi-role authorization.Access
+      decisions had to remain correct across memberships and roles.
+      Selectedcontext,sharedauthorizationhelpers,permissionRPCs,and
+      databasepoliciesworktogethertoenforceaccessdecisions.
+
+  •Cross-client consistency.  Both clients needed consistent rules
+      without duplicated business logic.   They reuse protected server
+      workflowswhileexposingdifferentinterfacedepths.
+
+  •Large-file handling.Binary files had to remain associated with
+      protected academic records without storing the binary content in
+      the relational database.  Supabase-hosted PostgreSQL holds their
+      metadata,whileserver-controlledAWSS3handlesbinaryuploadand
+      retrieval.
+
+  •Live-sessionstateandrecovery.LiveKitparticipationalsorequired
+      areliableclasslifecycle.Persistentrecords,claimandendoperations,
+      heartbeats,andstale-statecheckscoordinateit.
+
+=== Physical 129 printed 117 ===
+Chapter6.SoftwareandEngineeringImplementation                     117
+
+6.14 ChapterSummary
+
+ThischapterdescribedthetechnicalrealizationofEduVerseacrossitsweb
+andmobileclients, server-sideservices, persistence, security, configurable
+capabilities,real-timecommunication,AIsupport,codingenvironment,and
+engineering workflow.  The implementation maintains a shared governed
+platformmodelwhileallowingthewebandmobileclientstoprovidedifferent
+levelsoffunctionaldepth.Thenextchapterevaluatesthesystemwithinthe
+definedtestingscope.
+
+=== Physical 130 printed 118 ===
+Chapter7
+
+SystemTestingandEvaluation
+
+
+
+
+     Contents
+
+     Introduction..................................    7.1,p.119
+     TestingStrategy ..............................    7.2,p.119
+     FunctionalTesting............................    7.3,p.119
+     Non-FunctionalEvaluation....................    7.4,p.119
+     ReviewandEvaluationSummary..............    7.5,p.120
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  118
+
+=== Physical 131 printed 119 ===
+Chapter7.SystemTestingandEvaluation                              119
+
+7.1 Introduction
+
+TestingandevaluationexaminewhethertheimplementedEduVerseplatform
+behavesaccordingtoitsacademic,role-based,andtechnicalresponsibilities.
+Inamulti-organizationeducationalsystem,correctnessdependsnotonlyon
+successfulinterfaceoperation,butalsoonaccesscontrol,assessmentlogic,
+featureconfiguration,andothergovernedplatformbehavior.
+   This chapter summarizes the testing activities applied to EduVerse
+andprovidesaconciseevaluationofselectedfunctionalandnon-functional
+characteristics.
+
+7.2 TestingStrategy
+
+EduVersewasevaluatedusingautomatedlogic-leveltestingtogetherwith
+engineering verification during development.  Automated tests focus on
+rule-intensiveplatformbehavior, whileGitHubActionsverifyproduction
+builds,formatting,andTypeScriptcorrectness.Vercelpreviewdeployments
+alsosupportreviewofchangesbeforemerge.
+  •automatedlogic-leveltesting;
+  •GitHubActionsbuild,formatting,andtypechecks;
+  •Vercelpreviewdeploymentsfordevelopmentreview.
+
+7.3 FunctionalTesting
+
+Theautomatedtestsuitecoversselectedrule-intensiveareasofEduVerse,
+includingclassaccessandvisibility,examinationrulesandintegrityhandling,
+grading,featureresolution,educationselectors,andselectedIDEbehavior.
+   ThecompletesuitewasexecutedusingBunTestandcompletedwith76
+passedtests,0failedtests,and105assertionsacross10testfiles. These
+resultsverifythetestedlogic-levelbehaviorsoftheplatform.
+
+7.4 Non-FunctionalEvaluation
+
+Thenon-functionalevaluationfocusedonpracticalcharacteristicssupported
+bytheimplementedEduVerseplatform. Securityandaccesscontrolwere
+
+=== Physical 132 printed 120 ===
+Chapter7.SystemTestingandEvaluation                              120
+
+
+evaluatedthroughauthentication,authorization,protectedresourceaccess,
+role-basedpermissions,andselectedautomatedtests.
+   Maintainabilityissupportedbythemodularprojectstructure,shared
+utilities, configuration-driven feature control, and automated engineering
+checks. Usabilityandresponsivenesswerereviewedthroughrepresentative
+workflowsacrosstheimplementedwebandmobileinterfaces.
+
+7.5 ReviewandEvaluationSummary
+
+Overall,thetestingandevaluationactivitiesverifythemainrule-intensive
+areasofEduVerseandsupportthecorrectnessofitscoreplatformbehavior.
+Theautomatedtestsuitecompletedsuccessfullywith76passedtestsand
+nofailures,whileGitHubActionschecksandVercelpreviewdeployments
+providedadditionalengineeringverificationthroughoutdevelopment.
+
+=== Physical 133 printed 121 ===
+Chapter8
+
+FutureWorkand
+Recommendations
+
+
+
+
+     Contents
+
+     Introduction..................................    8.1,p.122
+     ScalabilityImprovements......................    8.2,p.122
+     UserFeedbackandUsabilityRefinement.......    8.3,p.122
+     ChapterSummary.............................    8.4,p.122
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                121
+
+=== Physical 134 printed 122 ===
+Chapter8.FutureWorkandRecommendations                          122
+
+8.1 Introduction
+
+Future work for EduVerse focuses on two main directions:  evaluating
+scalability under broader real-world use and refining usability through
+structured user feedback.  These directions extend the project toward
+evidence-basedperformanceplanninganduser-informedinterfacerefinement.
+
+8.2 ScalabilityImprovements
+
+AsEduVerseisusedbylargernumbersoforganizations,users,classes,files,
+andlivesessions,futureevaluationcanexaminehowtheplatformperforms
+underheavierandmoreconcurrentworkloads. Thiswouldhelpestablish
+practicalperformancebaselinesandidentifyareasthatmayrequirefurther
+refinementasusagegrows.
+   Operational monitoring can also be strengthened to provide clearer
+informationaboutsystembehavior,resourcedemand,andservicereliability
+duringbroaderuse.Suchevidencewouldallowfuturescalabilitydecisionsto
+beguidedbyobservedplatformbehaviorratherthanassumedlimitations.
+
+8.3 UserFeedbackandUsabilityRefinement
+
+AseconddirectionisbroaderevaluationwithOrganizationAdministrators,
+Teachers,andStudents. Structuredfeedbackfromtheseusergroupscan
+provideevidenceaboutnavigationclarity,workflowunderstanding,feature
+discoverability,andtheoverallusabilityoftheintegratedplatform.
+   Findings from usability testing, questionnaires, or other structured
+feedback methods can then guide targeted refinements to interfaces and
+workflows. TheobjectiveistopreservetheintegratednatureofEduVerse
+whilekeepingtheexperienceclear,efficient,andmanageableastheplatform
+evolves.
+
+8.4 ChapterSummary
+
+FuturedevelopmentcanstrengthenEduVersethroughempiricalscalability
+evaluation, improved operational monitoring, and user-informed usability
+refinement.
+
+=== Physical 135 printed 123 ===
+Conclusion
+
+
+
+EduVerse was developed to address a clear problem in contemporary
+digitaleducation: closelyrelatedacademicworkflowsoftenlackashared
+institutional context.  This thesis has shown how a multi-organization,
+role-based  environment  can  coordinate  learning  management,  live
+collaboration, AI-driven support, and coding practice under common
+governance.
+   The implemented system realizes this model through a primary web
+platform,EduVerseMobilesupportforselectedhigh-frequencyworkflows,
+protectedsharedAPIs,role-awareaccess,andconfigurableservicesfordata,
+files,livesessions,andAIsupport. Bothclientsreusethegovernedservice
+layerwhileprovidinginteractiondepthsuitedtotheirrespectiveroles.
+   Theprojectthereforecontributesacoherentmodelforintegrateddigital
+learning without sacrificing governance, extensibility, controlled feature
+availability,oracademicauthority. Scalability,broaderuserfeedback,and
+continuedusabilityrefinementremaintheprincipalnextsteps, whilethe
+currentimplementationprovidesapracticalfoundationforthatwork.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       123
+
+=== Physical 136 printed 124 ===
+References
+
+
+
+ [1]BashaerAlsafari, EricAtwell, AishaWalker, andMartinCallaghan.
+     Towardseffectiveteachingassistants: Fromintent-basedchatbotsto
+     LLM-poweredteachingassistants.NaturalLanguageProcessingJournal,
+     8:100101,2024.
+
+ [2]Melissa Bond, Hassan Khosravi, Maarten De Laat, Nina Bergdahl,
+     VioletaNegrea, EmilyOxley, PhuongPham, SinWangChong, and
+     GeorgeSiemens. Ametasystematicreviewofartificialintelligencein
+     highereducation:Acallforincreasedethics,collaboration,andrigour.
+     InternationalJournalofEducationalTechnologyinHigherEducation,
+     21:4,2024.
+
+ [3]BendikBygstad, EgilØvrelid, StenLudvigsen, andMortenDæhlen.
+     From dual digitalization to digital learning space:  Exploring the
+     digitaltransformationofhighereducation.Computers&Education,
+     182:104463,2022.
+
+ [4]Ritesh Chugh,  Darren Turnbull,  Michael A. Cowling,  Robert
+     Vanderburg,andMichelleA.Vanderburg. Implementingeducational
+     technologyinhighereducationinstitutions: Areviewoftechnologies,
+     stakeholder perceptions, frameworks and metrics.Education and
+     InformationTechnologies,28:16403–16429,2023.
+
+ [5]MahaKadhimKabier,AliA.Yassin,andZaidAmeenAbduljabbar.
+     Towards for designing educational system using role-based access
+     control.InternationalJournalofIntelligentEngineeringandSystems,
+     16(2):50–63,2023.
+
+
+
+
+
+                                       124
+
+=== Physical 137 printed 125 ===
+References                                                           125
+
+
+ [6]LashaLabadze,MayaGrigolia,andLelaMachaidze.RoleofAIchatbots
+     ineducation: Systematicliteraturereview.InternationalJournalof
+     EducationalTechnologyinHigherEducation,20:56,2023.
+
+ [7]Yong Keow Lee,  Norasykin Mohd Zaid,  and Zaidatun Tasir.
+     Synchronousonlineteachingpractices: Ascopingreview.Innovative
+     TeachingandLearningJournal,8(1):88–100,2024.
+
+ [8]QinyiLiuandMohammadKhalil. Understandingprivacyanddata
+     protectionissuesinlearninganalyticsusingasystematicreview.British
+     JournalofEducationalTechnology,54(6):1715–1747,2023.
+
+ [9]FengchunMiaoandWayneHolmes.GuidanceforGenerativeAIin
+     EducationandResearch.UNESCO,Paris,2023.
+
+[10]NorFarahwahidaMohdNoor,AslinaSaad,AbuBakarIbrahim,and
+     NorashadyMohdNoor. Theacceptanceofaneducationalintegrated
+     development  environment  to  learn  programming  fundamentals.
+     InformationTechnologiesandLearningTools,93(1):135–151,2023.
+
+[11]Organisation for Economic Co-operation and Development.OECD
+     DigitalEducationOutlook2023:TowardsanEffectiveDigitalEducation
+     Ecosystem.OECDPublishing,Paris,2023.
+
+[12]Gizeh Rangel-de Lázaro and Josep M. Duart. Moving learning: A
+     systematic review of mobile learning applications for online higher
+     education.Journal of New Approaches in Educational Research,
+     12:198–224,2023.
+
+[13]Metehan Feridun Sorkun, Öznur Yurt, and Juliana Hsuan.  Service
+     modularity in e-learning programs: An analysis from the perceived
+     usefulness perspective.  International Journal of Operations &
+     ProductionManagement,42(5):637–660,2022.
+
+[14]Tao Xie, Yuanyuan Kuang, Ying Tang, Jian Liao, and Yunong
+     Yang.UsingLLM-supportedlecturesummarizationsystemtoimprove
+     knowledge recall and student satisfaction.Expert Systems with
+     Applications,269:126371,2025.

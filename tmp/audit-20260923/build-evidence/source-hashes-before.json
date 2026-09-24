@@ -1,0 +1,20 @@
+{
+  "main.tex": "e142e3b0740948778bfb475f4a2b588511e7f73ac4cc8679dce5ad6911db7812",
+  "references.bib": "7a8709efcb29dcad4554d937af793a2dad363db3ef14b24b95ff159a0c70fb16",
+  "chapters\\chapter1_strategic_vision.tex": "df091c78817a5ec05d6f2e442ea80f3dd9b052ff075bf1b97c964cd8599a2292",
+  "chapters\\chapter2_literature_review.tex": "b8a9e468cb8353ea8bbb6454cae6808639fad12c57ed9302dfa5c02a2ce6659f",
+  "chapters\\chapter3_methodology.tex": "3e913f69223bd54fe6dbd96fa826f3b0888143383ee596ce89d06234a6f1b585",
+  "chapters\\chapter4_system_analysis.tex": "bfa825745c2fca9c070ac34721622f92137b1ee69717587fa6707f5245425d9d",
+  "chapters\\chapter5_system_design.tex": "77945b4cb432ce4cea9c7e6f7b64375911184df980cf37cc12d8786d4d4fbb0e",
+  "chapters\\chapter6_implementation.tex": "26916e2de98849e29fcfb7de8fe50122f7a0b787d4b632eae2b5be43a14a9058",
+  "chapters\\chapter7_testing_evaluation.tex": "6f109562ec8dc427318d7b5a9fddcd1fafaff1d7ee2be511be486f21664343b6",
+  "chapters\\chapter8_future_work.tex": "6539389719bbf2051cd8b56b9c105d78adb9884d2a5819600255042f9e007235",
+  "frontmatter\\abstract.tex": "7fee7f1999aaa874aa951337429d2d2861cefb29d93999cbad78fc1901c6f19a",
+  "frontmatter\\acknowledgements.tex": "df9fbce0ecd2a0f61045abf307e81d9c03a392a48aeb355f62b3a7ac7e12c1a3",
+  "frontmatter\\cover_page.tex": "86caabb1cd62c3f7b2d372054967327afa3764cc0d7702a82a2414ce5b916d18",
+  "backmatter\\conclusion.tex": "bb9caa7c2d57f5a471478af04924e60b034845dc65bedadc5edebc7433e89c3b",
+  "figures\\activity_diagrams\\activity_diagram_styles.tex": "4cdc29ccdc9bdb78c771b4f00653492bb4b7ae84ad7631480c0019d399bd2f1a",
+  "figures\\activity_diagrams\\chapter4_activity_diagrams.tex": "2aa6a7f476abc81c528852e63d534f7c4f36d49d6c4641985ac1f91051b4bc6c",
+  "figures\\diagrams\\eduverse_diagram_styles.tex": "013be62861b9dbaae7edd5eeb011bb5a9a9c3b36b72ca3a077b4fdaceae519e2",
+  "figures\\diagrams\\eduverse_use_case_diagrams.tex": "e1998ed4f8d147dcd805b10a29048639a9cf8a6a634f28f4bd92c6f4a6ea1688"
+}

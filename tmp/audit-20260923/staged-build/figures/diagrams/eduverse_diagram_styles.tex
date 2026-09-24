@@ -1,0 +1,58 @@
+\tikzset{
+  edu usecase diagram/.style={
+    font=\footnotesize,
+    every node/.style={align=center}
+  },
+  edu system boundary/.style={
+    draw,
+    thick,
+    rounded corners=4pt
+  },
+  edu usecase/.style={
+    ellipse,
+    draw,
+    thick,
+    fill=gray!8,
+    minimum height=10mm,
+    text width=29mm,
+    inner sep=2pt
+  },
+  edu actor link/.style={
+    draw,
+    thick
+  },
+  edu decision wide/.style={
+    edu decision,
+    text width=34mm,
+    aspect=1.8
+  }
+}
+
+\newsavebox{\EduUseCaseBox}
+
+\newcommand{\EduUseCaseFigure}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \sbox{\EduUseCaseBox}{#1}%
+    \ifdim\wd\EduUseCaseBox>0.96\textwidth
+      \resizebox{0.96\textwidth}{!}{\usebox{\EduUseCaseBox}}%
+    \else\ifdim\dimexpr\ht\EduUseCaseBox+\dp\EduUseCaseBox\relax>0.68\textheight
+      \resizebox{!}{0.68\textheight}{\usebox{\EduUseCaseBox}}%
+    \else
+      \usebox{\EduUseCaseBox}%
+    \fi\fi
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+\newcommand{\EduActor}[2]{%
+  \begin{scope}[shift={#1}]
+    \draw[thick] (0,0.55) circle [radius=0.24];
+    \draw[thick] (0,0.31) -- (0,-0.52);
+    \draw[thick] (-0.42,0.02) -- (0,0.18) -- (0.42,0.02);
+    \draw[thick] (0,-0.52) -- (-0.36,-1.02);
+    \draw[thick] (0,-0.52) -- (0.36,-1.02);
+    \node at (0,-1.48) {#2};
+  \end{scope}
+}

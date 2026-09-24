@@ -1,0 +1,185 @@
+﻿list,kind,number,title,page,actual_printed_page,physical_page,anchor,destination_page_matches,heading_or_caption_present,visible_index_row_present
+toc,chapter,,Abstract,i,i,2,chapter*.1,True,True,True
+toc,chapter,,Acknowledgements,ii,ii,3,chapter*.2,True,True,True
+toc,chapter,,Contents,iii,iii,4,section*.3,True,True,True
+toc,chapter,,List of Figures,vii,vii,8,section*.5,True,True,True
+toc,chapter,,List of Tables,x,x,11,section*.7,True,True,True
+toc,chapter,1,Strategic Vision and Project Scope,1,1,13,chapter.1,True,True,True
+toc,section,1.1,Project Vision,2,2,14,section.1.1,True,True,True
+toc,section,1.2,Problem Statement,2,2,14,section.1.2,True,True,True
+toc,section,1.3,Project Motivations,3,3,15,section.1.3,True,True,True
+toc,section,1.4,Strategic Objectives,3,3,15,section.1.4,True,True,True
+toc,section,1.5,Project Benefits and Broader Impact,4,4,16,section.1.5,True,True,True
+toc,section,1.6,Project Scope and Boundaries,5,5,17,section.1.6,True,True,True
+toc,subsection,1.6.1,System Boundaries and User Roles,5,5,17,subsection.1.6.1,True,True,True
+toc,subsection,1.6.2,Functional Scope,5,5,17,subsection.1.6.2,True,True,True
+toc,subsection,1.6.3,Web and Mobile Client Scope,6,6,18,subsection.1.6.3,True,True,True
+toc,subsection,1.6.4,Distinctive Features and Extensible Design,6,6,18,subsection.1.6.4,True,True,True
+toc,chapter,2,Literature Review and Theoretical Framework,7,7,19,chapter.2,True,True,True
+toc,section,2.1,Introduction,8,8,20,section.2.1,True,True,True
+toc,section,2.2,Evolution of Digital Education Platforms,8,8,20,section.2.2,True,True,True
+toc,subsection,2.2.1,From Traditional Classroom Management to Digital Learning Systems,8,8,20,subsection.2.2.1,True,True,True
+toc,subsection,2.2.2,Limitations of Fragmented Learning Management Tools,9,9,21,subsection.2.2.2,True,True,True
+toc,section,2.3,Research Gap and Integrated Learning Ecosystems,9,9,21,section.2.3,True,True,True
+toc,section,2.4,Artificial Intelligence in Education,10,10,22,section.2.4,True,True,True
+toc,subsection,2.4.1,Context-Aware Learning Assistance,10,10,22,subsection.2.4.1,True,True,True
+toc,subsection,2.4.2,Material Summarization and Learning Support,10,10,22,subsection.2.4.2,True,True,True
+toc,subsection,2.4.3,Assessment and Feedback Support,10,10,22,subsection.2.4.3,True,True,True
+toc,section,2.5,Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach,11,11,23,section.2.5,True,True,True
+toc,section,2.6,Theoretical and Technical Foundations of EduVerse,12,12,24,section.2.6,True,True,True
+toc,subsection,2.6.1,Web-Based Educational Platforms,12,12,24,subsection.2.6.1,True,True,True
+toc,subsection,2.6.2,Mobile Companion Learning Applications,13,13,25,subsection.2.6.2,True,True,True
+toc,subsection,2.6.3,Real-Time Virtual Classrooms,13,13,25,subsection.2.6.3,True,True,True
+toc,subsection,2.6.4,Integrated Coding Environments for Programming Education,13,13,25,subsection.2.6.4,True,True,True
+toc,subsection,2.6.5,Extensible Educational Ecosystems and Governed Openness,14,14,26,subsection.2.6.5,True,True,True
+toc,subsection,2.6.6,"Security, Roles, and Data Management",14,14,26,subsection.2.6.6,True,True,True
+toc,chapter,3,Methodology,15,15,27,chapter.3,True,True,True
+toc,section,3.1,Introduction,16,16,28,section.3.1,True,True,True
+toc,section,3.2,Methodological Approach,16,16,28,section.3.2,True,True,True
+toc,subsection,3.2.1,Iterative Feature-Centered Development,16,16,28,subsection.3.2.1,True,True,True
+toc,subsection,3.2.2,Vertical-Slice Realization,17,17,29,subsection.3.2.2,True,True,True
+toc,subsection,3.2.3,Why This Methodology Fits EduVerse,17,17,29,subsection.3.2.3,True,True,True
+toc,section,3.3,Repeated Development Cycle,18,18,30,section.3.3,True,True,True
+toc,section,3.4,Chapter Summary,19,19,31,section.3.4,True,True,True
+toc,chapter,4,System Analysis and Requirements,20,20,32,chapter.4,True,True,True
+toc,section,4.1,Introduction,21,21,33,section.4.1,True,True,True
+toc,section,4.2,System Overview,21,21,33,section.4.2,True,True,True
+toc,section,4.3,System Actors,21,21,33,section.4.3,True,True,True
+toc,section,4.4,Functional Requirements,22,22,34,section.4.4,True,True,True
+toc,section,4.5,Non-Functional Requirements,27,27,39,section.4.5,True,True,True
+toc,section,4.6,Use-Case Model,28,28,40,section.4.6,True,True,True
+toc,section,4.7,Activity Diagrams,44,44,56,section.4.7,True,True,True
+toc,section,4.8,Chapter Summary,59,59,71,section.4.8,True,True,True
+toc,chapter,5,System Design,60,60,72,chapter.5,True,True,True
+toc,section,5.1,Introduction,61,61,73,section.5.1,True,True,True
+toc,section,5.2,Design Context and Architectural Structure,61,61,73,section.5.2,True,True,True
+toc,section,5.3,Information Model and Persistence Design,61,61,73,section.5.3,True,True,True
+toc,subsection,5.3.1,Logical Database Design,62,62,74,subsection.5.3.1,True,True,True
+toc,subsection,5.3.2,Relational Structure Through the ERD,62,62,74,subsection.5.3.2,True,True,True
+toc,subsection,5.3.3,Principal Schema Groups,65,65,77,subsection.5.3.3,True,True,True
+toc,subsection,5.3.4,Physical Schema Tables,66,66,78,subsection.5.3.4,True,True,True
+toc,section,5.4,Interface and Interaction Design,82,82,94,section.5.4,True,True,True
+toc,subsection,5.4.1,Access and Identity Interfaces,82,82,94,subsection.5.4.1,True,True,True
+toc,subsection,5.4.2,Administrative Governance Interfaces,86,86,98,subsection.5.4.2,True,True,True
+toc,subsection,5.4.3,Classroom and Learning Interfaces,94,94,106,subsection.5.4.3,True,True,True
+toc,subsection,5.4.4,Assessment and Submission Interfaces,98,98,110,subsection.5.4.4,True,True,True
+toc,subsection,5.4.5,Synchronous Collaboration Interfaces,105,105,117,subsection.5.4.5,True,True,True
+toc,subsection,5.4.6,AI Support and Coding-Lab Interfaces,106,106,118,subsection.5.4.6,True,True,True
+toc,chapter,6,Software and Engineering Implementation,108,108,120,chapter.6,True,True,True
+toc,section,6.1,Introduction,109,109,121,section.6.1,True,True,True
+toc,section,6.2,Implementation Environment,109,109,121,section.6.2,True,True,True
+toc,section,6.3,System Architecture,109,109,121,section.6.3,True,True,True
+toc,section,6.4,Web Application Implementation,111,111,123,section.6.4,True,True,True
+toc,section,6.5,Mobile Companion Application Implementation,111,111,123,section.6.5,True,True,True
+toc,section,6.6,"Backend, Database, and Storage Implementation",112,112,124,section.6.6,True,True,True
+toc,section,6.7,"Authentication, Authorization, and Security",113,113,125,section.6.7,True,True,True
+toc,section,6.8,Role-Based and Multi-Organization Access,113,113,125,section.6.8,True,True,True
+toc,section,6.9,Feature Availability and Extension Implementation,114,114,126,section.6.9,True,True,True
+toc,section,6.10,Real-Time Communication and Live Sessions,114,114,126,section.6.10,True,True,True
+toc,section,6.11,AI Learning Support and IDE Implementation,115,115,127,section.6.11,True,True,True
+toc,section,6.12,Development Workflow and Deployment,116,116,128,section.6.12,True,True,True
+toc,section,6.13,Implementation Challenges and Adopted Solutions,116,116,128,section.6.13,True,True,True
+toc,section,6.14,Chapter Summary,117,117,129,section.6.14,True,True,True
+toc,chapter,7,System Testing and Evaluation,118,118,130,chapter.7,True,True,True
+toc,section,7.1,Introduction,119,119,131,section.7.1,True,True,True
+toc,section,7.2,Testing Strategy,119,119,131,section.7.2,True,True,True
+toc,section,7.3,Functional Testing,119,119,131,section.7.3,True,True,True
+toc,section,7.4,Non-Functional Evaluation,119,119,131,section.7.4,True,True,True
+toc,section,7.5,Review and Evaluation Summary,120,120,132,section.7.5,True,True,True
+toc,chapter,8,Future Work and Recommendations,121,121,133,chapter.8,True,True,True
+toc,section,8.1,Introduction,122,122,134,section.8.1,True,True,True
+toc,section,8.2,Scalability Improvements,122,122,134,section.8.2,True,True,True
+toc,section,8.3,User Feedback and Usability Refinement,122,122,134,section.8.3,True,True,True
+toc,section,8.4,Chapter Summary,122,122,134,section.8.4,True,True,True
+toc,chapter,,Conclusion,123,123,135,chapter*.59,True,True,True
+toc,chapter,,References,124,124,136,section*.60,True,True,True
+lof,figure,4.1,Project Overview Use-Case Diagram,31,31,43,figure.4.1,True,True,True
+lof,figure,4.2,Authentication and Access Use-Case Diagram,32,32,44,figure.4.2,True,True,True
+lof,figure,4.3,Organization and Role Management Use-Case Diagram,33,33,45,figure.4.3,True,True,True
+lof,figure,4.4,Class Management Use-Case Diagram,34,34,46,figure.4.4,True,True,True
+lof,figure,4.5,Assignment Management Use-Case Diagram,35,35,47,figure.4.5,True,True,True
+lof,figure,4.6,AI Learning Support Use-Case Diagram,36,36,48,figure.4.6,True,True,True
+lof,figure,4.7,Class Communication and Notifications Use-Case Diagram,37,37,49,figure.4.7,True,True,True
+lof,figure,4.8,Course Content and Materials Use-Case Diagram,38,38,50,figure.4.8,True,True,True
+lof,figure,4.9,Exam Management and Integrity Use-Case Diagram,39,39,51,figure.4.9,True,True,True
+lof,figure,4.10,Live Sessions and Whiteboard Use-Case Diagram,40,40,52,figure.4.10,True,True,True
+lof,figure,4.11,Integrated Coding Lab / IDE Extension Use-Case Diagram,41,41,53,figure.4.11,True,True,True
+lof,figure,4.12,Profile and Help Use-Case Diagram,42,42,54,figure.4.12,True,True,True
+lof,figure,4.13,Results and Dashboards Use-Case Diagram,43,43,55,figure.4.13,True,True,True
+lof,figure,4.14,Authentication and Workspace Access Activity Diagram,46,46,58,figure.4.14,True,True,True
+lof,figure,4.15,Organization Member Access and Public Join Link Activity Diagram,47,47,59,figure.4.15,True,True,True
+lof,figure,4.16,"Class Creation, Configuration, and Past Terms Activity Diagram",48,48,60,figure.4.16,True,True,True
+lof,figure,4.17,Course Content and Materials Activity Diagram,49,49,61,figure.4.17,True,True,True
+lof,figure,4.18,Class Communication and Notifications Activity Diagram,50,50,62,figure.4.18,True,True,True
+lof,figure,4.19,Assignment Workflow Activity Diagram,51,51,63,figure.4.19,True,True,True
+lof,figure,4.20,Exam Management and Integrity Workflow Activity Diagram,52,52,64,figure.4.20,True,True,True
+lof,figure,4.21,Live Session and Whiteboard Workflow Activity Diagram,53,53,65,figure.4.21,True,True,True
+lof,figure,4.22,Results Workflow Activity Diagram,54,54,66,figure.4.22,True,True,True
+lof,figure,4.23,Dashboard Workflow Activity Diagram,55,55,67,figure.4.23,True,True,True
+lof,figure,4.24,AI Learning Support Workflow Activity Diagram,56,56,68,figure.4.24,True,True,True
+lof,figure,4.25,Integrated Coding Lab / IDE Workflow Activity Diagram,57,57,69,figure.4.25,True,True,True
+lof,figure,4.26,Profile and Help Workflow Activity Diagram,58,58,70,figure.4.26,True,True,True
+lof,figure,5.1,Entity Relationship Diagram of the EduVerse Database,64,64,76,figure.5.1,True,True,True
+lof,figure,5.2,Authentication interface showing sign-in and sign-up forms for EduVerse users.,83,83,95,figure.5.2,True,True,True
+lof,figure,5.3,Organization and active-role selector used to switch between available EduVerse workspaces.,84,84,96,figure.5.3,True,True,True
+lof,figure,5.4,"User profile and settings interface showing role context, theme preferences, and password management controls.",85,85,97,figure.5.4,True,True,True
+lof,figure,5.5,Organization creation interface showing template-based setup and initial feature-availability controls for different educational contexts.,87,87,99,figure.5.5,True,True,True
+lof,figure,5.6,Organization administrator dashboard showing class oversight and organization-wide statistics.,88,88,100,figure.5.6,True,True,True
+lof,figure,5.7,Class creation and feature-configuration dialog used to define class properties and enabled tools.,89,89,101,figure.5.7,True,True,True
+lof,figure,5.8,Past-terms administration interface used to review archived classes and historical academic records.,90,90,102,figure.5.8,True,True,True
+lof,figure,5.9,Organization members and invitations interface showing role assignment and invitation-management controls.,91,91,103,figure.5.9,True,True,True
+lof,figure,5.10,Public join-link management interface showing join-link creation and request-handling controls.,91,91,103,figure.5.10,True,True,True
+lof,figure,5.11,Public join page used by a student to request access to an organization workspace.,92,92,104,figure.5.11,True,True,True
+lof,figure,5.12,Organization settings interface showing public-feature controls and teacher class-permission settings.,93,93,105,figure.5.12,True,True,True
+lof,figure,5.13,Class home interface showing the main classroom workspace and available learning tools.,94,94,106,figure.5.13,True,True,True
+lof,figure,5.14,Classroom materials interface used to access uploaded learning resources and study actions.,95,95,107,figure.5.14,True,True,True
+lof,figure,5.15,Class chat and announcements interface supporting class-wide discussion and instructor notices.,96,96,108,figure.5.15,True,True,True
+lof,figure,5.16,"Notifications panel showing alerts for live sessions, materials, examinations, and announcements.",97,97,109,figure.5.16,True,True,True
+lof,figure,5.17,"Assignment management interface showing teacher-side assignment creation, submission review, and grading controls.",98,98,110,figure.5.17,True,True,True
+lof,figure,5.18,Student assignment submission interface showing response entry and file-upload controls.,99,99,111,figure.5.18,True,True,True
+lof,figure,5.19,Exam management interface showing teacher-side exam creation and question configuration.,100,100,112,figure.5.19,True,True,True
+lof,figure,5.20,"Student exam start interface showing exam rules, timing, and attempt conditions before entry.",101,101,113,figure.5.20,True,True,True
+lof,figure,5.21,Student exam-taking interface showing timed question navigation during an active exam attempt.,102,102,114,figure.5.21,True,True,True
+lof,figure,5.22,"Exam attempt review interface showing submitted answers, grading controls, and integrity-related events.",103,103,115,figure.5.22,True,True,True
+lof,figure,5.23,"Results dashboard showing released grades, score breakdowns, and detailed assessment feedback.",104,104,116,figure.5.23,True,True,True
+lof,figure,5.24,"Live session room showing the shared whiteboard, participant list, and session controls.",105,105,117,figure.5.24,True,True,True
+lof,figure,5.25,AI learning support interface showing conversational assistance within the class workspace.,106,106,118,figure.5.25,True,True,True
+lof,figure,5.26,"Integrated coding workspace showing the file explorer, code editor, terminal, and live preview pane.",107,107,119,figure.5.26,True,True,True
+lot,table,2.1,Fragmented Educational Tools vs. Integrated EduVerse Approach,11,11,23,table.2.1,True,True,True
+lot,table,3.1,Repeated Iterative Development Structure in EduVerse,18,18,30,table.3.1,True,True,True
+lot,table,4.1,Primary EduVerse System Actors,22,22,34,table.4.1,True,True,True
+lot,table,5.1,Principal Schema Groups in EduVerse,65,65,77,table.5.1,True,True,True
+lot,table,5.2,Schema for Table: organizations,66,66,78,table.5.2,True,True,True
+lot,table,5.3,Schema for Table: profiles,66,66,78,table.5.3,True,True,True
+lot,table,5.4,Schema for Table: organization_memberships,67,67,79,table.5.4,True,True,True
+lot,table,5.5,Schema for Table: organization_membership_roles,67,67,79,table.5.5,True,True,True
+lot,table,5.6,Schema for Table: organization_invites,67,67,79,table.5.6,True,True,True
+lot,table,5.7,Schema for Table: organization_settings,68,68,80,table.5.7,True,True,True
+lot,table,5.8,Schema for Table: organization_teacher_class_permissions,68,68,80,table.5.8,True,True,True
+lot,table,5.9,Schema for Table: organization_join_links,69,69,81,table.5.9,True,True,True
+lot,table,5.10,Schema for Table: organization_join_requests,69,69,81,table.5.10,True,True,True
+lot,table,5.11,Schema for Table: class_invites,70,70,82,table.5.11,True,True,True
+lot,table,5.12,Schema for Table: classes,70,70,82,table.5.12,True,True,True
+lot,table,5.13,Schema for Table: class_memberships,71,71,83,table.5.13,True,True,True
+lot,table,5.14,Schema for Table: class_visibility_preferences,71,71,83,table.5.14,True,True,True
+lot,table,5.15,Schema for Table: feature_definitions,72,72,84,table.5.15,True,True,True
+lot,table,5.16,Schema for Table: feature_presets,72,72,84,table.5.16,True,True,True
+lot,table,5.17,Schema for Table: feature_preset_items,72,72,84,table.5.17,True,True,True
+lot,table,5.18,Schema for Table: organization_feature_settings,73,73,85,table.5.18,True,True,True
+lot,table,5.19,Schema for Table: class_feature_settings,73,73,85,table.5.19,True,True,True
+lot,table,5.20,Schema for Table: organization_extensions,73,73,85,table.5.20,True,True,True
+lot,table,5.21,Schema for Table: class_extension_settings,74,74,86,table.5.21,True,True,True
+lot,table,5.22,Schema for Table: class_materials,74,74,86,table.5.22,True,True,True
+lot,table,5.23,Schema for Table: class_messages,75,75,87,table.5.23,True,True,True
+lot,table,5.24,Schema for Table: class_assignments,76,76,88,table.5.24,True,True,True
+lot,table,5.25,Schema for Table: class_assignment_files,76,76,88,table.5.25,True,True,True
+lot,table,5.26,Schema for Table: class_assignment_submissions,77,77,89,table.5.26,True,True,True
+lot,table,5.27,Schema for Table: exams,78,78,90,table.5.27,True,True,True
+lot,table,5.28,Schema for Table: exam_questions,78,78,90,table.5.28,True,True,True
+lot,table,5.29,Schema for Table: exam_attempts,79,79,91,table.5.29,True,True,True
+lot,table,5.30,Schema for Table: exam_answers,80,80,92,table.5.30,True,True,True
+lot,table,5.31,Schema for Table: notifications,80,80,92,table.5.31,True,True,True
+lot,table,5.32,Schema for Table: class_live_sessions,81,81,93,table.5.32,True,True,True
+lot,table,5.33,Schema for Table: audit_logs,81,81,93,table.5.33,True,True,True
+lot,table,5.34,Schema for Table: auth.users,82,82,94,table.5.34,True,True,True
+lot,table,6.1,Main EduVerse Implementation Environment,110,110,122,table.6.1,True,True,True

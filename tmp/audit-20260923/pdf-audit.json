@@ -1,0 +1,6401 @@
+{
+  "pdf_pages": 137,
+  "front_matter": "i-xi",
+  "main_matter": "1-125",
+  "entry_counts": {
+    "toc": 94,
+    "lof": 52,
+    "lot": 38
+  },
+  "labels": 138,
+  "chapter_opening_entries": 51,
+  "internal_pdf_links": 321,
+  "actual_caption_occurrences": 90,
+  "issues": [],
+  "warnings": [],
+  "reference_warnings": [],
+  "overfull_boxes": 2,
+  "underfull_boxes": 124,
+  "ignored_glue_shrinkage_diagnostics": 12,
+  "entries": [
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "",
+      "title": "Abstract",
+      "page": "i",
+      "anchor": "chapter*.1",
+      "physical_page": 2,
+      "actual_printed_page": "i",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "",
+      "title": "Acknowledgements",
+      "page": "ii",
+      "anchor": "chapter*.2",
+      "physical_page": 3,
+      "actual_printed_page": "ii",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "",
+      "title": "Contents",
+      "page": "iii",
+      "anchor": "section*.3",
+      "physical_page": 4,
+      "actual_printed_page": "iii",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "",
+      "title": "List of Figures",
+      "page": "vii",
+      "anchor": "section*.5",
+      "physical_page": 8,
+      "actual_printed_page": "vii",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "",
+      "title": "List of Tables",
+      "page": "x",
+      "anchor": "section*.7",
+      "physical_page": 11,
+      "actual_printed_page": "x",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "1",
+      "title": "Strategic Vision and Project Scope",
+      "page": "1",
+      "anchor": "chapter.1",
+      "physical_page": 13,
+      "actual_printed_page": "1",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "1.1",
+      "title": "Project Vision",
+      "page": "2",
+      "anchor": "section.1.1",
+      "physical_page": 14,
+      "actual_printed_page": "2",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "1.2",
+      "title": "Problem Statement",
+      "page": "2",
+      "anchor": "section.1.2",
+      "physical_page": 14,
+      "actual_printed_page": "2",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "1.3",
+      "title": "Project Motivations",
+      "page": "3",
+      "anchor": "section.1.3",
+      "physical_page": 15,
+      "actual_printed_page": "3",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "1.4",
+      "title": "Strategic Objectives",
+      "page": "3",
+      "anchor": "section.1.4",
+      "physical_page": 15,
+      "actual_printed_page": "3",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "1.5",
+      "title": "Project Benefits and Broader Impact",
+      "page": "4",
+      "anchor": "section.1.5",
+      "physical_page": 16,
+      "actual_printed_page": "4",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "1.6",
+      "title": "Project Scope and Boundaries",
+      "page": "5",
+      "anchor": "section.1.6",
+      "physical_page": 17,
+      "actual_printed_page": "5",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "1.6.1",
+      "title": "System Boundaries and User Roles",
+      "page": "5",
+      "anchor": "subsection.1.6.1",
+      "physical_page": 17,
+      "actual_printed_page": "5",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "1.6.2",
+      "title": "Functional Scope",
+      "page": "5",
+      "anchor": "subsection.1.6.2",
+      "physical_page": 17,
+      "actual_printed_page": "5",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "1.6.3",
+      "title": "Web and Mobile Client Scope",
+      "page": "6",
+      "anchor": "subsection.1.6.3",
+      "physical_page": 18,
+      "actual_printed_page": "6",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "1.6.4",
+      "title": "Distinctive Features and Extensible Design",
+      "page": "6",
+      "anchor": "subsection.1.6.4",
+      "physical_page": 18,
+      "actual_printed_page": "6",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "2",
+      "title": "Literature Review and Theoretical Framework",
+      "page": "7",
+      "anchor": "chapter.2",
+      "physical_page": 19,
+      "actual_printed_page": "7",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "2.1",
+      "title": "Introduction",
+      "page": "8",
+      "anchor": "section.2.1",
+      "physical_page": 20,
+      "actual_printed_page": "8",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "2.2",
+      "title": "Evolution of Digital Education Platforms",
+      "page": "8",
+      "anchor": "section.2.2",
+      "physical_page": 20,
+      "actual_printed_page": "8",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.2.1",
+      "title": "From Traditional Classroom Management to Digital Learning Systems",
+      "page": "8",
+      "anchor": "subsection.2.2.1",
+      "physical_page": 20,
+      "actual_printed_page": "8",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.2.2",
+      "title": "Limitations of Fragmented Learning Management Tools",
+      "page": "9",
+      "anchor": "subsection.2.2.2",
+      "physical_page": 21,
+      "actual_printed_page": "9",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "2.3",
+      "title": "Research Gap and Integrated Learning Ecosystems",
+      "page": "9",
+      "anchor": "section.2.3",
+      "physical_page": 21,
+      "actual_printed_page": "9",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "2.4",
+      "title": "Artificial Intelligence in Education",
+      "page": "10",
+      "anchor": "section.2.4",
+      "physical_page": 22,
+      "actual_printed_page": "10",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.4.1",
+      "title": "Context-Aware Learning Assistance",
+      "page": "10",
+      "anchor": "subsection.2.4.1",
+      "physical_page": 22,
+      "actual_printed_page": "10",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.4.2",
+      "title": "Material Summarization and Learning Support",
+      "page": "10",
+      "anchor": "subsection.2.4.2",
+      "physical_page": 22,
+      "actual_printed_page": "10",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.4.3",
+      "title": "Assessment and Feedback Support",
+      "page": "10",
+      "anchor": "subsection.2.4.3",
+      "physical_page": 22,
+      "actual_printed_page": "10",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "2.5",
+      "title": "Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach",
+      "page": "11",
+      "anchor": "section.2.5",
+      "physical_page": 23,
+      "actual_printed_page": "11",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "2.6",
+      "title": "Theoretical and Technical Foundations of EduVerse",
+      "page": "12",
+      "anchor": "section.2.6",
+      "physical_page": 24,
+      "actual_printed_page": "12",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.6.1",
+      "title": "Web-Based Educational Platforms",
+      "page": "12",
+      "anchor": "subsection.2.6.1",
+      "physical_page": 24,
+      "actual_printed_page": "12",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.6.2",
+      "title": "Mobile Companion Learning Applications",
+      "page": "13",
+      "anchor": "subsection.2.6.2",
+      "physical_page": 25,
+      "actual_printed_page": "13",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.6.3",
+      "title": "Real-Time Virtual Classrooms",
+      "page": "13",
+      "anchor": "subsection.2.6.3",
+      "physical_page": 25,
+      "actual_printed_page": "13",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.6.4",
+      "title": "Integrated Coding Environments for Programming Education",
+      "page": "13",
+      "anchor": "subsection.2.6.4",
+      "physical_page": 25,
+      "actual_printed_page": "13",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.6.5",
+      "title": "Extensible Educational Ecosystems and Governed Openness",
+      "page": "14",
+      "anchor": "subsection.2.6.5",
+      "physical_page": 26,
+      "actual_printed_page": "14",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "2.6.6",
+      "title": "Security, Roles, and Data Management",
+      "page": "14",
+      "anchor": "subsection.2.6.6",
+      "physical_page": 26,
+      "actual_printed_page": "14",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "3",
+      "title": "Methodology",
+      "page": "15",
+      "anchor": "chapter.3",
+      "physical_page": 27,
+      "actual_printed_page": "15",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "3.1",
+      "title": "Introduction",
+      "page": "16",
+      "anchor": "section.3.1",
+      "physical_page": 28,
+      "actual_printed_page": "16",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "3.2",
+      "title": "Methodological Approach",
+      "page": "16",
+      "anchor": "section.3.2",
+      "physical_page": 28,
+      "actual_printed_page": "16",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "3.2.1",
+      "title": "Iterative Feature-Centered Development",
+      "page": "16",
+      "anchor": "subsection.3.2.1",
+      "physical_page": 28,
+      "actual_printed_page": "16",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "3.2.2",
+      "title": "Vertical-Slice Realization",
+      "page": "17",
+      "anchor": "subsection.3.2.2",
+      "physical_page": 29,
+      "actual_printed_page": "17",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "3.2.3",
+      "title": "Why This Methodology Fits EduVerse",
+      "page": "17",
+      "anchor": "subsection.3.2.3",
+      "physical_page": 29,
+      "actual_printed_page": "17",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "3.3",
+      "title": "Repeated Development Cycle",
+      "page": "18",
+      "anchor": "section.3.3",
+      "physical_page": 30,
+      "actual_printed_page": "18",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "3.4",
+      "title": "Chapter Summary",
+      "page": "19",
+      "anchor": "section.3.4",
+      "physical_page": 31,
+      "actual_printed_page": "19",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "4",
+      "title": "System Analysis and Requirements",
+      "page": "20",
+      "anchor": "chapter.4",
+      "physical_page": 32,
+      "actual_printed_page": "20",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.1",
+      "title": "Introduction",
+      "page": "21",
+      "anchor": "section.4.1",
+      "physical_page": 33,
+      "actual_printed_page": "21",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.2",
+      "title": "System Overview",
+      "page": "21",
+      "anchor": "section.4.2",
+      "physical_page": 33,
+      "actual_printed_page": "21",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.3",
+      "title": "System Actors",
+      "page": "21",
+      "anchor": "section.4.3",
+      "physical_page": 33,
+      "actual_printed_page": "21",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.4",
+      "title": "Functional Requirements",
+      "page": "22",
+      "anchor": "section.4.4",
+      "physical_page": 34,
+      "actual_printed_page": "22",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.5",
+      "title": "Non-Functional Requirements",
+      "page": "27",
+      "anchor": "section.4.5",
+      "physical_page": 39,
+      "actual_printed_page": "27",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.6",
+      "title": "Use-Case Model",
+      "page": "28",
+      "anchor": "section.4.6",
+      "physical_page": 40,
+      "actual_printed_page": "28",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.7",
+      "title": "Activity Diagrams",
+      "page": "44",
+      "anchor": "section.4.7",
+      "physical_page": 56,
+      "actual_printed_page": "44",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "4.8",
+      "title": "Chapter Summary",
+      "page": "59",
+      "anchor": "section.4.8",
+      "physical_page": 71,
+      "actual_printed_page": "59",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "5",
+      "title": "System Design",
+      "page": "60",
+      "anchor": "chapter.5",
+      "physical_page": 72,
+      "actual_printed_page": "60",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "5.1",
+      "title": "Introduction",
+      "page": "61",
+      "anchor": "section.5.1",
+      "physical_page": 73,
+      "actual_printed_page": "61",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "5.2",
+      "title": "Design Context and Architectural Structure",
+      "page": "61",
+      "anchor": "section.5.2",
+      "physical_page": 73,
+      "actual_printed_page": "61",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "5.3",
+      "title": "Information Model and Persistence Design",
+      "page": "61",
+      "anchor": "section.5.3",
+      "physical_page": 73,
+      "actual_printed_page": "61",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.3.1",
+      "title": "Logical Database Design",
+      "page": "62",
+      "anchor": "subsection.5.3.1",
+      "physical_page": 74,
+      "actual_printed_page": "62",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.3.2",
+      "title": "Relational Structure Through the ERD",
+      "page": "62",
+      "anchor": "subsection.5.3.2",
+      "physical_page": 74,
+      "actual_printed_page": "62",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.3.3",
+      "title": "Principal Schema Groups",
+      "page": "65",
+      "anchor": "subsection.5.3.3",
+      "physical_page": 77,
+      "actual_printed_page": "65",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.3.4",
+      "title": "Physical Schema Tables",
+      "page": "66",
+      "anchor": "subsection.5.3.4",
+      "physical_page": 78,
+      "actual_printed_page": "66",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "5.4",
+      "title": "Interface and Interaction Design",
+      "page": "82",
+      "anchor": "section.5.4",
+      "physical_page": 94,
+      "actual_printed_page": "82",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.4.1",
+      "title": "Access and Identity Interfaces",
+      "page": "82",
+      "anchor": "subsection.5.4.1",
+      "physical_page": 94,
+      "actual_printed_page": "82",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.4.2",
+      "title": "Administrative Governance Interfaces",
+      "page": "86",
+      "anchor": "subsection.5.4.2",
+      "physical_page": 98,
+      "actual_printed_page": "86",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.4.3",
+      "title": "Classroom and Learning Interfaces",
+      "page": "94",
+      "anchor": "subsection.5.4.3",
+      "physical_page": 106,
+      "actual_printed_page": "94",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.4.4",
+      "title": "Assessment and Submission Interfaces",
+      "page": "98",
+      "anchor": "subsection.5.4.4",
+      "physical_page": 110,
+      "actual_printed_page": "98",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.4.5",
+      "title": "Synchronous Collaboration Interfaces",
+      "page": "105",
+      "anchor": "subsection.5.4.5",
+      "physical_page": 117,
+      "actual_printed_page": "105",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "subsection",
+      "number": "5.4.6",
+      "title": "AI Support and Coding-Lab Interfaces",
+      "page": "106",
+      "anchor": "subsection.5.4.6",
+      "physical_page": 118,
+      "actual_printed_page": "106",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "6",
+      "title": "Software and Engineering Implementation",
+      "page": "108",
+      "anchor": "chapter.6",
+      "physical_page": 120,
+      "actual_printed_page": "108",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.1",
+      "title": "Introduction",
+      "page": "109",
+      "anchor": "section.6.1",
+      "physical_page": 121,
+      "actual_printed_page": "109",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.2",
+      "title": "Implementation Environment",
+      "page": "109",
+      "anchor": "section.6.2",
+      "physical_page": 121,
+      "actual_printed_page": "109",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.3",
+      "title": "System Architecture",
+      "page": "109",
+      "anchor": "section.6.3",
+      "physical_page": 121,
+      "actual_printed_page": "109",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.4",
+      "title": "Web Application Implementation",
+      "page": "111",
+      "anchor": "section.6.4",
+      "physical_page": 123,
+      "actual_printed_page": "111",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.5",
+      "title": "Mobile Companion Application Implementation",
+      "page": "111",
+      "anchor": "section.6.5",
+      "physical_page": 123,
+      "actual_printed_page": "111",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.6",
+      "title": "Backend, Database, and Storage Implementation",
+      "page": "112",
+      "anchor": "section.6.6",
+      "physical_page": 124,
+      "actual_printed_page": "112",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.7",
+      "title": "Authentication, Authorization, and Security",
+      "page": "113",
+      "anchor": "section.6.7",
+      "physical_page": 125,
+      "actual_printed_page": "113",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.8",
+      "title": "Role-Based and Multi-Organization Access",
+      "page": "113",
+      "anchor": "section.6.8",
+      "physical_page": 125,
+      "actual_printed_page": "113",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.9",
+      "title": "Feature Availability and Extension Implementation",
+      "page": "114",
+      "anchor": "section.6.9",
+      "physical_page": 126,
+      "actual_printed_page": "114",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.10",
+      "title": "Real-Time Communication and Live Sessions",
+      "page": "114",
+      "anchor": "section.6.10",
+      "physical_page": 126,
+      "actual_printed_page": "114",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.11",
+      "title": "AI Learning Support and IDE Implementation",
+      "page": "115",
+      "anchor": "section.6.11",
+      "physical_page": 127,
+      "actual_printed_page": "115",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.12",
+      "title": "Development Workflow and Deployment",
+      "page": "116",
+      "anchor": "section.6.12",
+      "physical_page": 128,
+      "actual_printed_page": "116",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.13",
+      "title": "Implementation Challenges and Adopted Solutions",
+      "page": "116",
+      "anchor": "section.6.13",
+      "physical_page": 128,
+      "actual_printed_page": "116",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "6.14",
+      "title": "Chapter Summary",
+      "page": "117",
+      "anchor": "section.6.14",
+      "physical_page": 129,
+      "actual_printed_page": "117",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "7",
+      "title": "System Testing and Evaluation",
+      "page": "118",
+      "anchor": "chapter.7",
+      "physical_page": 130,
+      "actual_printed_page": "118",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "7.1",
+      "title": "Introduction",
+      "page": "119",
+      "anchor": "section.7.1",
+      "physical_page": 131,
+      "actual_printed_page": "119",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "7.2",
+      "title": "Testing Strategy",
+      "page": "119",
+      "anchor": "section.7.2",
+      "physical_page": 131,
+      "actual_printed_page": "119",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "7.3",
+      "title": "Functional Testing",
+      "page": "119",
+      "anchor": "section.7.3",
+      "physical_page": 131,
+      "actual_printed_page": "119",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "7.4",
+      "title": "Non-Functional Evaluation",
+      "page": "119",
+      "anchor": "section.7.4",
+      "physical_page": 131,
+      "actual_printed_page": "119",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "7.5",
+      "title": "Review and Evaluation Summary",
+      "page": "120",
+      "anchor": "section.7.5",
+      "physical_page": 132,
+      "actual_printed_page": "120",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "8",
+      "title": "Future Work and Recommendations",
+      "page": "121",
+      "anchor": "chapter.8",
+      "physical_page": 133,
+      "actual_printed_page": "121",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "8.1",
+      "title": "Introduction",
+      "page": "122",
+      "anchor": "section.8.1",
+      "physical_page": 134,
+      "actual_printed_page": "122",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "8.2",
+      "title": "Scalability Improvements",
+      "page": "122",
+      "anchor": "section.8.2",
+      "physical_page": 134,
+      "actual_printed_page": "122",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "8.3",
+      "title": "User Feedback and Usability Refinement",
+      "page": "122",
+      "anchor": "section.8.3",
+      "physical_page": 134,
+      "actual_printed_page": "122",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "section",
+      "number": "8.4",
+      "title": "Chapter Summary",
+      "page": "122",
+      "anchor": "section.8.4",
+      "physical_page": 134,
+      "actual_printed_page": "122",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_heading_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "",
+      "title": "Conclusion",
+      "page": "123",
+      "anchor": "chapter*.59",
+      "physical_page": 135,
+      "actual_printed_page": "123",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "toc",
+      "kind": "chapter",
+      "number": "",
+      "title": "References",
+      "page": "124",
+      "anchor": "section*.60",
+      "physical_page": 136,
+      "actual_printed_page": "124",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Project Overview Use-Case Diagram",
+      "page": "31",
+      "anchor": "figure.4.1",
+      "physical_page": 43,
+      "actual_printed_page": "31",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Authentication and Access Use-Case Diagram",
+      "page": "32",
+      "anchor": "figure.4.2",
+      "physical_page": 44,
+      "actual_printed_page": "32",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.3",
+      "title": "Organization and Role Management Use-Case Diagram",
+      "page": "33",
+      "anchor": "figure.4.3",
+      "physical_page": 45,
+      "actual_printed_page": "33",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.4",
+      "title": "Class Management Use-Case Diagram",
+      "page": "34",
+      "anchor": "figure.4.4",
+      "physical_page": 46,
+      "actual_printed_page": "34",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.5",
+      "title": "Assignment Management Use-Case Diagram",
+      "page": "35",
+      "anchor": "figure.4.5",
+      "physical_page": 47,
+      "actual_printed_page": "35",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.6",
+      "title": "AI Learning Support Use-Case Diagram",
+      "page": "36",
+      "anchor": "figure.4.6",
+      "physical_page": 48,
+      "actual_printed_page": "36",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.7",
+      "title": "Class Communication and Notifications Use-Case Diagram",
+      "page": "37",
+      "anchor": "figure.4.7",
+      "physical_page": 49,
+      "actual_printed_page": "37",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.8",
+      "title": "Course Content and Materials Use-Case Diagram",
+      "page": "38",
+      "anchor": "figure.4.8",
+      "physical_page": 50,
+      "actual_printed_page": "38",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.9",
+      "title": "Exam Management and Integrity Use-Case Diagram",
+      "page": "39",
+      "anchor": "figure.4.9",
+      "physical_page": 51,
+      "actual_printed_page": "39",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.10",
+      "title": "Live Sessions and Whiteboard Use-Case Diagram",
+      "page": "40",
+      "anchor": "figure.4.10",
+      "physical_page": 52,
+      "actual_printed_page": "40",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.11",
+      "title": "Integrated Coding Lab / IDE Extension Use-Case Diagram",
+      "page": "41",
+      "anchor": "figure.4.11",
+      "physical_page": 53,
+      "actual_printed_page": "41",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.12",
+      "title": "Profile and Help Use-Case Diagram",
+      "page": "42",
+      "anchor": "figure.4.12",
+      "physical_page": 54,
+      "actual_printed_page": "42",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.13",
+      "title": "Results and Dashboards Use-Case Diagram",
+      "page": "43",
+      "anchor": "figure.4.13",
+      "physical_page": 55,
+      "actual_printed_page": "43",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.14",
+      "title": "Authentication and Workspace Access Activity Diagram",
+      "page": "46",
+      "anchor": "figure.4.14",
+      "physical_page": 58,
+      "actual_printed_page": "46",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.15",
+      "title": "Organization Member Access and Public Join Link Activity Diagram",
+      "page": "47",
+      "anchor": "figure.4.15",
+      "physical_page": 59,
+      "actual_printed_page": "47",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.16",
+      "title": "Class Creation, Configuration, and Past Terms Activity Diagram",
+      "page": "48",
+      "anchor": "figure.4.16",
+      "physical_page": 60,
+      "actual_printed_page": "48",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.17",
+      "title": "Course Content and Materials Activity Diagram",
+      "page": "49",
+      "anchor": "figure.4.17",
+      "physical_page": 61,
+      "actual_printed_page": "49",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.18",
+      "title": "Class Communication and Notifications Activity Diagram",
+      "page": "50",
+      "anchor": "figure.4.18",
+      "physical_page": 62,
+      "actual_printed_page": "50",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.19",
+      "title": "Assignment Workflow Activity Diagram",
+      "page": "51",
+      "anchor": "figure.4.19",
+      "physical_page": 63,
+      "actual_printed_page": "51",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.20",
+      "title": "Exam Management and Integrity Workflow Activity Diagram",
+      "page": "52",
+      "anchor": "figure.4.20",
+      "physical_page": 64,
+      "actual_printed_page": "52",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.21",
+      "title": "Live Session and Whiteboard Workflow Activity Diagram",
+      "page": "53",
+      "anchor": "figure.4.21",
+      "physical_page": 65,
+      "actual_printed_page": "53",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.22",
+      "title": "Results Workflow Activity Diagram",
+      "page": "54",
+      "anchor": "figure.4.22",
+      "physical_page": 66,
+      "actual_printed_page": "54",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.23",
+      "title": "Dashboard Workflow Activity Diagram",
+      "page": "55",
+      "anchor": "figure.4.23",
+      "physical_page": 67,
+      "actual_printed_page": "55",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.24",
+      "title": "AI Learning Support Workflow Activity Diagram",
+      "page": "56",
+      "anchor": "figure.4.24",
+      "physical_page": 68,
+      "actual_printed_page": "56",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.25",
+      "title": "Integrated Coding Lab / IDE Workflow Activity Diagram",
+      "page": "57",
+      "anchor": "figure.4.25",
+      "physical_page": 69,
+      "actual_printed_page": "57",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "4.26",
+      "title": "Profile and Help Workflow Activity Diagram",
+      "page": "58",
+      "anchor": "figure.4.26",
+      "physical_page": 70,
+      "actual_printed_page": "58",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.1",
+      "title": "Entity Relationship Diagram of the EduVerse Database",
+      "page": "64",
+      "anchor": "figure.5.1",
+      "physical_page": 76,
+      "actual_printed_page": "64",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.2",
+      "title": "Authentication interface showing sign-in and sign-up forms for EduVerse users.",
+      "page": "83",
+      "anchor": "figure.5.2",
+      "physical_page": 95,
+      "actual_printed_page": "83",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.3",
+      "title": "Organization and active-role selector used to switch between available EduVerse workspaces.",
+      "page": "84",
+      "anchor": "figure.5.3",
+      "physical_page": 96,
+      "actual_printed_page": "84",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.4",
+      "title": "User profile and settings interface showing role context, theme preferences, and password management controls.",
+      "page": "85",
+      "anchor": "figure.5.4",
+      "physical_page": 97,
+      "actual_printed_page": "85",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.5",
+      "title": "Organization creation interface showing template-based setup and initial feature-availability controls for different educational contexts.",
+      "page": "87",
+      "anchor": "figure.5.5",
+      "physical_page": 99,
+      "actual_printed_page": "87",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.6",
+      "title": "Organization administrator dashboard showing class oversight and organization-wide statistics.",
+      "page": "88",
+      "anchor": "figure.5.6",
+      "physical_page": 100,
+      "actual_printed_page": "88",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.7",
+      "title": "Class creation and feature-configuration dialog used to define class properties and enabled tools.",
+      "page": "89",
+      "anchor": "figure.5.7",
+      "physical_page": 101,
+      "actual_printed_page": "89",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.8",
+      "title": "Past-terms administration interface used to review archived classes and historical academic records.",
+      "page": "90",
+      "anchor": "figure.5.8",
+      "physical_page": 102,
+      "actual_printed_page": "90",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.9",
+      "title": "Organization members and invitations interface showing role assignment and invitation-management controls.",
+      "page": "91",
+      "anchor": "figure.5.9",
+      "physical_page": 103,
+      "actual_printed_page": "91",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.10",
+      "title": "Public join-link management interface showing join-link creation and request-handling controls.",
+      "page": "91",
+      "anchor": "figure.5.10",
+      "physical_page": 103,
+      "actual_printed_page": "91",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.11",
+      "title": "Public join page used by a student to request access to an organization workspace.",
+      "page": "92",
+      "anchor": "figure.5.11",
+      "physical_page": 104,
+      "actual_printed_page": "92",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.12",
+      "title": "Organization settings interface showing public-feature controls and teacher class-permission settings.",
+      "page": "93",
+      "anchor": "figure.5.12",
+      "physical_page": 105,
+      "actual_printed_page": "93",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.13",
+      "title": "Class home interface showing the main classroom workspace and available learning tools.",
+      "page": "94",
+      "anchor": "figure.5.13",
+      "physical_page": 106,
+      "actual_printed_page": "94",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.14",
+      "title": "Classroom materials interface used to access uploaded learning resources and study actions.",
+      "page": "95",
+      "anchor": "figure.5.14",
+      "physical_page": 107,
+      "actual_printed_page": "95",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.15",
+      "title": "Class chat and announcements interface supporting class-wide discussion and instructor notices.",
+      "page": "96",
+      "anchor": "figure.5.15",
+      "physical_page": 108,
+      "actual_printed_page": "96",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.16",
+      "title": "Notifications panel showing alerts for live sessions, materials, examinations, and announcements.",
+      "page": "97",
+      "anchor": "figure.5.16",
+      "physical_page": 109,
+      "actual_printed_page": "97",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.17",
+      "title": "Assignment management interface showing teacher-side assignment creation, submission review, and grading controls.",
+      "page": "98",
+      "anchor": "figure.5.17",
+      "physical_page": 110,
+      "actual_printed_page": "98",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.18",
+      "title": "Student assignment submission interface showing response entry and file-upload controls.",
+      "page": "99",
+      "anchor": "figure.5.18",
+      "physical_page": 111,
+      "actual_printed_page": "99",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.19",
+      "title": "Exam management interface showing teacher-side exam creation and question configuration.",
+      "page": "100",
+      "anchor": "figure.5.19",
+      "physical_page": 112,
+      "actual_printed_page": "100",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.20",
+      "title": "Student exam start interface showing exam rules, timing, and attempt conditions before entry.",
+      "page": "101",
+      "anchor": "figure.5.20",
+      "physical_page": 113,
+      "actual_printed_page": "101",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.21",
+      "title": "Student exam-taking interface showing timed question navigation during an active exam attempt.",
+      "page": "102",
+      "anchor": "figure.5.21",
+      "physical_page": 114,
+      "actual_printed_page": "102",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.22",
+      "title": "Exam attempt review interface showing submitted answers, grading controls, and integrity-related events.",
+      "page": "103",
+      "anchor": "figure.5.22",
+      "physical_page": 115,
+      "actual_printed_page": "103",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.23",
+      "title": "Results dashboard showing released grades, score breakdowns, and detailed assessment feedback.",
+      "page": "104",
+      "anchor": "figure.5.23",
+      "physical_page": 116,
+      "actual_printed_page": "104",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.24",
+      "title": "Live session room showing the shared whiteboard, participant list, and session controls.",
+      "page": "105",
+      "anchor": "figure.5.24",
+      "physical_page": 117,
+      "actual_printed_page": "105",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.25",
+      "title": "AI learning support interface showing conversational assistance within the class workspace.",
+      "page": "106",
+      "anchor": "figure.5.25",
+      "physical_page": 118,
+      "actual_printed_page": "106",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lof",
+      "kind": "figure",
+      "number": "5.26",
+      "title": "Integrated coding workspace showing the file explorer, code editor, terminal, and live preview pane.",
+      "page": "107",
+      "anchor": "figure.5.26",
+      "physical_page": 119,
+      "actual_printed_page": "107",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "2.1",
+      "title": "Fragmented Educational Tools vs. Integrated EduVerse Approach",
+      "page": "11",
+      "anchor": "table.2.1",
+      "physical_page": 23,
+      "actual_printed_page": "11",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "3.1",
+      "title": "Repeated Iterative Development Structure in EduVerse",
+      "page": "18",
+      "anchor": "table.3.1",
+      "physical_page": 30,
+      "actual_printed_page": "18",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "4.1",
+      "title": "Primary EduVerse System Actors",
+      "page": "22",
+      "anchor": "table.4.1",
+      "physical_page": 34,
+      "actual_printed_page": "22",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.1",
+      "title": "Principal Schema Groups in EduVerse",
+      "page": "65",
+      "anchor": "table.5.1",
+      "physical_page": 77,
+      "actual_printed_page": "65",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.2",
+      "title": "Schema for Table: organizations",
+      "page": "66",
+      "anchor": "table.5.2",
+      "physical_page": 78,
+      "actual_printed_page": "66",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.3",
+      "title": "Schema for Table: profiles",
+      "page": "66",
+      "anchor": "table.5.3",
+      "physical_page": 78,
+      "actual_printed_page": "66",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.4",
+      "title": "Schema for Table: organization_memberships",
+      "page": "67",
+      "anchor": "table.5.4",
+      "physical_page": 79,
+      "actual_printed_page": "67",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.5",
+      "title": "Schema for Table: organization_membership_roles",
+      "page": "67",
+      "anchor": "table.5.5",
+      "physical_page": 79,
+      "actual_printed_page": "67",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.6",
+      "title": "Schema for Table: organization_invites",
+      "page": "67",
+      "anchor": "table.5.6",
+      "physical_page": 79,
+      "actual_printed_page": "67",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.7",
+      "title": "Schema for Table: organization_settings",
+      "page": "68",
+      "anchor": "table.5.7",
+      "physical_page": 80,
+      "actual_printed_page": "68",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.8",
+      "title": "Schema for Table: organization_teacher_class_permissions",
+      "page": "68",
+      "anchor": "table.5.8",
+      "physical_page": 80,
+      "actual_printed_page": "68",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.9",
+      "title": "Schema for Table: organization_join_links",
+      "page": "69",
+      "anchor": "table.5.9",
+      "physical_page": 81,
+      "actual_printed_page": "69",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.10",
+      "title": "Schema for Table: organization_join_requests",
+      "page": "69",
+      "anchor": "table.5.10",
+      "physical_page": 81,
+      "actual_printed_page": "69",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.11",
+      "title": "Schema for Table: class_invites",
+      "page": "70",
+      "anchor": "table.5.11",
+      "physical_page": 82,
+      "actual_printed_page": "70",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.12",
+      "title": "Schema for Table: classes",
+      "page": "70",
+      "anchor": "table.5.12",
+      "physical_page": 82,
+      "actual_printed_page": "70",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.13",
+      "title": "Schema for Table: class_memberships",
+      "page": "71",
+      "anchor": "table.5.13",
+      "physical_page": 83,
+      "actual_printed_page": "71",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.14",
+      "title": "Schema for Table: class_visibility_preferences",
+      "page": "71",
+      "anchor": "table.5.14",
+      "physical_page": 83,
+      "actual_printed_page": "71",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.15",
+      "title": "Schema for Table: feature_definitions",
+      "page": "72",
+      "anchor": "table.5.15",
+      "physical_page": 84,
+      "actual_printed_page": "72",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.16",
+      "title": "Schema for Table: feature_presets",
+      "page": "72",
+      "anchor": "table.5.16",
+      "physical_page": 84,
+      "actual_printed_page": "72",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.17",
+      "title": "Schema for Table: feature_preset_items",
+      "page": "72",
+      "anchor": "table.5.17",
+      "physical_page": 84,
+      "actual_printed_page": "72",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.18",
+      "title": "Schema for Table: organization_feature_settings",
+      "page": "73",
+      "anchor": "table.5.18",
+      "physical_page": 85,
+      "actual_printed_page": "73",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.19",
+      "title": "Schema for Table: class_feature_settings",
+      "page": "73",
+      "anchor": "table.5.19",
+      "physical_page": 85,
+      "actual_printed_page": "73",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.20",
+      "title": "Schema for Table: organization_extensions",
+      "page": "73",
+      "anchor": "table.5.20",
+      "physical_page": 85,
+      "actual_printed_page": "73",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.21",
+      "title": "Schema for Table: class_extension_settings",
+      "page": "74",
+      "anchor": "table.5.21",
+      "physical_page": 86,
+      "actual_printed_page": "74",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.22",
+      "title": "Schema for Table: class_materials",
+      "page": "74",
+      "anchor": "table.5.22",
+      "physical_page": 86,
+      "actual_printed_page": "74",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.23",
+      "title": "Schema for Table: class_messages",
+      "page": "75",
+      "anchor": "table.5.23",
+      "physical_page": 87,
+      "actual_printed_page": "75",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.24",
+      "title": "Schema for Table: class_assignments",
+      "page": "76",
+      "anchor": "table.5.24",
+      "physical_page": 88,
+      "actual_printed_page": "76",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.25",
+      "title": "Schema for Table: class_assignment_files",
+      "page": "76",
+      "anchor": "table.5.25",
+      "physical_page": 88,
+      "actual_printed_page": "76",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.26",
+      "title": "Schema for Table: class_assignment_submissions",
+      "page": "77",
+      "anchor": "table.5.26",
+      "physical_page": 89,
+      "actual_printed_page": "77",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.27",
+      "title": "Schema for Table: exams",
+      "page": "78",
+      "anchor": "table.5.27",
+      "physical_page": 90,
+      "actual_printed_page": "78",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.28",
+      "title": "Schema for Table: exam_questions",
+      "page": "78",
+      "anchor": "table.5.28",
+      "physical_page": 90,
+      "actual_printed_page": "78",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.29",
+      "title": "Schema for Table: exam_attempts",
+      "page": "79",
+      "anchor": "table.5.29",
+      "physical_page": 91,
+      "actual_printed_page": "79",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.30",
+      "title": "Schema for Table: exam_answers",
+      "page": "80",
+      "anchor": "table.5.30",
+      "physical_page": 92,
+      "actual_printed_page": "80",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.31",
+      "title": "Schema for Table: notifications",
+      "page": "80",
+      "anchor": "table.5.31",
+      "physical_page": 92,
+      "actual_printed_page": "80",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.32",
+      "title": "Schema for Table: class_live_sessions",
+      "page": "81",
+      "anchor": "table.5.32",
+      "physical_page": 93,
+      "actual_printed_page": "81",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.33",
+      "title": "Schema for Table: audit_logs",
+      "page": "81",
+      "anchor": "table.5.33",
+      "physical_page": 93,
+      "actual_printed_page": "81",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "5.34",
+      "title": "Schema for Table: auth.users",
+      "page": "82",
+      "anchor": "table.5.34",
+      "physical_page": 94,
+      "actual_printed_page": "82",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    },
+    {
+      "list": "lot",
+      "kind": "table",
+      "number": "6.1",
+      "title": "Main EduVerse Implementation Environment",
+      "page": "110",
+      "anchor": "table.6.1",
+      "physical_page": 122,
+      "actual_printed_page": "110",
+      "destination_page_matches": true,
+      "heading_or_caption_present": true,
+      "numbered_caption_present": true,
+      "visible_index_row_present": true
+    }
+  ],
+  "label_checks": [
+    {
+      "key": "chap:implementation",
+      "number": "6",
+      "page": "108",
+      "title": "Software and Engineering Implementation",
+      "anchor": "chapter.6",
+      "destination_page": "108"
+    },
+    {
+      "key": "sec:implementation_introduction",
+      "number": "6.1",
+      "page": "109",
+      "title": "Introduction",
+      "anchor": "section.6.1",
+      "destination_page": "109"
+    },
+    {
+      "key": "sec:implementation_environment",
+      "number": "6.2",
+      "page": "109",
+      "title": "Implementation Environment",
+      "anchor": "section.6.2",
+      "destination_page": "109"
+    },
+    {
+      "key": "sec:implementation_system_architecture",
+      "number": "6.3",
+      "page": "109",
+      "title": "System Architecture",
+      "anchor": "section.6.3",
+      "destination_page": "109"
+    },
+    {
+      "key": "tab:eduverse_implementation_environment",
+      "number": "6.1",
+      "page": "110",
+      "title": "Main EduVerse Implementation Environment",
+      "anchor": "table.6.1",
+      "destination_page": "110"
+    },
+    {
+      "key": "sec:web_application_implementation",
+      "number": "6.4",
+      "page": "111",
+      "title": "Web Application Implementation",
+      "anchor": "section.6.4",
+      "destination_page": "111"
+    },
+    {
+      "key": "sec:mobile_companion_application_implementation",
+      "number": "6.5",
+      "page": "111",
+      "title": "Mobile Companion Application Implementation",
+      "anchor": "section.6.5",
+      "destination_page": "111"
+    },
+    {
+      "key": "sec:backend_database_storage_implementation",
+      "number": "6.6",
+      "page": "112",
+      "title": "Backend, Database, and Storage Implementation",
+      "anchor": "section.6.6",
+      "destination_page": "112"
+    },
+    {
+      "key": "sec:authentication_authorization_security",
+      "number": "6.7",
+      "page": "113",
+      "title": "Authentication, Authorization, and Security",
+      "anchor": "section.6.7",
+      "destination_page": "113"
+    },
+    {
+      "key": "sec:role_based_multi_organization_access",
+      "number": "6.8",
+      "page": "113",
+      "title": "Role-Based and Multi-Organization Access",
+      "anchor": "section.6.8",
+      "destination_page": "113"
+    },
+    {
+      "key": "sec:feature_availability_extension_implementation",
+      "number": "6.9",
+      "page": "114",
+      "title": "Feature Availability and Extension Implementation",
+      "anchor": "section.6.9",
+      "destination_page": "114"
+    },
+    {
+      "key": "sec:real_time_communication_live_sessions",
+      "number": "6.10",
+      "page": "114",
+      "title": "Real-Time Communication and Live Sessions",
+      "anchor": "section.6.10",
+      "destination_page": "114"
+    },
+    {
+      "key": "sec:ai_learning_support_ide_implementation",
+      "number": "6.11",
+      "page": "115",
+      "title": "AI Learning Support and IDE Implementation",
+      "anchor": "section.6.11",
+      "destination_page": "115"
+    },
+    {
+      "key": "sec:development_workflow_deployment",
+      "number": "6.12",
+      "page": "116",
+      "title": "Development Workflow and Deployment",
+      "anchor": "section.6.12",
+      "destination_page": "116"
+    },
+    {
+      "key": "sec:implementation_challenges_adopted_solutions",
+      "number": "6.13",
+      "page": "116",
+      "title": "Implementation Challenges and Adopted Solutions",
+      "anchor": "section.6.13",
+      "destination_page": "116"
+    },
+    {
+      "key": "sec:implementation_chapter_summary",
+      "number": "6.14",
+      "page": "117",
+      "title": "Chapter Summary",
+      "anchor": "section.6.14",
+      "destination_page": "117"
+    },
+    {
+      "key": "chap:strategic_vision",
+      "number": "1",
+      "page": "1",
+      "title": "Strategic Vision and Project Scope",
+      "anchor": "chapter.1",
+      "destination_page": "1"
+    },
+    {
+      "key": "sec:project_vision",
+      "number": "1.1",
+      "page": "2",
+      "title": "Project Vision",
+      "anchor": "section.1.1",
+      "destination_page": "2"
+    },
+    {
+      "key": "sec:problem_statement",
+      "number": "1.2",
+      "page": "2",
+      "title": "Problem Statement",
+      "anchor": "section.1.2",
+      "destination_page": "2"
+    },
+    {
+      "key": "sec:project_motivations",
+      "number": "1.3",
+      "page": "3",
+      "title": "Project Motivations",
+      "anchor": "section.1.3",
+      "destination_page": "3"
+    },
+    {
+      "key": "sec:strategic_objectives",
+      "number": "1.4",
+      "page": "3",
+      "title": "Strategic Objectives",
+      "anchor": "section.1.4",
+      "destination_page": "3"
+    },
+    {
+      "key": "sec:team_goals",
+      "number": "1.5",
+      "page": "4",
+      "title": "Project Benefits and Broader Impact",
+      "anchor": "section.1.5",
+      "destination_page": "4"
+    },
+    {
+      "key": "sec:project_scope",
+      "number": "1.6",
+      "page": "5",
+      "title": "Project Scope and Boundaries",
+      "anchor": "section.1.6",
+      "destination_page": "5"
+    },
+    {
+      "key": "subsec:system_boundaries_roles",
+      "number": "1.6.1",
+      "page": "5",
+      "title": "System Boundaries and User Roles",
+      "anchor": "subsection.1.6.1",
+      "destination_page": "5"
+    },
+    {
+      "key": "subsec:functional_scope",
+      "number": "1.6.2",
+      "page": "5",
+      "title": "Functional Scope",
+      "anchor": "subsection.1.6.2",
+      "destination_page": "5"
+    },
+    {
+      "key": "subsec:web_mobile_client_scope",
+      "number": "1.6.3",
+      "page": "6",
+      "title": "Web and Mobile Client Scope",
+      "anchor": "subsection.1.6.3",
+      "destination_page": "6"
+    },
+    {
+      "key": "subsec:competitive_features_innovation",
+      "number": "1.6.4",
+      "page": "6",
+      "title": "Distinctive Features and Extensible Design",
+      "anchor": "subsection.1.6.4",
+      "destination_page": "6"
+    },
+    {
+      "key": "chap:literature_review",
+      "number": "2",
+      "page": "7",
+      "title": "Literature Review and Theoretical Framework",
+      "anchor": "chapter.2",
+      "destination_page": "7"
+    },
+    {
+      "key": "sec:literature_review_introduction",
+      "number": "2.1",
+      "page": "8",
+      "title": "Introduction",
+      "anchor": "section.2.1",
+      "destination_page": "8"
+    },
+    {
+      "key": "sec:evolution_of_digital_education_platforms",
+      "number": "2.2",
+      "page": "8",
+      "title": "Evolution of Digital Education Platforms",
+      "anchor": "section.2.2",
+      "destination_page": "8"
+    },
+    {
+      "key": "subsec:traditional_to_digital_learning_systems",
+      "number": "2.2.1",
+      "page": "8",
+      "title": "From Traditional Classroom Management to Digital Learning Systems",
+      "anchor": "subsection.2.2.1",
+      "destination_page": "8"
+    },
+    {
+      "key": "subsec:limitations_of_fragmented_learning_management_tools",
+      "number": "2.2.2",
+      "page": "9",
+      "title": "Limitations of Fragmented Learning Management Tools",
+      "anchor": "subsection.2.2.2",
+      "destination_page": "9"
+    },
+    {
+      "key": "sec:research_gap_integrated_ecosystem",
+      "number": "2.3",
+      "page": "9",
+      "title": "Research Gap and Integrated Learning Ecosystems",
+      "anchor": "section.2.3",
+      "destination_page": "9"
+    },
+    {
+      "key": "sec:artificial_intelligence_in_education",
+      "number": "2.4",
+      "page": "10",
+      "title": "Artificial Intelligence in Education",
+      "anchor": "section.2.4",
+      "destination_page": "10"
+    },
+    {
+      "key": "subsec:context_aware_learning_assistance",
+      "number": "2.4.1",
+      "page": "10",
+      "title": "Context-Aware Learning Assistance",
+      "anchor": "subsection.2.4.1",
+      "destination_page": "10"
+    },
+    {
+      "key": "subsec:material_summarization_and_learning_support",
+      "number": "2.4.2",
+      "page": "10",
+      "title": "Material Summarization and Learning Support",
+      "anchor": "subsection.2.4.2",
+      "destination_page": "10"
+    },
+    {
+      "key": "subsec:assessment_and_feedback_support",
+      "number": "2.4.3",
+      "page": "10",
+      "title": "Assessment and Feedback Support",
+      "anchor": "subsection.2.4.3",
+      "destination_page": "10"
+    },
+    {
+      "key": "sec:benchmarking_fragmented_vs_integrated",
+      "number": "2.5",
+      "page": "11",
+      "title": "Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach",
+      "anchor": "section.2.5",
+      "destination_page": "11"
+    },
+    {
+      "key": "tab:fragmented_vs_integrated_eduverse",
+      "number": "2.1",
+      "page": "11",
+      "title": "Fragmented Educational Tools vs. Integrated EduVerse Approach",
+      "anchor": "table.2.1",
+      "destination_page": "11"
+    },
+    {
+      "key": "sec:theoretical_technical_foundations_eduverse",
+      "number": "2.6",
+      "page": "12",
+      "title": "Theoretical and Technical Foundations of EduVerse",
+      "anchor": "section.2.6",
+      "destination_page": "12"
+    },
+    {
+      "key": "subsec:web_based_educational_platforms",
+      "number": "2.6.1",
+      "page": "12",
+      "title": "Web-Based Educational Platforms",
+      "anchor": "subsection.2.6.1",
+      "destination_page": "12"
+    },
+    {
+      "key": "subsec:mobile_companion_learning_applications",
+      "number": "2.6.2",
+      "page": "13",
+      "title": "Mobile Companion Learning Applications",
+      "anchor": "subsection.2.6.2",
+      "destination_page": "13"
+    },
+    {
+      "key": "subsec:real_time_virtual_classrooms",
+      "number": "2.6.3",
+      "page": "13",
+      "title": "Real-Time Virtual Classrooms",
+      "anchor": "subsection.2.6.3",
+      "destination_page": "13"
+    },
+    {
+      "key": "subsec:integrated_coding_environments_programming_education",
+      "number": "2.6.4",
+      "page": "13",
+      "title": "Integrated Coding Environments for Programming Education",
+      "anchor": "subsection.2.6.4",
+      "destination_page": "13"
+    },
+    {
+      "key": "subsec:extensible_ecosystems_governed_openness",
+      "number": "2.6.5",
+      "page": "14",
+      "title": "Extensible Educational Ecosystems and Governed Openness",
+      "anchor": "subsection.2.6.5",
+      "destination_page": "14"
+    },
+    {
+      "key": "subsec:security_roles_and_data_management",
+      "number": "2.6.6",
+      "page": "14",
+      "title": "Security, Roles, and Data Management",
+      "anchor": "subsection.2.6.6",
+      "destination_page": "14"
+    },
+    {
+      "key": "chap:methodology",
+      "number": "3",
+      "page": "15",
+      "title": "Methodology",
+      "anchor": "chapter.3",
+      "destination_page": "15"
+    },
+    {
+      "key": "sec:methodology_introduction",
+      "number": "3.1",
+      "page": "16",
+      "title": "Introduction",
+      "anchor": "section.3.1",
+      "destination_page": "16"
+    },
+    {
+      "key": "sec:system_development_methodology",
+      "number": "3.2",
+      "page": "16",
+      "title": "Methodological Approach",
+      "anchor": "section.3.2",
+      "destination_page": "16"
+    },
+    {
+      "key": "subsec:feature_based_iterative_workflow",
+      "number": "3.2.1",
+      "page": "16",
+      "title": "Iterative Feature-Centered Development",
+      "anchor": "subsection.3.2.1",
+      "destination_page": "16"
+    },
+    {
+      "key": "subsec:vertical_slice_development_approach",
+      "number": "3.2.2",
+      "page": "17",
+      "title": "Vertical-Slice Realization",
+      "anchor": "subsection.3.2.2",
+      "destination_page": "17"
+    },
+    {
+      "key": "subsec:justification_for_methodology_selection",
+      "number": "3.2.3",
+      "page": "17",
+      "title": "Why This Methodology Fits EduVerse",
+      "anchor": "subsection.3.2.3",
+      "destination_page": "17"
+    },
+    {
+      "key": "sec:development_workflow_structure",
+      "number": "3.3",
+      "page": "18",
+      "title": "Repeated Development Cycle",
+      "anchor": "section.3.3",
+      "destination_page": "18"
+    },
+    {
+      "key": "tab:eduverse_iterative_development_structure",
+      "number": "3.1",
+      "page": "18",
+      "title": "Repeated Iterative Development Structure in EduVerse",
+      "anchor": "table.3.1",
+      "destination_page": "18"
+    },
+    {
+      "key": "sec:chapter3_summary",
+      "number": "3.4",
+      "page": "19",
+      "title": "Chapter Summary",
+      "anchor": "section.3.4",
+      "destination_page": "19"
+    },
+    {
+      "key": "chap:system_analysis",
+      "number": "4",
+      "page": "20",
+      "title": "System Analysis and Requirements",
+      "anchor": "chapter.4",
+      "destination_page": "20"
+    },
+    {
+      "key": "sec:system_analysis_introduction",
+      "number": "4.1",
+      "page": "21",
+      "title": "Introduction",
+      "anchor": "section.4.1",
+      "destination_page": "21"
+    },
+    {
+      "key": "sec:system_overview",
+      "number": "4.2",
+      "page": "21",
+      "title": "System Overview",
+      "anchor": "section.4.2",
+      "destination_page": "21"
+    },
+    {
+      "key": "sec:system_actors",
+      "number": "4.3",
+      "page": "21",
+      "title": "System Actors",
+      "anchor": "section.4.3",
+      "destination_page": "21"
+    },
+    {
+      "key": "tab:eduverse_system_actors",
+      "number": "4.1",
+      "page": "22",
+      "title": "Primary EduVerse System Actors",
+      "anchor": "table.4.1",
+      "destination_page": "22"
+    },
+    {
+      "key": "sec:functional_requirements",
+      "number": "4.4",
+      "page": "22",
+      "title": "Functional Requirements",
+      "anchor": "section.4.4",
+      "destination_page": "22"
+    },
+    {
+      "key": "sec:non_functional_requirements",
+      "number": "4.5",
+      "page": "27",
+      "title": "Non-Functional Requirements",
+      "anchor": "section.4.5",
+      "destination_page": "27"
+    },
+    {
+      "key": "sec:use_case_model",
+      "number": "4.6",
+      "page": "28",
+      "title": "Use-Case Model",
+      "anchor": "section.4.6",
+      "destination_page": "28"
+    },
+    {
+      "key": "fig:ch4_usecase_project_overview",
+      "number": "4.1",
+      "page": "31",
+      "title": "Project Overview Use-Case Diagram",
+      "anchor": "figure.4.1",
+      "destination_page": "31"
+    },
+    {
+      "key": "fig:ch4_usecase_authentication_access",
+      "number": "4.2",
+      "page": "32",
+      "title": "Authentication and Access Use-Case Diagram",
+      "anchor": "figure.4.2",
+      "destination_page": "32"
+    },
+    {
+      "key": "fig:ch4_usecase_organization_role_management",
+      "number": "4.3",
+      "page": "33",
+      "title": "Organization and Role Management Use-Case Diagram",
+      "anchor": "figure.4.3",
+      "destination_page": "33"
+    },
+    {
+      "key": "fig:ch4_usecase_class_management",
+      "number": "4.4",
+      "page": "34",
+      "title": "Class Management Use-Case Diagram",
+      "anchor": "figure.4.4",
+      "destination_page": "34"
+    },
+    {
+      "key": "fig:ch4_usecase_assignment_management",
+      "number": "4.5",
+      "page": "35",
+      "title": "Assignment Management Use-Case Diagram",
+      "anchor": "figure.4.5",
+      "destination_page": "35"
+    },
+    {
+      "key": "fig:ch4_usecase_ai_learning_support",
+      "number": "4.6",
+      "page": "36",
+      "title": "AI Learning Support Use-Case Diagram",
+      "anchor": "figure.4.6",
+      "destination_page": "36"
+    },
+    {
+      "key": "fig:ch4_usecase_class_communication_notifications",
+      "number": "4.7",
+      "page": "37",
+      "title": "Class Communication and Notifications Use-Case Diagram",
+      "anchor": "figure.4.7",
+      "destination_page": "37"
+    },
+    {
+      "key": "fig:ch4_usecase_course_content_materials",
+      "number": "4.8",
+      "page": "38",
+      "title": "Course Content and Materials Use-Case Diagram",
+      "anchor": "figure.4.8",
+      "destination_page": "38"
+    },
+    {
+      "key": "fig:ch4_usecase_exam_management_integrity",
+      "number": "4.9",
+      "page": "39",
+      "title": "Exam Management and Integrity Use-Case Diagram",
+      "anchor": "figure.4.9",
+      "destination_page": "39"
+    },
+    {
+      "key": "fig:ch4_usecase_live_sessions_whiteboard",
+      "number": "4.10",
+      "page": "40",
+      "title": "Live Sessions and Whiteboard Use-Case Diagram",
+      "anchor": "figure.4.10",
+      "destination_page": "40"
+    },
+    {
+      "key": "fig:ch4_usecase_integrated_coding_lab_ide_extension",
+      "number": "4.11",
+      "page": "41",
+      "title": "Integrated Coding Lab / IDE Extension Use-Case Diagram",
+      "anchor": "figure.4.11",
+      "destination_page": "41"
+    },
+    {
+      "key": "fig:ch4_usecase_profile_help",
+      "number": "4.12",
+      "page": "42",
+      "title": "Profile and Help Use-Case Diagram",
+      "anchor": "figure.4.12",
+      "destination_page": "42"
+    },
+    {
+      "key": "fig:ch4_usecase_results_dashboards",
+      "number": "4.13",
+      "page": "43",
+      "title": "Results and Dashboards Use-Case Diagram",
+      "anchor": "figure.4.13",
+      "destination_page": "43"
+    },
+    {
+      "key": "sec:activity_diagrams",
+      "number": "4.7",
+      "page": "44",
+      "title": "Activity Diagrams",
+      "anchor": "section.4.7",
+      "destination_page": "44"
+    },
+    {
+      "key": "fig:ch4_activity_auth_workspace_access",
+      "number": "4.14",
+      "page": "46",
+      "title": "Authentication and Workspace Access Activity Diagram",
+      "anchor": "figure.4.14",
+      "destination_page": "46"
+    },
+    {
+      "key": "fig:ch4_activity_organization_access",
+      "number": "4.15",
+      "page": "47",
+      "title": "Organization Member Access and Public Join Link Activity Diagram",
+      "anchor": "figure.4.15",
+      "destination_page": "47"
+    },
+    {
+      "key": "fig:ch4_activity_class_lifecycle",
+      "number": "4.16",
+      "page": "48",
+      "title": "Class Creation, Configuration, and Past Terms Activity Diagram",
+      "anchor": "figure.4.16",
+      "destination_page": "48"
+    },
+    {
+      "key": "fig:ch4_activity_materials",
+      "number": "4.17",
+      "page": "49",
+      "title": "Course Content and Materials Activity Diagram",
+      "anchor": "figure.4.17",
+      "destination_page": "49"
+    },
+    {
+      "key": "fig:ch4_activity_communication_notifications",
+      "number": "4.18",
+      "page": "50",
+      "title": "Class Communication and Notifications Activity Diagram",
+      "anchor": "figure.4.18",
+      "destination_page": "50"
+    },
+    {
+      "key": "fig:ch4_activity_assignment_workflow",
+      "number": "4.19",
+      "page": "51",
+      "title": "Assignment Workflow Activity Diagram",
+      "anchor": "figure.4.19",
+      "destination_page": "51"
+    },
+    {
+      "key": "fig:ch4_activity_exam_integrity",
+      "number": "4.20",
+      "page": "52",
+      "title": "Exam Management and Integrity Workflow Activity Diagram",
+      "anchor": "figure.4.20",
+      "destination_page": "52"
+    },
+    {
+      "key": "fig:ch4_activity_live_session",
+      "number": "4.21",
+      "page": "53",
+      "title": "Live Session and Whiteboard Workflow Activity Diagram",
+      "anchor": "figure.4.21",
+      "destination_page": "53"
+    },
+    {
+      "key": "fig:ch4_activity_results",
+      "number": "4.22",
+      "page": "54",
+      "title": "Results Workflow Activity Diagram",
+      "anchor": "figure.4.22",
+      "destination_page": "54"
+    },
+    {
+      "key": "fig:ch4_activity_dashboard",
+      "number": "4.23",
+      "page": "55",
+      "title": "Dashboard Workflow Activity Diagram",
+      "anchor": "figure.4.23",
+      "destination_page": "55"
+    },
+    {
+      "key": "fig:ch4_activity_ai_learning_support",
+      "number": "4.24",
+      "page": "56",
+      "title": "AI Learning Support Workflow Activity Diagram",
+      "anchor": "figure.4.24",
+      "destination_page": "56"
+    },
+    {
+      "key": "fig:ch4_activity_ide_workflow",
+      "number": "4.25",
+      "page": "57",
+      "title": "Integrated Coding Lab / IDE Workflow Activity Diagram",
+      "anchor": "figure.4.25",
+      "destination_page": "57"
+    },
+    {
+      "key": "fig:ch4_activity_profile_help",
+      "number": "4.26",
+      "page": "58",
+      "title": "Profile and Help Workflow Activity Diagram",
+      "anchor": "figure.4.26",
+      "destination_page": "58"
+    },
+    {
+      "key": "sec:chapter4_summary",
+      "number": "4.8",
+      "page": "59",
+      "title": "Chapter Summary",
+      "anchor": "section.4.8",
+      "destination_page": "59"
+    },
+    {
+      "key": "chap:system_design",
+      "number": "5",
+      "page": "60",
+      "title": "System Design",
+      "anchor": "chapter.5",
+      "destination_page": "60"
+    },
+    {
+      "key": "sec:system_design_introduction",
+      "number": "5.1",
+      "page": "61",
+      "title": "Introduction",
+      "anchor": "section.5.1",
+      "destination_page": "61"
+    },
+    {
+      "key": "sec:architectural_design_overview",
+      "number": "5.2",
+      "page": "61",
+      "title": "Design Context and Architectural Structure",
+      "anchor": "section.5.2",
+      "destination_page": "61"
+    },
+    {
+      "key": "sec:data_and_storage_design",
+      "number": "5.3",
+      "page": "61",
+      "title": "Information Model and Persistence Design",
+      "anchor": "section.5.3",
+      "destination_page": "61"
+    },
+    {
+      "key": "subsec:database_design_overview",
+      "number": "5.3.1",
+      "page": "62",
+      "title": "Logical Database Design",
+      "anchor": "subsection.5.3.1",
+      "destination_page": "62"
+    },
+    {
+      "key": "subsec:entity_relationship_diagram",
+      "number": "5.3.2",
+      "page": "62",
+      "title": "Relational Structure Through the ERD",
+      "anchor": "subsection.5.3.2",
+      "destination_page": "62"
+    },
+    {
+      "key": "fig:eduverse_database_erd",
+      "number": "5.1",
+      "page": "64",
+      "title": "Entity Relationship Diagram of the EduVerse Database",
+      "anchor": "figure.5.1",
+      "destination_page": "64"
+    },
+    {
+      "key": "subsec:principal_schema_groups",
+      "number": "5.3.3",
+      "page": "65",
+      "title": "Principal Schema Groups",
+      "anchor": "subsection.5.3.3",
+      "destination_page": "65"
+    },
+    {
+      "key": "tab:principal_schema_groups",
+      "number": "5.1",
+      "page": "65",
+      "title": "Principal Schema Groups in EduVerse",
+      "anchor": "table.5.1",
+      "destination_page": "65"
+    },
+    {
+      "key": "subsec:database_tables",
+      "number": "5.3.4",
+      "page": "66",
+      "title": "Physical Schema Tables",
+      "anchor": "subsection.5.3.4",
+      "destination_page": "66"
+    },
+    {
+      "key": "sec:interface_and_interaction_design",
+      "number": "5.4",
+      "page": "82",
+      "title": "Interface and Interaction Design",
+      "anchor": "section.5.4",
+      "destination_page": "82"
+    },
+    {
+      "key": "fig:ui-auth-signin-signup",
+      "number": "5.2",
+      "page": "83",
+      "title": "Authentication interface showing sign-in and sign-up forms for EduVerse users",
+      "anchor": "figure.5.2",
+      "destination_page": "83"
+    },
+    {
+      "key": "fig:ui-auth-organization-role-switcher",
+      "number": "5.3",
+      "page": "84",
+      "title": "Organization and active-role selector used to switch between available EduVerse workspaces",
+      "anchor": "figure.5.3",
+      "destination_page": "84"
+    },
+    {
+      "key": "fig:ui-profile-settings",
+      "number": "5.4",
+      "page": "85",
+      "title": "User profile and settings interface showing role context, theme preferences, and password management controls",
+      "anchor": "figure.5.4",
+      "destination_page": "85"
+    },
+    {
+      "key": "fig:ui-admin-organization-creation",
+      "number": "5.5",
+      "page": "87",
+      "title": "Organization creation interface showing template-based setup and initial feature-availability controls for different educational contexts",
+      "anchor": "figure.5.5",
+      "destination_page": "87"
+    },
+    {
+      "key": "fig:ui-admin-dashboard",
+      "number": "5.6",
+      "page": "88",
+      "title": "Organization administrator dashboard showing class oversight and organization-wide statistics",
+      "anchor": "figure.5.6",
+      "destination_page": "88"
+    },
+    {
+      "key": "fig:ui-admin-class-settings",
+      "number": "5.7",
+      "page": "89",
+      "title": "Class creation and feature-configuration dialog used to define class properties and enabled tools",
+      "anchor": "figure.5.7",
+      "destination_page": "89"
+    },
+    {
+      "key": "fig:ui-admin-past-terms",
+      "number": "5.8",
+      "page": "90",
+      "title": "Past-terms administration interface used to review archived classes and historical academic records",
+      "anchor": "figure.5.8",
+      "destination_page": "90"
+    },
+    {
+      "key": "fig:ui-admin-members",
+      "number": "5.9",
+      "page": "91",
+      "title": "Organization members and invitations interface showing role assignment and invitation-management controls",
+      "anchor": "figure.5.9",
+      "destination_page": "91"
+    },
+    {
+      "key": "fig:ui-admin-join-links",
+      "number": "5.10",
+      "page": "91",
+      "title": "Public join-link management interface showing join-link creation and request-handling controls",
+      "anchor": "figure.5.10",
+      "destination_page": "91"
+    },
+    {
+      "key": "fig:ui-admin-public-join",
+      "number": "5.11",
+      "page": "92",
+      "title": "Public join page used by a student to request access to an organization workspace",
+      "anchor": "figure.5.11",
+      "destination_page": "92"
+    },
+    {
+      "key": "fig:ui-admin-settings",
+      "number": "5.12",
+      "page": "93",
+      "title": "Organization settings interface showing public-feature controls and teacher class-permission settings",
+      "anchor": "figure.5.12",
+      "destination_page": "93"
+    },
+    {
+      "key": "fig:ui-class-home",
+      "number": "5.13",
+      "page": "94",
+      "title": "Class home interface showing the main classroom workspace and available learning tools",
+      "anchor": "figure.5.13",
+      "destination_page": "94"
+    },
+    {
+      "key": "fig:ui-class-materials",
+      "number": "5.14",
+      "page": "95",
+      "title": "Classroom materials interface used to access uploaded learning resources and study actions",
+      "anchor": "figure.5.14",
+      "destination_page": "95"
+    },
+    {
+      "key": "fig:ui-class-chat-announcements",
+      "number": "5.15",
+      "page": "96",
+      "title": "Class chat and announcements interface supporting class-wide discussion and instructor notices",
+      "anchor": "figure.5.15",
+      "destination_page": "96"
+    },
+    {
+      "key": "fig:ui-class-notifications",
+      "number": "5.16",
+      "page": "97",
+      "title": "Notifications panel showing alerts for live sessions, materials, examinations, and announcements",
+      "anchor": "figure.5.16",
+      "destination_page": "97"
+    },
+    {
+      "key": "fig:ui-assignment-management",
+      "number": "5.17",
+      "page": "98",
+      "title": "Assignment management interface showing teacher-side assignment creation, submission review, and grading controls",
+      "anchor": "figure.5.17",
+      "destination_page": "98"
+    },
+    {
+      "key": "fig:ui-assignment-submission",
+      "number": "5.18",
+      "page": "99",
+      "title": "Student assignment submission interface showing response entry and file-upload controls",
+      "anchor": "figure.5.18",
+      "destination_page": "99"
+    },
+    {
+      "key": "fig:ui-exam-management",
+      "number": "5.19",
+      "page": "100",
+      "title": "Exam management interface showing teacher-side exam creation and question configuration",
+      "anchor": "figure.5.19",
+      "destination_page": "100"
+    },
+    {
+      "key": "fig:ui-exam-start",
+      "number": "5.20",
+      "page": "101",
+      "title": "Student exam start interface showing exam rules, timing, and attempt conditions before entry",
+      "anchor": "figure.5.20",
+      "destination_page": "101"
+    },
+    {
+      "key": "fig:ui-exam-attempt",
+      "number": "5.21",
+      "page": "102",
+      "title": "Student exam-taking interface showing timed question navigation during an active exam attempt",
+      "anchor": "figure.5.21",
+      "destination_page": "102"
+    },
+    {
+      "key": "fig:ui-exam-review",
+      "number": "5.22",
+      "page": "103",
+      "title": "Exam attempt review interface showing submitted answers, grading controls, and integrity-related events",
+      "anchor": "figure.5.22",
+      "destination_page": "103"
+    },
+    {
+      "key": "fig:ui-results-dashboard",
+      "number": "5.23",
+      "page": "104",
+      "title": "Results dashboard showing released grades, score breakdowns, and detailed assessment feedback",
+      "anchor": "figure.5.23",
+      "destination_page": "104"
+    },
+    {
+      "key": "fig:ui-session-whiteboard",
+      "number": "5.24",
+      "page": "105",
+      "title": "Live session room showing the shared whiteboard, participant list, and session controls",
+      "anchor": "figure.5.24",
+      "destination_page": "105"
+    },
+    {
+      "key": "fig:ui-ai-learning-support",
+      "number": "5.25",
+      "page": "106",
+      "title": "AI learning support interface showing conversational assistance within the class workspace",
+      "anchor": "figure.5.25",
+      "destination_page": "106"
+    },
+    {
+      "key": "fig:ui-ide-workspace",
+      "number": "5.26",
+      "page": "107",
+      "title": "Integrated coding workspace showing the file explorer, code editor, terminal, and live preview pane",
+      "anchor": "figure.5.26",
+      "destination_page": "107"
+    },
+    {
+      "key": "chap:testing_evaluation",
+      "number": "7",
+      "page": "118",
+      "title": "System Testing and Evaluation",
+      "anchor": "chapter.7",
+      "destination_page": "118"
+    },
+    {
+      "key": "sec:testing_evaluation_introduction",
+      "number": "7.1",
+      "page": "119",
+      "title": "Introduction",
+      "anchor": "section.7.1",
+      "destination_page": "119"
+    },
+    {
+      "key": "sec:testing_strategy",
+      "number": "7.2",
+      "page": "119",
+      "title": "Testing Strategy",
+      "anchor": "section.7.2",
+      "destination_page": "119"
+    },
+    {
+      "key": "sec:functional_testing",
+      "number": "7.3",
+      "page": "119",
+      "title": "Functional Testing",
+      "anchor": "section.7.3",
+      "destination_page": "119"
+    },
+    {
+      "key": "sec:non_functional_evaluation",
+      "number": "7.4",
+      "page": "119",
+      "title": "Non-Functional Evaluation",
+      "anchor": "section.7.4",
+      "destination_page": "119"
+    },
+    {
+      "key": "sec:review_evaluation_summary",
+      "number": "7.5",
+      "page": "120",
+      "title": "Review and Evaluation Summary",
+      "anchor": "section.7.5",
+      "destination_page": "120"
+    },
+    {
+      "key": "chap:future_work",
+      "number": "8",
+      "page": "121",
+      "title": "Future Work and Recommendations",
+      "anchor": "chapter.8",
+      "destination_page": "121"
+    },
+    {
+      "key": "sec:future_work_introduction",
+      "number": "8.1",
+      "page": "122",
+      "title": "Introduction",
+      "anchor": "section.8.1",
+      "destination_page": "122"
+    },
+    {
+      "key": "sec:scalability_improvements",
+      "number": "8.2",
+      "page": "122",
+      "title": "Scalability Improvements",
+      "anchor": "section.8.2",
+      "destination_page": "122"
+    },
+    {
+      "key": "sec:user_feedback_usability_refinement",
+      "number": "8.3",
+      "page": "122",
+      "title": "User Feedback and Usability Refinement",
+      "anchor": "section.8.3",
+      "destination_page": "122"
+    },
+    {
+      "key": "sec:future_work_summary",
+      "number": "8.4",
+      "page": "122",
+      "title": "Chapter Summary",
+      "anchor": "section.8.4",
+      "destination_page": "122"
+    }
+  ],
+  "opening_checks": [
+    {
+      "chapter": 1,
+      "opening_page": "1",
+      "key": "sec:project_vision",
+      "number": "1.1",
+      "page": "2",
+      "title": "Project Vision",
+      "anchor": "section.1.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 1,
+      "opening_page": "1",
+      "key": "sec:problem_statement",
+      "number": "1.2",
+      "page": "2",
+      "title": "Problem Statement",
+      "anchor": "section.1.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 1,
+      "opening_page": "1",
+      "key": "sec:project_motivations",
+      "number": "1.3",
+      "page": "3",
+      "title": "Project Motivations",
+      "anchor": "section.1.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 1,
+      "opening_page": "1",
+      "key": "sec:strategic_objectives",
+      "number": "1.4",
+      "page": "3",
+      "title": "Strategic Objectives",
+      "anchor": "section.1.4",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 1,
+      "opening_page": "1",
+      "key": "sec:team_goals",
+      "number": "1.5",
+      "page": "4",
+      "title": "Project Benefits and Broader Impact",
+      "anchor": "section.1.5",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 1,
+      "opening_page": "1",
+      "key": "sec:project_scope",
+      "number": "1.6",
+      "page": "5",
+      "title": "Project Scope and Boundaries",
+      "anchor": "section.1.6",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 2,
+      "opening_page": "7",
+      "key": "sec:literature_review_introduction",
+      "number": "2.1",
+      "page": "8",
+      "title": "Introduction",
+      "anchor": "section.2.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 2,
+      "opening_page": "7",
+      "key": "sec:evolution_of_digital_education_platforms",
+      "number": "2.2",
+      "page": "8",
+      "title": "Evolution of Digital Education Platforms",
+      "anchor": "section.2.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 2,
+      "opening_page": "7",
+      "key": "sec:research_gap_integrated_ecosystem",
+      "number": "2.3",
+      "page": "9",
+      "title": "Research Gap and Integrated Learning Ecosystems",
+      "anchor": "section.2.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 2,
+      "opening_page": "7",
+      "key": "sec:artificial_intelligence_in_education",
+      "number": "2.4",
+      "page": "10",
+      "title": "Artificial Intelligence in Education",
+      "anchor": "section.2.4",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 2,
+      "opening_page": "7",
+      "key": "sec:benchmarking_fragmented_vs_integrated",
+      "number": "2.5",
+      "page": "11",
+      "title": "Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach",
+      "anchor": "section.2.5",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 2,
+      "opening_page": "7",
+      "key": "sec:theoretical_technical_foundations_eduverse",
+      "number": "2.6",
+      "page": "12",
+      "title": "Theoretical and Technical Foundations of EduVerse",
+      "anchor": "section.2.6",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 3,
+      "opening_page": "15",
+      "key": "sec:methodology_introduction",
+      "number": "3.1",
+      "page": "16",
+      "title": "Introduction",
+      "anchor": "section.3.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 3,
+      "opening_page": "15",
+      "key": "sec:system_development_methodology",
+      "number": "3.2",
+      "page": "16",
+      "title": "Methodological Approach",
+      "anchor": "section.3.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 3,
+      "opening_page": "15",
+      "key": "sec:development_workflow_structure",
+      "number": "3.3",
+      "page": "18",
+      "title": "Repeated Development Cycle",
+      "anchor": "section.3.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 3,
+      "opening_page": "15",
+      "key": "sec:chapter3_summary",
+      "number": "3.4",
+      "page": "19",
+      "title": "Chapter Summary",
+      "anchor": "section.3.4",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:system_analysis_introduction",
+      "number": "4.1",
+      "page": "21",
+      "title": "Introduction",
+      "anchor": "section.4.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:system_overview",
+      "number": "4.2",
+      "page": "21",
+      "title": "System Overview",
+      "anchor": "section.4.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:system_actors",
+      "number": "4.3",
+      "page": "21",
+      "title": "System Actors",
+      "anchor": "section.4.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:functional_requirements",
+      "number": "4.4",
+      "page": "22",
+      "title": "Functional Requirements",
+      "anchor": "section.4.4",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:non_functional_requirements",
+      "number": "4.5",
+      "page": "27",
+      "title": "Non-Functional Requirements",
+      "anchor": "section.4.5",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:use_case_model",
+      "number": "4.6",
+      "page": "28",
+      "title": "Use-Case Model",
+      "anchor": "section.4.6",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:activity_diagrams",
+      "number": "4.7",
+      "page": "44",
+      "title": "Activity Diagrams",
+      "anchor": "section.4.7",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 4,
+      "opening_page": "20",
+      "key": "sec:chapter4_summary",
+      "number": "4.8",
+      "page": "59",
+      "title": "Chapter Summary",
+      "anchor": "section.4.8",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 5,
+      "opening_page": "60",
+      "key": "sec:system_design_introduction",
+      "number": "5.1",
+      "page": "61",
+      "title": "Introduction",
+      "anchor": "section.5.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 5,
+      "opening_page": "60",
+      "key": "sec:architectural_design_overview",
+      "number": "5.2",
+      "page": "61",
+      "title": "Design Context and Architectural Structure",
+      "anchor": "section.5.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 5,
+      "opening_page": "60",
+      "key": "sec:data_and_storage_design",
+      "number": "5.3",
+      "page": "61",
+      "title": "Information Model and Persistence Design",
+      "anchor": "section.5.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 5,
+      "opening_page": "60",
+      "key": "sec:interface_and_interaction_design",
+      "number": "5.4",
+      "page": "82",
+      "title": "Interface and Interaction Design",
+      "anchor": "section.5.4",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:implementation_introduction",
+      "number": "6.1",
+      "page": "109",
+      "title": "Introduction",
+      "anchor": "section.6.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:implementation_environment",
+      "number": "6.2",
+      "page": "109",
+      "title": "Implementation Environment",
+      "anchor": "section.6.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:implementation_system_architecture",
+      "number": "6.3",
+      "page": "109",
+      "title": "System Architecture",
+      "anchor": "section.6.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:web_application_implementation",
+      "number": "6.4",
+      "page": "111",
+      "title": "Web Application Implementation",
+      "anchor": "section.6.4",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:mobile_companion_application_implementation",
+      "number": "6.5",
+      "page": "111",
+      "title": "Mobile Companion Application Implementation",
+      "anchor": "section.6.5",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:backend_database_storage_implementation",
+      "number": "6.6",
+      "page": "112",
+      "title": "Backend, Database, and Storage Implementation",
+      "anchor": "section.6.6",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:authentication_authorization_security",
+      "number": "6.7",
+      "page": "113",
+      "title": "Authentication, Authorization, and Security",
+      "anchor": "section.6.7",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:role_based_multi_organization_access",
+      "number": "6.8",
+      "page": "113",
+      "title": "Role-Based and Multi-Organization Access",
+      "anchor": "section.6.8",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:feature_availability_extension_implementation",
+      "number": "6.9",
+      "page": "114",
+      "title": "Feature Availability and Extension Implementation",
+      "anchor": "section.6.9",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:real_time_communication_live_sessions",
+      "number": "6.10",
+      "page": "114",
+      "title": "Real-Time Communication and Live Sessions",
+      "anchor": "section.6.10",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:ai_learning_support_ide_implementation",
+      "number": "6.11",
+      "page": "115",
+      "title": "AI Learning Support and IDE Implementation",
+      "anchor": "section.6.11",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:development_workflow_deployment",
+      "number": "6.12",
+      "page": "116",
+      "title": "Development Workflow and Deployment",
+      "anchor": "section.6.12",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:implementation_challenges_adopted_solutions",
+      "number": "6.13",
+      "page": "116",
+      "title": "Implementation Challenges and Adopted Solutions",
+      "anchor": "section.6.13",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 6,
+      "opening_page": "108",
+      "key": "sec:implementation_chapter_summary",
+      "number": "6.14",
+      "page": "117",
+      "title": "Chapter Summary",
+      "anchor": "section.6.14",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 7,
+      "opening_page": "118",
+      "key": "sec:testing_evaluation_introduction",
+      "number": "7.1",
+      "page": "119",
+      "title": "Introduction",
+      "anchor": "section.7.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 7,
+      "opening_page": "118",
+      "key": "sec:testing_strategy",
+      "number": "7.2",
+      "page": "119",
+      "title": "Testing Strategy",
+      "anchor": "section.7.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 7,
+      "opening_page": "118",
+      "key": "sec:functional_testing",
+      "number": "7.3",
+      "page": "119",
+      "title": "Functional Testing",
+      "anchor": "section.7.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 7,
+      "opening_page": "118",
+      "key": "sec:non_functional_evaluation",
+      "number": "7.4",
+      "page": "119",
+      "title": "Non-Functional Evaluation",
+      "anchor": "section.7.4",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 7,
+      "opening_page": "118",
+      "key": "sec:review_evaluation_summary",
+      "number": "7.5",
+      "page": "120",
+      "title": "Review and Evaluation Summary",
+      "anchor": "section.7.5",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 8,
+      "opening_page": "121",
+      "key": "sec:future_work_introduction",
+      "number": "8.1",
+      "page": "122",
+      "title": "Introduction",
+      "anchor": "section.8.1",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 8,
+      "opening_page": "121",
+      "key": "sec:scalability_improvements",
+      "number": "8.2",
+      "page": "122",
+      "title": "Scalability Improvements",
+      "anchor": "section.8.2",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 8,
+      "opening_page": "121",
+      "key": "sec:user_feedback_usability_refinement",
+      "number": "8.3",
+      "page": "122",
+      "title": "User Feedback and Usability Refinement",
+      "anchor": "section.8.3",
+      "visible_reference": true,
+      "visible_title": true
+    },
+    {
+      "chapter": 8,
+      "opening_page": "121",
+      "key": "sec:future_work_summary",
+      "number": "8.4",
+      "page": "122",
+      "title": "Chapter Summary",
+      "anchor": "section.8.4",
+      "visible_reference": true,
+      "visible_title": true
+    }
+  ],
+  "links": [
+    {
+      "from_physical_page": 4,
+      "anchor": "chapter*.1",
+      "target_physical_page": 2
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "chapter*.2",
+      "target_physical_page": 3
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section*.3",
+      "target_physical_page": 4
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section*.5",
+      "target_physical_page": 8
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section*.7",
+      "target_physical_page": 11
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "chapter.1",
+      "target_physical_page": 13
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.1.1",
+      "target_physical_page": 14
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.1.2",
+      "target_physical_page": 14
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.1.3",
+      "target_physical_page": 15
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.1.4",
+      "target_physical_page": 15
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.1.5",
+      "target_physical_page": 16
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.1.6",
+      "target_physical_page": 17
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "subsection.1.6.1",
+      "target_physical_page": 17
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "subsection.1.6.2",
+      "target_physical_page": 17
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "subsection.1.6.3",
+      "target_physical_page": 18
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "subsection.1.6.4",
+      "target_physical_page": 18
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "chapter.2",
+      "target_physical_page": 19
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.2.1",
+      "target_physical_page": 20
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.2.2",
+      "target_physical_page": 20
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "subsection.2.2.1",
+      "target_physical_page": 20
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "subsection.2.2.1",
+      "target_physical_page": 20
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "subsection.2.2.2",
+      "target_physical_page": 21
+    },
+    {
+      "from_physical_page": 4,
+      "anchor": "section.2.3",
+      "target_physical_page": 21
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.2.4",
+      "target_physical_page": 22
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.4.1",
+      "target_physical_page": 22
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.4.2",
+      "target_physical_page": 22
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.4.3",
+      "target_physical_page": 22
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.2.5",
+      "target_physical_page": 23
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.2.5",
+      "target_physical_page": 23
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.2.6",
+      "target_physical_page": 24
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.1",
+      "target_physical_page": 24
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.2",
+      "target_physical_page": 25
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.3",
+      "target_physical_page": 25
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.4",
+      "target_physical_page": 25
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.4",
+      "target_physical_page": 25
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.5",
+      "target_physical_page": 26
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.5",
+      "target_physical_page": 26
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.2.6.6",
+      "target_physical_page": 26
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "chapter.3",
+      "target_physical_page": 27
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.3.1",
+      "target_physical_page": 28
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.3.2",
+      "target_physical_page": 28
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.3.2.1",
+      "target_physical_page": 28
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.3.2.2",
+      "target_physical_page": 29
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "subsection.3.2.3",
+      "target_physical_page": 29
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.3.3",
+      "target_physical_page": 30
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.3.4",
+      "target_physical_page": 31
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "chapter.4",
+      "target_physical_page": 32
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.1",
+      "target_physical_page": 33
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.2",
+      "target_physical_page": 33
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.3",
+      "target_physical_page": 33
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.4",
+      "target_physical_page": 34
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.5",
+      "target_physical_page": 39
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.6",
+      "target_physical_page": 40
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.7",
+      "target_physical_page": 56
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.4.8",
+      "target_physical_page": 71
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "chapter.5",
+      "target_physical_page": 72
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.5.1",
+      "target_physical_page": 73
+    },
+    {
+      "from_physical_page": 5,
+      "anchor": "section.5.2",
+      "target_physical_page": 73
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.5.3",
+      "target_physical_page": 73
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.3.1",
+      "target_physical_page": 74
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.3.2",
+      "target_physical_page": 74
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.3.3",
+      "target_physical_page": 77
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.3.4",
+      "target_physical_page": 78
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.5.4",
+      "target_physical_page": 94
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.4.1",
+      "target_physical_page": 94
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.4.2",
+      "target_physical_page": 98
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.4.3",
+      "target_physical_page": 106
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.4.4",
+      "target_physical_page": 110
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.4.5",
+      "target_physical_page": 117
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "subsection.5.4.6",
+      "target_physical_page": 118
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "chapter.6",
+      "target_physical_page": 120
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.1",
+      "target_physical_page": 121
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.2",
+      "target_physical_page": 121
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.3",
+      "target_physical_page": 121
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.4",
+      "target_physical_page": 123
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.5",
+      "target_physical_page": 123
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.6",
+      "target_physical_page": 124
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.7",
+      "target_physical_page": 125
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.8",
+      "target_physical_page": 125
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.9",
+      "target_physical_page": 126
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.10",
+      "target_physical_page": 126
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.11",
+      "target_physical_page": 127
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.12",
+      "target_physical_page": 128
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.13",
+      "target_physical_page": 128
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.6.14",
+      "target_physical_page": 129
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "chapter.7",
+      "target_physical_page": 130
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.7.1",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.7.2",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.7.3",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.7.4",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 6,
+      "anchor": "section.7.5",
+      "target_physical_page": 132
+    },
+    {
+      "from_physical_page": 7,
+      "anchor": "chapter.8",
+      "target_physical_page": 133
+    },
+    {
+      "from_physical_page": 7,
+      "anchor": "section.8.1",
+      "target_physical_page": 134
+    },
+    {
+      "from_physical_page": 7,
+      "anchor": "section.8.2",
+      "target_physical_page": 134
+    },
+    {
+      "from_physical_page": 7,
+      "anchor": "section.8.3",
+      "target_physical_page": 134
+    },
+    {
+      "from_physical_page": 7,
+      "anchor": "section.8.4",
+      "target_physical_page": 134
+    },
+    {
+      "from_physical_page": 7,
+      "anchor": "chapter*.59",
+      "target_physical_page": 135
+    },
+    {
+      "from_physical_page": 7,
+      "anchor": "section*.60",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.1",
+      "target_physical_page": 43
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.2",
+      "target_physical_page": 44
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.3",
+      "target_physical_page": 45
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.4",
+      "target_physical_page": 46
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.5",
+      "target_physical_page": 47
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.6",
+      "target_physical_page": 48
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.7",
+      "target_physical_page": 49
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.8",
+      "target_physical_page": 50
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.9",
+      "target_physical_page": 51
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.10",
+      "target_physical_page": 52
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.11",
+      "target_physical_page": 53
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.12",
+      "target_physical_page": 54
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.13",
+      "target_physical_page": 55
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.14",
+      "target_physical_page": 58
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.15",
+      "target_physical_page": 59
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.15",
+      "target_physical_page": 59
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.16",
+      "target_physical_page": 60
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.17",
+      "target_physical_page": 61
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.18",
+      "target_physical_page": 62
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.19",
+      "target_physical_page": 63
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.20",
+      "target_physical_page": 64
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.21",
+      "target_physical_page": 65
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.22",
+      "target_physical_page": 66
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.23",
+      "target_physical_page": 67
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.24",
+      "target_physical_page": 68
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.25",
+      "target_physical_page": 69
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.4.26",
+      "target_physical_page": 70
+    },
+    {
+      "from_physical_page": 8,
+      "anchor": "figure.5.1",
+      "target_physical_page": 76
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.2",
+      "target_physical_page": 95
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.2",
+      "target_physical_page": 95
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.3",
+      "target_physical_page": 96
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.3",
+      "target_physical_page": 96
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.4",
+      "target_physical_page": 97
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.4",
+      "target_physical_page": 97
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.5",
+      "target_physical_page": 99
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.5",
+      "target_physical_page": 99
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.5",
+      "target_physical_page": 99
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.6",
+      "target_physical_page": 100
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.6",
+      "target_physical_page": 100
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.7",
+      "target_physical_page": 101
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.7",
+      "target_physical_page": 101
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.8",
+      "target_physical_page": 102
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.8",
+      "target_physical_page": 102
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.9",
+      "target_physical_page": 103
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.9",
+      "target_physical_page": 103
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.10",
+      "target_physical_page": 103
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.10",
+      "target_physical_page": 103
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.11",
+      "target_physical_page": 104
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.11",
+      "target_physical_page": 104
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.12",
+      "target_physical_page": 105
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.12",
+      "target_physical_page": 105
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.13",
+      "target_physical_page": 106
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.13",
+      "target_physical_page": 106
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.14",
+      "target_physical_page": 107
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.14",
+      "target_physical_page": 107
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.15",
+      "target_physical_page": 108
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.15",
+      "target_physical_page": 108
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.16",
+      "target_physical_page": 109
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.16",
+      "target_physical_page": 109
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.17",
+      "target_physical_page": 110
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.17",
+      "target_physical_page": 110
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.18",
+      "target_physical_page": 111
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.18",
+      "target_physical_page": 111
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.19",
+      "target_physical_page": 112
+    },
+    {
+      "from_physical_page": 9,
+      "anchor": "figure.5.19",
+      "target_physical_page": 112
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.20",
+      "target_physical_page": 113
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.20",
+      "target_physical_page": 113
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.21",
+      "target_physical_page": 114
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.21",
+      "target_physical_page": 114
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.22",
+      "target_physical_page": 115
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.22",
+      "target_physical_page": 115
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.23",
+      "target_physical_page": 116
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.23",
+      "target_physical_page": 116
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.24",
+      "target_physical_page": 117
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.24",
+      "target_physical_page": 117
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.25",
+      "target_physical_page": 118
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.25",
+      "target_physical_page": 118
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.26",
+      "target_physical_page": 119
+    },
+    {
+      "from_physical_page": 10,
+      "anchor": "figure.5.26",
+      "target_physical_page": 119
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.2.1",
+      "target_physical_page": 23
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.2.1",
+      "target_physical_page": 23
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.3.1",
+      "target_physical_page": 30
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.4.1",
+      "target_physical_page": 34
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.1",
+      "target_physical_page": 77
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.2",
+      "target_physical_page": 78
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.3",
+      "target_physical_page": 78
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.4",
+      "target_physical_page": 79
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.5",
+      "target_physical_page": 79
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.6",
+      "target_physical_page": 79
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.7",
+      "target_physical_page": 80
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.8",
+      "target_physical_page": 80
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.8",
+      "target_physical_page": 80
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.9",
+      "target_physical_page": 81
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.10",
+      "target_physical_page": 81
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.11",
+      "target_physical_page": 82
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.12",
+      "target_physical_page": 82
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.13",
+      "target_physical_page": 83
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.14",
+      "target_physical_page": 83
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.15",
+      "target_physical_page": 84
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.16",
+      "target_physical_page": 84
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.17",
+      "target_physical_page": 84
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.18",
+      "target_physical_page": 85
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.19",
+      "target_physical_page": 85
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.20",
+      "target_physical_page": 85
+    },
+    {
+      "from_physical_page": 11,
+      "anchor": "table.5.21",
+      "target_physical_page": 86
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.22",
+      "target_physical_page": 86
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.23",
+      "target_physical_page": 87
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.24",
+      "target_physical_page": 88
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.25",
+      "target_physical_page": 88
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.26",
+      "target_physical_page": 89
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.27",
+      "target_physical_page": 90
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.28",
+      "target_physical_page": 90
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.29",
+      "target_physical_page": 91
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.30",
+      "target_physical_page": 92
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.31",
+      "target_physical_page": 92
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.32",
+      "target_physical_page": 93
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.33",
+      "target_physical_page": 93
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.5.34",
+      "target_physical_page": 94
+    },
+    {
+      "from_physical_page": 12,
+      "anchor": "table.6.1",
+      "target_physical_page": 122
+    },
+    {
+      "from_physical_page": 13,
+      "anchor": "section.1.1",
+      "target_physical_page": 14
+    },
+    {
+      "from_physical_page": 13,
+      "anchor": "section.1.2",
+      "target_physical_page": 14
+    },
+    {
+      "from_physical_page": 13,
+      "anchor": "section.1.3",
+      "target_physical_page": 15
+    },
+    {
+      "from_physical_page": 13,
+      "anchor": "section.1.4",
+      "target_physical_page": 15
+    },
+    {
+      "from_physical_page": 13,
+      "anchor": "section.1.5",
+      "target_physical_page": 16
+    },
+    {
+      "from_physical_page": 13,
+      "anchor": "section.1.6",
+      "target_physical_page": 17
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.1",
+      "target_physical_page": 20
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.2",
+      "target_physical_page": 20
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.3",
+      "target_physical_page": 21
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.3",
+      "target_physical_page": 21
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.4",
+      "target_physical_page": 22
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.5",
+      "target_physical_page": 23
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.5",
+      "target_physical_page": 23
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.6",
+      "target_physical_page": 24
+    },
+    {
+      "from_physical_page": 19,
+      "anchor": "section.2.6",
+      "target_physical_page": 24
+    },
+    {
+      "from_physical_page": 20,
+      "anchor": "cite.chugh2023edtech",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 20,
+      "anchor": "cite.bygstad2022digital",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 20,
+      "anchor": "cite.chugh2023edtech",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 21,
+      "anchor": "cite.bygstad2022digital",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 21,
+      "anchor": "cite.oecd2023outlook",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 21,
+      "anchor": "cite.bygstad2022digital",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 21,
+      "anchor": "cite.oecd2023outlook",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 22,
+      "anchor": "cite.bond2024ai",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 22,
+      "anchor": "cite.labadze2023chatbots",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 22,
+      "anchor": "cite.alsafari2024teaching",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 22,
+      "anchor": "cite.labadze2023chatbots",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 22,
+      "anchor": "cite.xie2025summarization",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 23,
+      "anchor": "cite.labadze2023chatbots",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 23,
+      "anchor": "cite.unesco2023genai",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 23,
+      "anchor": "cite.labadze2023chatbots",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 23,
+      "anchor": "table.2.1",
+      "target_physical_page": 23
+    },
+    {
+      "from_physical_page": 25,
+      "anchor": "cite.rangel2023mobile",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 25,
+      "anchor": "cite.lee2024synchronous",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 25,
+      "anchor": "cite.noor2023ide",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 26,
+      "anchor": "cite.sorkun2022modularity",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 26,
+      "anchor": "cite.oecd2023outlook",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 26,
+      "anchor": "cite.kabier2023rbac",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 26,
+      "anchor": "cite.liu2023privacy",
+      "target_physical_page": 137
+    },
+    {
+      "from_physical_page": 26,
+      "anchor": "cite.kabier2023rbac",
+      "target_physical_page": 136
+    },
+    {
+      "from_physical_page": 27,
+      "anchor": "section.3.1",
+      "target_physical_page": 28
+    },
+    {
+      "from_physical_page": 27,
+      "anchor": "section.3.2",
+      "target_physical_page": 28
+    },
+    {
+      "from_physical_page": 27,
+      "anchor": "section.3.3",
+      "target_physical_page": 30
+    },
+    {
+      "from_physical_page": 27,
+      "anchor": "section.3.4",
+      "target_physical_page": 31
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.1",
+      "target_physical_page": 33
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.2",
+      "target_physical_page": 33
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.3",
+      "target_physical_page": 33
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.4",
+      "target_physical_page": 34
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.5",
+      "target_physical_page": 39
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.6",
+      "target_physical_page": 40
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.7",
+      "target_physical_page": 56
+    },
+    {
+      "from_physical_page": 32,
+      "anchor": "section.4.8",
+      "target_physical_page": 71
+    },
+    {
+      "from_physical_page": 41,
+      "anchor": "figure.4.2",
+      "target_physical_page": 44
+    },
+    {
+      "from_physical_page": 41,
+      "anchor": "figure.4.3",
+      "target_physical_page": 45
+    },
+    {
+      "from_physical_page": 41,
+      "anchor": "figure.4.4",
+      "target_physical_page": 46
+    },
+    {
+      "from_physical_page": 41,
+      "anchor": "figure.4.5",
+      "target_physical_page": 47
+    },
+    {
+      "from_physical_page": 41,
+      "anchor": "figure.4.6",
+      "target_physical_page": 48
+    },
+    {
+      "from_physical_page": 41,
+      "anchor": "figure.4.7",
+      "target_physical_page": 49
+    },
+    {
+      "from_physical_page": 41,
+      "anchor": "figure.4.8",
+      "target_physical_page": 50
+    },
+    {
+      "from_physical_page": 42,
+      "anchor": "figure.4.9",
+      "target_physical_page": 51
+    },
+    {
+      "from_physical_page": 42,
+      "anchor": "figure.4.10",
+      "target_physical_page": 52
+    },
+    {
+      "from_physical_page": 42,
+      "anchor": "figure.4.11",
+      "target_physical_page": 53
+    },
+    {
+      "from_physical_page": 42,
+      "anchor": "figure.4.12",
+      "target_physical_page": 54
+    },
+    {
+      "from_physical_page": 42,
+      "anchor": "figure.4.13",
+      "target_physical_page": 55
+    },
+    {
+      "from_physical_page": 56,
+      "anchor": "figure.4.14",
+      "target_physical_page": 58
+    },
+    {
+      "from_physical_page": 56,
+      "anchor": "figure.4.15",
+      "target_physical_page": 59
+    },
+    {
+      "from_physical_page": 56,
+      "anchor": "figure.4.16",
+      "target_physical_page": 60
+    },
+    {
+      "from_physical_page": 56,
+      "anchor": "figure.4.17",
+      "target_physical_page": 61
+    },
+    {
+      "from_physical_page": 56,
+      "anchor": "figure.4.18",
+      "target_physical_page": 62
+    },
+    {
+      "from_physical_page": 56,
+      "anchor": "figure.4.19",
+      "target_physical_page": 63
+    },
+    {
+      "from_physical_page": 57,
+      "anchor": "figure.4.20",
+      "target_physical_page": 64
+    },
+    {
+      "from_physical_page": 57,
+      "anchor": "figure.4.21",
+      "target_physical_page": 65
+    },
+    {
+      "from_physical_page": 57,
+      "anchor": "figure.4.22",
+      "target_physical_page": 66
+    },
+    {
+      "from_physical_page": 57,
+      "anchor": "figure.4.23",
+      "target_physical_page": 67
+    },
+    {
+      "from_physical_page": 57,
+      "anchor": "figure.4.24",
+      "target_physical_page": 68
+    },
+    {
+      "from_physical_page": 57,
+      "anchor": "figure.4.25",
+      "target_physical_page": 69
+    },
+    {
+      "from_physical_page": 57,
+      "anchor": "figure.4.26",
+      "target_physical_page": 70
+    },
+    {
+      "from_physical_page": 72,
+      "anchor": "section.5.1",
+      "target_physical_page": 73
+    },
+    {
+      "from_physical_page": 72,
+      "anchor": "section.5.2",
+      "target_physical_page": 73
+    },
+    {
+      "from_physical_page": 72,
+      "anchor": "section.5.3",
+      "target_physical_page": 73
+    },
+    {
+      "from_physical_page": 72,
+      "anchor": "section.5.4",
+      "target_physical_page": 94
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.1",
+      "target_physical_page": 121
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.2",
+      "target_physical_page": 121
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.3",
+      "target_physical_page": 121
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.4",
+      "target_physical_page": 123
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.5",
+      "target_physical_page": 123
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.6",
+      "target_physical_page": 124
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.7",
+      "target_physical_page": 125
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.8",
+      "target_physical_page": 125
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.9",
+      "target_physical_page": 126
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.10",
+      "target_physical_page": 126
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.11",
+      "target_physical_page": 127
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.12",
+      "target_physical_page": 128
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.13",
+      "target_physical_page": 128
+    },
+    {
+      "from_physical_page": 120,
+      "anchor": "section.6.14",
+      "target_physical_page": 129
+    },
+    {
+      "from_physical_page": 121,
+      "anchor": "table.6.1",
+      "target_physical_page": 122
+    },
+    {
+      "from_physical_page": 130,
+      "anchor": "section.7.1",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 130,
+      "anchor": "section.7.2",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 130,
+      "anchor": "section.7.3",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 130,
+      "anchor": "section.7.4",
+      "target_physical_page": 131
+    },
+    {
+      "from_physical_page": 130,
+      "anchor": "section.7.5",
+      "target_physical_page": 132
+    },
+    {
+      "from_physical_page": 133,
+      "anchor": "section.8.1",
+      "target_physical_page": 134
+    },
+    {
+      "from_physical_page": 133,
+      "anchor": "section.8.2",
+      "target_physical_page": 134
+    },
+    {
+      "from_physical_page": 133,
+      "anchor": "section.8.3",
+      "target_physical_page": 134
+    },
+    {
+      "from_physical_page": 133,
+      "anchor": "section.8.4",
+      "target_physical_page": 134
+    }
+  ],
+  "found_captions": [
+    {
+      "kind": "table",
+      "number": "2.1",
+      "page": "11",
+      "physical_page": 23
+    },
+    {
+      "kind": "table",
+      "number": "3.1",
+      "page": "18",
+      "physical_page": 30
+    },
+    {
+      "kind": "table",
+      "number": "4.1",
+      "page": "22",
+      "physical_page": 34
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "page": "31",
+      "physical_page": 43
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "page": "32",
+      "physical_page": 44
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "page": "33",
+      "physical_page": 45
+    },
+    {
+      "kind": "figure",
+      "number": "4.4",
+      "page": "34",
+      "physical_page": 46
+    },
+    {
+      "kind": "figure",
+      "number": "4.5",
+      "page": "35",
+      "physical_page": 47
+    },
+    {
+      "kind": "figure",
+      "number": "4.6",
+      "page": "36",
+      "physical_page": 48
+    },
+    {
+      "kind": "figure",
+      "number": "4.7",
+      "page": "37",
+      "physical_page": 49
+    },
+    {
+      "kind": "figure",
+      "number": "4.8",
+      "page": "38",
+      "physical_page": 50
+    },
+    {
+      "kind": "figure",
+      "number": "4.9",
+      "page": "39",
+      "physical_page": 51
+    },
+    {
+      "kind": "figure",
+      "number": "4.10",
+      "page": "40",
+      "physical_page": 52
+    },
+    {
+      "kind": "figure",
+      "number": "4.11",
+      "page": "41",
+      "physical_page": 53
+    },
+    {
+      "kind": "figure",
+      "number": "4.12",
+      "page": "42",
+      "physical_page": 54
+    },
+    {
+      "kind": "figure",
+      "number": "4.13",
+      "page": "43",
+      "physical_page": 55
+    },
+    {
+      "kind": "figure",
+      "number": "4.14",
+      "page": "46",
+      "physical_page": 58
+    },
+    {
+      "kind": "figure",
+      "number": "4.15",
+      "page": "47",
+      "physical_page": 59
+    },
+    {
+      "kind": "figure",
+      "number": "4.16",
+      "page": "48",
+      "physical_page": 60
+    },
+    {
+      "kind": "figure",
+      "number": "4.17",
+      "page": "49",
+      "physical_page": 61
+    },
+    {
+      "kind": "figure",
+      "number": "4.18",
+      "page": "50",
+      "physical_page": 62
+    },
+    {
+      "kind": "figure",
+      "number": "4.19",
+      "page": "51",
+      "physical_page": 63
+    },
+    {
+      "kind": "figure",
+      "number": "4.20",
+      "page": "52",
+      "physical_page": 64
+    },
+    {
+      "kind": "figure",
+      "number": "4.21",
+      "page": "53",
+      "physical_page": 65
+    },
+    {
+      "kind": "figure",
+      "number": "4.22",
+      "page": "54",
+      "physical_page": 66
+    },
+    {
+      "kind": "figure",
+      "number": "4.23",
+      "page": "55",
+      "physical_page": 67
+    },
+    {
+      "kind": "figure",
+      "number": "4.24",
+      "page": "56",
+      "physical_page": 68
+    },
+    {
+      "kind": "figure",
+      "number": "4.25",
+      "page": "57",
+      "physical_page": 69
+    },
+    {
+      "kind": "figure",
+      "number": "4.26",
+      "page": "58",
+      "physical_page": 70
+    },
+    {
+      "kind": "figure",
+      "number": "5.1",
+      "page": "64",
+      "physical_page": 76
+    },
+    {
+      "kind": "table",
+      "number": "5.1",
+      "page": "65",
+      "physical_page": 77
+    },
+    {
+      "kind": "table",
+      "number": "5.2",
+      "page": "66",
+      "physical_page": 78
+    },
+    {
+      "kind": "table",
+      "number": "5.3",
+      "page": "66",
+      "physical_page": 78
+    },
+    {
+      "kind": "table",
+      "number": "5.4",
+      "page": "67",
+      "physical_page": 79
+    },
+    {
+      "kind": "table",
+      "number": "5.5",
+      "page": "67",
+      "physical_page": 79
+    },
+    {
+      "kind": "table",
+      "number": "5.6",
+      "page": "67",
+      "physical_page": 79
+    },
+    {
+      "kind": "table",
+      "number": "5.7",
+      "page": "68",
+      "physical_page": 80
+    },
+    {
+      "kind": "table",
+      "number": "5.8",
+      "page": "68",
+      "physical_page": 80
+    },
+    {
+      "kind": "table",
+      "number": "5.9",
+      "page": "69",
+      "physical_page": 81
+    },
+    {
+      "kind": "table",
+      "number": "5.10",
+      "page": "69",
+      "physical_page": 81
+    },
+    {
+      "kind": "table",
+      "number": "5.11",
+      "page": "70",
+      "physical_page": 82
+    },
+    {
+      "kind": "table",
+      "number": "5.12",
+      "page": "70",
+      "physical_page": 82
+    },
+    {
+      "kind": "table",
+      "number": "5.13",
+      "page": "71",
+      "physical_page": 83
+    },
+    {
+      "kind": "table",
+      "number": "5.14",
+      "page": "71",
+      "physical_page": 83
+    },
+    {
+      "kind": "table",
+      "number": "5.15",
+      "page": "72",
+      "physical_page": 84
+    },
+    {
+      "kind": "table",
+      "number": "5.16",
+      "page": "72",
+      "physical_page": 84
+    },
+    {
+      "kind": "table",
+      "number": "5.17",
+      "page": "72",
+      "physical_page": 84
+    },
+    {
+      "kind": "table",
+      "number": "5.18",
+      "page": "73",
+      "physical_page": 85
+    },
+    {
+      "kind": "table",
+      "number": "5.19",
+      "page": "73",
+      "physical_page": 85
+    },
+    {
+      "kind": "table",
+      "number": "5.20",
+      "page": "73",
+      "physical_page": 85
+    },
+    {
+      "kind": "table",
+      "number": "5.21",
+      "page": "74",
+      "physical_page": 86
+    },
+    {
+      "kind": "table",
+      "number": "5.22",
+      "page": "74",
+      "physical_page": 86
+    },
+    {
+      "kind": "table",
+      "number": "5.23",
+      "page": "75",
+      "physical_page": 87
+    },
+    {
+      "kind": "table",
+      "number": "5.24",
+      "page": "76",
+      "physical_page": 88
+    },
+    {
+      "kind": "table",
+      "number": "5.25",
+      "page": "76",
+      "physical_page": 88
+    },
+    {
+      "kind": "table",
+      "number": "5.26",
+      "page": "77",
+      "physical_page": 89
+    },
+    {
+      "kind": "table",
+      "number": "5.27",
+      "page": "78",
+      "physical_page": 90
+    },
+    {
+      "kind": "table",
+      "number": "5.28",
+      "page": "78",
+      "physical_page": 90
+    },
+    {
+      "kind": "table",
+      "number": "5.29",
+      "page": "79",
+      "physical_page": 91
+    },
+    {
+      "kind": "table",
+      "number": "5.30",
+      "page": "80",
+      "physical_page": 92
+    },
+    {
+      "kind": "table",
+      "number": "5.31",
+      "page": "80",
+      "physical_page": 92
+    },
+    {
+      "kind": "table",
+      "number": "5.32",
+      "page": "81",
+      "physical_page": 93
+    },
+    {
+      "kind": "table",
+      "number": "5.33",
+      "page": "81",
+      "physical_page": 93
+    },
+    {
+      "kind": "table",
+      "number": "5.34",
+      "page": "82",
+      "physical_page": 94
+    },
+    {
+      "kind": "figure",
+      "number": "5.2",
+      "page": "83",
+      "physical_page": 95
+    },
+    {
+      "kind": "figure",
+      "number": "5.3",
+      "page": "84",
+      "physical_page": 96
+    },
+    {
+      "kind": "figure",
+      "number": "5.4",
+      "page": "85",
+      "physical_page": 97
+    },
+    {
+      "kind": "figure",
+      "number": "5.5",
+      "page": "87",
+      "physical_page": 99
+    },
+    {
+      "kind": "figure",
+      "number": "5.6",
+      "page": "88",
+      "physical_page": 100
+    },
+    {
+      "kind": "figure",
+      "number": "5.7",
+      "page": "89",
+      "physical_page": 101
+    },
+    {
+      "kind": "figure",
+      "number": "5.8",
+      "page": "90",
+      "physical_page": 102
+    },
+    {
+      "kind": "figure",
+      "number": "5.9",
+      "page": "91",
+      "physical_page": 103
+    },
+    {
+      "kind": "figure",
+      "number": "5.10",
+      "page": "91",
+      "physical_page": 103
+    },
+    {
+      "kind": "figure",
+      "number": "5.11",
+      "page": "92",
+      "physical_page": 104
+    },
+    {
+      "kind": "figure",
+      "number": "5.12",
+      "page": "93",
+      "physical_page": 105
+    },
+    {
+      "kind": "figure",
+      "number": "5.13",
+      "page": "94",
+      "physical_page": 106
+    },
+    {
+      "kind": "figure",
+      "number": "5.14",
+      "page": "95",
+      "physical_page": 107
+    },
+    {
+      "kind": "figure",
+      "number": "5.15",
+      "page": "96",
+      "physical_page": 108
+    },
+    {
+      "kind": "figure",
+      "number": "5.16",
+      "page": "97",
+      "physical_page": 109
+    },
+    {
+      "kind": "figure",
+      "number": "5.17",
+      "page": "98",
+      "physical_page": 110
+    },
+    {
+      "kind": "figure",
+      "number": "5.18",
+      "page": "99",
+      "physical_page": 111
+    },
+    {
+      "kind": "figure",
+      "number": "5.19",
+      "page": "100",
+      "physical_page": 112
+    },
+    {
+      "kind": "figure",
+      "number": "5.20",
+      "page": "101",
+      "physical_page": 113
+    },
+    {
+      "kind": "figure",
+      "number": "5.21",
+      "page": "102",
+      "physical_page": 114
+    },
+    {
+      "kind": "figure",
+      "number": "5.22",
+      "page": "103",
+      "physical_page": 115
+    },
+    {
+      "kind": "figure",
+      "number": "5.23",
+      "page": "104",
+      "physical_page": 116
+    },
+    {
+      "kind": "figure",
+      "number": "5.24",
+      "page": "105",
+      "physical_page": 117
+    },
+    {
+      "kind": "figure",
+      "number": "5.25",
+      "page": "106",
+      "physical_page": 118
+    },
+    {
+      "kind": "figure",
+      "number": "5.26",
+      "page": "107",
+      "physical_page": 119
+    },
+    {
+      "kind": "table",
+      "number": "6.1",
+      "page": "110",
+      "physical_page": 122
+    }
+  ]
+}

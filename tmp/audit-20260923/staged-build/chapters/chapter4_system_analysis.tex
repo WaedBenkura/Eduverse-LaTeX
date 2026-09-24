@@ -1,0 +1,684 @@
+\chapterwithopening{System Analysis and Requirements}{chap:system_analysis}{
+  \chaptercontentsitem{sec:system_analysis_introduction}
+  \chaptercontentsitem{sec:system_overview}
+  \chaptercontentsitem{sec:system_actors}
+  \chaptercontentsitem{sec:functional_requirements}
+  \chaptercontentsitem{sec:non_functional_requirements}
+  \chaptercontentsitem{sec:use_case_model}
+  \chaptercontentsitem{sec:activity_diagrams}
+  \chaptercontentsitem{sec:chapter4_summary}
+}
+
+\input{figures/activity_diagrams/activity_diagram_styles.tex}
+\input{figures/activity_diagrams/chapter4_activity_diagrams.tex}
+
+\newcommand{\EduUseCasePdfFigure}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[page=1,width=\textwidth,height=0.82\textheight,keepaspectratio]{#1}
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+\section{Introduction}\label{sec:system_analysis_introduction}
+
+This chapter translates the strategic direction of EduVerse into its principal
+analytical elements. It identifies the system actors, functional and
+non-functional requirements, access conditions, and interaction models that
+define expected platform behavior.
+
+The chapter then presents the use-case and activity models used to represent
+user interaction and major workflow sequences. Together, these elements
+provide the analytical basis for the system design and implementation described
+in the following chapters.
+
+\section{System Overview}\label{sec:system_overview}
+
+EduVerse is a multi-organization educational platform in which the class acts
+as the primary operational workspace. The system supports three principal
+human roles: Organization Administrator, Teacher, and Student, while the same
+account may belong to multiple organizations or hold more than one role.
+
+System behavior depends on the active organization, active role, class
+membership, and applicable feature configuration. These conditions determine
+which resources, workflows, and management actions are available to the
+current user.
+
+The web application provides the primary operational environment, while the
+mobile companion extends selected high-frequency academic interactions. This
+chapter analyzes the system at the level of actors, requirements, permissions,
+and workflows rather than implementation architecture.
+
+\section{System Actors}\label{sec:system_actors}
+
+The principal human actors of EduVerse are the Organization Administrator,
+Teacher, and Student. These roles represent different levels of responsibility
+within the platform rather than permanently separate account types. A user may
+belong to more than one organization or hold more than one role, with access
+resolved according to the current workspace context.
+The diagrams in this chapter focus on the three principal human actors.
+Automatic responsibilities such as access enforcement, notification generation,
+integrity-event recording, and workflow-state changes are represented through
+the surrounding analysis and workflow behavior where relevant.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.15}
+  \setlength{\tabcolsep}{5pt}
+  \caption{Primary EduVerse System Actors}
+  \label{tab:eduverse_system_actors}
+  \begin{tabular}{|p{0.23\textwidth}|p{0.57\textwidth}|}
+    \hline
+    \textbf{Actor} & \textbf{Analytical Role in the System} \\
+    \hline
+    Organization Administrator & Manages organization-level governance, membership, role assignment, institutional settings, class oversight, and other administrative capabilities. \\
+    \hline
+    Teacher & Manages instructional and class-level academic workflows within the permissions granted by the organization and class context. \\
+    \hline
+    Student & Participates in permitted learning activities, accesses class resources, completes assessments, joins communication and live-learning workflows, and reviews released academic outcomes. \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+
+\section{Functional Requirements}\label{sec:functional_requirements}
+
+The functional requirements define the main behaviors that EduVerse must
+provide within the implemented project scope. They are grouped by functional
+area to maintain traceability with the use-case model and system workflows.
+
+\subsection*{Authentication and Access}
+
+\begin{itemize}
+  \item \textbf{FR-01.} The system shall allow users to sign up, sign in,
+    verify email addresses, request password reset, and log out.
+  \item \textbf{FR-02.} The system shall require authenticated access before
+    opening organization-scoped or class-scoped workspaces.
+  \item \textbf{FR-03.} The system shall allow users with more than one
+    eligible workspace context to select the Active Organization and Active
+    Role.
+  \item \textbf{FR-04.} The system shall open the role-appropriate workspace
+    or dashboard after successful authentication and context resolution.
+\end{itemize}
+
+\subsection*{Organization and Role Management}
+
+\begin{itemize}
+  \item \textbf{FR-05.} The system shall allow an Organization Administrator
+    to create an organization from a selected template and configure its
+    initial institutional settings.
+  \item \textbf{FR-06.} The system shall allow Organization Administrators to
+    invite or reinvite members, revoke outstanding invitations, manage
+    organization membership, and grant or remove permitted organization roles.
+  \item \textbf{FR-07.} The system shall support invitation-based access and,
+    when enabled, Public Join Link access with target-role selection and
+    direct-join or approval-based entry modes.
+  \item \textbf{FR-08.} The system shall allow Organization Administrators to
+    manage organization-level access governance, including join-request
+    decisions, public-access settings, and teacher class permissions.
+\end{itemize}
+
+\subsection*{Class Management and Class History}
+
+\begin{itemize}
+  \item \textbf{FR-09.} The system shall allow authorized users to create and
+    edit classes with details such as title, code, term, stage, description,
+    purpose, and related settings.
+  \item \textbf{FR-10.} The system shall allow class membership management,
+    including assigning or changing the responsible Teacher and managing
+    student enrollment according to permissions.
+  \item \textbf{FR-11.} The system shall allow authorized users to configure
+    class tools, extension availability, visibility rules, Results visibility,
+    and class purpose within the controls exposed for the class.
+  \item \textbf{FR-12.} The system shall allow administrators or permitted
+    teachers to end a class, stage, or term and move the class into Past
+    Terms while preserving class history and authorized previous-term student
+    linkage.
+\end{itemize}
+
+\subsection*{Course Content and Materials}
+
+\begin{itemize}
+  \item \textbf{FR-13.} The system shall allow authorized users to upload
+    materials together with descriptive details and the selected file.
+  \item \textbf{FR-14.} The system shall allow class members to view, search,
+    filter, preview, open, and download available materials according to
+    access permissions.
+  \item \textbf{FR-15.} The system shall allow authorized users to delete
+    materials from the applicable class workspace.
+\end{itemize}
+
+\subsection*{Class Communication and Notifications}
+
+\begin{itemize}
+  \item \textbf{FR-16.} The system shall allow class members to send text or
+    media messages within the class communication space.
+  \item \textbf{FR-17.} The system shall allow authorized users to post
+    announcements, remove announcement entries from the announcement area, and
+    search the class conversation.
+  \item \textbf{FR-18.} The system shall generate notifications from relevant
+    system events and shall allow users to view, open, mark, mark all, and
+    delete notification entries.
+\end{itemize}
+
+\subsection*{Assignment Management}
+
+\begin{itemize}
+  \item \textbf{FR-19.} The system shall allow authorized users to create,
+    edit, delete, save as draft, and publish assignments.
+  \item \textbf{FR-20.} The system shall allow assignment configuration for
+    due date, score range, submission modes, and optional attached files.
+  \item \textbf{FR-21.} The system shall allow students to submit text or file work according to the assignment settings and to resubmit when the assignment policy permits it.
+  \item \textbf{FR-22.} The system shall allow Teachers to review submissions,
+    record grades, provide feedback, and use AI-assisted feedback tools when
+    enabled. The system shall allow Organization Administrators to review
+    submissions and grading outcomes for oversight.
+\end{itemize}
+
+\subsection*{Exam Management and Integrity}
+
+\begin{itemize}
+  \item \textbf{FR-23.} The system shall allow authorized users to create,
+    edit, delete, draft, and publish exams, including question management and
+    passcode configuration when required.
+  \item \textbf{FR-24.} The system shall allow students enrolled in the relevant class to start an exam attempt, enter a passcode when required, answer questions, and submit the attempt within the valid exam window.
+  \item \textbf{FR-25.} The system shall apply configured integrity controls,
+    including fullscreen requirements and integrity-event recording when the
+    required exam state is interrupted.
+  \item \textbf{FR-26.} The system shall allow teachers and administrators to
+    monitor attempts, review integrity events, grade manual answers, void
+    attempts, and grant retakes where permitted.
+  \item \textbf{FR-27.} The system shall allow release of exam results and,
+    after release, shall allow students to view result details and answer
+    review where the class settings permit it.
+\end{itemize}
+
+\subsection*{Live Sessions and Whiteboard}
+
+\begin{itemize}
+  \item \textbf{FR-28.} The system shall allow authorized class managers to
+    start, manage, and end live sessions.
+  \item \textbf{FR-29.} The system shall allow authorized users to join live sessions and access available session tools, such as microphone, camera, screen sharing, participants view, and session chat, according to their role and permissions.
+  \item \textbf{FR-30.} The system shall allow whiteboard interaction or
+    whiteboard viewing according to the role and permissions of the current
+    participant.
+\end{itemize}
+
+\subsection*{Results and Dashboards}
+
+\begin{itemize}
+  \item \textbf{FR-31.} The system shall provide role-specific dashboards for
+    Students, Teachers, and Organization Administrators.
+  \item \textbf{FR-32.} The system shall allow students to view assignment
+    grades, feedback, released exam results, and related result details within
+    permitted classes.
+  \item \textbf{FR-33.} The system shall allow teachers and administrators to review assignment and exam results.
+\end{itemize}
+
+\subsection*{AI Learning Support}
+
+\begin{itemize}
+  \item \textbf{FR-34.} The system shall provide a class AI Agent for
+    contextual academic support when the AI feature is enabled for the current
+    organization and class context.
+  \item \textbf{FR-35.} The system shall allow users to generate AI-assisted summaries of available class materials.
+  \item \textbf{FR-36.} The system shall allow authorized Teachers and
+    Organization Administrators to use AI-assisted drafting for assignments,
+    examinations, and assignment feedback when AI support is available in the
+    current context.
+\end{itemize}
+
+\subsection*{Integrated Coding Lab / IDE Extension}
+
+\begin{itemize}
+  \item \textbf{FR-37.} The system shall allow users to open the Integrated
+    Coding Lab / IDE Extension when it is enabled for the current class.
+  \item \textbf{FR-38.} The system shall allow users to choose an available
+    coding environment and manage the visible project files in the workspace.
+  \item \textbf{FR-39.} The system shall allow users to open, edit, and save
+    code, and to run or preview supported code according to the selected coding
+    environment.
+  \item \textbf{FR-40.} The system shall allow users to review console or problems output, reset the workspace when needed, and use the IDE terminal.
+\end{itemize}
+
+\subsection*{Feature Configuration and Extensibility}
+
+\begin{itemize}
+  \item \textbf{FR-41.} The system shall allow supported platform features to
+    be enabled or disabled at the organization level and at the class level for
+    features that provide class-level control.
+  \item \textbf{FR-42.} The system shall hide, block, or clearly mark
+    unavailable features according to the active organization and class
+    configuration rather than exposing unusable controls.
+  \item \textbf{FR-43.} The system shall allow users to open enabled extensions
+    and feature modules from the applicable organization or class context.
+\end{itemize}
+
+\subsection*{Profile and Help}
+
+\begin{itemize}
+  \item \textbf{FR-44.} The system shall allow users to view profile
+    information, change theme preferences, and manage password-related account
+    settings.
+  \item \textbf{FR-45.} The system shall allow authenticated users to return to
+    workspace selection and change the Active Organization or Active Role
+    without signing out.
+  \item \textbf{FR-46.} The system shall provide searchable help content for
+    account, class, administration, AI, coding, assignment, exam, results,
+    navigation, and troubleshooting topics.
+\end{itemize}
+
+\section{Non-Functional Requirements}\label{sec:non_functional_requirements}
+
+The non-functional requirements define the principal quality, security, operational, and maintainability constraints expected of EduVerse within the scope of this project.
+
+\begin{itemize}
+  \item \textbf{NFR-01 Usability.} The interface shall maintain consistent navigation and clear context indication across organization, role, class, and feature workflows.
+  \item \textbf{NFR-02 Security and Access Control.} The system shall enforce access control based on authentication, organization membership, user role, and class access. Public access features shall follow the access rules defined by the organization.
+  \item \textbf{NFR-03 Reliability.} The system shall preserve consistent workflow state and stored records during membership, materials, submission, examination, notification, live-session, and results workflows.
+  \item \textbf{NFR-04 Performance.} Interactive pages and academic workflows shall respond without delays that prevent normal task completion.
+  \item \textbf{NFR-05 Maintainability.} The system shall keep supported
+    features and shared services structurally separated so that correcting or
+    extending one workflow does not require unrelated workflows to be
+    rewritten.
+  \item \textbf{NFR-06 Scalability.} The data and access model shall support
+    multiple organizations, classes, memberships, and academic records without
+    requiring a separate application instance for each organization.
+  \item \textbf{NFR-07 Data Privacy.} Personal and academic data shall be
+    exposed only to authorized users and contexts, with particular protection
+    for profiles, submissions, integrity records, grades, and
+    organization-scoped data.
+  \item \textbf{NFR-08 Cross-Client Consistency.} The system shall apply
+    consistent authentication, role-resolution, and core access rules across
+    supported clients that use the shared platform services.
+\end{itemize}
+
+\section{Use-Case Model}\label{sec:use_case_model}
+
+The use-case model represents the principal interactions between EduVerse users and the services available within the selected organization and class.
+The Project Overview provides a high-level system view, while the remaining
+diagrams focus on specific functional areas.
+
+The diagrams emphasize human interaction with the platform. Automatic system
+behavior is represented through the surrounding analysis and related workflow
+descriptions rather than modeled repeatedly as a separate system actor.
+
+\begingroup
+\makeatletter
+\renewenvironment{figure}[1][]{%
+  \par\addvspace{\intextsep}%
+  \noindent\begin{minipage}{\textwidth}%
+    \def\@captype{figure}%
+}{%
+  \end{minipage}%
+  \par\addvspace{\intextsep}%
+}
+\renewenvironment{samepage}{%
+\par\addvspace{0.75\baselineskip}%
+
+  \noindent\begin{minipage}{\textwidth}%
+}{%
+  \end{minipage}\par\addvspace{0.65\baselineskip}%
+}
+\makeatother
+
+\begin{samepage}
+
+\subsection*{Project Overview}
+
+The Project Overview use-case diagram provides a high-level representation of
+the relationship between the three principal human actors and the main
+EduVerse service areas. Detailed interactions are decomposed into the
+module-specific diagrams that follow.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Authentication and Access}
+
+Figure~\ref{fig:ch4_usecase_authentication_access} represents entry into the
+EduVerse workspace and the conditions required to resolve the user's active
+context. It distinguishes account access from organization- and role-selection
+behavior when multiple valid contexts are available.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Organization and Role Management}
+
+Figure~\ref{fig:ch4_usecase_organization_role_management} represents
+organization-level governance and membership control. It emphasizes how
+administrative authority, role assignment, access pathways, and institutional
+settings are resolved within an organization context.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Class Management}
+
+Figure~\ref{fig:ch4_usecase_class_management} models the Class as the central
+operational unit of EduVerse. It emphasizes class lifecycle, membership,
+configuration, visibility, and historical continuity under the applicable
+permissions.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Assignment Management}
+
+Figure~\ref{fig:ch4_usecase_assignment_management} represents the assignment workflow and distinguishes teacher activities, such as assignment creation and grading, from student submission activities. Some actions depend on assignment settings, such as publication status, the selected submission mode, and whether late submission is allowed.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AI Learning Support}
+
+Figure~\ref{fig:ch4_usecase_ai_learning_support} represents AI as a supporting
+capability within the academic workflow rather than as an independent human
+actor. Availability depends on the applicable organization and class
+configuration.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Class Communication and Notifications}
+
+Figure~\ref{fig:ch4_usecase_class_communication_notifications} distinguishes
+user-generated class communication from system-generated notification
+behavior. The model separates direct interaction from event-driven awareness
+while keeping both within the class context.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Course Content and Materials}
+
+Figure~\ref{fig:ch4_usecase_course_content_materials} represents the controlled
+lifecycle of class learning resources and the distinction between authorized
+content management and member access.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Exam Management and Integrity}
+
+Figure~\ref{fig:ch4_usecase_exam_management_integrity} models the controlled
+examination lifecycle and the relationship between attempt eligibility,
+integrity monitoring, grading, result release, and post-attempt administrative
+decisions.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Live Sessions and Whiteboard}
+
+Figure~\ref{fig:ch4_usecase_live_sessions_whiteboard} represents synchronous
+participation within the class context and the collaboration capabilities
+available to eligible participants according to their role and permissions.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Integrated Coding Lab / IDE Extension}
+
+Figure~\ref{fig:ch4_usecase_integrated_coding_lab_ide_extension} represents
+access to the integrated coding workspace as a configurable class capability.
+The model emphasizes the relationship between workspace interaction and
+feature availability.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Profile and Help}
+
+Figure~\ref{fig:ch4_usecase_profile_help} represents account-oriented and
+user-support interactions that apply across the wider platform rather than to
+one specific academic workflow.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{Results and Dashboards}
+
+Figure~\ref{fig:ch4_usecase_results_dashboards} represents role-sensitive
+access to dashboard information and academic outcomes. The model emphasizes
+that result visibility depends on actor responsibility, result release, and
+applicable class settings.
+\end{samepage}
+
+\clearpage
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/project_overview.pdf}
+  {Project Overview Use-Case Diagram}
+  {fig:ch4_usecase_project_overview}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/authentication_access.pdf}
+  {Authentication and Access Use-Case Diagram}
+  {fig:ch4_usecase_authentication_access}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/organization_role_management.pdf}
+  {Organization and Role Management Use-Case Diagram}
+  {fig:ch4_usecase_organization_role_management}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/class_management.pdf}
+  {Class Management Use-Case Diagram}
+  {fig:ch4_usecase_class_management}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/assignment_management.pdf}
+  {Assignment Management Use-Case Diagram}
+  {fig:ch4_usecase_assignment_management}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/ai_learning_support.pdf}
+  {AI Learning Support Use-Case Diagram}
+  {fig:ch4_usecase_ai_learning_support}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/class_communication_notifications.pdf}
+  {Class Communication and Notifications Use-Case Diagram}
+  {fig:ch4_usecase_class_communication_notifications}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/course_content_materials.pdf}
+  {Course Content and Materials Use-Case Diagram}
+  {fig:ch4_usecase_course_content_materials}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/exam_management_integrity.pdf}
+  {Exam Management and Integrity Use-Case Diagram}
+  {fig:ch4_usecase_exam_management_integrity}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/live_sessions_whiteboard.pdf}
+  {Live Sessions and Whiteboard Use-Case Diagram}
+  {fig:ch4_usecase_live_sessions_whiteboard}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/integrated_coding_lab_ide_extension.pdf}
+  {Integrated Coding Lab / IDE Extension Use-Case Diagram}
+  {fig:ch4_usecase_integrated_coding_lab_ide_extension}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/profile_help.pdf}
+  {Profile and Help Use-Case Diagram}
+  {fig:ch4_usecase_profile_help}
+
+\EduUseCasePdfFigure
+  {figures/chapter4/usecases/results_dashboards.pdf}
+  {Results and Dashboards Use-Case Diagram}
+  {fig:ch4_usecase_results_dashboards}
+
+\clearpage
+
+\section{Activity Diagrams}\label{sec:activity_diagrams}
+
+The following activity diagrams model the principal EduVerse workflows
+represented by the use-case set. They emphasize user-visible actions, decision
+points, and relevant automatic system responses while avoiding unnecessary
+implementation detail.
+
+\begin{samepage}
+\subsection*{AD-01 Authentication and Workspace Access}
+
+Figure~\ref{fig:ch4_activity_auth_workspace_access} emphasizes the main
+decision paths involved in account access, verification, recovery,
+workspace-context resolution, and exit from the authenticated session.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-02 Organization Member Access and Public Join Link}
+
+Figure~\ref{fig:ch4_activity_organization_access} emphasizes the alternative
+membership-entry paths and the administrative decisions required when access
+depends on invitation, public joining, or approval.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-03 Class Creation, Configuration, and Past Terms}
+
+Figure~\ref{fig:ch4_activity_class_lifecycle} represents the class lifecycle
+from creation and configuration through controlled closure and preservation in
+Past Terms.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-04 Course Content and Materials}
+
+Figure~\ref{fig:ch4_activity_materials} represents the main decision paths
+between authorized material management and member access to available learning
+resources.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-05 Class Communication and Notifications}
+
+Figure~\ref{fig:ch4_activity_communication_notifications} distinguishes direct
+class communication actions from event-driven notification handling within the
+same class context.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-06 Assignment Workflow}
+
+Figure~\ref{fig:ch4_activity_assignment_workflow} emphasizes the assignment
+lifecycle and the decision points surrounding publication, submission,
+permitted resubmission, grading, and returned outcomes.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-07 Exam Management and Integrity Workflow}
+
+Figure~\ref{fig:ch4_activity_exam_integrity} emphasizes the principal
+examination decision paths involving attempt eligibility, integrity handling,
+grading, result release, voiding, and retake outcomes.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-08 Live Session and Whiteboard Workflow}
+
+Figure~\ref{fig:ch4_activity_live_session} represents the controlled
+synchronous-session lifecycle from session availability through participation
+to closure.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-09 Results Workflow}
+
+Figure~\ref{fig:ch4_activity_results} represents the conditions under which
+academic results become available to different actors and how visibility rules
+affect subsequent review.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-10 Dashboard Workflow}
+
+Figure~\ref{fig:ch4_activity_dashboard} represents role-specific dashboard
+access and preserves the distinction between summary information and detailed
+Results workflows.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-11 AI Learning Support Workflow}
+
+Figure~\ref{fig:ch4_activity_ai_learning_support} represents access to
+AI-supported learning actions and the configuration conditions that determine
+whether those capabilities are available.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-12 Integrated Coding Lab / IDE Workflow}
+
+Figure~\ref{fig:ch4_activity_ide_workflow} represents the main coding-workspace
+interaction flow under the condition that the corresponding class capability
+is enabled.
+\end{samepage}
+
+\begin{samepage}
+\subsection*{AD-13 Profile and Help Workflow}
+
+Figure~\ref{fig:ch4_activity_profile_help} represents the user-support workflow
+for account-oriented settings, workspace-context access, and help resources.
+\end{samepage}
+
+\clearpage
+
+\EduActivityFigureReadable{\EduActivityAuthWorkspaceAccessDiagram}
+  {Authentication and Workspace Access Activity Diagram}
+  {fig:ch4_activity_auth_workspace_access}
+
+\EduActivityFigureReadable{\EduActivityOrganizationAccessDiagram}
+  {Organization Member Access and Public Join Link Activity Diagram}
+  {fig:ch4_activity_organization_access}
+
+\EduActivityFigure{\EduActivityClassLifecycleDiagram}
+  {Class Creation, Configuration, and Past Terms Activity Diagram}
+  {fig:ch4_activity_class_lifecycle}
+
+\EduActivityFigureReadable{\EduActivityMaterialsWorkflowDiagram}
+  {Course Content and Materials Activity Diagram}
+  {fig:ch4_activity_materials}
+
+\EduActivityFigureTall{\EduActivityCommunicationNotificationsDiagram}
+  {Class Communication and Notifications Activity Diagram}
+  {fig:ch4_activity_communication_notifications}
+
+\EduActivityFigureReadable{\EduActivityAssignmentWorkflowDiagram}
+  {Assignment Workflow Activity Diagram}
+  {fig:ch4_activity_assignment_workflow}
+
+\EduActivityFigureTall{\EduActivityExamIntegrityWorkflowDiagram}
+  {Exam Management and Integrity Workflow Activity Diagram}
+  {fig:ch4_activity_exam_integrity}
+
+\EduActivityFigure{\EduActivityLiveSessionWorkflowDiagram}
+  {Live Session and Whiteboard Workflow Activity Diagram}
+  {fig:ch4_activity_live_session}
+
+\EduActivityFigureTall{\EduActivityResultsWorkflowDiagram}
+  {Results Workflow Activity Diagram}
+  {fig:ch4_activity_results}
+
+\EduActivityFigureReadable{\EduActivityDashboardWorkflowDiagram}
+  {Dashboard Workflow Activity Diagram}
+  {fig:ch4_activity_dashboard}
+
+\EduActivityFigureReadable{\EduActivityAiLearningSupportWorkflowDiagram}
+  {AI Learning Support Workflow Activity Diagram}
+  {fig:ch4_activity_ai_learning_support}
+
+\EduActivityFigure{\EduActivityIdeWorkflowDiagram}
+  {Integrated Coding Lab / IDE Workflow Activity Diagram}
+  {fig:ch4_activity_ide_workflow}
+
+\EduActivityFigureReadable{\EduActivityProfileHelpWorkflowDiagram}
+  {Profile and Help Workflow Activity Diagram}
+  {fig:ch4_activity_profile_help}
+
+\endgroup
+
+\clearpage
+
+\section{Chapter Summary}\label{sec:chapter4_summary}
+
+This chapter defined the analytical structure of EduVerse through its actor
+model, functional and non-functional requirements, use-case model, and activity
+workflows. Together, these elements establish the expected system behavior,
+access conditions, and principal interaction patterns that inform the design
+and implementation described in the following chapters.
+

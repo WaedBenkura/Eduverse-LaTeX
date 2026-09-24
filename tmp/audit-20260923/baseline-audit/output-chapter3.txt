@@ -1,0 +1,123 @@
+--- Physical page 28, thesis page 16 ---
+Chapter 3
+Methodology
+Contents
+Introduction .................................. 3.1, p. 19
+Methodological Approach...................... 3.2, p. 19
+Repeated Development Cycle .................. 3.3, p. 21
+Chapter Summary............................. 3.4, p. 21
+16
+
+--- Physical page 29, thesis page 17 ---
+Chapter 3. Methodology 17
+3.1 Introduction
+EduVerse combines interdependent workflows, roles, clients, services, and
+configurable features that share data and access rules. Its methodology
+therefore needed to support progressive refinement and controlled integration
+as these dependencies became clearer during development. Methodology
+choice was particularly important because access control, persistence, and
+user interaction could not be refined independently without affecting the
+coherence of the platform.
+3.2 Methodological Approach
+EduVerse was developed using a hybrid iterative methodology with
+predominantly feature-based vertical-slice development, rather than a
+strict waterfall model in which analysis, design, implementation, and
+validation each occur once in a fixed sequence. The platform instead evolved
+through repeated increments, each centered on a meaningful academic or
+administrative capability, allowing requirements and structure to be refined
+as the relationships between modules became clearer through development.
+3.2.1 Iterative Feature-Centered Development
+Development was organized around functional areas rather than technical
+layers. Iterations focused on modules such as organization and class
+management, materials, assessment, live sessions, results, AI Agent
+and integrated IDE support, feature configuration, and public access.
+Each selected feature moved through analysis, design, development, and
+validation, with one increment informing the next. Organizing work in this
+way kept each cycle tied to a recognizable user or institutional outcome
+while allowing technical work to span the layers needed to deliver it.
+The same iterations coordinated the primary web application with
+the MVP mobile companion. They provided checkpoints for deciding
+which high-frequency workflows required cross-client refinement and which
+remained web-centered.
+
+--- Physical page 30, thesis page 18 ---
+Chapter 3. Methodology 18
+3.2.2 Vertical-Slice Realization
+A feature was generally treated as a coherent functional unit rather than
+split into interface-only or backend-only stages. Depending on scope, a slice
+could span interface behavior, business rules, APIs, permissions, and data.
+For example, assignment submission and examination scheduling depend on
+the actor, governing rules, and persistence as well as the interface. The
+approach was predominantly, not exclusively, vertical: some features required
+only a subset of layers, while others also extended into the MVP mobile
+companion. This qualification preserves an important distinction between
+a methodological preference for complete feature paths and an inflexible
+requirement that every increment modify every system layer.
+3.2.3 Why This Methodology Fits EduVerse
+A rigid sequential methodology was unsuitable because module boundaries
+and dependencies became clearer through implementation. Organization
+governance, class operation, assessment, communication, AI support, and the
+integrated IDE share permissions, data, and user context; fixing their design
+before examining that interplay would have increased the risk of rework.
+Incremental checks allowed permissions, workflows, interfaces, and data
+structures to be refined while remaining coherent with the wider platform.
+Repeated validation was particularly important because the Organization
+Administrator, Teacher, and Student interact with related features under
+different access conditions, and some workflows span both web and mobile.
+3.3 Repeated Development Cycle
+Each increment followed the cycle in Table 3.1, with its depth adjusted to
+the feature and the system layers involved. A web-centered change could
+require limited supporting work, whereas another increment might extend
+through the API, database, permissions, and mobile companion. In both
+cases, the cycle retained the same progression from scope clarification to
+platform integration.
+Version control and pull-request review kept changes bounded to a feature
+slice while supporting review of integration effects before merge.
+
+--- Physical page 31, thesis page 19 ---
+Chapter 3. Methodology 19
+Table 3.1.Repeated Iterative Development Structure in EduVerse
+Repeated phase Methodological focus
+Feature selection and
+scope clarification
+Identify the next meaningful academic or
+administrative feature and define the intended
+workflow boundaries for the current
+increment.
+Workflow and
+requirement analysis
+Examine the target actors, conditions,
+information flow, constraints, and
+dependencies associated with the selected
+feature.
+Design of feature
+behavior and user
+interaction
+Define how the feature should behave from
+the user perspective, including role-sensitive
+interaction, states, and decision points.
+Feature-slice
+implementation
+Realize the selected feature across the relevant
+system layers, including interface behavior,
+services, permissions, and data handling
+where the scope requires them.
+Validation and
+refinement
+Review the implemented behavior against the
+intended workflow, resolve inconsistencies, and
+refine the feature before broader adoption.
+Integration into the
+wider platform
+Connect the completed feature to the
+surrounding platform so it remains coherent
+with existing modules, shared rules, and user
+workflows.
+
+--- Physical page 32, thesis page 20 ---
+Chapter 3. Methodology 20
+3.4 Chapter Summary
+EduVerse used iterative, feature-based, predominantly vertical-slice
+development to refine academic and administrative capabilities through
+the cycle summarized above. The following chapters present the resulting
+analysis, design, implementation, and testing.

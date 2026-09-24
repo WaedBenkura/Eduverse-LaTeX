@@ -1,0 +1,24 @@
+[
+  {
+    "step": "latex-pass-1",
+    "returncode": 1,
+    "seconds": 31.45,
+    "state": {
+      "main.aux": "ff8e885765174fb5afa1683e1f857827e6ff6716253c568cc800b755cef96640",
+      "main.toc": "8534b01c70c66175a7282f4a95faef06fe5d16d0503dbb68b6d330f8b961c802",
+      "main.lof": "9a7a7ecd87288f6bd973089a7bde59e8509e745855a2b5b78ce3a283d1f127df",
+      "main.lot": "8755f8cb0d4ab5f0917b2f79007c5f38456586d050f7359ad03ba3ae82dd2711",
+      "main.out": "0457a1f48d6c5f4952dbb31670e953587ff118068db3352b24e1e21276d9e04d",
+      "chapters\\chapter1_strategic_vision.aux": "8e9c6a46809f93807ceaad21f076aac5ab161efde04241b7309225918da370c5",
+      "chapters\\chapter2_literature_review.aux": "6d4b614d45097b51fc483929da0e8d49eea019ecd8df55a517a678c8f26031c6",
+      "chapters\\chapter3_methodology.aux": "7b85498ebb447ed23251ea37f2d8863d11387dc7f1cd102c093adc42801e6606",
+      "chapters\\chapter4_system_analysis.aux": "42973fcd8cefddd2ec6440245e5abd7078ecba6983399fdebe3c4563ca766895",
+      "chapters\\chapter5_system_design.aux": "de97a15998d62d937504159f112f2e1894742d5675c49714183c6278a6bcc984",
+      "chapters\\chapter7_testing_evaluation.aux": "ba359f03539da3d30366bb4250b84761ea4763ea16766310a384acb0f571134c",
+      "chapters\\chapter8_future_work.aux": "544e17e1b312f8f4c77d5f0343826c39cac5b9fab35883d098ea1ab4782c87a3",
+      "frontmatter\\abstract.aux": "214a9dab6dbbaf71c672377d4624ee248707604ceab4787459c9e06644feaf6a",
+      "frontmatter\\acknowledgements.aux": "30d1feca1a0d9a6c7e54c72ae6bc44f014aa7cacf762c32be7e2de38900baf52",
+      "backmatter\\conclusion.aux": "c2d351a3194cb69ab27e0161e1e356fe9445965fecf6f0c63933989cce69bac4"
+    }
+  }
+]

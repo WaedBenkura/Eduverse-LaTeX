@@ -1,0 +1,4495 @@
+{
+  "active_files": [
+    "main.tex",
+    "frontmatter/cover_page.tex",
+    "frontmatter/abstract.tex",
+    "frontmatter/acknowledgements.tex",
+    "chapters/chapter1_strategic_vision.tex",
+    "chapters/chapter2_literature_review.tex",
+    "chapters/chapter3_methodology.tex",
+    "chapters/chapter4_system_analysis.tex",
+    "figures/activity_diagrams/activity_diagram_styles.tex",
+    "figures/activity_diagrams/chapter4_activity_diagrams.tex",
+    "chapters/chapter5_system_design.tex",
+    "chapters/chapter6_implementation.tex",
+    "chapters/chapter7_testing_evaluation.tex",
+    "chapters/chapter8_future_work.tex",
+    "backmatter/conclusion.tex"
+  ],
+  "aux_files": [
+    "main.aux",
+    "frontmatter/abstract.aux",
+    "frontmatter/acknowledgements.aux",
+    "chapters/chapter1_strategic_vision.aux",
+    "chapters/chapter2_literature_review.aux",
+    "chapters/chapter3_methodology.aux",
+    "chapters/chapter4_system_analysis.aux",
+    "chapters/chapter5_system_design.aux",
+    "chapters/chapter7_testing_evaluation.aux",
+    "chapters/chapter8_future_work.aux",
+    "backmatter/conclusion.aux"
+  ],
+  "counts": {
+    "active_source_files": 15,
+    "source_labels": 138,
+    "aux_labels": 138,
+    "reference_commands": 78,
+    "unique_reference_targets": 78,
+    "citation_uses": 23,
+    "unique_citations": 14,
+    "bib_keys": 14,
+    "numbered_headings": 87,
+    "toc_entries": 94,
+    "chapter_opening_items": 51,
+    "paragraphs_screened": 197
+  },
+  "openings": [
+    {
+      "chapter": 1,
+      "title": "Strategic Vision and Project Scope",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "items": [
+        "sec:project_vision",
+        "sec:problem_statement",
+        "sec:project_motivations",
+        "sec:strategic_objectives",
+        "sec:team_goals",
+        "sec:project_scope"
+      ],
+      "sectionkeys": [
+        "sec:project_vision",
+        "sec:problem_statement",
+        "sec:project_motivations",
+        "sec:strategic_objectives",
+        "sec:team_goals",
+        "sec:project_scope"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:project_vision",
+          "number": "1.1",
+          "page": "2",
+          "title": "Project Vision",
+          "anchor": "section.1.1",
+          "aux": "chapters/chapter1_strategic_vision.aux"
+        },
+        {
+          "key": "sec:problem_statement",
+          "number": "1.2",
+          "page": "2",
+          "title": "Problem Statement",
+          "anchor": "section.1.2",
+          "aux": "chapters/chapter1_strategic_vision.aux"
+        },
+        {
+          "key": "sec:project_motivations",
+          "number": "1.3",
+          "page": "3",
+          "title": "Project Motivations",
+          "anchor": "section.1.3",
+          "aux": "chapters/chapter1_strategic_vision.aux"
+        },
+        {
+          "key": "sec:strategic_objectives",
+          "number": "1.4",
+          "page": "3",
+          "title": "Strategic Objectives",
+          "anchor": "section.1.4",
+          "aux": "chapters/chapter1_strategic_vision.aux"
+        },
+        {
+          "key": "sec:team_goals",
+          "number": "1.5",
+          "page": "4",
+          "title": "Project Benefits and Broader Impact",
+          "anchor": "section.1.5",
+          "aux": "chapters/chapter1_strategic_vision.aux"
+        },
+        {
+          "key": "sec:project_scope",
+          "number": "1.6",
+          "page": "5",
+          "title": "Project Scope and Boundaries",
+          "anchor": "section.1.6",
+          "aux": "chapters/chapter1_strategic_vision.aux"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Literature Review and Theoretical Framework",
+      "file": "chapters/chapter2_literature_review.tex",
+      "items": [
+        "sec:literature_review_introduction",
+        "sec:evolution_of_digital_education_platforms",
+        "sec:research_gap_integrated_ecosystem",
+        "sec:artificial_intelligence_in_education",
+        "sec:benchmarking_fragmented_vs_integrated",
+        "sec:theoretical_technical_foundations_eduverse"
+      ],
+      "sectionkeys": [
+        "sec:literature_review_introduction",
+        "sec:evolution_of_digital_education_platforms",
+        "sec:research_gap_integrated_ecosystem",
+        "sec:artificial_intelligence_in_education",
+        "sec:benchmarking_fragmented_vs_integrated",
+        "sec:theoretical_technical_foundations_eduverse"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:literature_review_introduction",
+          "number": "2.1",
+          "page": "8",
+          "title": "Introduction",
+          "anchor": "section.2.1",
+          "aux": "chapters/chapter2_literature_review.aux"
+        },
+        {
+          "key": "sec:evolution_of_digital_education_platforms",
+          "number": "2.2",
+          "page": "8",
+          "title": "Evolution of Digital Education Platforms",
+          "anchor": "section.2.2",
+          "aux": "chapters/chapter2_literature_review.aux"
+        },
+        {
+          "key": "sec:research_gap_integrated_ecosystem",
+          "number": "2.3",
+          "page": "9",
+          "title": "Research Gap and Integrated Learning Ecosystems",
+          "anchor": "section.2.3",
+          "aux": "chapters/chapter2_literature_review.aux"
+        },
+        {
+          "key": "sec:artificial_intelligence_in_education",
+          "number": "2.4",
+          "page": "10",
+          "title": "Artificial Intelligence in Education",
+          "anchor": "section.2.4",
+          "aux": "chapters/chapter2_literature_review.aux"
+        },
+        {
+          "key": "sec:benchmarking_fragmented_vs_integrated",
+          "number": "2.5",
+          "page": "11",
+          "title": "Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach",
+          "anchor": "section.2.5",
+          "aux": "chapters/chapter2_literature_review.aux"
+        },
+        {
+          "key": "sec:theoretical_technical_foundations_eduverse",
+          "number": "2.6",
+          "page": "12",
+          "title": "Theoretical and Technical Foundations of EduVerse",
+          "anchor": "section.2.6",
+          "aux": "chapters/chapter2_literature_review.aux"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Methodology",
+      "file": "chapters/chapter3_methodology.tex",
+      "items": [
+        "sec:methodology_introduction",
+        "sec:system_development_methodology",
+        "sec:development_workflow_structure",
+        "sec:chapter3_summary"
+      ],
+      "sectionkeys": [
+        "sec:methodology_introduction",
+        "sec:system_development_methodology",
+        "sec:development_workflow_structure",
+        "sec:chapter3_summary"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:methodology_introduction",
+          "number": "3.1",
+          "page": "16",
+          "title": "Introduction",
+          "anchor": "section.3.1",
+          "aux": "chapters/chapter3_methodology.aux"
+        },
+        {
+          "key": "sec:system_development_methodology",
+          "number": "3.2",
+          "page": "16",
+          "title": "Methodological Approach",
+          "anchor": "section.3.2",
+          "aux": "chapters/chapter3_methodology.aux"
+        },
+        {
+          "key": "sec:development_workflow_structure",
+          "number": "3.3",
+          "page": "18",
+          "title": "Repeated Development Cycle",
+          "anchor": "section.3.3",
+          "aux": "chapters/chapter3_methodology.aux"
+        },
+        {
+          "key": "sec:chapter3_summary",
+          "number": "3.4",
+          "page": "19",
+          "title": "Chapter Summary",
+          "anchor": "section.3.4",
+          "aux": "chapters/chapter3_methodology.aux"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "System Analysis and Requirements",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "items": [
+        "sec:system_analysis_introduction",
+        "sec:system_overview",
+        "sec:system_actors",
+        "sec:functional_requirements",
+        "sec:non_functional_requirements",
+        "sec:use_case_model",
+        "sec:activity_diagrams",
+        "sec:chapter4_summary"
+      ],
+      "sectionkeys": [
+        "sec:system_analysis_introduction",
+        "sec:system_overview",
+        "sec:system_actors",
+        "sec:functional_requirements",
+        "sec:non_functional_requirements",
+        "sec:use_case_model",
+        "sec:activity_diagrams",
+        "sec:chapter4_summary"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:system_analysis_introduction",
+          "number": "4.1",
+          "page": "21",
+          "title": "Introduction",
+          "anchor": "section.4.1",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        },
+        {
+          "key": "sec:system_overview",
+          "number": "4.2",
+          "page": "21",
+          "title": "System Overview",
+          "anchor": "section.4.2",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        },
+        {
+          "key": "sec:system_actors",
+          "number": "4.3",
+          "page": "21",
+          "title": "System Actors",
+          "anchor": "section.4.3",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        },
+        {
+          "key": "sec:functional_requirements",
+          "number": "4.4",
+          "page": "22",
+          "title": "Functional Requirements",
+          "anchor": "section.4.4",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        },
+        {
+          "key": "sec:non_functional_requirements",
+          "number": "4.5",
+          "page": "27",
+          "title": "Non-Functional Requirements",
+          "anchor": "section.4.5",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        },
+        {
+          "key": "sec:use_case_model",
+          "number": "4.6",
+          "page": "28",
+          "title": "Use-Case Model",
+          "anchor": "section.4.6",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        },
+        {
+          "key": "sec:activity_diagrams",
+          "number": "4.7",
+          "page": "44",
+          "title": "Activity Diagrams",
+          "anchor": "section.4.7",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        },
+        {
+          "key": "sec:chapter4_summary",
+          "number": "4.8",
+          "page": "59",
+          "title": "Chapter Summary",
+          "anchor": "section.4.8",
+          "aux": "chapters/chapter4_system_analysis.aux"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "System Design",
+      "file": "chapters/chapter5_system_design.tex",
+      "items": [
+        "sec:system_design_introduction",
+        "sec:architectural_design_overview",
+        "sec:data_and_storage_design",
+        "sec:interface_and_interaction_design"
+      ],
+      "sectionkeys": [
+        "sec:system_design_introduction",
+        "sec:architectural_design_overview",
+        "sec:data_and_storage_design",
+        "sec:interface_and_interaction_design"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:system_design_introduction",
+          "number": "5.1",
+          "page": "61",
+          "title": "Introduction",
+          "anchor": "section.5.1",
+          "aux": "chapters/chapter5_system_design.aux"
+        },
+        {
+          "key": "sec:architectural_design_overview",
+          "number": "5.2",
+          "page": "61",
+          "title": "Design Context and Architectural Structure",
+          "anchor": "section.5.2",
+          "aux": "chapters/chapter5_system_design.aux"
+        },
+        {
+          "key": "sec:data_and_storage_design",
+          "number": "5.3",
+          "page": "61",
+          "title": "Information Model and Persistence Design",
+          "anchor": "section.5.3",
+          "aux": "chapters/chapter5_system_design.aux"
+        },
+        {
+          "key": "sec:interface_and_interaction_design",
+          "number": "5.4",
+          "page": "82",
+          "title": "Interface and Interaction Design",
+          "anchor": "section.5.4",
+          "aux": "chapters/chapter5_system_design.aux"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "Software and Engineering Implementation",
+      "file": "chapters/chapter6_implementation.tex",
+      "items": [
+        "sec:implementation_introduction",
+        "sec:implementation_environment",
+        "sec:implementation_system_architecture",
+        "sec:web_application_implementation",
+        "sec:mobile_companion_application_implementation",
+        "sec:backend_database_storage_implementation",
+        "sec:authentication_authorization_security",
+        "sec:role_based_multi_organization_access",
+        "sec:feature_availability_extension_implementation",
+        "sec:real_time_communication_live_sessions",
+        "sec:ai_learning_support_ide_implementation",
+        "sec:development_workflow_deployment",
+        "sec:implementation_challenges_adopted_solutions",
+        "sec:implementation_chapter_summary"
+      ],
+      "sectionkeys": [
+        "sec:implementation_introduction",
+        "sec:implementation_environment",
+        "sec:implementation_system_architecture",
+        "sec:web_application_implementation",
+        "sec:mobile_companion_application_implementation",
+        "sec:backend_database_storage_implementation",
+        "sec:authentication_authorization_security",
+        "sec:role_based_multi_organization_access",
+        "sec:feature_availability_extension_implementation",
+        "sec:real_time_communication_live_sessions",
+        "sec:ai_learning_support_ide_implementation",
+        "sec:development_workflow_deployment",
+        "sec:implementation_challenges_adopted_solutions",
+        "sec:implementation_chapter_summary"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:implementation_introduction",
+          "number": "6.1",
+          "page": "109",
+          "title": "Introduction",
+          "anchor": "section.6.1",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:implementation_environment",
+          "number": "6.2",
+          "page": "109",
+          "title": "Implementation Environment",
+          "anchor": "section.6.2",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:implementation_system_architecture",
+          "number": "6.3",
+          "page": "109",
+          "title": "System Architecture",
+          "anchor": "section.6.3",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:web_application_implementation",
+          "number": "6.4",
+          "page": "111",
+          "title": "Web Application Implementation",
+          "anchor": "section.6.4",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:mobile_companion_application_implementation",
+          "number": "6.5",
+          "page": "111",
+          "title": "Mobile Companion Application Implementation",
+          "anchor": "section.6.5",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:backend_database_storage_implementation",
+          "number": "6.6",
+          "page": "112",
+          "title": "Backend, Database, and Storage Implementation",
+          "anchor": "section.6.6",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:authentication_authorization_security",
+          "number": "6.7",
+          "page": "113",
+          "title": "Authentication, Authorization, and Security",
+          "anchor": "section.6.7",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:role_based_multi_organization_access",
+          "number": "6.8",
+          "page": "113",
+          "title": "Role-Based and Multi-Organization Access",
+          "anchor": "section.6.8",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:feature_availability_extension_implementation",
+          "number": "6.9",
+          "page": "114",
+          "title": "Feature Availability and Extension Implementation",
+          "anchor": "section.6.9",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:real_time_communication_live_sessions",
+          "number": "6.10",
+          "page": "114",
+          "title": "Real-Time Communication and Live Sessions",
+          "anchor": "section.6.10",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:ai_learning_support_ide_implementation",
+          "number": "6.11",
+          "page": "115",
+          "title": "AI Learning Support and IDE Implementation",
+          "anchor": "section.6.11",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:development_workflow_deployment",
+          "number": "6.12",
+          "page": "116",
+          "title": "Development Workflow and Deployment",
+          "anchor": "section.6.12",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:implementation_challenges_adopted_solutions",
+          "number": "6.13",
+          "page": "116",
+          "title": "Implementation Challenges and Adopted Solutions",
+          "anchor": "section.6.13",
+          "aux": "main.aux"
+        },
+        {
+          "key": "sec:implementation_chapter_summary",
+          "number": "6.14",
+          "page": "117",
+          "title": "Chapter Summary",
+          "anchor": "section.6.14",
+          "aux": "main.aux"
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "System Testing and Evaluation",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "items": [
+        "sec:testing_evaluation_introduction",
+        "sec:testing_strategy",
+        "sec:functional_testing",
+        "sec:non_functional_evaluation",
+        "sec:review_evaluation_summary"
+      ],
+      "sectionkeys": [
+        "sec:testing_evaluation_introduction",
+        "sec:testing_strategy",
+        "sec:functional_testing",
+        "sec:non_functional_evaluation",
+        "sec:review_evaluation_summary"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:testing_evaluation_introduction",
+          "number": "7.1",
+          "page": "119",
+          "title": "Introduction",
+          "anchor": "section.7.1",
+          "aux": "chapters/chapter7_testing_evaluation.aux"
+        },
+        {
+          "key": "sec:testing_strategy",
+          "number": "7.2",
+          "page": "119",
+          "title": "Testing Strategy",
+          "anchor": "section.7.2",
+          "aux": "chapters/chapter7_testing_evaluation.aux"
+        },
+        {
+          "key": "sec:functional_testing",
+          "number": "7.3",
+          "page": "119",
+          "title": "Functional Testing",
+          "anchor": "section.7.3",
+          "aux": "chapters/chapter7_testing_evaluation.aux"
+        },
+        {
+          "key": "sec:non_functional_evaluation",
+          "number": "7.4",
+          "page": "119",
+          "title": "Non-Functional Evaluation",
+          "anchor": "section.7.4",
+          "aux": "chapters/chapter7_testing_evaluation.aux"
+        },
+        {
+          "key": "sec:review_evaluation_summary",
+          "number": "7.5",
+          "page": "120",
+          "title": "Review and Evaluation Summary",
+          "anchor": "section.7.5",
+          "aux": "chapters/chapter7_testing_evaluation.aux"
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "Future Work and Recommendations",
+      "file": "chapters/chapter8_future_work.tex",
+      "items": [
+        "sec:future_work_introduction",
+        "sec:scalability_improvements",
+        "sec:user_feedback_usability_refinement",
+        "sec:future_work_summary"
+      ],
+      "sectionkeys": [
+        "sec:future_work_introduction",
+        "sec:scalability_improvements",
+        "sec:user_feedback_usability_refinement",
+        "sec:future_work_summary"
+      ],
+      "matches": true,
+      "resolved": [
+        {
+          "key": "sec:future_work_introduction",
+          "number": "8.1",
+          "page": "122",
+          "title": "Introduction",
+          "anchor": "section.8.1",
+          "aux": "chapters/chapter8_future_work.aux"
+        },
+        {
+          "key": "sec:scalability_improvements",
+          "number": "8.2",
+          "page": "122",
+          "title": "Scalability Improvements",
+          "anchor": "section.8.2",
+          "aux": "chapters/chapter8_future_work.aux"
+        },
+        {
+          "key": "sec:user_feedback_usability_refinement",
+          "number": "8.3",
+          "page": "122",
+          "title": "User Feedback and Usability Refinement",
+          "anchor": "section.8.3",
+          "aux": "chapters/chapter8_future_work.aux"
+        },
+        {
+          "key": "sec:future_work_summary",
+          "number": "8.4",
+          "page": "122",
+          "title": "Chapter Summary",
+          "anchor": "section.8.4",
+          "aux": "chapters/chapter8_future_work.aux"
+        }
+      ]
+    }
+  ],
+  "source_aux_label_key_match": true,
+  "missing_source_labels": [],
+  "missing_aux_labels": [],
+  "duplicate_source_labels": [],
+  "duplicate_aux_labels": [],
+  "unsafe_label_names": [],
+  "unused_unnumbered_label_numeric_values": [],
+  "undefined_references": [],
+  "undefined_citations": [],
+  "label_attachment_issues": [],
+  "numbered_toc_matches_source": true,
+  "source_toc": [
+    {
+      "kind": "chapter",
+      "number": "1",
+      "title": "Strategic Vision and Project Scope"
+    },
+    {
+      "kind": "section",
+      "number": "1.1",
+      "title": "Project Vision"
+    },
+    {
+      "kind": "section",
+      "number": "1.2",
+      "title": "Problem Statement"
+    },
+    {
+      "kind": "section",
+      "number": "1.3",
+      "title": "Project Motivations"
+    },
+    {
+      "kind": "section",
+      "number": "1.4",
+      "title": "Strategic Objectives"
+    },
+    {
+      "kind": "section",
+      "number": "1.5",
+      "title": "Project Benefits and Broader Impact"
+    },
+    {
+      "kind": "section",
+      "number": "1.6",
+      "title": "Project Scope and Boundaries"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.1",
+      "title": "System Boundaries and User Roles"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.2",
+      "title": "Functional Scope"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.3",
+      "title": "Web and Mobile Client Scope"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.4",
+      "title": "Distinctive Features and Extensible Design"
+    },
+    {
+      "kind": "chapter",
+      "number": "2",
+      "title": "Literature Review and Theoretical Framework"
+    },
+    {
+      "kind": "section",
+      "number": "2.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "2.2",
+      "title": "Evolution of Digital Education Platforms"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.2.1",
+      "title": "From Traditional Classroom Management to Digital Learning Systems"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.2.2",
+      "title": "Limitations of Fragmented Learning Management Tools"
+    },
+    {
+      "kind": "section",
+      "number": "2.3",
+      "title": "Research Gap and Integrated Learning Ecosystems"
+    },
+    {
+      "kind": "section",
+      "number": "2.4",
+      "title": "Artificial Intelligence in Education"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.1",
+      "title": "Context-Aware Learning Assistance"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.2",
+      "title": "Material Summarization and Learning Support"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.3",
+      "title": "Assessment and Feedback Support"
+    },
+    {
+      "kind": "section",
+      "number": "2.5",
+      "title": "Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach"
+    },
+    {
+      "kind": "section",
+      "number": "2.6",
+      "title": "Theoretical and Technical Foundations of EduVerse"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.1",
+      "title": "Web-Based Educational Platforms"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.2",
+      "title": "Mobile Companion Learning Applications"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.3",
+      "title": "Real-Time Virtual Classrooms"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.4",
+      "title": "Integrated Coding Environments for Programming Education"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.5",
+      "title": "Extensible Educational Ecosystems and Governed Openness"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.6",
+      "title": "Security, Roles, and Data Management"
+    },
+    {
+      "kind": "chapter",
+      "number": "3",
+      "title": "Methodology"
+    },
+    {
+      "kind": "section",
+      "number": "3.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "3.2",
+      "title": "Methodological Approach"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.1",
+      "title": "Iterative Feature-Centered Development"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.2",
+      "title": "Vertical-Slice Realization"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.3",
+      "title": "Why This Methodology Fits EduVerse"
+    },
+    {
+      "kind": "section",
+      "number": "3.3",
+      "title": "Repeated Development Cycle"
+    },
+    {
+      "kind": "section",
+      "number": "3.4",
+      "title": "Chapter Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "4",
+      "title": "System Analysis and Requirements"
+    },
+    {
+      "kind": "section",
+      "number": "4.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "4.2",
+      "title": "System Overview"
+    },
+    {
+      "kind": "section",
+      "number": "4.3",
+      "title": "System Actors"
+    },
+    {
+      "kind": "section",
+      "number": "4.4",
+      "title": "Functional Requirements"
+    },
+    {
+      "kind": "section",
+      "number": "4.5",
+      "title": "Non-Functional Requirements"
+    },
+    {
+      "kind": "section",
+      "number": "4.6",
+      "title": "Use-Case Model"
+    },
+    {
+      "kind": "section",
+      "number": "4.7",
+      "title": "Activity Diagrams"
+    },
+    {
+      "kind": "section",
+      "number": "4.8",
+      "title": "Chapter Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "5",
+      "title": "System Design"
+    },
+    {
+      "kind": "section",
+      "number": "5.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "5.2",
+      "title": "Design Context and Architectural Structure"
+    },
+    {
+      "kind": "section",
+      "number": "5.3",
+      "title": "Information Model and Persistence Design"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.1",
+      "title": "Logical Database Design"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.2",
+      "title": "Relational Structure Through the ERD"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.3",
+      "title": "Principal Schema Groups"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.4",
+      "title": "Physical Schema Tables"
+    },
+    {
+      "kind": "section",
+      "number": "5.4",
+      "title": "Interface and Interaction Design"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.1",
+      "title": "Access and Identity Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.2",
+      "title": "Administrative Governance Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.3",
+      "title": "Classroom and Learning Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.4",
+      "title": "Assessment and Submission Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.5",
+      "title": "Synchronous Collaboration Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.6",
+      "title": "AI Support and Coding-Lab Interfaces"
+    },
+    {
+      "kind": "chapter",
+      "number": "6",
+      "title": "Software and Engineering Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "6.2",
+      "title": "Implementation Environment"
+    },
+    {
+      "kind": "section",
+      "number": "6.3",
+      "title": "System Architecture"
+    },
+    {
+      "kind": "section",
+      "number": "6.4",
+      "title": "Web Application Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.5",
+      "title": "Mobile Companion Application Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.6",
+      "title": "Backend, Database, and Storage Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.7",
+      "title": "Authentication, Authorization, and Security"
+    },
+    {
+      "kind": "section",
+      "number": "6.8",
+      "title": "Role-Based and Multi-Organization Access"
+    },
+    {
+      "kind": "section",
+      "number": "6.9",
+      "title": "Feature Availability and Extension Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.10",
+      "title": "Real-Time Communication and Live Sessions"
+    },
+    {
+      "kind": "section",
+      "number": "6.11",
+      "title": "AI Learning Support and IDE Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.12",
+      "title": "Development Workflow and Deployment"
+    },
+    {
+      "kind": "section",
+      "number": "6.13",
+      "title": "Implementation Challenges and Adopted Solutions"
+    },
+    {
+      "kind": "section",
+      "number": "6.14",
+      "title": "Chapter Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "7",
+      "title": "System Testing and Evaluation"
+    },
+    {
+      "kind": "section",
+      "number": "7.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "7.2",
+      "title": "Testing Strategy"
+    },
+    {
+      "kind": "section",
+      "number": "7.3",
+      "title": "Functional Testing"
+    },
+    {
+      "kind": "section",
+      "number": "7.4",
+      "title": "Non-Functional Evaluation"
+    },
+    {
+      "kind": "section",
+      "number": "7.5",
+      "title": "Review and Evaluation Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "8",
+      "title": "Future Work and Recommendations"
+    },
+    {
+      "kind": "section",
+      "number": "8.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "8.2",
+      "title": "Scalability Improvements"
+    },
+    {
+      "kind": "section",
+      "number": "8.3",
+      "title": "User Feedback and Usability Refinement"
+    },
+    {
+      "kind": "section",
+      "number": "8.4",
+      "title": "Chapter Summary"
+    }
+  ],
+  "compiled_toc": [
+    {
+      "kind": "chapter",
+      "number": "1",
+      "title": "Strategic Vision and Project Scope"
+    },
+    {
+      "kind": "section",
+      "number": "1.1",
+      "title": "Project Vision"
+    },
+    {
+      "kind": "section",
+      "number": "1.2",
+      "title": "Problem Statement"
+    },
+    {
+      "kind": "section",
+      "number": "1.3",
+      "title": "Project Motivations"
+    },
+    {
+      "kind": "section",
+      "number": "1.4",
+      "title": "Strategic Objectives"
+    },
+    {
+      "kind": "section",
+      "number": "1.5",
+      "title": "Project Benefits and Broader Impact"
+    },
+    {
+      "kind": "section",
+      "number": "1.6",
+      "title": "Project Scope and Boundaries"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.1",
+      "title": "System Boundaries and User Roles"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.2",
+      "title": "Functional Scope"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.3",
+      "title": "Web and Mobile Client Scope"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.4",
+      "title": "Distinctive Features and Extensible Design"
+    },
+    {
+      "kind": "chapter",
+      "number": "2",
+      "title": "Literature Review and Theoretical Framework"
+    },
+    {
+      "kind": "section",
+      "number": "2.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "2.2",
+      "title": "Evolution of Digital Education Platforms"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.2.1",
+      "title": "From Traditional Classroom Management to Digital Learning Systems"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.2.2",
+      "title": "Limitations of Fragmented Learning Management Tools"
+    },
+    {
+      "kind": "section",
+      "number": "2.3",
+      "title": "Research Gap and Integrated Learning Ecosystems"
+    },
+    {
+      "kind": "section",
+      "number": "2.4",
+      "title": "Artificial Intelligence in Education"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.1",
+      "title": "Context-Aware Learning Assistance"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.2",
+      "title": "Material Summarization and Learning Support"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.3",
+      "title": "Assessment and Feedback Support"
+    },
+    {
+      "kind": "section",
+      "number": "2.5",
+      "title": "Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach"
+    },
+    {
+      "kind": "section",
+      "number": "2.6",
+      "title": "Theoretical and Technical Foundations of EduVerse"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.1",
+      "title": "Web-Based Educational Platforms"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.2",
+      "title": "Mobile Companion Learning Applications"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.3",
+      "title": "Real-Time Virtual Classrooms"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.4",
+      "title": "Integrated Coding Environments for Programming Education"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.5",
+      "title": "Extensible Educational Ecosystems and Governed Openness"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.6",
+      "title": "Security, Roles, and Data Management"
+    },
+    {
+      "kind": "chapter",
+      "number": "3",
+      "title": "Methodology"
+    },
+    {
+      "kind": "section",
+      "number": "3.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "3.2",
+      "title": "Methodological Approach"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.1",
+      "title": "Iterative Feature-Centered Development"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.2",
+      "title": "Vertical-Slice Realization"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.3",
+      "title": "Why This Methodology Fits EduVerse"
+    },
+    {
+      "kind": "section",
+      "number": "3.3",
+      "title": "Repeated Development Cycle"
+    },
+    {
+      "kind": "section",
+      "number": "3.4",
+      "title": "Chapter Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "4",
+      "title": "System Analysis and Requirements"
+    },
+    {
+      "kind": "section",
+      "number": "4.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "4.2",
+      "title": "System Overview"
+    },
+    {
+      "kind": "section",
+      "number": "4.3",
+      "title": "System Actors"
+    },
+    {
+      "kind": "section",
+      "number": "4.4",
+      "title": "Functional Requirements"
+    },
+    {
+      "kind": "section",
+      "number": "4.5",
+      "title": "Non-Functional Requirements"
+    },
+    {
+      "kind": "section",
+      "number": "4.6",
+      "title": "Use-Case Model"
+    },
+    {
+      "kind": "section",
+      "number": "4.7",
+      "title": "Activity Diagrams"
+    },
+    {
+      "kind": "section",
+      "number": "4.8",
+      "title": "Chapter Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "5",
+      "title": "System Design"
+    },
+    {
+      "kind": "section",
+      "number": "5.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "5.2",
+      "title": "Design Context and Architectural Structure"
+    },
+    {
+      "kind": "section",
+      "number": "5.3",
+      "title": "Information Model and Persistence Design"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.1",
+      "title": "Logical Database Design"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.2",
+      "title": "Relational Structure Through the ERD"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.3",
+      "title": "Principal Schema Groups"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.4",
+      "title": "Physical Schema Tables"
+    },
+    {
+      "kind": "section",
+      "number": "5.4",
+      "title": "Interface and Interaction Design"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.1",
+      "title": "Access and Identity Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.2",
+      "title": "Administrative Governance Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.3",
+      "title": "Classroom and Learning Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.4",
+      "title": "Assessment and Submission Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.5",
+      "title": "Synchronous Collaboration Interfaces"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.6",
+      "title": "AI Support and Coding-Lab Interfaces"
+    },
+    {
+      "kind": "chapter",
+      "number": "6",
+      "title": "Software and Engineering Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "6.2",
+      "title": "Implementation Environment"
+    },
+    {
+      "kind": "section",
+      "number": "6.3",
+      "title": "System Architecture"
+    },
+    {
+      "kind": "section",
+      "number": "6.4",
+      "title": "Web Application Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.5",
+      "title": "Mobile Companion Application Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.6",
+      "title": "Backend, Database, and Storage Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.7",
+      "title": "Authentication, Authorization, and Security"
+    },
+    {
+      "kind": "section",
+      "number": "6.8",
+      "title": "Role-Based and Multi-Organization Access"
+    },
+    {
+      "kind": "section",
+      "number": "6.9",
+      "title": "Feature Availability and Extension Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.10",
+      "title": "Real-Time Communication and Live Sessions"
+    },
+    {
+      "kind": "section",
+      "number": "6.11",
+      "title": "AI Learning Support and IDE Implementation"
+    },
+    {
+      "kind": "section",
+      "number": "6.12",
+      "title": "Development Workflow and Deployment"
+    },
+    {
+      "kind": "section",
+      "number": "6.13",
+      "title": "Implementation Challenges and Adopted Solutions"
+    },
+    {
+      "kind": "section",
+      "number": "6.14",
+      "title": "Chapter Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "7",
+      "title": "System Testing and Evaluation"
+    },
+    {
+      "kind": "section",
+      "number": "7.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "7.2",
+      "title": "Testing Strategy"
+    },
+    {
+      "kind": "section",
+      "number": "7.3",
+      "title": "Functional Testing"
+    },
+    {
+      "kind": "section",
+      "number": "7.4",
+      "title": "Non-Functional Evaluation"
+    },
+    {
+      "kind": "section",
+      "number": "7.5",
+      "title": "Review and Evaluation Summary"
+    },
+    {
+      "kind": "chapter",
+      "number": "8",
+      "title": "Future Work and Recommendations"
+    },
+    {
+      "kind": "section",
+      "number": "8.1",
+      "title": "Introduction"
+    },
+    {
+      "kind": "section",
+      "number": "8.2",
+      "title": "Scalability Improvements"
+    },
+    {
+      "kind": "section",
+      "number": "8.3",
+      "title": "User Feedback and Usability Refinement"
+    },
+    {
+      "kind": "section",
+      "number": "8.4",
+      "title": "Chapter Summary"
+    }
+  ],
+  "toc": [
+    {
+      "kind": "chapter",
+      "number": "",
+      "title": "Abstract",
+      "page": "i",
+      "anchor": "chapter*.1"
+    },
+    {
+      "kind": "chapter",
+      "number": "",
+      "title": "Acknowledgements",
+      "page": "ii",
+      "anchor": "chapter*.2"
+    },
+    {
+      "kind": "chapter",
+      "number": "",
+      "title": "Contents",
+      "page": "iii",
+      "anchor": "section*.3"
+    },
+    {
+      "kind": "chapter",
+      "number": "",
+      "title": "List of Figures",
+      "page": "vii",
+      "anchor": "section*.5"
+    },
+    {
+      "kind": "chapter",
+      "number": "",
+      "title": "List of Tables",
+      "page": "x",
+      "anchor": "section*.7"
+    },
+    {
+      "kind": "chapter",
+      "number": "1",
+      "title": "Strategic Vision and Project Scope",
+      "page": "1",
+      "anchor": "chapter.1"
+    },
+    {
+      "kind": "section",
+      "number": "1.1",
+      "title": "Project Vision",
+      "page": "2",
+      "anchor": "section.1.1"
+    },
+    {
+      "kind": "section",
+      "number": "1.2",
+      "title": "Problem Statement",
+      "page": "2",
+      "anchor": "section.1.2"
+    },
+    {
+      "kind": "section",
+      "number": "1.3",
+      "title": "Project Motivations",
+      "page": "3",
+      "anchor": "section.1.3"
+    },
+    {
+      "kind": "section",
+      "number": "1.4",
+      "title": "Strategic Objectives",
+      "page": "3",
+      "anchor": "section.1.4"
+    },
+    {
+      "kind": "section",
+      "number": "1.5",
+      "title": "Project Benefits and Broader Impact",
+      "page": "4",
+      "anchor": "section.1.5"
+    },
+    {
+      "kind": "section",
+      "number": "1.6",
+      "title": "Project Scope and Boundaries",
+      "page": "5",
+      "anchor": "section.1.6"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.1",
+      "title": "System Boundaries and User Roles",
+      "page": "5",
+      "anchor": "subsection.1.6.1"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.2",
+      "title": "Functional Scope",
+      "page": "5",
+      "anchor": "subsection.1.6.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.3",
+      "title": "Web and Mobile Client Scope",
+      "page": "6",
+      "anchor": "subsection.1.6.3"
+    },
+    {
+      "kind": "subsection",
+      "number": "1.6.4",
+      "title": "Distinctive Features and Extensible Design",
+      "page": "6",
+      "anchor": "subsection.1.6.4"
+    },
+    {
+      "kind": "chapter",
+      "number": "2",
+      "title": "Literature Review and Theoretical Framework",
+      "page": "7",
+      "anchor": "chapter.2"
+    },
+    {
+      "kind": "section",
+      "number": "2.1",
+      "title": "Introduction",
+      "page": "8",
+      "anchor": "section.2.1"
+    },
+    {
+      "kind": "section",
+      "number": "2.2",
+      "title": "Evolution of Digital Education Platforms",
+      "page": "8",
+      "anchor": "section.2.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.2.1",
+      "title": "From Traditional Classroom Management to Digital Learning Systems",
+      "page": "8",
+      "anchor": "subsection.2.2.1"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.2.2",
+      "title": "Limitations of Fragmented Learning Management Tools",
+      "page": "9",
+      "anchor": "subsection.2.2.2"
+    },
+    {
+      "kind": "section",
+      "number": "2.3",
+      "title": "Research Gap and Integrated Learning Ecosystems",
+      "page": "9",
+      "anchor": "section.2.3"
+    },
+    {
+      "kind": "section",
+      "number": "2.4",
+      "title": "Artificial Intelligence in Education",
+      "page": "10",
+      "anchor": "section.2.4"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.1",
+      "title": "Context-Aware Learning Assistance",
+      "page": "10",
+      "anchor": "subsection.2.4.1"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.2",
+      "title": "Material Summarization and Learning Support",
+      "page": "10",
+      "anchor": "subsection.2.4.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.4.3",
+      "title": "Assessment and Feedback Support",
+      "page": "10",
+      "anchor": "subsection.2.4.3"
+    },
+    {
+      "kind": "section",
+      "number": "2.5",
+      "title": "Benchmarking: Fragmented Tools vs. Integrated EduVerse Approach",
+      "page": "11",
+      "anchor": "section.2.5"
+    },
+    {
+      "kind": "section",
+      "number": "2.6",
+      "title": "Theoretical and Technical Foundations of EduVerse",
+      "page": "12",
+      "anchor": "section.2.6"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.1",
+      "title": "Web-Based Educational Platforms",
+      "page": "12",
+      "anchor": "subsection.2.6.1"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.2",
+      "title": "Mobile Companion Learning Applications",
+      "page": "13",
+      "anchor": "subsection.2.6.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.3",
+      "title": "Real-Time Virtual Classrooms",
+      "page": "13",
+      "anchor": "subsection.2.6.3"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.4",
+      "title": "Integrated Coding Environments for Programming Education",
+      "page": "13",
+      "anchor": "subsection.2.6.4"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.5",
+      "title": "Extensible Educational Ecosystems and Governed Openness",
+      "page": "14",
+      "anchor": "subsection.2.6.5"
+    },
+    {
+      "kind": "subsection",
+      "number": "2.6.6",
+      "title": "Security, Roles, and Data Management",
+      "page": "14",
+      "anchor": "subsection.2.6.6"
+    },
+    {
+      "kind": "chapter",
+      "number": "3",
+      "title": "Methodology",
+      "page": "15",
+      "anchor": "chapter.3"
+    },
+    {
+      "kind": "section",
+      "number": "3.1",
+      "title": "Introduction",
+      "page": "16",
+      "anchor": "section.3.1"
+    },
+    {
+      "kind": "section",
+      "number": "3.2",
+      "title": "Methodological Approach",
+      "page": "16",
+      "anchor": "section.3.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.1",
+      "title": "Iterative Feature-Centered Development",
+      "page": "16",
+      "anchor": "subsection.3.2.1"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.2",
+      "title": "Vertical-Slice Realization",
+      "page": "17",
+      "anchor": "subsection.3.2.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "3.2.3",
+      "title": "Why This Methodology Fits EduVerse",
+      "page": "17",
+      "anchor": "subsection.3.2.3"
+    },
+    {
+      "kind": "section",
+      "number": "3.3",
+      "title": "Repeated Development Cycle",
+      "page": "18",
+      "anchor": "section.3.3"
+    },
+    {
+      "kind": "section",
+      "number": "3.4",
+      "title": "Chapter Summary",
+      "page": "19",
+      "anchor": "section.3.4"
+    },
+    {
+      "kind": "chapter",
+      "number": "4",
+      "title": "System Analysis and Requirements",
+      "page": "20",
+      "anchor": "chapter.4"
+    },
+    {
+      "kind": "section",
+      "number": "4.1",
+      "title": "Introduction",
+      "page": "21",
+      "anchor": "section.4.1"
+    },
+    {
+      "kind": "section",
+      "number": "4.2",
+      "title": "System Overview",
+      "page": "21",
+      "anchor": "section.4.2"
+    },
+    {
+      "kind": "section",
+      "number": "4.3",
+      "title": "System Actors",
+      "page": "21",
+      "anchor": "section.4.3"
+    },
+    {
+      "kind": "section",
+      "number": "4.4",
+      "title": "Functional Requirements",
+      "page": "22",
+      "anchor": "section.4.4"
+    },
+    {
+      "kind": "section",
+      "number": "4.5",
+      "title": "Non-Functional Requirements",
+      "page": "27",
+      "anchor": "section.4.5"
+    },
+    {
+      "kind": "section",
+      "number": "4.6",
+      "title": "Use-Case Model",
+      "page": "28",
+      "anchor": "section.4.6"
+    },
+    {
+      "kind": "section",
+      "number": "4.7",
+      "title": "Activity Diagrams",
+      "page": "44",
+      "anchor": "section.4.7"
+    },
+    {
+      "kind": "section",
+      "number": "4.8",
+      "title": "Chapter Summary",
+      "page": "59",
+      "anchor": "section.4.8"
+    },
+    {
+      "kind": "chapter",
+      "number": "5",
+      "title": "System Design",
+      "page": "60",
+      "anchor": "chapter.5"
+    },
+    {
+      "kind": "section",
+      "number": "5.1",
+      "title": "Introduction",
+      "page": "61",
+      "anchor": "section.5.1"
+    },
+    {
+      "kind": "section",
+      "number": "5.2",
+      "title": "Design Context and Architectural Structure",
+      "page": "61",
+      "anchor": "section.5.2"
+    },
+    {
+      "kind": "section",
+      "number": "5.3",
+      "title": "Information Model and Persistence Design",
+      "page": "61",
+      "anchor": "section.5.3"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.1",
+      "title": "Logical Database Design",
+      "page": "62",
+      "anchor": "subsection.5.3.1"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.2",
+      "title": "Relational Structure Through the ERD",
+      "page": "62",
+      "anchor": "subsection.5.3.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.3",
+      "title": "Principal Schema Groups",
+      "page": "65",
+      "anchor": "subsection.5.3.3"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.3.4",
+      "title": "Physical Schema Tables",
+      "page": "66",
+      "anchor": "subsection.5.3.4"
+    },
+    {
+      "kind": "section",
+      "number": "5.4",
+      "title": "Interface and Interaction Design",
+      "page": "82",
+      "anchor": "section.5.4"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.1",
+      "title": "Access and Identity Interfaces",
+      "page": "82",
+      "anchor": "subsection.5.4.1"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.2",
+      "title": "Administrative Governance Interfaces",
+      "page": "86",
+      "anchor": "subsection.5.4.2"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.3",
+      "title": "Classroom and Learning Interfaces",
+      "page": "94",
+      "anchor": "subsection.5.4.3"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.4",
+      "title": "Assessment and Submission Interfaces",
+      "page": "98",
+      "anchor": "subsection.5.4.4"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.5",
+      "title": "Synchronous Collaboration Interfaces",
+      "page": "105",
+      "anchor": "subsection.5.4.5"
+    },
+    {
+      "kind": "subsection",
+      "number": "5.4.6",
+      "title": "AI Support and Coding-Lab Interfaces",
+      "page": "106",
+      "anchor": "subsection.5.4.6"
+    },
+    {
+      "kind": "chapter",
+      "number": "6",
+      "title": "Software and Engineering Implementation",
+      "page": "108",
+      "anchor": "chapter.6"
+    },
+    {
+      "kind": "section",
+      "number": "6.1",
+      "title": "Introduction",
+      "page": "109",
+      "anchor": "section.6.1"
+    },
+    {
+      "kind": "section",
+      "number": "6.2",
+      "title": "Implementation Environment",
+      "page": "109",
+      "anchor": "section.6.2"
+    },
+    {
+      "kind": "section",
+      "number": "6.3",
+      "title": "System Architecture",
+      "page": "109",
+      "anchor": "section.6.3"
+    },
+    {
+      "kind": "section",
+      "number": "6.4",
+      "title": "Web Application Implementation",
+      "page": "111",
+      "anchor": "section.6.4"
+    },
+    {
+      "kind": "section",
+      "number": "6.5",
+      "title": "Mobile Companion Application Implementation",
+      "page": "111",
+      "anchor": "section.6.5"
+    },
+    {
+      "kind": "section",
+      "number": "6.6",
+      "title": "Backend, Database, and Storage Implementation",
+      "page": "112",
+      "anchor": "section.6.6"
+    },
+    {
+      "kind": "section",
+      "number": "6.7",
+      "title": "Authentication, Authorization, and Security",
+      "page": "113",
+      "anchor": "section.6.7"
+    },
+    {
+      "kind": "section",
+      "number": "6.8",
+      "title": "Role-Based and Multi-Organization Access",
+      "page": "113",
+      "anchor": "section.6.8"
+    },
+    {
+      "kind": "section",
+      "number": "6.9",
+      "title": "Feature Availability and Extension Implementation",
+      "page": "114",
+      "anchor": "section.6.9"
+    },
+    {
+      "kind": "section",
+      "number": "6.10",
+      "title": "Real-Time Communication and Live Sessions",
+      "page": "114",
+      "anchor": "section.6.10"
+    },
+    {
+      "kind": "section",
+      "number": "6.11",
+      "title": "AI Learning Support and IDE Implementation",
+      "page": "115",
+      "anchor": "section.6.11"
+    },
+    {
+      "kind": "section",
+      "number": "6.12",
+      "title": "Development Workflow and Deployment",
+      "page": "116",
+      "anchor": "section.6.12"
+    },
+    {
+      "kind": "section",
+      "number": "6.13",
+      "title": "Implementation Challenges and Adopted Solutions",
+      "page": "116",
+      "anchor": "section.6.13"
+    },
+    {
+      "kind": "section",
+      "number": "6.14",
+      "title": "Chapter Summary",
+      "page": "117",
+      "anchor": "section.6.14"
+    },
+    {
+      "kind": "chapter",
+      "number": "7",
+      "title": "System Testing and Evaluation",
+      "page": "118",
+      "anchor": "chapter.7"
+    },
+    {
+      "kind": "section",
+      "number": "7.1",
+      "title": "Introduction",
+      "page": "119",
+      "anchor": "section.7.1"
+    },
+    {
+      "kind": "section",
+      "number": "7.2",
+      "title": "Testing Strategy",
+      "page": "119",
+      "anchor": "section.7.2"
+    },
+    {
+      "kind": "section",
+      "number": "7.3",
+      "title": "Functional Testing",
+      "page": "119",
+      "anchor": "section.7.3"
+    },
+    {
+      "kind": "section",
+      "number": "7.4",
+      "title": "Non-Functional Evaluation",
+      "page": "119",
+      "anchor": "section.7.4"
+    },
+    {
+      "kind": "section",
+      "number": "7.5",
+      "title": "Review and Evaluation Summary",
+      "page": "120",
+      "anchor": "section.7.5"
+    },
+    {
+      "kind": "chapter",
+      "number": "8",
+      "title": "Future Work and Recommendations",
+      "page": "121",
+      "anchor": "chapter.8"
+    },
+    {
+      "kind": "section",
+      "number": "8.1",
+      "title": "Introduction",
+      "page": "122",
+      "anchor": "section.8.1"
+    },
+    {
+      "kind": "section",
+      "number": "8.2",
+      "title": "Scalability Improvements",
+      "page": "122",
+      "anchor": "section.8.2"
+    },
+    {
+      "kind": "section",
+      "number": "8.3",
+      "title": "User Feedback and Usability Refinement",
+      "page": "122",
+      "anchor": "section.8.3"
+    },
+    {
+      "kind": "section",
+      "number": "8.4",
+      "title": "Chapter Summary",
+      "page": "122",
+      "anchor": "section.8.4"
+    },
+    {
+      "kind": "chapter",
+      "number": "",
+      "title": "Conclusion",
+      "page": "123",
+      "anchor": "chapter*.59"
+    },
+    {
+      "kind": "chapter",
+      "number": "",
+      "title": "References",
+      "page": "124",
+      "anchor": "section*.60"
+    }
+  ],
+  "lists": {
+    "lof": {
+      "source_count": 52,
+      "compiled_count": 52,
+      "captions_match": true,
+      "sequence_issues": [],
+      "label_list_issues": [],
+      "entries": [
+        {
+          "number": "4.1",
+          "caption": "Project Overview Use-Case Diagram",
+          "page": "31",
+          "anchor": "figure.4.1"
+        },
+        {
+          "number": "4.2",
+          "caption": "Authentication and Access Use-Case Diagram",
+          "page": "32",
+          "anchor": "figure.4.2"
+        },
+        {
+          "number": "4.3",
+          "caption": "Organization and Role Management Use-Case Diagram",
+          "page": "33",
+          "anchor": "figure.4.3"
+        },
+        {
+          "number": "4.4",
+          "caption": "Class Management Use-Case Diagram",
+          "page": "34",
+          "anchor": "figure.4.4"
+        },
+        {
+          "number": "4.5",
+          "caption": "Assignment Management Use-Case Diagram",
+          "page": "35",
+          "anchor": "figure.4.5"
+        },
+        {
+          "number": "4.6",
+          "caption": "AI Learning Support Use-Case Diagram",
+          "page": "36",
+          "anchor": "figure.4.6"
+        },
+        {
+          "number": "4.7",
+          "caption": "Class Communication and Notifications Use-Case Diagram",
+          "page": "37",
+          "anchor": "figure.4.7"
+        },
+        {
+          "number": "4.8",
+          "caption": "Course Content and Materials Use-Case Diagram",
+          "page": "38",
+          "anchor": "figure.4.8"
+        },
+        {
+          "number": "4.9",
+          "caption": "Exam Management and Integrity Use-Case Diagram",
+          "page": "39",
+          "anchor": "figure.4.9"
+        },
+        {
+          "number": "4.10",
+          "caption": "Live Sessions and Whiteboard Use-Case Diagram",
+          "page": "40",
+          "anchor": "figure.4.10"
+        },
+        {
+          "number": "4.11",
+          "caption": "Integrated Coding Lab / IDE Extension Use-Case Diagram",
+          "page": "41",
+          "anchor": "figure.4.11"
+        },
+        {
+          "number": "4.12",
+          "caption": "Profile and Help Use-Case Diagram",
+          "page": "42",
+          "anchor": "figure.4.12"
+        },
+        {
+          "number": "4.13",
+          "caption": "Results and Dashboards Use-Case Diagram",
+          "page": "43",
+          "anchor": "figure.4.13"
+        },
+        {
+          "number": "4.14",
+          "caption": "Authentication and Workspace Access Activity Diagram",
+          "page": "46",
+          "anchor": "figure.4.14"
+        },
+        {
+          "number": "4.15",
+          "caption": "Organization Member Access and Public Join Link Activity Diagram",
+          "page": "47",
+          "anchor": "figure.4.15"
+        },
+        {
+          "number": "4.16",
+          "caption": "Class Creation, Configuration, and Past Terms Activity Diagram",
+          "page": "48",
+          "anchor": "figure.4.16"
+        },
+        {
+          "number": "4.17",
+          "caption": "Course Content and Materials Activity Diagram",
+          "page": "49",
+          "anchor": "figure.4.17"
+        },
+        {
+          "number": "4.18",
+          "caption": "Class Communication and Notifications Activity Diagram",
+          "page": "50",
+          "anchor": "figure.4.18"
+        },
+        {
+          "number": "4.19",
+          "caption": "Assignment Workflow Activity Diagram",
+          "page": "51",
+          "anchor": "figure.4.19"
+        },
+        {
+          "number": "4.20",
+          "caption": "Exam Management and Integrity Workflow Activity Diagram",
+          "page": "52",
+          "anchor": "figure.4.20"
+        },
+        {
+          "number": "4.21",
+          "caption": "Live Session and Whiteboard Workflow Activity Diagram",
+          "page": "53",
+          "anchor": "figure.4.21"
+        },
+        {
+          "number": "4.22",
+          "caption": "Results Workflow Activity Diagram",
+          "page": "54",
+          "anchor": "figure.4.22"
+        },
+        {
+          "number": "4.23",
+          "caption": "Dashboard Workflow Activity Diagram",
+          "page": "55",
+          "anchor": "figure.4.23"
+        },
+        {
+          "number": "4.24",
+          "caption": "AI Learning Support Workflow Activity Diagram",
+          "page": "56",
+          "anchor": "figure.4.24"
+        },
+        {
+          "number": "4.25",
+          "caption": "Integrated Coding Lab / IDE Workflow Activity Diagram",
+          "page": "57",
+          "anchor": "figure.4.25"
+        },
+        {
+          "number": "4.26",
+          "caption": "Profile and Help Workflow Activity Diagram",
+          "page": "58",
+          "anchor": "figure.4.26"
+        },
+        {
+          "number": "5.1",
+          "caption": "Entity Relationship Diagram of the EduVerse Database",
+          "page": "64",
+          "anchor": "figure.5.1"
+        },
+        {
+          "number": "5.2",
+          "caption": "Authentication interface showing sign-in and sign-up forms for EduVerse users.",
+          "page": "83",
+          "anchor": "figure.5.2"
+        },
+        {
+          "number": "5.3",
+          "caption": "Organization and active-role selector used to switch between available EduVerse workspaces.",
+          "page": "84",
+          "anchor": "figure.5.3"
+        },
+        {
+          "number": "5.4",
+          "caption": "User profile and settings interface showing role context, theme preferences, and password management controls.",
+          "page": "85",
+          "anchor": "figure.5.4"
+        },
+        {
+          "number": "5.5",
+          "caption": "Organization creation interface showing template-based setup and initial feature-availability controls for different educational contexts.",
+          "page": "87",
+          "anchor": "figure.5.5"
+        },
+        {
+          "number": "5.6",
+          "caption": "Organization administrator dashboard showing class oversight and organization-wide statistics.",
+          "page": "88",
+          "anchor": "figure.5.6"
+        },
+        {
+          "number": "5.7",
+          "caption": "Class creation and feature-configuration dialog used to define class properties and enabled tools.",
+          "page": "89",
+          "anchor": "figure.5.7"
+        },
+        {
+          "number": "5.8",
+          "caption": "Past-terms administration interface used to review archived classes and historical academic records.",
+          "page": "90",
+          "anchor": "figure.5.8"
+        },
+        {
+          "number": "5.9",
+          "caption": "Organization members and invitations interface showing role assignment and invitation-management controls.",
+          "page": "91",
+          "anchor": "figure.5.9"
+        },
+        {
+          "number": "5.10",
+          "caption": "Public join-link management interface showing join-link creation and request-handling controls.",
+          "page": "91",
+          "anchor": "figure.5.10"
+        },
+        {
+          "number": "5.11",
+          "caption": "Public join page used by a student to request access to an organization workspace.",
+          "page": "92",
+          "anchor": "figure.5.11"
+        },
+        {
+          "number": "5.12",
+          "caption": "Organization settings interface showing public-feature controls and teacher class-permission settings.",
+          "page": "93",
+          "anchor": "figure.5.12"
+        },
+        {
+          "number": "5.13",
+          "caption": "Class home interface showing the main classroom workspace and available learning tools.",
+          "page": "94",
+          "anchor": "figure.5.13"
+        },
+        {
+          "number": "5.14",
+          "caption": "Classroom materials interface used to access uploaded learning resources and study actions.",
+          "page": "95",
+          "anchor": "figure.5.14"
+        },
+        {
+          "number": "5.15",
+          "caption": "Class chat and announcements interface supporting class-wide discussion and instructor notices.",
+          "page": "96",
+          "anchor": "figure.5.15"
+        },
+        {
+          "number": "5.16",
+          "caption": "Notifications panel showing alerts for live sessions, materials, examinations, and announcements.",
+          "page": "97",
+          "anchor": "figure.5.16"
+        },
+        {
+          "number": "5.17",
+          "caption": "Assignment management interface showing teacher-side assignment creation, submission review, and grading controls.",
+          "page": "98",
+          "anchor": "figure.5.17"
+        },
+        {
+          "number": "5.18",
+          "caption": "Student assignment submission interface showing response entry and file-upload controls.",
+          "page": "99",
+          "anchor": "figure.5.18"
+        },
+        {
+          "number": "5.19",
+          "caption": "Exam management interface showing teacher-side exam creation and question configuration.",
+          "page": "100",
+          "anchor": "figure.5.19"
+        },
+        {
+          "number": "5.20",
+          "caption": "Student exam start interface showing exam rules, timing, and attempt conditions before entry.",
+          "page": "101",
+          "anchor": "figure.5.20"
+        },
+        {
+          "number": "5.21",
+          "caption": "Student exam-taking interface showing timed question navigation during an active exam attempt.",
+          "page": "102",
+          "anchor": "figure.5.21"
+        },
+        {
+          "number": "5.22",
+          "caption": "Exam attempt review interface showing submitted answers, grading controls, and integrity-related events.",
+          "page": "103",
+          "anchor": "figure.5.22"
+        },
+        {
+          "number": "5.23",
+          "caption": "Results dashboard showing released grades, score breakdowns, and detailed assessment feedback.",
+          "page": "104",
+          "anchor": "figure.5.23"
+        },
+        {
+          "number": "5.24",
+          "caption": "Live session room showing the shared whiteboard, participant list, and session controls.",
+          "page": "105",
+          "anchor": "figure.5.24"
+        },
+        {
+          "number": "5.25",
+          "caption": "AI learning support interface showing conversational assistance within the class workspace.",
+          "page": "106",
+          "anchor": "figure.5.25"
+        },
+        {
+          "number": "5.26",
+          "caption": "Integrated coding workspace showing the file explorer, code editor, terminal, and live preview pane.",
+          "page": "107",
+          "anchor": "figure.5.26"
+        }
+      ],
+      "source": [
+        {
+          "caption": "Project Overview Use-Case Diagram",
+          "key": "fig:ch4_usecase_project_overview",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 442
+        },
+        {
+          "caption": "Authentication and Access Use-Case Diagram",
+          "key": "fig:ch4_usecase_authentication_access",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 447
+        },
+        {
+          "caption": "Organization and Role Management Use-Case Diagram",
+          "key": "fig:ch4_usecase_organization_role_management",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 452
+        },
+        {
+          "caption": "Class Management Use-Case Diagram",
+          "key": "fig:ch4_usecase_class_management",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 457
+        },
+        {
+          "caption": "Assignment Management Use-Case Diagram",
+          "key": "fig:ch4_usecase_assignment_management",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 462
+        },
+        {
+          "caption": "AI Learning Support Use-Case Diagram",
+          "key": "fig:ch4_usecase_ai_learning_support",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 467
+        },
+        {
+          "caption": "Class Communication and Notifications Use-Case Diagram",
+          "key": "fig:ch4_usecase_class_communication_notifications",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 472
+        },
+        {
+          "caption": "Course Content and Materials Use-Case Diagram",
+          "key": "fig:ch4_usecase_course_content_materials",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 477
+        },
+        {
+          "caption": "Exam Management and Integrity Use-Case Diagram",
+          "key": "fig:ch4_usecase_exam_management_integrity",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 482
+        },
+        {
+          "caption": "Live Sessions and Whiteboard Use-Case Diagram",
+          "key": "fig:ch4_usecase_live_sessions_whiteboard",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 487
+        },
+        {
+          "caption": "Integrated Coding Lab / IDE Extension Use-Case Diagram",
+          "key": "fig:ch4_usecase_integrated_coding_lab_ide_extension",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 492
+        },
+        {
+          "caption": "Profile and Help Use-Case Diagram",
+          "key": "fig:ch4_usecase_profile_help",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 497
+        },
+        {
+          "caption": "Results and Dashboards Use-Case Diagram",
+          "key": "fig:ch4_usecase_results_dashboards",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 502
+        },
+        {
+          "caption": "Authentication and Workspace Access Activity Diagram",
+          "key": "fig:ch4_activity_auth_workspace_access",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 621
+        },
+        {
+          "caption": "Organization Member Access and Public Join Link Activity Diagram",
+          "key": "fig:ch4_activity_organization_access",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 625
+        },
+        {
+          "caption": "Class Creation, Configuration, and Past Terms Activity Diagram",
+          "key": "fig:ch4_activity_class_lifecycle",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 629
+        },
+        {
+          "caption": "Course Content and Materials Activity Diagram",
+          "key": "fig:ch4_activity_materials",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 633
+        },
+        {
+          "caption": "Class Communication and Notifications Activity Diagram",
+          "key": "fig:ch4_activity_communication_notifications",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 637
+        },
+        {
+          "caption": "Assignment Workflow Activity Diagram",
+          "key": "fig:ch4_activity_assignment_workflow",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 641
+        },
+        {
+          "caption": "Exam Management and Integrity Workflow Activity Diagram",
+          "key": "fig:ch4_activity_exam_integrity",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 645
+        },
+        {
+          "caption": "Live Session and Whiteboard Workflow Activity Diagram",
+          "key": "fig:ch4_activity_live_session",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 649
+        },
+        {
+          "caption": "Results Workflow Activity Diagram",
+          "key": "fig:ch4_activity_results",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 653
+        },
+        {
+          "caption": "Dashboard Workflow Activity Diagram",
+          "key": "fig:ch4_activity_dashboard",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 657
+        },
+        {
+          "caption": "AI Learning Support Workflow Activity Diagram",
+          "key": "fig:ch4_activity_ai_learning_support",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 661
+        },
+        {
+          "caption": "Integrated Coding Lab / IDE Workflow Activity Diagram",
+          "key": "fig:ch4_activity_ide_workflow",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 665
+        },
+        {
+          "caption": "Profile and Help Workflow Activity Diagram",
+          "key": "fig:ch4_activity_profile_help",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 669
+        },
+        {
+          "caption": "Entity Relationship Diagram of the EduVerse Database",
+          "key": "fig:eduverse_database_erd",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 186
+        },
+        {
+          "caption": "Authentication interface showing sign-in and sign-up forms for EduVerse users.",
+          "key": "fig:ui-auth-signin-signup",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 810
+        },
+        {
+          "caption": "Organization and active-role selector used to switch between available EduVerse workspaces.",
+          "key": "fig:ui-auth-organization-role-switcher",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 815
+        },
+        {
+          "caption": "User profile and settings interface showing role context, theme preferences, and password management controls.",
+          "key": "fig:ui-profile-settings",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 820
+        },
+        {
+          "caption": "Organization creation interface showing template-based setup and initial feature-availability controls for different educational contexts.",
+          "key": "fig:ui-admin-organization-creation",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 838
+        },
+        {
+          "caption": "Organization administrator dashboard showing class oversight and organization-wide statistics.",
+          "key": "fig:ui-admin-dashboard",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 843
+        },
+        {
+          "caption": "Class creation and feature-configuration dialog used to define class properties and enabled tools.",
+          "key": "fig:ui-admin-class-settings",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 848
+        },
+        {
+          "caption": "Past-terms administration interface used to review archived classes and historical academic records.",
+          "key": "fig:ui-admin-past-terms",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 853
+        },
+        {
+          "caption": "Organization members and invitations interface showing role assignment and invitation-management controls.",
+          "key": "fig:ui-admin-members",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 858
+        },
+        {
+          "caption": "Public join-link management interface showing join-link creation and request-handling controls.",
+          "key": "fig:ui-admin-join-links",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 863
+        },
+        {
+          "caption": "Public join page used by a student to request access to an organization workspace.",
+          "key": "fig:ui-admin-public-join",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 868
+        },
+        {
+          "caption": "Organization settings interface showing public-feature controls and teacher class-permission settings.",
+          "key": "fig:ui-admin-settings",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 873
+        },
+        {
+          "caption": "Class home interface showing the main classroom workspace and available learning tools.",
+          "key": "fig:ui-class-home",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 887
+        },
+        {
+          "caption": "Classroom materials interface used to access uploaded learning resources and study actions.",
+          "key": "fig:ui-class-materials",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 892
+        },
+        {
+          "caption": "Class chat and announcements interface supporting class-wide discussion and instructor notices.",
+          "key": "fig:ui-class-chat-announcements",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 897
+        },
+        {
+          "caption": "Notifications panel showing alerts for live sessions, materials, examinations, and announcements.",
+          "key": "fig:ui-class-notifications",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 902
+        },
+        {
+          "caption": "Assignment management interface showing teacher-side assignment creation, submission review, and grading controls.",
+          "key": "fig:ui-assignment-management",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 919
+        },
+        {
+          "caption": "Student assignment submission interface showing response entry and file-upload controls.",
+          "key": "fig:ui-assignment-submission",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 924
+        },
+        {
+          "caption": "Exam management interface showing teacher-side exam creation and question configuration.",
+          "key": "fig:ui-exam-management",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 929
+        },
+        {
+          "caption": "Student exam start interface showing exam rules, timing, and attempt conditions before entry.",
+          "key": "fig:ui-exam-start",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 934
+        },
+        {
+          "caption": "Student exam-taking interface showing timed question navigation during an active exam attempt.",
+          "key": "fig:ui-exam-attempt",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 939
+        },
+        {
+          "caption": "Exam attempt review interface showing submitted answers, grading controls, and integrity-related events.",
+          "key": "fig:ui-exam-review",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 944
+        },
+        {
+          "caption": "Results dashboard showing released grades, score breakdowns, and detailed assessment feedback.",
+          "key": "fig:ui-results-dashboard",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 949
+        },
+        {
+          "caption": "Live session room showing the shared whiteboard, participant list, and session controls.",
+          "key": "fig:ui-session-whiteboard",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 963
+        },
+        {
+          "caption": "AI learning support interface showing conversational assistance within the class workspace.",
+          "key": "fig:ui-ai-learning-support",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 978
+        },
+        {
+          "caption": "Integrated coding workspace showing the file explorer, code editor, terminal, and live preview pane.",
+          "key": "fig:ui-ide-workspace",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 983
+        }
+      ]
+    },
+    "lot": {
+      "source_count": 38,
+      "compiled_count": 38,
+      "captions_match": true,
+      "sequence_issues": [],
+      "label_list_issues": [],
+      "entries": [
+        {
+          "number": "2.1",
+          "caption": "Fragmented Educational Tools vs. Integrated EduVerse Approach",
+          "page": "11",
+          "anchor": "table.2.1"
+        },
+        {
+          "number": "3.1",
+          "caption": "Repeated Iterative Development Structure in EduVerse",
+          "page": "18",
+          "anchor": "table.3.1"
+        },
+        {
+          "number": "4.1",
+          "caption": "Primary EduVerse System Actors",
+          "page": "22",
+          "anchor": "table.4.1"
+        },
+        {
+          "number": "5.1",
+          "caption": "Principal Schema Groups in EduVerse",
+          "page": "65",
+          "anchor": "table.5.1"
+        },
+        {
+          "number": "5.2",
+          "caption": "Schema for Table: \\db{organizations}",
+          "page": "66",
+          "anchor": "table.5.2"
+        },
+        {
+          "number": "5.3",
+          "caption": "Schema for Table: \\db{profiles}",
+          "page": "66",
+          "anchor": "table.5.3"
+        },
+        {
+          "number": "5.4",
+          "caption": "Schema for Table: \\db{organization_memberships}",
+          "page": "67",
+          "anchor": "table.5.4"
+        },
+        {
+          "number": "5.5",
+          "caption": "Schema for Table: \\db{organization_membership_roles}",
+          "page": "67",
+          "anchor": "table.5.5"
+        },
+        {
+          "number": "5.6",
+          "caption": "Schema for Table: \\db{organization_invites}",
+          "page": "67",
+          "anchor": "table.5.6"
+        },
+        {
+          "number": "5.7",
+          "caption": "Schema for Table: \\db{organization_settings}",
+          "page": "68",
+          "anchor": "table.5.7"
+        },
+        {
+          "number": "5.8",
+          "caption": "Schema for Table: \\db{organization_teacher_class_permissions}",
+          "page": "68",
+          "anchor": "table.5.8"
+        },
+        {
+          "number": "5.9",
+          "caption": "Schema for Table: \\db{organization_join_links}",
+          "page": "69",
+          "anchor": "table.5.9"
+        },
+        {
+          "number": "5.10",
+          "caption": "Schema for Table: \\db{organization_join_requests}",
+          "page": "69",
+          "anchor": "table.5.10"
+        },
+        {
+          "number": "5.11",
+          "caption": "Schema for Table: \\db{class_invites}",
+          "page": "70",
+          "anchor": "table.5.11"
+        },
+        {
+          "number": "5.12",
+          "caption": "Schema for Table: \\db{classes}",
+          "page": "70",
+          "anchor": "table.5.12"
+        },
+        {
+          "number": "5.13",
+          "caption": "Schema for Table: \\db{class_memberships}",
+          "page": "71",
+          "anchor": "table.5.13"
+        },
+        {
+          "number": "5.14",
+          "caption": "Schema for Table: \\db{class_visibility_preferences}",
+          "page": "71",
+          "anchor": "table.5.14"
+        },
+        {
+          "number": "5.15",
+          "caption": "Schema for Table: \\db{feature_definitions}",
+          "page": "72",
+          "anchor": "table.5.15"
+        },
+        {
+          "number": "5.16",
+          "caption": "Schema for Table: \\db{feature_presets}",
+          "page": "72",
+          "anchor": "table.5.16"
+        },
+        {
+          "number": "5.17",
+          "caption": "Schema for Table: \\db{feature_preset_items}",
+          "page": "72",
+          "anchor": "table.5.17"
+        },
+        {
+          "number": "5.18",
+          "caption": "Schema for Table: \\db{organization_feature_settings}",
+          "page": "73",
+          "anchor": "table.5.18"
+        },
+        {
+          "number": "5.19",
+          "caption": "Schema for Table: \\db{class_feature_settings}",
+          "page": "73",
+          "anchor": "table.5.19"
+        },
+        {
+          "number": "5.20",
+          "caption": "Schema for Table: \\db{organization_extensions}",
+          "page": "73",
+          "anchor": "table.5.20"
+        },
+        {
+          "number": "5.21",
+          "caption": "Schema for Table: \\db{class_extension_settings}",
+          "page": "74",
+          "anchor": "table.5.21"
+        },
+        {
+          "number": "5.22",
+          "caption": "Schema for Table: \\db{class_materials}",
+          "page": "74",
+          "anchor": "table.5.22"
+        },
+        {
+          "number": "5.23",
+          "caption": "Schema for Table: \\db{class_messages}",
+          "page": "75",
+          "anchor": "table.5.23"
+        },
+        {
+          "number": "5.24",
+          "caption": "Schema for Table: \\db{class_assignments}",
+          "page": "76",
+          "anchor": "table.5.24"
+        },
+        {
+          "number": "5.25",
+          "caption": "Schema for Table: \\db{class_assignment_files}",
+          "page": "76",
+          "anchor": "table.5.25"
+        },
+        {
+          "number": "5.26",
+          "caption": "Schema for Table: \\db{class_assignment_submissions}",
+          "page": "77",
+          "anchor": "table.5.26"
+        },
+        {
+          "number": "5.27",
+          "caption": "Schema for Table: \\db{exams}",
+          "page": "78",
+          "anchor": "table.5.27"
+        },
+        {
+          "number": "5.28",
+          "caption": "Schema for Table: \\db{exam_questions}",
+          "page": "78",
+          "anchor": "table.5.28"
+        },
+        {
+          "number": "5.29",
+          "caption": "Schema for Table: \\db{exam_attempts}",
+          "page": "79",
+          "anchor": "table.5.29"
+        },
+        {
+          "number": "5.30",
+          "caption": "Schema for Table: \\db{exam_answers}",
+          "page": "80",
+          "anchor": "table.5.30"
+        },
+        {
+          "number": "5.31",
+          "caption": "Schema for Table: \\db{notifications}",
+          "page": "80",
+          "anchor": "table.5.31"
+        },
+        {
+          "number": "5.32",
+          "caption": "Schema for Table: \\db{class_live_sessions}",
+          "page": "81",
+          "anchor": "table.5.32"
+        },
+        {
+          "number": "5.33",
+          "caption": "Schema for Table: \\db{audit_logs}",
+          "page": "81",
+          "anchor": "table.5.33"
+        },
+        {
+          "number": "5.34",
+          "caption": "Schema for Table: \\db{auth.users}",
+          "page": "82",
+          "anchor": "table.5.34"
+        },
+        {
+          "number": "6.1",
+          "caption": "Main EduVerse Implementation Environment",
+          "page": "110",
+          "anchor": "table.6.1"
+        }
+      ],
+      "source": [
+        {
+          "caption": "Fragmented Educational Tools vs. Integrated EduVerse Approach",
+          "key": "tab:fragmented_vs_integrated_eduverse",
+          "file": "chapters/chapter2_literature_review.tex",
+          "line": 150
+        },
+        {
+          "caption": "Repeated Iterative Development Structure in EduVerse",
+          "key": "tab:eduverse_iterative_development_structure",
+          "file": "chapters/chapter3_methodology.tex",
+          "line": 88
+        },
+        {
+          "caption": "Primary EduVerse System Actors",
+          "key": "tab:eduverse_system_actors",
+          "file": "chapters/chapter4_system_analysis.tex",
+          "line": 65
+        },
+        {
+          "caption": "Principal Schema Groups in EduVerse",
+          "key": "tab:principal_schema_groups",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 214
+        },
+        {
+          "caption": "Schema for Table: \\db{organizations}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 305
+        },
+        {
+          "caption": "Schema for Table: \\db{profiles}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 311
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_memberships}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 321
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_membership_roles}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 332
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_invites}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 341
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_settings}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 354
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_teacher_class_permissions}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 364
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_join_links}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 373
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_join_requests}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 389
+        },
+        {
+          "caption": "Schema for Table: \\db{class_invites}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 402
+        },
+        {
+          "caption": "Schema for Table: \\db{classes}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 418
+        },
+        {
+          "caption": "Schema for Table: \\db{class_memberships}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 441
+        },
+        {
+          "caption": "Schema for Table: \\db{class_visibility_preferences}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 451
+        },
+        {
+          "caption": "Schema for Table: \\db{feature_definitions}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 465
+        },
+        {
+          "caption": "Schema for Table: \\db{feature_presets}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 480
+        },
+        {
+          "caption": "Schema for Table: \\db{feature_preset_items}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 488
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_feature_settings}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 497
+        },
+        {
+          "caption": "Schema for Table: \\db{class_feature_settings}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 506
+        },
+        {
+          "caption": "Schema for Table: \\db{organization_extensions}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 516
+        },
+        {
+          "caption": "Schema for Table: \\db{class_extension_settings}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 530
+        },
+        {
+          "caption": "Schema for Table: \\db{class_materials}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 542
+        },
+        {
+          "caption": "Schema for Table: \\db{class_messages}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 568
+        },
+        {
+          "caption": "Schema for Table: \\db{class_assignments}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 588
+        },
+        {
+          "caption": "Schema for Table: \\db{class_assignment_files}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 606
+        },
+        {
+          "caption": "Schema for Table: \\db{class_assignment_submissions}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 621
+        },
+        {
+          "caption": "Schema for Table: \\db{exams}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 646
+        },
+        {
+          "caption": "Schema for Table: \\db{exam_questions}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 664
+        },
+        {
+          "caption": "Schema for Table: \\db{exam_attempts}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 683
+        },
+        {
+          "caption": "Schema for Table: \\db{exam_answers}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 713
+        },
+        {
+          "caption": "Schema for Table: \\db{notifications}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 727
+        },
+        {
+          "caption": "Schema for Table: \\db{class_live_sessions}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 744
+        },
+        {
+          "caption": "Schema for Table: \\db{audit_logs}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 761
+        },
+        {
+          "caption": "Schema for Table: \\db{auth.users}",
+          "file": "chapters/chapter5_system_design.tex",
+          "line": 771
+        },
+        {
+          "caption": "Main EduVerse Implementation Environment",
+          "key": "tab:eduverse_implementation_environment",
+          "file": "chapters/chapter6_implementation.tex",
+          "line": 38
+        }
+      ]
+    }
+  },
+  "duplicate_paragraphs": [],
+  "source_labels": [
+    {
+      "key": "sec:project_vision",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 10
+    },
+    {
+      "key": "sec:problem_statement",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 22
+    },
+    {
+      "key": "sec:project_motivations",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 50
+    },
+    {
+      "key": "sec:strategic_objectives",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 57
+    },
+    {
+      "key": "sec:team_goals",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 86
+    },
+    {
+      "key": "sec:project_scope",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 111
+    },
+    {
+      "key": "subsec:system_boundaries_roles",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 112
+    },
+    {
+      "key": "subsec:functional_scope",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 126
+    },
+    {
+      "key": "subsec:web_mobile_client_scope",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 148
+    },
+    {
+      "key": "subsec:competitive_features_innovation",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 164
+    },
+    {
+      "key": "chap:strategic_vision",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 1
+    },
+    {
+      "key": "sec:literature_review_introduction",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 10
+    },
+    {
+      "key": "sec:evolution_of_digital_education_platforms",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 26
+    },
+    {
+      "key": "subsec:traditional_to_digital_learning_systems",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 29
+    },
+    {
+      "key": "subsec:limitations_of_fragmented_learning_management_tools",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 46
+    },
+    {
+      "key": "sec:research_gap_integrated_ecosystem",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 63
+    },
+    {
+      "key": "sec:artificial_intelligence_in_education",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 82
+    },
+    {
+      "key": "subsec:context_aware_learning_assistance",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 97
+    },
+    {
+      "key": "subsec:material_summarization_and_learning_support",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 111
+    },
+    {
+      "key": "subsec:assessment_and_feedback_support",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 123
+    },
+    {
+      "key": "sec:benchmarking_fragmented_vs_integrated",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 137
+    },
+    {
+      "key": "tab:fragmented_vs_integrated_eduverse",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 152
+    },
+    {
+      "key": "sec:theoretical_technical_foundations_eduverse",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 212
+    },
+    {
+      "key": "subsec:web_based_educational_platforms",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 222
+    },
+    {
+      "key": "subsec:mobile_companion_learning_applications",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 235
+    },
+    {
+      "key": "subsec:real_time_virtual_classrooms",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 249
+    },
+    {
+      "key": "subsec:integrated_coding_environments_programming_education",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 263
+    },
+    {
+      "key": "subsec:extensible_ecosystems_governed_openness",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 277
+    },
+    {
+      "key": "subsec:security_roles_and_data_management",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 292
+    },
+    {
+      "key": "chap:literature_review",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 1
+    },
+    {
+      "key": "sec:methodology_introduction",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 8
+    },
+    {
+      "key": "sec:system_development_methodology",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 20
+    },
+    {
+      "key": "subsec:feature_based_iterative_workflow",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 23
+    },
+    {
+      "key": "subsec:vertical_slice_development_approach",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 40
+    },
+    {
+      "key": "subsec:justification_for_methodology_selection",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 58
+    },
+    {
+      "key": "sec:development_workflow_structure",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 76
+    },
+    {
+      "key": "tab:eduverse_iterative_development_structure",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 94
+    },
+    {
+      "key": "sec:chapter3_summary",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 118
+    },
+    {
+      "key": "chap:methodology",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 1
+    },
+    {
+      "key": "sec:system_analysis_introduction",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 24
+    },
+    {
+      "key": "sec:system_overview",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 36
+    },
+    {
+      "key": "sec:system_actors",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 53
+    },
+    {
+      "key": "tab:eduverse_system_actors",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 71
+    },
+    {
+      "key": "sec:functional_requirements",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 87
+    },
+    {
+      "key": "sec:non_functional_requirements",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 274
+    },
+    {
+      "key": "sec:use_case_model",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 299
+    },
+    {
+      "key": "sec:activity_diagrams",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 509
+    },
+    {
+      "key": "sec:chapter4_summary",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 677
+    },
+    {
+      "key": "chap:system_analysis",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 1
+    },
+    {
+      "key": "fig:ch4_usecase_project_overview",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 442
+    },
+    {
+      "key": "fig:ch4_usecase_authentication_access",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 447
+    },
+    {
+      "key": "fig:ch4_usecase_organization_role_management",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 452
+    },
+    {
+      "key": "fig:ch4_usecase_class_management",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 457
+    },
+    {
+      "key": "fig:ch4_usecase_assignment_management",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 462
+    },
+    {
+      "key": "fig:ch4_usecase_ai_learning_support",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 467
+    },
+    {
+      "key": "fig:ch4_usecase_class_communication_notifications",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 472
+    },
+    {
+      "key": "fig:ch4_usecase_course_content_materials",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 477
+    },
+    {
+      "key": "fig:ch4_usecase_exam_management_integrity",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 482
+    },
+    {
+      "key": "fig:ch4_usecase_live_sessions_whiteboard",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 487
+    },
+    {
+      "key": "fig:ch4_usecase_integrated_coding_lab_ide_extension",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 492
+    },
+    {
+      "key": "fig:ch4_usecase_profile_help",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 497
+    },
+    {
+      "key": "fig:ch4_usecase_results_dashboards",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 502
+    },
+    {
+      "key": "fig:ch4_activity_auth_workspace_access",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 621
+    },
+    {
+      "key": "fig:ch4_activity_organization_access",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 625
+    },
+    {
+      "key": "fig:ch4_activity_class_lifecycle",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 629
+    },
+    {
+      "key": "fig:ch4_activity_materials",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 633
+    },
+    {
+      "key": "fig:ch4_activity_communication_notifications",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 637
+    },
+    {
+      "key": "fig:ch4_activity_assignment_workflow",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 641
+    },
+    {
+      "key": "fig:ch4_activity_exam_integrity",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 645
+    },
+    {
+      "key": "fig:ch4_activity_live_session",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 649
+    },
+    {
+      "key": "fig:ch4_activity_results",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 653
+    },
+    {
+      "key": "fig:ch4_activity_dashboard",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 657
+    },
+    {
+      "key": "fig:ch4_activity_ai_learning_support",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 661
+    },
+    {
+      "key": "fig:ch4_activity_ide_workflow",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 665
+    },
+    {
+      "key": "fig:ch4_activity_profile_help",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 669
+    },
+    {
+      "key": "sec:system_design_introduction",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 60
+    },
+    {
+      "key": "sec:architectural_design_overview",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 72
+    },
+    {
+      "key": "sec:data_and_storage_design",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 90
+    },
+    {
+      "key": "subsec:database_design_overview",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 102
+    },
+    {
+      "key": "subsec:entity_relationship_diagram",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 124
+    },
+    {
+      "key": "fig:eduverse_database_erd",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 198
+    },
+    {
+      "key": "subsec:principal_schema_groups",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 203
+    },
+    {
+      "key": "tab:principal_schema_groups",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 216
+    },
+    {
+      "key": "subsec:database_tables",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 296
+    },
+    {
+      "key": "sec:interface_and_interaction_design",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 792
+    },
+    {
+      "key": "chap:system_design",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 1
+    },
+    {
+      "key": "fig:ui-auth-signin-signup",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 810
+    },
+    {
+      "key": "fig:ui-auth-organization-role-switcher",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 815
+    },
+    {
+      "key": "fig:ui-profile-settings",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 820
+    },
+    {
+      "key": "fig:ui-admin-organization-creation",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 838
+    },
+    {
+      "key": "fig:ui-admin-dashboard",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 843
+    },
+    {
+      "key": "fig:ui-admin-class-settings",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 848
+    },
+    {
+      "key": "fig:ui-admin-past-terms",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 853
+    },
+    {
+      "key": "fig:ui-admin-members",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 858
+    },
+    {
+      "key": "fig:ui-admin-join-links",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 863
+    },
+    {
+      "key": "fig:ui-admin-public-join",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 868
+    },
+    {
+      "key": "fig:ui-admin-settings",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 873
+    },
+    {
+      "key": "fig:ui-class-home",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 887
+    },
+    {
+      "key": "fig:ui-class-materials",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 892
+    },
+    {
+      "key": "fig:ui-class-chat-announcements",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 897
+    },
+    {
+      "key": "fig:ui-class-notifications",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 902
+    },
+    {
+      "key": "fig:ui-assignment-management",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 919
+    },
+    {
+      "key": "fig:ui-assignment-submission",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 924
+    },
+    {
+      "key": "fig:ui-exam-management",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 929
+    },
+    {
+      "key": "fig:ui-exam-start",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 934
+    },
+    {
+      "key": "fig:ui-exam-attempt",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 939
+    },
+    {
+      "key": "fig:ui-exam-review",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 944
+    },
+    {
+      "key": "fig:ui-results-dashboard",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 949
+    },
+    {
+      "key": "fig:ui-session-whiteboard",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 963
+    },
+    {
+      "key": "fig:ui-ai-learning-support",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 978
+    },
+    {
+      "key": "fig:ui-ide-workspace",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 983
+    },
+    {
+      "key": "sec:implementation_introduction",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 18
+    },
+    {
+      "key": "sec:implementation_environment",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 32
+    },
+    {
+      "key": "tab:eduverse_implementation_environment",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 44
+    },
+    {
+      "key": "sec:implementation_system_architecture",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 70
+    },
+    {
+      "key": "sec:web_application_implementation",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 91
+    },
+    {
+      "key": "sec:mobile_companion_application_implementation",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 115
+    },
+    {
+      "key": "sec:backend_database_storage_implementation",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 138
+    },
+    {
+      "key": "sec:authentication_authorization_security",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 168
+    },
+    {
+      "key": "sec:role_based_multi_organization_access",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 192
+    },
+    {
+      "key": "sec:feature_availability_extension_implementation",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 210
+    },
+    {
+      "key": "sec:real_time_communication_live_sessions",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 230
+    },
+    {
+      "key": "sec:ai_learning_support_ide_implementation",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 250
+    },
+    {
+      "key": "sec:development_workflow_deployment",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 284
+    },
+    {
+      "key": "sec:implementation_challenges_adopted_solutions",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 299
+    },
+    {
+      "key": "sec:implementation_chapter_summary",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 320
+    },
+    {
+      "key": "chap:implementation",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 1
+    },
+    {
+      "key": "sec:testing_evaluation_introduction",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 9
+    },
+    {
+      "key": "sec:testing_strategy",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 21
+    },
+    {
+      "key": "sec:functional_testing",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 35
+    },
+    {
+      "key": "sec:non_functional_evaluation",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 46
+    },
+    {
+      "key": "sec:review_evaluation_summary",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 59
+    },
+    {
+      "key": "chap:testing_evaluation",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 1
+    },
+    {
+      "key": "sec:future_work_introduction",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 8
+    },
+    {
+      "key": "sec:scalability_improvements",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 15
+    },
+    {
+      "key": "sec:user_feedback_usability_refinement",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 29
+    },
+    {
+      "key": "sec:future_work_summary",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 42
+    },
+    {
+      "key": "chap:future_work",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 1
+    }
+  ],
+  "references": [
+    {
+      "key": "sec:project_vision",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:problem_statement",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:project_motivations",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:strategic_objectives",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 5
+    },
+    {
+      "key": "sec:team_goals",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 6
+    },
+    {
+      "key": "sec:project_scope",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter1_strategic_vision.tex",
+      "line": 7
+    },
+    {
+      "key": "sec:literature_review_introduction",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:evolution_of_digital_education_platforms",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:research_gap_integrated_ecosystem",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:artificial_intelligence_in_education",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 5
+    },
+    {
+      "key": "sec:benchmarking_fragmented_vs_integrated",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 6
+    },
+    {
+      "key": "sec:theoretical_technical_foundations_eduverse",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 7
+    },
+    {
+      "key": "tab:fragmented_vs_integrated_eduverse",
+      "command": "\\ref",
+      "file": "chapters/chapter2_literature_review.tex",
+      "line": 143
+    },
+    {
+      "key": "sec:methodology_introduction",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:system_development_methodology",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:development_workflow_structure",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:chapter3_summary",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter3_methodology.tex",
+      "line": 5
+    },
+    {
+      "key": "sec:system_analysis_introduction",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:system_overview",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:system_actors",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:functional_requirements",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 5
+    },
+    {
+      "key": "sec:non_functional_requirements",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 6
+    },
+    {
+      "key": "sec:use_case_model",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 7
+    },
+    {
+      "key": "sec:activity_diagrams",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 8
+    },
+    {
+      "key": "sec:chapter4_summary",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 9
+    },
+    {
+      "key": "fig:ch4_usecase_authentication_access",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 341
+    },
+    {
+      "key": "fig:ch4_usecase_organization_role_management",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 350
+    },
+    {
+      "key": "fig:ch4_usecase_class_management",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 359
+    },
+    {
+      "key": "fig:ch4_usecase_assignment_management",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 368
+    },
+    {
+      "key": "fig:ch4_usecase_ai_learning_support",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 374
+    },
+    {
+      "key": "fig:ch4_usecase_class_communication_notifications",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 383
+    },
+    {
+      "key": "fig:ch4_usecase_course_content_materials",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 392
+    },
+    {
+      "key": "fig:ch4_usecase_exam_management_integrity",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 400
+    },
+    {
+      "key": "fig:ch4_usecase_live_sessions_whiteboard",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 409
+    },
+    {
+      "key": "fig:ch4_usecase_integrated_coding_lab_ide_extension",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 417
+    },
+    {
+      "key": "fig:ch4_usecase_profile_help",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 426
+    },
+    {
+      "key": "fig:ch4_usecase_results_dashboards",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 434
+    },
+    {
+      "key": "fig:ch4_activity_auth_workspace_access",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 519
+    },
+    {
+      "key": "fig:ch4_activity_organization_access",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 527
+    },
+    {
+      "key": "fig:ch4_activity_class_lifecycle",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 535
+    },
+    {
+      "key": "fig:ch4_activity_materials",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 543
+    },
+    {
+      "key": "fig:ch4_activity_communication_notifications",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 551
+    },
+    {
+      "key": "fig:ch4_activity_assignment_workflow",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 559
+    },
+    {
+      "key": "fig:ch4_activity_exam_integrity",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 567
+    },
+    {
+      "key": "fig:ch4_activity_live_session",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 575
+    },
+    {
+      "key": "fig:ch4_activity_results",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 583
+    },
+    {
+      "key": "fig:ch4_activity_dashboard",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 591
+    },
+    {
+      "key": "fig:ch4_activity_ai_learning_support",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 599
+    },
+    {
+      "key": "fig:ch4_activity_ide_workflow",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 607
+    },
+    {
+      "key": "fig:ch4_activity_profile_help",
+      "command": "\\ref",
+      "file": "chapters/chapter4_system_analysis.tex",
+      "line": 615
+    },
+    {
+      "key": "sec:system_design_introduction",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:architectural_design_overview",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:data_and_storage_design",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:interface_and_interaction_design",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter5_system_design.tex",
+      "line": 5
+    },
+    {
+      "key": "sec:implementation_introduction",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:implementation_environment",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:implementation_system_architecture",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:web_application_implementation",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 5
+    },
+    {
+      "key": "sec:mobile_companion_application_implementation",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 6
+    },
+    {
+      "key": "sec:backend_database_storage_implementation",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 7
+    },
+    {
+      "key": "sec:authentication_authorization_security",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 8
+    },
+    {
+      "key": "sec:role_based_multi_organization_access",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 9
+    },
+    {
+      "key": "sec:feature_availability_extension_implementation",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 10
+    },
+    {
+      "key": "sec:real_time_communication_live_sessions",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 11
+    },
+    {
+      "key": "sec:ai_learning_support_ide_implementation",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 12
+    },
+    {
+      "key": "sec:development_workflow_deployment",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 13
+    },
+    {
+      "key": "sec:implementation_challenges_adopted_solutions",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 14
+    },
+    {
+      "key": "sec:implementation_chapter_summary",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 15
+    },
+    {
+      "key": "tab:eduverse_implementation_environment",
+      "command": "\\ref",
+      "file": "chapters/chapter6_implementation.tex",
+      "line": 36
+    },
+    {
+      "key": "sec:testing_evaluation_introduction",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:testing_strategy",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:functional_testing",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:non_functional_evaluation",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 5
+    },
+    {
+      "key": "sec:review_evaluation_summary",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter7_testing_evaluation.tex",
+      "line": 6
+    },
+    {
+      "key": "sec:future_work_introduction",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 2
+    },
+    {
+      "key": "sec:scalability_improvements",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 3
+    },
+    {
+      "key": "sec:user_feedback_usability_refinement",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 4
+    },
+    {
+      "key": "sec:future_work_summary",
+      "command": "\\chaptercontentsitem",
+      "file": "chapters/chapter8_future_work.tex",
+      "line": 5
+    }
+  ],
+  "unused_labels": [
+    "chap:implementation",
+    "chap:strategic_vision",
+    "subsec:system_boundaries_roles",
+    "subsec:functional_scope",
+    "subsec:web_mobile_client_scope",
+    "subsec:competitive_features_innovation",
+    "chap:literature_review",
+    "subsec:traditional_to_digital_learning_systems",
+    "subsec:limitations_of_fragmented_learning_management_tools",
+    "subsec:context_aware_learning_assistance",
+    "subsec:material_summarization_and_learning_support",
+    "subsec:assessment_and_feedback_support",
+    "subsec:web_based_educational_platforms",
+    "subsec:mobile_companion_learning_applications",
+    "subsec:real_time_virtual_classrooms",
+    "subsec:integrated_coding_environments_programming_education",
+    "subsec:extensible_ecosystems_governed_openness",
+    "subsec:security_roles_and_data_management",
+    "chap:methodology",
+    "subsec:feature_based_iterative_workflow",
+    "subsec:vertical_slice_development_approach",
+    "subsec:justification_for_methodology_selection",
+    "tab:eduverse_iterative_development_structure",
+    "chap:system_analysis",
+    "tab:eduverse_system_actors",
+    "fig:ch4_usecase_project_overview",
+    "chap:system_design",
+    "subsec:database_design_overview",
+    "subsec:entity_relationship_diagram",
+    "fig:eduverse_database_erd",
+    "subsec:principal_schema_groups",
+    "tab:principal_schema_groups",
+    "subsec:database_tables",
+    "fig:ui-auth-signin-signup",
+    "fig:ui-auth-organization-role-switcher",
+    "fig:ui-profile-settings",
+    "fig:ui-admin-organization-creation",
+    "fig:ui-admin-dashboard",
+    "fig:ui-admin-class-settings",
+    "fig:ui-admin-past-terms",
+    "fig:ui-admin-members",
+    "fig:ui-admin-join-links",
+    "fig:ui-admin-public-join",
+    "fig:ui-admin-settings",
+    "fig:ui-class-home",
+    "fig:ui-class-materials",
+    "fig:ui-class-chat-announcements",
+    "fig:ui-class-notifications",
+    "fig:ui-assignment-management",
+    "fig:ui-assignment-submission",
+    "fig:ui-exam-management",
+    "fig:ui-exam-start",
+    "fig:ui-exam-attempt",
+    "fig:ui-exam-review",
+    "fig:ui-results-dashboard",
+    "fig:ui-session-whiteboard",
+    "fig:ui-ai-learning-support",
+    "fig:ui-ide-workspace",
+    "chap:testing_evaluation",
+    "chap:future_work"
+  ]
+}
